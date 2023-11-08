@@ -508,17 +508,17 @@ loin:InformationDeliveryMilestone
     ] ;
   vs:term_status "stable" ;
 .
-loin:InformationProvider
+loin:SendingActor
   rdf:type owl:Class ;
-  rdfs:comment "Information provider is a party for information delivery according to ISO 19650-1 (2018)"@en ;
-  rdfs:label "Information provider"@en ;
+  rdfs:comment "Sending actor is a party for information delivery according to ISO 19650-1 (2018)"@en ;
+  rdfs:label "Sending actor"@en ;
   rdfs:subClassOf loin:Actor ;
   vs:term_status "stable" ;
 .
-loin:InformationReceiver
+loin:ReceivingActor
   rdf:type owl:Class ;
-  rdfs:comment "Information receiver is a party for information delivery according to ISO 19650-1 (2018)"@en ;
-  rdfs:label "Information receiver"@en ;
+  rdfs:comment "Receiving actor is a party for information delivery according to ISO 19650-1 (2018)"@en ;
+  rdfs:label "Receiving actor"@en ;
   rdfs:subClassOf loin:Actor ;
   vs:term_status "stable" ;
 .
@@ -1043,7 +1043,7 @@ loin:hasProvider
   rdfs:comment "The object property relates the information provider with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has provider"@en ;
-  rdfs:range loin:InformationProvider ;
+  rdfs:range loin:SendingActor ;
   vs:term_status "stable" ;
 .
 loin:hasPurpose
@@ -1059,7 +1059,7 @@ loin:hasReceiver
   rdfs:comment "The object property relates the information receiver with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has information receiver"@en ;
-  rdfs:range loin:InformationReceiver ;
+  rdfs:range loin:ReceivingActor ;
   vs:term_status "stable" ;
 .
 loin:hasReferenceSource
