@@ -1,0 +1,60 @@
+# baseURI: http://inf.bi.rub.de/ontology/tmp
+# prefix: tmp
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tmp: <http://inf.bi.rub.de/ontology/tmp#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+
+<http://inf.bi.rub.de/ontology/tmp>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+  rdf:type owl:Ontology ;
+  dc:created "2023-12-23"^^xsd:date ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:liu.liu-m6r@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-5907-7609> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Liu Liu" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Philipp Hagedorn" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:name "Marthina Mellenthin-Filardo" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:sven.zentgraf@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-6058-7614> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Sven Zentgraf" ;
+    ] ;
+  dc:description "The Data Template (TMP) Ontology is defined for ..."@en ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universität Weimar" ;
+  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^xsd:anyURI ;
+  dc:title "Data Template (TMP) Ontology"@en ;
+  vann:preferredNamespacePrefix "tmp" ;
+  owl:versionInfo "1.0" ;
+.
