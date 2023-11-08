@@ -1,10 +1,10 @@
 Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
-# Data Template (TMP) Ontology
+# Examples for LOIN-TMP-IDDO
 
 ## Metadata
 * **IRI**
-  * `http://inf.bi.rub.de/ontology/tmp`
+  * `http://inf.bi.rub.de/ontology/loin-tmp-iddo`
 * **Creators(s)**
   * [Liu Liu](https://orcid.org/0000-0001-5907-7609)
     [[ORCID]](https://orcid.org/0000-0001-5907-7609)
@@ -18,19 +18,19 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
   * [Sven Zentgraf](https://orcid.org/0000-0001-6058-7614)
     [[ORCID]](https://orcid.org/0000-0001-6058-7614)
     (<sven.zentgraf@rub.de></a>) of [Ruhr University Bochum](https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en)
-* **Created**
-  * 2023-12-23
 * **Version Information**
-  * 1.0
+  * Created with TopBraid Composer
+* **Imports**
+  * [http://inf.bi.rub.de/ontology/tmp](http://inf.bi.rub.de/ontology/tmp)
+  * [https://w3id.org/iddo/v2](https://w3id.org/iddo/v2)
+  * [https://w3id.org/loin/v2](https://w3id.org/loin/v2)
 * **License &amp; Rights**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
   * &copy; 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar
-* **Source**
-  * [https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology](https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology)
 * **Ontology RDF**
-  * RDF ([tmp.ttl](turtle))
+  * RDF ([loin-tmp-iddo.ttl](turtle))
 ### Description
-<p>The Data Template (TMP) Ontology is defined for ...</p>
+<p>Examples for LOIN-TMP-IDDO</p>
 
 ## Table of Contents
 1. [Namespaces](#namespaces)
@@ -45,9 +45,15 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 ## Named Individuals
 ## Namespaces
 * **default (:)**
-  * `http://inf.bi.rub.de/ontology/tmp#`
+  * `http://inf.bi.rub.de/ontology/loin-tmp-iddo#`
 * **dc**
   * `http://purl.org/dc/terms/`
+* **iddo**
+  * `https://w3id.org/iddo/v2#`
+* **loin**
+  * `https://w3id.org/loin/v2#`
+* **loin-tmp-iddo**
+  * `http://inf.bi.rub.de/ontology/loin-tmp-iddo#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prov**

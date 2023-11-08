@@ -38,6 +38,12 @@
     ] ;
   dc:creator [
       rdf:type schema:Person ;
+      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
+      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
+      schema:memberOf [
+          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
+          schema:name "Bauhaus-Universitaet Weimar" ;
+        ] ;
       schema:name "Marthina Mellenthin-Filardo" ;
     ] ;
   dc:creator [
