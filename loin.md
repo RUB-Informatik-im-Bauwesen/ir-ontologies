@@ -19,7 +19,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Version Information**
   * 2.0
 * **Imports**
-  * [http://inf.bi.rub.de/ontology/tmp](http://inf.bi.rub.de/ontology/tmp)
+  * [http://inf.bi.rub.de/ontology/dt](http://inf.bi.rub.de/ontology/dt)
 * **License &amp; Rights**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
   * &copy; 2023 by Chair of Computing in Engineering, Ruhr University Bochum
@@ -34,7 +34,6 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 1. [Classes](#classes)
 1. [Object Properties](#objectproperties)
 1. [Datatype Properties](#datatypeproperties)
-1. [Properties](#properties)
 1. [Namespaces](#namespaces)
 1. [Legend](#legend)
 
@@ -95,15 +94,15 @@ IRI | `https://w3id.org/loin/v2#Actor`
 Description | <p>Actor is a contextual aspect according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
 Sub-classes |[loin:SendingActor](Sendingactor) (c)<br />[loin:ReceivingActor](Receivingactor) (c)<br />
-In domain of |[loin:isRelatedToContainerParty](isrelatedtocontainerparty)<br />[loin:hasAgent](hasagent) (op)<br />
+In domain of |[loin:hasAgent](hasagent) (op)<br />[icdd4loin:isRelatedToContainerParty](https://w3id.org/loin/v2/icdd#isRelatedToContainerParty) (op)<br />
 ### Alphanumerical information
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#AlphanumericalInformation`
 Description | <p>Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[loin:Information](Information) (c)<br />
-Restrictions |[loin:requested](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)) (dp) **exactly** 1<br />
-In domain of |[loin:requested](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)) (dp)<br />[loin:hasIdentification](hasidentification) (op)<br />[loin:hasInformationContent](hasalphanumericalinformatoncontent) (op)<br />
+Restrictions |[loin:requested](requested) (dp) **exactly** 1<br />
+In domain of |[loin:requested](requested) (dp)<br />[loin:hasIdentification](hasidentification) (op)<br />[loin:hasInformationContent](hasalphanumericalinformatoncontent) (op)<br />
 In range of |[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op)<br />
 ### Appearance
 Property | Value
@@ -139,15 +138,6 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#Dimensionality`
 Description | <p>Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[loin:GeometrySpecification](Geometricalinformationspecification) (c)<br />
-### Document
-Property | Value
---- | ---
-IRI | `https://w3id.org/loin/v2#Document`
-Description | <p>Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)</p>
-Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Restrictions |[icdd4loin:isRelatedToContainerDocument](https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument) (op) **max** 1<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentContent](Documentcontent) (c)<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentPurpose](Documentpurpose) (c)<br />[icdd4loin:isRelatedToContainerLinkset](https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset) (op) **max** 1<br />[loin:belongsToInformationContent](belongstoinformationcontent) (op) **max** 1<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentFormat](Documentformat) (c)<br />
-In domain of |[loin:hasDocumentSpecification](hasdocumentatonspecification) (op)<br />[icdd4loin:isRelatedToContainerLinkset](https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset) (op)<br />[loin:belongsToInformationContent](belongstoinformationcontent) (op)<br />[icdd4loin:isRelatedToContainerDocument](https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument) (op)<br />
-In range of |[loin:isRelatedToLoinDocument](isrelatedtoLoindocument) (op)<br />
 ### Document content
 Property | Value
 --- | ---
@@ -172,7 +162,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#DocumentSpecification`
 Description | <p>Additional specification of document for information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[loin:DocumentPurpose](Documentpurpose) (c)<br />[loin:DocumentContent](Documentcontent) (c)<br />[loin:DocumentFormat](Documentformat) (c)<br />
+Sub-classes |[loin:DocumentPurpose](Documentpurpose) (c)<br />[loin:DocumentFormat](Documentformat) (c)<br />[loin:DocumentContent](Documentcontent) (c)<br />
 In range of |[loin:hasDocumentSpecification](hasdocumentatonspecification) (op)<br />
 ### Documentation
 Property | Value
@@ -180,6 +170,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#Documentation`
 Description | <p>Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[loin:Information](Information) (c)<br />
+Restrictions |[loin:hasDocument](hasdocument) (op) **some** [loin:RequiredDocument](Document) (c)<br />
 In domain of |[loin:hasDocument](hasdocument) (op)<br />
 In range of |[loin:hasDocumentation](hasdocumentation) (op)<br />
 ### Geometrical information
@@ -188,8 +179,8 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#GeometricalInformation`
 Description | <p>Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[loin:Information](Information) (c)<br />
-Restrictions |[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Appearance](Appearance) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:ParametricBehaviour](Parametricbehaviour) (c)<br />[loin:requested](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)) (dp) **exactly** 1<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Detail](Detail) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Dimensionality](Dimensionality) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Location](Location) (c)<br />
-In domain of |[loin:requested](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)) (dp)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op)<br />
+Restrictions |[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Dimensionality](Dimensionality) (c)<br />[loin:requested](requested) (dp) **exactly** 1<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Detail](Detail) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Location](Location) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:Appearance](Appearance) (c)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op) **some** [loin:ParametricBehaviour](Parametricbehaviour) (c)<br />
+In domain of |[loin:requested](requested) (dp)<br />[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op)<br />
 In range of |[loin:hasGeometricalInformation](hasgeometricalinformation) (op)<br />
 ### Geometrical information specification
 Property | Value
@@ -197,8 +188,8 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#GeometrySpecification`
 Description | <p>Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[loin:ParametricBehaviour](Parametricbehaviour) (c)<br />[loin:Detail](Detail) (c)<br />[loin:Location](Location) (c)<br />[loin:Appearance](Appearance) (c)<br />[loin:Dimensionality](Dimensionality) (c)<br />
-In domain of |[loin:requested](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)) (dp)<br />
+Sub-classes |[loin:Dimensionality](Dimensionality) (c)<br />[loin:Detail](Detail) (c)<br />[loin:ParametricBehaviour](Parametricbehaviour) (c)<br />[loin:Appearance](Appearance) (c)<br />[loin:Location](Location) (c)<br />
+In domain of |[loin:requested](requested) (dp)<br />
 In range of |[loin:hasGeometrySpecification](hasgeometricalinformationspecification) (op)<br />
 ### Identification
 Property | Value
@@ -215,23 +206,23 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#Identifier`
 Description | <p>Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Restrictions |[loin:hasIdentifierType](hasidentifiertype) (op) **exactly** 1<br />[loin:value](value) (dp) **exactly** 1<br />[loin:hasBreakdownStructure](hasbreakdownstructure) (op) **exactly** 1<br />
+Restrictions |[loin:hasBreakdownStructure](hasbreakdownstructure) (op) **exactly** 1<br />[loin:value](value) (dp) **exactly** 1<br />[loin:hasIdentifierType](hasidentifiertype) (op) **exactly** 1<br />
 In domain of |[loin:hasIdentifierType](hasidentifiertype) (op)<br />
-In range of |[loin:specifiedByIdentifier](specifiedbyidentifier)<br />[loin:hasIdentifier](hasidentifier) (op)<br />
+In range of |[loin:specifiedByIdentifier](specifiedbyidentifier) (op)<br />[loin:hasIdentifier](hasidentifier) (op)<br />
 ### Identifier type
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#IdentifierType`
 Description | <p>Identifier type is used to specify the identifier in a breakdown structure according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-In domain of |[loin:isRelatedToLinksetIdentifier](isrelatedtolinksetidentifier)<br />
+In domain of |[icdd4loin:isRelatedToLinksetIdentifier](https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier) (op)<br />
 In range of |[loin:hasIdentifierType](hasidentifiertype) (op)<br />
 ### Information
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#Information`
 Description | <p>Proxy class for the three information specifications Alphanumerical Information, Geometrical Information, and Documentation</p>
-Sub-classes |[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />[loin:GeometricalInformation](Geometricalinformation) (c)<br />[loin:Documentation](Documentation) (c)<br />
+Sub-classes |[loin:GeometricalInformation](Geometricalinformation) (c)<br />[loin:Documentation](Documentation) (c)<br />[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />
 In range of |[loin:hasInformation](hasinformation) (op)<br />
 ### Alphanumerical information content
 Property | Value
@@ -240,7 +231,7 @@ IRI | `https://w3id.org/loin/v2#InformationContent`
 Description | <p>Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
 Sub-classes |[loin:OntologyDataDefinition](Ontologydatadefinition) (c)<br />[ids4loin:DataDefinition](https://w3id.org/loin/v2/ids#DataDefinition) (c)<br />
-In domain of |[loin:specifiedByIdentifier](specifiedbyidentifier)<br />[loin:isRelatedToLoinDocument](isrelatedtoLoindocument) (op)<br />
+In domain of |[loin:isRelatedToLoinDocument](isrelatedtoLoindocument) (op)<br />[loin:specifiedByIdentifier](specifiedbyidentifier) (op)<br />
 In range of |[loin:belongsToInformationContent](belongstoinformationcontent) (op)<br />[loin:hasInformationContent](hasalphanumericalinformatoncontent) (op)<br />
 ### Information delivery milestone
 Property | Value
@@ -249,7 +240,7 @@ IRI | `https://w3id.org/loin/v2#InformationDeliveryMilestone`
 Description | <p>Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
 Restrictions |[loin:hasReceivingActor](hasreceivingactor) (op) **exactly** 1<br />[loin:hasSpecificationPerObjectType](hasspecificationperobjecttype) (op) **min** 1<br />[loin:hasPurpose](haspurpose) (op) **exactly** 1<br />[loin:hasSendingActor](hashasSendingActor) (op) **exactly** 1<br />
-In domain of |[loin:hasSendingActor](hashasSendingActor) (op)<br />[loin:hasReceivingActor](hasreceivingactor) (op)<br />[loin:hasSpecificationPerObjectType](hasspecificationperobjecttype) (op)<br />[loin:hasPurpose](haspurpose) (op)<br />[icdd4loin:isRelatedToContainerDescription](https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription) (op)<br />
+In domain of |[loin:hasPurpose](haspurpose) (op)<br />[loin:hasSpecificationPerObjectType](hasspecificationperobjecttype) (op)<br />[loin:hasReceivingActor](hasreceivingactor) (op)<br />[loin:hasSendingActor](hashasSendingActor) (op)<br />[icdd4loin:isRelatedToContainerDescription](https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription) (op)<br />
 ### Location
 Property | Value
 --- | ---
@@ -262,7 +253,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#OntologyDataDefinition`
 Description | <p>Ontology data definition is an extension of BS EN 17412-1 (2020). It is used to specify the alphanumerical information according to a published or customized ontology</p>
 Super-classes |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
-Restrictions |[loin:specifiedByIdentifier](specifiedbyidentifier) **min** 1<br />
+Restrictions |[loin:specifiedByIdentifier](specifiedbyidentifier) (op) **min** 1<br />
 ### Parametric behaviour
 Property | Value
 --- | ---
@@ -285,6 +276,15 @@ IRI | `https://w3id.org/loin/v2#ReceivingActor`
 Description | <p>Receiving actor is a party for information delivery according to ISO 19650-1 (2018)</p>
 Super-classes |[loin:Actor](Actor) (c)<br />
 In range of |[loin:hasReceivingActor](hasreceivingactor) (op)<br />
+### Document
+Property | Value
+--- | ---
+IRI | `https://w3id.org/loin/v2#RequiredDocument`
+Description | <p>Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)</p>
+Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
+Restrictions |[loin:belongsToInformationContent](belongstoinformationcontent) (op) **max** 1<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentContent](Documentcontent) (c)<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentFormat](Documentformat) (c)<br />[icdd4loin:isRelatedToContainerLinkset](https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset) (op) **max** 1<br />[icdd4loin:isRelatedToContainerDocument](https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument) (op) **max** 1<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op) **some** [loin:DocumentPurpose](Documentpurpose) (c)<br />
+In domain of |[icdd4loin:isRelatedToContainerDocument](https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument) (op)<br />[icdd4loin:isRelatedToContainerLinkset](https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset) (op)<br />[loin:hasDocumentSpecification](hasdocumentatonspecification) (op)<br />[loin:belongsToInformationContent](belongstoinformationcontent) (op)<br />
+In range of |[loin:isRelatedToLoinDocument](isrelatedtoLoindocument) (op)<br />
 ### Sending actor
 Property | Value
 --- | ---
@@ -298,8 +298,8 @@ Property | Value
 IRI | `https://w3id.org/loin/v2#SpecificationPerObjectType`
 Description | <p>SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Restrictions |[loin:hasDocumentation](hasdocumentation) (op) **exactly** 1<br />[loin:hasObjectType](hasobjecttype) (op) **exactly** 1<br />[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op) **max** 1<br />[loin:hasGeometricalInformation](hasgeometricalinformation) (op) **exactly** 1<br />
-In domain of |[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op)<br />[loin:hasGeometricalInformation](hasgeometricalinformation) (op)<br />[loin:hasObjectType](hasobjecttype) (op)<br />[loin:hasInformation](hasinformation) (op)<br />[loin:hasDocumentation](hasdocumentation) (op)<br />
+Restrictions |[loin:hasObjectType](hasobjecttype) (op) **exactly** 1<br />[loin:hasDocumentation](hasdocumentation) (op) **exactly** 1<br />[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op) **max** 1<br />[loin:hasGeometricalInformation](hasgeometricalinformation) (op) **exactly** 1<br />
+In domain of |[loin:hasObjectType](hasobjecttype) (op)<br />[loin:hasInformation](hasinformation) (op)<br />[loin:hasGeometricalInformation](hasgeometricalinformation) (op)<br />[loin:hasDataTemplate](hasdatatemplate) (op)<br />[loin:hasDocumentation](hasdocumentation) (op)<br />[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op)<br />
 In range of |[loin:hasSpecificationPerObjectType](hasspecificationperobjecttype) (op)<br />
 ### Attribute of IDS
 Property | Value
@@ -315,7 +315,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#AttributeName`
 Description | <p>Attribute name must be a valid attribute name from the IFC schema according to the definition of IDS developed by buildingSMART International. Example AttributeName = "Description"</p>
 Super-classes |[ids4loin:FacetParameter](https://w3id.org/loin/v2/ids#FacetParameter) (c)<br />
-Restrictions |[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />
+Restrictions |[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />
 In range of |[ids4loin:hasAttributeName](https://w3id.org/loin/v2/ids#hasAttributeName) (op)<br />
 ### Classification of IDS
 Property | Value
@@ -329,7 +329,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#DataDefinition`
 Description | <p>IDS data definition is used to specify the alphanumerical information according to Information Delivery Specification (IDS) developed by buildingSMART International</p>
 Super-classes |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
-Restrictions |[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op) **min** 1<br />[ids4loin:hasRequirement](https://w3id.org/loin/v2/ids#hasRequirement) (op) **min** 1<br />[loin:description](description) (dp) **exactly** 1<br />[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op) **some** [ids4loin:Entity](https://w3id.org/loin/v2/ids#Entity) (c)<br />
+Restrictions |[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op) **min** 1<br />[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op) **some** [ids4loin:Entity](https://w3id.org/loin/v2/ids#Entity) (c)<br />[loin:description](description) (dp) **exactly** 1<br />[ids4loin:hasRequirement](https://w3id.org/loin/v2/ids#hasRequirement) (op) **min** 1<br />
 In domain of |[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op)<br />[ids4loin:hasRequirement](https://w3id.org/loin/v2/ids#hasRequirement) (op)<br />
 ### Entity
 Property | Value
@@ -338,14 +338,14 @@ IRI | `https://w3id.org/loin/v2/ids#Entity`
 Description | <p>Entity is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International</p>
 Super-classes |[ids4loin:FacetDefinition](https://w3id.org/loin/v2/ids#FacetDefinition) (c)<br />
 Restrictions |[ids4loin:hasEntityName](https://w3id.org/loin/v2/ids#hasEntityName) (op) **exactly** 1<br />
-In domain of |[ids4loin:hasPredefinedType](https://w3id.org/loin/v2/ids#hasPredefinedType) (op)<br />[ids4loin:hasEntityName](https://w3id.org/loin/v2/ids#hasEntityName) (op)<br />
+In domain of |[ids4loin:hasEntityName](https://w3id.org/loin/v2/ids#hasEntityName) (op)<br />[ids4loin:hasPredefinedType](https://w3id.org/loin/v2/ids#hasPredefinedType) (op)<br />
 ### Entity name
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2/ids#EntityName`
 Description | <p>Entity name must be a valid IFC class from the IFC schema according to IDS developed by buildingSMART International. Example EntityName = "IFCWALL"</p>
 Super-classes |[ids4loin:FacetParameter](https://w3id.org/loin/v2/ids#FacetParameter) (c)<br />
-Restrictions |[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />
+Restrictions |[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />
 In range of |[ids4loin:hasEntityName](https://w3id.org/loin/v2/ids#hasEntityName) (op)<br />
 ### IDS facet definition
 Property | Value
@@ -353,17 +353,17 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#FacetDefinition`
 Description | <p>IDS facet definition is used to define a facet to apply the requirement or to require the information according to IDS standard developed by buildingSMART International</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[ids4loin:Material](https://w3id.org/loin/v2/ids#Material) (c)<br />[ids4loin:Property](https://w3id.org/loin/v2/ids#Property) (c)<br />[ids4loin:Attribute](https://w3id.org/loin/v2/ids#Attribute) (c)<br />[ids4loin:Classification](https://w3id.org/loin/v2/ids#Classification) (c)<br />[ids4loin:Entity](https://w3id.org/loin/v2/ids#Entity) (c)<br />
+Sub-classes |[ids4loin:Property](https://w3id.org/loin/v2/ids#Property) (c)<br />[ids4loin:Entity](https://w3id.org/loin/v2/ids#Entity) (c)<br />[ids4loin:Classification](https://w3id.org/loin/v2/ids#Classification) (c)<br />[ids4loin:Attribute](https://w3id.org/loin/v2/ids#Attribute) (c)<br />[ids4loin:Material](https://w3id.org/loin/v2/ids#Material) (c)<br />
 In domain of |[loin:hasRequirementType](hasrequirementtype) (op)<br />
-In range of |[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op)<br />[ids4loin:hasRequirement](https://w3id.org/loin/v2/ids#hasRequirement) (op)<br />
+In range of |[ids4loin:hasRequirement](https://w3id.org/loin/v2/ids#hasRequirement) (op)<br />[ids4loin:hasApplicability](https://w3id.org/loin/v2/ids#hasApplicability) (op)<br />
 ### IDS facet parameter
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2/ids#FacetParameter`
 Description | <p>IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[ids4loin:AttributeName](https://w3id.org/loin/v2/ids#AttributeName) (c)<br />[ids4loin:PsetName](https://w3id.org/loin/v2/ids#PsetName) (c)<br />[ids4loin:PropertyName](https://w3id.org/loin/v2/ids#PropertyName) (c)<br />[ids4loin:IFCDataType](https://w3id.org/loin/v2/ids#IFCDataType) (c)<br />[ids4loin:PredefinedType](https://w3id.org/loin/v2/ids#PredefinedType) (c)<br />[ids4loin:Value](https://w3id.org/loin/v2/ids#Value) (c)<br />[ids4loin:EntityName](https://w3id.org/loin/v2/ids#EntityName) (c)<br />
-In domain of |[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp)<br />[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op)<br />
+Sub-classes |[ids4loin:AttributeName](https://w3id.org/loin/v2/ids#AttributeName) (c)<br />[ids4loin:IFCDataType](https://w3id.org/loin/v2/ids#IFCDataType) (c)<br />[ids4loin:EntityName](https://w3id.org/loin/v2/ids#EntityName) (c)<br />[ids4loin:PredefinedType](https://w3id.org/loin/v2/ids#PredefinedType) (c)<br />[ids4loin:Value](https://w3id.org/loin/v2/ids#Value) (c)<br />[ids4loin:PsetName](https://w3id.org/loin/v2/ids#PsetName) (c)<br />[ids4loin:PropertyName](https://w3id.org/loin/v2/ids#PropertyName) (c)<br />
+In domain of |[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op)<br />[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp)<br />
 ### IFC data type
 Property | Value
 --- | ---
@@ -393,8 +393,8 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#Property`
 Description | <p>Property is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International</p>
 Super-classes |[ids4loin:FacetDefinition](https://w3id.org/loin/v2/ids#FacetDefinition) (c)<br />
-Restrictions |[ids4loin:belongsToPset](https://w3id.org/loin/v2/ids#belongsToPset) (op) **exactly** 1<br />[ids4loin:hasPropertyName](https://w3id.org/loin/v2/ids#hasPropertyName) (op) **exactly** 1<br />[ids4loin:hasIFCDataType](https://w3id.org/loin/v2/ids#hasIFCDataType) (op) **exactly** 1<br />
-In domain of |[ids4loin:belongsToPset](https://w3id.org/loin/v2/ids#belongsToPset) (op)<br />[ids4loin:hasIFCDataType](https://w3id.org/loin/v2/ids#hasIFCDataType) (op)<br />[ids4loin:hasPropertyName](https://w3id.org/loin/v2/ids#hasPropertyName) (op)<br />[ids4loin:hasValue](https://w3id.org/loin/v2/ids#hasValue) (op)<br />
+Restrictions |[ids4loin:hasIFCDataType](https://w3id.org/loin/v2/ids#hasIFCDataType) (op) **exactly** 1<br />[ids4loin:hasPropertyName](https://w3id.org/loin/v2/ids#hasPropertyName) (op) **exactly** 1<br />[ids4loin:belongsToPset](https://w3id.org/loin/v2/ids#belongsToPset) (op) **exactly** 1<br />
+In domain of |[ids4loin:belongsToPset](https://w3id.org/loin/v2/ids#belongsToPset) (op)<br />[ids4loin:hasPropertyName](https://w3id.org/loin/v2/ids#hasPropertyName) (op)<br />[ids4loin:hasIFCDataType](https://w3id.org/loin/v2/ids#hasIFCDataType) (op)<br />[ids4loin:hasValue](https://w3id.org/loin/v2/ids#hasValue) (op)<br />
 ### Property name
 Property | Value
 --- | ---
@@ -409,7 +409,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#PsetName`
 Description | <p>Property set name must be a valid name from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International</p>
 Super-classes |[ids4loin:FacetParameter](https://w3id.org/loin/v2/ids#FacetParameter) (c)<br />
-Restrictions |[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />
+Restrictions |[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />
 In range of |[ids4loin:belongsToPset](https://w3id.org/loin/v2/ids#belongsToPset) (op)<br />
 ### IDS requirement type
 Property | Value
@@ -431,7 +431,7 @@ Property | Value
 IRI | `https://w3id.org/loin/v2/ids#Value`
 Description | <p>Value can be any custom value according to IDS standard developed by buildingSMART International</p>
 Super-classes |[ids4loin:FacetParameter](https://w3id.org/loin/v2/ids#FacetParameter) (c)<br />
-Restrictions |[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />
+Restrictions |[ids4loin:hasRestrictionType](https://w3id.org/loin/v2/ids#hasRestrictionType) (op) **exactly** 1<br />[ids4loin:restrictionFormulation](https://w3id.org/loin/v2/ids#restrictionFormulation) (dp) **exactly** 1<br />
 In range of |[ids4loin:hasValue](https://w3id.org/loin/v2/ids#hasValue) (op)<br />
 
 ## Object Properties
@@ -440,6 +440,7 @@ In range of |[ids4loin:hasValue](https://w3id.org/loin/v2/ids#hasValue) (op)<br 
 [has alphanumerical information](#hasalphanumericalinformation),
 [has breakdown structure](#hasbreakdownstructure),
 [has breakdown structure type](#hasbreakdownstructuretype),
+[has data template](#hasdatatemplate),
 [has document](#hasdocument),
 [has documentaton specification](#hasdocumentatonspecification),
 [has documentation](#hasdocumentation),
@@ -458,9 +459,12 @@ In range of |[ids4loin:hasValue](https://w3id.org/loin/v2/ids#hasValue) (op)<br 
 [has has Sending Actor](#hashasSendingActor),
 [has specification per object type](#hasspecificationperobjecttype),
 [is related to Loin document](#isrelatedtoLoindocument),
+[specified by identifier](#specifiedbyidentifier),
 [is related to container description](#isrelatedtocontainerdescription),
 [is related to container document](#isrelatedtocontainerdocument),
 [is related to container linkset](#isrelatedtocontainerlinkset),
+[is related to container party](#isrelatedtocontainerparty),
+[is related to linkset identifier](#isrelatedtolinksetidentifier),
 [A property belongs to Property set](#ApropertybelongstoPropertyset),
 [has applicability](#hasapplicability),
 [has attribute name](#hasattributename),
@@ -477,7 +481,8 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#belongsToInformationContent`
 Description | Specification of document, that relates with a respective person
-Domain(s) |[loin:Document](Document) (c)<br />
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[loin:RequiredDocument](Document) (c)<br />
 Range(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
 [](hasagent)
 ### has agent
@@ -485,6 +490,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasAgent`
 Description | Information of the information delivery actor defined by foaf ontology mit class foaf:Agent
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:Actor](Actor) (c)<br />
 [](hasalphanumericalinformation)
 ### has alphanumerical information
@@ -501,6 +507,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasBreakdownStructure`
 Description | The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:Identification](Identification) (c)<br />
 Range(s) |[loin:BreakdownStructure](Breakdownstructure) (c)<br />
 [](hasbreakdownstructuretype)
@@ -509,14 +516,24 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasBreakdownStructureType`
 Description | The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:BreakdownStructure](Breakdownstructure) (c)<br />
 Range(s) |[loin:BreakdownStructureType](Breakdownstructuretype) (c)<br />
+[](hasdatatemplate)
+### has data template
+Property | Value
+--- | ---
+IRI | `https://w3id.org/loin/v2#hasDataTemplate`
+Super-properties |[loin:hasAlphanumericalInformation](hasalphanumericalinformation) (op)<br />
+Domain(s) |[loin:SpecificationPerObjectType](SpecificationperObjectType) (c)<br />
+Range(s) |[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
 [](hasdocument)
 ### has document
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasDocument`
 Description | The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:Documentation](Documentation) (c)<br />
 [](hasdocumentatonspecification)
 ### has documentaton specification
@@ -524,7 +541,8 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasDocumentSpecification`
 Description | The object property relates the document specifications with a document according to BS EN 17412-1 (2020)
-Domain(s) |[loin:Document](Document) (c)<br />
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[loin:RequiredDocument](Document) (c)<br />
 Range(s) |[loin:DocumentSpecification](Documentspecification) (c)<br />
 [](hasdocumentation)
 ### has documentation
@@ -550,6 +568,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasGeometrySpecification`
 Description | The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:GeometricalInformation](Geometricalinformation) (c)<br />
 Range(s) |[loin:GeometrySpecification](Geometricalinformationspecification) (c)<br />
 [](hasidentification)
@@ -558,6 +577,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasIdentification`
 Description | The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />
 Range(s) |[loin:Identification](Identification) (c)<br />
 [](hasidentifier)
@@ -566,6 +586,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasIdentifier`
 Description | The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:BreakdownStructure](Breakdownstructure) (c)<br />
 Range(s) |[loin:Identifier](Identifier) (c)<br />
 [](hasidentifiertype)
@@ -574,6 +595,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasIdentifierType`
 Description | The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:Identifier](Identifier) (c)<br />
 Range(s) |[loin:IdentifierType](Identifiertype) (c)<br />
 [](hasinformation)
@@ -582,6 +604,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasInformation`
 Description | Proxy property for the three information specification relationships
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:SpecificationPerObjectType](SpecificationperObjectType) (c)<br />
 Range(s) |[loin:Information](Information) (c)<br />
 [](hasalphanumericalinformatoncontent)
@@ -590,6 +613,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasInformationContent`
 Description | The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />
 Range(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
 [](hasobjecttype)
@@ -597,6 +621,7 @@ Range(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasObjectType`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:SpecificationPerObjectType](SpecificationperObjectType) (c)<br />
 Range(s) |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />
 [](haspurpose)
@@ -605,6 +630,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasPurpose`
 Description | The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:InformationDeliveryMilestone](Informationdeliverymilestone) (c)<br />
 Range(s) |[loin:Purpose](Purpose) (c)<br />
 [](hasreceivingactor)
@@ -613,6 +639,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasReceivingActor`
 Description | The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:InformationDeliveryMilestone](Informationdeliverymilestone) (c)<br />
 Range(s) |[loin:ReceivingActor](Receivingactor) (c)<br />
 [](hasreferencesource)
@@ -620,14 +647,16 @@ Range(s) |[loin:ReceivingActor](Receivingactor) (c)<br />
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasReferenceSource`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |([loin:BreakdownStructure](Breakdownstructure) (c) or [loin:OntologyDataDefinition](Ontologydatadefinition) (c))<br />
-Range(s) |[xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) (c)<br />[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+Range(s) |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) (c)<br />
 [](hasrequirementtype)
 ### has requirement type
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasRequirementType`
 Description | relates the requirement type with the defined requirements in IDS data definition
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[ids4loin:FacetDefinition](https://w3id.org/loin/v2/ids#FacetDefinition) (c)<br />
 Range(s) |[ids4loin:RequirementType](https://w3id.org/loin/v2/ids#RequirementType) (c)<br />
 [](hashasSendingActor)
@@ -636,6 +665,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasSendingActor`
 Description | The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:InformationDeliveryMilestone](Informationdeliverymilestone) (c)<br />
 Range(s) |[loin:SendingActor](Sendingactor) (c)<br />
 [](hasspecificationperobjecttype)
@@ -644,6 +674,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#hasSpecificationPerObjectType`
 Description | The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:InformationDeliveryMilestone](Informationdeliverymilestone) (c)<br />
 Range(s) |[loin:SpecificationPerObjectType](SpecificationperObjectType) (c)<br />
 [](isrelatedtoLoindocument)
@@ -652,8 +683,17 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#isRelatedToLoinDocument`
 Description | The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
-Range(s) |[loin:Document](Document) (c)<br />
+Range(s) |[loin:RequiredDocument](Document) (c)<br />
+[](specifiedbyidentifier)
+### specified by identifier
+Property | Value
+--- | ---
+IRI | `https://w3id.org/loin/v2#specifiedByIdentifier`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
+Range(s) |[loin:Identifier](Identifier) (c)<br />
 [](isrelatedtocontainerdescription)
 ### is related to container description
 Property | Value
@@ -668,7 +708,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument`
 Description | The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents
-Domain(s) |[loin:Document](Document) (c)<br />
+Domain(s) |[loin:RequiredDocument](Document) (c)<br />
 Range(s) |[Container:Document](https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Document) (c)<br />
 [](isrelatedtocontainerlinkset)
 ### is related to container linkset
@@ -676,8 +716,24 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset`
 Description | The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set
-Domain(s) |[loin:Document](Document) (c)<br />
+Domain(s) |[loin:RequiredDocument](Document) (c)<br />
 Range(s) |[Container:Linkset](https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset) (c)<br />
+[](isrelatedtocontainerparty)
+### is related to container party
+Property | Value
+--- | ---
+IRI | `https://w3id.org/loin/v2/icdd#isRelatedToContainerParty`
+Description | The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party
+Domain(s) |[loin:Actor](Actor) (c)<br />
+Range(s) |[Container:Party](https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Party) (c)<br />
+[](isrelatedtolinksetidentifier)
+### is related to linkset identifier
+Property | Value
+--- | ---
+IRI | `https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier`
+Description | The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier
+Domain(s) |[loin:IdentifierType](Identifiertype) (c)<br />
+Range(s) |[Linkset:Identifier](https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Identifier) (c)<br />
 [](ApropertybelongstoPropertyset)
 ### A property belongs to Property set
 Property | Value
@@ -761,7 +817,7 @@ Range(s) |[ids4loin:Value](https://w3id.org/loin/v2/ids#Value) (c)<br />
 
 ## Datatype Properties
 [description](#description),
-[requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)](#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)),
+[requested](#requested),
 [value](#value),
 [Constraint text formulated for facet parameters](#Constrainttextformulatedforfacetparameters),
 [](description)
@@ -770,13 +826,15 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#description`
 Description | Description provide detail and extend of information derived by Information Delivery Specification (IDS)
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |([loin:InformationContent](Alphanumericalinformationcontent) (c) or [loin:Purpose](Purpose) (c))<br />
-[](requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020))
-### requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)
+[](requested)
+### requested
 Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#requested`
-Domain(s) |[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />[loin:GeometricalInformation](Geometricalinformation) (c)<br />[loin:GeometrySpecification](Geometricalinformationspecification) (c)<br />
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Domain(s) |[loin:GeometricalInformation](Geometricalinformation) (c)<br />[loin:GeometrySpecification](Geometricalinformationspecification) (c)<br />[loin:AlphanumericalInformation](Alphanumericalinformation) (c)<br />
 Range(s) |[xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) (c)<br />
 [](value)
 ### value
@@ -784,6 +842,7 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/loin/v2#value`
 Description | value for general definition
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 [](Constrainttextformulatedforfacetparameters)
 ### Constraint text formulated for facet parameters
 Property | Value
@@ -792,34 +851,6 @@ IRI | `https://w3id.org/loin/v2/ids#restrictionFormulation`
 Description | Restriction formulation is for formulating facet parameter value, that is used by IDS definition.
 Domain(s) |[ids4loin:FacetParameter](https://w3id.org/loin/v2/ids#FacetParameter) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
-
-## Properties
-[is related to container party](#isrelatedtocontainerparty),
-[is related to linkset identifier](#isrelatedtolinksetidentifier),
-[specified by identifier](#specifiedbyidentifier),
-[](isrelatedtocontainerparty)
-### is related to container party
-Property | Value
---- | ---
-IRI | `https://w3id.org/loin/v2#isRelatedToContainerParty`
-Description | The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party
-Domain(s) |[loin:Actor](Actor) (c)<br />
-Range(s) |[Container:Party](https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Party) (c)<br />
-[](isrelatedtolinksetidentifier)
-### is related to linkset identifier
-Property | Value
---- | ---
-IRI | `https://w3id.org/loin/v2#isRelatedToLinksetIdentifier`
-Description | The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier
-Domain(s) |[loin:IdentifierType](Identifiertype) (c)<br />
-Range(s) |[Linkset:Identifier](https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Identifier) (c)<br />
-[](specifiedbyidentifier)
-### specified by identifier
-Property | Value
---- | ---
-IRI | `https://w3id.org/loin/v2#specifiedByIdentifier`
-Domain(s) |[loin:InformationContent](Alphanumericalinformationcontent) (c)<br />
-Range(s) |[loin:Identifier](Identifier) (c)<br />
 
 ## Named Individuals
 ## Namespaces

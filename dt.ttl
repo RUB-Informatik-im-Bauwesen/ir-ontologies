@@ -45,6 +45,12 @@ dt:DataTemplate
       owl:someValuesFrom <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
     ] ;
 .
+dt:ISBN
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "ISBN" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 dt:LibraryComponent
   rdf:type rdfs:Class ;
   rdfs:comment "Enter a comment"@en ;
@@ -65,6 +71,43 @@ dt:ReferenceDocument
   rdf:type rdfs:Class ;
   rdfs:label "Reference document"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:ISBN ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:author ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:dateOfPublication ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:publisher ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:uri ;
+    ] ;
+.
+dt:author
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "author" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+dt:dateOfPublication
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "date of publication" ;
+  rdfs:range xsd:dateTime ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 dt:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
@@ -100,6 +143,17 @@ dt:isDataTemplateFor
   rdfs:label "is data template for" ;
   rdfs:range <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:publisher
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "publisher" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+dt:uri
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "uri" ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 <http://inf.bi.rub.de/ontology/tmp>
   rdf:type owl:Ontology ;

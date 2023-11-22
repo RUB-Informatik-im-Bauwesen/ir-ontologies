@@ -1,5 +1,5 @@
 # baseURI: https://w3id.org/loin/v2
-# imports: http://inf.bi.rub.de/ontology/tmp
+# imports: http://inf.bi.rub.de/ontology/dt
 # prefix: loin
 
 @prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
@@ -19,6 +19,9 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+dt:isDataTemplateFor
+  owl:inverseOf loin:hasDataTemplate ;
+.
 <https://w3id.org/loin/v2>
   rdf:type owl:Ontology ;
   dc:created "2023-01-30"^^xsd:date ;
@@ -57,7 +60,7 @@
   dc:source "https://github.com/RUB-Informatik-im-Bauwesen/loin-ontology"^^xsd:anyURI ;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
-  owl:imports <http://inf.bi.rub.de/ontology/tmp> ;
+  owl:imports <http://inf.bi.rub.de/ontology/dt> ;
   owl:versionInfo "2.0" ;
 .
 loin:Actor
@@ -137,43 +140,6 @@ loin:Dimensionality
   rdfs:subClassOf loin:GeometrySpecification ;
   vs:term_status "stable" ;
 .
-loin:Document
-  rdf:type owl:Class ;
-  rdfs:comment "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"@en ;
-  rdfs:label "Document"@en ;
-  rdfs:subClassOf rdfs:Resource ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:belongsToInformationContent ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty icdd4loin:isRelatedToContainerDocument ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty icdd4loin:isRelatedToContainerLinkset ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty loin:hasDocumentSpecification ;
-      owl:someValuesFrom loin:DocumentContent ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty loin:hasDocumentSpecification ;
-      owl:someValuesFrom loin:DocumentFormat ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty loin:hasDocumentSpecification ;
-      owl:someValuesFrom loin:DocumentPurpose ;
-    ] ;
-  vs:term_status "stable" ;
-.
 loin:DocumentContent
   rdf:type owl:Class ;
   rdfs:comment "Document specification for content for information need according to BS EN 17412-1 (2020)"@en ;
@@ -207,6 +173,11 @@ loin:Documentation
   rdfs:comment "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Documentation"@en ;
   rdfs:subClassOf loin:Information ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty loin:hasDocument ;
+      owl:someValuesFrom loin:RequiredDocument ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:EngineeringPrinciple
@@ -480,6 +451,43 @@ loin:Report
   rdfs:label "Report" ;
   vs:term_status "stable" ;
 .
+loin:RequiredDocument
+  rdf:type owl:Class ;
+  rdfs:comment "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:label "Document"@en ;
+  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:belongsToInformationContent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty icdd4loin:isRelatedToContainerDocument ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty icdd4loin:isRelatedToContainerLinkset ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty loin:hasDocumentSpecification ;
+      owl:someValuesFrom loin:DocumentContent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty loin:hasDocumentSpecification ;
+      owl:someValuesFrom loin:DocumentFormat ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty loin:hasDocumentSpecification ;
+      owl:someValuesFrom loin:DocumentPurpose ;
+    ] ;
+  vs:term_status "stable" ;
+.
 loin:Required_For_Approval
   rdf:type loin:DocumentPurpose ;
   rdfs:comment "The document required by deliverer is for getting approval"@en ;
@@ -577,9 +585,10 @@ loin:absolute
 loin:belongsToInformationContent
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Specification of document, that relates with a respective person"@en ;
-  rdfs:domain loin:Document ;
+  rdfs:domain loin:RequiredDocument ;
   rdfs:label "belongs to information content"@en ;
   rdfs:range loin:InformationContent ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:constructive
@@ -611,6 +620,7 @@ loin:description
         ) ;
     ] ;
   rdfs:label "description"@en ;
+  rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
 .
 loin:detailed
@@ -648,6 +658,7 @@ loin:hasAgent
   rdfs:comment "Information of the information delivery actor defined by foaf ontology mit class foaf:Agent"@en ;
   rdfs:domain loin:Actor ;
   rdfs:label "has agent"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasAlphanumericalInformation
@@ -665,6 +676,7 @@ loin:hasBreakdownStructure
   rdfs:domain loin:Identification ;
   rdfs:label "has breakdown structure"@en ;
   rdfs:range loin:BreakdownStructure ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasBreakdownStructureType
@@ -673,21 +685,32 @@ loin:hasBreakdownStructureType
   rdfs:domain loin:BreakdownStructure ;
   rdfs:label "has breakdown structure type"@en ;
   rdfs:range loin:BreakdownStructureType ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
+.
+loin:hasDataTemplate
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain loin:SpecificationPerObjectType ;
+  rdfs:label "has data template" ;
+  rdfs:range dt:DataTemplate ;
+  rdfs:subPropertyOf loin:hasAlphanumericalInformation ;
+  owl:inverseOf dt:isDataTemplateFor ;
 .
 loin:hasDocument
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"@en ;
   rdfs:domain loin:Documentation ;
   rdfs:label "has document"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasDocumentSpecification
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates the document specifications with a document according to BS EN 17412-1 (2020)"@en ;
-  rdfs:domain loin:Document ;
+  rdfs:domain loin:RequiredDocument ;
   rdfs:label "has documentaton specification"@en ;
   rdfs:range loin:DocumentSpecification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasDocumentation
@@ -719,6 +742,7 @@ loin:hasGeometrySpecification
   rdfs:domain loin:GeometricalInformation ;
   rdfs:label "has geometrical information specification"@en ;
   rdfs:range loin:GeometrySpecification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasIdentification
@@ -727,6 +751,7 @@ loin:hasIdentification
   rdfs:domain loin:AlphanumericalInformation ;
   rdfs:label "has identification"@en ;
   rdfs:range loin:Identification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasIdentifier
@@ -735,6 +760,7 @@ loin:hasIdentifier
   rdfs:domain loin:BreakdownStructure ;
   rdfs:label "has identifier"@en ;
   rdfs:range loin:Identifier ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasIdentifierType
@@ -743,6 +769,7 @@ loin:hasIdentifierType
   rdfs:domain loin:Identifier ;
   rdfs:label "has identifier type"@en ;
   rdfs:range loin:IdentifierType ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasInformation
   rdf:type owl:ObjectProperty ;
@@ -750,6 +777,7 @@ loin:hasInformation
   rdfs:domain loin:SpecificationPerObjectType ;
   rdfs:label "has information"@en ;
   rdfs:range loin:Information ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasInformationContent
   rdf:type owl:ObjectProperty ;
@@ -757,6 +785,7 @@ loin:hasInformationContent
   rdfs:domain loin:AlphanumericalInformation ;
   rdfs:label "has alphanumerical informaton content"@en ;
   rdfs:range loin:InformationContent ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasObjectType
@@ -764,6 +793,7 @@ loin:hasObjectType
   rdfs:domain loin:SpecificationPerObjectType ;
   rdfs:label "has object type" ;
   rdfs:range dt:ConstructionObject ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasPurpose
   rdf:type owl:ObjectProperty ;
@@ -771,6 +801,7 @@ loin:hasPurpose
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has purpose"@en ;
   rdfs:range loin:Purpose ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasReceivingActor
@@ -779,6 +810,7 @@ loin:hasReceivingActor
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has receiving actor"@en ;
   rdfs:range loin:ReceivingActor ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasReferenceSource
@@ -793,6 +825,7 @@ loin:hasReferenceSource
   rdfs:label "has reference source"@en ;
   rdfs:range xsd:anyURI ;
   rdfs:range owl:Thing ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasRequirementType
   rdf:type owl:ObjectProperty ;
@@ -800,6 +833,7 @@ loin:hasRequirementType
   rdfs:domain ids4loin:FacetDefinition ;
   rdfs:label "has requirement type"@en ;
   rdfs:range ids4loin:RequirementType ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasSendingActor
@@ -808,6 +842,7 @@ loin:hasSendingActor
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has has Sending Actor"@en ;
   rdfs:range loin:SendingActor ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasSpecificationPerObjectType
@@ -816,22 +851,7 @@ loin:hasSpecificationPerObjectType
   rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has specification per object type"@en ;
   rdfs:range loin:SpecificationPerObjectType ;
-  vs:term_status "stable" ;
-.
-loin:isRelatedToContainerParty
-  rdf:type rdf:Property ;
-  rdfs:comment "The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party"@en ;
-  rdfs:domain loin:Actor ;
-  rdfs:label "is related to container party"@en ;
-  rdfs:range Container:Party ;
-  vs:term_status "stable" ;
-.
-loin:isRelatedToLinksetIdentifier
-  rdf:type rdf:Property ;
-  rdfs:comment "The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier"@en ;
-  rdfs:domain loin:IdentifierType ;
-  rdfs:label "is related to linkset identifier"@en ;
-  rdfs:range Linkset:Identifier ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:isRelatedToLoinDocument
@@ -839,7 +859,8 @@ loin:isRelatedToLoinDocument
   rdfs:comment "The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)"@en ;
   rdfs:domain loin:InformationContent ;
   rdfs:label "is related to Loin document" ;
-  rdfs:range loin:Document ;
+  rdfs:range loin:RequiredDocument ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:one-dimensional
@@ -886,6 +907,7 @@ loin:requested
   rdfs:label "requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "requested" ;
   rdfs:range xsd:boolean ;
+  rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
 .
 loin:simplified
@@ -895,10 +917,11 @@ loin:simplified
   vs:term_status "stable" ;
 .
 loin:specifiedByIdentifier
-  rdf:type rdf:Property ;
+  rdf:type owl:ObjectProperty ;
   rdfs:domain loin:InformationContent ;
   rdfs:label "specified by identifier" ;
   rdfs:range loin:Identifier ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:structuralAnalysis
@@ -929,6 +952,7 @@ loin:value
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "value for general definition"@en ;
   rdfs:label "value"@en ;
+  rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
 .
 loin:visualization
@@ -956,7 +980,7 @@ icdd4loin:isRelatedToContainerDocument
   rdf:type owl:ObjectProperty ;
   rdf:type owl:SymmetricProperty ;
   rdfs:comment "The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents"@en ;
-  rdfs:domain loin:Document ;
+  rdfs:domain loin:RequiredDocument ;
   rdfs:label "is related to container document"@en ;
   rdfs:range Container:Document ;
   vs:term_status "stable" ;
@@ -964,9 +988,25 @@ icdd4loin:isRelatedToContainerDocument
 icdd4loin:isRelatedToContainerLinkset
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set"@en ;
-  rdfs:domain loin:Document ;
+  rdfs:domain loin:RequiredDocument ;
   rdfs:label "is related to container linkset"@en ;
   rdfs:range Container:Linkset ;
+  vs:term_status "stable" ;
+.
+icdd4loin:isRelatedToContainerParty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party"@en ;
+  rdfs:domain loin:Actor ;
+  rdfs:label "is related to container party"@en ;
+  rdfs:range Container:Party ;
+  vs:term_status "stable" ;
+.
+icdd4loin:isRelatedToLinksetIdentifier
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier"@en ;
+  rdfs:domain loin:IdentifierType ;
+  rdfs:label "is related to linkset identifier"@en ;
+  rdfs:range Linkset:Identifier ;
   vs:term_status "stable" ;
 .
 ids4loin:Attribute
