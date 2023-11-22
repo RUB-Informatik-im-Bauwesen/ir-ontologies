@@ -50,12 +50,41 @@ dt:LibraryComponent
   rdfs:comment "Enter a comment"@en ;
   rdfs:label "Library component"@en ;
   rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasExternalDictionary ;
+      owl:someValuesFrom <https://w3id.org/iddo/v2#Dictionary> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasReferenceDocument ;
+      owl:someValuesFrom dt:ReferenceDocument ;
+    ] ;
+.
+dt:ReferenceDocument
+  rdf:type rdfs:Class ;
+  rdfs:label "Reference document"@en ;
+  rdfs:subClassOf dt:LibraryComponent ;
+.
+dt:hasExternalDictionary
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:LibraryComponent ;
+  rdfs:label "has external dictionary" ;
+  rdfs:range <https://w3id.org/iddo/v2#Dictionary> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:DataTemplate ;
   rdfs:label "has property" ;
   rdfs:range <https://w3id.org/iddo/v2#Property> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasReferenceDocument
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:LibraryComponent ;
+  rdfs:label "has reference document" ;
+  rdfs:range dt:ReferenceDocument ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasSetOfProperties

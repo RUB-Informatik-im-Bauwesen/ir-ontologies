@@ -21,7 +21,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Created**
   * 2023-12-23
 * **Version Information**
-  * 1.0
+  * Created with TopBraid Composer
 * **Imports**
   * [https://w3id.org/iddo/v2](https://w3id.org/iddo/v2)
   * [https://w3id.org/loin/v2](https://w3id.org/loin/v2)
@@ -49,6 +49,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 [Construction object](#Constructionobject),
 [Data template](#Datatemplate),
 [Library component](#Librarycomponent),
+[Reference document](#Referencedocument),
 ### Construction object
 Property | Value
 --- | ---
@@ -61,20 +62,38 @@ Property | Value
 IRI | `http://inf.bi.rub.de/ontology/dt#DataTemplate`
 Description | <p>Enter a comment</p>
 Super-classes |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
-Restrictions |[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op) **some** [https://w3id.org/iddo/v2#GroupOfProperties](https://w3id.org/iddo/v2#GroupOfProperties) (c)<br />
-In domain of |[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op)<br />[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op)<br />[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op)<br />
+Restrictions |[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op) **some** [https://w3id.org/iddo/v2#GroupOfProperties](https://w3id.org/iddo/v2#GroupOfProperties) (c)<br />[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />
+In domain of |[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op)<br />[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op)<br />[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op)<br />
 ### Library component
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#LibraryComponent`
 Description | <p>Enter a comment</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
+Restrictions |[dt:hasReferenceDocument](http://inf.bi.rub.de/ontology/dt#hasReferenceDocument) (op) **some** [dt:ReferenceDocument](http://inf.bi.rub.de/ontology/dt#ReferenceDocument) (c)<br />[dt:hasExternalDictionary](http://inf.bi.rub.de/ontology/dt#hasExternalDictionary) (op) **some** [https://w3id.org/iddo/v2#Dictionary](https://w3id.org/iddo/v2#Dictionary) (c)<br />
+Sub-classes |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />[dt:ReferenceDocument](http://inf.bi.rub.de/ontology/dt#ReferenceDocument) (c)<br />
+In domain of |[dt:hasExternalDictionary](http://inf.bi.rub.de/ontology/dt#hasExternalDictionary) (op)<br />[dt:hasReferenceDocument](http://inf.bi.rub.de/ontology/dt#hasReferenceDocument) (op)<br />
+### Reference document
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#ReferenceDocument`
+Super-classes |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+In range of |[dt:hasReferenceDocument](http://inf.bi.rub.de/ontology/dt#hasReferenceDocument) (op)<br />
 
 ## Object Properties
+[has external dictionary](#hasexternaldictionary),
 [has property](#hasproperty),
+[has reference document](#hasreferencedocument),
 [has set of properties](#hassetofproperties),
 [is data template for](#isdatatemplatefor),
+[](hasexternaldictionary)
+### has external dictionary
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasExternalDictionary`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+Range(s) |[https://w3id.org/iddo/v2#Dictionary](https://w3id.org/iddo/v2#Dictionary) (c)<br />
 [](hasproperty)
 ### has property
 Property | Value
@@ -83,6 +102,14 @@ IRI | `http://inf.bi.rub.de/ontology/dt#hasProperty`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
 Range(s) |[https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />
+[](hasreferencedocument)
+### has reference document
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasReferenceDocument`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+Range(s) |[dt:ReferenceDocument](http://inf.bi.rub.de/ontology/dt#ReferenceDocument) (c)<br />
 [](hassetofproperties)
 ### has set of properties
 Property | Value
