@@ -1,4 +1,7 @@
-# baseURI: http://inf.bi.rub.de/ontology/tmp
+# baseURI: http://inf.bi.rub.de/ontology/dt
+# imports: https://w3id.org/iddo/v2
+# imports: https://w3id.org/loin/v2
+# prefix: dt
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
@@ -10,15 +13,64 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://inf.bi.rub.de/ontology/dt>
+  rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/iddo/v2> ;
+  owl:imports <https://w3id.org/loin/v2> ;
+.
 dt:ConstructionObject
   rdf:type rdfs:Class ;
-  rdfs:label "Construction object" ;
+  rdfs:comment "Enter a comment"@en ;
+  rdfs:label "Construction object"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
+.
+dt:DataTemplate
+  rdf:type rdfs:Class ;
+  rdfs:comment "Enter a comment"@en ;
+  rdfs:label "Data template"@en ;
+  rdfs:subClassOf dt:LibraryComponent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasProperty ;
+      owl:someValuesFrom <https://w3id.org/iddo/v2#Property> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasSetOfProperties ;
+      owl:someValuesFrom <https://w3id.org/iddo/v2#GroupOfProperties> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:isDataTemplateFor ;
+      owl:someValuesFrom <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
+    ] ;
 .
 dt:LibraryComponent
   rdf:type rdfs:Class ;
-  rdfs:label "Library component" ;
+  rdfs:comment "Enter a comment"@en ;
+  rdfs:label "Library component"@en ;
   rdfs:subClassOf rdfs:Resource ;
+.
+dt:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:DataTemplate ;
+  rdfs:label "has property" ;
+  rdfs:range <https://w3id.org/iddo/v2#Property> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasSetOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:DataTemplate ;
+  rdfs:label "has set of properties" ;
+  rdfs:range <https://w3id.org/iddo/v2#GroupOfProperties> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:isDataTemplateFor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:DataTemplate ;
+  rdfs:label "is data template for" ;
+  rdfs:range <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
 .
 <http://inf.bi.rub.de/ontology/tmp>
   rdf:type owl:Ontology ;

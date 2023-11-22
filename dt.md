@@ -21,7 +21,10 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Created**
   * 2023-12-23
 * **Version Information**
-  * Created with TopBraid Composer
+  * 1.0
+* **Imports**
+  * [https://w3id.org/iddo/v2](https://w3id.org/iddo/v2)
+  * [https://w3id.org/loin/v2](https://w3id.org/loin/v2)
 * **License &amp; Rights**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
   * &copy; 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar
@@ -34,6 +37,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
 ## Table of Contents
 1. [Classes](#classes)
+1. [Object Properties](#objectproperties)
 1. [Namespaces](#namespaces)
 1. [Legend](#legend)
 
@@ -43,18 +47,58 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 **Figure 1:** Ontology overview
 ## Classes
 [Construction object](#Constructionobject),
+[Data template](#Datatemplate),
 [Library component](#Librarycomponent),
 ### Construction object
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#ConstructionObject`
+Description | <p>Enter a comment</p>
 Super-classes |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+### Data template
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#DataTemplate`
+Description | <p>Enter a comment</p>
+Super-classes |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+Restrictions |[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op) **some** [https://w3id.org/iddo/v2#GroupOfProperties](https://w3id.org/iddo/v2#GroupOfProperties) (c)<br />
+In domain of |[dt:hasSetOfProperties](http://inf.bi.rub.de/ontology/dt#hasSetOfProperties) (op)<br />[dt:isDataTemplateFor](http://inf.bi.rub.de/ontology/dt#isDataTemplateFor) (op)<br />[dt:hasProperty](http://inf.bi.rub.de/ontology/dt#hasProperty) (op)<br />
 ### Library component
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#LibraryComponent`
+Description | <p>Enter a comment</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Sub-classes |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />
+Sub-classes |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
+
+## Object Properties
+[has property](#hasproperty),
+[has set of properties](#hassetofproperties),
+[is data template for](#isdatatemplatefor),
+[](hasproperty)
+### has property
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasProperty`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
+Range(s) |[https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />
+[](hassetofproperties)
+### has set of properties
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasSetOfProperties`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
+Range(s) |[https://w3id.org/iddo/v2#GroupOfProperties](https://w3id.org/iddo/v2#GroupOfProperties) (c)<br />
+[](isdatatemplatefor)
+### is data template for
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#isDataTemplateFor`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:DataTemplate](http://inf.bi.rub.de/ontology/dt#DataTemplate) (c)<br />
+Range(s) |[https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />
 
 ## Named Individuals
 ## Namespaces
