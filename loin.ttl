@@ -1,9 +1,11 @@
 # baseURI: https://w3id.org/loin/v2
+# imports: http://inf.bi.rub.de/ontology/tmp
 # prefix: loin
 
 @prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
 @prefix Linkset: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1#> .
 @prefix icdd4loin: <https://w3id.org/loin/v2/icdd#> .
 @prefix ids4loin: <https://w3id.org/loin/v2/ids#> .
@@ -55,6 +57,7 @@
   dc:source "https://github.com/RUB-Informatik-im-Bauwesen/loin-ontology"^^xsd:anyURI ;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
+  owl:imports <http://inf.bi.rub.de/ontology/tmp> ;
   owl:versionInfo "2.0" ;
 .
 loin:Actor
@@ -533,18 +536,23 @@ loin:SpecificationPerObjectType
   rdfs:subClassOf rdfs:Resource ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasAlphanumericalInformation ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasDocumentation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasGeometricalInformation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasObjectType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasAlphanumericalInformation ;
     ] ;
   vs:term_status "stable" ;
 .
@@ -750,6 +758,12 @@ loin:hasInformationContent
   rdfs:label "has alphanumerical informaton content"@en ;
   rdfs:range loin:InformationContent ;
   vs:term_status "stable" ;
+.
+loin:hasObjectType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain loin:SpecificationPerObjectType ;
+  rdfs:label "has object type" ;
+  rdfs:range dt:ConstructionObject ;
 .
 loin:hasPurpose
   rdf:type owl:ObjectProperty ;

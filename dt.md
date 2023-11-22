@@ -21,18 +21,19 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Created**
   * 2023-12-23
 * **Version Information**
-  * 1.0
+  * Created with TopBraid Composer
 * **License &amp; Rights**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
   * &copy; 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar
 * **Source**
   * [https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology](https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology)
 * **Ontology RDF**
-  * RDF ([tmp.ttl](turtle))
+  * RDF ([dt.ttl](turtle))
 ### Description
 <p>The Data Template (TMP) Ontology is defined for ...</p>
 
 ## Table of Contents
+1. [Classes](#classes)
 1. [Namespaces](#namespaces)
 1. [Legend](#legend)
 
@@ -41,13 +42,26 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 
 **Figure 1:** Ontology overview
 ## Classes
+[Construction object](#Constructionobject),
+[Library component](#Librarycomponent),
+### Construction object
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#ConstructionObject`
+Super-classes |[dt:LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
+### Library component
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#LibraryComponent`
+Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
+Sub-classes |[dt:ConstructionObject](http://inf.bi.rub.de/ontology/dt#ConstructionObject) (c)<br />
 
 ## Named Individuals
 ## Namespaces
-* **default (:)**
-  * `http://inf.bi.rub.de/ontology/tmp#`
 * **dc**
   * `http://purl.org/dc/terms/`
+* **dt**
+  * `http://inf.bi.rub.de/ontology/dt#`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **prov**
@@ -60,8 +74,6 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
   * `https://schema.org/`
 * **skos**
   * `http://www.w3.org/2004/02/skos/core#`
-* **tmp**
-  * `http://inf.bi.rub.de/ontology/tmp#`
 * **vann**
   * `http://purl.org/vocab/vann/`
 * **vs**

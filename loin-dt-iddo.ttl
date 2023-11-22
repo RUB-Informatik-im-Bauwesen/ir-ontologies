@@ -1,14 +1,14 @@
-# baseURI: http://inf.bi.rub.de/ontology/loin-tmp-iddo
-# imports: http://inf.bi.rub.de/ontology/tmp
+# baseURI: http://inf.bi.rub.de/ontology/loin-dt-iddo
+# imports: http://inf.bi.rub.de/ontology/dt
 # imports: https://w3id.org/iddo
 # imports: https://w3id.org/loin
-# prefix: loin-tmp-iddo
+# prefix: loin-dt-iddo
 
-@prefix loin-tmp-iddo: <http://inf.bi.rub.de/ontology/loin-tmp-iddo#> .
+@prefix loin-dt-iddo: <http://inf.bi.rub.de/ontology/loin-dt-iddo#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix tmp: <http://inf.bi.rub.de/ontology/tmp#> .
+@prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
@@ -20,7 +20,7 @@
 
 <http://inf.bi.rub.de/ontology/loin-tmp-iddo>
   rdf:type owl:Ontology ;
-  owl:imports <http://inf.bi.rub.de/ontology/tmp> ;
+  owl:imports <http://inf.bi.rub.de/ontology/dt> ;
   owl:imports <https://w3id.org/iddo/v2> ;
   owl:imports <https://w3id.org/loin/v2> ;
   owl:versionInfo "Created with TopBraid Composer" ;

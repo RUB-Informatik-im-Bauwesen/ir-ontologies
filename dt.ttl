@@ -1,19 +1,26 @@
 # baseURI: http://inf.bi.rub.de/ontology/tmp
-# prefix: tmp
 
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix tmp: <http://inf.bi.rub.de/ontology/tmp#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dc: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+dt:ConstructionObject
+  rdf:type rdfs:Class ;
+  rdfs:label "Construction object" ;
+  rdfs:subClassOf dt:LibraryComponent ;
+.
+dt:LibraryComponent
+  rdf:type rdfs:Class ;
+  rdfs:label "Library component" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
 <http://inf.bi.rub.de/ontology/tmp>
-  rdf:type owl:Ontology ;
-  owl:versionInfo "Created with TopBraid Composer" ;
   rdf:type owl:Ontology ;
   dc:created "2023-12-23"^^xsd:date ;
   dc:creator [
@@ -28,6 +35,16 @@
     ] ;
   dc:creator [
       rdf:type schema:Person ;
+      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
+      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
+      schema:memberOf [
+          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
+          schema:name "Bauhaus-Universitaet Weimar" ;
+        ] ;
+      schema:name "Marthina Mellenthin-Filardo" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
       schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
       schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
       schema:memberOf [
@@ -35,16 +52,6 @@
           schema:name "Ruhr University Bochum" ;
         ] ;
       schema:name "Philipp Hagedorn" ;
-    ] ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
-      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
-      schema:memberOf [
-          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
-          schema:name "Bauhaus-Universitaet Weimar" ;
-        ] ;
-      schema:name "Marthina Mellenthin-Filardo" ;
     ] ;
   dc:creator [
       rdf:type schema:Person ;
@@ -63,4 +70,5 @@
   dc:title "Data Template (TMP) Ontology"@en ;
   vann:preferredNamespacePrefix "tmp" ;
   owl:versionInfo "1.0" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
 .
