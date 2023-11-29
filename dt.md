@@ -21,7 +21,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Created**
   * 2023-12-23
 * **Version Information**
-  * 1.0
+  * Created with TopBraid Composer
 * **Imports**
   * [https://w3id.org/iddo/v2](https://w3id.org/iddo/v2)
   * [https://w3id.org/loin/v2](https://w3id.org/loin/v2)
@@ -65,39 +65,43 @@ Property | Value
 IRI | `http://inf.bi.rub.de/ontology/dt#DataTemplate`
 Description | <p>Enter a comment</p>
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [https://w3id.org/iddo/v2#GroupOfProperties](https://w3id.org/iddo/v2#GroupOfProperties) (c)<br />
-In domain of |[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />[dt:hasProperty](hasproperty) (op)<br />[dt:hasSetOfProperties](hassetofproperties) (op)<br />
+Restrictions |[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />
+In domain of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />[dt:hasProperty](hasproperty) (op)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />
 ### External dictionary
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference`
+Restrictions |[dt:hasExternalDictionaryProperty](hasexternalpropertyreference) (op) **exactly** 1<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **exactly** 1<br />
+In domain of |[dt:hasExternalDictionaryProperty](hasexternalpropertyreference) (op)<br />[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />
 ### Library component
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#LibraryComponent`
 Description | <p>Enter a comment</p>
 Super-classes |[rdfs:Resource](http://www.w3.org/2000/01/rdf-schema#Resource) (c)<br />
-Restrictions |[dt:hasReferenceDocument](hasreferencedocument) (op) **some** [dt:ReferenceDocument](Referencedocument) (c)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **some** [https://w3id.org/iddo/v2#Dictionary](https://w3id.org/iddo/v2#Dictionary) (c)<br />
-Sub-classes |[dt:SetOfProperties](Setofproperties) (c)<br />[dt:ConstructionObject](Constructionobject) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />
-In domain of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />
+Restrictions |[dt:hasReferenceDocument](hasreferencedocument) (op) **some** [dt:ReferenceDocument](Referencedocument) (c)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **some** [dt:ExternalDictionaryReference](Externaldictionary) (c)<br />
+Sub-classes |[dt:SetOfProperties](Setofproperties) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />[dt:ConstructionObject](Constructionobject) (c)<br />
+In domain of |[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
 ### Reference document
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#ReferenceDocument`
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:uri](uri) (dp) **max** 1<br />[dt:author](author) (dp) **max** 1<br />
+Restrictions |[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:uri](uri) (dp) **max** 1<br />[dt:author](author) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />
 In range of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
 ### Set of properties
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#SetOfProperties`
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:hasProperty](hasproperty) (op) **min** 0<br />
+Restrictions |[dt:hasProperty](hasproperty) (op) **min** 0<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />
 In domain of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 In range of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 
 ## Object Properties
 [has external dictionary](#hasexternaldictionary),
+[has external property reference](#hasexternalpropertyreference),
+[referenced external dictionary](#referencedexternaldictionary),
 [has property](#hasproperty),
 [has reference document](#hasreferencedocument),
 [has set of properties](#hassetofproperties),
@@ -110,6 +114,20 @@ IRI | `http://inf.bi.rub.de/ontology/dt#hasExternalDictionary`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[dt:LibraryComponent](Librarycomponent) (c)<br />
 Range(s) |[https://w3id.org/iddo/v2#Dictionary](https://w3id.org/iddo/v2#Dictionary) (c)<br />
+[](hasexternalpropertyreference)
+### has external property reference
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:ExternalDictionaryReference](Externaldictionary) (c)<br />
+[](referencedexternaldictionary)
+### referenced external dictionary
+Property | Value
+--- | ---
+IRI | `http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference`
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[dt:ExternalDictionaryReference](Externaldictionary) (c)<br />
 [](hasproperty)
 ### has property
 Property | Value

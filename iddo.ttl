@@ -18,6 +18,9 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference>
+  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> ;
+.
 dcat:accessURL
   rdf:type owl:AnnotationProperty ;
 .
@@ -656,15 +659,13 @@ This attribute should be used for compatibility between already existing propert
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality 1 ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality 1 ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> ;
     ] ;
   owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> ;
 .
@@ -1643,6 +1644,18 @@ iddo:hasDictionarySubset
   rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
   rdfs:range iddo:DictionarySubset ;
   rdfs:subPropertyOf dcat:dataset ;
+.
+iddo:hasExternalDictionary
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has external dictionary" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> ;
+.
+iddo:hasExternalDictionaryProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has external dictionary property" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> ;
 .
 iddo:hasExternalDictionaryReference
   rdf:type owl:ObjectProperty ;

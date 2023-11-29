@@ -37,7 +37,7 @@ dt:DataTemplate
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:hasSetOfProperties ;
-      owl:someValuesFrom <https://w3id.org/iddo/v2#GroupOfProperties> ;
+      owl:someValuesFrom dt:SetOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -48,6 +48,16 @@ dt:DataTemplate
 dt:ExternalDictionaryReference
   rdf:type rdfs:Class ;
   rdfs:label "External dictionary" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasExternalDictionary ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasExternalDictionaryProperty ;
+    ] ;
   owl:equivalentClass <https://w3id.org/iddo/v2#ExternalDictionaryReference> ;
 .
 dt:ISBN
@@ -64,7 +74,7 @@ dt:LibraryComponent
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:hasExternalDictionary ;
-      owl:someValuesFrom <https://w3id.org/iddo/v2#Dictionary> ;
+      owl:someValuesFrom dt:ExternalDictionaryReference ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -145,6 +155,18 @@ dt:hasExternalDictionary
   rdfs:domain dt:LibraryComponent ;
   rdfs:label "has external dictionary" ;
   rdfs:range <https://w3id.org/iddo/v2#Dictionary> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasExternalDictionaryProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:ExternalDictionaryReference ;
+  rdfs:label "has external property reference" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasExternalDictionaryReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain dt:ExternalDictionaryReference ;
+  rdfs:label "referenced external dictionary" ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasProperty
