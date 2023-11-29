@@ -896,19 +896,6 @@ iddo:GroupsOfProperties
   iddo:code "PA021" ;
   iddo:code "PA021"@de-DE ;
 .
-iddo:InterConDictID
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Corresponding data dictionary identifier" ;
-  rdfs:comment "Entsprechender Daten-katalog-Bezeichner"@de-DE ;
-  rdfs:domain iddo:ExternalDictionaryReference ;
-  rdfs:label "Interconnected Data Dictionary ID" ;
-  rdfs:label "Miteinander verbundene Datenkatalog ID"@de-DE ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-  skos:scopeNote "PA014" ;
-  iddo:code "PA014/GA014" ;
-  iddo:code "PA014/GA014"@de-DE ;
-.
 iddo:ListOfPossibleValuesInLanguageN
   rdf:type owl:ObjectProperty ;
   rdfs:comment """List of pairs (possible value for the property and language)
