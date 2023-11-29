@@ -154,7 +154,6 @@ dt:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:LibraryComponent ;
   rdfs:label "has external dictionary" ;
-  rdfs:range <https://w3id.org/iddo/v2#Dictionary> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasExternalDictionaryProperty
@@ -165,8 +164,9 @@ dt:hasExternalDictionaryProperty
 .
 dt:hasExternalDictionaryReference
   rdf:type owl:ObjectProperty ;
-  rdfs:domain dt:ExternalDictionaryReference ;
+  rdfs:domain dt:LibraryComponent ;
   rdfs:label "referenced external dictionary" ;
+  rdfs:range dt:ExternalDictionaryReference ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasProperty
