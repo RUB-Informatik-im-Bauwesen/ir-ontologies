@@ -1,24 +1,76 @@
 # baseURI: https://w3id.org/iddo/v2
+# imports: http://inf.bi.rub.de/ontology/dt
 # prefix: iddo
 
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix ex: <http://www.example.com/property#> .
 @prefix iddo: <https://w3id.org/iddo/v2#> .
 @prefix opm: <https://w3id.org/opm#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://www.example.com/property#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
 
+ex:Dataset_1
+  rdf:type owl:NamedIndividual ;
+  rdf:type iddo:DictionarySubset ;
+  iddo:hasDictionaryReferenceDocument ex:ReferenceDocument_1 ;
+.
+ex:Dictionary_1
+  rdf:type owl:NamedIndividual ;
+  rdf:type iddo:Dictionary ;
+  iddo:hasDictionarySubset ex:Dataset_1 ;
+.
+ex:GroupOfProperties_1
+  rdf:type owl:NamedIndividual ;
+  rdf:type iddo:GroupOfProperties ;
+  rdfs:comment "Collection enabling the properties to be prearranged or organized" ;
+  rdfs:comment "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"@de-DE ;
+  rdfs:label "Group of properties example 1" ;
+  rdfs:label "Merkmalsgruppenbeispiel 1"@de-DE ;
+  iddo:CategoryOfGroupOfProperties "Reference document" ;
+  iddo:CountryOfOrigin "DE" ;
+  iddo:CountryOfUse "DE" ;
+  iddo:CreatorsLanguage "de-DE" ;
+  iddo:DateOfActivation "2022-04-05T16:52:00"^^xsd:dateTime ;
+  iddo:DateOfCreation "2022-04-05T16:52:00"^^xsd:dateTime ;
+  iddo:DateOfLastChange "2022-04-05T16:52:00"^^xsd:dateTime ;
+  iddo:DateOfRevision "2022-04-05T16:52:30"^^xsd:dateTime ;
+  iddo:DateOfVersion "2022-04-05T16:52:33"^^xsd:dateTime ;
+  iddo:DefinitionInLanguage "Definition der Merkmalsgruppe" ;
+  iddo:GloballyUniqueIdentifier "9f225e73-c25a-4175-85c4-30de6becf5e0" ;
+  iddo:NameInLanguage "Beispielmerkmalsgruppe"@de-DE ;
+  iddo:RevisionNumber 1 ;
+  iddo:Status "active" ;
+  iddo:VersionNumber 1 ;
+.
+ex:Property_1
+  rdf:type owl:NamedIndividual ;
+  rdf:type iddo:Property ;
+  rdfs:label "Merkmalsbeispiel"@de ;
+  rdfs:label "Property example 1"@en ;
+  iddo:GroupsOfProperties ex:GroupOfProperties_1 ;
+  iddo:NameInLanguage "Name"@de ;
+.
+ex:ReferenceDocument_1
+  rdf:type owl:NamedIndividual ;
+  rdf:type iddo:DictionaryReferenceDocument ;
+  dcat:accessURL ex: ;
+  iddo:hasPropertyGroupReference iddo:GroupOfProperties_1 ;
+.
+dcat:accessURL
+  rdf:type owl:AnnotationProperty ;
+.
 <https://w3id.org/iddo/v2>
   rdf:type owl:Ontology ;
+  dc:created "2019-01-01"^^xsd:date ;
   dc:creator [
       rdf:type schema:Person ;
       schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
@@ -29,7 +81,6 @@
         ] ;
       schema:name "Philipp Hagedorn" ;
     ] ;
-  dc:created "2019-01-01"^^xsd:date ;
   dc:creator [
       rdf:type schema:Person ;
       schema:email <mailto:sven.zentgraf@rub.de> ;
@@ -61,19 +112,20 @@ The namespace for IDDO terms is [https://w3id.org/iddo](https://w3id.org/iddo)
 The preferred prefix for the IDDO namespace is `iddo`.
 
 ## Ontology Overview 
-![IDDO Ontology](Ontology_Overview.png "Ontology")
+![IDDO Ontology](Ontology_Overview.png \"Ontology\")
 
 ## Assigning an IDDO Property to a Feature of Interest
-![Property_Assignment](Property_Assignment.png "Property_Assignment")
+![Property_Assignment](Property_Assignment.png \"Property_Assignment\")
 
 ## Relation between DCAT vocabulary and the IDDO ontology
-![DataCatalog_Overview](DataCatalog_Overview.png "DataCatalog_Overview")
+![DataCatalog_Overview](DataCatalog_Overview.png \"DataCatalog_Overview\")
 """ ;
   rdfs:label "The Interconnected Data Dictionary Ontology (IDDO)" ;
+  rdfs:seeAlso <https://www.iso.org/standard/75401.html> ;
+  owl:imports <http://inf.bi.rub.de/ontology/dt> ;
   owl:versionIRI <https://w3id.org/iddo/v2> ;
   owl:versionInfo "v2.0" ;
-  rdfs:seeAlso <https://www.iso.org/standard/75401.html> ;
-  skos:example <https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png>;
+  skos:example <https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png> ;
   skos:historyNote """v2.0: update
   
   v0.3: dcat usage update 
@@ -84,124 +136,6 @@ v0.1: initial ontology for BIMSTRUCT project
   """ ;
   schema:codeRepository <https://github.com/RUB-Informatik-im-Bauwesen/iddo> ;
 .
-
-iddo:Dictionary
-rdf:type owl:Class ;
-  rdfs:comment "Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format" ;
-  rdfs:comment "Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format"@de-DE ;
-  rdfs:label "Data dictionary" ;
-  rdfs:label "Datenkatalog"@de-DE ;
-rdfs:subClassOf <http://www.w3.org/ns/dcat#Catalog> ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:integer ;
-      owl:onProperty iddo:hasDictionarySubset ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:title ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:publisher ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:description ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:issued ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:type ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:identifier ;
-    ] ;
-.
-
-iddo:DictionarySubset
-rdf:type owl:Class ;
-  rdfs:comment "Defines a subset or subgrouping of a data catalog" ;
-  rdfs:comment "Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs"@de-DE ;
-  rdfs:label "Dictionary subset" ;
-  rdfs:label "Teilmenge des Datenkatalogs"@de-DE ;
-rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty iddo:hasDictionaryReferenceDocument ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty <http://www.w3.org/ns/dcat#accessURL> ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:title ;
-    ] ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty dc:description ;
-    ] ;
-.
-
-iddo:DictionaryReferenceDocument
-rdf:type owl:Class ;
-  rdfs:comment "Publication that is consulted to find specific information, particularly in a technical or scientific domain" ;
-  rdfs:comment "Publikation, die hinzugezogen wird, um bestimmte Informationen zu finden, insbesondere in einer technischen oder wissenschaftlichen Domaene"@de-DE ;
-  rdfs:label "Reference document" ;
-  rdfs:label "Referenzdokument"@de-DE ;
-rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
-rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
-      owl:onProperty iddo:hasPropertyGroupReference ;
-    ] ;
-.
-
-iddo:hasDictionarySubset a owl:ObjectProperty;
-  rdfs:subPropertyOf <http://www.w3.org/ns/dcat#dataset>;
-  rdfs:domain iddo:Dictionary  ;
-  rdfs:label "has dictionary subset" ;
-  rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
-  rdfs:range iddo:DictionarySubset ;
-.
-
-iddo:hasDictionaryReferenceDocument a owl:ObjectProperty;
-  rdfs:subPropertyOf <http://www.w3.org/ns/dcat#distribution>;
-  rdfs:domain iddo:DictionarySubset  ;
-  rdfs:label "has relation to a reference document" ;
-  rdfs:label "hat den Verweis auf ein Referenzdokument"@de-DE ;
-  rdfs:range iddo:DictionaryReferenceDocument ;
-.
-
-<http://www.w3.org/ns/dcat#accessURL> a owl:AnnotationProperty.
-
-iddo:hasPropertyGroupReference
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Attaches a property group reference to a iddo:ReferenceDocument" ;
-  rdfs:comment "Fuegt eine Merkmalsgruppe (oberstes in der Hierarchie) zu einer iddo:ReferenceDocument hinzu"@de-DE ;
-  rdfs:domain iddo:ReferenceDocument  ;
-  rdfs:label "has property group reference" ;
-  rdfs:label "hat Merkmalsgruppenreferenz"@de-DE ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  rdfs:subPropertyOf <http://www.w3.org/ns/dcat#distribution> ;
-.
-
 iddo:AssignedProperty
   rdf:type owl:Class ;
   rdfs:comment "Repraesentiert die Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)"@de-DE ;
@@ -211,16 +145,15 @@ iddo:AssignedProperty
   rdfs:subClassOf <http://www.w3id.org/opm#Property> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty iddo:hasPropertyReference ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:integer ;
+      owl:minCardinality 1 ;
       owl:onProperty <http://www.w3id.org/opm#hasPropertyState> ;
     ] ;
 .
-
 iddo:AssignedPropertyShape
   rdf:type owl:NamedIndividual ;
   rdf:type sh:NodeShape ;
@@ -228,31 +161,30 @@ iddo:AssignedPropertyShape
   rdfs:comment "Represents the validation using SHACL of the assignment of a property and a property state to a feature of interest (FOI)." ;
   rdfs:label "Assigned property SHACL shape" ;
   rdfs:label "Zugewiesenes Merkmal SHACL Shape"@de-DE ;
-  sh:targetClass iddo:AssignedProperty;
-  sh:closed true ;
+  sh:closed "true"^^xsd:boolean ;
   sh:property [
-		sh:path iddo:hasPropertyReference ;
-    sh:class iddo:Property;
-		sh:name "PropertyReference" ;
-		sh:description "Needs exactly one property reference" ;
-		sh:minCount 1 ;
-    sh:maxCount 1 ;
-	] ;
+      sh:path <http://www.w3id.org/opm#hasPropertyState> ;
+      sh:description "Needs at least one property state" ;
+      sh:minCount 1 ;
+      sh:name "PropertyState" ;
+    ] ;
   sh:property [
-		sh:path <http://www.w3id.org/opm#hasPropertyState> ;
-		sh:name "PropertyState" ;
-		sh:description "Needs at least one property state" ;
-		sh:minCount 1 ;
-	] ;
+      sh:path iddo:hasPropertyReference ;
+      sh:class iddo:Property ;
+      sh:description "Needs exactly one property reference" ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "PropertyReference" ;
+    ] ;
   sh:property [
-		sh:inversePath iddo:hasProperty ;
-		sh:name "PropertyState" ;
-		sh:description "Must be assigned to exacltyl one FOI" ;
-		sh:minCount 1 ;
-    sh:maxCount 1 ;
-	] ;
+      sh:description "Must be assigned to exacltyl one FOI" ;
+      sh:inversePath iddo:hasProperty ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "PropertyState" ;
+    ] ;
+  sh:targetClass iddo:AssignedProperty ;
 .
-
 iddo:BoundaryValue
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Einzelnes Grenzwertintervall"@de-DE ;
@@ -276,12 +208,12 @@ iddo:BoundaryValueItem
   rdfs:subClassOf schema:PropertyValue ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty schema:maxValue ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty schema:minValue ;
     ] ;
   skos:scopeNote "PA040" ;
@@ -310,12 +242,12 @@ iddo:BoundaryValuesList
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty iddo:Unit ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onClass iddo:BoundaryValueItem ;
       owl:onProperty iddo:BoundaryValue ;
     ] ;
@@ -529,7 +461,7 @@ iddo:DefiningValueItem
   rdfs:subClassOf schema:PropertyValue ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
   skos:scopeNote "PA035" ;
@@ -558,7 +490,7 @@ iddo:DefiningValuesList
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:integer ;
+      owl:minCardinality 1 ;
       owl:onProperty iddo:DefiningValueItem ;
     ] ;
   skos:scopeNote "PA035" ;
@@ -573,7 +505,7 @@ iddo:DefinitionInLanguage
   rdfs:domain iddo:Property ;
   rdfs:label "Definition in Sprache N"@de-DE ;
   rdfs:label "Definition of in language N" ;
-  rdfs:range  rdf:langString ;
+  rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA016/GA016" ;
   iddo:code "PA016/GA016" ;
@@ -587,7 +519,7 @@ iddo:DeprecationExplanation
   rdfs:domain iddo:Property ;
   rdfs:label "Deprecation explanation" ;
   rdfs:label "Erlaeuterung fuer die Ablehnung"@de-DE ;
-  rdfs:range  rdf:langString ;
+  rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA013/GA013" ;
   iddo:code "PA013/GA013" ;
@@ -600,11 +532,95 @@ iddo:DescriptionInLanguage
   rdfs:domain iddo:Property ;
   rdfs:label "Beschreibung in Sprache N"@de-DE ;
   rdfs:label "Description in language N" ;
-  rdfs:range  rdf:langString ;
+  rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA019" ;
   iddo:code "PA019" ;
   iddo:code "PA019"@de-DE ;
+.
+iddo:Dictionary
+  rdf:type owl:Class ;
+  rdfs:comment "Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format" ;
+  rdfs:comment "Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format"@de-DE ;
+  rdfs:label "Data dictionary" ;
+  rdfs:label "Datenkatalog"@de-DE ;
+  rdfs:subClassOf dcat:Catalog ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:description ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:identifier ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:issued ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:publisher ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:title ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:type ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty iddo:hasDictionarySubset ;
+    ] ;
+.
+iddo:DictionaryReferenceDocument
+  rdf:type owl:Class ;
+  rdfs:comment "Publication that is consulted to find specific information, particularly in a technical or scientific domain" ;
+  rdfs:comment "Publikation, die hinzugezogen wird, um bestimmte Informationen zu finden, insbesondere in einer technischen oder wissenschaftlichen Domaene"@de-DE ;
+  rdfs:label "Reference document" ;
+  rdfs:label "Referenzdokument"@de-DE ;
+  rdfs:subClassOf dcat:Distribution ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty iddo:hasPropertyGroupReference ;
+    ] ;
+.
+iddo:DictionarySubset
+  rdf:type owl:Class ;
+  rdfs:comment "Defines a subset or subgrouping of a data catalog" ;
+  rdfs:comment "Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs"@de-DE ;
+  rdfs:label "Dictionary subset" ;
+  rdfs:label "Teilmenge des Datenkatalogs"@de-DE ;
+  rdfs:subClassOf dcat:Dataset ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:description ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dc:title ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty dcat:accessURL ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty iddo:hasDictionaryReferenceDocument ;
+    ] ;
 .
 iddo:DigitalFormat
   rdf:type owl:ObjectProperty ;
@@ -634,13 +650,13 @@ Precision is the number of significant digits""" ;
       rdf:type owl:Restriction ;
       owl:onDataRange <http://qudt.org/schema/qudt/Unit> ;
       owl:onProperty iddo:Unit ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty iddo:Precision ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   skos:scopeNote "PA037" ;
   iddo:code "PA037" ;
@@ -740,106 +756,107 @@ iddo:GroupOfProperties
   rdfs:comment "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"@de-DE ;
   rdfs:label "Group of properties" ;
   rdfs:label "Merkmalsgruppe"@de-DE ;
+  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:integer ;
+      owl:maxQualifiedCardinality 1 ;
+      owl:onClass iddo:GroupOfProperties ;
+      owl:onProperty iddo:ParentGroupOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DeprecationExplanation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:ListOfReplacedGroupsOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:ListOfReplacingGroupsOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:GroupOfProperties ;
+      owl:onProperty iddo:ParentGroupOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
       owl:onProperty iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfActivation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfDeactivation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfLastChange ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty iddo:Tolerance ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DeprecationExplanation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Dimension ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:SubdivisionOfUse ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
-      owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ParentGroupOfProperties ;
-    ] ;
-    rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:integer ;
-      owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ParentGroupOfProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CountryOfUse ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DefinitionInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:NameInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:VisualRepresentation ;
     ] ;
@@ -847,31 +864,31 @@ iddo:GroupOfProperties
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfCreation ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfRevision ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfVersion ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:integer ;
       owl:onProperty iddo:RevisionNumber ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:integer ;
       owl:onProperty iddo:VersionNumber ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -884,25 +901,25 @@ iddo:GroupOfProperties
             ) ;
         ] ;
       owl:onProperty iddo:Status ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CountryOfOrigin ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CreatorsLanguage ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -917,7 +934,7 @@ iddo:GroupOfProperties
             ) ;
         ] ;
       owl:onProperty iddo:CategoryOfGroupOfProperties ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
 .
 iddo:GroupsOfProperties
@@ -1049,7 +1066,7 @@ iddo:NameOfTheDefiningValues
   rdfs:comment "In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)" ;
   rdfs:label "Name der definierenden Werte"@de-DE ;
   rdfs:label "Names of the defining values" ;
-  rdfs:range  rdf:langString ;
+  rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA034" ;
   iddo:code "PA034" ;
@@ -1111,7 +1128,7 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   rdfs:domain iddo:Property ;
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
-  rdfs:range  rdf:langString ;
+  rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA027" ;
   iddo:code "PA027" ;
@@ -1129,7 +1146,7 @@ Values can be string or numbers""" ;
   rdfs:subClassOf schema:PropertyValue ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
   skos:scopeNote "PA039" ;
@@ -1155,207 +1172,208 @@ iddo:Property
   rdfs:comment "Inherent or acquired feature of an item" ;
   rdfs:label "Merkmal"@de-DE ;
   rdfs:label "Property" ;
+  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:integer ;
+      owl:cardinality 1 ;
       owl:onProperty iddo:CreatorsLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:integer ;
+      owl:maxQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CountryOfOrigin ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:integer ;
+      owl:maxQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DeprecationExplanation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:integer ;
+      owl:maxQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Dimension ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:DefiningValuesList ;
       owl:onProperty iddo:DefiningValues ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:DigitalFormatItem ;
       owl:onProperty iddo:DigitalFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:PossibleValueInLanguageN ;
       owl:onProperty iddo:ListOfPossibleValuesInLanguageN ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ConnectedProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ListOfReplacedProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ListOfReplacingProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ParametersOfTheDynamicProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:RelationOfPropertiyIdentifiersInTheInterconnectedDataDictionaries ;
       owl:onProperty iddo:RelationsOfThePropertyIdentifiersInTheInterconnectedDataDictionaries ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:SymbolOfTheProperty ;
       owl:onProperty iddo:SymbolsOfTheProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:TextFormatItem ;
       owl:onProperty iddo:TextFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfActivation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfDeactivation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfLastChange ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:decimal ;
       owl:onProperty iddo:Tolerance ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CountryOfOrigin ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DeprecationExplanation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DescriptionInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Dimension ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:ExampleInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:ListOfPossibleValuesInLanguageN ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:MethodOfMeasurement ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:NameOfTheDefiningValues ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:SubdivisionOfUse ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Units ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:integer ;
+      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:VisualRepresentation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:GroupsOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:CountryOfUse ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DefinitionInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:NameInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:integer ;
+      owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:PhysicalQuantity ;
     ] ;
@@ -1363,49 +1381,49 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:onClass iddo:BoundaryValuesList ;
       owl:onProperty iddo:BoundaryValues ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfCreation ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfRevision ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfVersion ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:integer ;
       owl:onProperty iddo:RevisionNumber ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:integer ;
       owl:onProperty iddo:VersionNumber ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:DataType ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1417,7 +1435,7 @@ iddo:Property
             ) ;
         ] ;
       owl:onProperty iddo:Status ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1429,7 +1447,7 @@ iddo:Property
             ) ;
         ] ;
       owl:onProperty iddo:DynamicProperty ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   owl:equivalentClass opm:Property ;
 .
@@ -1446,13 +1464,13 @@ This attribute should be used for compatibility between already existing propert
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   skos:scopeNote "PA014" ;
   iddo:code "PA014" ;
@@ -1471,25 +1489,25 @@ This attribute should be used for compatibility between already existing groups 
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   skos:scopeNote "GA014" ;
   iddo:code "GA014" ;
@@ -1540,53 +1558,6 @@ Experts decide if a new revision number can be applied or if a new revision is n
   skos:scopeNote "PA010/GA010" ;
   iddo:code "PA010/GA010" ;
   iddo:code "PA010/GA010"@de-DE ;
-.
-ex:Property_1
-  rdf:type iddo:Property ;
-  rdf:type owl:NamedIndividual ;
-  rdfs:label "Merkmalsbeispiel"@de ;
-  rdfs:label "Property example 1"@en ;
-  iddo:NameInLanguage "Name"@de ;
-  iddo:GroupsOfProperties  ex:GroupOfProperties_1;
-.
-ex:Dictionary_1
-  rdf:type iddo:Dictionary ;
-  rdf:type owl:NamedIndividual ;
-  iddo:hasDictionarySubset ex:Dataset_1;
-.
-ex:Dataset_1
-  rdf:type iddo:DictionarySubset ;
-  rdf:type owl:NamedIndividual ;
-  iddo:hasDictionaryReferenceDocument ex:ReferenceDocument_1;
-.
-ex:ReferenceDocument_1
-  rdf:type iddo:DictionaryReferenceDocument ;
-  rdf:type owl:NamedIndividual ;
-  dcat:accessURL ex:;
-  iddo:hasPropertyGroupReference iddo:GroupOfProperties_1;
-.
-ex:GroupOfProperties_1
-  rdf:type iddo:GroupOfProperties ;
-  rdf:type owl:NamedIndividual ;
-  rdfs:comment "Collection enabling the properties to be prearranged or organized" ;
-  rdfs:comment "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"@de-DE ;
-  rdfs:label "Group of properties example 1" ;
-  rdfs:label "Merkmalsgruppenbeispiel 1"@de-DE ;
-  iddo:CategoryOfGroupOfProperties "Reference document" ;
-  iddo:CountryOfOrigin "DE" ;
-  iddo:CountryOfUse "DE" ;
-  iddo:CreatorsLanguage "de-DE" ;
-  iddo:DateOfActivation "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfCreation "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfLastChange "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfRevision "2022-04-05T16:52:30"^^xsd:dateTime ;
-  iddo:DateOfVersion "2022-04-05T16:52:33"^^xsd:dateTime ;
-  iddo:DefinitionInLanguage "Definition der Merkmalsgruppe" ;
-  iddo:GloballyUniqueIdentifier "9f225e73-c25a-4175-85c4-30de6becf5e0" ;
-  iddo:NameInLanguage "Beispielmerkmalsgruppe"@de-DE ;
-  iddo:RevisionNumber 1 ;
-  iddo:Status "active" ;
-  iddo:VersionNumber 1 ;
 .
 iddo:Status
   rdf:type owl:DatatypeProperty ;
@@ -1646,13 +1617,13 @@ iddo:SymbolOfTheProperty
       rdf:type owl:Restriction ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:GivenGroupsOfProperties ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Symbol ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   skos:scopeNote "PA022" ;
   iddo:code "PA022" ;
@@ -1699,13 +1670,13 @@ The encoding is set according to Name of encoding standard of IANA, RFC 2978""" 
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:integer ;
       owl:onProperty iddo:NumberOfCharacters ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:Encoding ;
-      owl:qualifiedCardinality "1"^^xsd:integer ;
+      owl:qualifiedCardinality 1 ;
     ] ;
   skos:scopeNote "PA038" ;
   iddo:code "PA038" ;
@@ -1791,6 +1762,22 @@ iddo:code
   rdfs:label "Code"@de-DE ;
   rdfs:range rdfs:Literal ;
 .
+iddo:hasDictionaryReferenceDocument
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain iddo:DictionarySubset ;
+  rdfs:label "has relation to a reference document" ;
+  rdfs:label "hat den Verweis auf ein Referenzdokument"@de-DE ;
+  rdfs:range iddo:DictionaryReferenceDocument ;
+  rdfs:subPropertyOf dcat:distribution ;
+.
+iddo:hasDictionarySubset
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain iddo:Dictionary ;
+  rdfs:label "has dictionary subset" ;
+  rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
+  rdfs:range iddo:DictionarySubset ;
+  rdfs:subPropertyOf dcat:dataset ;
+.
 iddo:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Attaches a property to a feature of interest (FOI)" ;
@@ -1799,6 +1786,17 @@ iddo:hasProperty
   rdfs:label "hat Merkmal"@de-DE ;
   rdfs:range iddo:AssignedProperty ;
   rdfs:subPropertyOf owl:topObjectProperty ;
+.
+iddo:hasPropertyGroupReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Attaches a property group reference to a iddo:ReferenceDocument" ;
+  rdfs:comment "Fuegt eine Merkmalsgruppe (oberstes in der Hierarchie) zu einer iddo:ReferenceDocument hinzu"@de-DE ;
+  rdfs:domain iddo:ReferenceDocument ;
+  rdfs:label "has property group reference" ;
+  rdfs:label "hat Merkmalsgruppenreferenz"@de-DE ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  rdfs:subPropertyOf dcat:distribution ;
 .
 iddo:hasPropertyReference
   rdf:type owl:ObjectProperty ;

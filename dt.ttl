@@ -45,6 +45,11 @@ dt:DataTemplate
       owl:someValuesFrom <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
     ] ;
 .
+dt:ExternalDictionary
+  rdf:type rdfs:Class ;
+  rdfs:label "External dictionary" ;
+  owl:equivalentClass <https://w3id.org/iddo/v2#Dictionary> ;
+.
 dt:ISBN
   rdf:type owl:DatatypeProperty ;
   rdfs:label "ISBN" ;
@@ -96,6 +101,7 @@ dt:ReferenceDocument
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty dt:uri ;
     ] ;
+  owl:equivalentClass <https://w3id.org/iddo/v2#DictionaryReferenceDocument> ;
 .
 dt:author
   rdf:type owl:DatatypeProperty ;
