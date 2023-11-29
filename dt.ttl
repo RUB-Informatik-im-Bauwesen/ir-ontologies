@@ -48,6 +48,7 @@ dt:DataTemplate
 dt:ExternalDictionaryReference
   rdf:type rdfs:Class ;
   rdfs:label "External dictionary" ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -70,7 +71,7 @@ dt:LibraryComponent
   rdf:type rdfs:Class ;
   rdfs:comment "Enter a comment"@en ;
   rdfs:label "Library component"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:hasExternalDictionary ;

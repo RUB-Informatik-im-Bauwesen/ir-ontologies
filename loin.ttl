@@ -67,7 +67,7 @@ loin:Actor
   rdf:type owl:Class ;
   rdfs:comment "Actor is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Actor" ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:AlphanumericalInformation
@@ -99,7 +99,7 @@ loin:BreakdownStructure
   rdf:type owl:Class ;
   rdfs:comment "Breakdown structure is a term for positioning the object in a structure according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Breakdown structure"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -111,7 +111,7 @@ loin:BreakdownStructureType
   rdf:type owl:Class ;
   rdfs:comment "Breakdown structure type is a term to specify the structure according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Breakdown structure type"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:ClassificationSystem
@@ -165,7 +165,7 @@ loin:DocumentSpecification
   rdf:type owl:Class ;
   rdfs:comment "Additional specification of document for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Document specification"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:Documentation
@@ -245,7 +245,7 @@ loin:GeometrySpecification
   rdf:type owl:Class ;
   rdfs:comment "Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Geometrical information specification"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:Handdrawn_Sketches
@@ -264,7 +264,7 @@ loin:Identification
   rdf:type owl:Class ;
   rdfs:comment "Identification is a term for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Identification"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
@@ -276,7 +276,7 @@ loin:Identifier
   rdf:type owl:Class ;
   rdfs:comment "Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Identifier"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -298,7 +298,7 @@ loin:IdentifierType
   rdf:type owl:Class ;
   rdfs:comment "Identifier type is used to specify the identifier in a breakdown structure according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Identifier type"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:Index
@@ -311,19 +311,20 @@ loin:Information
   rdf:type rdfs:Class ;
   rdfs:comment "Proxy class for the three information specifications Alphanumerical Information, Geometrical Information, and Documentation"@en ;
   rdfs:label "Information"@en ;
+  rdfs:subClassOf owl:Thing ;
 .
 loin:InformationContent
   rdf:type owl:Class ;
   rdfs:comment "Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Alphanumerical information content"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:InformationDeliveryMilestone
   rdf:type owl:Class ;
   rdfs:comment "Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Information delivery milestone"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -425,7 +426,7 @@ loin:Purpose
   rdf:type owl:Class ;
   rdfs:comment "Purpose is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Purpose" ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -455,7 +456,7 @@ loin:RequiredDocument
   rdf:type owl:Class ;
   rdfs:comment "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Document"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
@@ -541,7 +542,7 @@ loin:SpecificationPerObjectType
   rdf:type owl:Class ;
   rdfs:comment "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Specification per Object Type"@en ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
