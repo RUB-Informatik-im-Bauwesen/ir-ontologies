@@ -18,53 +18,6 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Dataset_1
-  rdf:type owl:NamedIndividual ;
-  rdf:type iddo:DictionarySubset ;
-  iddo:hasDictionaryReferenceDocument ex:ReferenceDocument_1 ;
-.
-ex:Dictionary_1
-  rdf:type owl:NamedIndividual ;
-  rdf:type iddo:Dictionary ;
-  iddo:hasDictionarySubset ex:Dataset_1 ;
-.
-ex:GroupOfProperties_1
-  rdf:type owl:NamedIndividual ;
-  rdf:type iddo:GroupOfProperties ;
-  rdfs:comment "Collection enabling the properties to be prearranged or organized" ;
-  rdfs:comment "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"@de-DE ;
-  rdfs:label "Group of properties example 1" ;
-  rdfs:label "Merkmalsgruppenbeispiel 1"@de-DE ;
-  iddo:CategoryOfGroupOfProperties "Reference document" ;
-  iddo:CountryOfOrigin "DE" ;
-  iddo:CountryOfUse "DE" ;
-  iddo:CreatorsLanguage "de-DE" ;
-  iddo:DateOfActivation "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfCreation "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfLastChange "2022-04-05T16:52:00"^^xsd:dateTime ;
-  iddo:DateOfRevision "2022-04-05T16:52:30"^^xsd:dateTime ;
-  iddo:DateOfVersion "2022-04-05T16:52:33"^^xsd:dateTime ;
-  iddo:DefinitionInLanguage "Definition der Merkmalsgruppe" ;
-  iddo:GloballyUniqueIdentifier "9f225e73-c25a-4175-85c4-30de6becf5e0" ;
-  iddo:NameInLanguage "Beispielmerkmalsgruppe"@de-DE ;
-  iddo:RevisionNumber 1 ;
-  iddo:Status "active" ;
-  iddo:VersionNumber 1 ;
-.
-ex:Property_1
-  rdf:type owl:NamedIndividual ;
-  rdf:type iddo:Property ;
-  rdfs:label "Merkmalsbeispiel"@de ;
-  rdfs:label "Property example 1"@en ;
-  iddo:GroupsOfProperties ex:GroupOfProperties_1 ;
-  iddo:NameInLanguage "Name"@de ;
-.
-ex:ReferenceDocument_1
-  rdf:type owl:NamedIndividual ;
-  rdf:type iddo:DictionaryReferenceDocument ;
-  dcat:accessURL ex: ;
-  iddo:hasPropertyGroupReference iddo:GroupOfProperties_1 ;
-.
 dcat:accessURL
   rdf:type owl:AnnotationProperty ;
 .
@@ -153,37 +106,6 @@ iddo:AssignedProperty
       owl:minCardinality 1 ;
       owl:onProperty <http://www.w3id.org/opm#hasPropertyState> ;
     ] ;
-.
-iddo:AssignedPropertyShape
-  rdf:type owl:NamedIndividual ;
-  rdf:type sh:NodeShape ;
-  rdfs:comment "Repraesentiert die Validierung mit Hilfe von SHACL der Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)"@de-DE ;
-  rdfs:comment "Represents the validation using SHACL of the assignment of a property and a property state to a feature of interest (FOI)." ;
-  rdfs:label "Assigned property SHACL shape" ;
-  rdfs:label "Zugewiesenes Merkmal SHACL Shape"@de-DE ;
-  sh:closed "true"^^xsd:boolean ;
-  sh:property [
-      sh:path <http://www.w3id.org/opm#hasPropertyState> ;
-      sh:description "Needs at least one property state" ;
-      sh:minCount 1 ;
-      sh:name "PropertyState" ;
-    ] ;
-  sh:property [
-      sh:path iddo:hasPropertyReference ;
-      sh:class iddo:Property ;
-      sh:description "Needs exactly one property reference" ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "PropertyReference" ;
-    ] ;
-  sh:property [
-      sh:description "Must be assigned to exacltyl one FOI" ;
-      sh:inversePath iddo:hasProperty ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "PropertyState" ;
-    ] ;
-  sh:targetClass iddo:AssignedProperty ;
 .
 iddo:BoundaryValue
   rdf:type owl:ObjectProperty ;
@@ -723,6 +645,29 @@ iddo:ExampleInLanguage
   iddo:code "PA019" ;
   iddo:code "PA019"@de-DE ;
 .
+iddo:ExternalDictionaryReference
+  rdf:type rdfs:Class ;
+  rdfs:comment """Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner)
+Dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"""@de-DE ;
+  rdfs:comment """Pair (property internal identifier, corresponding data dictionary identifier)
+This attribute should be used for compatibility between already existing properties""" ;
+  rdfs:label "External Dictionary Reference " ;
+  rdfs:label "External Dictionary Reference"@de-DE ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty iddo:GloballyUniqueIdentifier ;
+      owl:qualifiedCardinality 1 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty iddo:InterConDictID ;
+      owl:qualifiedCardinality 1 ;
+    ] ;
+  owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> ;
+.
 iddo:GivenGroupsOfProperties
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Global eindeutiger Bezeichner einer Merkmalsgruppe (Attribut GA001) fuer das dem Merkmal zugeordnetem Symbol"@de-DE ;
@@ -791,12 +736,6 @@ iddo:GroupOfProperties
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
-      owl:onProperty iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:dateTime ;
       owl:onProperty iddo:DateOfActivation ;
     ] ;
@@ -835,6 +774,12 @@ iddo:GroupOfProperties
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:SubdivisionOfUse ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass iddo:ExternalDictionaryReference ;
+      owl:onProperty iddo:hasExternalDictionaryReference ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -954,8 +899,7 @@ iddo:InterConDictID
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Corresponding data dictionary identifier" ;
   rdfs:comment "Entsprechender Daten-katalog-Bezeichner"@de-DE ;
-  rdfs:domain iddo:RelationOfPropertiyIdentifiersInTheInterconnectedDataDictionaries ;
-  rdfs:domain iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
+  rdfs:domain iddo:ExternalDictionaryReference ;
   rdfs:label "Interconnected Data Dictionary ID" ;
   rdfs:label "Miteinander verbundene Datenkatalog ID"@de-DE ;
   rdfs:range xsd:string ;
@@ -1212,6 +1156,12 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:ExternalDictionaryReference ;
+      owl:onProperty iddo:hasExternalDictionaryReference ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:PossibleValueInLanguageN ;
       owl:onProperty iddo:ListOfPossibleValuesInLanguageN ;
     ] ;
@@ -1238,12 +1188,6 @@ iddo:Property
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ParametersOfTheDynamicProperty ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:RelationOfPropertiyIdentifiersInTheInterconnectedDataDictionaries ;
-      owl:onProperty iddo:RelationsOfThePropertyIdentifiersInTheInterconnectedDataDictionaries ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1451,68 +1395,6 @@ iddo:Property
     ] ;
   owl:equivalentClass opm:Property ;
 .
-iddo:RelationOfPropertiyIdentifiersInTheInterconnectedDataDictionaries
-  rdf:type rdfs:Class ;
-  rdfs:comment """Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner)
-Dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"""@de-DE ;
-  rdfs:comment """Pair (property internal identifier, corresponding data dictionary identifier)
-This attribute should be used for compatibility between already existing properties""" ;
-  rdfs:label "Beziehung des Merkmalsbezeichners in den miteinander verbundenen Datenkatalogen"@de-DE ;
-  rdfs:label "Relation of propertiy identifier in the interconnected data dictionaries" ;
-  rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  skos:scopeNote "PA014" ;
-  iddo:code "PA014" ;
-  iddo:code "PA014"@de-DE ;
-.
-iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries
-  rdf:type rdfs:Class ;
-  rdfs:comment """Paar (interner Bezeichner der Merkmalsgruppe, entsprechender Datenkatalog-Bezeichner)
-dieses Attribut sollte fuer die Kompatibilitaet zwischen bereits vorhandenen Merkmalsgruppen verwendet werden"""@de-DE ;
-  rdfs:comment """Pair (group of properties internal identifier, corresponding data dictionary identifier)
-This attribute should be used for compatibility between already existing groups of properties""" ;
-  rdfs:label "Beziehung des Bezeichners der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen"@de-DE ;
-  rdfs:label "Relation of the group of properties identifier in the interconnected data dictionaries" ;
-  rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:InterConDictID ;
-      owl:qualifiedCardinality 1 ;
-    ] ;
-  skos:scopeNote "GA014" ;
-  iddo:code "GA014" ;
-  iddo:code "GA014"@de-DE ;
-.
 iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries
   rdf:type owl:ObjectProperty ;
   rdfs:comment """List of pairs (group of properties internal identifier, corresponding data dictionary identifier)
@@ -1522,26 +1404,10 @@ dieses Attribut sollte fuer die Kompatibilitaet zwischen bereits vorhandenen Mer
   rdfs:domain iddo:GroupOfProperties ;
   rdfs:label "Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen"@de-DE ;
   rdfs:label "Relations of the group of properties identifiers in the interconnected data dictionaries" ;
-  rdfs:range iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "GA014" ;
   iddo:code "GA014" ;
   iddo:code "GA014"@de-DE ;
-.
-iddo:RelationsOfThePropertyIdentifiersInTheInterconnectedDataDictionaries
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """List of pairs (property internal identifier, corresponding data dictionary identifier)
-This attribute should be used for compatibility between already existing properties""" ;
-  rdfs:comment """Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner)
-dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"""@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Beziehung der Merkmalsbezeichner in den miteinander verbundenen Datenka-talogen"@de-DE ;
-  rdfs:label "Relations of the property identifiers in the interconnected data dictionaries" ;
-  rdfs:range iddo:RelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA014" ;
-  iddo:code "PA014" ;
-  iddo:code "PA014"@de-DE ;
 .
 iddo:RevisionNumber
   rdf:type owl:DatatypeProperty ;
@@ -1777,6 +1643,25 @@ iddo:hasDictionarySubset
   rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
   rdfs:range iddo:DictionarySubset ;
   rdfs:subPropertyOf dcat:dataset ;
+.
+iddo:hasExternalDictionaryReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """List of pairs (property internal identifier, corresponding data dictionary identifier)
+This attribute should be used for compatibility between already existing properties""" ;
+  rdfs:comment """Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner)
+dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"""@de-DE ;
+  rdfs:domain iddo:GroupOfProperties ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "has External Dictionary Reference" ;
+  rdfs:label "hat externe Dictionary Referenz"@de-DE ;
+  rdfs:range iddo:ExternalDictionaryReference ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "GA014" ;
+  skos:scopeNote "PA014" ;
+  iddo:code "GA014" ;
+  iddo:code "GA014"@de-DE ;
+  iddo:code "PA014" ;
+  iddo:code "PA014"@de-DE ;
 .
 iddo:hasProperty
   rdf:type owl:ObjectProperty ;

@@ -45,10 +45,10 @@ dt:DataTemplate
       owl:someValuesFrom <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
     ] ;
 .
-dt:ExternalDictionary
+dt:ExternalDictionaryReference
   rdf:type rdfs:Class ;
   rdfs:label "External dictionary" ;
-  owl:equivalentClass <https://w3id.org/iddo/v2#Dictionary> ;
+  owl:equivalentClass <https://w3id.org/iddo/v2#ExternalDictionaryReference> ;
 .
 dt:ISBN
   rdf:type owl:DatatypeProperty ;
@@ -103,6 +103,31 @@ dt:ReferenceDocument
     ] ;
   owl:equivalentClass <https://w3id.org/iddo/v2#DictionaryReferenceDocument> ;
 .
+dt:SetOfProperties
+  rdf:type rdfs:Class ;
+  rdfs:label "Set of properties" ;
+  rdfs:subClassOf dt:LibraryComponent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasSetOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasProperty ;
+      owl:someValuesFrom <https://w3id.org/iddo/v2#Property> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty dt:hasSetOfProperties ;
+      owl:someValuesFrom dt:SetOfProperties ;
+    ] ;
+.
 dt:author
   rdf:type owl:DatatypeProperty ;
   rdfs:label "author" ;
@@ -139,8 +164,9 @@ dt:hasReferenceDocument
 dt:hasSetOfProperties
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:DataTemplate ;
+  rdfs:domain dt:SetOfProperties ;
   rdfs:label "has set of properties" ;
-  rdfs:range <https://w3id.org/iddo/v2#GroupOfProperties> ;
+  rdfs:range dt:SetOfProperties ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:isDataTemplateFor
