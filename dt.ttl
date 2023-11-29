@@ -13,11 +13,6 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://inf.bi.rub.de/ontology/dt>
-  rdf:type owl:Ontology ;
-  owl:imports <https://w3id.org/iddo/v2> ;
-  owl:imports <https://w3id.org/loin/v2> ;
-.
 dt:ConstructionObject
   rdf:type rdfs:Class ;
   rdfs:comment "Enter a comment"@en ;
@@ -210,7 +205,10 @@ dt:uri
   rdfs:label "uri" ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
-<http://inf.bi.rub.de/ontology/tmp>
+<http://inf.bi.rub.de/ontology/dt>
+  rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/iddo/v2> ;
+  owl:imports <https://w3id.org/loin/v2> ;
   rdf:type owl:Ontology ;
   dc:created "2023-12-23"^^xsd:date ;
   dc:creator [
