@@ -1067,7 +1067,7 @@ jedes einer Gruppe zugehoerige Merkmal wird von der/den Untergruppe(n) uebernomm
   iddo:code "GA023"@de-DE ;
 .
 iddo:PhysicalQuantity
-  rdf:type owl:DatatypeProperty ;
+  rdf:type rdfs:Class ;
   rdfs:comment """List of pairs (physical quantity | language)
 Physical quantities are expressed in International System (SI) units
 Non-physical quantities such as text are expressed with the value \"without\"
@@ -1078,14 +1078,14 @@ Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems 
 nicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben
 dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
 nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."""@de-DE ;
-  rdfs:domain iddo:Property ;
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
-  rdfs:range rdf:langString ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-  skos:scopeNote "PA027" ;
-  iddo:code "PA027" ;
-  iddo:code "PA027"@de-DE ;
+  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty iddo:hasDimension ;
+      owl:someValuesFrom iddo:Dimension ;
+    ] ;
 .
 iddo:PossibleValueInLanguageN
   rdf:type rdfs:Class ;
@@ -1326,9 +1326,9 @@ iddo:Property
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 1 ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:PhysicalQuantity ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange iddo:PhysicalQuantity ;
+      owl:onProperty iddo:hasPhysicalQuantity ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1769,6 +1769,27 @@ iddo:hasN
   rdfs:label "has N" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasPhysicalQuantity
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment """List of pairs (physical quantity | language)
+Physical quantities are expressed in International System (SI) units
+Non-physical quantities such as text are expressed with the value \"without\"
+This is equivalent to a measure in ISO 16739-1 and ISO 10303
+Only one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations""" ;
+  rdfs:comment """Liste von Paaren (physikalische Groesse | Sprache)
+Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben
+nicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben
+dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
+nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."""@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Physical quantity" ;
+  rdfs:label "Physikalische Groesse"@de-DE ;
+  rdfs:range rdf:langString ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  skos:scopeNote "PA027" ;
+  iddo:code "PA027" ;
+  iddo:code "PA027"@de-DE ;
 .
 iddo:hasProperty
   rdf:type owl:ObjectProperty ;
