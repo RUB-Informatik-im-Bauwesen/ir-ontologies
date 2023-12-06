@@ -61,60 +61,61 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 **Figure 1:** Ontology overview
 ## Classes
 [Assigned property](#Assignedproperty),
+[Boundary values list](#Boundaryvalueslist),
 [Data dictionary](#Datadictionary),
-[Defining value item](#Definingvalueitem),
+[Definierender Wert-Item](#DefinierenderWert-Item),
 [Dictionary subset](#Dictionarysubset),
 [Digital format item](#Digitalformatitem),
-[External Dictionary Reference](#ExternalDictionaryReference),
-[Grenzwertliste](#Grenzwertliste),
-[Group of properties](#Groupofproperties),
+[Dimension](#Dimension1),
+[External Dictionary Reference ](#ExternalDictionaryReference),
 [Liste definierender Werte](#ListedefinierenderWerte),
+[Maximum Boundary Limit](#MaximumBoundaryLimit),
 [Merkmal](#Merkmal),
-[Oberer Grenzwert](#ObererGrenzwert),
+[Merkmalsgruppe](#Merkmalsgruppe),
+[Minimum Boundary Limit](#MinimumBoundaryLimit),
 [Possible value in language N](#PossiblevalueinlanguageN),
-[Referenzdokument](#Referenzdokument),
-[Symbol des Merkmals in einer gegebenen Merkmalsgruppe](#SymboldesMerkmalsineinergegebenenMerkmalsgruppe),
+[Reference document](#Referencedocument),
+[Symbol of the property in a given property group](#Symbolofthepropertyinagivenpropertygroup),
 [Text format item](#Textformatitem),
-[Unterer Grenzwert](#UntererGrenzwert),
 ### Assigned property
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#AssignedProperty`
 Description | <p>Repraesentiert die Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)</p>
 Super-classes |[http://www.w3id.org/opm#Property](http://www.w3id.org/opm#Property) (c)<br />
-Restrictions |[http://www.w3id.org/opm#hasPropertyState](http://www.w3id.org/opm#hasPropertyState) **min** 1<br />[iddo:hasPropertyReference](hasPropertyReference) (op) **exactly** 1<br />
-In domain of |[iddo:hasPropertyReference](hasPropertyReference) (op)<br />
-In range of |[iddo:hasProperty](hasproperty) (op)<br />
-### Oberer Grenzwert
+Restrictions |[http://www.w3id.org/opm#hasPropertyState](http://www.w3id.org/opm#hasPropertyState) **min** 1<br />[iddo:hasPropertyReference](hatMerkmalreferenz) (op) **exactly** 1<br />
+In domain of |[iddo:hasPropertyReference](hatMerkmalreferenz) (op)<br />
+In range of |[iddo:hasProperty](hatMerkmal) (op)<br />
+### Maximum Boundary Limit
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#BoundaryLimitMax`
 Description | <p>Boundary limit  interval consisting of the the upper (maxValue) interval boundary</p>
 Usage Note | PA040
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[sdo:PropertyValue](https://schema.org/PropertyValue) (c)<br />
-Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />[iddo:Units](Einheiten) (op) **exactly** 1<br />
-In domain of |[iddo:Units](Einheiten) (op)<br />
-### Unterer Grenzwert
+Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />[iddo:Units](Units) (op) **exactly** 1<br />
+In domain of |[iddo:Units](Units) (op)<br />
+### Minimum Boundary Limit
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#BoundaryLimitMin`
-Description | <p>Grenzwertintervall bestehend aus der unteren(minValue) Intervallgrenze</p>
+Description | <p>Boundary limit interval consisting of the lower(minValue) interval boundary</p>
 Usage Note | PA040
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[sdo:PropertyValue](https://schema.org/PropertyValue) (c)<br />
-Restrictions |[iddo:Units](Einheiten) (op) **exactly** 1<br />[sdo:value](https://schema.org/value) **exactly** 1<br />
-In domain of |[iddo:Units](Einheiten) (op)<br />
-In range of |[iddo:BoundaryLimit](Boundaryvalue) (op)<br />
-### Grenzwertliste
+Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />[iddo:Units](Units) (op) **exactly** 1<br />
+In domain of |[iddo:Units](Units) (op)<br />
+In range of |[iddo:hasBoundaryLimit](Boundaryvalue) (op)<br />
+### Boundary values list
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#BoundaryValue`
-Description | <p>Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)</p>
+Description | <p>Pair  (List of boundary intervals of possible values for the property, unit)</p>
 Usage Note | PA040
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[iddo:BoundaryLimit](Boundaryvalue) (op) **max** 1 [iddo:BoundaryLimitMin](UntererGrenzwert) (c)<br />[iddo:BoundaryLimit](Boundaryvalue) (op) **max** 1 [iddo:BoundaryLimitMax](ObererGrenzwert) (c)<br />
-In domain of |[iddo:BoundaryLimit](Boundaryvalue) (op)<br />
-In range of |[iddo:Boundary](Boundaryvalues) (op)<br />
-### Defining value item
+Restrictions |[iddo:hasBoundaryLimit](Boundaryvalue) (op) **max** 1 [iddo:BoundaryLimitMax](MaximumBoundaryLimit) (c)<br />[iddo:hasBoundaryLimit](Boundaryvalue) (op) **max** 1 [iddo:BoundaryLimitMin](MinimumBoundaryLimit) (c)<br />
+In domain of |[iddo:hasBoundaryLimit](Boundaryvalue) (op)<br />
+In range of |[iddo:hasBoundary](Grenzwerte) (op)<br />
+### Definierender Wert-Item
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DefiningValueItem`
@@ -122,7 +123,7 @@ Description | <p>Contains a defining value of an array in the form of a literal<
 Usage Note | PA035
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[sdo:PropertyValue](https://schema.org/PropertyValue) (c)<br />
 Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />
-In range of |[iddo:DefiningValue](Definingvalue) (op)<br />
+In range of |[iddo:DefiningValue](DefinierenderWert) (op)<br />
 ### Liste definierender Werte
 Property | Value
 --- | ---
@@ -130,33 +131,33 @@ IRI | `https://w3id.org/iddo/v2#DefiningValuesList`
 Description | <p>Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben</p>
 Usage Note | PA035
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[iddo:DefiningValueItem](Definingvalueitem) **min** 1<br />
-In domain of |[iddo:DefiningValue](Definingvalue) (op)<br />
+Restrictions |[iddo:DefiningValueItem](DefinierenderWert-Item) **min** 1<br />
+In domain of |[iddo:DefiningValue](DefinierenderWert) (op)<br />
 In range of |[iddo:DefiningValues](Definingvalues) (op)<br />
 ### Data dictionary
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Dictionary`
-Description | <p>Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format</p>
+Description | <p>Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format</p>
 Super-classes |[dcat:Catalog](http://www.w3.org/ns/dcat#Catalog) (c)<br />
-Restrictions |[dc:identifier](http://purl.org/dc/terms/identifier) **exactly** 1<br />[dc:publisher](http://purl.org/dc/terms/publisher) **exactly** 1<br />[dc:description](http://purl.org/dc/terms/description) **exactly** 1<br />[dc:type](http://purl.org/dc/terms/type) **exactly** 1<br />[iddo:hasDictionarySubset](hatTeilmengeeinesKatalogs) (op) **min** 1<br />[dc:title](http://purl.org/dc/terms/title) **exactly** 1<br />[dc:issued](http://purl.org/dc/terms/issued) **exactly** 1<br />
+Restrictions |[dc:description](http://purl.org/dc/terms/description) **exactly** 1<br />[dc:type](http://purl.org/dc/terms/type) **exactly** 1<br />[dc:publisher](http://purl.org/dc/terms/publisher) **exactly** 1<br />[iddo:hasDictionarySubset](hatTeilmengeeinesKatalogs) (op) **min** 1<br />[dc:issued](http://purl.org/dc/terms/issued) **exactly** 1<br />[dc:title](http://purl.org/dc/terms/title) **exactly** 1<br />[dc:identifier](http://purl.org/dc/terms/identifier) **exactly** 1<br />
 In domain of |[iddo:hasDictionarySubset](hatTeilmengeeinesKatalogs) (op)<br />
-### Referenzdokument
+### Reference document
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DictionaryReferenceDocument`
-Description | <p>Publikation, die hinzugezogen wird, um bestimmte Informationen zu finden, insbesondere in einer technischen oder wissenschaftlichen Domaene</p>
+Description | <p>Publication that is consulted to find specific information, particularly in a technical or scientific domain</p>
 Super-classes |[dcat:Distribution](http://www.w3.org/ns/dcat#Distribution) (c)<br />
-Restrictions |[iddo:hasPropertyGroupReference](haspropertygroupreference) (op) **exactly** 1<br />
-In range of |[iddo:hasDictionaryReferenceDocument](hatdenVerweisaufeinReferenzdokument) (op)<br />
+Restrictions |[iddo:hasPropertyGroupReference](hatMerkmalsgruppenreferenz) (op) **exactly** 1<br />
+In range of |[iddo:hasDictionaryReferenceDocument](hasrelationtoareferencedocument) (op)<br />
 ### Dictionary subset
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DictionarySubset`
-Description | <p>Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs</p>
+Description | <p>Defines a subset or subgrouping of a data catalog</p>
 Super-classes |[dcat:Dataset](http://www.w3.org/ns/dcat#Dataset) (c)<br />
-Restrictions |[dc:title](http://purl.org/dc/terms/title) **exactly** 1<br />[dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) (ap) **exactly** 1<br />[dc:description](http://purl.org/dc/terms/description) **exactly** 1<br />[iddo:hasDictionaryReferenceDocument](hatdenVerweisaufeinReferenzdokument) (op) **exactly** 1<br />
-In domain of |[iddo:hasDictionaryReferenceDocument](hatdenVerweisaufeinReferenzdokument) (op)<br />
+Restrictions |[dc:title](http://purl.org/dc/terms/title) **exactly** 1<br />[dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) (ap) **exactly** 1<br />[iddo:hasDictionaryReferenceDocument](hasrelationtoareferencedocument) (op) **exactly** 1<br />[dc:description](http://purl.org/dc/terms/description) **exactly** 1<br />
+In domain of |[iddo:hasDictionaryReferenceDocument](hasrelationtoareferencedocument) (op)<br />
 In range of |[iddo:hasDictionarySubset](hatTeilmengeeinesKatalogs) (op)<br />
 ### Digital format item
 Property | Value
@@ -165,26 +166,34 @@ IRI | `https://w3id.org/iddo/v2#DigitalFormatItem`
 Description | <p>Pair for digital text type (precision, unit) Precision is the number of significant digits</p>
 Usage Note | PA037
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[iddo:Unit](Unit) (op) **exactly** 1<br />[iddo:Precision](Toleranz) (dp) **exactly** 1<br />
-In domain of |[iddo:Unit](Unit) (op)<br />[iddo:Precision](Toleranz) (dp)<br />
-In range of |[iddo:DigitalFormat](DigitalesFormat) (op)<br />
-### External Dictionary Reference
+Restrictions |[iddo:Precision](Toleranz) (dp) **exactly** 1<br />[iddo:Unit](Einheit) (op) **exactly** 1<br />
+In domain of |[iddo:Unit](Einheit) (op)<br />[iddo:Precision](Toleranz) (dp)<br />
+In range of |[iddo:DigitalFormat](Digitalformat) (op)<br />
+### Dimension
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#Dimension`
+Description | <p>Im Falle einer physikalischen Groesse, Dimension nach ISO 80000 (alle Teile) dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle physikalischen Groessen von 7 Basisgroessen abgeleitet sind, wird es durch Angabe der Basisdimensionen mit zugehoeriger Potenz (als rationale Zahl) in der folgenden Reihenfolge und mit jeweils einem Leerzeichen dazwischen angegeben</p>
+Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
+Restrictions |[iddo:hasN](hasN) (dp) **exactly** 1<br />[iddo:hasI](hasI) (dp) **exactly** 1<br />[iddo:hasJ](hasJ) (dp) **exactly** 1<br />[iddo:hasTheta](hasTheta) (dp) **exactly** 1<br />[iddo:hasL](hasL) (dp) **exactly** 1<br />[iddo:hasM](hasM) (dp) **exactly** 1<br />[iddo:hasT](hasT) (dp) **exactly** 1<br />
+In range of |[iddo:hasDimension](Dimension) (op)<br />
+### External Dictionary Reference 
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ExternalDictionaryReference`
 Description | <p>Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner) Dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty](http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty) **exactly** 1<br />[http://inf.bi.rub.de/ontology/dt#hasExternalDictionary](http://inf.bi.rub.de/ontology/dt#hasExternalDictionary) **exactly** 1<br />
-In range of |[iddo:hasExternalDictionaryReference](hatexterneDictionaryReferenz) (op)<br />
-### Group of properties
+Restrictions |[http://inf.bi.rub.de/ontology/dt#hasExternalDictionary](http://inf.bi.rub.de/ontology/dt#hasExternalDictionary) **exactly** 1<br />[http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty](http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty) **exactly** 1<br />
+In range of |[iddo:hasExternalDictionaryReference](hasExternalDictionaryReference) (op)<br />
+### Merkmalsgruppe
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#GroupOfProperties`
 Description | <p>Collection enabling the properties to be prearranged or organized</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[http://inf.bi.rub.de/ontology/dt#LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
-Restrictions |[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op) **min** 0 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **min** 0<br />[iddo:VisualRepresentation](BildlicheDarstellung) (dp) **min** 1<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp) **min** 0<br />[iddo:NameInLanguage](NameinSpracheN) (dp) **min** 1<br />[iddo:DateOfCreation](Dateofcreation) (dp) **exactly** 1<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp) **exactly** 1<br />[iddo:DateOfLastChange](DatumderletztenAenderung) (dp) **min** 0<br />[iddo:DateOfVersion](DatumderVersion) (dp) **exactly** 1<br />[iddo:hasExternalDictionaryReference](hatexterneDictionaryReferenz) (op) **min** 0 [iddo:ExternalDictionaryReference](ExternalDictionaryReference) (c)<br />[iddo:VersionNumber](Versionnumber) (dp) **exactly** 1<br />[iddo:Status](Status) (dp) **exactly** 1<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **exactly** 1<br />[iddo:CountryOfUse](Countryofuse) (dp) **min** 1<br />[iddo:ParentGroupOfProperties](uebergeordneteMerkmalsgruppe) (op) **max** 1 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **max** 1<br />[iddo:CategoryOfGroupOfProperties](KategoriederMerkmalsgruppe) (dp) **exactly** 1<br />[iddo:DateOfActivation](DatumderAktivierung) (dp) **min** 0<br />[iddo:Dimension](Dimension) (dp) **min** 0<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp) **exactly** 1<br />[iddo:DefinitionInLanguage](DefinitioninSpracheN) (dp) **min** 1<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp) **exactly** 1<br />[iddo:CreatorsLanguage](ErlaeuterungfuerdieAblehnung) (dp) **exactly** 1<br />[iddo:ParentGroupOfProperties](uebergeordneteMerkmalsgruppe) (op) **min** 0 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:SubdivisionOfUse](Subdivisionofuse) (dp) **min** 0<br />[iddo:ListOfReplacingGroupsOfProperties](Listofreplacinggroupsofproperties) (op) **min** 0 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Tolerance](Tolerance) (dp) **min** 0<br />
-In domain of |[iddo:VersionNumber](Versionnumber) (dp)<br />[iddo:ParentGroupOfProperties](uebergeordneteMerkmalsgruppe) (op)<br />[iddo:CategoryOfGroupOfProperties](KategoriederMerkmalsgruppe) (dp)<br />[iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries](BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen) (op)<br />[iddo:NameInLanguage](NameinSpracheN) (dp)<br />[iddo:VisualRepresentation](BildlicheDarstellung) (dp)<br />[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op)<br />[iddo:SubdivisionOfUse](Subdivisionofuse) (dp)<br />[iddo:DateOfActivation](DatumderAktivierung) (dp)<br />[iddo:DateOfCreation](Dateofcreation) (dp)<br />[iddo:hasExternalDictionaryReference](hatexterneDictionaryReferenz) (op)<br />[iddo:CreatorsLanguage](ErlaeuterungfuerdieAblehnung) (dp)<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp)<br />[iddo:Status](Status) (dp)<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp)<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp)<br />[iddo:ListOfReplacingGroupsOfProperties](Listofreplacinggroupsofproperties) (op)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp)<br />[iddo:CountryOfUse](Countryofuse) (dp)<br />[iddo:DefinitionInLanguage](DefinitioninSpracheN) (dp)<br />[iddo:DateOfLastChange](DatumderletztenAenderung) (dp)<br />[iddo:DateOfVersion](DatumderVersion) (dp)<br />[iddo:CountryOfOrigin](Ursprungsland) (dp)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp)<br />
-In range of |[iddo:ListOfReplacingGroupsOfProperties](Listofreplacinggroupsofproperties) (op)<br />[iddo:ParentGroupOfProperties](uebergeordneteMerkmalsgruppe) (op)<br />[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op)<br />[iddo:GivenGroupsOfProperties](GegebeneMerkmalsgruppe) (op)<br />[iddo:GroupsOfProperties](Merkmalsgruppe(n)) (op)<br />[iddo:hasPropertyGroupReference](haspropertygroupreference) (op)<br />
+Restrictions |[iddo:DateOfDeactivation](Dateofdeactivation) (dp) **min** 0<br />[iddo:SubdivisionOfUse](UnterteilungderVerwendung) (dp) **min** 0<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **max** 1<br />[iddo:DateOfLastChange](Dateoflastchange) (dp) **min** 0<br />[iddo:DateOfCreation](Dateofcreation) (dp) **exactly** 1<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **min** 0<br />[iddo:DateOfActivation](Dateofactivation) (dp) **min** 0<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp) **exactly** 1<br />[iddo:ListOfReplacingGroupsOfProperties](ListeersetzenderMerkmalsgruppen) (op) **min** 0 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:ParentGroupOfProperties](Parentgroupofproperties) (op) **min** 0 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op) **min** 0 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:hasDimension](Dimension) (op) **min** 0<br />[iddo:DefinitionInLanguage](DefinitionofinlanguageN) (dp) **min** 1<br />[iddo:Status](Status) (dp) **exactly** 1<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp) **exactly** 1<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **exactly** 1<br />[iddo:NameInLanguage](NameinSpracheN) (dp) **min** 1<br />[iddo:Tolerance](Tolerance) (dp) **min** 0<br />[iddo:VersionNumber](Versionsnummer) (dp) **exactly** 1<br />[iddo:hasExternalDictionaryReference](hasExternalDictionaryReference) (op) **min** 0 [iddo:ExternalDictionaryReference](ExternalDictionaryReference) (c)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp) **exactly** 1<br />[iddo:ParentGroupOfProperties](Parentgroupofproperties) (op) **max** 1 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:VisualRepresentation](Visualrepresentation) (dp) **min** 1<br />[iddo:CountryOfUse](LandderVerwendung) (dp) **min** 1<br />[iddo:DateOfVersion](Dateofversion) (dp) **exactly** 1<br />[iddo:CreatorsLanguage](Creator'slanguage) (dp) **exactly** 1<br />[iddo:CategoryOfGroupOfProperties](KategoriederMerkmalsgruppe) (dp) **exactly** 1<br />
+In domain of |[iddo:SubdivisionOfUse](UnterteilungderVerwendung) (dp)<br />[iddo:CategoryOfGroupOfProperties](KategoriederMerkmalsgruppe) (dp)<br />[iddo:NameInLanguage](NameinSpracheN) (dp)<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp)<br />[iddo:DateOfActivation](Dateofactivation) (dp)<br />[iddo:VisualRepresentation](Visualrepresentation) (dp)<br />[iddo:DateOfVersion](Dateofversion) (dp)<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp)<br />[iddo:DateOfCreation](Dateofcreation) (dp)<br />[iddo:DateOfLastChange](Dateoflastchange) (dp)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp)<br />[iddo:ListOfReplacingGroupsOfProperties](ListeersetzenderMerkmalsgruppen) (op)<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp)<br />[iddo:CountryOfOrigin](Ursprungsland) (dp)<br />[iddo:CreatorsLanguage](Creator'slanguage) (dp)<br />[iddo:DefinitionInLanguage](DefinitionofinlanguageN) (dp)<br />[iddo:ParentGroupOfProperties](Parentgroupofproperties) (op)<br />[iddo:hasExternalDictionaryReference](hasExternalDictionaryReference) (op)<br />[iddo:VersionNumber](Versionsnummer) (dp)<br />[iddo:CountryOfUse](LandderVerwendung) (dp)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp)<br />[iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries](Relationsofthegroupofpropertiesidentifiersintheinterconnecteddatadictionaries) (op)<br />[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op)<br />[iddo:Status](Status) (dp)<br />
+In range of |[iddo:ListOfReplacedGroupsOfProperties](ListeersetzterMerkmalsgruppen) (op)<br />[iddo:ListOfReplacingGroupsOfProperties](ListeersetzenderMerkmalsgruppen) (op)<br />[iddo:GivenGroupsOfProperties](Givengroupofproperties) (op)<br />[iddo:GroupsOfProperties](Group(s)ofproperties) (op)<br />[iddo:ParentGroupOfProperties](Parentgroupofproperties) (op)<br />[iddo:hasPropertyGroupReference](hatMerkmalsgruppenreferenz) (op)<br />
 ### Possible value in language N
 Property | Value
 --- | ---
@@ -193,26 +202,26 @@ Description | <p>Moeglicher Wert fuer das Merkmal und Sprache Werte koennen Stri
 Usage Note | PA039
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[sdo:PropertyValue](https://schema.org/PropertyValue) (c)<br />
 Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />
-In range of |[iddo:ListOfPossibleValuesInLanguageN](ListofpossiblevaluesinlanguageN) (op)<br />
+In range of |[iddo:ListOfPossibleValuesInLanguageN](ListemoeglicherWerteinSpracheN) (op)<br />
 ### Merkmal
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Property`
 Description | <p>Inhaerente oder erworbene Eigenschaft eines Datenelements</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[http://inf.bi.rub.de/ontology/dt#LibraryComponent](http://inf.bi.rub.de/ontology/dt#LibraryComponent) (c)<br />
-Restrictions |[iddo:RevisionNumber](Nummerderueberarbeitung) (dp) **exactly** 1<br />[iddo:CountryOfUse](Countryofuse) (dp) **min** 1<br />[iddo:ParametersOfTheDynamicProperty](ParameterdesdynamischenMerkmals) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:hasExternalDictionaryReference](hatexterneDictionaryReferenz) (op) **min** 0 [iddo:ExternalDictionaryReference](ExternalDictionaryReference) (c)<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:DateOfCreation](Dateofcreation) (dp) **exactly** 1<br />[iddo:ExampleInLanguage](ExampleinlanguageN) (dp) **min** 0<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp) **exactly** 1<br />[iddo:DescriptionInLanguage](DescriptioninlanguageN) (dp) **min** 0<br />[iddo:VisualRepresentation](BildlicheDarstellung) (dp) **min** 0<br />[iddo:ConnectedProperties](Connectedproperties) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:Dimension](Dimension) (dp) **min** 0<br />[iddo:NameOfTheDefiningValues](Namesofthedefiningvalues) (dp) **min** 0<br />[iddo:VersionNumber](Versionnumber) (dp) **exactly** 1<br />[iddo:DefiningValues](Definingvalues) (op) **min** 0 [iddo:DefiningValuesList](ListedefinierenderWerte) (c)<br />[iddo:DigitalFormat](DigitalesFormat) (op) **min** 0 [iddo:DigitalFormatItem](Digitalformatitem) (c)<br />[iddo:Tolerance](Tolerance) (dp) **min** 0<br />[iddo:Units](Einheiten) (op) **min** 0<br />[iddo:ListOfPossibleValuesInLanguageN](ListofpossiblevaluesinlanguageN) (op) **min** 0 [iddo:PossibleValueInLanguageN](PossiblevalueinlanguageN) (c)<br />[iddo:Boundary](Boundaryvalues) (op) **exactly** 1 [iddo:BoundaryValue](Grenzwertliste) (c)<br />[iddo:TextFormat](Textformat) (op) **min** 0 [iddo:TextFormatItem](Textformatitem) (c)<br />[iddo:MethodOfMeasurement](Methodofmeasurement) (dp) **min** 0<br />[iddo:DataType](Datentyp(GUID)) (dp) **exactly** 1<br />[iddo:Status](Status) (dp) **exactly** 1<br />[iddo:Dimension](Dimension) (dp) **max** 1<br />[iddo:GroupsOfProperties](Merkmalsgruppe(n)) (op) **min** 1 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **max** 1<br />[iddo:DateOfActivation](DatumderAktivierung) (dp) **min** 0<br />[iddo:PhysicalQuantity](Physicalquantity) (dp) **min** 1<br />[iddo:DateOfLastChange](DatumderletztenAenderung) (dp) **min** 0<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **max** 1<br />[iddo:NameInLanguage](NameinSpracheN) (dp) **min** 1<br />[iddo:CreatorsLanguage](ErlaeuterungfuerdieAblehnung) (dp) **exactly** 1<br />[iddo:DynamicProperty](DynamischesMerkmal) (dp) **exactly** 1<br />[iddo:DateOfVersion](DatumderVersion) (dp) **exactly** 1<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp) **min** 0<br />[iddo:ListOfPossibleValuesInLanguageN](ListofpossiblevaluesinlanguageN) (op) **min** 0<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **min** 0<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp) **exactly** 1<br />[iddo:DefinitionInLanguage](DefinitioninSpracheN) (dp) **min** 1<br />[iddo:SymbolsOfTheProperty](Symbolsofthepropertyinagivenpropertygroup) (op) **min** 0 [iddo:SymbolOfTheProperty](SymboldesMerkmalsineinergegebenenMerkmalsgruppe) (c)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **min** 0<br />[iddo:SubdivisionOfUse](Subdivisionofuse) (dp) **min** 0<br />
-In domain of |[iddo:DigitalFormat](DigitalesFormat) (op)<br />[iddo:Dimension](Dimension) (dp)<br />[iddo:Units](Einheiten) (op)<br />[iddo:NameInLanguage](NameinSpracheN) (dp)<br />[iddo:DataType](Datentyp(GUID)) (dp)<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op)<br />[iddo:TextFormat](Textformat) (op)<br />[iddo:DefiningValues](Definingvalues) (op)<br />[iddo:VisualRepresentation](BildlicheDarstellung) (dp)<br />[iddo:SubdivisionOfUse](Subdivisionofuse) (dp)<br />[iddo:ExampleInLanguage](ExampleinlanguageN) (dp)<br />[iddo:ListOfPossibleValuesInLanguageN](ListofpossiblevaluesinlanguageN) (op)<br />[iddo:DateOfActivation](DatumderAktivierung) (dp)<br />[iddo:DateOfCreation](Dateofcreation) (dp)<br />[iddo:Tolerance](Tolerance) (dp)<br />[iddo:CreatorsLanguage](ErlaeuterungfuerdieAblehnung) (dp)<br />[iddo:SymbolsOfTheProperty](Symbolsofthepropertyinagivenpropertygroup) (op)<br />[iddo:hasExternalDictionaryReference](hatexterneDictionaryReferenz) (op)<br />[iddo:Status](Status) (dp)<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp)<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp)<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp)<br />[iddo:DescriptionInLanguage](DescriptioninlanguageN) (dp)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp)<br />[iddo:GroupsOfProperties](Merkmalsgruppe(n)) (op)<br />[iddo:ParametersOfTheDynamicProperty](ParameterdesdynamischenMerkmals) (op)<br />[iddo:CountryOfUse](Countryofuse) (dp)<br />[iddo:PhysicalQuantity](Physicalquantity) (dp)<br />[iddo:GivenGroupsOfProperties](GegebeneMerkmalsgruppe) (op)<br />[iddo:DateOfLastChange](DatumderletztenAenderung) (dp)<br />[iddo:Boundary](Boundaryvalues) (op)<br />[iddo:CountryOfOrigin](Ursprungsland) (dp)<br />[iddo:DateOfVersion](DatumderVersion) (dp)<br />[iddo:DefinitionInLanguage](DefinitioninSpracheN) (dp)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp)<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op)<br />[iddo:MethodOfMeasurement](Methodofmeasurement) (dp)<br />[iddo:ConnectedProperties](Connectedproperties) (op)<br />[iddo:VersionNumber](Versionnumber) (dp)<br />
-In range of |[iddo:ParametersOfTheDynamicProperty](ParameterdesdynamischenMerkmals) (op)<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op)<br />[iddo:hasPropertyReference](hasPropertyReference) (op)<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op)<br />[iddo:ConnectedProperties](Connectedproperties) (op)<br />
-### Symbol des Merkmals in einer gegebenen Merkmalsgruppe
+Restrictions |[iddo:ParametersOfTheDynamicProperty](Parametersofthedynamicproperty) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **max** 1<br />[iddo:VisualRepresentation](Visualrepresentation) (dp) **min** 0<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp) **min** 0<br />[iddo:DateOfVersion](Dateofversion) (dp) **exactly** 1<br />[iddo:SubdivisionOfUse](UnterteilungderVerwendung) (dp) **min** 0<br />[iddo:Units](Units) (op) **min** 0<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **min** 0<br />[iddo:GroupsOfProperties](Group(s)ofproperties) (op) **min** 1 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:ExampleInLanguage](ExampleinlanguageN) (dp) **min** 0<br />[iddo:ListOfPossibleValuesInLanguageN](ListemoeglicherWerteinSpracheN) (op) **min** 0<br />[iddo:DigitalFormat](Digitalformat) (op) **min** 0 [iddo:DigitalFormatItem](Digitalformatitem) (c)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp) **max** 1<br />[iddo:ListOfPossibleValuesInLanguageN](ListemoeglicherWerteinSpracheN) (op) **min** 0 [iddo:PossibleValueInLanguageN](PossiblevalueinlanguageN) (c)<br />[iddo:MethodOfMeasurement](Methodofmeasurement) (dp) **min** 0<br />[iddo:SymbolsOfTheProperty](SymboledesMerkmalsineinergegebenenMerk-malsgruppe) (op) **min** 0 [iddo:SymbolOfTheProperty](Symbolofthepropertyinagivenpropertygroup) (c)<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp) **exactly** 1<br />[iddo:Status](Status) (dp) **exactly** 1<br />[iddo:DefinitionInLanguage](DefinitionofinlanguageN) (dp) **min** 1<br />[iddo:CountryOfOrigin](Ursprungsland) (dp) **min** 0<br />[iddo:hasDimension](Dimension) (op) **max** 1 [iddo:Dimension](Dimension1) (c)<br />[iddo:PhysicalQuantity](Physicalquantity) (dp) **min** 1<br />[iddo:hasExternalDictionaryReference](hasExternalDictionaryReference) (op) **min** 0 [iddo:ExternalDictionaryReference](ExternalDictionaryReference) (c)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp) **exactly** 1<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:VersionNumber](Versionsnummer) (dp) **exactly** 1<br />[iddo:CreatorsLanguage](Creator'slanguage) (dp) **exactly** 1<br />[iddo:DescriptionInLanguage](DescriptioninlanguageN) (dp) **min** 0<br />[iddo:hasBoundary](Grenzwerte) (op) **exactly** 1 [iddo:BoundaryValue](Boundaryvalueslist) (c)<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp) **exactly** 1<br />[iddo:DefiningValues](Definingvalues) (op) **min** 0 [iddo:DefiningValuesList](ListedefinierenderWerte) (c)<br />[iddo:NameOfTheDefiningValues](Namesofthedefiningvalues) (dp) **min** 0<br />[iddo:NameInLanguage](NameinSpracheN) (dp) **min** 1<br />[iddo:Tolerance](Tolerance) (dp) **min** 0<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:DateOfCreation](Dateofcreation) (dp) **exactly** 1<br />[iddo:CountryOfUse](LandderVerwendung) (dp) **min** 1<br />[iddo:DateOfLastChange](Dateoflastchange) (dp) **min** 0<br />[iddo:DynamicProperty](DynamischesMerkmal) (dp) **exactly** 1<br />[iddo:hasConnectedProperty](Connectedproperties) (op) **min** 0 [iddo:Property](Merkmal) (c)<br />[iddo:TextFormat](Textformat) (op) **min** 0 [iddo:TextFormatItem](Textformatitem) (c)<br />[iddo:DataType](Datentyp(GUID)) (dp) **exactly** 1<br />[iddo:hasDimension](Dimension) (op) **min** 0 [iddo:Dimension](Dimension1) (c)<br />[iddo:DateOfActivation](Dateofactivation) (dp) **min** 0<br />
+In domain of |[iddo:hasConnectedProperty](Connectedproperties) (op)<br />[iddo:DateOfVersion](Dateofversion) (dp)<br />[iddo:DateOfRevision](DatumderUeberarbeitung) (dp)<br />[iddo:DateOfCreation](Dateofcreation) (dp)<br />[iddo:DateOfLastChange](Dateoflastchange) (dp)<br />[iddo:MethodOfMeasurement](Methodofmeasurement) (dp)<br />[iddo:ParametersOfTheDynamicProperty](Parametersofthedynamicproperty) (op)<br />[iddo:GivenGroupsOfProperties](Givengroupofproperties) (op)<br />[iddo:DeprecationExplanation](Deprecationexplanation) (dp)<br />[iddo:GloballyUniqueIdentifier](GlobaleindeutigerBezeichner(GUID)) (dp)<br />[iddo:CountryOfOrigin](Ursprungsland) (dp)<br />[iddo:ListOfPossibleValuesInLanguageN](ListemoeglicherWerteinSpracheN) (op)<br />[iddo:DefinitionInLanguage](DefinitionofinlanguageN) (dp)<br />[iddo:hasExternalDictionaryReference](hasExternalDictionaryReference) (op)<br />[iddo:Tolerance](Tolerance) (dp)<br />[iddo:CreatorsLanguage](Creator'slanguage) (dp)<br />[iddo:hasDimension](Dimension) (op)<br />[iddo:hasBoundary](Grenzwerte) (op)<br />[iddo:TextFormat](Textformat) (op)<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op)<br />[iddo:DataType](Datentyp(GUID)) (dp)<br />[iddo:DescriptionInLanguage](DescriptioninlanguageN) (dp)<br />[iddo:DigitalFormat](Digitalformat) (op)<br />[iddo:VersionNumber](Versionsnummer) (dp)<br />[iddo:CountryOfUse](LandderVerwendung) (dp)<br />[iddo:RevisionNumber](Nummerderueberarbeitung) (dp)<br />[iddo:PhysicalQuantity](Physicalquantity) (dp)<br />[iddo:DefiningValues](Definingvalues) (op)<br />[iddo:Status](Status) (dp)<br />[iddo:ExampleInLanguage](ExampleinlanguageN) (dp)<br />[iddo:GroupsOfProperties](Group(s)ofproperties) (op)<br />[iddo:SubdivisionOfUse](UnterteilungderVerwendung) (dp)<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op)<br />[iddo:NameInLanguage](NameinSpracheN) (dp)<br />[iddo:DateOfDeactivation](Dateofdeactivation) (dp)<br />[iddo:Units](Units) (op)<br />[iddo:DateOfActivation](Dateofactivation) (dp)<br />[iddo:SymbolsOfTheProperty](SymboledesMerkmalsineinergegebenenMerk-malsgruppe) (op)<br />[iddo:VisualRepresentation](Visualrepresentation) (dp)<br />
+In range of |[iddo:hasPropertyReference](hatMerkmalreferenz) (op)<br />[iddo:hasConnectedProperty](Connectedproperties) (op)<br />[iddo:ParametersOfTheDynamicProperty](Parametersofthedynamicproperty) (op)<br />[iddo:ListOfReplacingProperties](Listofreplacingproperties) (op)<br />[iddo:ListOfReplacedProperties](ListeersetzterMerkmale) (op)<br />
+### Symbol of the property in a given property group
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#SymbolOfTheProperty`
 Description | <p>Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))</p>
 Usage Note | PA022
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[iddo:GivenGroupsOfProperties](GegebeneMerkmalsgruppe) (op) **exactly** 1 [iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Symbol](Symbol) (dp) **exactly** 1<br />
+Restrictions |[iddo:Symbol](Symbol) (dp) **exactly** 1<br />[iddo:GivenGroupsOfProperties](Givengroupofproperties) (op) **exactly** 1 [iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 In domain of |[iddo:Symbol](Symbol) (dp)<br />
-In range of |[iddo:SymbolsOfTheProperty](Symbolsofthepropertyinagivenpropertygroup) (op)<br />
+In range of |[iddo:SymbolsOfTheProperty](SymboledesMerkmalsineinergegebenenMerk-malsgruppe) (op)<br />
 ### Text format item
 Property | Value
 --- | ---
@@ -221,100 +230,71 @@ Description | <p>Pair for text type (encoding, number of characters) The encodin
 Usage Note | PA038
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
 Restrictions |[iddo:Encoding](Encoding) (dp) **exactly** 1<br />[iddo:NumberOfCharacters](NumberofCharacters) (dp) **exactly** 1<br />
-In domain of |[iddo:Encoding](Encoding) (dp)<br />[iddo:NumberOfCharacters](NumberofCharacters) (dp)<br />
+In domain of |[iddo:NumberOfCharacters](NumberofCharacters) (dp)<br />[iddo:Encoding](Encoding) (dp)<br />
 In range of |[iddo:TextFormat](Textformat) (op)<br />
 
 ## Object Properties
-[Boundary values](#Boundaryvalues),
-[Boundary value](#Boundaryvalue),
-[Connected properties](#Connectedproperties),
-[Defining value](#Definingvalue),
+[Definierender Wert](#DefinierenderWert),
 [Defining values](#Definingvalues),
-[Digitales Format](#DigitalesFormat),
-[Gegebene Merkmalsgruppe](#GegebeneMerkmalsgruppe),
-[Merkmalsgruppe(n)](#Merkmalsgruppe(n)),
-[List of possible values in language N](#ListofpossiblevaluesinlanguageN),
+[Digital format](#Digitalformat),
+[Given group of properties](#Givengroupofproperties),
+[Group(s) of properties](#Group(s)ofproperties),
+[Liste moeglicher Werte in Sprache N](#ListemoeglicherWerteinSpracheN),
 [Liste ersetzter Merkmalsgruppen](#ListeersetzterMerkmalsgruppen),
 [Liste ersetzter Merkmale](#ListeersetzterMerkmale),
-[List of replacing groups of properties](#Listofreplacinggroupsofproperties),
+[Liste ersetzender Merkmalsgruppen](#ListeersetzenderMerkmalsgruppen),
 [List of replacing properties](#Listofreplacingproperties),
-[Parameter des dynamischen Merkmals](#ParameterdesdynamischenMerkmals),
-[uebergeordnete Merkmalsgruppe](#uebergeordneteMerkmalsgruppe),
-[Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen](#BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen),
-[Symbols of the property in a given property group](#Symbolsofthepropertyinagivenpropertygroup),
-[Textformat](#Textformat),
-[Unit](#Unit),
-[Einheiten](#Einheiten),
-[hat den Verweis auf ein Referenzdokument](#hatdenVerweisaufeinReferenzdokument),
+[Parameters of the dynamic property](#Parametersofthedynamicproperty),
+[Parent group of properties](#Parentgroupofproperties),
+[Relations of the group of properties identifiers in the interconnected data dictionaries](#Relationsofthegroupofpropertiesidentifiersintheinterconnecteddatadictionaries),
+[Symbole des Merkmals in einer gegebenen Merk-malsgruppe](#SymboledesMerkmalsineinergegebenenMerk-malsgruppe),
+[Text format](#Textformat),
+[Einheit](#Einheit),
+[Units](#Units),
+[Grenzwerte](#Grenzwerte),
+[Boundary value](#Boundaryvalue),
+[Connected properties](#Connectedproperties),
+[has relation to a reference document](#hasrelationtoareferencedocument),
 [hat Teilmenge eines Katalogs](#hatTeilmengeeinesKatalogs),
+[Dimension](#Dimension),
 [has external dictionary](#hasexternaldictionary),
 [has external dictionary property](#hasexternaldictionaryproperty),
-[hat externe Dictionary Referenz](#hatexterneDictionaryReferenz),
-[has property](#hasproperty),
-[has property group reference](#haspropertygroupreference),
-[has Property Reference](#hasPropertyReference),
-[](Boundaryvalues)
-### Boundary values
-Property | Value
---- | ---
-IRI | `https://w3id.org/iddo/v2#Boundary`
-Description | Pair (list of boundary intervals of possible values for the property, unit)
-Usage Note | PA040
-Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[iddo:BoundaryValue](Grenzwertliste) (c)<br />
-[](Boundaryvalue)
-### Boundary value
-Property | Value
---- | ---
-IRI | `https://w3id.org/iddo/v2#BoundaryLimit`
-Description | Einzelnes Grenzwertintervall
-Usage Note | PA040
-Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:BoundaryValue](Grenzwertliste) (c)<br />
-Range(s) |[iddo:BoundaryLimitMin](UntererGrenzwert) (c)<br />
-[](Connectedproperties)
-### Connected properties
-Property | Value
---- | ---
-IRI | `https://w3id.org/iddo/v2#ConnectedProperties`
-Description | List of the globally unique identifier of the connected properties (attribute PA001); the value of one property is related to the values of the other ones. For example, a sound absorption coefficient is given for a specific frequency, in this case sound absorption and frequency are connected properties
-Usage Note | PA020
-Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[iddo:Property](Merkmal) (c)<br />
-[](Definingvalue)
-### Defining value
+[has External Dictionary Reference](#hasExternalDictionaryReference),
+[hat Merkmal](#hatMerkmal),
+[hat Merkmalsgruppenreferenz](#hatMerkmalsgruppenreferenz),
+[hat Merkmalreferenz](#hatMerkmalreferenz),
+[](DefinierenderWert)
+### Definierender Wert
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DefiningValue`
-Description | Contains a defining value of an array
+Description | Enthaelt einen definierenden Wert eines Arrays
 Usage Note | PA035
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:DefiningValuesList](ListedefinierenderWerte) (c)<br />
-Range(s) |[iddo:DefiningValueItem](Definingvalueitem) (c)<br />
+Range(s) |[iddo:DefiningValueItem](DefinierenderWert-Item) (c)<br />
 [](Definingvalues)
 ### Defining values
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DefiningValues`
-Description | In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030
+Description | Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben
 Usage Note | PA035
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:DefiningValuesList](ListedefinierenderWerte) (c)<br />
-[](DigitalesFormat)
-### Digitales Format
+[](Digitalformat)
+### Digital format
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DigitalFormat`
-Description | Paar fuer den digitalen Texttyp (Praezision, Masseinheit) Praezision ist die Anzahl signifikanter Stellen
+Description | Pair for digital text type (precision, unit) Precision is the number of significant digits
 Usage Note | PA037
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:DigitalFormatItem](Digitalformatitem) (c)<br />
-[](GegebeneMerkmalsgruppe)
-### Gegebene Merkmalsgruppe
+[](Givengroupofproperties)
+### Given group of properties
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#GivenGroupsOfProperties`
@@ -322,9 +302,9 @@ Description | Global eindeutiger Bezeichner einer Merkmalsgruppe (Attribut GA001
 Usage Note | PA022
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](Merkmalsgruppe(n))
-### Merkmalsgruppe(n)
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+[](Group(s)ofproperties)
+### Group(s) of properties
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#GroupsOfProperties`
@@ -332,9 +312,9 @@ Description | List of globally unique identifiers of groups of properties (attri
 Usage Note | PA021
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](ListofpossiblevaluesinlanguageN)
-### List of possible values in language N
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+[](ListemoeglicherWerteinSpracheN)
+### Liste moeglicher Werte in Sprache N
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ListOfPossibleValuesInLanguageN`
@@ -348,11 +328,11 @@ Range(s) |[iddo:PossibleValueInLanguageN](PossiblevalueinlanguageN) (c)<br />
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ListOfReplacedGroupsOfProperties`
-Description | List of globally unique identifiers of the replaced groups of properties
+Description | Liste von globalen Bezeichnern fuer die ersetzten Merk-malsgruppen
 Usage Note | GA011
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 [](ListeersetzterMerkmale)
 ### Liste ersetzter Merkmale
 Property | Value
@@ -363,16 +343,16 @@ Usage Note | PA011
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:Property](Merkmal) (c)<br />
-[](Listofreplacinggroupsofproperties)
-### List of replacing groups of properties
+[](ListeersetzenderMerkmalsgruppen)
+### Liste ersetzender Merkmalsgruppen
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ListOfReplacingGroupsOfProperties`
 Description | List of globally unique identifiers of the replacing groups of properties
 Usage Note | GA012
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 [](Listofreplacingproperties)
 ### List of replacing properties
 Property | Value
@@ -383,37 +363,37 @@ Usage Note | PA012
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:Property](Merkmal) (c)<br />
-[](ParameterdesdynamischenMerkmals)
-### Parameter des dynamischen Merkmals
+[](Parametersofthedynamicproperty)
+### Parameters of the dynamic property
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ParametersOfTheDynamicProperty`
-Description | List of GUIDS of properties which are parameters of the function for a dynamic property
+Description | Liste von GUIDs von Merkmalen, welche Parameter der Funktion fuer ein dynamisches Merkmal sind
 Usage Note | PA032
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:Property](Merkmal) (c)<br />
-[](uebergeordneteMerkmalsgruppe)
-### uebergeordnete Merkmalsgruppe
+[](Parentgroupofproperties)
+### Parent group of properties
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#ParentGroupOfProperties`
-Description | Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001) Any property attached to a group is inherited by the sub-group(s)
+Description | Ermoeglicht die Ver-knuepfung einer Unter-gruppe mit einer ueber-geordneten Gruppe ueber ihre global ein-deutigen Bezeichner (Attribut GA001) jedes einer Gruppe zugehoerige Merkmal wird von der/den Untergruppe(n) uebernommen
 Usage Note | GA023
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen)
-### Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+[](Relationsofthegroupofpropertiesidentifiersintheinterconnecteddatadictionaries)
+### Relations of the group of properties identifiers in the interconnected data dictionaries
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries`
 Description | List of pairs (group of properties internal identifier, corresponding data dictionary identifier) This attribute should be used for compatibility between already existing groups of properties
 Usage Note | GA014
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](Symbolsofthepropertyinagivenpropertygroup)
-### Symbols of the property in a given property group
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+[](SymboledesMerkmalsineinergegebenenMerk-malsgruppe)
+### Symbole des Merkmals in einer gegebenen Merk-malsgruppe
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#SymbolsOfTheProperty`
@@ -421,9 +401,9 @@ Description | List of pairs (symbol of the property, globally unique identifier 
 Usage Note | PA022
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[iddo:SymbolOfTheProperty](SymboldesMerkmalsineinergegebenenMerkmalsgruppe) (c)<br />
+Range(s) |[iddo:SymbolOfTheProperty](Symbolofthepropertyinagivenpropertygroup) (c)<br />
 [](Textformat)
-### Textformat
+### Text format
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#TextFormat`
@@ -432,34 +412,64 @@ Usage Note | PA038
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:TextFormatItem](Textformatitem) (c)<br />
-[](Unit)
-### Unit
+[](Einheit)
+### Einheit
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Unit`
-Description | Masseinheit fuer den digitalen Texttyp
+Description | Unit of measurement for the digital text type
 Usage Note | PA037
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[iddo:DigitalFormatItem](Digitalformatitem) (c)<br />
 Range(s) |[http://qudt.org/schema/qudt/Unit](http://qudt.org/schema/qudt/Unit) (c)<br />
-[](Einheiten)
-### Einheiten
+[](Units)
+### Units
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Units`
-Description | Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird
+Description | A unit to represent a scale that enables a value to be measured It is possible to use this attribute to explain there is no unit attached to the property by using unitless
 Usage Note | PA033
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:BoundaryLimitMin](UntererGrenzwert) (c)<br />[iddo:Property](Merkmal) (c)<br />[iddo:BoundaryLimitMax](ObererGrenzwert) (c)<br />
+Domain(s) |[iddo:BoundaryLimitMin](MinimumBoundaryLimit) (c)<br />[iddo:BoundaryLimitMax](MaximumBoundaryLimit) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[http://qudt.org/schema/qudt/Unit](http://qudt.org/schema/qudt/Unit) (c)<br />
-[](hatdenVerweisaufeinReferenzdokument)
-### hat den Verweis auf ein Referenzdokument
+[](Grenzwerte)
+### Grenzwerte
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasBoundary`
+Description | Pair (list of boundary intervals of possible values for the property, unit)
+Usage Note | PA040
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />
+Range(s) |[iddo:BoundaryValue](Boundaryvalueslist) (c)<br />
+[](Boundaryvalue)
+### Boundary value
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasBoundaryLimit`
+Description | Einzelnes Grenzwertintervall
+Usage Note | PA040
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[iddo:BoundaryValue](Boundaryvalueslist) (c)<br />
+Range(s) |[iddo:BoundaryLimitMin](MinimumBoundaryLimit) (c)<br />
+[](Connectedproperties)
+### Connected properties
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasConnectedProperty`
+Description | Liste der global eindeutigen Bezeichner der verbundenen Merkmale (Attribut PA001); der Wert eines Merkmals steht zu den Werten der anderen in einer Beziehung. Beispielsweise ist ein Schallabsorptionsgrad fuer eine bestimmte Frequenz gegeben, in diesem Fall sind Schallabsorp-tionsgrad und Frequenz ver-bundene Merkmale.
+Usage Note | PA020
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />
+Range(s) |[iddo:Property](Merkmal) (c)<br />
+[](hasrelationtoareferencedocument)
+### has relation to a reference document
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasDictionaryReferenceDocument`
 Super-properties |[dcat:distribution](http://www.w3.org/ns/dcat#distribution)<br />
 Domain(s) |[iddo:DictionarySubset](Dictionarysubset) (c)<br />
-Range(s) |[iddo:DictionaryReferenceDocument](Referenzdokument) (c)<br />
+Range(s) |[iddo:DictionaryReferenceDocument](Referencedocument) (c)<br />
 [](hatTeilmengeeinesKatalogs)
 ### hat Teilmenge eines Katalogs
 Property | Value
@@ -468,6 +478,16 @@ IRI | `https://w3id.org/iddo/v2#hasDictionarySubset`
 Super-properties |[dcat:dataset](http://www.w3.org/ns/dcat#dataset)<br />
 Domain(s) |[iddo:Dictionary](Datadictionary) (c)<br />
 Range(s) |[iddo:DictionarySubset](Dictionarysubset) (c)<br />
+[](Dimension)
+### Dimension
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasDimension`
+Description | In case of a physical quantity, dimension according to ISO 80000 (all parts) This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each
+Usage Note | PA028
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />
+Range(s) |[iddo:Dimension](Dimension1) (c)<br />
 [](hasexternaldictionary)
 ### has external dictionary
 Property | Value
@@ -480,35 +500,35 @@ Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasExternalDictionaryProperty`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-[](hatexterneDictionaryReferenz)
-### hat externe Dictionary Referenz
+[](hasExternalDictionaryReference)
+### has External Dictionary Reference
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasExternalDictionaryReference`
 Description | Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner) dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden
 Usage Note | PA014
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[iddo:ExternalDictionaryReference](ExternalDictionaryReference) (c)<br />
-[](hasproperty)
-### has property
+[](hatMerkmal)
+### hat Merkmal
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasProperty`
 Description | Fuegt ein Merkmal zu einem Feature of Interest (FOI) hinzu
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Range(s) |[iddo:AssignedProperty](Assignedproperty) (c)<br />
-[](haspropertygroupreference)
-### has property group reference
+[](hatMerkmalsgruppenreferenz)
+### hat Merkmalsgruppenreferenz
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasPropertyGroupReference`
-Description | Attaches a property group reference to a iddo:ReferenceDocument
-Super-properties |[dcat:distribution](http://www.w3.org/ns/dcat#distribution)<br />[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
+Description | Fuegt eine Merkmalsgruppe (oberstes in der Hierarchie) zu einer iddo:ReferenceDocument hinzu
+Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />[dcat:distribution](http://www.w3.org/ns/dcat#distribution)<br />
 Domain(s) |[iddo:ReferenceDocument](https://w3id.org/iddo/v2#ReferenceDocument) (c)<br />
-Range(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](hasPropertyReference)
-### has Property Reference
+Range(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
+[](hatMerkmalreferenz)
+### hat Merkmalreferenz
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#hasPropertyReference`
@@ -520,19 +540,18 @@ Range(s) |[iddo:Property](Merkmal) (c)<br />
 ## Datatype Properties
 [Kategorie der Merkmalsgruppe](#KategoriederMerkmalsgruppe),
 [Ursprungsland](#Ursprungsland),
-[Country of use](#Countryofuse),
-[Erlaeuterung fuer die Ablehnung](#ErlaeuterungfuerdieAblehnung),
+[Land der Verwendung](#LandderVerwendung),
+[Creator's language](#Creator'slanguage),
 [Datentyp (GUID)](#Datentyp(GUID)),
-[Datum der Aktivierung](#DatumderAktivierung),
+[Date of activation](#Dateofactivation),
 [Date of creation](#Dateofcreation),
 [Date of deactivation](#Dateofdeactivation),
-[Datum der letzten Aenderung](#DatumderletztenAenderung),
+[Date of last change](#Dateoflastchange),
 [Datum der Ueberarbeitung](#DatumderUeberarbeitung),
-[Datum der Version](#DatumderVersion),
-[Definition in Sprache N](#DefinitioninSpracheN),
+[Date of version](#Dateofversion),
+[Definition of in language N](#DefinitionofinlanguageN),
 [Deprecation explanation](#Deprecationexplanation),
 [Description in language N](#DescriptioninlanguageN),
-[Dimension](#Dimension),
 [Dynamisches Merkmal](#DynamischesMerkmal),
 [Encoding](#Encoding),
 [Example in language N](#ExampleinlanguageN),
@@ -545,11 +564,18 @@ Range(s) |[iddo:Property](Merkmal) (c)<br />
 [Toleranz](#Toleranz),
 [Nummer der ueberarbeitung](#Nummerderueberarbeitung),
 [Status](#Status),
-[Subdivision of use](#Subdivisionofuse),
+[Unterteilung der Verwendung](#UnterteilungderVerwendung),
 [Symbol](#Symbol),
-[Tolerance](#Tolerance),
-[Version number](#Versionnumber),
-[Bildliche Darstellung](#BildlicheDarstellung),
+[Toleranz](#Tolerance),
+[Versionsnummer](#Versionsnummer),
+[Visual representation](#Visualrepresentation),
+[has I](#hasI),
+[has J](#hasJ),
+[has L](#hasL),
+[has M](#hasM),
+[has N](#hasN),
+[has T](#hasT),
+[has Theta](#hasTheta),
 [](KategoriederMerkmalsgruppe)
 ### Kategorie der Merkmalsgruppe
 Property | Value
@@ -557,58 +583,58 @@ Property | Value
 IRI | `https://w3id.org/iddo/v2#CategoryOfGroupOfProperties`
 Description | Specifies the category of the created property group
 Usage Note | GA022
-Example | ````Domain`<br />```
+Example | ````Composed property`<br />```
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 [](Ursprungsland)
 ### Ursprungsland
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#CountryOfOrigin`
-Description | Country from where the requirement for this property/group of properties originated
+Description | Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt
 Usage Note | PA026/GA021
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
-[](Countryofuse)
-### Country of use
+[](LandderVerwendung)
+### Land der Verwendung
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#CountryOfUse`
-Description | Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in
+Description | Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist
 Usage Note | PA024/GA019
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
-[](ErlaeuterungfuerdieAblehnung)
-### Erlaeuterung fuer die Ablehnung
+[](Creator'slanguage)
+### Creator's language
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#CreatorsLanguage`
 Description | Satz, der den Grund fuer die Ab-lehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal entsprechen; diese Er-laeuterung muss in internatio-nalem Englisch (EN) geschrieben werden
 Usage Note | PA015/GA015
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 [](Datentyp(GUID))
 ### Datentyp (GUID)
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DataType`
-Description | Format fuer die Angabe des Wertes des Merkmals dies kann aus einer Soft-ware-Perspektive als Speiche-rungsart verstanden werden im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Er-gebnisses der Berechnung mit der Gleichung
+Description | Format for expressing the value of the property This can be understood as the storage type from a software perspective In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula
 Usage Note | PA030
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
-[](DatumderAktivierung)
-### Datum der Aktivierung
+[](Dateofactivation)
+### Date of activation
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DateOfActivation`
-Description | Date after when the property can be used
+Description | Datum, nach dem das Merkmal verwendet werden kann
 Usage Note | PA04/GA04
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
 [](Dateofcreation)
 ### Date of creation
@@ -618,27 +644,27 @@ IRI | `https://w3id.org/iddo/v2#DateOfCreation`
 Description | Datum der Validierung der An-frage zur Erstellung des Merkmals durch Sachverstaendige
 Usage Note | PA003/GA003
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
 [](Dateofdeactivation)
 ### Date of deactivation
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DateOfDeactivation`
-Description | Datum der Deaktivierung
+Description | Date of deactivation
 Usage Note | PA008/GA008
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
-[](DatumderletztenAenderung)
-### Datum der letzten Aenderung
+[](Dateoflastchange)
+### Date of last change
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DateOfLastChange`
-Description | Datum der Validierung der letzten Aenderungsanfrage durch Sachverstaendige
+Description | Date of validation of the last change request by experts
 Usage Note | PA005/GA005
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
 [](DatumderUeberarbeitung)
 ### Datum der Ueberarbeitung
@@ -648,37 +674,37 @@ IRI | `https://w3id.org/iddo/v2#DateOfRevision`
 Description | Datum der Ueberarbeitung
 Usage Note | PA006/GA006
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
-[](DatumderVersion)
-### Datum der Version
+[](Dateofversion)
+### Date of version
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DateOfVersion`
 Description | Date of version
 Usage Note | PA007/GA007
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 Range(s) |[xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) (c)<br />
-[](DefinitioninSpracheN)
-### Definition in Sprache N
+[](DefinitionofinlanguageN)
+### Definition of in language N
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DefinitionInLanguage`
-Description | Liste von Paaren (Definition des Merkmals/der Merkmalsgruppe, Sprache)
+Description | List of pairs (definition of the property/group of properties, language)
 Usage Note | PA016/GA016
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString) (c)<br />
 [](Deprecationexplanation)
 ### Deprecation explanation
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DeprecationExplanation`
-Description | Satz, der den Grund fuer die Ablehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal/der neuen Merkmalsgruppe entsprechen; diese Erlaeuterung muss in internationalem Englisch (EN) geschrieben werden
+Description | Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property/group of properties; this explanation has to be written in international English (EN)
 Usage Note | PA013/GA013
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString) (c)<br />
 [](DescriptioninlanguageN)
 ### Description in language N
@@ -690,22 +716,12 @@ Usage Note | PA019
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString) (c)<br />
-[](Dimension)
-### Dimension
-Property | Value
---- | ---
-IRI | `https://w3id.org/iddo/v2#Dimension`
-Description | In case of a physical quantity, dimension according to ISO 80000 (all parts) This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each
-Usage Note | PA028
-Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />
-Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 [](DynamischesMerkmal)
 ### Dynamisches Merkmal
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#DynamicProperty`
-Description | If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032
+Description | Wenn es sich um ein dynamisches Merkmal handelt, haengt der Wert von den im Attribut PA032 bereitgestellten Parametern ab
 Usage Note | PA031
 Example | ````yes`<br />```
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
@@ -714,7 +730,7 @@ Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataPro
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Encoding`
-Description | Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt
+Description | The encoding is set according to Name of encoding standard of IANA, RFC 2978
 Usage Note | PA038
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[iddo:TextFormatItem](Textformatitem) (c)<br />
@@ -734,10 +750,10 @@ Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#GloballyUniqueIdentifier`
-Description | Unique identifier generated using the algorithm denoted in RFC 4122
+Description | Eindeutiger Bezeichner, der mit dem in RFC 4122 beschriebenen Algorithmus erzeugt wird
 Usage Note | PA001/GA001
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 [](Methodofmeasurement)
 ### Method of measurement
@@ -757,7 +773,7 @@ IRI | `https://w3id.org/iddo/v2#NameInLanguage`
 Description | List of pairs (property name and language) This attribute can be used to add synonyms for different domains
 Usage Note | PA016/GA016
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString) (c)<br />
 [](Namesofthedefiningvalues)
 ### Names of the defining values
@@ -773,7 +789,7 @@ Range(s) |[rdf:langString](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#NumberOfCharacters`
-Description | Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt
+Description | The encoding is set according to Name of encoding standard of IANA, RFC 2978
 Usage Note | PA038
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[iddo:TextFormatItem](Textformatitem) (c)<br />
@@ -806,7 +822,7 @@ IRI | `https://w3id.org/iddo/v2#RevisionNumber`
 Description | Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1. Sachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist.
 Usage Note | PA010/GA010
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
 [](Status)
 ### Status
@@ -815,18 +831,18 @@ Property | Value
 IRI | `https://w3id.org/iddo/v2#Status`
 Description | Status of the property during its life cycle
 Usage Note | PA002/GA002
-Example | ````inactive`<br />```
+Example | ````active`<br />```
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
-[](Subdivisionofuse)
-### Subdivision of use
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
+[](UnterteilungderVerwendung)
+### Unterteilung der Verwendung
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#SubdivisionOfUse`
 Description | Documented geographical region of use of the group of properties
 Usage Note | PA025/GA020
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 [](Symbol)
 ### Symbol
@@ -835,38 +851,87 @@ Property | Value
 IRI | `https://w3id.org/iddo/v2#Symbol`
 Usage Note | PA022
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:SymbolOfTheProperty](SymboldesMerkmalsineinergegebenenMerkmalsgruppe) (c)<br />
+Domain(s) |[iddo:SymbolOfTheProperty](Symbolofthepropertyinagivenpropertygroup) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
 [](Tolerance)
-### Tolerance
+### Toleranz
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#Tolerance`
-Description | Fuer numerische Werte; der Gesamtbetrag, um den eine be-stimmte Einheit schwanken darf; sie ist die Differenz zwischen dem Hoechstwert und dem Mindestwert fuer die Einheit
+Description | For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit
 Usage Note | PA036
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
 Domain(s) |[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal) (c)<br />
-[](Versionnumber)
-### Version number
+[](Versionsnummer)
+### Versionsnummer
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#VersionNumber`
-Description | This version number allows tracking of major changes. Experts decide if a new version number must be applied
+Description | Diese Versionsnummer ermoeglicht die Verfolgung groesserer aenderungen. Sachverstaendige entscheiden, ob eine neue Ver-sionsnummer angewendet werden muss.
 Usage Note | PA009/GA009
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:GroupOfProperties](Groupofproperties) (c)<br />[iddo:Property](Merkmal) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
-[](BildlicheDarstellung)
-### Bildliche Darstellung
+[](Visualrepresentation)
+### Visual representation
 Property | Value
 --- | ---
 IRI | `https://w3id.org/iddo/v2#VisualRepresentation`
 Description | Visual representation of the group of properties through sketches, photos, videos or other multimedia objects
 Usage Note | PA023/GA018
 Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
-Domain(s) |[iddo:Property](Merkmal) (c)<br />[iddo:GroupOfProperties](Groupofproperties) (c)<br />
+Domain(s) |[iddo:GroupOfProperties](Merkmalsgruppe) (c)<br />[iddo:Property](Merkmal) (c)<br />
 Range(s) |[xsd:string](http://www.w3.org/2001/XMLSchema#string) (c)<br />
+[](hasI)
+### has I
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasI`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasJ)
+### has J
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasJ`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasL)
+### has L
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasL`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasM)
+### has M
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasM`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasN)
+### has N
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasN`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasT)
+### has T
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasT`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
+[](hasTheta)
+### has Theta
+Property | Value
+--- | ---
+IRI | `https://w3id.org/iddo/v2#hasTheta`
+Super-properties |[owl:topDataProperty](http://www.w3.org/2002/07/owl#topDataProperty)<br />
+Range(s) |[xsd:integer](http://www.w3.org/2001/XMLSchema#integer) (c)<br />
 
 ## Annotation Properties
 [accessURL](#accessURL),

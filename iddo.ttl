@@ -110,32 +110,6 @@ iddo:AssignedProperty
       owl:onProperty <http://www.w3id.org/opm#hasPropertyState> ;
     ] ;
 .
-iddo:Boundary
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)"@de-DE ;
-  rdfs:comment "Pair (list of boundary intervals of possible values for the property, unit)" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Boundary values" ;
-  rdfs:label "Grenzwerte"@de-DE ;
-  rdfs:range iddo:BoundaryValue ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA040" ;
-  iddo:code "PA040" ;
-  iddo:code "PA040"@de-DE ;
-.
-iddo:BoundaryLimit
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Einzelnes Grenzwertintervall"@de-DE ;
-  rdfs:comment "Single Boundary value interval" ;
-  rdfs:domain iddo:BoundaryValue ;
-  rdfs:label "Boundary value" ;
-  rdfs:label "Grenzwert"@de-DE ;
-  rdfs:range iddo:BoundaryLimitMin ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA040" ;
-  iddo:code "PA040" ;
-  iddo:code "PA040"@de-DE ;
-.
 iddo:BoundaryLimitMax
   rdf:type rdfs:Class ;
   rdfs:comment "Boundary limit  interval consisting of the the upper (maxValue) interval boundary" ;
@@ -191,13 +165,13 @@ iddo:BoundaryValue
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass iddo:BoundaryLimitMax ;
-      owl:onProperty iddo:BoundaryLimit ;
+      owl:onProperty iddo:hasBoundaryLimit ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass iddo:BoundaryLimitMin ;
-      owl:onProperty iddo:BoundaryLimit ;
+      owl:onProperty iddo:hasBoundaryLimit ;
     ] ;
   skos:scopeNote "PA040" ;
   iddo:code "PA040" ;
@@ -229,19 +203,6 @@ iddo:CategoryOfGroupOfProperties
   skos:scopeNote "GA022" ;
   iddo:code "GA022" ;
   iddo:code "GA022"@de-DE ;
-.
-iddo:ConnectedProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of the globally unique identifier of the connected properties (attribute PA001); the value of one property is related to the values of the other ones. For example, a sound absorption coefficient is given for a specific frequency, in this case sound absorption and frequency are connected properties" ;
-  rdfs:comment "Liste der global eindeutigen Bezeichner der verbundenen Merkmale (Attribut PA001); der Wert eines Merkmals steht zu den Werten der anderen in einer Beziehung. Beispielsweise ist ein Schallabsorptionsgrad fuer eine bestimmte Frequenz gegeben, in diesem Fall sind Schallabsorp-tionsgrad und Frequenz ver-bundene Merkmale."@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Connected properties" ;
-  rdfs:label "Verbundene Merkmale"@de-DE ;
-  rdfs:range iddo:Property ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA020" ;
-  iddo:code "PA020" ;
-  iddo:code "PA020"@de-DE ;
 .
 iddo:CountryOfOrigin
   rdf:type owl:DatatypeProperty ;
@@ -611,19 +572,56 @@ Precision is the number of significant digits""" ;
   iddo:code "PA037"@de-DE ;
 .
 iddo:Dimension
-  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:Class ;
   rdfs:comment """Im Falle einer physikalischen Groesse, Dimension nach ISO 80000 (alle Teile)
 dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle physikalischen Groessen von 7 Basisgroessen abgeleitet sind, wird es durch Angabe der Basisdimensionen mit zugehoeriger Potenz (als rationale Zahl) in der folgenden Reihenfolge und mit jeweils einem Leerzeichen dazwischen angegeben"""@de-DE ;
   rdfs:comment """In case of a physical quantity, dimension according to ISO 80000 (all parts)
 This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each""" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Dimension" ;
-  rdfs:label "Dimension"@de-DE ;
-  rdfs:range xsd:string ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-  skos:scopeNote "PA028" ;
-  iddo:code "PA028" ;
-  iddo:code "PA028"@de-DE ;
+  rdfs:label "Dimension"@de ;
+  rdfs:label "Dimension"@en ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasI ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasJ ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasL ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasM ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasN ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasT ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty iddo:hasTheta ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
 .
 iddo:DynamicProperty
   rdf:type owl:DatatypeProperty ;
@@ -791,13 +789,13 @@ iddo:GroupOfProperties
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:Dimension ;
+      owl:onProperty iddo:SubdivisionOfUse ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:SubdivisionOfUse ;
+      owl:onProperty iddo:hasDimension ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1148,9 +1146,9 @@ iddo:Property
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality 1 ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:Dimension ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass iddo:Dimension ;
+      owl:onProperty iddo:hasDimension ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1180,12 +1178,6 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
-      owl:onProperty iddo:ConnectedProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:Property ;
       owl:onProperty iddo:ListOfReplacedProperties ;
     ] ;
   rdfs:subClassOf [
@@ -1199,6 +1191,12 @@ iddo:Property
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:ParametersOfTheDynamicProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:Property ;
+      owl:onProperty iddo:hasConnectedProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1258,12 +1256,6 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:Dimension ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onDataRange xsd:string ;
       owl:onProperty iddo:ExampleInLanguage ;
     ] ;
   rdfs:subClassOf [
@@ -1304,6 +1296,12 @@ iddo:Property
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass iddo:Dimension ;
+      owl:onProperty iddo:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 1 ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:GroupsOfProperties ;
@@ -1335,7 +1333,7 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onClass iddo:BoundaryValue ;
-      owl:onProperty iddo:Boundary ;
+      owl:onProperty iddo:hasBoundary ;
       owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
@@ -1641,6 +1639,45 @@ iddo:code
   rdfs:label "Code"@de-DE ;
   rdfs:range rdfs:Literal ;
 .
+iddo:hasBoundary
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)"@de-DE ;
+  rdfs:comment "Pair (list of boundary intervals of possible values for the property, unit)" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Boundary values" ;
+  rdfs:label "Grenzwerte"@de-DE ;
+  rdfs:range iddo:BoundaryValue ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA040" ;
+  iddo:code "PA040" ;
+  iddo:code "PA040"@de-DE ;
+.
+iddo:hasBoundaryLimit
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Einzelnes Grenzwertintervall"@de-DE ;
+  rdfs:comment "Single Boundary value interval" ;
+  rdfs:domain iddo:BoundaryValue ;
+  rdfs:label "Boundary value" ;
+  rdfs:label "Grenzwert"@de-DE ;
+  rdfs:range iddo:BoundaryLimitMin ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA040" ;
+  iddo:code "PA040" ;
+  iddo:code "PA040"@de-DE ;
+.
+iddo:hasConnectedProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of the globally unique identifier of the connected properties (attribute PA001); the value of one property is related to the values of the other ones. For example, a sound absorption coefficient is given for a specific frequency, in this case sound absorption and frequency are connected properties" ;
+  rdfs:comment "Liste der global eindeutigen Bezeichner der verbundenen Merkmale (Attribut PA001); der Wert eines Merkmals steht zu den Werten der anderen in einer Beziehung. Beispielsweise ist ein Schallabsorptionsgrad fuer eine bestimmte Frequenz gegeben, in diesem Fall sind Schallabsorp-tionsgrad und Frequenz ver-bundene Merkmale."@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Connected properties" ;
+  rdfs:label "Verbundene Merkmale"@de-DE ;
+  rdfs:range iddo:Property ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA020" ;
+  iddo:code "PA020" ;
+  iddo:code "PA020"@de-DE ;
+.
 iddo:hasDictionaryReferenceDocument
   rdf:type owl:ObjectProperty ;
   rdfs:domain iddo:DictionarySubset ;
@@ -1656,6 +1693,21 @@ iddo:hasDictionarySubset
   rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
   rdfs:range iddo:DictionarySubset ;
   rdfs:subPropertyOf dcat:dataset ;
+.
+iddo:hasDimension
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """Im Falle einer physikalischen Groesse, Dimension nach ISO 80000 (alle Teile)
+dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle physikalischen Groessen von 7 Basisgroessen abgeleitet sind, wird es durch Angabe der Basisdimensionen mit zugehoeriger Potenz (als rationale Zahl) in der folgenden Reihenfolge und mit jeweils einem Leerzeichen dazwischen angegeben"""@de-DE ;
+  rdfs:comment """In case of a physical quantity, dimension according to ISO 80000 (all parts)
+This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each""" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Dimension" ;
+  rdfs:label "Dimension"@de-DE ;
+  rdfs:range iddo:Dimension ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA028" ;
+  iddo:code "PA028" ;
+  iddo:code "PA028"@de-DE ;
 .
 iddo:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
@@ -1688,6 +1740,36 @@ dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Me
   iddo:code "PA014" ;
   iddo:code "PA014"@de-DE ;
 .
+iddo:hasI
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has I" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasJ
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has J" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasL
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has L" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasM
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has M" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasN
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has N" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 iddo:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Attaches a property to a feature of interest (FOI)" ;
@@ -1717,4 +1799,16 @@ iddo:hasPropertyReference
   rdfs:label "hat Merkmalreferenz"@de-DE ;
   rdfs:range iddo:Property ;
   rdfs:subPropertyOf owl:topObjectProperty ;
+.
+iddo:hasT
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has T" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasTheta
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "has Theta" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
