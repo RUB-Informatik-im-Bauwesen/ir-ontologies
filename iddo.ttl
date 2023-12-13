@@ -157,6 +157,12 @@ iddo:BoundaryLimitMin
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty iddo:hasUnit ;
     ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:boolean ;
+      owl:onProperty iddo:Inclusive ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   skos:scopeNote "PA040" ;
   iddo:code "PA040" ;
   iddo:code "PA040"@de-DE ;
