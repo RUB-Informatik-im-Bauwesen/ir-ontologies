@@ -13,6 +13,60 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://inf.bi.rub.de/ontology/dt>
+  rdf:type owl:Ontology ;
+  dc:created "2023-12-23"^^xsd:date ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:liu.liu-m6r@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-5907-7609> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Liu Liu" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
+      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
+      schema:memberOf [
+          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
+          schema:name "Bauhaus-Universitaet Weimar" ;
+        ] ;
+      schema:name "Marthina Mellenthin-Filardo" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Philipp Hagedorn" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:sven.zentgraf@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-6058-7614> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Sven Zentgraf" ;
+    ] ;
+  dc:description "The Data Template (TMP) Ontology is defined for ..."@en ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
+  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^xsd:anyURI ;
+  dc:title "Data Template (TMP) Ontology"@en ;
+  vann:preferredNamespacePrefix "tmp" ;
+  owl:imports <https://w3id.org/iddo/v2> ;
+  owl:imports <https://w3id.org/loin/v2> ;
+  owl:versionInfo "1.0" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
 dt:ConstructionObject
   rdf:type rdfs:Class ;
   rdfs:comment "Enter a comment"@en ;
@@ -78,6 +132,12 @@ dt:LibraryComponent
       owl:someValuesFrom dt:ReferenceDocument ;
     ] ;
 .
+dt:PhysicalQuantity
+  rdf:type rdfs:Class ;
+  rdfs:label "Physical quantity" ;
+  rdfs:subClassOf dt:LibraryComponent ;
+  owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
+.
 dt:ReferenceDocument
   rdf:type rdfs:Class ;
   rdfs:label "Reference document"@en ;
@@ -133,6 +193,12 @@ dt:SetOfProperties
       owl:onProperty dt:hasSetOfProperties ;
       owl:someValuesFrom dt:SetOfProperties ;
     ] ;
+.
+dt:Unit
+  rdf:type rdfs:Class ;
+  rdfs:label "Unit" ;
+  rdfs:subClassOf dt:LibraryComponent ;
+  owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
 .
 dt:author
   rdf:type owl:DatatypeProperty ;
@@ -204,59 +270,4 @@ dt:uri
   rdf:type owl:DatatypeProperty ;
   rdfs:label "uri" ;
   rdfs:subPropertyOf owl:topDataProperty ;
-.
-<http://inf.bi.rub.de/ontology/dt>
-  rdf:type owl:Ontology ;
-  owl:imports <https://w3id.org/iddo/v2> ;
-  owl:imports <https://w3id.org/loin/v2> ;
-  rdf:type owl:Ontology ;
-  dc:created "2023-12-23"^^xsd:date ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:email <mailto:liu.liu-m6r@rub.de> ;
-      schema:identifier <https://orcid.org/0000-0001-5907-7609> ;
-      schema:memberOf [
-          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> ;
-          schema:name "Ruhr University Bochum" ;
-        ] ;
-      schema:name "Liu Liu" ;
-    ] ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
-      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
-      schema:memberOf [
-          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
-          schema:name "Bauhaus-Universitaet Weimar" ;
-        ] ;
-      schema:name "Marthina Mellenthin-Filardo" ;
-    ] ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
-      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
-      schema:memberOf [
-          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
-          schema:name "Ruhr University Bochum" ;
-        ] ;
-      schema:name "Philipp Hagedorn" ;
-    ] ;
-  dc:creator [
-      rdf:type schema:Person ;
-      schema:email <mailto:sven.zentgraf@rub.de> ;
-      schema:identifier <https://orcid.org/0000-0001-6058-7614> ;
-      schema:memberOf [
-          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> ;
-          schema:name "Ruhr University Bochum" ;
-        ] ;
-      schema:name "Sven Zentgraf" ;
-    ] ;
-  dc:description "The Data Template (TMP) Ontology is defined for ..."@en ;
-  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
-  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^xsd:anyURI ;
-  dc:title "Data Template (TMP) Ontology"@en ;
-  vann:preferredNamespacePrefix "tmp" ;
-  owl:versionInfo "1.0" ;
-  owl:versionInfo "Created with TopBraid Composer" ;
 .

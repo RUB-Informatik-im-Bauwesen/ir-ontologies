@@ -558,9 +558,9 @@ Precision is the number of significant digits""" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onDataRange qudt:Unit ;
-      owl:onProperty iddo:Unit ;
-      owl:qualifiedCardinality 1 ;
+      owl:onClass qudt:Unit ;
+      owl:onProperty iddo:hasUnit ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1571,19 +1571,6 @@ iddo:Tolerance
   skos:scopeNote "PA036" ;
   iddo:code "PA036" ;
   iddo:code "PA036"@de-DE ;
-.
-iddo:Unit
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Masseinheit fuer den digitalen Texttyp"@de-DE ;
-  rdfs:comment "Unit of measurement for the digital text type" ;
-  rdfs:domain iddo:DigitalFormatItem ;
-  rdfs:label "Einheit"@de-DE ;
-  rdfs:label "Unit" ;
-  rdfs:range qudt:Unit ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA037" ;
-  iddo:code "PA037" ;
-  iddo:code "PA037"@de-DE ;
 .
 iddo:VersionNumber
   rdf:type owl:DatatypeProperty ;
