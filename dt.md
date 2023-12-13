@@ -21,7 +21,7 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.4
 * **Created**
   * 2023-12-23
 * **Version Information**
-  * Created with TopBraid Composer
+  * 1.0
 * **Imports**
   * [https://w3id.org/iddo/v2](https://w3id.org/iddo/v2)
   * [https://w3id.org/loin/v2](https://w3id.org/loin/v2)
@@ -67,8 +67,8 @@ Property | Value
 IRI | `http://inf.bi.rub.de/ontology/dt#DataTemplate`
 Description | <p>Enter a comment</p>
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />
-In domain of |[dt:hasProperty](hasproperty) (op)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />[dt:hasSetOfProperties](hassetofproperties) (op)<br />
+Restrictions |[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />
+In domain of |[dt:hasProperty](hasproperty) (op)<br />[dt:hasSetOfProperties](hassetofproperties) (op)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />
 ### External dictionary
 Property | Value
 --- | ---
@@ -84,8 +84,8 @@ IRI | `http://inf.bi.rub.de/ontology/dt#LibraryComponent`
 Description | <p>Enter a comment</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
 Restrictions |[dt:hasReferenceDocument](hasreferencedocument) (op) **some** [dt:ReferenceDocument](Referencedocument) (c)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **some** [dt:ExternalDictionaryReference](Externaldictionary) (c)<br />
-Sub-classes |[dt:ConstructionObject](Constructionobject) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />[dt:Unit](Unit) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />[dt:PhysicalQuantity](Physicalquantity) (c)<br />
-In domain of |[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
+Sub-classes |[dt:ConstructionObject](Constructionobject) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />[dt:PhysicalQuantity](Physicalquantity) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />[dt:Unit](Unit) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />
+In domain of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />
 ### Physical quantity
 Property | Value
 --- | ---
@@ -96,14 +96,14 @@ Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#ReferenceDocument`
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />[dt:author](author) (dp) **max** 1<br />[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:uri](uri) (dp) **max** 1<br />
+Restrictions |[dt:uri](uri) (dp) **max** 1<br />[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:author](author) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />
 In range of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
 ### Set of properties
 Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#SetOfProperties`
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:hasProperty](hasproperty) (op) **min** 0<br />
+Restrictions |[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/iddo/v2#Property](https://w3id.org/iddo/v2#Property) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />[dt:hasProperty](hasproperty) (op) **min** 0<br />
 In domain of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 In range of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 ### Unit
@@ -164,7 +164,7 @@ Property | Value
 --- | ---
 IRI | `http://inf.bi.rub.de/ontology/dt#hasSetOfProperties`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[dt:DataTemplate](Datatemplate) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />
+Domain(s) |[dt:SetOfProperties](Setofproperties) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />
 Range(s) |[dt:SetOfProperties](Setofproperties) (c)<br />
 [](isdatatemplatefor)
 ### is data template for

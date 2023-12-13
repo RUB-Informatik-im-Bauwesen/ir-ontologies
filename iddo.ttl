@@ -572,59 +572,6 @@ Precision is the number of significant digits""" ;
   iddo:code "PA037" ;
   iddo:code "PA037"@de-DE ;
 .
-iddo:Dimension
-  rdf:type owl:Class ;
-  rdfs:comment """Im Falle einer physikalischen Groesse, Dimension nach ISO 80000 (alle Teile)
-dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle physikalischen Groessen von 7 Basisgroessen abgeleitet sind, wird es durch Angabe der Basisdimensionen mit zugehoeriger Potenz (als rationale Zahl) in der folgenden Reihenfolge und mit jeweils einem Leerzeichen dazwischen angegeben"""@de-DE ;
-  rdfs:comment """In case of a physical quantity, dimension according to ISO 80000 (all parts)
-This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each""" ;
-  rdfs:label "Dimension"@de ;
-  rdfs:label "Dimension"@en ;
-  rdfs:subClassOf qudt:QuantityKindDimensionVector_SI ;
-  rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty qudt:dimensionExponentForLength ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasI ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasJ ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasM ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasN ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasT ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasTheta ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-.
 iddo:DynamicProperty
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032" ;
@@ -1083,11 +1030,6 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
   rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onProperty iddo:hasDimension ;
-      owl:someValuesFrom iddo:Dimension ;
-    ] ;
 .
 iddo:PossibleValueInLanguageN
   rdf:type rdfs:Class ;
@@ -1148,12 +1090,6 @@ iddo:Property
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass qudt:QuantityKindDimensionVector ;
-      owl:onProperty iddo:hasDimension ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:DefiningValuesList ;
       owl:onProperty iddo:DefiningValues ;
@@ -1210,7 +1146,7 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:TextFormatItem ;
-      owl:onProperty iddo:TextFormat ;
+      owl:onProperty iddo:hasTextFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1292,18 +1228,6 @@ iddo:Property
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass qudt:QuantityKindDimensionVector ;
-      owl:onProperty iddo:hasDimension ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass qudt:Unit ;
-      owl:onProperty iddo:hasUnit ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 1 ;
       owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:GroupsOfProperties ;
@@ -1325,6 +1249,12 @@ iddo:Property
       owl:minQualifiedCardinality 1 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:NameInLanguage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass qudt:Unit ;
+      owl:onProperty iddo:hasUnit ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1519,21 +1449,6 @@ iddo:SymbolsOfTheProperty
   iddo:code "PA022" ;
   iddo:code "PA022"@de-DE ;
 .
-iddo:TextFormat
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """Paar fuer den Texttyp (Ver-schluesselung, Anzahl der Zeichen)
-die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"""@de-DE ;
-  rdfs:comment """Pair for text type (encoding, number of characters)
-The encoding is set according to Name of encoding standard of IANA, RFC 2978""" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Text format" ;
-  rdfs:label "Textformat"@de-DE ;
-  rdfs:range iddo:TextFormatItem ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA038" ;
-  iddo:code "PA038" ;
-  iddo:code "PA038"@de-DE ;
-.
 iddo:TextFormatItem
   rdf:type rdfs:Class ;
   rdfs:comment """Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
@@ -1675,7 +1590,6 @@ This attribute allows the dimension to be machine readable; as all physical quan
   rdfs:domain iddo:Property ;
   rdfs:label "Dimension" ;
   rdfs:label "Dimension"@de-DE ;
-  rdfs:range iddo:Dimension ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA028" ;
   iddo:code "PA028" ;
@@ -1712,53 +1626,24 @@ dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Me
   iddo:code "PA014" ;
   iddo:code "PA014"@de-DE ;
 .
-iddo:hasI
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has I" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-iddo:hasJ
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has J" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-iddo:hasL
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has L" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-iddo:hasM
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has M" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-iddo:hasN
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has N" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
 iddo:hasPhysicalQuantity
-  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment """List of pairs (physical quantity | language)
 Physical quantities are expressed in International System (SI) units
-Non-physical quantities such as text are expressed with the value \"without\"
+Non-physical quantities such as text are expressed with the value \"without\" --> http://qudt.org/vocab/quantitykind/Dimensionless
 This is equivalent to a measure in ISO 16739-1 and ISO 10303
 Only one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations""" ;
   rdfs:comment """Liste von Paaren (physikalische Groesse | Sprache)
 Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben
-nicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben
+nicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben --> http://qudt.org/vocab/quantitykind/Dimensionless
 dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
 nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."""@de-DE ;
   rdfs:domain iddo:Property ;
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
-  rdfs:range rdf:langString ;
-  rdfs:subPropertyOf owl:topDataProperty ;
+  rdfs:range qudt:QuantityKind ;
+  rdfs:seeAlso <http://qudt.org/vocab/quantitykind> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA027" ;
   iddo:code "PA027" ;
   iddo:code "PA027"@de-DE ;
@@ -1793,30 +1678,34 @@ iddo:hasPropertyReference
   rdfs:range iddo:Property ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
-iddo:hasT
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has T" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-iddo:hasTheta
-  rdf:type owl:DatatypeProperty ;
-  rdfs:label "has Theta" ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
+iddo:hasTextFormat
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
+die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"""@de-DE ;
+  rdfs:comment """Pair for text type (encoding, number of characters)
+The encoding is set according to Name of encoding standard of IANA, RFC 2978""" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Text format" ;
+  rdfs:label "Textformat"@de-DE ;
+  rdfs:range iddo:TextFormatItem ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA038" ;
+  iddo:code "PA038" ;
+  iddo:code "PA038"@de-DE ;
 .
 iddo:hasUnit
   rdf:type owl:ObjectProperty ;
   rdfs:comment """A unit to represent a scale that enables a value to be measured
-It is possible to use this attribute to explain there is no unit attached to the property by using unitless""" ;
+It is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS""" ;
   rdfs:comment """Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen
-es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird"""@de-DE ;
+es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird --> http://qudt.org/vocab/unit/UNITLESS"""@de-DE ;
   rdfs:domain iddo:BoundaryLimitMax ;
   rdfs:domain iddo:BoundaryLimitMin ;
   rdfs:domain iddo:Property ;
   rdfs:label "has unit" ;
   rdfs:label "hat Einheit"@de-DE ;
   rdfs:range qudt:Unit ;
+  rdfs:seeAlso unit:UNITLESS ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA033" ;
   iddo:code "PA033" ;
