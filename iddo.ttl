@@ -354,19 +354,6 @@ iddo:DateOfVersion
   iddo:code "PA007/GA007" ;
   iddo:code "PA007/GA007"@de-DE ;
 .
-iddo:DefiningValue
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Contains a defining value of an array" ;
-  rdfs:comment "Enthaelt einen definierenden Wert eines Arrays"@de-DE ;
-  rdfs:domain iddo:DefiningValuesList ;
-  rdfs:label "Definierender Wert"@de-DE ;
-  rdfs:label "Defining value" ;
-  rdfs:range iddo:DefiningValueItem ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA035" ;
-  iddo:code "PA035" ;
-  iddo:code "PA035"@de-DE ;
-.
 iddo:DefiningValueItem
   rdf:type rdfs:Class ;
   rdfs:comment "Contains a defining value of an array in the form of a literal" ;
@@ -380,19 +367,6 @@ iddo:DefiningValueItem
       owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
-  skos:scopeNote "PA035" ;
-  iddo:code "PA035" ;
-  iddo:code "PA035"@de-DE ;
-.
-iddo:DefiningValues
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben"@de-DE ;
-  rdfs:comment "In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Definierende Werte"@de-DE ;
-  rdfs:label "Defining values" ;
-  rdfs:range iddo:DefiningValuesList ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA035" ;
   iddo:code "PA035" ;
   iddo:code "PA035"@de-DE ;
@@ -538,21 +512,6 @@ iddo:DictionarySubset
       owl:onProperty iddo:hasDictionaryReferenceDocument ;
     ] ;
 .
-iddo:DigitalFormat
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """Paar fuer den digitalen Texttyp (Praezision, Masseinheit)
-Praezision ist die Anzahl signifikanter Stellen"""@de-DE ;
-  rdfs:comment """Pair for digital text type (precision, unit)
-Precision is the number of significant digits""" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Digital format" ;
-  rdfs:label "Digitales Format"@de-DE ;
-  rdfs:range iddo:DigitalFormatItem ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA037" ;
-  iddo:code "PA037" ;
-  iddo:code "PA037"@de-DE ;
-.
 iddo:DigitalFormatItem
   rdf:type rdfs:Class ;
   rdfs:comment """Paar fuer den digitalen Texttyp (Praezision, Masseinheit)
@@ -645,19 +604,6 @@ This attribute should be used for compatibility between already existing propert
     ] ;
   owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> ;
 .
-iddo:GivenGroupsOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Global eindeutiger Bezeichner einer Merkmalsgruppe (Attribut GA001) fuer das dem Merkmal zugeordnetem Symbol"@de-DE ;
-  rdfs:comment "Globally unique identifier of a group of properties (attribute GA001) for the symbol assigned to the property." ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Gegebene Merkmalsgruppe"@de-DE ;
-  rdfs:label "Given group of properties" ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA022" ;
-  iddo:code "PA022" ;
-  iddo:code "PA022"@de-DE ;
-.
 iddo:GloballyUniqueIdentifier
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Eindeutiger Bezeichner, der mit dem in RFC 4122 beschriebenen Algorithmus erzeugt wird"@de-DE ;
@@ -684,7 +630,7 @@ iddo:GroupOfProperties
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality 1 ;
       owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ParentGroupOfProperties ;
+      owl:onProperty iddo:hasParentGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -708,7 +654,7 @@ iddo:GroupOfProperties
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ParentGroupOfProperties ;
+      owl:onProperty iddo:hasParentGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -859,19 +805,6 @@ iddo:GroupOfProperties
       owl:qualifiedCardinality 1 ;
     ] ;
 .
-iddo:GroupsOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of globally unique identifiers of groups of properties (attribute GA001) to which the property is attached" ;
-  rdfs:comment "Liste von global eindeutigen Bezeichnern von Merkmalsgruppen (Attribut GA001), denen das Merkmal angehoert"@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Group(s) of properties" ;
-  rdfs:label "Merkmalsgruppe(n)"@de-DE ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA021" ;
-  iddo:code "PA021" ;
-  iddo:code "PA021"@de-DE ;
-.
 iddo:Inclusive
   rdf:type owl:DatatypeProperty ;
   rdfs:domain iddo:BoundaryLimitMax ;
@@ -1001,34 +934,6 @@ iddo:NumberOfCharacters
   iddo:code "PA038" ;
   iddo:code "PA038"@de-DE ;
 .
-iddo:ParametersOfTheDynamicProperty
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of GUIDS of properties which are parameters of the function for a dynamic property" ;
-  rdfs:comment "Liste von GUIDs von Merkmalen, welche Parameter der Funktion fuer ein dynamisches Merkmal sind"@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Parameter des dynamischen Merkmals"@de-DE ;
-  rdfs:label "Parameters of the dynamic property" ;
-  rdfs:range iddo:Property ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA032" ;
-  iddo:code "GA032"@de-DE ;
-  iddo:code "PA032" ;
-.
-iddo:ParentGroupOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001)
-Any property attached to a group is inherited by the sub-group(s)""" ;
-  rdfs:comment """Ermoeglicht die Ver-knuepfung einer Unter-gruppe mit einer ueber-geordneten Gruppe ueber ihre global ein-deutigen Bezeichner (Attribut GA001)
-jedes einer Gruppe zugehoerige Merkmal wird von der/den Untergruppe(n) uebernommen"""@de-DE ;
-  rdfs:domain iddo:GroupOfProperties ;
-  rdfs:label "Parent group of properties" ;
-  rdfs:label "uebergeordnete Merkmalsgruppe"@de-DE ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "GA023" ;
-  iddo:code "GA023" ;
-  iddo:code "GA023"@de-DE ;
-.
 iddo:PhysicalQuantity
   rdf:type rdfs:Class ;
   rdfs:comment """List of pairs (physical quantity | language)
@@ -1106,13 +1011,13 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:DefiningValuesList ;
-      owl:onProperty iddo:DefiningValues ;
+      owl:onProperty iddo:hasDefiningValue ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:DigitalFormatItem ;
-      owl:onProperty iddo:DigitalFormat ;
+      owl:onProperty iddo:hasDigitalFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1142,19 +1047,19 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
-      owl:onProperty iddo:ParametersOfTheDynamicProperty ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:Property ;
       owl:onProperty iddo:hasConnectedProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:Property ;
+      owl:onProperty iddo:hasParameterOfTheDynamicProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:SymbolOfTheProperty ;
-      owl:onProperty iddo:SymbolsOfTheProperty ;
+      owl:onProperty iddo:hasSymbolsOfTheProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1244,7 +1149,7 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 1 ;
       owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:GroupsOfProperties ;
+      owl:onProperty iddo:hasGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1350,20 +1255,6 @@ iddo:Property
     ] ;
   owl:equivalentClass opm:Property ;
 .
-iddo:RelationsOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """List of pairs (group of properties internal identifier, corresponding data dictionary identifier)
-This attribute should be used for compatibility between already existing groups of properties""" ;
-  rdfs:comment """Liste von Paaren (inter-ner Bezeichner der Merkmalsgruppe, ent-sprechender Daten-katalog-Bezeichner)
-dieses Attribut sollte fuer die Kompatibilitaet zwischen bereits vorhandenen Merk-malsgruppen verwen-det werden"""@de-DE ;
-  rdfs:domain iddo:GroupOfProperties ;
-  rdfs:label "Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen"@de-DE ;
-  rdfs:label "Relations of the group of properties identifiers in the interconnected data dictionaries" ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "GA014" ;
-  iddo:code "GA014" ;
-  iddo:code "GA014"@de-DE ;
-.
 iddo:RevisionNumber
   rdf:type owl:DatatypeProperty ;
   rdfs:comment """Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.
@@ -1437,7 +1328,7 @@ iddo:SymbolOfTheProperty
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:GivenGroupsOfProperties ;
+      owl:onProperty iddo:hasGivenGroupOfProperties ;
       owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
@@ -1446,19 +1337,6 @@ iddo:SymbolOfTheProperty
       owl:onProperty iddo:Symbol ;
       owl:qualifiedCardinality 1 ;
     ] ;
-  skos:scopeNote "PA022" ;
-  iddo:code "PA022" ;
-  iddo:code "PA022"@de-DE ;
-.
-iddo:SymbolsOfTheProperty
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of pairs (symbol of the property, globally unique identifier of the group of properties (attribute GA001))" ;
-  rdfs:comment "Liste von Paaren (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))"@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Symbole des Merkmals in einer gegebenen Merk-malsgruppe"@de-DE ;
-  rdfs:label "Symbols of the property in a given property group" ;
-  rdfs:range iddo:SymbolOfTheProperty ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA022" ;
   iddo:code "PA022" ;
   iddo:code "PA022"@de-DE ;
@@ -1579,6 +1457,32 @@ iddo:hasConnectedProperty
   iddo:code "PA020" ;
   iddo:code "PA020"@de-DE ;
 .
+iddo:hasDefiningValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben"@de-DE ;
+  rdfs:comment "In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Definierende Werte"@de-DE ;
+  rdfs:label "Defining values" ;
+  rdfs:range iddo:DefiningValuesList ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA035" ;
+  iddo:code "PA035" ;
+  iddo:code "PA035"@de-DE ;
+.
+iddo:hasDefiningValueItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Contains a defining value of an array" ;
+  rdfs:comment "Enthaelt einen definierenden Wert eines Arrays"@de-DE ;
+  rdfs:domain iddo:DefiningValuesList ;
+  rdfs:label "Definierender Wert"@de-DE ;
+  rdfs:label "Defining value" ;
+  rdfs:range iddo:DefiningValueItem ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA035" ;
+  iddo:code "PA035" ;
+  iddo:code "PA035"@de-DE ;
+.
 iddo:hasDictionaryReferenceDocument
   rdf:type owl:ObjectProperty ;
   rdfs:domain iddo:DictionarySubset ;
@@ -1594,6 +1498,21 @@ iddo:hasDictionarySubset
   rdfs:label "hat Teilmenge eines Katalogs"@de-DE ;
   rdfs:range iddo:DictionarySubset ;
   rdfs:subPropertyOf dcat:dataset ;
+.
+iddo:hasDigitalFormat
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """Paar fuer den digitalen Texttyp (Praezision, Masseinheit)
+Praezision ist die Anzahl signifikanter Stellen"""@de-DE ;
+  rdfs:comment """Pair for digital text type (precision, unit)
+Precision is the number of significant digits""" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Digital format" ;
+  rdfs:label "Digitales Format"@de-DE ;
+  rdfs:range iddo:DigitalFormatItem ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA037" ;
+  iddo:code "PA037" ;
+  iddo:code "PA037"@de-DE ;
 .
 iddo:hasDimension
   rdf:type owl:ObjectProperty ;
@@ -1639,6 +1558,60 @@ dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Me
   iddo:code "GA014"@de-DE ;
   iddo:code "PA014" ;
   iddo:code "PA014"@de-DE ;
+.
+iddo:hasGivenGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Global eindeutiger Bezeichner einer Merkmalsgruppe (Attribut GA001) fuer das dem Merkmal zugeordnetem Symbol"@de-DE ;
+  rdfs:comment "Globally unique identifier of a group of properties (attribute GA001) for the symbol assigned to the property." ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Gegebene Merkmalsgruppe"@de-DE ;
+  rdfs:label "Given group of properties" ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA022" ;
+  iddo:code "PA022" ;
+  iddo:code "PA022"@de-DE ;
+.
+iddo:hasGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of globally unique identifiers of groups of properties (attribute GA001) to which the property is attached" ;
+  rdfs:comment "Liste von global eindeutigen Bezeichnern von Merkmalsgruppen (Attribut GA001), denen das Merkmal angehoert"@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Group(s) of properties" ;
+  rdfs:label "Merkmalsgruppe(n)"@de-DE ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA021" ;
+  iddo:code "PA021" ;
+  iddo:code "PA021"@de-DE ;
+.
+iddo:hasParameterOfTheDynamicProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of GUIDS of properties which are parameters of the function for a dynamic property" ;
+  rdfs:comment "Liste von GUIDs von Merkmalen, welche Parameter der Funktion fuer ein dynamisches Merkmal sind"@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Parameter des dynamischen Merkmals"@de-DE ;
+  rdfs:label "Parameters of the dynamic property" ;
+  rdfs:range iddo:Property ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA032" ;
+  iddo:code "GA032"@de-DE ;
+  iddo:code "PA032" ;
+.
+iddo:hasParentGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001)
+Any property attached to a group is inherited by the sub-group(s)""" ;
+  rdfs:comment """Ermoeglicht die Ver-knuepfung einer Unter-gruppe mit einer ueber-geordneten Gruppe ueber ihre global ein-deutigen Bezeichner (Attribut GA001)
+jedes einer Gruppe zugehoerige Merkmal wird von der/den Untergruppe(n) uebernommen"""@de-DE ;
+  rdfs:domain iddo:GroupOfProperties ;
+  rdfs:label "Parent group of properties" ;
+  rdfs:label "uebergeordnete Merkmalsgruppe"@de-DE ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "GA023" ;
+  iddo:code "GA023" ;
+  iddo:code "GA023"@de-DE ;
 .
 iddo:hasPhysicalQuantity
   rdf:type owl:ObjectProperty ;
@@ -1691,6 +1664,33 @@ iddo:hasPropertyReference
   rdfs:label "hat Merkmalreferenz"@de-DE ;
   rdfs:range iddo:Property ;
   rdfs:subPropertyOf owl:topObjectProperty ;
+.
+iddo:hasRelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """List of pairs (group of properties internal identifier, corresponding data dictionary identifier)
+This attribute should be used for compatibility between already existing groups of properties""" ;
+  rdfs:comment """Liste von Paaren (inter-ner Bezeichner der Merkmalsgruppe, ent-sprechender Daten-katalog-Bezeichner)
+dieses Attribut sollte fuer die Kompatibilitaet zwischen bereits vorhandenen Merk-malsgruppen verwen-det werden"""@de-DE ;
+  rdfs:domain iddo:GroupOfProperties ;
+  rdfs:label "Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen"@de-DE ;
+  rdfs:label "Relations of the group of properties identifiers in the interconnected data dictionaries" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "GA014" ;
+  iddo:code "GA014" ;
+  iddo:code "GA014"@de-DE ;
+.
+iddo:hasSymbolsOfTheProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of pairs (symbol of the property, globally unique identifier of the group of properties (attribute GA001))" ;
+  rdfs:comment "Liste von Paaren (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))"@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "Symbole des Merkmals in einer gegebenen Merk-malsgruppe"@de-DE ;
+  rdfs:label "Symbols of the property in a given property group" ;
+  rdfs:range iddo:SymbolOfTheProperty ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA022" ;
+  iddo:code "PA022" ;
+  iddo:code "PA022"@de-DE ;
 .
 iddo:hasTextFormat
   rdf:type owl:ObjectProperty ;
