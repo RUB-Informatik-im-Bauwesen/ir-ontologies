@@ -8,6 +8,7 @@
 @prefix iddo: <https://w3id.org/iddo/v2#> .
 @prefix opm: <https://w3id.org/opm#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -126,7 +127,7 @@ iddo:BoundaryLimitMax
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty iddo:Units ;
+      owl:onProperty iddo:hasUnit ;
     ] ;
   skos:scopeNote "PA040" ;
   iddo:code "PA040" ;
@@ -148,7 +149,7 @@ iddo:BoundaryLimitMin
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty iddo:Units ;
+      owl:onProperty iddo:hasUnit ;
     ] ;
   skos:scopeNote "PA040" ;
   iddo:code "PA040" ;
@@ -557,7 +558,7 @@ Precision is the number of significant digits""" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onDataRange <http://qudt.org/schema/qudt/Unit> ;
+      owl:onDataRange qudt:Unit ;
       owl:onProperty iddo:Unit ;
       owl:qualifiedCardinality 1 ;
     ] ;
@@ -579,7 +580,14 @@ dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle phy
 This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each""" ;
   rdfs:label "Dimension"@de ;
   rdfs:label "Dimension"@en ;
+  rdfs:subClassOf qudt:QuantityKindDimensionVector_SI ;
   rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:int ;
+      owl:onProperty qudt:dimensionExponentForLength ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:int ;
@@ -590,12 +598,6 @@ This attribute allows the dimension to be machine readable; as all physical quan
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:int ;
       owl:onProperty iddo:hasJ ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:onDataRange xsd:int ;
-      owl:onProperty iddo:hasL ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
@@ -1147,7 +1149,7 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass iddo:Dimension ;
+      owl:onClass qudt:QuantityKindDimensionVector ;
       owl:onProperty iddo:hasDimension ;
     ] ;
   rdfs:subClassOf [
@@ -1286,19 +1288,19 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:Units ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onDataRange xsd:string ;
       owl:onProperty iddo:VisualRepresentation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass iddo:Dimension ;
+      owl:onClass qudt:QuantityKindDimensionVector ;
       owl:onProperty iddo:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass qudt:Unit ;
+      owl:onProperty iddo:hasUnit ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1327,7 +1329,7 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange iddo:PhysicalQuantity ;
+      owl:onDataRange qudt:QuantityKind ;
       owl:onProperty iddo:hasPhysicalQuantity ;
     ] ;
   rdfs:subClassOf [
@@ -1577,28 +1579,11 @@ iddo:Unit
   rdfs:domain iddo:DigitalFormatItem ;
   rdfs:label "Einheit"@de-DE ;
   rdfs:label "Unit" ;
-  rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+  rdfs:range qudt:Unit ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA037" ;
   iddo:code "PA037" ;
   iddo:code "PA037"@de-DE ;
-.
-iddo:Units
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """A unit to represent a scale that enables a value to be measured
-It is possible to use this attribute to explain there is no unit attached to the property by using unitless""" ;
-  rdfs:comment """Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen
-es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird"""@de-DE ;
-  rdfs:domain iddo:BoundaryLimitMax ;
-  rdfs:domain iddo:BoundaryLimitMin ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Einheiten"@de-DE ;
-  rdfs:label "Units" ;
-  rdfs:range <http://qudt.org/schema/qudt/Unit> ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA033" ;
-  iddo:code "PA033" ;
-  iddo:code "PA033"@de-DE ;
 .
 iddo:VersionNumber
   rdf:type owl:DatatypeProperty ;
@@ -1832,4 +1817,21 @@ iddo:hasTheta
   rdfs:label "has Theta" ;
   rdfs:range xsd:integer ;
   rdfs:subPropertyOf owl:topDataProperty ;
+.
+iddo:hasUnit
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """A unit to represent a scale that enables a value to be measured
+It is possible to use this attribute to explain there is no unit attached to the property by using unitless""" ;
+  rdfs:comment """Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen
+es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird"""@de-DE ;
+  rdfs:domain iddo:BoundaryLimitMax ;
+  rdfs:domain iddo:BoundaryLimitMin ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "has unit" ;
+  rdfs:label "hat Einheit"@de-DE ;
+  rdfs:range qudt:Unit ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA033" ;
+  iddo:code "PA033" ;
+  iddo:code "PA033"@de-DE ;
 .
