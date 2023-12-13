@@ -648,19 +648,19 @@ iddo:GroupOfProperties
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ListOfReplacedGroupsOfProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:GroupOfProperties ;
-      owl:onProperty iddo:ListOfReplacingGroupsOfProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:GroupOfProperties ;
       owl:onProperty iddo:hasParentGroupOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:GroupOfProperties ;
+      owl:onProperty iddo:isReplacedByGroupOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:GroupOfProperties ;
+      owl:onProperty iddo:replacesGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -819,73 +819,6 @@ iddo:Inclusive
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
-iddo:ListOfPossibleValuesInLanguageN
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """List of pairs (possible value for the property and language)
-Values can be string or numbers""" ;
-  rdfs:comment """Liste von Paaren (moeglicher Wert fuer das Merkmal und Sprache)
-Werte koennen String oder Zahlen sein"""@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "List of possible values in language N" ;
-  rdfs:label "Liste moeglicher Werte in Sprache N"@de-DE ;
-  rdfs:range iddo:PossibleValueInLanguageN ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA039" ;
-  iddo:code "PA039" ;
-  iddo:code "PA039"@de-DE ;
-.
-iddo:ListOfReplacedGroupsOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of globally unique identifiers of the replaced groups of properties" ;
-  rdfs:comment "Liste von globalen Bezeichnern fuer die ersetzten Merk-malsgruppen"@de-DE ;
-  rdfs:domain iddo:GroupOfProperties ;
-  rdfs:label "List of replaced groups of properties" ;
-  rdfs:label "Liste ersetzter Merkmalsgruppen"@de-DE ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "GA011" ;
-  iddo:code "GA011" ;
-  iddo:code "GA011"@de-DE ;
-.
-iddo:ListOfReplacedProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Global eindeutiger Bezeichner des ersetzten Merkmals (oder der Merkmale)"@de-DE ;
-  rdfs:comment "Globally unique identifier of the replaced property (or properties)" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "List of replaced properties" ;
-  rdfs:label "Liste ersetzter Merkmale"@de-DE ;
-  rdfs:range iddo:Property ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA011" ;
-  iddo:code "PA011" ;
-  iddo:code "PA011"@de-DE ;
-.
-iddo:ListOfReplacingGroupsOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "List of globally unique identifiers of the replacing groups of properties" ;
-  rdfs:comment "Liste von globalen Bezeichnern fuer die ersetzenden Merkmalsgruppen"@de-DE ;
-  rdfs:domain iddo:GroupOfProperties ;
-  rdfs:label "List of replacing groups of properties" ;
-  rdfs:label "Liste ersetzender Merkmalsgruppen"@de-DE ;
-  rdfs:range iddo:GroupOfProperties ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "GA012" ;
-  iddo:code "GA012" ;
-  iddo:code "GA012"@de-DE ;
-.
-iddo:ListOfReplacingProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "Globally unique identifier (attribute PA001) of the replacing property (or properties)" ;
-  rdfs:comment "global eindeutiger Bezeichner (Attribut PA001) des ersetzenden Merkmals (oder der Merkmale)"@de-DE ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "List of replacing properties" ;
-  rdfs:label "Liste ersetzender Merkmale"@de-DE ;
-  rdfs:range iddo:Property ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA012" ;
-  iddo:code "PA012" ;
-  iddo:code "PA012"@de-DE ;
-.
 iddo:MethodOfMeasurement
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen" ;
@@ -1035,19 +968,7 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:PossibleValueInLanguageN ;
-      owl:onProperty iddo:ListOfPossibleValuesInLanguageN ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:Property ;
-      owl:onProperty iddo:ListOfReplacedProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:Property ;
-      owl:onProperty iddo:ListOfReplacingProperties ;
+      owl:onProperty iddo:hasPossibleValuesInLanguageN ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1060,6 +981,18 @@ iddo:Property
       owl:minQualifiedCardinality 0 ;
       owl:onClass iddo:Property ;
       owl:onProperty iddo:hasParameterOfTheDynamicProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:Property ;
+      owl:onProperty iddo:isReplacedByProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onClass iddo:Property ;
+      owl:onProperty iddo:replacesProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1125,12 +1058,6 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:ListOfPossibleValuesInLanguageN ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onDataRange xsd:string ;
       owl:onProperty iddo:MethodOfMeasurement ;
     ] ;
   rdfs:subClassOf [
@@ -1150,6 +1077,12 @@ iddo:Property
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty iddo:VisualRepresentation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality 0 ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty iddo:hasPossibleValuesInLanguageN ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1641,6 +1574,21 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   iddo:code "PA027" ;
   iddo:code "PA027"@de-DE ;
 .
+iddo:hasPossibleValuesInLanguageN
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment """List of pairs (possible value for the property and language)
+Values can be string or numbers""" ;
+  rdfs:comment """Liste von Paaren (moeglicher Wert fuer das Merkmal und Sprache)
+Werte koennen String oder Zahlen sein"""@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "List of possible values in language N" ;
+  rdfs:label "Liste moeglicher Werte in Sprache N"@de-DE ;
+  rdfs:range iddo:PossibleValueInLanguageN ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  skos:scopeNote "PA039" ;
+  iddo:code "PA039" ;
+  iddo:code "PA039"@de-DE ;
+.
 iddo:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Attaches a property to a feature of interest (FOI)" ;
@@ -1730,4 +1678,60 @@ es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkma
   skos:scopeNote "PA033" ;
   iddo:code "PA033" ;
   iddo:code "PA033"@de-DE ;
+.
+iddo:isReplacedByGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of globally unique identifiers of the replacing groups of properties" ;
+  rdfs:comment "Liste von globalen Bezeichnern fuer die ersetzenden Merkmalsgruppen"@de-DE ;
+  rdfs:domain iddo:GroupOfProperties ;
+  rdfs:label "List of replacing groups of properties" ;
+  rdfs:label "Liste ersetzender Merkmalsgruppen"@de-DE ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf iddo:replacesGroupOfProperties ;
+  skos:scopeNote "GA012" ;
+  iddo:code "GA012" ;
+  iddo:code "GA012"@de-DE ;
+.
+iddo:isReplacedByProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Globally unique identifier (attribute PA001) of the replacing property (or properties)" ;
+  rdfs:comment "global eindeutiger Bezeichner (Attribut PA001) des ersetzenden Merkmals (oder der Merkmale)"@de-DE ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "List of replacing properties" ;
+  rdfs:label "Liste ersetzender Merkmale"@de-DE ;
+  rdfs:range iddo:Property ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf iddo:replacesProperties ;
+  skos:scopeNote "PA012" ;
+  iddo:code "PA012" ;
+  iddo:code "PA012"@de-DE ;
+.
+iddo:replacesGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "List of globally unique identifiers of the replaced groups of properties" ;
+  rdfs:comment "Liste von globalen Bezeichnern fuer die ersetzten Merk-malsgruppen"@de-DE ;
+  rdfs:domain iddo:GroupOfProperties ;
+  rdfs:label "List of replaced groups of properties" ;
+  rdfs:label "Liste ersetzter Merkmalsgruppen"@de-DE ;
+  rdfs:range iddo:GroupOfProperties ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf iddo:isReplacedByGroupOfProperties ;
+  skos:scopeNote "GA011" ;
+  iddo:code "GA011" ;
+  iddo:code "GA011"@de-DE ;
+.
+iddo:replacesProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Global eindeutiger Bezeichner des ersetzten Merkmals (oder der Merkmale)"@de-DE ;
+  rdfs:comment "Globally unique identifier of the replaced property (or properties)" ;
+  rdfs:domain iddo:Property ;
+  rdfs:label "List of replaced properties" ;
+  rdfs:label "Liste ersetzter Merkmale"@de-DE ;
+  rdfs:range iddo:Property ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:inverseOf iddo:isReplacedByProperty ;
+  skos:scopeNote "PA011" ;
+  iddo:code "PA011" ;
+  iddo:code "PA011"@de-DE ;
 .
