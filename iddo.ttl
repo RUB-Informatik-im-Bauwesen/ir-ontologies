@@ -1159,14 +1159,25 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:DataType ;
+      owl:onProperty iddo:GloballyUniqueIdentifier ;
       owl:qualifiedCardinality 1 ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:GloballyUniqueIdentifier ;
-      owl:qualifiedCardinality 1 ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "BOOLEAN"
+              "INTEGER"
+              "RATIONAL"
+              "REAL"
+              "COMPLEX"
+              "STRING"
+              "DATETIME"
+            ) ;
+        ] ;
+      owl:onProperty iddo:DataType ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
