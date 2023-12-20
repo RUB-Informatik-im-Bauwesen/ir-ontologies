@@ -138,6 +138,37 @@ dt:PhysicalQuantity
   rdfs:subClassOf dt:LibraryComponent ;
   owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
 .
+dt:PredefinedValueItem
+  rdf:type owl:Class ;
+  rdfs:label "Definition of the property in language N"@en-GB ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf schema:PropertyValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty schema:value ;
+    ] ;
+.
+dt:PredefinedValuesList
+  rdf:type owl:Class ;
+  rdfs:label "T Predefined Values"@en-GB ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <https://w3id.org/iddo/v2#hasUnit> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty <https://w3id.org/iddo/v2#hasUnit> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasPredefinedValueItem ;
+    ] ;
+.
 dt:ReferenceDocument
   rdf:type rdfs:Class ;
   rdfs:label "Reference document"@en ;
@@ -229,6 +260,16 @@ dt:hasExternalDictionaryReference
   rdfs:domain dt:LibraryComponent ;
   rdfs:label "referenced external dictionary" ;
   rdfs:range dt:ExternalDictionaryReference ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasPredefinedValueItem
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Predefinded Value Item@en-GB}" ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+dt:hasPredefinedValues
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Predefined Values"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasProperty
