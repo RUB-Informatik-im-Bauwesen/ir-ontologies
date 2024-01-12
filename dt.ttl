@@ -169,6 +169,13 @@ dt:PredefinedValuesList
       owl:onProperty dt:hasPredefinedValueItem ;
     ] ;
 .
+dt:Property
+  rdf:type rdfs:Class ;
+  rdfs:comment "Inherent or acquired feature of an item"@en ;
+  rdfs:label "Property"@en-GB ;
+  rdfs:subClassOf dt:LibraryComponent ;
+  owl:equivalentClass <https://w3id.org/iddo/v2#Property> ;
+.
 dt:ReferenceDocument
   rdf:type rdfs:Class ;
   rdfs:label "Reference document"@en ;
