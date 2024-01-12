@@ -136,7 +136,7 @@ dt:PhysicalQuantity
   rdf:type rdfs:Class ;
   rdfs:label "Physical quantity" ;
   rdfs:subClassOf dt:LibraryComponent ;
-  owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
+  owl:equivalentClass <http://qudt.org/schema/qudt/QuantityKind> ;
 .
 dt:PredefinedValueItem
   rdf:type owl:Class ;

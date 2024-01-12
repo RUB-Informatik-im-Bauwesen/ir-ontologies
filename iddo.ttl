@@ -700,12 +700,6 @@ iddo:GroupOfProperties
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty iddo:hasDimension ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onClass iddo:ExternalDictionaryReference ;
       owl:onProperty iddo:hasExternalDictionaryReference ;
@@ -888,6 +882,7 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
   rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
+  owl:equivalentClass qudt:QuantityKind ;
 .
 iddo:PossibleValueInLanguageN
   rdf:type rdfs:Class ;
@@ -1463,20 +1458,6 @@ Precision is the number of significant digits""" ;
   skos:scopeNote "PA037" ;
   iddo:code "PA037" ;
   iddo:code "PA037"@de-DE ;
-.
-iddo:hasDimension
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment """Im Falle einer physikalischen Groesse, Dimension nach ISO 80000 (alle Teile)
-dieses Attribut ermoeglicht, dass die Dimension maschinenlesbar ist; da alle physikalischen Groessen von 7 Basisgroessen abgeleitet sind, wird es durch Angabe der Basisdimensionen mit zugehoeriger Potenz (als rationale Zahl) in der folgenden Reihenfolge und mit jeweils einem Leerzeichen dazwischen angegeben"""@de-DE ;
-  rdfs:comment """In case of a physical quantity, dimension according to ISO 80000 (all parts)
-This attribute allows the dimension to be machine readable; as all physical quantities are derived from 7 base quantities, it is provided with the power (as a rational number) attached to a basic dimension in the following order and with one space between each""" ;
-  rdfs:domain iddo:Property ;
-  rdfs:label "Dimension" ;
-  rdfs:label "Dimension"@de-DE ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  skos:scopeNote "PA028" ;
-  iddo:code "PA028" ;
-  iddo:code "PA028"@de-DE ;
 .
 iddo:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
