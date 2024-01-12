@@ -91,7 +91,7 @@ dt:DataTemplate
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:isDataTemplateFor ;
-      owl:someValuesFrom <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
+      owl:someValuesFrom <https://w3id.org/loin/v2#AlphanumericalInformation> ;
     ] ;
 .
 dt:ExternalDictionaryReference

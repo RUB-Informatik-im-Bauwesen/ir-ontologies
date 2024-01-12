@@ -691,7 +691,7 @@ loin:hasBreakdownStructureType
 .
 loin:hasDataTemplate
   rdf:type owl:ObjectProperty ;
-  rdfs:domain loin:SpecificationPerObjectType ;
+  rdfs:domain loin:AlphanumericalInformation ;
   rdfs:label "has data template" ;
   rdfs:range dt:DataTemplate ;
   rdfs:subPropertyOf loin:hasAlphanumericalInformation ;
@@ -702,6 +702,7 @@ loin:hasDocument
   rdfs:comment "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"@en ;
   rdfs:domain loin:Documentation ;
   rdfs:label "has document"@en ;
+  rdfs:range loin:RequiredDocument ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
