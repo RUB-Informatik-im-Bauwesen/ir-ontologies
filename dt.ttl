@@ -148,6 +148,11 @@ dt:PredefinedValueItem
       owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasIndex ;
+    ] ;
 .
 dt:PredefinedValuesList
   rdf:type owl:Class ;
@@ -174,6 +179,11 @@ dt:Property
   rdfs:comment "Inherent or acquired feature of an item"@en ;
   rdfs:label "Property"@en-GB ;
   rdfs:subClassOf dt:LibraryComponent ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty dt:hasPredefinedValues ;
+    ] ;
   owl:equivalentClass <https://w3id.org/iddo/v2#Property> ;
 .
 dt:ReferenceDocument
@@ -269,6 +279,11 @@ dt:hasExternalDictionaryReference
   rdfs:range dt:ExternalDictionaryReference ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
+dt:hasIndex
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Index of the element in the enumeration" ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 dt:hasPredefinedValueItem
   rdf:type owl:ObjectProperty ;
   rdfs:label "Predefinded Value Item@en-GB}" ;
@@ -278,6 +293,7 @@ dt:hasPredefinedValues
   rdf:type owl:ObjectProperty ;
   rdfs:label "Predefined Values"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/iddo/v2#hasPossibleValues> ;
 .
 dt:hasProperty
   rdf:type owl:ObjectProperty ;
