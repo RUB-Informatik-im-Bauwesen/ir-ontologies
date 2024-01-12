@@ -884,7 +884,7 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
   owl:equivalentClass qudt:QuantityKind ;
 .
-iddo:PossibleValueInLanguageN
+iddo:PossibleValues
   rdf:type rdfs:Class ;
   rdfs:comment """Moeglicher Wert fuer das Merkmal und Sprache
 Werte koennen String oder Zahlen sein"""@de-DE ;
@@ -899,6 +899,7 @@ Values can be string or numbers""" ;
       owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
+  owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> ;
   skos:scopeNote "PA039" ;
   iddo:code "PA039" ;
   iddo:code "PA039"@de-DE ;
@@ -962,8 +963,8 @@ iddo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
-      owl:onClass iddo:PossibleValueInLanguageN ;
-      owl:onProperty iddo:hasPossibleValuesInLanguageN ;
+      owl:onClass iddo:PossibleValues ;
+      owl:onProperty iddo:hasPossibleValues ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1077,7 +1078,7 @@ iddo:Property
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
-      owl:onProperty iddo:hasPossibleValuesInLanguageN ;
+      owl:onProperty iddo:hasPossibleValues ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1566,7 +1567,7 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
   iddo:code "PA027" ;
   iddo:code "PA027"@de-DE ;
 .
-iddo:hasPossibleValuesInLanguageN
+iddo:hasPossibleValues
   rdf:type owl:ObjectProperty ;
   rdfs:comment """List of pairs (possible value for the property and language)
 Values can be string or numbers""" ;
@@ -1575,7 +1576,7 @@ Werte koennen String oder Zahlen sein"""@de-DE ;
   rdfs:domain iddo:Property ;
   rdfs:label "List of possible values in language N" ;
   rdfs:label "Liste moeglicher Werte in Sprache N"@de-DE ;
-  rdfs:range iddo:PossibleValueInLanguageN ;
+  rdfs:range iddo:PossibleValues ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   skos:scopeNote "PA039" ;
   iddo:code "PA039" ;
