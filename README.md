@@ -1,4 +1,4 @@
-# DOING - Data Ontology for Information Need Group
+# Harmonization project for LOIN, Data Templates, and Properties on an ontological basis
 
 * **Contributors**
   * [Liu Liu](https://orcid.org/0000-0001-5907-7609)
@@ -27,6 +27,7 @@
 [LOIN / EN 17412–1 Ontology (TTL)](loin.ttl)   
 [Data Templates /ISO 23387 Ontology (TTL)](dt.ttl)   
 [Example (TTL)](loin-dt-iddo.ttl)   
+
 ### Work process
 After every edit execute:
 ```
@@ -34,6 +35,6 @@ After every edit execute:
 ./pylode.exe -i iddo.ttl -o iddo.md -f md
 ./pylode.exe -i dt.ttl -o dt.md -f md
 ```
-
+for documentation.
 
  
