@@ -17,13 +17,13 @@
 ## Table of contents
 ### Documentation
 
-[IDDO / ISO 23386 Ontology Documentation](iddo.md)   
+[IDDO / ISOProps / ISO 23386 Ontology Documentation](iddo.md)   
 [LOIN / EN 17412–1 Ontology Documentation](loin.md)   
 [Data Templates /ISO 23387 Ontology Documentation](dt.md)   
 [Examples Documentation](loin-dt-iddo.md)   
 
 ### Ontology data
-[IDDO / ISO 23386 Ontology (TTL)](iddo.ttl)   
+[IDDO / ISOProps / ISO 23386 Ontology (TTL)](iddo.ttl)   
 [LOIN / EN 17412–1 Ontology (TTL)](loin.ttl)   
 [Data Templates /ISO 23387 Ontology (TTL)](dt.ttl)   
 [Example (TTL)](loin-dt-iddo.ttl)   
