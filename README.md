@@ -21,6 +21,7 @@
 [LOIN / EN 17412–1 Ontology Documentation](loin.md)   
 [Data Templates /ISO 23387 Ontology Documentation](dt.md)   
 [Examples Documentation](loin-dt-iddo.md)   
+[Evaluation of FAIR Data principles](fair-data.md)   
 
 ### Ontology data
 [IDDO / ISOProps / ISO 23386 Ontology (TTL)](iddo.ttl)   
