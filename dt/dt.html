@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Data Template (TMP) Ontology</title>
+    <title>Data Template (DT) Ontology</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -184,13 +184,13 @@
     <script type="application/ld+json">
       [
   {
-    "@id": "http://inf.bi.rub.de/ontology/dt",
+    "@id": "http://w3id.org/dt",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The Data Template (TMP) Ontology is defined for ...</p>"
+        "@value": "<p>The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. </p>"
       }
     ],
     "https://schema.org/license": [
@@ -200,7 +200,7 @@
     ],
     "https://schema.org/name": [
       {
-        "@value": "Data Template (TMP) Ontology"
+        "@value": "Data Template (DT) Ontology"
       }
     ],
     "https://schema.org/rights": [
@@ -217,12 +217,12 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.4</span>
   </div>
-  <h1>Data Template (TMP) Ontology</h1>
+  <h1>Data Template (DT) Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
         <dt>IRI</dt>
-        <dd><code>http://inf.bi.rub.de/ontology/dt</code></dd>
+        <dd><code>http://w3id.org/dt</code></dd>
         <dt>Creator(s)</dt>
         <dd>
             
@@ -324,8 +324,8 @@
         <dd>Created with TopBraid Composer</dd>
         <dt>Imports</dt>
         <dd>
-            <a href="https://w3id.org/iddo/v2">https://w3id.org/iddo/v2</a><br/>
-            <a href="https://w3id.org/loin/v2">https://w3id.org/loin/v2</a><br/>
+            <a href="https://w3id.org/isoprops">https://w3id.org/isoprops</a><br/>
+            <a href="https://w3id.org/loin">https://w3id.org/loin</a><br/>
         </dd>
         <dt>License &amp; Rights</dt>
         <dd>
@@ -333,13 +333,13 @@
             &copy; 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar
         </dd>
         <dt>Source</dt>
-        <dd><a href="https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology">https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology</a></dd>
+        <dd><a href="https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt">https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt</a></dd>
         <dt>Ontology RDF</dt>
         <dd><a href="dt.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The Data Template (TMP) Ontology is defined for ...</p>
+        <p>The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. </p>
     </div>
 </section>
 <section id="toc">
@@ -352,26 +352,19 @@
         <li><a href="#legend">Legend</a></li>
     </ol>
 </section>
-<section id="overview">
-    <h2>Overview</h2>
-    <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
-        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
-    </div>
-</section>
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#Constructionobject">Construction object</a></li>
         <li><a href="#Datatemplate">Data template</a></li>
-        <li><a href="#DefinitionofthepropertyinlanguageN">Definition of the property in language N</a></li>
         <li><a href="#Externaldictionary">External dictionary</a></li>
         <li><a href="#Librarycomponent">Library component</a></li>
         <li><a href="#Physicalquantity">Physical quantity</a></li>
+        <li><a href="#Predefinedvalueitem">Predefined value item</a></li>
+        <li><a href="#Predefinedvaluelist">Predefined value list</a></li>
         <li><a href="#Property">Property</a></li>
         <li><a href="#Referencedocument">Reference document</a></li>
         <li><a href="#Setofproperties">Set of properties</a></li>
-        <li><a href="#TPredefinedValues">T Predefined Values</a></li>
         <li><a href="#Unit">Unit</a></li>
     </ul>
     <div class="entity class" id="Constructionobject">
@@ -379,12 +372,12 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#ConstructionObject</code></td>
+                <td><code>http://w3id.org/dt#ConstructionObject</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Enter a comment</p>
+                    <p>object of interest in the context of a construction process</p>
                 </td>
             </tr>
             <tr>
@@ -400,12 +393,12 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#DataTemplate</code></td>
+                <td><code>http://w3id.org/dt#DataTemplate</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Enter a comment</p>
+                    <p>data structure used to describe the characteristics of construction objects</p>
                 </td>
             </tr>
             <tr>
@@ -417,17 +410,17 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#isdatatemplatefor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin/v2#AlphanumericalInformation">https://w3id.org/loin/v2#AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/iddo/v2#Property">https://w3id.org/iddo/v2#Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#isdatatemplatefor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin/v2#AlphanumericalInformation">https://w3id.org/loin/v2#AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#isdatatemplatefor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -437,7 +430,13 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference</code></td>
+                <td><code>http://w3id.org/dt#ExternalDictionaryReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>reference to an external dictionary, which is a centralized repository of information about data such as meaning, relationships to other data, origin, usage and format</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -471,12 +470,12 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#LibraryComponent</code></td>
+                <td><code>http://w3id.org/dt#LibraryComponent</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Enter a comment</p>
+                    <p>named and individually scheduled physical item and feature that might require management, such as inspection, maintenance, servicing or replacement, during the in-use phase</p>
                 </td>
             </tr>
             <tr>
@@ -488,20 +487,20 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Externaldictionary">dt:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasreferencedocument">dt:hasReferenceDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Referencedocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Externaldictionary">dt:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Unit">dt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Physicalquantity">dt:PhysicalQuantity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Constructionobject">dt:ConstructionObject</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Property">dt:Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Physicalquantity">dt:PhysicalQuantity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Referencedocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Property">dt:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Unit">dt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -519,7 +518,13 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#PhysicalQuantity</code></td>
+                <td><code>http://w3id.org/dt#PhysicalQuantity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>the physical quantity of a library component</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -529,12 +534,18 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="DefinitionofthepropertyinlanguageN">
-        <h3>Definition of the property in language N<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="Predefinedvalueitem">
+        <h3>Predefined value item<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#PredefinedValueItem</code></td>
+                <td><code>http://w3id.org/dt#PredefinedValueItem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>the physical quantity of a library component</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -546,18 +557,24 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#Indexoftheelementintheenumeration">dt:hasIndex</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Indexoftheelementintheenumeration">dt:hasIndex</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity class" id="TPredefinedValues">
-        <h3>T Predefined Values<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="Predefinedvaluelist">
+        <h3>Predefined value list<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#PredefinedValuesList</code></td>
+                <td><code>http://w3id.org/dt#PredefinedValuesList</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>list of predefined values</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -568,9 +585,9 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="https://w3id.org/isoprops#hasUnit">https://w3id.org/isoprops#hasUnit</a> <span class="cardinality">min</span> 0<br/>
+                    <a href="https://w3id.org/isoprops#hasUnit">https://w3id.org/isoprops#hasUnit</a> <span class="cardinality">max</span> 1<br/>
                     <a href="#PredefindedValueItem@en-GB}">dt:hasPredefinedValueItem</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="https://w3id.org/iddo/v2#hasUnit">https://w3id.org/iddo/v2#hasUnit</a> <span class="cardinality">min</span> 0<br/>
-                    <a href="https://w3id.org/iddo/v2#hasUnit">https://w3id.org/iddo/v2#hasUnit</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -580,12 +597,12 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#Property</code></td>
+                <td><code>http://w3id.org/dt#Property</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Inherent or acquired feature of an item</p>
+                    <p>inherent or acquired feature of an item</p>
                 </td>
             </tr>
             <tr>
@@ -607,7 +624,13 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#ReferenceDocument</code></td>
+                <td><code>http://w3id.org/dt#ReferenceDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>publication that is consulted to find specific information, particularly in a technical or scientific domain</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -619,10 +642,10 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="#uri">dt:uri</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#author">dt:author</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#dateofpublication">dt:dateOfPublication</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#publisher">dt:publisher</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#ISBN">dt:ISBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#publisher">dt:publisher</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#dateofpublication">dt:dateOfPublication</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#author">dt:author</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -638,7 +661,13 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#SetOfProperties</code></td>
+                <td><code>http://w3id.org/dt#SetOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>a set of properties that can be applied to a data template</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -649,10 +678,10 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
-                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/iddo/v2#Property">https://w3id.org/iddo/v2#Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
                 </td>
             </tr>
             <tr>
@@ -674,7 +703,13 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#Unit</code></td>
+                <td><code>http://w3id.org/dt#Unit</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the second quantity to the first one as a number</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -703,7 +738,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasExternalDictionary</code></td>
+                <td><code>http://w3id.org/dt#hasExternalDictionary</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -724,7 +759,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty</code></td>
+                <td><code>http://w3id.org/dt#hasExternalDictionaryProperty</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -745,7 +780,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference</code></td>
+                <td><code>http://w3id.org/dt#hasExternalDictionaryReference</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -772,7 +807,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem</code></td>
+                <td><code>http://w3id.org/dt#hasPredefinedValueItem</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -787,7 +822,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasPredefinedValues</code></td>
+                <td><code>http://w3id.org/dt#hasPredefinedValues</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -798,7 +833,7 @@
             <tr>
                 <th>Equivalent properties</th>
                 <td>
-                    <a href="https://w3id.org/iddo/v2#hasPossibleValues">https://w3id.org/iddo/v2#hasPossibleValues</a>
+                    <a href="https://w3id.org/isoprops#hasPossibleValues">https://w3id.org/isoprops#hasPossibleValues</a>
                 </td>
             </tr>
         </table>
@@ -808,7 +843,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasProperty</code></td>
+                <td><code>http://w3id.org/dt#hasProperty</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -825,7 +860,7 @@
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="https://w3id.org/iddo/v2#Property">https://w3id.org/iddo/v2#Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
@@ -835,7 +870,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasReferenceDocument</code></td>
+                <td><code>http://w3id.org/dt#hasReferenceDocument</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -862,7 +897,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasSetOfProperties</code></td>
+                <td><code>http://w3id.org/dt#hasSetOfProperties</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -873,8 +908,8 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup>
                     <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -890,7 +925,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#isDataTemplateFor</code></td>
+                <td><code>http://w3id.org/dt#isDataTemplateFor</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -929,7 +964,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#ISBN</code></td>
+                <td><code>http://w3id.org/dt#ISBN</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -950,7 +985,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#author</code></td>
+                <td><code>http://w3id.org/dt#author</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -971,7 +1006,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#dateOfPublication</code></td>
+                <td><code>http://w3id.org/dt#dateOfPublication</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -992,7 +1027,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#hasIndex</code></td>
+                <td><code>http://w3id.org/dt#hasIndex</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -1007,7 +1042,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#publisher</code></td>
+                <td><code>http://w3id.org/dt#publisher</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -1028,7 +1063,7 @@
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://inf.bi.rub.de/ontology/dt#uri</code></td>
+                <td><code>http://w3id.org/dt#uri</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
@@ -1051,11 +1086,15 @@
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
-        <dd><code>http://inf.bi.rub.de/ontology/dt#</code></dd>
+        <dd><code>http://w3id.org/dt#</code></dd>
         <dt>dc</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>dt</dt>
-        <dd><code>http://inf.bi.rub.de/ontology/dt#</code></dd>
+        <dd><code>http://w3id.org/dt#</code></dd>
+        <dt>isoprops</dt>
+        <dd><code>http://w3id.org/isoprops#</code></dd>
+        <dt>loin</dt>
+        <dd><code>http://w3id.org/loin#</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
         <dt>prov</dt>
