@@ -50,7 +50,7 @@ dcat:accessURL
     ] ;
   dc:issued "2021-12-06"^^xsd:date ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:modified "2022-10-18"^^xsd:date ;
+  dc:modified "2024-04-24"^^xsd:date ;
   dc:publisher [
       rdf:type schema:Organization ;
       schema:identifier <https://www.inf.bi.rub.de> ;
