@@ -1,0 +1,158 @@
+# baseURI: http://inf.bi.rub.de/ontology/loin-dt-isoprops
+# imports: http://w3id.org/dt
+# imports: http://qudt.org/2.1/schema/qudt
+# imports: https://w3id.org/isoprops
+# imports: https://w3id.org/loin/v2
+
+@prefix : <http://inf.bi.rub.de/ontology/loin-dt-isoprops#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dt: <http://w3id.org/dt#> .
+@prefix isoprops: <https://w3id.org/isoprops#> .
+@prefix loin: <https://w3id.org/loin/v2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://inf.bi.rub.de/ontology/loin-dt-isoprops>
+  rdf:type owl:Ontology ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
+      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
+      schema:memberOf [
+          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
+          schema:name "Bauhaus-Universitaet Weimar" ;
+        ] ;
+      schema:name "Marthina Mellenthin-Filardo" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:liu.liu-m6r@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-5907-7609> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Liu Liu" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:philipp.hagedorn-n6v@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0002-6249-243X> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Philipp Hagedorn" ;
+    ] ;
+  dc:creator [
+      rdf:type schema:Person ;
+      schema:email <mailto:sven.zentgraf@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-6058-7614> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Sven Zentgraf" ;
+    ] ;
+  dc:description "Examples as LOIN-DT-ISOProps"@en ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
+  dc:title "Examples for LOIN-DT-ISOProps"@en ;
+  owl:imports <http://w3id.org/dt> ;
+  owl:imports <http://qudt.org/2.1/schema/qudt> ;
+  owl:imports <https://w3id.org/isoprops> ;
+  owl:imports <https://w3id.org/loin/v2> ;
+  owl:versionInfo "1.0" ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+
+############################################################################################################
+########## Following An Example for Building Design Coordination Considering Fire Safety          ##########
+########## Information Requirement Definition for Partitation Wall with Two Properties            ##########
+########## Using LOIN - DT - ISOprops Standardized Ontology Network                               ##########
+############################################################################################################
+
+<http://inf.bi.rub.de/ontology/loin-dt-isoprops>
+  rdf:type owl:Ontology ;
+  owl:imports <http://w3id.org/dt> ;
+  owl:imports <http://qudt.org/2.1/schema/qudt> ;
+  owl:imports <https://w3id.org/isoprops> ;
+  owl:imports <https://w3id.org/loin/v2> ;
+.
+:Building_Detailed_Design
+  rdf:type loin:InformationDeliveryMilestone ;
+  loin:hasPurpose :Coordination ;
+  loin:hasReceivingActor :Lead_Architect ;
+  loin:hasSendingActor :Structural_Engineer ;
+.
+:Coordination
+  rdf:type loin:Purpose ;
+.
+:DIN_EN_1992_1_2_2008
+  rdf:type dt:ReferenceDocument ;
+  rdf:type isoprops:DictionaryReferenceDocument ;
+.
+:DIN_EN_1992_1_2_eDictionary
+  rdf:type isoprops:Dictionary ;
+.
+:Fire_Resistance
+  rdf:type isoprops:Property ;
+  isoprops:CreatorsLanguage "DE" ;
+  isoprops:DataType "REAL" ;
+  isoprops:DateOfActivation "2023-12-08T13:40:57.229"^^xsd:dateTime ;
+  isoprops:DateOfCreation "2023-12-01T13:41:41.339"^^xsd:dateTime ;
+  isoprops:DefinitionInLanguage "EN" ;
+  isoprops:NameInLanguage "EN" ;
+  isoprops:hasGroupOfProperties :Wall_Partition_PGrp ;
+.
+:Lead_Architect
+  rdf:type loin:ReceivingActor ;
+.
+:Partition_Wall
+  rdf:type loin:SpecificationPerObjectType ;
+  loin:hasAlphanumericalInformation :Partition_Wall_Info_Content ;
+  loin:hasInformation :Partition_Wall_Info_Content ;
+  loin:hasObjectType :Wall_Partition_NonLoadBearing_SpaceEnclosing ;
+.
+:Partition_Wall_Info_Content
+  rdf:type loin:AlphanumericalInformation ;
+  loin:hasDataTemplate :Wall_Fire_Resistance_Template ;
+.
+:Structural_Engineer
+  rdf:type loin:SendingActor ;
+.
+:Wall_Fire_Resistance_PSet
+  rdf:type dt:SetOfProperties ;
+  dt:hasProperty :Fire_Resistance ;
+  dt:hasProperty :Wall_Thickness ;
+.
+:Wall_Fire_Resistance_Template
+  rdf:type dt:DataTemplate ;
+  dt:hasExternalDictionaryReference :DIN_EN_1992_1_2_eDictionary ;
+  dt:hasReferenceDocument :DIN_EN_1992_1_2_2008 ;
+  dt:hasSetOfProperties :Wall_Fire_Resistance_PSet ;
+  dt:isDataTemplateFor :Partition_Wall ;
+.
+:Wall_Partition_NonLoadBearing_SpaceEnclosing
+  rdf:type dt:ConstructionObject ;
+.
+:Wall_Partition_PGrp
+  rdf:type isoprops:GroupOfProperties ;
+.
+:Wall_Thickness
+  rdf:type isoprops:Property ;
+  isoprops:CountryOfOrigin "DE" ;
+  isoprops:CountryOfUse "DE" ;
+  isoprops:DataType "INTEGER" ;
+  isoprops:DateOfActivation "2023-12-12T14:14:55.995"^^xsd:dateTime ;
+  isoprops:DateOfCreation "2023-12-01T14:15:10.507"^^xsd:dateTime ;
+  isoprops:NameInLanguage "EN" ;
+  isoprops:hasGroupOfProperties :Wall_Partition_PGrp ;
+  isoprops:hasUnit <http://qudt.org/vocab/unit/MilliM> ;
+.

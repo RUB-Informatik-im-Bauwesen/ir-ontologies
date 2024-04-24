@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <title>Level of Information Need (LOIN) Ontology</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
+EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -132,8 +135,8 @@
         .sup-ap,
         .sup-p,
         .sup-ni,
-        .sup-cp,
-        .sup-cl {
+        .sup-con,
+        .sup-col {
             cursor:help;
             margin-left: 3px;
         }
@@ -166,11 +169,11 @@
             color:brown;
         }
 
-        .sup-cp {
+        .sup-con {
             color:orange;
         }
 
-        .sup-cl {
+        .sup-col {
             color:darkred;
         }
 
@@ -179,6 +182,11 @@
             color: darkred;
         }
 
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
     </style>
     
     <script type="application/ld+json">
@@ -215,24 +223,25 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.4</span>
+    <span style="font-size:smaller;">2.9.3</span>
   </div>
   <h1>Level of Information Need (LOIN) Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
-        <dt>IRI</dt>
+        <dt>URI</dt>
         <dd><code>https://w3id.org/loin</code></dd>
-        <dt>Publisher(s)</dt>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">Publisher</a>(s)</dt>
         <dd>
             
     <a href="https://www.inf.bi.rub.de">Chair of Computing in Engineering, Ruhr University Bochum</a><br/>
         </dd>
-        <dt>Creator(s)</dt>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
         <dd>
             
     <a href="https://orcid.org/0000-0001-5907-7609">Liu Liu</a>
-    <a href="https://orcid.org/0000-0001-5907-7609"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -250,12 +259,14 @@
             </g>
         </g>
     </g>
-</svg></a>
+  </svg>
+</a>
     (<a href="mailto:liu.liu-m6r@rub.de">liu.liu-m6r@rub.de</a>) of 
     <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en">Ruhr University Bochum</a><br/>
             
     <a href="https://orcid.org/0000-0002-6249-243X">Philipp Hagedorn</a>
-    <a href="https://orcid.org/0000-0002-6249-243X"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="">
+  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -273,11 +284,12 @@
             </g>
         </g>
     </g>
-</svg></a>
+  </svg>
+</a>
     (<a href="mailto:philipp.hagedorn-n6v@rub.de">philipp.hagedorn-n6v@rub.de</a>) of 
     <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en">Ruhr University Bochum</a><br/>
         </dd>
-        <dt>Created</dt>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
         <dd>2023-01-30</dd>
         <dt>Version Information</dt>
         <dd>2.0</dd>
@@ -320,57 +332,60 @@
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#Actor">Actor</a></li>
-        <li><a href="#Alphanumericalinformation">Alphanumerical information</a></li>
-        <li><a href="#Alphanumericalinformationcontent">Alphanumerical information content</a></li>
-        <li><a href="#Appearance">Appearance</a></li>
-        <li><a href="#Attributename">Attribute name</a></li>
-        <li><a href="#AttributeofIDS">Attribute of IDS</a></li>
-        <li><a href="#Breakdownstructure">Breakdown structure</a></li>
-        <li><a href="#Breakdownstructuretype">Breakdown structure type</a></li>
-        <li><a href="#ClassificationofIDS">Classification of IDS</a></li>
-        <li><a href="#Detail">Detail</a></li>
-        <li><a href="#Dimensionality">Dimensionality</a></li>
-        <li><a href="#Document">Document</a></li>
-        <li><a href="#Documentcontent">Document content</a></li>
-        <li><a href="#Documentformat">Document format</a></li>
-        <li><a href="#Documentpurpose">Document purpose</a></li>
-        <li><a href="#Documentspecification">Document specification</a></li>
-        <li><a href="#Documentation">Documentation</a></li>
-        <li><a href="#Entity">Entity</a></li>
-        <li><a href="#Entityname">Entity name</a></li>
-        <li><a href="#Geometricalinformation">Geometrical information</a></li>
-        <li><a href="#Geometricalinformationspecification">Geometrical information specification</a></li>
-        <li><a href="#IDSdatadefinition">IDS data definition</a></li>
-        <li><a href="#IDSfacetdefinition">IDS facet definition</a></li>
-        <li><a href="#IDSfacetparameter">IDS facet parameter</a></li>
-        <li><a href="#IDSrequirementtype">IDS requirement type</a></li>
-        <li><a href="#IFCdatatype">IFC data type</a></li>
-        <li><a href="#Identification">Identification</a></li>
-        <li><a href="#Identifier">Identifier</a></li>
-        <li><a href="#Identifiertype">Identifier type</a></li>
-        <li><a href="#Information">Information</a></li>
-        <li><a href="#Informationdeliverymilestone">Information delivery milestone</a></li>
-        <li><a href="#Location">Location</a></li>
-        <li><a href="#Material">Material</a></li>
-        <li><a href="#Ontologydatadefinition">Ontology data definition</a></li>
-        <li><a href="#Parametricbehaviour">Parametric behaviour</a></li>
-        <li><a href="#Predefinedtype">Predefined type</a></li>
-        <li><a href="#Property">Property</a></li>
-        <li><a href="#Propertyname">Property name</a></li>
-        <li><a href="#Propertysetname">Property set name</a></li>
-        <li><a href="#Purpose">Purpose</a></li>
-        <li><a href="#Receivingactor">Receiving actor</a></li>
-        <li><a href="#Restrictiontype">Restriction type</a></li>
-        <li><a href="#Sendingactor">Sending actor</a></li>
-        <li><a href="#SpecificationperObjectType">Specification per Object Type</a></li>
-        <li><a href="#Value">Value</a></li>
+      <li><a href="#Actor">Actor</a></li>
+      <li><a href="#Alphanumericalinformation">Alphanumerical information</a></li>
+      <li><a href="#Appearance">Appearance</a></li>
+      <li><a href="#Breakdownstructure">Breakdown structure</a></li>
+      <li><a href="#Breakdownstructuretype">Breakdown structure type</a></li>
+      <li><a href="#Detail">Detail</a></li>
+      <li><a href="#Dimensionality">Dimensionality</a></li>
+      <li><a href="#Documentcontent">Document content</a></li>
+      <li><a href="#Documentformat">Document format</a></li>
+      <li><a href="#Documentpurpose">Document purpose</a></li>
+      <li><a href="#Documentspecification">Document specification</a></li>
+      <li><a href="#Documentation">Documentation</a></li>
+      <li><a href="#Geometricalinformation">Geometrical information</a></li>
+      <li><a href="#Geometricalinformationspecification">Geometrical information specification</a></li>
+      <li><a href="#Identification">Identification</a></li>
+      <li><a href="#Identifier">Identifier</a></li>
+      <li><a href="#Identifiertype">Identifier type</a></li>
+      <li><a href="#Information">Information</a></li>
+      <li><a href="#Alphanumericalinformationcontent">Alphanumerical information content</a></li>
+      <li><a href="#Informationdeliverymilestone">Information delivery milestone</a></li>
+      <li><a href="#Location">Location</a></li>
+      <li><a href="#Ontologydatadefinition">Ontology data definition</a></li>
+      <li><a href="#Parametricbehaviour">Parametric behaviour</a></li>
+      <li><a href="#Purpose">Purpose</a></li>
+      <li><a href="#Receivingactor">Receiving actor</a></li>
+      <li><a href="#Document">Document</a></li>
+      <li><a href="#Sendingactor">Sending actor</a></li>
+      <li><a href="#SpecificationperObjectType">Specification per Object Type</a></li>
+      <li><a href="#AttributeofIDS">Attribute of IDS</a></li>
+      <li><a href="#Attributename">Attribute name</a></li>
+      <li><a href="#ClassificationofIDS">Classification of IDS</a></li>
+      <li><a href="#IDSdatadefinition">IDS data definition</a></li>
+      <li><a href="#Entity">Entity</a></li>
+      <li><a href="#Entityname">Entity name</a></li>
+      <li><a href="#IDSfacetdefinition">IDS facet definition</a></li>
+      <li><a href="#IDSfacetparameter">IDS facet parameter</a></li>
+      <li><a href="#IFCdatatype">IFC data type</a></li>
+      <li><a href="#Material">Material</a></li>
+      <li><a href="#Predefinedtype">Predefined type</a></li>
+      <li><a href="#Property">Property</a></li>
+      <li><a href="#Propertyname">Property name</a></li>
+      <li><a href="#Propertysetname">Property set name</a></li>
+      <li><a href="#IDSrequirementtype">IDS requirement type</a></li>
+      <li><a href="#Restrictiontype">Restriction type</a></li>
+      <li><a href="#Value">Value</a></li>
     </ul>
     <div class="entity class" id="Actor">
-        <h3>Actor<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Actor<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Actor" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Actor</code></td>
             </tr>
             <tr>
@@ -388,24 +403,27 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Sendingactor">loin:SendingActor</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Receivingactor">loin:ReceivingActor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Receivingactor">Receiving actor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Sendingactor">Sending actor</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerParty">icdd4loin:isRelatedToContainerParty</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasagent">loin:hasAgent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasagent">has agent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtocontainerparty">is related to container party</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Alphanumericalinformation">
-        <h3>Alphanumerical information<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Alphanumerical information<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Alphanumericalinformation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#AlphanumericalInformation</code></td>
             </tr>
             <tr>
@@ -417,37 +435,40 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Information">Information</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#requested">requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasidentification">loin:hasIdentification</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasalphanumericalinformatoncontent">loin:hasInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#hasdatatemplate">loin:hasDataTemplate</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentification">has identification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasalphanumericalinformatoncontent">has alphanumerical informaton content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#requested">requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasdatatemplate">has data template</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasalphanumericalinformation">has alphanumerical information</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Appearance">
-        <h3>Appearance<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Appearance<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Appearance" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Appearance</code></td>
             </tr>
             <tr>
@@ -459,16 +480,27 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#real-world">https://w3id.org/loin#real-world</a><br/>
+                    <a href="https://w3id.org/loin#realistic">https://w3id.org/loin#realistic</a><br/>
+                    <a href="https://w3id.org/loin#symbolic">https://w3id.org/loin#symbolic</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Breakdownstructure">
-        <h3>Breakdown structure<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Breakdown structure<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Breakdownstructure" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#BreakdownStructure</code></td>
             </tr>
             <tr>
@@ -486,29 +518,32 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasidentifier">has identifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasbreakdownstructuretype">loin:hasBreakdownStructureType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasbreakdownstructuretype">has breakdown structure type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifier">has identifier</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasbreakdownstructure">has breakdown structure</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Breakdownstructuretype">
-        <h3>Breakdown structure type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Breakdown structure type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Breakdownstructuretype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#BreakdownStructureType</code></td>
             </tr>
             <tr>
@@ -526,16 +561,30 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasbreakdownstructuretype">loin:hasBreakdownStructureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasbreakdownstructuretype">has breakdown structure type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#Semantic">https://w3id.org/loin#Semantic</a><br/>
+                    <a href="https://w3id.org/loin#ClassificationSystem">https://w3id.org/loin#ClassificationSystem</a><br/>
+                    <a href="https://w3id.org/loin#EngineeringPrinciple">https://w3id.org/loin#EngineeringPrinciple</a><br/>
+                    <a href="https://w3id.org/loin#Functional">https://w3id.org/loin#Functional</a><br/>
+                    <a href="https://w3id.org/loin#Spatial">https://w3id.org/loin#Spatial</a><br/>
+                    <a href="https://w3id.org/loin#FederationStrategy">https://w3id.org/loin#FederationStrategy</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Detail">
-        <h3>Detail<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Detail<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Detail" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Detail</code></td>
             </tr>
             <tr>
@@ -547,16 +596,26 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#detailed">https://w3id.org/loin#detailed</a><br/>
+                    <a href="https://w3id.org/loin#simplified">https://w3id.org/loin#simplified</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Dimensionality">
-        <h3>Dimensionality<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Dimensionality<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Dimensionality" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Dimensionality</code></td>
             </tr>
             <tr>
@@ -568,16 +627,28 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#zero-dimensional">https://w3id.org/loin#zero-dimensional</a><br/>
+                    <a href="https://w3id.org/loin#two-dimensional">https://w3id.org/loin#two-dimensional</a><br/>
+                    <a href="https://w3id.org/loin#three-dimensional">https://w3id.org/loin#three-dimensional</a><br/>
+                    <a href="https://w3id.org/loin#one-dimensional">https://w3id.org/loin#one-dimensional</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Documentcontent">
-        <h3>Document content<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Document content<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Documentcontent" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#DocumentContent</code></td>
             </tr>
             <tr>
@@ -589,16 +660,31 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentspecification">Document specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#Photograph">https://w3id.org/loin#Photograph</a><br/>
+                    <a href="https://w3id.org/loin#Signed_Document">https://w3id.org/loin#Signed_Document</a><br/>
+                    <a href="https://w3id.org/loin#Hard_Copy">https://w3id.org/loin#Hard_Copy</a><br/>
+                    <a href="https://w3id.org/loin#Report">https://w3id.org/loin#Report</a><br/>
+                    <a href="https://w3id.org/loin#Specification">https://w3id.org/loin#Specification</a><br/>
+                    <a href="https://w3id.org/loin#Handdrawn_Sketches">https://w3id.org/loin#Handdrawn_Sketches</a><br/>
+                    <a href="https://w3id.org/loin#Manual">https://w3id.org/loin#Manual</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Documentformat">
-        <h3>Document format<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Document format<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Documentformat" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#DocumentFormat</code></td>
             </tr>
             <tr>
@@ -610,16 +696,19 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentspecification">Document specification</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Documentpurpose">
-        <h3>Document purpose<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Document purpose<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Documentpurpose" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#DocumentPurpose</code></td>
             </tr>
             <tr>
@@ -631,16 +720,28 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentspecification">Document specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#Required_For_Approval">https://w3id.org/loin#Required_For_Approval</a><br/>
+                    <a href="https://w3id.org/loin#Used_As_Template">https://w3id.org/loin#Used_As_Template</a><br/>
+                    <a href="https://w3id.org/loin#Required_with_Supplement">https://w3id.org/loin#Required_with_Supplement</a><br/>
+                    <a href="https://w3id.org/loin#Provided_As_Information">https://w3id.org/loin#Provided_As_Information</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Documentspecification">
-        <h3>Document specification<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Document specification<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Documentspecification" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#DocumentSpecification</code></td>
             </tr>
             <tr>
@@ -658,24 +759,27 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Documentpurpose">loin:DocumentPurpose</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Documentformat">loin:DocumentFormat</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Documentcontent">loin:DocumentContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentformat">Document format</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentcontent">Document content</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentpurpose">Document purpose</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentatonspecification">has documentaton specification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Documentation">
-        <h3>Documentation<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Documentation<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Documentation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Documentation</code></td>
             </tr>
             <tr>
@@ -687,34 +791,37 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Information">Information</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasdocument">has document</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Document">Document</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocument">has document</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentation">has documentation</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Geometricalinformation">
-        <h3>Geometrical information<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Geometrical information<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Geometricalinformation" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#GeometricalInformation</code></td>
             </tr>
             <tr>
@@ -726,40 +833,49 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Information">Information</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Detail">loin:Detail</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Location">loin:Location</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Appearance">loin:Appearance</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Parametricbehaviour">loin:ParametricBehaviour</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Dimensionality">loin:Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Detail">Detail</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Location">Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Parametricbehaviour">Parametric behaviour</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#requested">requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Dimensionality">Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Appearance">Appearance</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#requested">requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasgeometricalinformation">has geometrical information</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#NotRequested">https://w3id.org/loin#NotRequested</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Geometricalinformationspecification">
-        <h3>Geometrical information specification<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Geometrical information specification<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Geometricalinformationspecification" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#GeometrySpecification</code></td>
             </tr>
             <tr>
@@ -777,32 +893,35 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Appearance">loin:Appearance</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Parametricbehaviour">loin:ParametricBehaviour</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Location">loin:Location</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Dimensionality">loin:Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Detail">loin:Detail</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Parametricbehaviour">Parametric behaviour</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Location">Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Dimensionality">Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Detail">Detail</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Appearance">Appearance</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#requested">requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">has geometrical information specification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Identification">
-        <h3>Identification<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Identification<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Identification" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Identification</code></td>
             </tr>
             <tr>
@@ -820,28 +939,31 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hasbreakdownstructure">has breakdown structure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasbreakdownstructure">has breakdown structure</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasidentification">loin:hasIdentification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentification">has identification</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Identifier">
-        <h3>Identifier<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Identifier<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Identifier" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Identifier</code></td>
             </tr>
             <tr>
@@ -859,31 +981,34 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#value">loin:value</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasidentifiertype">has identifier type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#value">value</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasbreakdownstructure">has breakdown structure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifiertype">has identifier type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#specifiedbyidentifier">specified by identifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifier">has identifier</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Identifiertype">
-        <h3>Identifier type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Identifier type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Identifiertype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#IdentifierType</code></td>
             </tr>
             <tr>
@@ -901,22 +1026,36 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier">icdd4loin:isRelatedToLinksetIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtolinksetidentifier">is related to linkset identifier</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifiertype">has identifier type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#Codification">https://w3id.org/loin#Codification</a><br/>
+                    <a href="https://w3id.org/loin#Name">https://w3id.org/loin#Name</a><br/>
+                    <a href="https://w3id.org/loin#Index">https://w3id.org/loin#Index</a><br/>
+                    <a href="https://w3id.org/loin#Numbering">https://w3id.org/loin#Numbering</a><br/>
+                    <a href="https://w3id.org/loin#TypeName">https://w3id.org/loin#TypeName</a><br/>
+                    <a href="https://w3id.org/loin#ReferenceOfStructure">https://w3id.org/loin#ReferenceOfStructure</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Information">
-        <h3>Information<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Information<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Information" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Information</code></td>
             </tr>
             <tr>
@@ -934,24 +1073,27 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformation">Geometrical information</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentation">Documentation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Alphanumericalinformation">Alphanumerical information</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasinformation">has information</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Alphanumericalinformationcontent">
-        <h3>Alphanumerical information content<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Alphanumerical information content<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Alphanumericalinformationcontent" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#InformationContent</code></td>
             </tr>
             <tr>
@@ -969,31 +1111,34 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Ontologydatadefinition">loin:OntologyDataDefinition</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSdatadefinition">IDS data definition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Ontologydatadefinition">Ontology data definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isrelatedtoLoindocument">loin:isRelatedToLoinDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#specifiedbyidentifier">specified by identifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtoLoindocument">is related to Loin document</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasalphanumericalinformatoncontent">loin:hasInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasalphanumericalinformatoncontent">has alphanumerical informaton content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#belongstoinformationcontent">belongs to information content</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Informationdeliverymilestone">
-        <h3>Information delivery milestone<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Information delivery milestone<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Informationdeliverymilestone" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#InformationDeliveryMilestone</code></td>
             </tr>
             <tr>
@@ -1011,29 +1156,40 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hashasSendingActor">has has Sending Actor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#haspurpose">has purpose</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasreceivingactor">has receiving actor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasspecificationperobjecttype">has specification per object type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription">icdd4loin:isRelatedToContainerDescription</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hashasSendingActor">has has Sending Actor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasspecificationperobjecttype">has specification per object type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspurpose">has purpose</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtocontainerdescription">is related to container description</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasreceivingactor">has receiving actor</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#preliminaryDesign">https://w3id.org/loin#preliminaryDesign</a><br/>
+                    <a href="https://w3id.org/loin#detailedDesign">https://w3id.org/loin#detailedDesign</a><br/>
+                    <a href="https://w3id.org/loin#finalDesign">https://w3id.org/loin#finalDesign</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Location">
-        <h3>Location<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Location<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Location" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Location</code></td>
             </tr>
             <tr>
@@ -1045,16 +1201,26 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#absolute">https://w3id.org/loin#absolute</a><br/>
+                    <a href="https://w3id.org/loin#relative">https://w3id.org/loin#relative</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Ontologydatadefinition">
-        <h3>Ontology data definition<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Ontology data definition<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Ontologydatadefinition" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#OntologyDataDefinition</code></td>
             </tr>
             <tr>
@@ -1066,22 +1232,25 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Alphanumericalinformationcontent">Alphanumerical information content</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#specifiedbyidentifier">specified by identifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Parametricbehaviour">
-        <h3>Parametric behaviour<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Parametric behaviour<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Parametricbehaviour" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#ParametricBehaviour</code></td>
             </tr>
             <tr>
@@ -1093,16 +1262,27 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#parametric">https://w3id.org/loin#parametric</a><br/>
+                    <a href="https://w3id.org/loin#constructive">https://w3id.org/loin#constructive</a><br/>
+                    <a href="https://w3id.org/loin#explicit">https://w3id.org/loin#explicit</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Purpose">
-        <h3>Purpose<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Purpose<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Purpose" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#Purpose</code></td>
             </tr>
             <tr>
@@ -1120,28 +1300,41 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#description">loin:description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#description">description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription">icdd4loin:isRelatedToContainerDescription</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtocontainerdescription">is related to container description</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspurpose">has purpose</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#structuralAnalysis">https://w3id.org/loin#structuralAnalysis</a><br/>
+                    <a href="https://w3id.org/loin#costEstimation">https://w3id.org/loin#costEstimation</a><br/>
+                    <a href="https://w3id.org/loin#fireSmokeSimulation">https://w3id.org/loin#fireSmokeSimulation</a><br/>
+                    <a href="https://w3id.org/loin#coordination">https://w3id.org/loin#coordination</a><br/>
+                    <a href="https://w3id.org/loin#visualization">https://w3id.org/loin#visualization</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Receivingactor">
-        <h3>Receiving actor<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Receiving actor<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Receivingactor" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#ReceivingActor</code></td>
             </tr>
             <tr>
@@ -1153,22 +1346,25 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Actor">Actor</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasreceivingactor">has receiving actor</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Document">
-        <h3>Document<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Document<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Document" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#RequiredDocument</code></td>
             </tr>
             <tr>
@@ -1186,37 +1382,40 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset">icdd4loin:isRelatedToContainerLinkset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentpurpose">loin:DocumentPurpose</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument">icdd4loin:isRelatedToContainerDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentformat">loin:DocumentFormat</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentcontent">loin:DocumentContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#isrelatedtocontainerdocument">is related to container document</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasdocumentatonspecification">has documentaton specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentformat">Document format</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#isrelatedtocontainerlinkset">is related to container linkset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasdocumentatonspecification">has documentaton specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentpurpose">Document purpose</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#belongstoinformationcontent">belongs to information content</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasdocumentatonspecification">has documentaton specification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentcontent">Document content</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset">icdd4loin:isRelatedToContainerLinkset</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument">icdd4loin:isRelatedToContainerDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtocontainerlinkset">is related to container linkset</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentatonspecification">has documentaton specification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#belongstoinformationcontent">belongs to information content</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtocontainerdocument">is related to container document</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#isrelatedtoLoindocument">loin:isRelatedToLoinDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocument">has document</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtoLoindocument">is related to Loin document</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Sendingactor">
-        <h3>Sending actor<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Sending actor<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Sendingactor" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#SendingActor</code></td>
             </tr>
             <tr>
@@ -1228,22 +1427,25 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Actor">Actor</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hashasSendingActor">has has Sending Actor</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="SpecificationperObjectType">
-        <h3>Specification per Object Type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Specification per Object Type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#SpecificationperObjectType" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#SpecificationPerObjectType</code></td>
             </tr>
             <tr>
@@ -1261,35 +1463,38 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#hasobjecttype">loin:hasObjectType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasalphanumericalinformation">has alphanumerical information</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasdocumentation">has documentation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasgeometricalinformation">has geometrical information</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasobjecttype">has object type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasobjecttype">loin:hasObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasgeometricalinformation">has geometrical information</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasalphanumericalinformation">has alphanumerical information</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentation">has documentation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasobjecttype">has object type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasinformation">has information</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasspecificationperobjecttype">has specification per object type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="AttributeofIDS">
-        <h3>Attribute of IDS<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Attribute of IDS<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#AttributeofIDS" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Attribute</code></td>
             </tr>
             <tr>
@@ -1301,29 +1506,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasattributename">has attribute name</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasattributename">has attribute name</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasvalue">has value</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Attributename">
-        <h3>Attribute name<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Attribute name<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Attributename" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#AttributeName</code></td>
             </tr>
             <tr>
@@ -1335,29 +1543,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasattributename">has attribute name</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="ClassificationofIDS">
-        <h3>Classification of IDS<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Classification of IDS<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#ClassificationofIDS" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Classification</code></td>
             </tr>
             <tr>
@@ -1369,16 +1580,19 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="IDSdatadefinition">
-        <h3>IDS data definition<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          IDS data definition<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#IDSdatadefinition" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#DataDefinition</code></td>
             </tr>
             <tr>
@@ -1390,32 +1604,35 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Alphanumericalinformationcontent">Alphanumerical information content</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="#description">loin:description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasapplicability">has applicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Entity">Entity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasapplicability">has applicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#description">description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrequirement">has requirement</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrequirement">has requirement</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasapplicability">has applicability</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Entity">
-        <h3>Entity<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Entity<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Entity" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Entity</code></td>
             </tr>
             <tr>
@@ -1427,29 +1644,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasentityname">has entity name</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasPredefinedType">ids4loin:hasPredefinedType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasentityname">has entity name</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspredefinedtype">has predefined type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Entityname">
-        <h3>Entity name<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Entity name<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Entityname" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#EntityName</code></td>
             </tr>
             <tr>
@@ -1461,29 +1681,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasentityname">has entity name</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="IDSfacetdefinition">
-        <h3>IDS facet definition<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          IDS facet definition<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#IDSfacetdefinition" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#FacetDefinition</code></td>
             </tr>
             <tr>
@@ -1501,33 +1724,36 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#Material">ids4loin:Material</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#Classification">ids4loin:Classification</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Property">Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Material">Material</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AttributeofIDS">Attribute of IDS</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Entity">Entity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ClassificationofIDS">Classification of IDS</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasrequirementtype">loin:hasRequirementType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrequirementtype">has requirement type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasapplicability">has applicability</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrequirement">has requirement</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="IDSfacetparameter">
-        <h3>IDS facet parameter<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          IDS facet parameter<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#IDSfacetparameter" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#FacetParameter</code></td>
             </tr>
             <tr>
@@ -1545,29 +1771,32 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#AttributeName">ids4loin:AttributeName</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#PsetName">ids4loin:PsetName</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#EntityName">ids4loin:EntityName</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#PredefinedType">ids4loin:PredefinedType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#PropertyName">ids4loin:PropertyName</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#IFCDataType">ids4loin:IFCDataType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#Value">ids4loin:Value</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Value">Value</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Propertysetname">Property set name</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Predefinedtype">Predefined type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Propertyname">Property name</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Attributename">Attribute name</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Entityname">Entity name</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IFCdatatype">IFC data type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="IFCdatatype">
-        <h3>IFC data type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          IFC data type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#IFCdatatype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#IFCDataType</code></td>
             </tr>
             <tr>
@@ -1579,29 +1808,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasIFCdatatype">has IFC data type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Material">
-        <h3>Material<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Material<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Material" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Material</code></td>
             </tr>
             <tr>
@@ -1613,22 +1845,25 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasvalue">has value</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Predefinedtype">
-        <h3>Predefined type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Predefined type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Predefinedtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#PredefinedType</code></td>
             </tr>
             <tr>
@@ -1640,29 +1875,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasPredefinedType">ids4loin:hasPredefinedType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspredefinedtype">has predefined type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Property">
-        <h3>Property<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Property<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Property" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Property</code></td>
             </tr>
             <tr>
@@ -1674,33 +1912,36 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasIFCdatatype">has IFC data type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#haspropertyname">has property name</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#ApropertybelongstoPropertyset">A property belongs to Property set</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasvalue">has value</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ApropertybelongstoPropertyset">A property belongs to Property set</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasIFCdatatype">has IFC data type</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspropertyname">has property name</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Propertyname">
-        <h3>Property name<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Property name<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Propertyname" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#PropertyName</code></td>
             </tr>
             <tr>
@@ -1712,29 +1953,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="https://w3id.org/loin#SimpleValue">loin:SimpleValue</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="https://w3id.org/loin#SimpleValue">https://w3id.org/loin#SimpleValue</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspropertyname">has property name</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Propertysetname">
-        <h3>Property set name<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Property set name<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Propertysetname" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#PsetName</code></td>
             </tr>
             <tr>
@@ -1746,29 +1990,32 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ApropertybelongstoPropertyset">A property belongs to Property set</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="IDSrequirementtype">
-        <h3>IDS requirement type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          IDS requirement type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#IDSrequirementtype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#RequirementType</code></td>
             </tr>
             <tr>
@@ -1786,16 +2033,19 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#hasrequirementtype">loin:hasRequirementType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrequirementtype">has requirement type</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Restrictiontype">
-        <h3>Restriction type<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Restriction type<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Restrictiontype" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#RestrictionType</code></td>
             </tr>
             <tr>
@@ -1813,16 +2063,29 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Members</th>
+                <td>
+                    <a href="https://w3id.org/loin#SimpleValue">https://w3id.org/loin#SimpleValue</a><br/>
+                    <a href="https://w3id.org/loin#Bounds">https://w3id.org/loin#Bounds</a><br/>
+                    <a href="https://w3id.org/loin#Length">https://w3id.org/loin#Length</a><br/>
+                    <a href="https://w3id.org/loin#Enumeration">https://w3id.org/loin#Enumeration</a><br/>
+                    <a href="https://w3id.org/loin#Pattern">https://w3id.org/loin#Pattern</a><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Value">
-        <h3>Value<sup title="class" class="sup-c">c</sup></h3>
+        <h3>
+          Value<sup title="class" class="sup-c">c</sup>
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Value" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#Value</code></td>
             </tr>
             <tr>
@@ -1834,20 +2097,20 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasrestrictiontype">has restriction type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasvalue">has value</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1898,16 +2161,18 @@
         <li><a href="#hasvalue">has value</a></li>
     </ul>
     <div class="entity property" id="belongstoinformationcontent">
-        <h3>belongs to information content<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>belongs to information content<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#belongstoinformationcontent" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#belongsToInformationContent</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Specification of document, that relates with a respective person
+                    <p>Specification of document, that relates with a respective person</p>
                 </td>
             </tr>
             <tr>
@@ -1919,28 +2184,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Document">Document</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#InformationContent">https://w3id.org/loin#InformationContent</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasagent">
-        <h3>has agent<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has agent<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasagent" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasAgent</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Information of the information delivery actor defined by foaf ontology mit class foaf:Agent
+                    <p>Information of the information delivery actor defined by foaf ontology mit class foaf:Agent</p>
                 </td>
             </tr>
             <tr>
@@ -1952,55 +2219,59 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Actor">Actor</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasalphanumericalinformation">
-        <h3>has alphanumerical information<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has alphanumerical information<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasalphanumericalinformation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasAlphanumericalInformation</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)
+                    <p>The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#hasinformation">has information</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#SpecificationperObjectType">Specification per Object Type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#AlphanumericalInformation">https://w3id.org/loin#AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasbreakdownstructure">
-        <h3>has breakdown structure<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has breakdown structure<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasbreakdownstructure" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasBreakdownStructure</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)
+                    <p>The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2012,28 +2283,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Identification">loin:Identification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Identification">Identification</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#BreakdownStructure">https://w3id.org/loin#BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasbreakdownstructuretype">
-        <h3>has breakdown structure type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has breakdown structure type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasbreakdownstructuretype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasBreakdownStructureType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)
+                    <p>The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2045,28 +2318,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Breakdownstructure">Breakdown structure</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Breakdownstructuretype">loin:BreakdownStructureType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#BreakdownStructureType">https://w3id.org/loin#BreakdownStructureType</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasdatatemplate">
-        <h3>has data template<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has data template<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasdatatemplate" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasDataTemplate</code></td>
             </tr>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#hasalphanumericalinformation">has alphanumerical information</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
@@ -2078,7 +2353,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformation">Alphanumerical information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2090,16 +2365,18 @@
         </table>
     </div>
     <div class="entity property" id="hasdocument">
-        <h3>has document<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has document<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasdocument" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasDocument</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)
+                    <p>The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2111,28 +2388,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Documentation">Documentation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#RequiredDocument">https://w3id.org/loin#RequiredDocument</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasdocumentatonspecification">
-        <h3>has documentaton specification<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has documentaton specification<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasdocumentatonspecification" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasDocumentSpecification</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the document specifications with a document according to BS EN 17412-1 (2020)
+                    <p>The object property relates the document specifications with a document according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2144,94 +2423,100 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Document">Document</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#DocumentSpecification">https://w3id.org/loin#DocumentSpecification</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasdocumentation">
-        <h3>has documentation<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has documentation<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasdocumentation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasDocumentation</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)
+                    <p>The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#hasinformation">has information</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#SpecificationperObjectType">Specification per Object Type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Documentation">https://w3id.org/loin#Documentation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasgeometricalinformation">
-        <h3>has geometrical information<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has geometrical information<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasgeometricalinformation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasGeometricalInformation</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)
+                    <p>The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="#hasinformation">has information</a><sup class="sup-op" title="object property">op</sup>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#SpecificationperObjectType">Specification per Object Type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#GeometricalInformation">https://w3id.org/loin#GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasgeometricalinformationspecification">
-        <h3>has geometrical information specification<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has geometrical information specification<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasgeometricalinformationspecification" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasGeometrySpecification</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)
+                    <p>The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2243,28 +2528,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Geometricalinformation">Geometrical information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#GeometrySpecification">https://w3id.org/loin#GeometrySpecification</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasidentification">
-        <h3>has identification<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has identification<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasidentification" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasIdentification</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)
+                    <p>The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2276,28 +2563,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformation">Alphanumerical information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Identification">loin:Identification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Identification">https://w3id.org/loin#Identification</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasidentifier">
-        <h3>has identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has identifier<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasidentifier" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasIdentifier</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)
+                    <p>The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2309,28 +2598,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Breakdownstructure">Breakdown structure</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Identifier">https://w3id.org/loin#Identifier</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasidentifiertype">
-        <h3>has identifier type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has identifier type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasidentifiertype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasIdentifierType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)
+                    <p>The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2342,28 +2633,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Identifier">Identifier</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Identifiertype">loin:IdentifierType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#IdentifierType">https://w3id.org/loin#IdentifierType</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasinformation">
-        <h3>has information<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has information<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasinformation" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasInformation</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Proxy property for the three information specification relationships
+                    <p>Proxy property for the three information specification relationships</p>
                 </td>
             </tr>
             <tr>
@@ -2375,28 +2668,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#SpecificationperObjectType">Specification per Object Type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Information">https://w3id.org/loin#Information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasalphanumericalinformatoncontent">
-        <h3>has alphanumerical informaton content<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has alphanumerical informaton content<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasalphanumericalinformatoncontent" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasInformationContent</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)
+                    <p>The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2408,22 +2703,24 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformation">Alphanumerical information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#InformationContent">https://w3id.org/loin#InformationContent</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasobjecttype">
-        <h3>has object type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has object type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasobjecttype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasObjectType</code></td>
             </tr>
             <tr>
@@ -2435,7 +2732,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#SpecificationperObjectType">Specification per Object Type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2447,16 +2744,18 @@
         </table>
     </div>
     <div class="entity property" id="haspurpose">
-        <h3>has purpose<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has purpose<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#haspurpose" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasPurpose</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)
+                    <p>The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2468,28 +2767,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">Information delivery milestone</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Purpose">https://w3id.org/loin#Purpose</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasreceivingactor">
-        <h3>has receiving actor<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has receiving actor<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasreceivingactor" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasReceivingActor</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)
+                    <p>The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2501,22 +2802,24 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">Information delivery milestone</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Receivingactor">loin:ReceivingActor</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#ReceivingActor">https://w3id.org/loin#ReceivingActor</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasreferencesource">
-        <h3>has reference source<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has reference source<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasreferencesource" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasReferenceSource</code></td>
             </tr>
             <tr>
@@ -2528,29 +2831,31 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    (<a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup> or <a href="#Ontologydatadefinition">loin:OntologyDataDefinition</a><sup class="sup-c" title="class">c</sup>)
+                    (<a href="#Breakdownstructure">Breakdown structure</a><sup class="sup-c" title="class">c</sup> or <a href="#Ontologydatadefinition">Ontology data definition</a><sup class="sup-c" title="class">c</sup>)
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup>
                     <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasrequirementtype">
-        <h3>has requirement type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has requirement type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasrequirementtype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasRequirementType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    relates the requirement type with the defined requirements in IDS data definition
+                    <p>relates the requirement type with the defined requirements in IDS data definition</p>
                 </td>
             </tr>
             <tr>
@@ -2562,7 +2867,7 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#IDSfacetdefinition">IDS facet definition</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2574,16 +2879,18 @@
         </table>
     </div>
     <div class="entity property" id="hashasSendingActor">
-        <h3>has has Sending Actor<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has has Sending Actor<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hashasSendingActor" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasSendingActor</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)
+                    <p>The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2595,28 +2902,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">Information delivery milestone</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Sendingactor">loin:SendingActor</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#SendingActor">https://w3id.org/loin#SendingActor</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="hasspecificationperobjecttype">
-        <h3>has specification per object type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has specification per object type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasspecificationperobjecttype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#hasSpecificationPerObjectType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)
+                    <p>The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2628,28 +2937,30 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">Information delivery milestone</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#SpecificationPerObjectType">https://w3id.org/loin#SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="isrelatedtoLoindocument">
-        <h3>is related to Loin document<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to Loin document<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtoLoindocument" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#isRelatedToLoinDocument</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)
+                    <p>The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)</p>
                 </td>
             </tr>
             <tr>
@@ -2661,22 +2972,24 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformationcontent">Alphanumerical information content</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#RequiredDocument">https://w3id.org/loin#RequiredDocument</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="specifiedbyidentifier">
-        <h3>specified by identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>specified by identifier<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#specifiedbyidentifier" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#specifiedByIdentifier</code></td>
             </tr>
             <tr>
@@ -2688,35 +3001,37 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformationcontent">Alphanumerical information content</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#Identifier">https://w3id.org/loin#Identifier</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity property" id="isrelatedtocontainerdescription">
-        <h3>is related to container description<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to container description<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtocontainerdescription" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description
+                    <p>The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>
-                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Purpose">Purpose</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">Information delivery milestone</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2728,22 +3043,24 @@
         </table>
     </div>
     <div class="entity property" id="isrelatedtocontainerdocument">
-        <h3>is related to container document<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to container document<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtocontainerdocument" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents
+                    <p>The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Document">Document</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2755,22 +3072,24 @@
         </table>
     </div>
     <div class="entity property" id="isrelatedtocontainerlinkset">
-        <h3>is related to container linkset<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to container linkset<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtocontainerlinkset" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set
+                    <p>The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Document">Document</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2782,22 +3101,24 @@
         </table>
     </div>
     <div class="entity property" id="isrelatedtocontainerparty">
-        <h3>is related to container party<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to container party<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtocontainerparty" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerParty</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party
+                    <p>The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Actor">Actor</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2809,22 +3130,24 @@
         </table>
     </div>
     <div class="entity property" id="isrelatedtolinksetidentifier">
-        <h3>is related to linkset identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>is related to linkset identifier<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#isrelatedtolinksetidentifier" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier
+                    <p>The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Identifiertype">loin:IdentifierType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Identifiertype">Identifier type</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2836,22 +3159,24 @@
         </table>
     </div>
     <div class="entity property" id="ApropertybelongstoPropertyset">
-        <h3>A property belongs to Property set<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>A property belongs to Property set<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#ApropertybelongstoPropertyset" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#belongsToPset</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Specification is used for facet property of IDS data definition.
+                    <p>Specification is used for facet property of IDS data definition.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Property">Property</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2863,22 +3188,24 @@
         </table>
     </div>
     <div class="entity property" id="hasapplicability">
-        <h3>has applicability<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has applicability<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasapplicability" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasApplicability</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property describes the applicability of a facet for the specification according to IDS definition
+                    <p>The object property describes the applicability of a facet for the specification according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#IDSdatadefinition">IDS data definition</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2890,22 +3217,24 @@
         </table>
     </div>
     <div class="entity property" id="hasattributename">
-        <h3>has attribute name<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has attribute name<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasattributename" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasAttributeName</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the attribute name with the facet attribute according to IDS definition
+                    <p>The object property relates the attribute name with the facet attribute according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#AttributeofIDS">Attribute of IDS</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2917,22 +3246,24 @@
         </table>
     </div>
     <div class="entity property" id="hasentityname">
-        <h3>has entity name<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has entity name<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasentityname" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasEntityName</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the entity name with the facet entity according to IDS definition
+                    <p>The object property relates the entity name with the facet entity according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Entity">Entity</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2944,22 +3275,24 @@
         </table>
     </div>
     <div class="entity property" id="hasIFCdatatype">
-        <h3>has IFC data type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has IFC data type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasIFCdatatype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasIFCDataType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the IFC data type with the facet property according to IDS definition
+                    <p>The object property relates the IFC data type with the facet property according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Property">Property</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2971,22 +3304,24 @@
         </table>
     </div>
     <div class="entity property" id="haspredefinedtype">
-        <h3>has predefined type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has predefined type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#haspredefinedtype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasPredefinedType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates a predefined type with the facet entity according to IDS definition
+                    <p>The object property relates a predefined type with the facet entity according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Entity">Entity</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -2998,22 +3333,24 @@
         </table>
     </div>
     <div class="entity property" id="haspropertyname">
-        <h3>has property name<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has property name<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#haspropertyname" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasPropertyName</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates a property name type with the facet property according to IDS definition
+                    <p>The object property relates a property name type with the facet property according to IDS definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Property">Property</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3025,22 +3362,24 @@
         </table>
     </div>
     <div class="entity property" id="hasrequirement">
-        <h3>has requirement<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has requirement<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasrequirement" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasRequirement</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    The object property relates the requirements with the IDS data definition
+                    <p>The object property relates the requirements with the IDS data definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#IDSdatadefinition">IDS data definition</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3052,22 +3391,24 @@
         </table>
     </div>
     <div class="entity property" id="hasrestrictiontype">
-        <h3>has restriction type<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has restriction type<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasrestrictiontype" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasRestrictionType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    relates the restriction type with the facet parameter in IDS data definition
+                    <p>relates the restriction type with the facet parameter in IDS data definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3079,24 +3420,26 @@
         </table>
     </div>
     <div class="entity property" id="hasvalue">
-        <h3>has value<sup title="object property" class="sup-op">op</sup></h3>
+        <h3>has value<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#hasvalue" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#hasValue</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    relates the value with a facet in IDS data definition
+                    <p>relates the value with a facet in IDS data definition</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#Material">ids4loin:Material</a><sup class="sup-c" title="class">c</sup>
-                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup>
-                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Property">Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Material">Material</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#AttributeofIDS">Attribute of IDS</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3113,21 +3456,23 @@
     <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#description">description</a></li>
-        <li><a href="#requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)</a></li>
+        <li><a href="#requested">requested</a></li>
         <li><a href="#value">value</a></li>
         <li><a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a></li>
     </ul>
     <div class="entity property" id="description">
-        <h3>description<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>description<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#description" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#description</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Description provide detail and extend of information derived by Information Delivery Specification (IDS)
+                    <p>Description provide detail and extend of information derived by Information Delivery Specification (IDS)</p>
                 </td>
             </tr>
             <tr>
@@ -3139,16 +3484,18 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    (<a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup> or <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>)
+                    (<a href="#Alphanumericalinformationcontent">Alphanumerical information content</a><sup class="sup-c" title="class">c</sup> or <a href="#Purpose">Purpose</a><sup class="sup-c" title="class">c</sup>)
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity property" id="requestedasboolean,specifysifGeometricalinformationisneededaccordingtoBSEN17412-1(2020)">
-        <h3>requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="requested">
+        <h3>requested<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#requested" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#requested</code></td>
             </tr>
             <tr>
@@ -3160,9 +3507,9 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
-                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup>
-                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Geometricalinformation">Geometrical information</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Geometricalinformationspecification">Geometrical information specification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformation">Alphanumerical information</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3174,16 +3521,18 @@
         </table>
     </div>
     <div class="entity property" id="value">
-        <h3>value<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>value<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#value" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin#value</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    value for general definition
+                    <p>value for general definition</p>
                 </td>
             </tr>
             <tr>
@@ -3195,22 +3544,24 @@
         </table>
     </div>
     <div class="entity property" id="Constrainttextformulatedforfacetparameters">
-        <h3>Constraint text formulated for facet parameters<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>Constraint text formulated for facet parameters<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
+            <a href="#Constrainttextformulatedforfacetparameters" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
+        </h3>
         <table>
             <tr>
-                <th>IRI</th>
+                <th>URI</th>
                 <td><code>https://w3id.org/loin/v2/ids#restrictionFormulation</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    Restriction formulation is for formulating facet parameter value, that is used by IDS definition.
+                    <p>Restriction formulation is for formulating facet parameter value, that is used by IDS definition.</p>
                 </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#IDSfacetparameter">IDS facet parameter</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
@@ -3224,17 +3575,11 @@
 </section>
 
   
-  <section id="namedindividuals">
-    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hlist">
-    </ul>
-</section>
-  
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
-        <dt><em>default (:)</em></dt>
-        <dd><code>https://w3id.org/loin#</code></dd>
+        <dt>default (:)</dt>
+        <dd><code>https://w3id.org/loin</code></dd>
         <dt>Container</dt>
         <dd><code>https://standards.iso.org/iso/21597/-1/ed-1/en/Container#</code></dd>
         <dt>Linkset</dt>
@@ -3249,8 +3594,6 @@
         <dd><code>https://w3id.org/loin/v2/icdd#</code></dd>
         <dt>ids4loin</dt>
         <dd><code>https://w3id.org/loin/v2/ids#</code></dd>
-        <dt>loin</dt>
-        <dd><code>https://w3id.org/loin#</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
         <dt>prov</dt>
@@ -3269,8 +3612,6 @@
         <dd><code>http://purl.org/vocab/vann/</code></dd>
         <dt>vs</dt>
         <dd><code>http://www.w3.org/2003/06/sw-vocab-status/ns#</code></dd>
-        <dt>xml</dt>
-        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
         <dt>xsd</dt>
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>
