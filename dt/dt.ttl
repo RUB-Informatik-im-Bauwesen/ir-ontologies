@@ -1,10 +1,12 @@
-# baseURI: http://inf.bi.rub.de/ontology/dt
-# imports: https://w3id.org/iddo/v2
-# imports: https://w3id.org/loin/v2
+# baseURI: http://w3id.org/dt
+# imports: https://w3id.org/isoprops
+# imports: https://w3id.org/loin
 # prefix: dt
 
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
+@prefix dt: <http://w3id.org/dt#> .
+@prefix isoprops: <http://w3id.org/isoprops#> .
+@prefix loin: <http://w3id.org/loin#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,7 +15,7 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://inf.bi.rub.de/ontology/dt>
+<http://w3id.org/dt>
   rdf:type owl:Ontology ;
   dc:created "2023-12-23"^^xsd:date ;
   dc:creator [
@@ -56,32 +58,32 @@
         ] ;
       schema:name "Sven Zentgraf" ;
     ] ;
-  dc:description "The Data Template (TMP) Ontology is defined for ..."@en ;
+  dc:description "The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "@en ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
   dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
-  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^xsd:anyURI ;
-  dc:title "Data Template (TMP) Ontology"@en ;
-  vann:preferredNamespacePrefix "tmp" ;
-  owl:imports <https://w3id.org/iddo/v2> ;
-  owl:imports <https://w3id.org/loin/v2> ;
+  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt"^^xsd:anyURI ;
+  dc:title "Data Template (DT) Ontology"@en ;
+  vann:preferredNamespacePrefix "dt" ;
+  owl:imports <https://w3id.org/isoprops> ;
+  owl:imports <https://w3id.org/loin> ;
   owl:versionInfo "1.0" ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 dt:ConstructionObject
   rdf:type rdfs:Class ;
-  rdfs:comment "Enter a comment"@en ;
+  rdfs:comment """object of interest in the context of a construction process"""@en ;
   rdfs:label "Construction object"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
 .
 dt:DataTemplate
   rdf:type rdfs:Class ;
-  rdfs:comment "Enter a comment"@en ;
+  rdfs:comment "data structure used to describe the characteristics of construction objects"@en ;
   rdfs:label "Data template"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:hasProperty ;
-      owl:someValuesFrom <https://w3id.org/iddo/v2#Property> ;
+      owl:someValuesFrom <https://w3id.org/isoprops#Property> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -97,6 +99,7 @@ dt:DataTemplate
 dt:ExternalDictionaryReference
   rdf:type rdfs:Class ;
   rdfs:label "External dictionary" ;
+  rdfs:comment "reference to an external dictionary, which is a centralized repository of information about data such as meaning, relationships to other data, origin, usage and format"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -108,7 +111,7 @@ dt:ExternalDictionaryReference
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty dt:hasExternalDictionaryProperty ;
     ] ;
-  owl:equivalentClass <https://w3id.org/iddo/v2#ExternalDictionaryReference> ;
+  owl:equivalentClass <https://w3id.org/isoprops#ExternalDictionaryReference> ;
 .
 dt:ISBN
   rdf:type owl:DatatypeProperty ;
@@ -118,7 +121,7 @@ dt:ISBN
 .
 dt:LibraryComponent
   rdf:type rdfs:Class ;
-  rdfs:comment "Enter a comment"@en ;
+  rdfs:comment "named and individually scheduled physical item and feature that might require management, such as inspection, maintenance, servicing or replacement, during the in-use phase"@en ;
   rdfs:label "Library component"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
@@ -135,12 +138,14 @@ dt:LibraryComponent
 dt:PhysicalQuantity
   rdf:type rdfs:Class ;
   rdfs:label "Physical quantity" ;
+  rdfs:comment "the physical quantity of a library component"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
   owl:equivalentClass <http://qudt.org/schema/qudt/QuantityKind> ;
 .
 dt:PredefinedValueItem
   rdf:type owl:Class ;
-  rdfs:label "Definition of the property in language N"@en-GB ;
+  rdfs:label "Predefined value item"@en-GB ;
+  rdfs:comment "the physical quantity of a library component"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf schema:PropertyValue ;
   rdfs:subClassOf [
@@ -156,17 +161,18 @@ dt:PredefinedValueItem
 .
 dt:PredefinedValuesList
   rdf:type owl:Class ;
-  rdfs:label "T Predefined Values"@en-GB ;
+  rdfs:label "Predefined value list"@en-GB ;
+  rdfs:comment "list of predefined values"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <https://w3id.org/iddo/v2#hasUnit> ;
+      owl:onProperty <https://w3id.org/isoprops#hasUnit> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty <https://w3id.org/iddo/v2#hasUnit> ;
+      owl:onProperty <https://w3id.org/isoprops#hasUnit> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -176,7 +182,7 @@ dt:PredefinedValuesList
 .
 dt:Property
   rdf:type rdfs:Class ;
-  rdfs:comment "Inherent or acquired feature of an item"@en ;
+  rdfs:comment "inherent or acquired feature of an item"@en ;
   rdfs:label "Property"@en-GB ;
   rdfs:subClassOf dt:LibraryComponent ;
   rdfs:subClassOf [
@@ -184,11 +190,12 @@ dt:Property
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty dt:hasPredefinedValues ;
     ] ;
-  owl:equivalentClass <https://w3id.org/iddo/v2#Property> ;
+  owl:equivalentClass <https://w3id.org/isoprops#Property> ;
 .
 dt:ReferenceDocument
   rdf:type rdfs:Class ;
   rdfs:label "Reference document"@en ;
+  rdfs:comment "publication that is consulted to find specific information, particularly in a technical or scientific domain"@en ;
   rdfs:subClassOf dt:LibraryComponent ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -215,11 +222,12 @@ dt:ReferenceDocument
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty dt:uri ;
     ] ;
-  owl:equivalentClass <https://w3id.org/iddo/v2#DictionaryReferenceDocument> ;
+  owl:equivalentClass <https://w3id.org/isoprops#DictionaryReferenceDocument> ;
 .
 dt:SetOfProperties
   rdf:type rdfs:Class ;
   rdfs:label "Set of properties" ;
+  rdfs:comment "a set of properties that can be applied to a data template" ;
   rdfs:subClassOf dt:LibraryComponent ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -234,7 +242,7 @@ dt:SetOfProperties
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:hasProperty ;
-      owl:someValuesFrom <https://w3id.org/iddo/v2#Property> ;
+      owl:someValuesFrom <https://w3id.org/isoprops#Property> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -244,6 +252,7 @@ dt:SetOfProperties
 .
 dt:Unit
   rdf:type rdfs:Class ;
+  rdfs:comment "real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the second quantity to the first one as a number" ;
   rdfs:label "Unit" ;
   rdfs:subClassOf dt:LibraryComponent ;
   owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
@@ -293,13 +302,13 @@ dt:hasPredefinedValues
   rdf:type owl:ObjectProperty ;
   rdfs:label "Predefined Values"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <https://w3id.org/iddo/v2#hasPossibleValues> ;
+  owl:equivalentProperty <https://w3id.org/isoprops#hasPossibleValues> ;
 .
 dt:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:DataTemplate ;
   rdfs:label "has property" ;
-  rdfs:range <https://w3id.org/iddo/v2#Property> ;
+  rdfs:range <https://w3id.org/isoprops#Property> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasReferenceDocument
