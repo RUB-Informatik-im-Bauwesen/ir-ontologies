@@ -1,6 +1,12 @@
-# Harmonization project for LOIN, Data Templates, and Properties on an ontological basis
+# A standard-based ontology network for information requirements in digital construction projects
 
-* **Contributors**
+This project showed the integration potentials of the standards for LOIN, Data Templates (DT), and properties in interconnected data dictionaries (ISOProps) using an alignment of modular ontologies. 
+                By cross-referencing and class and property equivalency mechanisms, three ontologies were successfully integrated into an aligned ontology network for exhaustively describing and
+                defining properties as well as construction objects harmonized with the analyzed standards <a href="https://www.iso.org/standard/82914.html" target="_blank">ISO&nbsp;7817</a>, <a href="https://www.iso.org/standard/75401.html" target="_blank">ISO&nbsp;23386</a>, <a href="https://www.iso.org/standard/75403.html" target="_blank">ISO&nbsp;23387</a>, as well as indirectly regarding ISO&nbsp;12006 and ISO&nbsp;19650 standard series.
+
+Detailed documentation: https://rub-informatik-im-bauwesen.github.io/ir-ontologies/
+
+ **Contributors**
   * [Liu Liu](https://orcid.org/0000-0001-5907-7609)
     [[ORCID]](https://orcid.org/0000-0001-5907-7609)
     (<liu.liu-m6r@rub.de></a>) of [Ruhr University Bochum](https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en)
@@ -17,25 +23,15 @@
 ## Table of contents
 ### Documentation
 
-[ISOProps / ISO 23386 Ontology Documentation (formerly IDDO ontology)](isoprops.md)   
-[LOIN / EN 17412–1 Ontology Documentation](loin.md)   
-[Data Templates /ISO 23387 Ontology Documentation](dt.md)   
-[Examples Documentation](loin-dt-iddo.md)   
-[Evaluation of FAIR Data principles](fair-data.md)   
+[ISOProps / ISO 23386 Ontology Documentation (formerly known as IDDO ontology)](/isoprops/isoprops.md)   
+[LOIN / EN 17412–1 Ontology Documentation](/loin/loin.md)   
+[Data Templates /ISO 23387 Ontology Documentation](/dt/dt.md)   
+[Examples Documentation](examples/loin-dt-iddo.md)   
+
 
 ### Ontology data
-[ISOProps / ISO 23386 Ontology (TTL)](iddo.ttl)   
-[LOIN / EN 17412–1 Ontology (TTL)](loin.ttl)   
-[Data Templates /ISO 23387 Ontology (TTL)](dt.ttl)   
-[Example (TTL)](loin-dt-iddo.ttl)   
+[ISOProps / ISO 23386 Ontology (TTL)](/isoprops/isoprops.ttl)   
+[LOIN / EN 17412–1 Ontology (TTL)](/loin/loin.ttl)   
+[Data Templates /ISO 23387 Ontology (TTL)](/dt/dt.ttl)   
+[Example (TTL)](/examples//loin-dt-iddo.ttl)   
 
-### Work process
-After every edit execute:
-```
-./pylode.exe -i loin.ttl -o loin.md -f md
-./pylode.exe -i iddo.ttl -o iddo.md -f md
-./pylode.exe -i dt.ttl -o dt.md -f md
-```
-for documentation.
-
- 
