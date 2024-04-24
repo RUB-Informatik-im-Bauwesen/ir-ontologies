@@ -20,8 +20,18 @@
 
         <div style="text-align:justify;">
             <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Fair Data evaluation</b></div>
+            <p>The developed ontologies are evaluated regarding the FAIRsFAIR Recommendations for Ontology Publication based on the analysis presented by Poveda-Villalón et al (2020):<br>
+
+           <a href="https://doi.org/10.1007/978-3-030-61244-3_18" target="_blank">Poveda-Villalón, M., Espinoza-Arias, P., Garijo, D., Corcho, O. (2020). Coming to Terms with FAIR Ontologies. In: Keet, C.M., Dumontier, M. (eds) Knowledge Engineering and Knowledge Management. EKAW 2020. Lecture Notes in Computer Science(), vol 12387. Springer, Cham. https://doi.org/10.1007/978-3-030-61244-3_18 </a> 
+        </p>
+            <p>and the original publication in:<br>
             
-           
+            <a href="https://doi.org/10.5281/zenodo.3707985" target="_blank"> Le Franc, Y., Parland-von Essen, J., Bonino, L., Lehvaslaiho, H., Coen, G., Staiger,
+                C.: D2.2 FAIR semantics: first recommendations, March 2020. https://doi.org/10.5281/zenodo.3707985</a>
+            </p>
+
+            <hr>
+
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
                 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -29,141 +39,142 @@
                 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
                   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
                 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-                .tg .tg-0lax{text-align:left;vertical-align:top}
+                .success {background-color: green; color: white!important;}
+                .ongoing {background-color: orange; color: black!important;}
+                .nosuccess {background-color: darkred; color: white!important;}
                 </style>
                 <table class="tg">
                 <thead>
                   <tr>
-                    <th class="tg-0pky"></th>
-                    <th class="tg-0lax">Description</th>
-                    <th class="tg-0pky">LOIN</th>
-                    <th class="tg-0pky">DT</th>
-                    <th class="tg-0pky">ISOProps</th>
+                    <th class="tg-0pky" width="5%"><b>Req.</b></th>
+                    <th class="tg-0pky" width="35%"><b>Description</b></th>
+                    <th class="tg-0pky" width="20%"><b>LOIN</b></th>
+                    <th class="tg-0pky" width="20%"><b>DT</b></th>
+                    <th class="tg-0pky" width="20%"><b>ISOProps</b></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="tg-0pky">P-Rec1:</td>
-                    <td class="tg-0lax">Use Globally Unique, Persistent and Resolvable Identifier for Semantic Artefacts, their content and their versions.</td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky">Use Globally Unique, Persistent and Resolvable Identifier for Semantic Artefacts, their content and their versions.</td>
+                    <td class="tg-0pky success">http://w3id.org/loin</td>
+                    <td class="tg-0pky success" >http://w3id.org/dt</td>
+                    <td class="tg-0pky success">http://w3id.org/isoprops</td>
                   </tr>
                   <tr>
                     <td class="tg-0pky">P-Rec2:</td>
-                    <td class="tg-0lax">Use Globally Unique, Persistent and Resolvable Identifier for Semantic Artefact Metadata Record.</td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky">Use Globally Unique, Persistent and Resolvable Identifier for Semantic Artefact Metadata Record.</td>
+                    <td class="tg-0pky success">http://w3id.org/loin</td>
+                    <td class="tg-0pky success" >http://w3id.org/dt</td>
+                    <td class="tg-0pky success">http://w3id.org/isoprops</td>
                   </tr>
                   <tr>
                     <td class="tg-0pky">P-Rec3:</td>
-                    <td class="tg-0lax">Use a common minimum metadata schema to describe semantic artefacts and their content.</td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
-                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky">Use a common minimum metadata schema to describe semantic artefacts and their content.</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann, skos</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec4:</td>
-                    <td class="tg-0lax">Publish the Semantic Artefact and its content in a semantic repository.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec4:</td>
+                    <td class="tg-0pky">Publish the Semantic Artefact and its content in a semantic repository.</td>
+                    <td class="tg-0pky ongoing">https://prefix.cc/loin registered<br> https://lov.linkeddata.es (LOV) registration ongoing </td>
+                    <td class="tg-0pky ongoing">https://lov.linkeddata.es (LOV) registration ongoing, https://prefix.cc/dt ongoing</td>
+                    <td class="tg-0pky ongoing"> https://prefix.cc/isoprops registered<br> https://lov.linkeddata.es (LOV) registration ongoing</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec5:</td>
-                    <td class="tg-0lax">Semantic repositories should offer a common API to access semantic artefacts and their content in various serializations for both use/reuse and indexation by any search engines.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec5:</td>
+                    <td class="tg-0pky">Semantic repositories should offer a common API to access semantic artefacts and their content in various serializations for both use/reuse and indexation by any search engines.</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec6:</td>
-                    <td class="tg-0lax">Build semantic artefacts’ search engines that operate across different semantic repositories.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec6:</td>
+                    <td class="tg-0pky">Build semantic artefacts’ search engines that operate across different semantic repositories.</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec7:</td>
-                    <td class="tg-0lax">Repositories should offer a secure protocol and user access control functionalities.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec7:</td>
+                    <td class="tg-0pky">Repositories should offer a secure protocol and user access control functionalities.</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec8:</td>
-                    <td class="tg-0lax">Define human and machine-readable persistency policies for semantic artefacts metadata.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec8:</td>
+                    <td class="tg-0pky">Define human and machine-readable persistency policies for semantic artefacts metadata.</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
+                    <td class="tg-0pky ongoing">LOV registration ongoing</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec9:</td>
-                    <td class="tg-0lax">Semantic artefacts should be represented using common serialization formats, e.g., Semantic Web and Linked Data standards.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec9:</td>
+                    <td class="tg-0pky">Semantic artefacts should be represented using common serialization formats, e.g., Semantic Web and Linked Data standards.</td>
+                    <td class="tg-0pky success">RDF/XML,TTL,JSON-LD,N-Triples</td>
+                    <td class="tg-0pky success">RDF/XML,TTL,JSON-LD,N-Triples</td>
+                    <td class="tg-0pky success">RDF/XML,TTL,JSON-LD,N-Triples</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec10:</td>
-                    <td class="tg-0lax">Use a Foundational Ontology to align semantic artefacts.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec10:</td>
+                    <td class="tg-0pky">Use a Foundational Ontology to align semantic artefacts.</td>
+                    <td class="tg-0pky">not applied</td>
+                    <td class="tg-0pky">not applied</td>
+                    <td class="tg-0pky">not applied</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec11:</td>
-                    <td class="tg-0lax">Use a standardized language for describing semantic artefacts.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec11:</td>
+                    <td class="tg-0pky">Use a standardized language for describing semantic artefacts.</td>
+                    <td class="tg-0pky success">RDF / RDFS / OWL</td>
+                    <td class="tg-0pky success">RDF / RDFS / OWL</td>
+                    <td class="tg-0pky success">RDF / RDFS / OWL</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec12:</td>
-                    <td class="tg-0lax">Semantic mappings between the different elements of semantic artefacts should use machine-readable formats based on W3C standards.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec12:</td>
+                    <td class="tg-0pky">Semantic mappings between the different elements of semantic artefacts should use machine-readable formats based on W3C standards.</td>
+                    <td class="tg-0pky success">aligned with DT and ISOProps ontology</td>
+                    <td class="tg-0pky success">aligned with LOIN and ISOProps ontology</td>
+                    <td class="tg-0pky success">aligned with DT and LOIN ontology</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec13:</td>
-                    <td class="tg-0lax">Crosswalks, mappings and bridging between semantic artefacts should be documented, published and curated.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec13:</td>
+                    <td class="tg-0pky">Crosswalks, mappings and bridging between semantic artefacts should be documented, published and curated.</td>
+                    <td class="tg-0pky success">documented</td>
+                    <td class="tg-0pky success">documented</td>
+                    <td class="tg-0pky success">documented</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec14:</td>
-                    <td class="tg-0lax">Use standard vocabularies to describe semantic artefacts.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec14:</td>
+                    <td class="tg-0pky">Use standard vocabularies to describe semantic artefacts.</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann</td>
+                    <td class="tg-0pky success">dc terms, schema.org, vann, skos</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec15:</td>
-                    <td class="tg-0lax">Make the references to the reused third-party semantic artefacts explicit.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec15:</td>
+                    <td class="tg-0pky">Make the references to the reused third-party semantic artefacts explicit.</td>
+                    <td class="tg-0pky success">imports documented</td>
+                    <td class="tg-0pky success">imports documented</td>
+                    <td class="tg-0pky success">imports documented</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec16:</td>
-                    <td class="tg-0lax">The semantic artefact should be clearly licensed for machines and humans.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec16:</td>
+                    <td class="tg-0pky">The semantic artefact should be clearly licensed for machines and humans.</td>
+                    <td class="tg-0pky success">CC-BY-40</td>
+                    <td class="tg-0pky success">CC-BY-40</td>
+                    <td class="tg-0pky success">CC-BY-40</td>
                   </tr>
                   <tr>
-                    <td class="tg-0lax">P-Rec17:</td>
-                    <td class="tg-0lax">Provenance should be clear for both humans and machines.</td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
-                    <td class="tg-0lax"></td>
+                    <td class="tg-0pky">P-Rec17:</td>
+                    <td class="tg-0pky">Provenance should be clear for both humans and machines.</td>
+                    <td class="tg-0pky success">documented in paper: ISO7817</td>
+                    <td class="tg-0pky success">documented in paper: ISO23387</td>
+                    <td class="tg-0pky success">documented in paper: ISO23386</td>
                   </tr>
                 </tbody>
                 </table>
-            
 
         </div>
        
