@@ -352,6 +352,13 @@
         <li><a href="#legend">Legend</a></li>
     </ol>
 </section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
@@ -411,8 +418,8 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#isdatatemplatefor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin#AlphanumericalInformation">https://w3id.org/loin#AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#isdatatemplatefor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin/v2#AlphanumericalInformation">https://w3id.org/loin/v2#AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -447,8 +454,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#hasexternalpropertyreference">dt:hasExternalDictionaryProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -487,28 +494,28 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasreferencedocument">dt:hasReferenceDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Referencedocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Externaldictionary">dt:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasreferencedocument">dt:hasReferenceDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Referencedocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Physicalquantity">dt:PhysicalQuantity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Constructionobject">dt:ConstructionObject</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Physicalquantity">dt:PhysicalQuantity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Referencedocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Property">dt:Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Datatemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Unit">dt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#referencedexternaldictionary">dt:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasreferencedocument">dt:hasReferenceDocument</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasexternaldictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#referencedexternaldictionary">dt:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -557,8 +564,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="#Indexoftheelementintheenumeration">dt:hasIndex</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -585,9 +592,9 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/isoprops#hasUnit">https://w3id.org/isoprops#hasUnit</a> <span class="cardinality">min</span> 0<br/>
                     <a href="https://w3id.org/isoprops#hasUnit">https://w3id.org/isoprops#hasUnit</a> <span class="cardinality">max</span> 1<br/>
                     <a href="#PredefindedValueItem@en-GB}">dt:hasPredefinedValueItem</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="https://w3id.org/isoprops#hasUnit">https://w3id.org/isoprops#hasUnit</a> <span class="cardinality">min</span> 0<br/>
                 </td>
             </tr>
         </table>
@@ -641,11 +648,11 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#uri">dt:uri</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#ISBN">dt:ISBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#uri">dt:uri</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#publisher">dt:publisher</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="#dateofpublication">dt:dateOfPublication</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="#author">dt:author</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#dateofpublication">dt:dateOfPublication</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -678,10 +685,10 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
                     <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Setofproperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hassetofproperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#hasproperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">https://w3id.org/isoprops#Property</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -942,7 +949,7 @@
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="https://w3id.org/loin/v2#SpecificationPerObjectType">https://w3id.org/loin/v2#SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin#SpecificationPerObjectType">https://w3id.org/loin#SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>

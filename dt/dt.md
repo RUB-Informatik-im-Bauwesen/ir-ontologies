@@ -70,15 +70,15 @@ Property | Value
 IRI | `http://w3id.org/dt#DataTemplate`
 Description | <p>data structure used to describe the characteristics of construction objects</p>
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin/v2#AlphanumericalInformation](https://w3id.org/loin/v2#AlphanumericalInformation) (c)<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/isoprops#Property](https://w3id.org/isoprops#Property) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />
-In domain of |[dt:hasProperty](hasproperty) (op)<br />[dt:hasSetOfProperties](hassetofproperties) (op)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />
+Restrictions |[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/isoprops#Property](https://w3id.org/isoprops#Property) (c)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op) **some** [https://w3id.org/loin#AlphanumericalInformation](https://w3id.org/loin#AlphanumericalInformation) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />
+In domain of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />[dt:hasProperty](hasproperty) (op)<br />[dt:isDataTemplateFor](isdatatemplatefor) (op)<br />
 ### External dictionary
 Property | Value
 --- | ---
 IRI | `http://w3id.org/dt#ExternalDictionaryReference`
 Description | <p>reference to an external dictionary, which is a centralized repository of information about data such as meaning, relationships to other data, origin, usage and format</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[dt:hasExternalDictionary](hasexternaldictionary) (op) **exactly** 1<br />[dt:hasExternalDictionaryProperty](hasexternalpropertyreference) (op) **exactly** 1<br />
+Restrictions |[dt:hasExternalDictionaryProperty](hasexternalpropertyreference) (op) **exactly** 1<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **exactly** 1<br />
 In domain of |[dt:hasExternalDictionaryProperty](hasexternalpropertyreference) (op)<br />
 In range of |[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />
 ### Library component
@@ -87,9 +87,9 @@ Property | Value
 IRI | `http://w3id.org/dt#LibraryComponent`
 Description | <p>named and individually scheduled physical item and feature that might require management, such as inspection, maintenance, servicing or replacement, during the in-use phase</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[dt:hasExternalDictionary](hasexternaldictionary) (op) **some** [dt:ExternalDictionaryReference](Externaldictionary) (c)<br />[dt:hasReferenceDocument](hasreferencedocument) (op) **some** [dt:ReferenceDocument](Referencedocument) (c)<br />
-Sub-classes |[dt:Property](Property) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />[dt:Unit](Unit) (c)<br />[dt:PhysicalQuantity](Physicalquantity) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />[dt:ConstructionObject](Constructionobject) (c)<br />
-In domain of |[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
+Restrictions |[dt:hasReferenceDocument](hasreferencedocument) (op) **some** [dt:ReferenceDocument](Referencedocument) (c)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op) **some** [dt:ExternalDictionaryReference](Externaldictionary) (c)<br />
+Sub-classes |[dt:PhysicalQuantity](Physicalquantity) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />[dt:Property](Property) (c)<br />[dt:Unit](Unit) (c)<br />[dt:ConstructionObject](Constructionobject) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />[dt:ReferenceDocument](Referencedocument) (c)<br />
+In domain of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />[dt:hasExternalDictionaryReference](referencedexternaldictionary) (op)<br />[dt:hasExternalDictionary](hasexternaldictionary) (op)<br />
 ### Physical quantity
 Property | Value
 --- | ---
@@ -102,14 +102,14 @@ Property | Value
 IRI | `http://w3id.org/dt#PredefinedValueItem`
 Description | <p>the physical quantity of a library component</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />[sdo:PropertyValue](https://schema.org/PropertyValue) (c)<br />
-Restrictions |[dt:hasIndex](Indexoftheelementintheenumeration) (dp) **exactly** 1<br />[sdo:value](https://schema.org/value) **exactly** 1<br />
+Restrictions |[sdo:value](https://schema.org/value) **exactly** 1<br />[dt:hasIndex](Indexoftheelementintheenumeration) (dp) **exactly** 1<br />
 ### Predefined value list
 Property | Value
 --- | ---
 IRI | `http://w3id.org/dt#PredefinedValuesList`
 Description | <p>list of predefined values</p>
 Super-classes |[owl:Thing](http://www.w3.org/2002/07/owl#Thing) (c)<br />
-Restrictions |[dt:hasPredefinedValueItem](PredefindedValueItem@en-GB}) (op) **min** 1<br />[https://w3id.org/isoprops#hasUnit](https://w3id.org/isoprops#hasUnit) **max** 1<br />[https://w3id.org/isoprops#hasUnit](https://w3id.org/isoprops#hasUnit) **min** 0<br />
+Restrictions |[https://w3id.org/isoprops#hasUnit](https://w3id.org/isoprops#hasUnit) **max** 1<br />[dt:hasPredefinedValueItem](PredefindedValueItem@en-GB}) (op) **min** 1<br />[https://w3id.org/isoprops#hasUnit](https://w3id.org/isoprops#hasUnit) **min** 0<br />
 ### Property
 Property | Value
 --- | ---
@@ -123,7 +123,7 @@ Property | Value
 IRI | `http://w3id.org/dt#ReferenceDocument`
 Description | <p>publication that is consulted to find specific information, particularly in a technical or scientific domain</p>
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:uri](uri) (dp) **max** 1<br />[dt:author](author) (dp) **max** 1<br />[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />
+Restrictions |[dt:author](author) (dp) **max** 1<br />[dt:dateOfPublication](dateofpublication) (dp) **max** 1<br />[dt:ISBN](ISBN) (dp) **max** 1<br />[dt:publisher](publisher) (dp) **max** 1<br />[dt:uri](uri) (dp) **max** 1<br />
 In range of |[dt:hasReferenceDocument](hasreferencedocument) (op)<br />
 ### Set of properties
 Property | Value
@@ -131,7 +131,7 @@ Property | Value
 IRI | `http://w3id.org/dt#SetOfProperties`
 Description | <p>a set of properties that can be applied to a data template</p>
 Super-classes |[dt:LibraryComponent](Librarycomponent) (c)<br />
-Restrictions |[dt:hasProperty](hasproperty) (op) **min** 0<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/isoprops#Property](https://w3id.org/isoprops#Property) (c)<br />[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />
+Restrictions |[dt:hasSetOfProperties](hassetofproperties) (op) **min** 0<br />[dt:hasProperty](hasproperty) (op) **some** [https://w3id.org/isoprops#Property](https://w3id.org/isoprops#Property) (c)<br />[dt:hasProperty](hasproperty) (op) **min** 0<br />[dt:hasSetOfProperties](hassetofproperties) (op) **some** [dt:SetOfProperties](Setofproperties) (c)<br />
 In domain of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 In range of |[dt:hasSetOfProperties](hassetofproperties) (op)<br />
 ### Unit
@@ -207,7 +207,7 @@ Property | Value
 --- | ---
 IRI | `http://w3id.org/dt#hasSetOfProperties`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
-Domain(s) |[dt:SetOfProperties](Setofproperties) (c)<br />[dt:DataTemplate](Datatemplate) (c)<br />
+Domain(s) |[dt:DataTemplate](Datatemplate) (c)<br />[dt:SetOfProperties](Setofproperties) (c)<br />
 Range(s) |[dt:SetOfProperties](Setofproperties) (c)<br />
 [](isdatatemplatefor)
 ### is data template for
@@ -216,7 +216,7 @@ Property | Value
 IRI | `http://w3id.org/dt#isDataTemplateFor`
 Super-properties |[owl:topObjectProperty](http://www.w3.org/2002/07/owl#topObjectProperty)<br />
 Domain(s) |[dt:DataTemplate](Datatemplate) (c)<br />
-Range(s) |[https://w3id.org/loin/v2#SpecificationPerObjectType](https://w3id.org/loin/v2#SpecificationPerObjectType) (c)<br />
+Range(s) |[https://w3id.org/loin#SpecificationPerObjectType](https://w3id.org/loin#SpecificationPerObjectType) (c)<br />
 
 ## Datatype Properties
 [ISBN](#ISBN),
