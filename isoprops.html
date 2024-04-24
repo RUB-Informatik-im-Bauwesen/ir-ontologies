@@ -1,0 +1,3625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Interconnected Data Dictionary Ontology (IDDO)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/iddo/v2",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@id": "https://github.com/RUB-Informatik-im-Bauwesen/iddo"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The interconnected data dictionary ontology maps the data model of the ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.</p>\n<p>The namespace for IDDO terms is <a href=\"https://w3id.org/iddo\">https://w3id.org/iddo</a></p>\n<p>The preferred prefix for the IDDO namespace is <code>iddo</code>.</p>\n<h2>Ontology Overview</h2>\n<p><img alt=\"IDDO Ontology\" src=\"Ontology_Overview.png\" title=\"Ontology\" /></p>\n<h2>Assigning an IDDO Property to a Feature of Interest</h2>\n<p><img alt=\"Property_Assignment\" src=\"Property_Assignment.png\" title=\"Property_Assignment\" /></p>\n<h2>Relation between DCAT vocabulary and the IDDO ontology</h2>\n<p><img alt=\"DataCatalog_Overview\" src=\"DataCatalog_Overview.png\" title=\"DataCatalog_Overview\" /></p>"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "The Interconnected Data Dictionary Ontology (IDDO)"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.4</span>
+  </div>
+  <h1>The Interconnected Data Dictionary Ontology (IDDO)</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>IRI</dt>
+        <dd><code>https://w3id.org/iddo/v2</code></dd>
+        <dt>Publisher(s)</dt>
+        <dd>
+            
+    <a href="https://www.inf.bi.rub.de">Chair of Computing in Engineering, Ruhr University Bochum</a><br/>
+        </dd>
+        <dt>Creator(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0001-6058-7614">Sven Zentgraf</a>
+    <a href="https://orcid.org/0000-0001-6058-7614"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:sven.zentgraf@rub.de">sven.zentgraf@rub.de</a>) of 
+    <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en">Ruhr University Bochum</a><br/>
+            
+    <a href="https://orcid.org/0000-0002-6249-243X">Philipp Hagedorn</a>
+    <a href="https://orcid.org/0000-0002-6249-243X"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:philipp.hagedorn-n6v@rub.de">philipp.hagedorn-n6v@rub.de</a>) of 
+    <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en">Ruhr University Bochum</a><br/>
+        </dd>
+        <dt>Created</dt>
+        <dd>2019-01-01</dd>
+        <dt>Modified</dt>
+        <dd>2022-10-18</dd>
+        <dt>Issued</dt>
+        <dd>2021-12-06</dd>
+        <dt>Version Information</dt>
+        <dd>v2.0</dd>
+        <dt>Version IRI</dt>
+        <dd><a href="https://w3id.org/iddo/v2">https://w3id.org/iddo/v2</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://inf.bi.rub.de/ontology/dt">http://inf.bi.rub.de/ontology/dt</a><br/>
+        </dd>
+        <dt>License</dt>
+        <dd><a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="isoprops.ttl">RDF (turtle)</a></dd>
+        <dt>Code Repository</dt>
+        <dd><a href="https://github.com/RUB-Informatik-im-Bauwesen/iddo">https://github.com/RUB-Informatik-im-Bauwesen/iddo</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The interconnected data dictionary ontology maps the data model of the ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.</p>
+<p>The namespace for IDDO terms is <a href="https://w3id.org/iddo">https://w3id.org/iddo</a></p>
+<p>The preferred prefix for the IDDO namespace is <code>iddo</code>.</p>
+<h2>Ontology Overview</h2>
+<p><img alt="IDDO Ontology" src="Ontology_Overview.png" title="Ontology" /></p>
+<h2>Assigning an IDDO Property to a Feature of Interest</h2>
+<p><img alt="Property_Assignment" src="Property_Assignment.png" title="Property_Assignment" /></p>
+<h2>Relation between DCAT vocabulary and the IDDO ontology</h2>
+<p><img alt="DataCatalog_Overview" src="DataCatalog_Overview.png" title="DataCatalog_Overview" /></p>
+    </div>
+    <p><strong>History Note:</strong> <p>v2.0: update</p>
+<p>v0.3: dcat usage update </p>
+<p>v0.2: ontology update </p>
+<p>v0.1: initial ontology for BIMSTRUCT project </p></p>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Boundaryvalueslist">Boundary values list</a></li>
+        <li><a href="#Datenkatalog">Datenkatalog</a></li>
+        <li><a href="#DefinierenderWert-Item">Definierender Wert-Item</a></li>
+        <li><a href="#Definingvalueslist">Defining values list</a></li>
+        <li><a href="#Dictionarysubset">Dictionary subset</a></li>
+        <li><a href="#DigitalesFormat-Item">Digitales Format-Item</a></li>
+        <li><a href="#ExternalDictionaryReference">External Dictionary Reference </a></li>
+        <li><a href="#Groupofproperties">Group of properties</a></li>
+        <li><a href="#PossibleValues">Liste moeglicher Werte in Sprache N</a></li>
+        <li><a href="#MaximumBoundaryLimit">Maximum Boundary Limit</a></li>
+        <li><a href="#Merkmal">Merkmal</a></li>
+        <li><a href="#Physicalquantity">Physical quantity</a></li>
+        <li><a href="#Referenzdokument">Referenzdokument</a></li>
+        <li><a href="#SymboldesMerkmalsineinergegebenenMerkmalsgruppe">Symbol des Merkmals in einer gegebenen Merkmalsgruppe</a></li>
+        <li><a href="#Textformatitem">Text format item</a></li>
+        <li><a href="#UntererGrenzwert">Unterer Grenzwert</a></li>
+        <li><a href="#ZugewiesenesMerkmal">Zugewiesenes Merkmal</a></li>
+    </ul>
+    <div class="entity class" id="ZugewiesenesMerkmal">
+        <h3>Zugewiesenes Merkmal<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#AssignedProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Represents the assignment of a property and a property state to a feature of interest (FOI).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3id.org/opm#Property">http://www.w3id.org/opm#Property</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3id.org/opm#hasPropertyState">http://www.w3id.org/opm#hasPropertyState</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hatMerkmalreferenz">iddo:hasPropertyReference</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hatMerkmalreferenz">iddo:hasPropertyReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hatMerkmal">iddo:hasProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="MaximumBoundaryLimit">
+        <h3>Maximum Boundary Limit<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#BoundaryLimitMax</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Boundary limit  interval consisting of the the upper (maxValue) interval boundary</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA040
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#inclusive">iddo:Inclusive</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#inclusive">iddo:Inclusive</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="UntererGrenzwert">
+        <h3>Unterer Grenzwert<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#BoundaryLimitMin</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Boundary limit interval consisting of the lower(minValue) interval boundary</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA040
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#inclusive">iddo:Inclusive</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#inclusive">iddo:Inclusive</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Boundaryvalue">iddo:hasBoundaryLimit</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Boundaryvalueslist">
+        <h3>Boundary values list<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#BoundaryValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Pair  (List of boundary intervals of possible values for the property, unit)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA040
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#Boundaryvalue">iddo:hasBoundaryLimit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1 <a href="#UntererGrenzwert">iddo:BoundaryLimitMin</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Boundaryvalue">iddo:hasBoundaryLimit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1 <a href="#MaximumBoundaryLimit">iddo:BoundaryLimitMax</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#Boundaryvalue">iddo:hasBoundaryLimit</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Grenzwerte">iddo:hasBoundary</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="DefinierenderWert-Item">
+        <h3>Definierender Wert-Item<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DefiningValueItem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Enthaelt einen definierenden Wert eines Arrays in Form eines Literals</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA035
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Definingvalue">iddo:hasDefiningValueItem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Definingvalueslist">
+        <h3>Defining values list<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DefiningValuesList</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA035
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#DefinierenderWert-Item">iddo:DefiningValueItem</a> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#Definingvalue">iddo:hasDefiningValueItem</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Definingvalues">iddo:hasDefiningValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Datenkatalog">
+        <h3>Datenkatalog<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Dictionary</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/description">dc:description</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/type">dc:type</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/issued">dc:issued</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasdictionarysubset">iddo:hasDictionarySubset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/title">dc:title</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/identifier">dc:identifier</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/publisher">dc:publisher</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasdictionarysubset">iddo:hasDictionarySubset</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Referenzdokument">
+        <h3>Referenzdokument<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DictionaryReferenceDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Publication that is consulted to find specific information, particularly in a technical or scientific domain</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#haspropertygroupreference">iddo:hasPropertyGroupReference</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hatdenVerweisaufeinReferenzdokument">iddo:hasDictionaryReferenceDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dictionarysubset">
+        <h3>Dictionary subset<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DictionarySubset</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Defines a subset or subgrouping of a data catalog</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/description">dc:description</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hatdenVerweisaufeinReferenzdokument">iddo:hasDictionaryReferenceDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a><sup class="sup-ap" title="annotation property">ap</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://purl.org/dc/terms/title">dc:title</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hatdenVerweisaufeinReferenzdokument">iddo:hasDictionaryReferenceDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasdictionarysubset">iddo:hasDictionarySubset</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="DigitalesFormat-Item">
+        <h3>Digitales Format-Item<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DigitalFormatItem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Pair for digital text type (precision, unit)
+Precision is the number of significant digits</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA037
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="http://qudt.org/schema/qudt/Unit">qudt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Tolerance">iddo:Precision</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#Tolerance">iddo:Precision</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Digitalformat">iddo:hasDigitalFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ExternalDictionaryReference">
+        <h3>External Dictionary Reference <sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#ExternalDictionaryReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner)
+Dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#hasExternalDictionary">http://inf.bi.rub.de/ontology/dt#hasExternalDictionary</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty">http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasExternalDictionaryReference">iddo:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Groupofproperties">
+        <h3>Group of properties<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#GroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#LibraryComponent">http://inf.bi.rub.de/ontology/dt#LibraryComponent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#Parentgroupofproperties">iddo:hasParentGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Ursprungsland">iddo:CountryOfOrigin</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#GlobaleindeutigerBezeichner(GUID)">iddo:GloballyUniqueIdentifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Parentgroupofproperties">iddo:hasParentGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ListeersetzenderMerkmalsgruppen">iddo:isReplacedByGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Dateofcreation">iddo:DateOfCreation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#BildlicheDarstellung">iddo:VisualRepresentation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#Dateofversion">iddo:DateOfVersion</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Versionnumber">iddo:VersionNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#NameinSpracheN">iddo:NameInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#Dateofactivation">iddo:DateOfActivation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasExternalDictionaryReference">iddo:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#ExternalDictionaryReference">iddo:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DatumderletztenAenderung">iddo:DateOfLastChange</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Nummerderueberarbeitung">iddo:RevisionNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#UnterteilungderVerwendung">iddo:SubdivisionOfUse</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Categoryofgroupofproperties">iddo:CategoryOfGroupOfProperties</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#DatumderUeberarbeitung">iddo:DateOfRevision</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Toleranz">iddo:Tolerance</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Countryofuse">iddo:CountryOfUse</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#ListeersetzterMerkmalsgruppen">iddo:replacesGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Status">iddo:Status</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Creator'slanguage">iddo:CreatorsLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Dateofdeactivation">iddo:DateOfDeactivation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#DefinitioninSpracheN">iddo:DefinitionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#DatumderUeberarbeitung">iddo:DateOfRevision</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Parentgroupofproperties">iddo:hasParentGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Status">iddo:Status</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#DefinitioninSpracheN">iddo:DefinitionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen">iddo:hasRelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Nummerderueberarbeitung">iddo:RevisionNumber</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Versionnumber">iddo:VersionNumber</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Ursprungsland">iddo:CountryOfOrigin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Creator'slanguage">iddo:CreatorsLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#DatumderletztenAenderung">iddo:DateOfLastChange</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Countryofuse">iddo:CountryOfUse</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasExternalDictionaryReference">iddo:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ListeersetzenderMerkmalsgruppen">iddo:isReplacedByGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Dateofversion">iddo:DateOfVersion</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofactivation">iddo:DateOfActivation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofdeactivation">iddo:DateOfDeactivation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofcreation">iddo:DateOfCreation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#GlobaleindeutigerBezeichner(GUID)">iddo:GloballyUniqueIdentifier</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#UnterteilungderVerwendung">iddo:SubdivisionOfUse</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ListeersetzterMerkmalsgruppen">iddo:replacesGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#NameinSpracheN">iddo:NameInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Categoryofgroupofproperties">iddo:CategoryOfGroupOfProperties</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#BildlicheDarstellung">iddo:VisualRepresentation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Givengroupofproperties">iddo:hasGivenGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Group(s)ofproperties">iddo:hasGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspropertygroupreference">iddo:hasPropertyGroupReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ListeersetzterMerkmalsgruppen">iddo:replacesGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ListeersetzenderMerkmalsgruppen">iddo:isReplacedByGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Parentgroupofproperties">iddo:hasParentGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Physicalquantity">
+        <h3>Physical quantity<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#PhysicalQuantity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Liste von Paaren (physikalische Groesse | Sprache)
+Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben
+nicht physikalische Groessen wie z. B. Text werden mit dem Wert "ohne" angegeben
+dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
+nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#LibraryComponent">http://inf.bi.rub.de/ontology/dt#LibraryComponent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PossibleValues">
+        <h3>Liste moeglicher Werte in Sprache N<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#PossibleValues</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Possible value for the property and language
+Values can be string or numbers</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA039
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://schema.org/value">sdo:value</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#ListemoeglicherWerteinSpracheN">iddo:hasPossibleValues</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Merkmal">
+        <h3>Merkmal<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Property</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Inherent or acquired feature of an item</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#LibraryComponent">http://inf.bi.rub.de/ontology/dt#LibraryComponent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#Versionnumber">iddo:VersionNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Connectedproperties">iddo:hasConnectedProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Dateofversion">iddo:DateOfVersion</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#UnterteilungderVerwendung">iddo:SubdivisionOfUse</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Textformat">iddo:hasTextFormat</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Textformatitem">iddo:TextFormatItem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Ursprungsland">iddo:CountryOfOrigin</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Dateofdeactivation">iddo:DateOfDeactivation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Countryofuse">iddo:CountryOfUse</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="http://qudt.org/schema/qudt/Unit">qudt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Creator'slanguage">iddo:CreatorsLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#ExampleinlanguageN">iddo:ExampleInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#GlobaleindeutigerBezeichner(GUID)">iddo:GloballyUniqueIdentifier</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Parametersofthedynamicproperty">iddo:hasParameterOfTheDynamicProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DefinitioninSpracheN">iddo:DefinitionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#ListemoeglicherWerteinSpracheN">iddo:hasPossibleValues</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#PossibleValues">iddo:PossibleValues</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Nummerderueberarbeitung">iddo:RevisionNumber</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Dateofactivation">iddo:DateOfActivation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#BildlicheDarstellung">iddo:VisualRepresentation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#Datatype">iddo:DataType</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Grenzwerte">iddo:hasBoundary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#Boundaryvalueslist">iddo:BoundaryValue</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Symbolsofthepropertyinagivenpropertygroup">iddo:hasSymbolsOfTheProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#SymboldesMerkmalsineinergegebenenMerkmalsgruppe">iddo:SymbolOfTheProperty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Toleranz">iddo:Tolerance</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#DatumderletztenAenderung">iddo:DateOfLastChange</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#DescriptioninlanguageN">iddo:DescriptionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#DatumderUeberarbeitung">iddo:DateOfRevision</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Listofreplacingproperties">iddo:isReplacedByProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Messverfahren">iddo:MethodOfMeasurement</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#ListemoeglicherWerteinSpracheN">iddo:hasPossibleValues</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#hasExternalDictionaryReference">iddo:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#ExternalDictionaryReference">iddo:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#Definingvalues">iddo:hasDefiningValue</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Definingvalueslist">iddo:DefiningValuesList</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Dateofcreation">iddo:DateOfCreation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#NamederdefinierendenWerte">iddo:NameOfTheDefiningValues</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="#NameinSpracheN">iddo:NameInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#Digitalformat">iddo:hasDigitalFormat</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#DigitalesFormat-Item">iddo:DigitalFormatItem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Group(s)ofproperties">iddo:hasGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#PhysikalischeGroesse">iddo:hasPhysicalQuantity</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#Status">iddo:Status</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Ursprungsland">iddo:CountryOfOrigin</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#ListeersetzterMerkmale">iddo:replacesProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DynamischesMerkmal">iddo:DynamicProperty</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#PhysikalischeGroesse">iddo:hasPhysicalQuantity</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Grenzwerte">iddo:hasBoundary</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#UnterteilungderVerwendung">iddo:SubdivisionOfUse</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#NameinSpracheN">iddo:NameInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Parametersofthedynamicproperty">iddo:hasParameterOfTheDynamicProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Textformat">iddo:hasTextFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Datatype">iddo:DataType</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ErlaeuterungfuerdieAblehnung">iddo:DeprecationExplanation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#BildlicheDarstellung">iddo:VisualRepresentation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ListemoeglicherWerteinSpracheN">iddo:hasPossibleValues</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Digitalformat">iddo:hasDigitalFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Symbolsofthepropertyinagivenpropertygroup">iddo:hasSymbolsOfTheProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#DatumderUeberarbeitung">iddo:DateOfRevision</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Definingvalues">iddo:hasDefiningValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Status">iddo:Status</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Connectedproperties">iddo:hasConnectedProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Group(s)ofproperties">iddo:hasGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#DefinitioninSpracheN">iddo:DefinitionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Nummerderueberarbeitung">iddo:RevisionNumber</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ListeersetzterMerkmale">iddo:replacesProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hatEinheit">iddo:hasUnit</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Versionnumber">iddo:VersionNumber</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Givengroupofproperties">iddo:hasGivenGroupOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Ursprungsland">iddo:CountryOfOrigin</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Creator'slanguage">iddo:CreatorsLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Messverfahren">iddo:MethodOfMeasurement</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#ExampleinlanguageN">iddo:ExampleInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Listofreplacingproperties">iddo:isReplacedByProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Toleranz">iddo:Tolerance</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#DatumderletztenAenderung">iddo:DateOfLastChange</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofversion">iddo:DateOfVersion</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofactivation">iddo:DateOfActivation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Dateofdeactivation">iddo:DateOfDeactivation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Countryofuse">iddo:CountryOfUse</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#DescriptioninlanguageN">iddo:DescriptionInLanguage</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasExternalDictionaryReference">iddo:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Dateofcreation">iddo:DateOfCreation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#GlobaleindeutigerBezeichner(GUID)">iddo:GloballyUniqueIdentifier</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Listofreplacingproperties">iddo:isReplacedByProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Connectedproperties">iddo:hasConnectedProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Parametersofthedynamicproperty">iddo:hasParameterOfTheDynamicProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hatMerkmalreferenz">iddo:hasPropertyReference</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#ListeersetzterMerkmale">iddo:replacesProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SymboldesMerkmalsineinergegebenenMerkmalsgruppe">
+        <h3>Symbol des Merkmals in einer gegebenen Merkmalsgruppe<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#SymbolOfTheProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA022
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#Symbol">iddo:Symbol</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#Givengroupofproperties">iddo:hasGivenGroupOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#Symbol">iddo:Symbol</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Symbolsofthepropertyinagivenpropertygroup">iddo:hasSymbolsOfTheProperty</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Textformatitem">
+        <h3>Text format item<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#TextFormatItem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
+die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA038
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#Kodierung">iddo:Encoding</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#NumberofCharacters">iddo:NumberOfCharacters</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#NumberofCharacters">iddo:NumberOfCharacters</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#Kodierung">iddo:Encoding</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#Textformat">iddo:hasTextFormat</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Grenzwerte">Grenzwerte</a></li>
+        <li><a href="#Boundaryvalue">Boundary value</a></li>
+        <li><a href="#Connectedproperties">Connected properties</a></li>
+        <li><a href="#Definingvalues">Defining values</a></li>
+        <li><a href="#Definingvalue">Defining value</a></li>
+        <li><a href="#hatdenVerweisaufeinReferenzdokument">hat den Verweis auf ein Referenzdokument</a></li>
+        <li><a href="#hasdictionarysubset">has dictionary subset</a></li>
+        <li><a href="#Digitalformat">Digital format</a></li>
+        <li><a href="#hasexternaldictionary">has external dictionary</a></li>
+        <li><a href="#hasexternaldictionaryproperty">has external dictionary property</a></li>
+        <li><a href="#hasExternalDictionaryReference">has External Dictionary Reference</a></li>
+        <li><a href="#Givengroupofproperties">Given group of properties</a></li>
+        <li><a href="#Group(s)ofproperties">Group(s) of properties</a></li>
+        <li><a href="#Parametersofthedynamicproperty">Parameters of the dynamic property</a></li>
+        <li><a href="#Parentgroupofproperties">Parent group of properties</a></li>
+        <li><a href="#PhysikalischeGroesse">Physikalische Groesse</a></li>
+        <li><a href="#ListemoeglicherWerteinSpracheN">Liste moeglicher Werte in Sprache N</a></li>
+        <li><a href="#hatMerkmal">hat Merkmal</a></li>
+        <li><a href="#haspropertygroupreference">has property group reference</a></li>
+        <li><a href="#hatMerkmalreferenz">hat Merkmalreferenz</a></li>
+        <li><a href="#BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen">Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen</a></li>
+        <li><a href="#Symbolsofthepropertyinagivenpropertygroup">Symbols of the property in a given property group</a></li>
+        <li><a href="#Textformat">Textformat</a></li>
+        <li><a href="#hatEinheit">hat Einheit</a></li>
+        <li><a href="#ListeersetzenderMerkmalsgruppen">Liste ersetzender Merkmalsgruppen</a></li>
+        <li><a href="#Listofreplacingproperties">List of replacing properties</a></li>
+        <li><a href="#ListeersetzterMerkmalsgruppen">Liste ersetzter Merkmalsgruppen</a></li>
+        <li><a href="#ListeersetzterMerkmale">Liste ersetzter Merkmale</a></li>
+    </ul>
+    <div class="entity property" id="Grenzwerte">
+        <h3>Grenzwerte<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasBoundary</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA040
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Boundaryvalueslist">iddo:BoundaryValue</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Boundaryvalue">
+        <h3>Boundary value<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasBoundaryLimit</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Single Boundary value interval
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA040
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Boundaryvalueslist">iddo:BoundaryValue</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#UntererGrenzwert">iddo:BoundaryLimitMin</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Connectedproperties">
+        <h3>Connected properties<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasConnectedProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of the globally unique identifier of the connected properties (attribute PA001); the value of one property is related to the values of the other ones. For example, a sound absorption coefficient is given for a specific frequency, in this case sound absorption and frequency are connected properties
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA020
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Definingvalues">
+        <h3>Defining values<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasDefiningValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA035
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Definingvalueslist">iddo:DefiningValuesList</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Definingvalue">
+        <h3>Defining value<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasDefiningValueItem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Contains a defining value of an array
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA035
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Definingvalueslist">iddo:DefiningValuesList</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#DefinierenderWert-Item">iddo:DefiningValueItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hatdenVerweisaufeinReferenzdokument">
+        <h3>hat den Verweis auf ein Referenzdokument<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasDictionaryReferenceDocument</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#distribution">dcat:distribution</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Dictionarysubset">iddo:DictionarySubset</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Referenzdokument">iddo:DictionaryReferenceDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdictionarysubset">
+        <h3>has dictionary subset<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasDictionarySubset</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#dataset">dcat:dataset</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Datenkatalog">iddo:Dictionary</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Dictionarysubset">iddo:DictionarySubset</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Digitalformat">
+        <h3>Digital format<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasDigitalFormat</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Pair for digital text type (precision, unit)
+Precision is the number of significant digits
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA037
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#DigitalesFormat-Item">iddo:DigitalFormatItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasexternaldictionary">
+        <h3>has external dictionary<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasExternalDictionary</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#hasExternalDictionary">http://inf.bi.rub.de/ontology/dt#hasExternalDictionary</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasexternaldictionaryproperty">
+        <h3>has external dictionary property<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasExternalDictionaryProperty</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty">http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasExternalDictionaryReference">
+        <h3>has External Dictionary Reference<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasExternalDictionaryReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner)
+dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA014
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#ExternalDictionaryReference">iddo:ExternalDictionaryReference</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Givengroupofproperties">
+        <h3>Given group of properties<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasGivenGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Global eindeutiger Bezeichner einer Merkmalsgruppe (Attribut GA001) fuer das dem Merkmal zugeordnetem Symbol
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA022
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Group(s)ofproperties">
+        <h3>Group(s) of properties<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von global eindeutigen Bezeichnern von Merkmalsgruppen (Attribut GA001), denen das Merkmal angehoert
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA021
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Parametersofthedynamicproperty">
+        <h3>Parameters of the dynamic property<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasParameterOfTheDynamicProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von GUIDs von Merkmalen, welche Parameter der Funktion fuer ein dynamisches Merkmal sind
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA032
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Parentgroupofproperties">
+        <h3>Parent group of properties<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasParentGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001)
+Any property attached to a group is inherited by the sub-group(s)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    GA023
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="PhysikalischeGroesse">
+        <h3>Physikalische Groesse<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasPhysicalQuantity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of pairs (physical quantity | language)
+Physical quantities are expressed in International System (SI) units
+Non-physical quantities such as text are expressed with the value "without" --> http://qudt.org/vocab/quantitykind/Dimensionless
+This is equivalent to a measure in ISO 16739-1 and ISO 10303
+Only one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA027
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://qudt.org/schema/qudt/QuantityKind">qudt:QuantityKind</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ListemoeglicherWerteinSpracheN">
+        <h3>Liste moeglicher Werte in Sprache N<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasPossibleValues</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von Paaren (moeglicher Wert fuer das Merkmal und Sprache)
+Werte koennen String oder Zahlen sein
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA039
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#PossibleValues">iddo:PossibleValues</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hatMerkmal">
+        <h3>hat Merkmal<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Attaches a property to a feature of interest (FOI)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#ZugewiesenesMerkmal">iddo:AssignedProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haspropertygroupreference">
+        <h3>has property group reference<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasPropertyGroupReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Attaches a property group reference to a iddo:ReferenceDocument
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/ns/dcat#distribution">dcat:distribution</a>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/iddo/v2#ReferenceDocument">iddo:ReferenceDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hatMerkmalreferenz">
+        <h3>hat Merkmalreferenz<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasPropertyReference</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Attaches a property reference to a property assignment
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#ZugewiesenesMerkmal">iddo:AssignedProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="BeziehungderBezeichnerderMerkmalsgruppeindenmiteinanderverbundenenDatenkatalogen">
+        <h3>Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasRelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von Paaren (inter-ner Bezeichner der Merkmalsgruppe, ent-sprechender Daten-katalog-Bezeichner)
+dieses Attribut sollte fuer die Kompatibilitaet zwischen bereits vorhandenen Merk-malsgruppen verwen-det werden
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    GA014
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Symbolsofthepropertyinagivenpropertygroup">
+        <h3>Symbols of the property in a given property group<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasSymbolsOfTheProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of pairs (symbol of the property, globally unique identifier of the group of properties (attribute GA001))
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA022
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#SymboldesMerkmalsineinergegebenenMerkmalsgruppe">iddo:SymbolOfTheProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Textformat">
+        <h3>Textformat<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasTextFormat</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
+die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA038
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Textformatitem">iddo:TextFormatItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hatEinheit">
+        <h3>hat Einheit<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#hasUnit</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen
+es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird --> http://qudt.org/vocab/unit/UNITLESS
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA033
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#MaximumBoundaryLimit">iddo:BoundaryLimitMax</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#UntererGrenzwert">iddo:BoundaryLimitMin</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://qudt.org/schema/qudt/Unit">qudt:Unit</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ListeersetzenderMerkmalsgruppen">
+        <h3>Liste ersetzender Merkmalsgruppen<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#isReplacedByGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of globally unique identifiers of the replacing groups of properties
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    GA012
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#ListeersetzterMerkmalsgruppen">iddo:replacesGroupOfProperties</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Listofreplacingproperties">
+        <h3>List of replacing properties<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#isReplacedByProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Globally unique identifier (attribute PA001) of the replacing property (or properties)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA012
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#ListeersetzterMerkmale">iddo:replacesProperties</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ListeersetzterMerkmalsgruppen">
+        <h3>Liste ersetzter Merkmalsgruppen<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#replacesGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von globalen Bezeichnern fuer die ersetzten Merk-malsgruppen
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    GA011
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#ListeersetzenderMerkmalsgruppen">iddo:isReplacedByGroupOfProperties</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ListeersetzterMerkmale">
+        <h3>Liste ersetzter Merkmale<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#replacesProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Global eindeutiger Bezeichner des ersetzten Merkmals (oder der Merkmale)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA011
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="#Listofreplacingproperties">iddo:isReplacedByProperty</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Categoryofgroupofproperties">Category of group of properties</a></li>
+        <li><a href="#Ursprungsland">Ursprungsland</a></li>
+        <li><a href="#Countryofuse">Country of use</a></li>
+        <li><a href="#Creator'slanguage">Creator's language</a></li>
+        <li><a href="#Datatype">Data type</a></li>
+        <li><a href="#Dateofactivation">Date of activation</a></li>
+        <li><a href="#Dateofcreation">Date of creation</a></li>
+        <li><a href="#Dateofdeactivation">Date of deactivation</a></li>
+        <li><a href="#DatumderletztenAenderung">Datum der letzten Aenderung</a></li>
+        <li><a href="#DatumderUeberarbeitung">Datum der Ueberarbeitung</a></li>
+        <li><a href="#Dateofversion">Date of version</a></li>
+        <li><a href="#DefinitioninSpracheN">Definition in Sprache N</a></li>
+        <li><a href="#ErlaeuterungfuerdieAblehnung">Erlaeuterung fuer die Ablehnung</a></li>
+        <li><a href="#DescriptioninlanguageN">Description in language N</a></li>
+        <li><a href="#DynamischesMerkmal">Dynamisches Merkmal</a></li>
+        <li><a href="#Kodierung">Kodierung</a></li>
+        <li><a href="#ExampleinlanguageN">Example in language N</a></li>
+        <li><a href="#GlobaleindeutigerBezeichner(GUID)">Global eindeutiger Bezeichner (GUID)</a></li>
+        <li><a href="#inclusive">inclusive</a></li>
+        <li><a href="#Messverfahren">Messverfahren</a></li>
+        <li><a href="#NameinSpracheN">Name in Sprache N</a></li>
+        <li><a href="#NamederdefinierendenWerte">Name der definierenden Werte</a></li>
+        <li><a href="#NumberofCharacters">Number of Characters</a></li>
+        <li><a href="#Tolerance">Tolerance</a></li>
+        <li><a href="#Nummerderueberarbeitung">Nummer der ueberarbeitung</a></li>
+        <li><a href="#Status">Status</a></li>
+        <li><a href="#UnterteilungderVerwendung">Unterteilung der Verwendung</a></li>
+        <li><a href="#Symbol">Symbol</a></li>
+        <li><a href="#Toleranz">Toleranz</a></li>
+        <li><a href="#Versionnumber">Version number</a></li>
+        <li><a href="#BildlicheDarstellung">Bildliche Darstellung</a></li>
+    </ul>
+    <div class="entity property" id="Categoryofgroupofproperties">
+        <h3>Category of group of properties<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#CategoryOfGroupOfProperties</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specifies the category of the created property group
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    GA022
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      Reference document
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Ursprungsland">
+        <h3>Ursprungsland<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#CountryOfOrigin</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA026/GA021
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Countryofuse">
+        <h3>Country of use<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#CountryOfUse</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA024/GA019
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Creator'slanguage">
+        <h3>Creator's language<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#CreatorsLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property; this explanation has to be written in international English (EN)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA015/GA015
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Datatype">
+        <h3>Data type<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DataType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Format fuer die Angabe des Wertes des Merkmals
+dies kann aus einer Soft-ware-Perspektive als Speiche-rungsart verstanden werden
+im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Er-gebnisses der Berechnung mit der Gleichung
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA030
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Dateofactivation">
+        <h3>Date of activation<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfActivation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Date after when the property can be used
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA04/GA04
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Dateofcreation">
+        <h3>Date of creation<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfCreation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Datum der Validierung der An-frage zur Erstellung des Merkmals durch Sachverstaendige
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA003/GA003
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Dateofdeactivation">
+        <h3>Date of deactivation<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfDeactivation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Date of deactivation
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA008/GA008
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="DatumderletztenAenderung">
+        <h3>Datum der letzten Aenderung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfLastChange</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Date of validation of the last change request by experts
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA005/GA005
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="DatumderUeberarbeitung">
+        <h3>Datum der Ueberarbeitung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfRevision</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Datum der Ueberarbeitung
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA006/GA006
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Dateofversion">
+        <h3>Date of version<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DateOfVersion</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Date of version
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA007/GA007
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="DefinitioninSpracheN">
+        <h3>Definition in Sprache N<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DefinitionInLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of pairs (definition of the property/group of properties, language)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA016/GA016
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ErlaeuterungfuerdieAblehnung">
+        <h3>Erlaeuterung fuer die Ablehnung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DeprecationExplanation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Satz, der den Grund fuer die Ablehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal/der neuen Merkmalsgruppe entsprechen; diese Erlaeuterung muss in internationalem Englisch (EN) geschrieben werden
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA013/GA013
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="DescriptioninlanguageN">
+        <h3>Description in language N<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DescriptionInLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von Paaren (Beschreibung des Merkmals, Sprache)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA019
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="DynamischesMerkmal">
+        <h3>Dynamisches Merkmal<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#DynamicProperty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Wenn es sich um ein dynamisches Merkmal handelt, haengt der Wert von den im Attribut PA032 bereitgestellten Parametern ab
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA031
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      yes
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Kodierung">
+        <h3>Kodierung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Encoding</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The encoding is set according to Name of encoding standard of IANA, RFC 2978
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA038
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Textformatitem">iddo:TextFormatItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ExampleinlanguageN">
+        <h3>Example in language N<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#ExampleInLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Liste von Paaren (Beispiel des Merkmals, Sprache)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA019
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="GlobaleindeutigerBezeichner(GUID)">
+        <h3>Global eindeutiger Bezeichner (GUID)<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#GloballyUniqueIdentifier</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Unique identifier generated using the algorithm denoted in RFC 4122
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA001/GA001
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="inclusive">
+        <h3>inclusive<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Inclusive</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#MaximumBoundaryLimit">iddo:BoundaryLimitMax</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#UntererGrenzwert">iddo:BoundaryLimitMin</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Messverfahren">
+        <h3>Messverfahren<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#MethodOfMeasurement</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA029
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="NameinSpracheN">
+        <h3>Name in Sprache N<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#NameInLanguage</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of pairs (property name and language)
+This attribute can be used to add synonyms for different domains
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA016/GA016
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="NamederdefinierendenWerte">
+        <h3>Name der definierenden Werte<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#NameOfTheDefiningValues</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA034
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rdf:langString</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="NumberofCharacters">
+        <h3>Number of Characters<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#NumberOfCharacters</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The encoding is set according to Name of encoding standard of IANA, RFC 2978
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA038
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Textformatitem">iddo:TextFormatItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Tolerance">
+        <h3>Tolerance<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Precision</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Precision is the number of significant digits
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA037
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#DigitalesFormat-Item">iddo:DigitalFormatItem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Nummerderueberarbeitung">
+        <h3>Nummer der ueberarbeitung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#RevisionNumber</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.
+Sachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist.
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA010/GA010
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Status">
+        <h3>Status<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Status</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Status des Merkmals waehrend seines Lebenszyklus
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA002/GA002
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      active
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="UnterteilungderVerwendung">
+        <h3>Unterteilung der Verwendung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#SubdivisionOfUse</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Documented geographical region of use of the group of properties
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA025/GA020
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Symbol">
+        <h3>Symbol<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Symbol</code></td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA022
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SymboldesMerkmalsineinergegebenenMerkmalsgruppe">iddo:SymbolOfTheProperty</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Toleranz">
+        <h3>Toleranz<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#Tolerance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA036
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Versionnumber">
+        <h3>Version number<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#VersionNumber</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This version number allows tracking of major changes. Experts decide if a new version number must be applied
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA009/GA009
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="BildlicheDarstellung">
+        <h3>Bildliche Darstellung<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#VisualRepresentation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Bildliche Darstellung des Merkmals durch Skizzen, Fotos, Videos oder sonstige Multimedia-Objekte
+                </td>
+            </tr>
+            <tr>
+                <th>Usage Note</th>
+                <td>
+                    PA023/GA018
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Merkmal">iddo:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Groupofproperties">iddo:GroupOfProperties</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#accessURL">accessURL</a></li>
+        <li><a href="#Code">Code</a></li>
+    </ul>
+    <div class="entity property" id="accessURL">
+        <h3>accessURL<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/ns/dcat#accessURL</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Code">
+        <h3>Code<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/iddo/v2#code</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/2000/01/rdf-schema#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Code that can be used to identify the attribute
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>https://w3id.org/iddo/v2#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>ex</dt>
+        <dd><code>http://www.example.com/property#</code></dd>
+        <dt>iddo</dt>
+        <dd><code>https://w3id.org/iddo/v2#</code></dd>
+        <dt>opm</dt>
+        <dd><code>https://w3id.org/opm#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qudt</dt>
+        <dd><code>http://qudt.org/schema/qudt/</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>unit</dt>
+        <dd><code>http://qudt.org/vocab/unit/</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>voaf</dt>
+        <dd><code>http://purl.org/vocommons/voaf#</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

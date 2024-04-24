@@ -1,0 +1,3295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Level of Information Need (LOIN) Ontology</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/loin/v2",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). </p>"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Level of Information Need (LOIN) Ontology"
+      }
+    ],
+    "https://schema.org/rights": [
+      {
+        "@value": "&copy; 2023 by Chair of Computing in Engineering, Ruhr University Bochum"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.4</span>
+  </div>
+  <h1>Level of Information Need (LOIN) Ontology</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>IRI</dt>
+        <dd><code>https://w3id.org/loin/v2</code></dd>
+        <dt>Publisher(s)</dt>
+        <dd>
+            
+    <a href="https://www.inf.bi.rub.de">Chair of Computing in Engineering, Ruhr University Bochum</a><br/>
+        </dd>
+        <dt>Creator(s)</dt>
+        <dd>
+            
+    <a href="https://orcid.org/0000-0001-5907-7609">Liu Liu</a>
+    <a href="https://orcid.org/0000-0001-5907-7609"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:liu.liu-m6r@rub.de">liu.liu-m6r@rub.de</a>) of 
+    <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en">Ruhr University Bochum</a><br/>
+            
+    <a href="https://orcid.org/0000-0002-6249-243X">Philipp Hagedorn</a>
+    <a href="https://orcid.org/0000-0002-6249-243X"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:philipp.hagedorn-n6v@rub.de">philipp.hagedorn-n6v@rub.de</a>) of 
+    <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en">Ruhr University Bochum</a><br/>
+        </dd>
+        <dt>Created</dt>
+        <dd>2023-01-30</dd>
+        <dt>Version Information</dt>
+        <dd>2.0</dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://inf.bi.rub.de/ontology/dt">http://inf.bi.rub.de/ontology/dt</a><br/>
+        </dd>
+        <dt>License &amp; Rights</dt>
+        <dd>
+            <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a><br />
+            &copy; 2023 by Chair of Computing in Engineering, Ruhr University Bochum
+        </dd>
+        <dt>Source</dt>
+        <dd><a href="https://github.com/RUB-Informatik-im-Bauwesen/loin-ontology">https://github.com/RUB-Informatik-im-Bauwesen/loin-ontology</a></dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="loin.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). </p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Actor">Actor</a></li>
+        <li><a href="#Alphanumericalinformation">Alphanumerical information</a></li>
+        <li><a href="#Alphanumericalinformationcontent">Alphanumerical information content</a></li>
+        <li><a href="#Appearance">Appearance</a></li>
+        <li><a href="#Attributename">Attribute name</a></li>
+        <li><a href="#AttributeofIDS">Attribute of IDS</a></li>
+        <li><a href="#Breakdownstructure">Breakdown structure</a></li>
+        <li><a href="#Breakdownstructuretype">Breakdown structure type</a></li>
+        <li><a href="#ClassificationofIDS">Classification of IDS</a></li>
+        <li><a href="#Detail">Detail</a></li>
+        <li><a href="#Dimensionality">Dimensionality</a></li>
+        <li><a href="#Document">Document</a></li>
+        <li><a href="#Documentcontent">Document content</a></li>
+        <li><a href="#Documentformat">Document format</a></li>
+        <li><a href="#Documentpurpose">Document purpose</a></li>
+        <li><a href="#Documentspecification">Document specification</a></li>
+        <li><a href="#Documentation">Documentation</a></li>
+        <li><a href="#Entity">Entity</a></li>
+        <li><a href="#Entityname">Entity name</a></li>
+        <li><a href="#Geometricalinformation">Geometrical information</a></li>
+        <li><a href="#Geometricalinformationspecification">Geometrical information specification</a></li>
+        <li><a href="#IDSdatadefinition">IDS data definition</a></li>
+        <li><a href="#IDSfacetdefinition">IDS facet definition</a></li>
+        <li><a href="#IDSfacetparameter">IDS facet parameter</a></li>
+        <li><a href="#IDSrequirementtype">IDS requirement type</a></li>
+        <li><a href="#IFCdatatype">IFC data type</a></li>
+        <li><a href="#Identification">Identification</a></li>
+        <li><a href="#Identifier">Identifier</a></li>
+        <li><a href="#Identifiertype">Identifier type</a></li>
+        <li><a href="#Information">Information</a></li>
+        <li><a href="#Informationdeliverymilestone">Information delivery milestone</a></li>
+        <li><a href="#Location">Location</a></li>
+        <li><a href="#Material">Material</a></li>
+        <li><a href="#Ontologydatadefinition">Ontology data definition</a></li>
+        <li><a href="#Parametricbehaviour">Parametric behaviour</a></li>
+        <li><a href="#Predefinedtype">Predefined type</a></li>
+        <li><a href="#Property">Property</a></li>
+        <li><a href="#Propertyname">Property name</a></li>
+        <li><a href="#Propertysetname">Property set name</a></li>
+        <li><a href="#Purpose">Purpose</a></li>
+        <li><a href="#Receivingactor">Receiving actor</a></li>
+        <li><a href="#Restrictiontype">Restriction type</a></li>
+        <li><a href="#Sendingactor">Sending actor</a></li>
+        <li><a href="#SpecificationperObjectType">Specification per Object Type</a></li>
+        <li><a href="#Value">Value</a></li>
+    </ul>
+    <div class="entity class" id="Actor">
+        <h3>Actor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Actor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Actor is a contextual aspect according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Sendingactor">loin:SendingActor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Receivingactor">loin:ReceivingActor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasagent">loin:hasAgent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerParty">icdd4loin:isRelatedToContainerParty</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Alphanumericalinformation">
+        <h3>Alphanumerical information<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#AlphanumericalInformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#requested">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasdatatemplate">loin:hasDataTemplate</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentification">loin:hasIdentification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#requested">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasalphanumericalinformatoncontent">loin:hasInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Appearance">
+        <h3>Appearance<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Appearance</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Breakdownstructure">
+        <h3>Breakdown structure<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#BreakdownStructure</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Breakdown structure is a term for positioning the object in a structure according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasbreakdownstructuretype">loin:hasBreakdownStructureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Breakdownstructuretype">
+        <h3>Breakdown structure type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#BreakdownStructureType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Breakdown structure type is a term to specify the structure according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasbreakdownstructuretype">loin:hasBreakdownStructureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Detail">
+        <h3>Detail<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Detail</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Dimensionality">
+        <h3>Dimensionality<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Dimensionality</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Documentcontent">
+        <h3>Document content<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#DocumentContent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Document specification for content for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Documentformat">
+        <h3>Document format<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#DocumentFormat</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Document specification for format for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Documentpurpose">
+        <h3>Document purpose<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#DocumentPurpose</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Documentspecification">
+        <h3>Document specification<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#DocumentSpecification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Additional specification of document for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Documentpurpose">loin:DocumentPurpose</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentcontent">loin:DocumentContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Documentformat">loin:DocumentFormat</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Documentation">
+        <h3>Documentation<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Documentation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Geometricalinformation">
+        <h3>Geometrical information<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#GeometricalInformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Location">loin:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Parametricbehaviour">loin:ParametricBehaviour</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Dimensionality">loin:Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Detail">loin:Detail</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#requested">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Appearance">loin:Appearance</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#requested">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Geometricalinformationspecification">
+        <h3>Geometrical information specification<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#GeometrySpecification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Parametricbehaviour">loin:ParametricBehaviour</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Location">loin:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Appearance">loin:Appearance</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Detail">loin:Detail</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Dimensionality">loin:Dimensionality</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#requested">loin:requested</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasgeometricalinformationspecification">loin:hasGeometrySpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Identification">
+        <h3>Identification<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Identification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Identification is a term for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasidentification">loin:hasIdentification</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Identifier">
+        <h3>Identifier<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Identifier</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasbreakdownstructure">loin:hasBreakdownStructure</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#value">loin:value</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasidentifier">loin:hasIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Identifiertype">
+        <h3>Identifier type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#IdentifierType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Identifier type is used to specify the identifier in a breakdown structure according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier">icdd4loin:isRelatedToLinksetIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasidentifiertype">loin:hasIdentifierType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Information">
+        <h3>Information<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Information</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Proxy class for the three information specifications Alphanumerical Information, Geometrical Information, and Documentation</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Alphanumericalinformationcontent">
+        <h3>Alphanumerical information content<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#InformationContent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Ontologydatadefinition">loin:OntologyDataDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#isrelatedtoLoindocument">loin:isRelatedToLoinDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasalphanumericalinformatoncontent">loin:hasInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Informationdeliverymilestone">
+        <h3>Information delivery milestone<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#InformationDeliveryMilestone</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription">icdd4loin:isRelatedToContainerDescription</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Location">
+        <h3>Location<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Location</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Ontologydatadefinition">
+        <h3>Ontology data definition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#OntologyDataDefinition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Ontology data definition is an extension of BS EN 17412-1 (2020). It is used to specify the alphanumerical information according to a published or customized ontology</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#specifiedbyidentifier">loin:specifiedByIdentifier</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Parametricbehaviour">
+        <h3>Parametric behaviour<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#ParametricBehaviour</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Purpose">
+        <h3>Purpose<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#Purpose</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Purpose is a contextual aspect according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#description">loin:description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription">icdd4loin:isRelatedToContainerDescription</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#haspurpose">loin:hasPurpose</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Receivingactor">
+        <h3>Receiving actor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#ReceivingActor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Receiving actor is a party for information delivery according to ISO 19650-1 (2018)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasreceivingactor">loin:hasReceivingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Document">
+        <h3>Document<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#RequiredDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument">icdd4loin:isRelatedToContainerDocument</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentpurpose">loin:DocumentPurpose</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentformat">loin:DocumentFormat</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#Documentcontent">loin:DocumentContent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset">icdd4loin:isRelatedToContainerLinkset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset">icdd4loin:isRelatedToContainerLinkset</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#belongstoinformationcontent">loin:belongsToInformationContent</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentatonspecification">loin:hasDocumentSpecification</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument">icdd4loin:isRelatedToContainerDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#isrelatedtoLoindocument">loin:isRelatedToLoinDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocument">loin:hasDocument</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Sendingactor">
+        <h3>Sending actor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#SendingActor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Sending actor is a party for information delivery according to ISO 19650-1 (2018)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hashasSendingActor">loin:hasSendingActor</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SpecificationperObjectType">
+        <h3>Specification per Object Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#SpecificationPerObjectType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasobjecttype">loin:hasObjectType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasdocumentation">loin:hasDocumentation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasgeometricalinformation">loin:hasGeometricalInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasobjecttype">loin:hasObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasspecificationperobjecttype">loin:hasSpecificationPerObjectType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AttributeofIDS">
+        <h3>Attribute of IDS<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Attribute</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Attribute is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Attributename">
+        <h3>Attribute name<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#AttributeName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Attribute name must be a valid attribute name from the IFC schema according to the definition of IDS developed by buildingSMART International. Example AttributeName = "Description"</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasAttributeName">ids4loin:hasAttributeName</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ClassificationofIDS">
+        <h3>Classification of IDS<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Classification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Classification is is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International. In this ontology, it is defined as an equivalent class of Indentification according to BS EN 17412-1</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IDSdatadefinition">
+        <h3>IDS data definition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#DataDefinition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>IDS data definition is used to specify the alphanumerical information according to Information Delivery Specification (IDS) developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#description">loin:description</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Entity">
+        <h3>Entity<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Entity</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Entity is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasPredefinedType">ids4loin:hasPredefinedType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Entityname">
+        <h3>Entity name<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#EntityName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Entity name must be a valid IFC class from the IFC schema according to IDS developed by buildingSMART International. Example EntityName = "IFCWALL"</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasEntityName">ids4loin:hasEntityName</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IDSfacetdefinition">
+        <h3>IDS facet definition<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#FacetDefinition</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>IDS facet definition is used to define a facet to apply the requirement or to require the information according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Material">ids4loin:Material</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#Classification">ids4loin:Classification</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasrequirementtype">loin:hasRequirementType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRequirement">ids4loin:hasRequirement</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasApplicability">ids4loin:hasApplicability</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IDSfacetparameter">
+        <h3>IDS facet parameter<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#FacetParameter</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Value">ids4loin:Value</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#PsetName">ids4loin:PsetName</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#AttributeName">ids4loin:AttributeName</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#EntityName">ids4loin:EntityName</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#PredefinedType">ids4loin:PredefinedType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#PropertyName">ids4loin:PropertyName</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#IFCDataType">ids4loin:IFCDataType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IFCdatatype">
+        <h3>IFC data type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#IFCDataType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>IFC data type must be a valid predefined type from the IFC schema according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Material">
+        <h3>Material<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Material</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Material is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Predefinedtype">
+        <h3>Predefined type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#PredefinedType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Predefined type must be a valid predefined type from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasPredefinedType">ids4loin:hasPredefinedType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Property">
+        <h3>Property<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Property</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Property is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasIFCDataType">ids4loin:hasIFCDataType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Propertyname">
+        <h3>Property name<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#PropertyName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Property name must be a valid name from the IFC schema, or any custom text value according to IDS stan developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="https://w3id.org/loin/v2#SimpleValue">loin:SimpleValue</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasPropertyName">ids4loin:hasPropertyName</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Propertysetname">
+        <h3>Property set name<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#PsetName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Property set name must be a valid name from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#belongsToPset">ids4loin:belongsToPset</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="IDSrequirementtype">
+        <h3>IDS requirement type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#RequirementType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>IDS requirement type is used to specify a requirement, if it is optional or mandatory according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasrequirementtype">loin:hasRequirementType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Restrictiontype">
+        <h3>Restriction type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#RestrictionType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Restriction type is used to specify the value of IDS facet parameter, that is defined in restriction formulation. The restriction types are based on IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Value">
+        <h3>Value<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#Value</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Value can be any custom value according to IDS standard developed by buildingSMART International</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasRestrictionType">ids4loin:hasRestrictionType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/loin/v2/ids#restrictionFormulation">ids4loin:restrictionFormulation</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#hasValue">ids4loin:hasValue</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#belongstoinformationcontent">belongs to information content</a></li>
+        <li><a href="#hasagent">has agent</a></li>
+        <li><a href="#hasalphanumericalinformation">has alphanumerical information</a></li>
+        <li><a href="#hasbreakdownstructure">has breakdown structure</a></li>
+        <li><a href="#hasbreakdownstructuretype">has breakdown structure type</a></li>
+        <li><a href="#hasdatatemplate">has data template</a></li>
+        <li><a href="#hasdocument">has document</a></li>
+        <li><a href="#hasdocumentatonspecification">has documentaton specification</a></li>
+        <li><a href="#hasdocumentation">has documentation</a></li>
+        <li><a href="#hasgeometricalinformation">has geometrical information</a></li>
+        <li><a href="#hasgeometricalinformationspecification">has geometrical information specification</a></li>
+        <li><a href="#hasidentification">has identification</a></li>
+        <li><a href="#hasidentifier">has identifier</a></li>
+        <li><a href="#hasidentifiertype">has identifier type</a></li>
+        <li><a href="#hasinformation">has information</a></li>
+        <li><a href="#hasalphanumericalinformatoncontent">has alphanumerical informaton content</a></li>
+        <li><a href="#hasobjecttype">has object type</a></li>
+        <li><a href="#haspurpose">has purpose</a></li>
+        <li><a href="#hasreceivingactor">has receiving actor</a></li>
+        <li><a href="#hasreferencesource">has reference source</a></li>
+        <li><a href="#hasrequirementtype">has requirement type</a></li>
+        <li><a href="#hashasSendingActor">has has Sending Actor</a></li>
+        <li><a href="#hasspecificationperobjecttype">has specification per object type</a></li>
+        <li><a href="#isrelatedtoLoindocument">is related to Loin document</a></li>
+        <li><a href="#specifiedbyidentifier">specified by identifier</a></li>
+        <li><a href="#isrelatedtocontainerdescription">is related to container description</a></li>
+        <li><a href="#isrelatedtocontainerdocument">is related to container document</a></li>
+        <li><a href="#isrelatedtocontainerlinkset">is related to container linkset</a></li>
+        <li><a href="#isrelatedtocontainerparty">is related to container party</a></li>
+        <li><a href="#isrelatedtolinksetidentifier">is related to linkset identifier</a></li>
+        <li><a href="#ApropertybelongstoPropertyset">A property belongs to Property set</a></li>
+        <li><a href="#hasapplicability">has applicability</a></li>
+        <li><a href="#hasattributename">has attribute name</a></li>
+        <li><a href="#hasentityname">has entity name</a></li>
+        <li><a href="#hasIFCdatatype">has IFC data type</a></li>
+        <li><a href="#haspredefinedtype">has predefined type</a></li>
+        <li><a href="#haspropertyname">has property name</a></li>
+        <li><a href="#hasrequirement">has requirement</a></li>
+        <li><a href="#hasrestrictiontype">has restriction type</a></li>
+        <li><a href="#hasvalue">has value</a></li>
+    </ul>
+    <div class="entity property" id="belongstoinformationcontent">
+        <h3>belongs to information content<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#belongsToInformationContent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specification of document, that relates with a respective person
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasagent">
+        <h3>has agent<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasAgent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Information of the information delivery actor defined by foaf ontology mit class foaf:Agent
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasalphanumericalinformation">
+        <h3>has alphanumerical information<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasAlphanumericalInformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasbreakdownstructure">
+        <h3>has breakdown structure<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasBreakdownStructure</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Identification">loin:Identification</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasbreakdownstructuretype">
+        <h3>has breakdown structure type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasBreakdownStructureType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Breakdownstructuretype">loin:BreakdownStructureType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdatatemplate">
+        <h3>has data template<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasDataTemplate</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasalphanumericalinformation">loin:hasAlphanumericalInformation</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#isDataTemplateFor">dt:isDataTemplateFor</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#DataTemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdocument">
+        <h3>has document<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdocumentatonspecification">
+        <h3>has documentaton specification<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasDocumentSpecification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the document specifications with a document according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Documentspecification">loin:DocumentSpecification</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdocumentation">
+        <h3>has documentation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasDocumentation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Documentation">loin:Documentation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasgeometricalinformation">
+        <h3>has geometrical information<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasGeometricalInformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="#hasinformation">loin:hasInformation</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasgeometricalinformationspecification">
+        <h3>has geometrical information specification<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasGeometrySpecification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    ["Appearance",
+"Detail",
+"Dimensionality",
+"Location",
+"ParametricBehaviour"]
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasidentification">
+        <h3>has identification<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasIdentification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Identification">loin:Identification</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasidentifier">
+        <h3>has identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasIdentifier</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasidentifiertype">
+        <h3>has identifier type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasIdentifierType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Identifiertype">loin:IdentifierType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasinformation">
+        <h3>has information<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasInformation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Proxy property for the three information specification relationships
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Information">loin:Information</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasalphanumericalinformatoncontent">
+        <h3>has alphanumerical informaton content<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasInformationContent</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasobjecttype">
+        <h3>has object type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasObjectType</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inf.bi.rub.de/ontology/dt#ConstructionObject">dt:ConstructionObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haspurpose">
+        <h3>has purpose<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasPurpose</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasreceivingactor">
+        <h3>has receiving actor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasReceivingActor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Receivingactor">loin:ReceivingActor</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasreferencesource">
+        <h3>has reference source<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasReferenceSource</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Breakdownstructure">loin:BreakdownStructure</a><sup class="sup-c" title="class">c</sup> or <a href="#Ontologydatadefinition">loin:OntologyDataDefinition</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasrequirementtype">
+        <h3>has requirement type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasRequirementType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    relates the requirement type with the defined requirements in IDS data definition
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#RequirementType">ids4loin:RequirementType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hashasSendingActor">
+        <h3>has has Sending Actor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasSendingActor</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Sendingactor">loin:SendingActor</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasspecificationperobjecttype">
+        <h3>has specification per object type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#hasSpecificationPerObjectType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#SpecificationperObjectType">loin:SpecificationPerObjectType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtoLoindocument">
+        <h3>is related to Loin document<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#isRelatedToLoinDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="specifiedbyidentifier">
+        <h3>specified by identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#specifiedByIdentifier</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topObjectProperty">owl:topObjectProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Identifier">loin:Identifier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtocontainerdescription">
+        <h3>is related to container description<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Informationdeliverymilestone">loin:InformationDeliveryMilestone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ContainerDescription">Container:ContainerDescription</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtocontainerdocument">
+        <h3>is related to container document<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Document">Container:Document</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtocontainerlinkset">
+        <h3>is related to container linkset<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Document">loin:RequiredDocument</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset">Container:Linkset</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtocontainerparty">
+        <h3>is related to container party<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/icdd#isRelatedToContainerParty</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Actor">loin:Actor</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Party">Container:Party</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="isrelatedtolinksetidentifier">
+        <h3>is related to linkset identifier<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Identifiertype">loin:IdentifierType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Identifier">Linkset:Identifier</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="ApropertybelongstoPropertyset">
+        <h3>A property belongs to Property set<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#belongsToPset</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specification is used for facet property of IDS data definition.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#PsetName">ids4loin:PsetName</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasapplicability">
+        <h3>has applicability<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasApplicability</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property describes the applicability of a facet for the specification according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasattributename">
+        <h3>has attribute name<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasAttributeName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the attribute name with the facet attribute according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#AttributeName">ids4loin:AttributeName</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasentityname">
+        <h3>has entity name<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasEntityName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the entity name with the facet entity according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#EntityName">ids4loin:EntityName</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasIFCdatatype">
+        <h3>has IFC data type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasIFCDataType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the IFC data type with the facet property according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#IFCDataType">ids4loin:IFCDataType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haspredefinedtype">
+        <h3>has predefined type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasPredefinedType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates a predefined type with the facet entity according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Entity">ids4loin:Entity</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#PredefinedType">ids4loin:PredefinedType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="haspropertyname">
+        <h3>has property name<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasPropertyName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates a property name type with the facet property according to IDS definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#PropertyName">ids4loin:PropertyName</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasrequirement">
+        <h3>has requirement<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasRequirement</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The object property relates the requirements with the IDS data definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#DataDefinition">ids4loin:DataDefinition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetDefinition">ids4loin:FacetDefinition</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasrestrictiontype">
+        <h3>has restriction type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasRestrictionType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    relates the restriction type with the facet parameter in IDS data definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#RestrictionType">ids4loin:RestrictionType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasvalue">
+        <h3>has value<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#hasValue</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    relates the value with a facet in IDS data definition
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Property">ids4loin:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin/v2/ids#Material">ids4loin:Material</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://w3id.org/loin/v2/ids#Attribute">ids4loin:Attribute</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#Value">ids4loin:Value</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#description">description</a></li>
+        <li><a href="#requested">requested</a></li>
+        <li><a href="#value">value</a></li>
+        <li><a href="#Constrainttextformulatedforfacetparameters">Constraint text formulated for facet parameters</a></li>
+    </ul>
+    <div class="entity property" id="description">
+        <h3>description<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#description</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Description provide detail and extend of information derived by Information Delivery Specification (IDS)
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Alphanumericalinformationcontent">loin:InformationContent</a><sup class="sup-c" title="class">c</sup> or <a href="#Purpose">loin:Purpose</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="requested">
+        <h3>requested<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#requested</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Geometricalinformationspecification">loin:GeometrySpecification</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Geometricalinformation">loin:GeometricalInformation</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Alphanumericalinformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="value">
+        <h3>value<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2#value</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    value for general definition
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.w3.org/2002/07/owl#topDataProperty">owl:topDataProperty</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Constrainttextformulatedforfacetparameters">
+        <h3>Constraint text formulated for facet parameters<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>https://w3id.org/loin/v2/ids#restrictionFormulation</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Restriction formulation is for formulating facet parameter value, that is used by IDS definition.
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="https://w3id.org/loin/v2/ids#FacetParameter">ids4loin:FacetParameter</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>https://w3id.org/loin/v2#</code></dd>
+        <dt>Container</dt>
+        <dd><code>https://standards.iso.org/iso/21597/-1/ed-1/en/Container#</code></dd>
+        <dt>Linkset</dt>
+        <dd><code>https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#</code></dd>
+        <dt>dc</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dt</dt>
+        <dd><code>http://inf.bi.rub.de/ontology/dt#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1#</code></dd>
+        <dt>icdd4loin</dt>
+        <dd><code>https://w3id.org/loin/v2/icdd#</code></dd>
+        <dt>ids4loin</dt>
+        <dd><code>https://w3id.org/loin/v2/ids#</code></dd>
+        <dt>loin</dt>
+        <dd><code>https://w3id.org/loin/v2#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>vann</dt>
+        <dd><code>http://purl.org/vocab/vann/</code></dd>
+        <dt>vs</dt>
+        <dd><code>http://www.w3.org/2003/06/sw-vocab-status/ns#</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
