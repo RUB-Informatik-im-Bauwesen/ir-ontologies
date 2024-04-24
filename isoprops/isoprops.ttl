@@ -1,5 +1,5 @@
 # baseURI: https://w3id.org/isoprops
-# imports: http://inf.bi.rub.de/ontology/dt
+# imports: https://w3id.org/dt
 # prefix: isoprops
 
 @prefix dc: <http://purl.org/dc/terms/> .
@@ -19,8 +19,8 @@
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference>
-  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> ;
+<https://w3id.org/dt#hasExternalDictionaryReference>
+  owl:equivalentProperty <https://w3id.org/dt#hasExternalDictionaryReference> ;
 .
 dcat:accessURL
   rdf:type owl:AnnotationProperty ;
@@ -79,7 +79,7 @@ The preferred prefix for the ISOProps namespace is `isoprops`.
 """ ;
   rdfs:label "ISO 23386 Property Ontology (ISOProps)" ;
   rdfs:seeAlso <https://www.iso.org/standard/75401.html> ;
-  owl:imports <http://inf.bi.rub.de/ontology/dt> ;
+  owl:imports <https://w3id.org/dt> ;
   owl:versionIRI <https://w3id.org/isoprops> ;
   owl:versionInfo "v2.1" ;
   skos:example <https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png> ;
@@ -605,14 +605,14 @@ This attribute should be used for compatibility between already existing propert
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> ;
+      owl:onProperty <https://w3id.org/dt#hasExternalDictionary> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> ;
+      owl:onProperty <https://w3id.org/dt#hasExternalDictionaryProperty> ;
     ] ;
-  owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> ;
+  owl:equivalentClass <https://w3id.org/dt#ExternalDictionaryReference> ;
 .
 isoprops:GloballyUniqueIdentifier
   rdf:type owl:DatatypeProperty ;
@@ -634,7 +634,7 @@ isoprops:GroupOfProperties
   rdfs:comment "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"@de-DE ;
   rdfs:label "Group of properties" ;
   rdfs:label "Merkmalsgruppe"@de-DE ;
-  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
+  rdfs:subClassOf <https://w3id.org/dt#LibraryComponent> ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -885,7 +885,7 @@ dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
 nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."""@de-DE ;
   rdfs:label "Physical quantity" ;
   rdfs:label "Physikalische Groesse"@de-DE ;
-  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
+  rdfs:subClassOf <https://w3id.org/dt#LibraryComponent> ;
   owl:equivalentClass qudt:QuantityKind ;
 .
 isoprops:PossibleValues
@@ -903,7 +903,7 @@ Values can be string or numbers""" ;
       owl:cardinality 1 ;
       owl:onProperty schema:value ;
     ] ;
-  owl:equivalentClass <http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> ;
+  owl:equivalentClass <https://w3id.org/dt#PredefinedValuesList> ;
   skos:scopeNote "PA039" ;
   isoprops:code "PA039" ;
   isoprops:code "PA039"@de-DE ;
@@ -927,7 +927,7 @@ isoprops:Property
   rdfs:comment "Inherent or acquired feature of an item" ;
   rdfs:label "Merkmal"@de-DE ;
   rdfs:label "Property" ;
-  rdfs:subClassOf <http://inf.bi.rub.de/ontology/dt#LibraryComponent> ;
+  rdfs:subClassOf <https://w3id.org/dt#LibraryComponent> ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1468,13 +1468,13 @@ isoprops:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
   rdfs:label "has external dictionary" ;
   rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> ;
+  owl:equivalentProperty <https://w3id.org/dt#hasExternalDictionary> ;
 .
 isoprops:hasExternalDictionaryProperty
   rdf:type owl:ObjectProperty ;
   rdfs:label "has external dictionary property" ;
   rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> ;
+  owl:equivalentProperty <https://w3id.org/dt#hasExternalDictionaryProperty> ;
 .
 isoprops:hasExternalDictionaryReference
   rdf:type owl:ObjectProperty ;

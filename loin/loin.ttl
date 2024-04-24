@@ -1,11 +1,11 @@
-# baseURI: https://w3id.org/loin/
-# imports: <http://w3id.org/dt#>
+# baseURI: https://w3id.org/loin
+# imports: <https://w3id.org/dt#>
 # prefix: loin
 
 @prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
 @prefix Linkset: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix dt: <http://w3id.org/dt#> .
+@prefix dt: <https://w3id.org/dt#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1#> .
 @prefix icdd4loin: <https://w3id.org/loin/v2/icdd#> .
 @prefix ids4loin: <https://w3id.org/loin/v2/ids#> .
@@ -60,7 +60,7 @@ dt:isDataTemplateFor
   dc:source "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin"^^xsd:anyURI ;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
-  owl:imports <http://inf.bi.rub.de/ontology/dt> ;
+  owl:imports <https://w3id.org/dt> ;
   owl:versionInfo "2.0" ;
 .
 loin:Actor

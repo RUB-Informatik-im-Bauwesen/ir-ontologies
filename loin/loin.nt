@@ -1,243 +1,982 @@
-# baseURI: http://inf.bi.rub.de/ontology/dt
-# imports: https://w3id.org/iddo/v2
-# imports: https://w3id.org/loin/v2
-# prefix: dt
+# baseURI: https://w3id.org/loin
+# imports: https://w3id.org/dt
+# prefix: loin
 
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/name> "Liu Liu" .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/memberOf> _:B6b1662876fb7d3465a3693b501d6a1d3 .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/identifier> <https://orcid.org/0000-0001-5907-7609> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/email> <mailto:liu.liu-m6r@rub.de> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasIndex> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2#SpecificationPerObjectType> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#label> "is data template for" .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4790e604f8b6d7c6c5cf5efd1359722f .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7bf81221da2c8d4b1a7984cd3a2a1892 .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "External dictionary" .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "referenced external dictionary" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/iddo/v2#hasPossibleValues> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined Values"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#ReferenceDocument> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#ReferenceDocument> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "has reference document" .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#dateOfPublication> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9a8fea55378a93f391021d0f517429df <https://schema.org/name> "Bauhaus-Universitaet Weimar" .
-_:B9a8fea55378a93f391021d0f517429df <https://schema.org/identifier> <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/QuantityKind> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "Physical quantity" .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9208d3d7fada0f49da39f4c626b14095 .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B087758d2b7763c56bc13d5deffe27768 .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcd802a6a3e563fa1ede0c2a6b200a85d .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Data template"@en .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/2000/01/rdf-schema#label> "uri" .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#label> "ISBN" .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/iddo/v2#hasUnit> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#uri> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#Property> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba7e5672ed426c6adfa10484253c3a935 .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Inherent or acquired feature of an item"@en .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdb39cff20c983f7abb0e94b6c03455bf .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B994cc4558742a792f3ac24b04b8b1161 .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Library component"@en .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/name> "Philipp Hagedorn" .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/memberOf> _:Badf29c26ee5231b99a064d85cc99d84e .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/identifier> <https://orcid.org/0000-0002-6249-243X> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/email> <mailto:philipp.hagedorn-n6v@rub.de> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has external property reference" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#author> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/iddo/v2#Property> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3f31d4c28d60ab9e565c9fef0b69a4eb .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B355a573de45e7b64ae1336edf5aa0ba7 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/PropertyValue> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Definition of the property in language N"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "has external dictionary" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher" .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Badf29c26ee5231b99a064d85cc99d84e <https://schema.org/name> "Ruhr University Bochum" .
-_:Badf29c26ee5231b99a064d85cc99d84e <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#label> "author" .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#publisher> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/name> "Marthina Mellenthin-Filardo" .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/memberOf> _:B9a8fea55378a93f391021d0f517429df .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/identifier> <https://orcid.org/0000-0001-7759-7579> .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/email> <mailto:martina.mellenthin.filardo@uni-weimar.de> .
-_:B9758e4135b92b6e51919af5f72d5f449 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd072f442ea579d29ab7edf9fd99af1b9 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdb586c5822d951ab73859b7a96e15206 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B04352159a55ade9320222024f78d31dd .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#label> "T Predefined Values"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/name> "Sven Zentgraf" .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/memberOf> _:B9126d17d8a14facc672aaee9692acec2 .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/identifier> <https://orcid.org/0000-0001-6058-7614> .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/email> <mailto:sven.zentgraf@rub.de> .
-_:B37d5f952d82c7e42384e126cb906e28c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/title> "Data Template (TMP) Ontology"@en .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/created> "2023-12-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#versionInfo> "1.0" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B9758e4135b92b6e51919af5f72d5f449 .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/iddo/v2> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/description> "The Data Template (TMP) Ontology is defined for ..."@en .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/loin/v2> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/source> "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tmp" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B37d5f952d82c7e42384e126cb906e28c .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:Bb4514973ffc0a37cbb6d35916c7a74a2 .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#versionInfo> "Created with TopBraid Composer" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B53c01bdd71a7e0ce9d405ef897822517 .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/rights> "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin/v2#AlphanumericalInformation> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#label> "Construction object"@en .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/iddo/v2#hasUnit> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "has set of properties" .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#DictionaryReferenceDocument> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B998e611adf547afbdbecd8d0858ee40c .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba2bcf0179e2df9a2e428d12a49c92f9b .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7e0470edf90cf7eb73120150a6f38bcd .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B92a497fb90307787f8ec483ff57ec3ee .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1c323b6a02d23afd4441c520ffff1720 .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Reference document"@en .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Predefinded Value Item@en-GB}" .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B6b1662876fb7d3465a3693b501d6a1d3 <https://schema.org/name> "Ruhr University Bochum" .
-_:B6b1662876fb7d3465a3693b501d6a1d3 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iddo/v2#Property> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property" .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/value> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/iddo/v2#Property> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#label> "Index of the element in the enumeration" .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/Unit> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B633eae376e8be509ae605842fdb1e14d .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4581eea3c90ca6581e67dd278a3638f3 .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0226a67bfa59d14720e05dfb7c6aafdf .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd211fa6d1a0cdc7866d5dffc8a51ff40 .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "Set of properties" .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#label> "date of publication" .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#ISBN> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9126d17d8a14facc672aaee9692acec2 <https://schema.org/name> "Ruhr University Bochum" .
-_:B9126d17d8a14facc672aaee9692acec2 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#EntityName> .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/2000/01/rdf-schema#label> "has entity name"@en .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Entity> .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the entity name with the facet entity according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasEntityName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bfa6248e050f35ff9339d14ee3b690bf9 <https://schema.org/name> "Ruhr University Bochum" .
+_:Bfa6248e050f35ff9339d14ee3b690bf9 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> .
+<https://w3id.org/loin#ClassificationSystem> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#ClassificationSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Classification system"@en .
+<https://w3id.org/loin#ClassificationSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#ClassificationSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#SimpleValue> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#SimpleValue> <http://www.w3.org/2000/01/rdf-schema#label> "Simple value restriction"@en .
+<https://w3id.org/loin#SimpleValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Simple value restriction specifies the exact allowed value. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en .
+<https://w3id.org/loin#SimpleValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin/v2/ids#RestrictionType> .
+<https://w3id.org/loin#real-world> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#real-world> <http://www.w3.org/2000/01/rdf-schema#label> "real-world"@en .
+<https://w3id.org/loin#real-world> <http://www.w3.org/2000/01/rdf-schema#comment> "Real-world, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#real-world> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Appearance> .
+<https://w3id.org/loin#Appearance> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Appearance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#Appearance> <http://www.w3.org/2000/01/rdf-schema#label> "Appearance"@en .
+<https://w3id.org/loin#Appearance> <http://www.w3.org/2000/01/rdf-schema#comment> "Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Appearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Document> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/2000/01/rdf-schema#label> "is related to container document"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B88cb81cb9ea0f2398b6d98e8deed6b51 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasSpecificationPerObjectType> .
+_:B88cb81cb9ea0f2398b6d98e8deed6b51 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B88cb81cb9ea0f2398b6d98e8deed6b51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5108358ad78919111e9e501759804efb <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#ParametricBehaviour> .
+_:B5108358ad78919111e9e501759804efb <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometrySpecification> .
+_:B5108358ad78919111e9e501759804efb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#DocumentPurpose> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#DocumentPurpose> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#DocumentSpecification> .
+<https://w3id.org/loin#DocumentPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "Document purpose"@en .
+<https://w3id.org/loin#DocumentPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document"@en .
+<https://w3id.org/loin#DocumentPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#explicit> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#explicit> <http://www.w3.org/2000/01/rdf-schema#label> "explicit"@en .
+<https://w3id.org/loin#explicit> <http://www.w3.org/2000/01/rdf-schema#comment> "Explicit, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#explicit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#ParametricBehaviour> .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Document"@en .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B462490c0e0d1ce214dc63a9b2dd418cb .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0d6987f5179dcdd425c238b898968697 .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf06729852e11c95015ef76a12a100879 .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B795e13f469cd72781ee00b89cf374680 .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B23b32cd0b44fa7d17d874baed85195c5 .
+<https://w3id.org/loin#RequiredDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B297ecf658f9e5dd23a87cf857a177c87 .
+<https://w3id.org/loin#structuralAnalysis> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#structuralAnalysis> <http://www.w3.org/2000/01/rdf-schema#label> "Structural analysis"@en .
+<https://w3id.org/loin#structuralAnalysis> <http://www.w3.org/2000/01/rdf-schema#comment> "Structural analysis, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#structuralAnalysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5591f0e8fccee8ffa19d30cca4c622a9 .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc7ad5dac82f0a7b2572bde2e0be83423 .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2000/01/rdf-schema#label> "IFC data type"@en .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "IFC data type must be a valid predefined type from the IFC schema according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#IFCDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd912a458fd9bfaeeae00716c5ce973c0 .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5986332250f4ebda9ef421e9e8994bf8 .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bed140f70e3c5ce970e043261c82085f7 .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Property is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9312daef1e2314333c0e7ef28a85f7cc .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bca36a343787532cce270752485082b80 .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined type"@en .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/2000/01/rdf-schema#comment> "Predefined type must be a valid predefined type from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#PredefinedType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf678a97eX2Dd639X2D4411X2Db1dbX2Dd809e5dc1fbb <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Be5916c42X2D0b48X2D46e7X2D9531X2Da4a53da00d80 .
+_:Bf678a97eX2Dd639X2D4411X2Db1dbX2Dd809e5dc1fbb <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/loin#InformationContent> .
+_:Bedc1a8a7X2D70b6X2D4892X2Db81cX2Db41bfdb09d98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Bedc1a8a7X2D70b6X2D4892X2Db81cX2Db41bfdb09d98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Prohibited" .
+_:B26cda9bb7630e3ecb2677c87a90e32e0 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasIdentifierType> .
+_:B26cda9bb7630e3ecb2677c87a90e32e0 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B26cda9bb7630e3ecb2677c87a90e32e0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B23b32cd0b44fa7d17d874baed85195c5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument> .
+_:B23b32cd0b44fa7d17d874baed85195c5 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B23b32cd0b44fa7d17d874baed85195c5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#BreakdownStructureType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#BreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#BreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#label> "Breakdown structure type"@en .
+<https://w3id.org/loin#BreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#comment> "Breakdown structure type is a term to specify the structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#BreakdownStructureType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf06729852e11c95015ef76a12a100879 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#belongsToInformationContent> .
+_:Bf06729852e11c95015ef76a12a100879 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bf06729852e11c95015ef76a12a100879 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Functional> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Functional> <http://www.w3.org/2000/01/rdf-schema#label> "Functional structure"@en .
+<https://w3id.org/loin#Functional> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Functional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Information> .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/2000/01/rdf-schema#label> "has information"@en .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Proxy property for the three information specification relationships"@en .
+<https://w3id.org/loin#hasInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9eacd135e41a90d51b1a9648f82c0d14 .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#Information> .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Alphanumerical information"@en .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#AlphanumericalInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Purpose> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B41120d52b96f38fd285829bc2273d80b .
+<https://w3id.org/loin#Purpose> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#Purpose> <http://www.w3.org/2000/01/rdf-schema#label> "Purpose" .
+<https://w3id.org/loin#Purpose> <http://www.w3.org/2000/01/rdf-schema#comment> "Purpose is a contextual aspect according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Purpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B9eacd135e41a90d51b1a9648f82c0d14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#requested> .
+_:B9eacd135e41a90d51b1a9648f82c0d14 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B9eacd135e41a90d51b1a9648f82c0d14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#DocumentSpecification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#DocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#DocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Document specification"@en .
+<https://w3id.org/loin#DocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Additional specification of document for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#DocumentSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#NotRequested> <https://w3id.org/loin#requested> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/loin#NotRequested> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#NotRequested> <http://www.w3.org/2000/01/rdf-schema#label> "Geometry not requested"@en .
+<https://w3id.org/loin#NotRequested> <http://www.w3.org/2000/01/rdf-schema#comment> "Geometry information is not requested"@en .
+<https://w3id.org/loin#NotRequested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#GeometricalInformation> .
+_:Bb8859f610cba3f5fa8495fdc4cea5411 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasReceivingActor> .
+_:Bb8859f610cba3f5fa8495fdc4cea5411 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb8859f610cba3f5fa8495fdc4cea5411 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#constructive> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#constructive> <http://www.w3.org/2000/01/rdf-schema#label> "constructive"@en .
+<https://w3id.org/loin#constructive> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#constructive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#ParametricBehaviour> .
+<https://w3id.org/loin#ParametricBehaviour> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#ParametricBehaviour> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#ParametricBehaviour> <http://www.w3.org/2000/01/rdf-schema#label> "Parametric behaviour"@en .
+<https://w3id.org/loin#ParametricBehaviour> <http://www.w3.org/2000/01/rdf-schema#comment> "Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#ParametricBehaviour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bee6cb6447d2d909fd249cd0fb3a58433 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasApplicability> .
+_:Bee6cb6447d2d909fd249cd0fb3a58433 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bee6cb6447d2d909fd249cd0fb3a58433 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4798efbf8b61c299692b0f3cc65e27c8 .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb312dab2d2d4c5e725e21d046198b3e9 .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2000/01/rdf-schema#label> "Value" .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/2000/01/rdf-schema#comment> "Value can be any custom value according to IDS standard developed by buildingSMART International" .
+<https://w3id.org/loin/v2/ids#Value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#requested> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#label> "requested" .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#label> "requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#GeometricalInformation> .
+<https://w3id.org/loin#requested> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#AlphanumericalInformation> .
+<https://w3id.org/loin#requested> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/loin#hasDataTemplate> .
+<https://w3id.org/loin#Signed_Document> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Signed_Document> <http://www.w3.org/2000/01/rdf-schema#label> "Signed document"@en .
+<https://w3id.org/loin#Signed_Document> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as test certificates, insurance policies, delivery notes according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Signed_Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/loin#Identification> .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/2000/01/rdf-schema#label> "Classification of IDS"@en .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/2000/01/rdf-schema#comment> "Classification is is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International. In this ontology, it is defined as an equivalent class of Indentification according to BS EN 17412-1"@en .
+<https://w3id.org/loin/v2/ids#Classification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/loin> <http://purl.org/dc/terms/creator> _:Bf64968a42395dcbbb72b6f14761eb629 .
+<https://w3id.org/loin> <http://purl.org/dc/terms/creator> _:B7ba70cf64451316812e56ffbcaac229c .
+<https://w3id.org/loin> <http://purl.org/dc/terms/publisher> _:Bab002ad09e434fc386e6ae84ecd1f97d .
+<https://w3id.org/loin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/loin> <http://purl.org/vocab/vann/preferredNamespacePrefix> "loin" .
+<https://w3id.org/loin> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/dt> .
+<https://w3id.org/loin> <http://purl.org/dc/terms/title> "Level of Information Need (LOIN) Ontology"@en .
+<https://w3id.org/loin> <http://purl.org/dc/terms/created> "2023-01-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/loin> <http://purl.org/dc/terms/description> "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). "@en .
+<https://w3id.org/loin> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+<https://w3id.org/loin> <http://purl.org/dc/terms/rights> "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum" .
+<https://w3id.org/loin> <http://purl.org/dc/terms/source> "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be6d546389c65f94a589411e165236b52 .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be78992d85d5afaa96b4894db6a2cfa32 .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#Information> .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc0af944f0e1d7956566e42bc185ac9c1 .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5108358ad78919111e9e501759804efb .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be394ebfa2993ef58a2b6102bbe28c0c2 .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Geometrical information"@en .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd0440a61b13ffbe1757f4f3112ee04a7 .
+<https://w3id.org/loin#GeometricalInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2e4442a6108e5713421608e95c47e791 .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B728aff7e77d322254e56a0fc66bc5c0c .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2000/01/rdf-schema#label> "Property set name"@en .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/2000/01/rdf-schema#comment> "Property set name must be a valid name from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#PsetName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#description> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#description> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/loin#description> <http://www.w3.org/2000/01/rdf-schema#label> "description"@en .
+<https://w3id.org/loin#description> <http://www.w3.org/2000/01/rdf-schema#domain> _:B2ca42d96e924b4a0a3511758ed1b9ba6 .
+<https://w3id.org/loin#description> <http://www.w3.org/2000/01/rdf-schema#comment> "Description provide detail and extend of information derived by Information Delivery Specification (IDS)"@en .
+<https://w3id.org/loin#description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B728aff7e77d322254e56a0fc66bc5c0c <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:B728aff7e77d322254e56a0fc66bc5c0c <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B728aff7e77d322254e56a0fc66bc5c0c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be2d50293dcff3fe684d05052cd6219ca <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasEntityName> .
+_:Be2d50293dcff3fe684d05052cd6219ca <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be2d50293dcff3fe684d05052cd6219ca <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#SendingActor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#SendingActor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#Actor> .
+<https://w3id.org/loin#SendingActor> <http://www.w3.org/2000/01/rdf-schema#label> "Sending actor"@en .
+<https://w3id.org/loin#SendingActor> <http://www.w3.org/2000/01/rdf-schema#comment> "Sending actor is a party for information delivery according to ISO 19650-1 (2018)"@en .
+<https://w3id.org/loin#SendingActor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bd912a458fd9bfaeeae00716c5ce973c0 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasPropertyName> .
+_:Bd912a458fd9bfaeeae00716c5ce973c0 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bd912a458fd9bfaeeae00716c5ce973c0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Enumeration> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Enumeration> <http://www.w3.org/2000/01/rdf-schema#label> "Enumeration restriction"@en .
+<https://w3id.org/loin#Enumeration> <http://www.w3.org/2000/01/rdf-schema#comment> "Enumeration restriction specifies that the value must be one of a list of allowed values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en .
+<https://w3id.org/loin#Enumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin/v2/ids#RestrictionType> .
+<https://w3id.org/loin/v2/ids#FacetParameter> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#FacetParameter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://w3id.org/loin/v2/ids#FacetParameter> <http://www.w3.org/2000/01/rdf-schema#label> "IDS facet parameter"@en .
+<https://w3id.org/loin/v2/ids#FacetParameter> <http://www.w3.org/2000/01/rdf-schema#comment> "IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#FacetParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#PropertyName> .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/2000/01/rdf-schema#label> "has property name"@en .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Property> .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates a property name type with the facet property according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasPropertyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/2000/01/rdf-schema#label> "has reference source"@en .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/2000/01/rdf-schema#domain> _:B7725260c8c7a5984550ad75e107789fb .
+<https://w3id.org/loin#hasReferenceSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#three-dimensional> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#three-dimensional> <http://www.w3.org/2000/01/rdf-schema#label> "three-dimensional"@en .
+<https://w3id.org/loin#three-dimensional> <http://www.w3.org/2000/01/rdf-schema#comment> "Three-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#three-dimensional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Dimensionality> .
+_:B0d6987f5179dcdd425c238b898968697 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#DocumentContent> .
+_:B0d6987f5179dcdd425c238b898968697 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasDocumentSpecification> .
+_:B0d6987f5179dcdd425c238b898968697 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Index> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Index> <http://www.w3.org/2000/01/rdf-schema#label> "Index of an item in a breakdown structure"@en .
+<https://w3id.org/loin#Index> <http://www.w3.org/2000/01/rdf-schema#comment> "Index, an identifier type according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Index> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+<https://w3id.org/loin/v2/ids#FacetDefinition> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#FacetDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://w3id.org/loin/v2/ids#FacetDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "IDS facet definition"@en .
+<https://w3id.org/loin/v2/ids#FacetDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "IDS facet definition is used to define a facet to apply the requirement or to require the information according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#FacetDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "has specification per object type"@en .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#comment> "The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasSpecificationPerObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#Location> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location"@en .
+<https://w3id.org/loin#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Report> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Report> <http://www.w3.org/2000/01/rdf-schema#label> "Report" .
+<https://w3id.org/loin#Report> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as geotechnical reports, reports of existing building conditions, soil surveys, pre calculations according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Report> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin#IdentifierType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#IdentifierType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#IdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier type"@en .
+<https://w3id.org/loin#IdentifierType> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier type is used to specify the identifier in a breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#IdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#preliminaryDesign> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#preliminaryDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Preliminary design" .
+<https://w3id.org/loin#preliminaryDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Preliminary design, an example of IDM information delivery milestone from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#preliminaryDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2000/01/rdf-schema#label> "has alphanumerical informaton content"@en .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#AlphanumericalInformation> .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasInformationContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#Pattern> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Pattern> <http://www.w3.org/2000/01/rdf-schema#label> "Pattern restriction"@en .
+<https://w3id.org/loin#Pattern> <http://www.w3.org/2000/01/rdf-schema#comment> "Pattern restriction with regex method specifies advanced pattern matching. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en .
+<https://w3id.org/loin#Pattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin/v2/ids#RestrictionType> .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdc726f281c34bbba9faf926d1e650ac0 .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8c9348d636f28124fc5031cc77303c17 .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2000/01/rdf-schema#label> "Property name"@en .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/2000/01/rdf-schema#comment> "Property name must be a valid name from the IFC schema, or any custom text value according to IDS stan developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#PropertyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Required_For_Approval> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Required_For_Approval> <http://www.w3.org/2000/01/rdf-schema#label> "document required for approval"@en .
+<https://w3id.org/loin#Required_For_Approval> <http://www.w3.org/2000/01/rdf-schema#comment> "The document required by deliverer is for getting approval"@en .
+<https://w3id.org/loin#Required_For_Approval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentPurpose> .
+<https://w3id.org/loin#Length> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Length> <http://www.w3.org/2000/01/rdf-schema#label> "Length restriction"@en .
+<https://w3id.org/loin#Length> <http://www.w3.org/2000/01/rdf-schema#comment> "Length restriction specifies the exact number of characters allowed in a value. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en .
+<https://w3id.org/loin#Length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin/v2/ids#RestrictionType> .
+_:B8c9348d636f28124fc5031cc77303c17 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B8c9348d636f28124fc5031cc77303c17 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B8c9348d636f28124fc5031cc77303c17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#RequirementType> .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2000/01/rdf-schema#label> "has requirement type"@en .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/2000/01/rdf-schema#comment> "relates the requirement type with the defined requirements in IDS data definition"@en .
+<https://w3id.org/loin#hasRequirementType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5591f0e8fccee8ffa19d30cca4c622a9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B5591f0e8fccee8ffa19d30cca4c622a9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5591f0e8fccee8ffa19d30cca4c622a9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B0ef7c255168aa79554aad6216a323907 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#value> .
+_:B0ef7c255168aa79554aad6216a323907 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B0ef7c255168aa79554aad6216a323907 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Handdrawn_Sketches> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Handdrawn_Sketches> <http://www.w3.org/2000/01/rdf-schema#label> "Handdrawn sketches"@en .
+<https://w3id.org/loin#Handdrawn_Sketches> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as such as initial sketches, site plans according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Handdrawn_Sketches> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#AttributeName> .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/2000/01/rdf-schema#label> "has attribute name"@en .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Attribute> .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the attribute name with the facet attribute according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasAttributeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has geometrical information specification"@en .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#GeometricalInformation> .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "[\"Appearance\",\r\n\"Detail\",\r\n\"Dimensionality\",\r\n\"Location\",\r\n\"ParametricBehaviour\"]" .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasGeometrySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/dt#ConstructionObject> .
+<https://w3id.org/loin#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "has object type" .
+<https://w3id.org/loin#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#detailed> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#detailed> <http://www.w3.org/2000/01/rdf-schema#label> "detailed"@en .
+<https://w3id.org/loin#detailed> <http://www.w3.org/2000/01/rdf-schema#comment> "Detail, an example of detail aspect according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#detailed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Detail> .
+_:Bd0440a61b13ffbe1757f4f3112ee04a7 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#Appearance> .
+_:Bd0440a61b13ffbe1757f4f3112ee04a7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometrySpecification> .
+_:Bd0440a61b13ffbe1757f4f3112ee04a7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be77de8f6bd7b75bd469149d2dd0d03cd <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Be77de8f6bd7b75bd469149d2dd0d03cd <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be77de8f6bd7b75bd469149d2dd0d03cd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#label> "has breakdown structure type"@en .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#BreakdownStructure> .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasBreakdownStructureType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#FederationStrategy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#FederationStrategy> <http://www.w3.org/2000/01/rdf-schema#label> "Federation strategy"@en .
+<https://w3id.org/loin#FederationStrategy> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#FederationStrategy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2000/01/rdf-schema#label> "has document"@en .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Documentation> .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0828cfa9473e3e44fbe28e9029f2856e .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf6abb70d87f0ccd706777cb50c735efc .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2000/01/rdf-schema#label> "Entity name"@en .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity name must be a valid IFC class from the IFC schema according to IDS developed by buildingSMART International. Example EntityName = \"IFCWALL\""@en .
+<https://w3id.org/loin/v2/ids#EntityName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bdc726f281c34bbba9faf926d1e650ac0 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Bdc726f281c34bbba9faf926d1e650ac0 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/loin#SimpleValue> .
+_:Bdc726f281c34bbba9faf926d1e650ac0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/loin#hasInformation> .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Documentation> .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2000/01/rdf-schema#label> "has documentation"@en .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/2000/01/rdf-schema#label> "has applicability"@en .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#DataDefinition> .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property describes the applicability of a facet for the specification according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasApplicability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B2236ae9b924158db3f5cce9742d850eb <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasAttributeName> .
+_:B2236ae9b924158db3f5cce9742d850eb <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B2236ae9b924158db3f5cce9742d850eb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B1b2dbaeb1394b0f86195d8970b94d4a9 <https://schema.org/name> "Ruhr University Bochum" .
+_:B1b2dbaeb1394b0f86195d8970b94d4a9 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> .
+<https://w3id.org/loin#Semantic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Semantic> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic structure"@en .
+<https://w3id.org/loin#Semantic> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Semantic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+_:B462490c0e0d1ce214dc63a9b2dd418cb <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#DocumentFormat> .
+_:B462490c0e0d1ce214dc63a9b2dd418cb <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasDocumentSpecification> .
+_:B462490c0e0d1ce214dc63a9b2dd418cb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/2002/07/owl#oneOf> _:Bc394c8e3X2D5958X2D415cX2D90aeX2De9cc28290b2b .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/2000/01/rdf-schema#label> "IDS requirement type"@en .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/2000/01/rdf-schema#comment> "IDS requirement type is used to specify a requirement, if it is optional or mandatory according to IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#RequirementType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B2ca42d96e924b4a0a3511758ed1b9ba6 <http://www.w3.org/2002/07/owl#unionOf> _:Bf678a97eX2Dd639X2D4411X2Db1dbX2Dd809e5dc1fbb .
+_:B2ca42d96e924b4a0a3511758ed1b9ba6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#detailedDesign> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#detailedDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Detailed design"@en .
+<https://w3id.org/loin#detailedDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Detailed design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#detailedDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#InformationDeliveryMilestone> .
+_:Bb312dab2d2d4c5e725e21d046198b3e9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Bb312dab2d2d4c5e725e21d046198b3e9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb312dab2d2d4c5e725e21d046198b3e9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B468b2fbae303102a2f9361528c9b5985 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B468b2fbae303102a2f9361528c9b5985 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B468b2fbae303102a2f9361528c9b5985 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#IFCDataType> .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/2000/01/rdf-schema#label> "has IFC data type"@en .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Property> .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the IFC data type with the facet property according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasIFCDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B9312daef1e2314333c0e7ef28a85f7cc <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B9312daef1e2314333c0e7ef28a85f7cc <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B9312daef1e2314333c0e7ef28a85f7cc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#fireSmokeSimulation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#fireSmokeSimulation> <http://www.w3.org/2000/01/rdf-schema#label> "Fire and smoke simulation"@en .
+<https://w3id.org/loin#fireSmokeSimulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Fire and smoke simulation, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#fireSmokeSimulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdcda5dc2bf39eb22e0f7320ce7e342be .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#Information> .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/2000/01/rdf-schema#label> "Documentation"@en .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/2000/01/rdf-schema#comment> "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Documentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B297ecf658f9e5dd23a87cf857a177c87 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#DocumentPurpose> .
+_:B297ecf658f9e5dd23a87cf857a177c87 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasDocumentSpecification> .
+_:B297ecf658f9e5dd23a87cf857a177c87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B35f3759fX2D1713X2D4521X2Da258X2Dbbcdd208bc42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bedc1a8a7X2D70b6X2D4892X2Db81cX2Db41bfdb09d98 .
+_:B35f3759fX2D1713X2D4521X2Da258X2Dbbcdd208bc42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Optional" .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2000/01/rdf-schema#label> "is related to Loin document" .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)"@en .
+<https://w3id.org/loin#isRelatedToLoinDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/loin#hasInformation> .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#AlphanumericalInformation> .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#label> "has alphanumerical information"@en .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasAlphanumericalInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bc394c8e3X2D5958X2D415cX2D90aeX2De9cc28290b2b <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B35f3759fX2D1713X2D4521X2Da258X2Dbbcdd208bc42 .
+_:Bc394c8e3X2D5958X2D415cX2D90aeX2De9cc28290b2b <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Required" .
+_:Bf6abb70d87f0ccd706777cb50c735efc <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Bf6abb70d87f0ccd706777cb50c735efc <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bf6abb70d87f0ccd706777cb50c735efc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B449bf4291851bd75fefd04be1adecfe4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasObjectType> .
+_:B449bf4291851bd75fefd04be1adecfe4 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B449bf4291851bd75fefd04be1adecfe4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Specification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Specification> <http://www.w3.org/2000/01/rdf-schema#label> "Specification"@en .
+<https://w3id.org/loin#Specification> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as technical specifications according to notes according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Specification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#BreakdownStructure> .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#label> "has breakdown structure"@en .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Identification> .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasBreakdownStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#coordination> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#coordination> <http://www.w3.org/2000/01/rdf-schema#label> "Coordination"@en .
+<https://w3id.org/loin#coordination> <http://www.w3.org/2000/01/rdf-schema#comment> "coordination, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#coordination> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin#symbolic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#symbolic> <http://www.w3.org/2000/01/rdf-schema#label> "symbolic"@en .
+<https://w3id.org/loin#symbolic> <http://www.w3.org/2000/01/rdf-schema#comment> "symbolic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#symbolic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Appearance> .
+<https://w3id.org/loin#Information> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#Information> <http://www.w3.org/2000/01/rdf-schema#label> "Information"@en .
+<https://w3id.org/loin#Information> <http://www.w3.org/2000/01/rdf-schema#comment> "Proxy class for the three information specifications Alphanumerical Information, Geometrical Information, and Documentation"@en .
+<https://w3id.org/loin#Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "has purpose"@en .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#PredefinedType> .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/2000/01/rdf-schema#label> "has predefined type"@en .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Entity> .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates a predefined type with the facet entity according to IDS definition"@en .
+<https://w3id.org/loin/v2/ids#hasPredefinedType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B0828cfa9473e3e44fbe28e9029f2856e <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B0828cfa9473e3e44fbe28e9029f2856e <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B0828cfa9473e3e44fbe28e9029f2856e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#InformationContent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#InformationContent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#InformationContent> <http://www.w3.org/2000/01/rdf-schema#label> "Alphanumerical information content"@en .
+<https://w3id.org/loin#InformationContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#InformationContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B64b84ed2dc95226e1e1b5cc7f2fc5307 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#specifiedByIdentifier> .
+_:B64b84ed2dc95226e1e1b5cc7f2fc5307 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B64b84ed2dc95226e1e1b5cc7f2fc5307 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#costEstimation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#costEstimation> <http://www.w3.org/2000/01/rdf-schema#label> "Cost estimation"@en .
+<https://w3id.org/loin#costEstimation> <http://www.w3.org/2000/01/rdf-schema#comment> "Cost estimation, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#costEstimation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Purpose> .
+_:Be394ebfa2993ef58a2b6102bbe28c0c2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#requested> .
+_:Be394ebfa2993ef58a2b6102bbe28c0c2 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be394ebfa2993ef58a2b6102bbe28c0c2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#IdentifierType> .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/2000/01/rdf-schema#label> "has identifier type"@en .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Identifier> .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasIdentifierType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B468b2fbae303102a2f9361528c9b5985 .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be77de8f6bd7b75bd469149d2dd0d03cd .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2000/01/rdf-schema#label> "Attribute name"@en .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/2000/01/rdf-schema#comment> "Attribute name must be a valid attribute name from the IFC schema according to the definition of IDS developed by buildingSMART International. Example AttributeName = \"Description\""@en .
+<https://w3id.org/loin/v2/ids#AttributeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B88cb81cb9ea0f2398b6d98e8deed6b51 .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb340d0130b9d2418c220a4354448cb65 .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb8859f610cba3f5fa8495fdc4cea5411 .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf4b223294ac8ab9f178a3eb7bef3d94c .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#label> "Information delivery milestone"@en .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/2000/01/rdf-schema#comment> "Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#InformationDeliveryMilestone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bca36a343787532cce270752485082b80 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Bca36a343787532cce270752485082b80 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bca36a343787532cce270752485082b80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be6d546389c65f94a589411e165236b52 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#Dimensionality> .
+_:Be6d546389c65f94a589411e165236b52 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometrySpecification> .
+_:Be6d546389c65f94a589411e165236b52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf64968a42395dcbbb72b6f14761eb629 <https://schema.org/name> "Liu Liu" .
+_:Bf64968a42395dcbbb72b6f14761eb629 <https://schema.org/memberOf> _:B1b2dbaeb1394b0f86195d8970b94d4a9 .
+_:Bf64968a42395dcbbb72b6f14761eb629 <https://schema.org/identifier> <https://orcid.org/0000-0001-5907-7609> .
+_:Bf64968a42395dcbbb72b6f14761eb629 <https://schema.org/email> <mailto:liu.liu-m6r@rub.de> .
+_:Bf64968a42395dcbbb72b6f14761eb629 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/loin#hasInformation> .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#GeometricalInformation> .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#label> "has geometrical information"@en .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasGeometricalInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#simplified> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#simplified> <http://www.w3.org/2000/01/rdf-schema#label> "simplified"@en .
+<https://w3id.org/loin#simplified> <http://www.w3.org/2000/01/rdf-schema#comment> "simplified, an example of detail according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#simplified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Detail> .
+_:Bb8fcadae99efed2e0146e696cac99a83 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRequirement> .
+_:Bb8fcadae99efed2e0146e696cac99a83 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb8fcadae99efed2e0146e696cac99a83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bab002ad09e434fc386e6ae84ecd1f97d <https://schema.org/parentOrganization> _:B2bcf30838d28bc83c00283c76b895d6e .
+_:Bab002ad09e434fc386e6ae84ecd1f97d <https://schema.org/name> "Chair of Computing in Engineering, Ruhr University Bochum" .
+_:Bab002ad09e434fc386e6ae84ecd1f97d <https://schema.org/identifier> <https://www.inf.bi.rub.de> .
+_:Bab002ad09e434fc386e6ae84ecd1f97d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://w3id.org/loin#Codification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Codification> <http://www.w3.org/2000/01/rdf-schema#label> "Codification of an item in a breakdown structure"@en .
+<https://w3id.org/loin#Codification> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of identifier type from a breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Codification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#PsetName> .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/2000/01/rdf-schema#label> "A property belongs to Property set"@en .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Property> .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/2000/01/rdf-schema#comment> "Specification is used for facet property of IDS data definition."@en .
+<https://w3id.org/loin/v2/ids#belongsToPset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5f735a9fd8052dd0ffefe88e78345c5e <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin/v2/ids#Entity> .
+_:B5f735a9fd8052dd0ffefe88e78345c5e <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasApplicability> .
+_:B5f735a9fd8052dd0ffefe88e78345c5e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#ReferenceOfStructure> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#ReferenceOfStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Reference of an item in a breakdown structure"@en .
+<https://w3id.org/loin#ReferenceOfStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#ReferenceOfStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+_:Ba97cdc8ad34a4d33b171b1b16133e154 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometricalInformation> .
+_:Ba97cdc8ad34a4d33b171b1b16133e154 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Ba97cdc8ad34a4d33b171b1b16133e154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#finalDesign> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#finalDesign> <http://www.w3.org/2000/01/rdf-schema#label> "Final design"@en .
+<https://w3id.org/loin#finalDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Final design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#finalDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#visualization> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#visualization> <http://www.w3.org/2000/01/rdf-schema#label> "Visualization" .
+<https://w3id.org/loin#visualization> <http://www.w3.org/2000/01/rdf-schema#comment> "Visualization, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en .
+<https://w3id.org/loin#visualization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Purpose> .
+_:Bed140f70e3c5ce970e043261c82085f7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#belongsToPset> .
+_:Bed140f70e3c5ce970e043261c82085f7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bed140f70e3c5ce970e043261c82085f7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B4ad9b58dX2D7d86X2D4eb1X2Da5f4X2Dd847a683f50e <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B15647269X2Dbea2X2D48fdX2D88e1X2D548537587e46 .
+_:B4ad9b58dX2D7d86X2D4eb1X2Da5f4X2Dd847a683f50e <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/loin#BreakdownStructure> .
+<https://w3id.org/loin#Numbering> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Numbering> <http://www.w3.org/2000/01/rdf-schema#label> "Numbering of an item in a breakdown structure" .
+<https://w3id.org/loin#Numbering> <http://www.w3.org/2000/01/rdf-schema#comment> "Numbering, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Numbering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to information content"@en .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Specification of document, that relates with a respective person"@en .
+<https://w3id.org/loin#belongsToInformationContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B7725260c8c7a5984550ad75e107789fb <http://www.w3.org/2002/07/owl#unionOf> _:B4ad9b58dX2D7d86X2D4eb1X2Da5f4X2Dd847a683f50e .
+_:B7725260c8c7a5984550ad75e107789fb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B4640779bc31e79f59c34aba1cc8b400f <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasBreakdownStructure> .
+_:B4640779bc31e79f59c34aba1cc8b400f <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B4640779bc31e79f59c34aba1cc8b400f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#Value> .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value" .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Property> .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Material> .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#Attribute> .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "relates the value with a facet in IDS data definition"@en .
+<https://w3id.org/loin/v2/ids#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bb340d0130b9d2418c220a4354448cb65 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasSendingActor> .
+_:Bb340d0130b9d2418c220a4354448cb65 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb340d0130b9d2418c220a4354448cb65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Identification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Identification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6a2c08d7f6b6ea7a771156f773eb42c0 .
+<https://w3id.org/loin#Identification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#Identification> <http://www.w3.org/2000/01/rdf-schema#label> "Identification"@en .
+<https://w3id.org/loin#Identification> <http://www.w3.org/2000/01/rdf-schema#comment> "Identification is a term for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Identification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bc7ad5dac82f0a7b2572bde2e0be83423 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasRestrictionType> .
+_:Bc7ad5dac82f0a7b2572bde2e0be83423 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc7ad5dac82f0a7b2572bde2e0be83423 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B6a2c08d7f6b6ea7a771156f773eb42c0 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasBreakdownStructure> .
+_:B6a2c08d7f6b6ea7a771156f773eb42c0 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B6a2c08d7f6b6ea7a771156f773eb42c0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be5916c42X2D0b48X2D46e7X2D9531X2Da4a53da00d80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Be5916c42X2D0b48X2D46e7X2D9531X2Da4a53da00d80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/2000/01/rdf-schema#label> "Constraint text formulated for facet parameters"@en .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Restriction formulation is for formulating facet parameter value, that is used by IDS definition."@en .
+<https://w3id.org/loin/v2/ids#restrictionFormulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/loin#Required_with_Supplement> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Required_with_Supplement> <http://www.w3.org/2000/01/rdf-schema#label> "document required with supplement"@en .
+<https://w3id.org/loin#Required_with_Supplement> <http://www.w3.org/2000/01/rdf-schema#comment> "The document required by deliverer with supplement of information"@en .
+<https://w3id.org/loin#Required_with_Supplement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentPurpose> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Party> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/2000/01/rdf-schema#label> "is related to container party"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Actor> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#absolute> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#absolute> <http://www.w3.org/2000/01/rdf-schema#label> "Absolute location"@en .
+<https://w3id.org/loin#absolute> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of location according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#absolute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Location> .
+<https://w3id.org/loin#GeometrySpecification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#GeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#GeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Geometrical information specification"@en .
+<https://w3id.org/loin#GeometrySpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#GeometrySpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5f735a9fd8052dd0ffefe88e78345c5e .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb8fcadae99efed2e0146e696cac99a83 .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bee6cb6447d2d909fd249cd0fb3a58433 .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9fa29b422c463d627d4191e1f3569957 .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "IDS data definition"@en .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "IDS data definition is used to specify the alphanumerical information according to Information Delivery Specification (IDS) developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#DataDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Spatial> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Spatial> <http://www.w3.org/2000/01/rdf-schema#label> "Spatial structure"@en .
+<https://w3id.org/loin#Spatial> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Spatial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#zero-dimensional> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#zero-dimensional> <http://www.w3.org/2000/01/rdf-schema#label> "zero-dimensional"@en .
+<https://w3id.org/loin#zero-dimensional> <http://www.w3.org/2000/01/rdf-schema#comment> "zero-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#zero-dimensional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Dimensionality> .
+_:B5986332250f4ebda9ef421e9e8994bf8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#hasIFCDataType> .
+_:B5986332250f4ebda9ef421e9e8994bf8 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5986332250f4ebda9ef421e9e8994bf8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#SendingActor> .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2000/01/rdf-schema#label> "has has Sending Actor"@en .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasSendingActor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#Manual> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Manual> <http://www.w3.org/2000/01/rdf-schema#label> "Manual" .
+<https://w3id.org/loin#Manual> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as maintenance and user manuals according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Manual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ContainerDescription> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2000/01/rdf-schema#label> "is related to container description"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Purpose> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B2bcf30838d28bc83c00283c76b895d6e <https://schema.org/name> "Ruhr University Bochum, Germany" .
+_:B2bcf30838d28bc83c00283c76b895d6e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://w3id.org/loin#Detail> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Detail> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#Detail> <http://www.w3.org/2000/01/rdf-schema#label> "Detail"@en .
+<https://w3id.org/loin#Detail> <http://www.w3.org/2000/01/rdf-schema#comment> "Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Detail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Be78992d85d5afaa96b4894db6a2cfa32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#Detail> .
+_:Be78992d85d5afaa96b4894db6a2cfa32 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometrySpecification> .
+_:Be78992d85d5afaa96b4894db6a2cfa32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B23ae31c1d1e4bd0cf3e53654bdb415f6 .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Breakdown structure"@en .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "Breakdown structure is a term for positioning the object in a structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#BreakdownStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B15647269X2Dbea2X2D48fdX2D88e1X2D548537587e46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B15647269X2Dbea2X2D48fdX2D88e1X2D548537587e46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/loin#OntologyDataDefinition> .
+<https://w3id.org/loin#Provided_As_Information> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Provided_As_Information> <http://www.w3.org/2000/01/rdf-schema#label> "The document provided as information"@en .
+<https://w3id.org/loin#Provided_As_Information> <http://www.w3.org/2000/01/rdf-schema#comment> "The document delivered by Inquirer as percondition or information"@en .
+<https://w3id.org/loin#Provided_As_Information> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentPurpose> .
+<https://w3id.org/loin#ReceivingActor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#ReceivingActor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#Actor> .
+<https://w3id.org/loin#ReceivingActor> <http://www.w3.org/2000/01/rdf-schema#label> "Receiving actor"@en .
+<https://w3id.org/loin#ReceivingActor> <http://www.w3.org/2000/01/rdf-schema#comment> "Receiving actor is a party for information delivery according to ISO 19650-1 (2018)"@en .
+<https://w3id.org/loin#ReceivingActor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Photograph> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Photograph> <http://www.w3.org/2000/01/rdf-schema#label> "Photograph" .
+<https://w3id.org/loin#Photograph> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents such as records of work done, records of existing conditions according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Photograph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8a14ba4c399d577fe9a0d78ac722a16e .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B449bf4291851bd75fefd04be1adecfe4 .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba97cdc8ad34a4d33b171b1b16133e154 .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9a698776a7344d70f9a9cfdb8565e18b .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "Specification per Object Type"@en .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/2000/01/rdf-schema#comment> "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#SpecificationPerObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/dt#isDataTemplateFor> .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/loin#hasAlphanumericalInformation> .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/dt#DataTemplate> .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "has data template" .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#AlphanumericalInformation> .
+<https://w3id.org/loin#hasDataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#relative> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#relative> <http://www.w3.org/2000/01/rdf-schema#label> "relative location"@en .
+<https://w3id.org/loin#relative> <http://www.w3.org/2000/01/rdf-schema#comment> "Relative, an example of location according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#relative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Location> .
+<https://w3id.org/loin#parametric> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#parametric> <http://www.w3.org/2000/01/rdf-schema#label> "parametric"@en .
+<https://w3id.org/loin#parametric> <http://www.w3.org/2000/01/rdf-schema#comment> "Parametric, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#parametric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#ParametricBehaviour> .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#RestrictionType> .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/2000/01/rdf-schema#label> "has restriction type"@en .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#FacetParameter> .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/2000/01/rdf-schema#comment> "relates the restriction type with the facet parameter in IDS data definition"@en .
+<https://w3id.org/loin/v2/ids#hasRestrictionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#RestrictionType> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#RestrictionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://w3id.org/loin/v2/ids#RestrictionType> <http://www.w3.org/2000/01/rdf-schema#label> "Restriction type"@en .
+<https://w3id.org/loin/v2/ids#RestrictionType> <http://www.w3.org/2000/01/rdf-schema#comment> "Restriction type is used to specify the value of IDS facet parameter, that is defined in restriction formulation. The restriction types are based on IDS standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#RestrictionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B23ae31c1d1e4bd0cf3e53654bdb415f6 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasIdentifier> .
+_:B23ae31c1d1e4bd0cf3e53654bdb415f6 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B23ae31c1d1e4bd0cf3e53654bdb415f6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B8a14ba4c399d577fe9a0d78ac722a16e <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasAlphanumericalInformation> .
+_:B8a14ba4c399d577fe9a0d78ac722a16e <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B8a14ba4c399d577fe9a0d78ac722a16e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Name> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Name> <http://www.w3.org/2000/01/rdf-schema#label> "Name of an item in a breakdown structure"@en .
+<https://w3id.org/loin#Name> <http://www.w3.org/2000/01/rdf-schema#comment> "Name, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+_:B41120d52b96f38fd285829bc2273d80b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#description> .
+_:B41120d52b96f38fd285829bc2273d80b <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B41120d52b96f38fd285829bc2273d80b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0ef7c255168aa79554aad6216a323907 .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B26cda9bb7630e3ecb2677c87a90e32e0 .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4640779bc31e79f59c34aba1cc8b400f .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier"@en .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#DocumentContent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#DocumentContent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#DocumentSpecification> .
+<https://w3id.org/loin#DocumentContent> <http://www.w3.org/2000/01/rdf-schema#label> "Document content"@en .
+<https://w3id.org/loin#DocumentContent> <http://www.w3.org/2000/01/rdf-schema#comment> "Document specification for content for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#DocumentContent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2236ae9b924158db3f5cce9742d850eb .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/2000/01/rdf-schema#label> "Attribute of IDS"@en .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/2000/01/rdf-schema#comment> "Attribute is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#Attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#realistic> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#realistic> <http://www.w3.org/2000/01/rdf-schema#label> "realistic"@en .
+<https://w3id.org/loin#realistic> <http://www.w3.org/2000/01/rdf-schema#comment> "realistic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#realistic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Appearance> .
+<https://w3id.org/loin#one-dimensional> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#one-dimensional> <http://www.w3.org/2000/01/rdf-schema#label> "one-dimensional"@en .
+<https://w3id.org/loin#one-dimensional> <http://www.w3.org/2000/01/rdf-schema#comment> "one-dimensional, an example of dimensionality according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#one-dimensional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Dimensionality> .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#DocumentSpecification> .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has documentaton specification"@en .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the document specifications with a document according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasDocumentSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#two-dimensional> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#two-dimensional> <http://www.w3.org/2000/01/rdf-schema#label> "two-dimensional"@en .
+<https://w3id.org/loin#two-dimensional> <http://www.w3.org/2000/01/rdf-schema#comment> "Two-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#two-dimensional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#Dimensionality> .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B64b84ed2dc95226e1e1b5cc7f2fc5307 .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "Ontology data definition"@en .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology data definition is an extension of BS EN 17412-1 (2020). It is used to specify the alphanumerical information according to a published or customized ontology"@en .
+<https://w3id.org/loin#OntologyDataDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B9fa29b422c463d627d4191e1f3569957 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#description> .
+_:B9fa29b422c463d627d4191e1f3569957 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B9fa29b422c463d627d4191e1f3569957 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B9a698776a7344d70f9a9cfdb8565e18b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasDocumentation> .
+_:B9a698776a7344d70f9a9cfdb8565e18b <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B9a698776a7344d70f9a9cfdb8565e18b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B795e13f469cd72781ee00b89cf374680 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> .
+_:B795e13f469cd72781ee00b89cf374680 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B795e13f469cd72781ee00b89cf374680 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be2d50293dcff3fe684d05052cd6219ca .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Used_As_Template> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Used_As_Template> <http://www.w3.org/2000/01/rdf-schema#label> "The document as template"@en .
+<https://w3id.org/loin#Used_As_Template> <http://www.w3.org/2000/01/rdf-schema#comment> "The document required by deliverer should be used as template"@en .
+<https://w3id.org/loin#Used_As_Template> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentPurpose> .
+<https://w3id.org/loin#Dimensionality> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Dimensionality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#GeometrySpecification> .
+<https://w3id.org/loin#Dimensionality> <http://www.w3.org/2000/01/rdf-schema#label> "Dimensionality"@en .
+<https://w3id.org/loin#Dimensionality> <http://www.w3.org/2000/01/rdf-schema#comment> "Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Dimensionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#Bounds> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Bounds> <http://www.w3.org/2000/01/rdf-schema#label> "Bounds restriction"@en .
+<https://w3id.org/loin#Bounds> <http://www.w3.org/2000/01/rdf-schema#comment> "Bounds restriction specifies that the value is a number and has to fall within a range of values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en .
+<https://w3id.org/loin#Bounds> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin/v2/ids#RestrictionType> .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Identifier> .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "has identifier"@en .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#BreakdownStructure> .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Identification> .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2000/01/rdf-schema#label> "has identification"@en .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#AlphanumericalInformation> .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasIdentification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#Identifier> .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "specified by identifier" .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationContent> .
+<https://w3id.org/loin#specifiedByIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin/v2/ids#Material> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#Material> <http://www.w3.org/2000/01/rdf-schema#label> "Material"@en .
+<https://w3id.org/loin/v2/ids#Material> <http://www.w3.org/2000/01/rdf-schema#comment> "Material is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International"@en .
+<https://w3id.org/loin/v2/ids#Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B2e4442a6108e5713421608e95c47e791 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B2e4442a6108e5713421608e95c47e791 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B2e4442a6108e5713421608e95c47e791 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bc0af944f0e1d7956566e42bc185ac9c1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#Location> .
+_:Bc0af944f0e1d7956566e42bc185ac9c1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasGeometrySpecification> .
+_:Bc0af944f0e1d7956566e42bc185ac9c1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/2000/01/rdf-schema#label> "has agent"@en .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#Actor> .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "Information of the information delivery actor defined by foaf ontology mit class foaf:Agent"@en .
+<https://w3id.org/loin#hasAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bdcda5dc2bf39eb22e0f7320ce7e342be <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#RequiredDocument> .
+_:Bdcda5dc2bf39eb22e0f7320ce7e342be <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasDocument> .
+_:Bdcda5dc2bf39eb22e0f7320ce7e342be <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/2000/01/rdf-schema#label> "is related to container linkset"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#RequiredDocument> .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#Hard_Copy> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Hard_Copy> <http://www.w3.org/2000/01/rdf-schema#label> "Hand copy"@en .
+<https://w3id.org/loin#Hard_Copy> <http://www.w3.org/2000/01/rdf-schema#comment> "Documents of geometrical information or alphanumerical information can also be considered as documents according to notes of BS EN 17412-1 (2020)."@en .
+<https://w3id.org/loin#Hard_Copy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#DocumentContent> .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2/ids#FacetDefinition> .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#label> "has requirement"@en .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin/v2/ids#DataDefinition> .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the requirements with the IDS data definition"@en .
+<https://w3id.org/loin/v2/ids#hasRequirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#value> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#value> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/loin#value> <http://www.w3.org/2000/01/rdf-schema#label> "value"@en .
+<https://w3id.org/loin#value> <http://www.w3.org/2000/01/rdf-schema#comment> "value for general definition"@en .
+<https://w3id.org/loin#value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/loin#EngineeringPrinciple> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#EngineeringPrinciple> <http://www.w3.org/2000/01/rdf-schema#label> "Engineering principle"@en .
+<https://w3id.org/loin#EngineeringPrinciple> <http://www.w3.org/2000/01/rdf-schema#comment> "An example of breakdown structure type according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#EngineeringPrinciple> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#BreakdownStructureType> .
+<https://w3id.org/loin#TypeName> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#TypeName> <http://www.w3.org/2000/01/rdf-schema#label> "Type name of an item in a breakdown structure"@en .
+<https://w3id.org/loin#TypeName> <http://www.w3.org/2000/01/rdf-schema#comment> "Type name, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#TypeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/loin#IdentifierType> .
+_:B7ba70cf64451316812e56ffbcaac229c <https://schema.org/name> "Philipp Hagedorn" .
+_:B7ba70cf64451316812e56ffbcaac229c <https://schema.org/memberOf> _:Bfa6248e050f35ff9339d14ee3b690bf9 .
+_:B7ba70cf64451316812e56ffbcaac229c <https://schema.org/identifier> <https://orcid.org/0000-0002-6249-243X> .
+_:B7ba70cf64451316812e56ffbcaac229c <https://schema.org/email> <mailto:philipp.hagedorn-n6v@rub.de> .
+_:B7ba70cf64451316812e56ffbcaac229c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bf4b223294ac8ab9f178a3eb7bef3d94c <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin#hasPurpose> .
+_:Bf4b223294ac8ab9f178a3eb7bef3d94c <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bf4b223294ac8ab9f178a3eb7bef3d94c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#Identifier> .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "is related to linkset identifier"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#IdentifierType> .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier"@en .
+<https://w3id.org/loin/v2/icdd#isRelatedToLinksetIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B4798efbf8b61c299692b0f3cc65e27c8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/loin/v2/ids#restrictionFormulation> .
+_:B4798efbf8b61c299692b0f3cc65e27c8 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B4798efbf8b61c299692b0f3cc65e27c8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#ReceivingActor> .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2000/01/rdf-schema#label> "has receiving actor"@en .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/loin#InformationDeliveryMilestone> .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#hasReceivingActor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/loin#Actor> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/loin#Actor> <http://www.w3.org/2000/01/rdf-schema#label> "Actor" .
+<https://w3id.org/loin#Actor> <http://www.w3.org/2000/01/rdf-schema#comment> "Actor is a contextual aspect according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/loin#DocumentFormat> <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+<https://w3id.org/loin#DocumentFormat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/loin#DocumentSpecification> .
+<https://w3id.org/loin#DocumentFormat> <http://www.w3.org/2000/01/rdf-schema#label> "Document format"@en .
+<https://w3id.org/loin#DocumentFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "Document specification for format for information need according to BS EN 17412-1 (2020)"@en .
+<https://w3id.org/loin#DocumentFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

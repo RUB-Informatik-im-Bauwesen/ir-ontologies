@@ -1,401 +1,2106 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "dt:hasSetOfProperties"
-  }, {
-    "@id" : "_:b1",
-    "@type" : "schema:Person",
-    "email" : "mailto:liu.liu-m6r@rub.de",
-    "identifier" : "https://orcid.org/0000-0001-5907-7609",
-    "memberOf" : "_:b2",
-    "name" : "Liu Liu"
-  }, {
-    "@id" : "_:b10",
-    "identifier" : "https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/",
-    "name" : "Bauhaus-Universitaet Weimar"
-  }, {
-    "@id" : "_:b11",
-    "@type" : "owl:Restriction",
-    "onProperty" : "dt:isDataTemplateFor",
-    "someValuesFrom" : "https://w3id.org/loin/v2#AlphanumericalInformation"
-  }, {
-    "@id" : "_:b12",
-    "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasProperty",
-    "someValuesFrom" : "https://w3id.org/iddo/v2#Property"
-  }, {
-    "@id" : "_:b13",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "https://w3id.org/iddo/v2#hasUnit"
-  }, {
-    "@id" : "_:b14",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:uri"
-  }, {
-    "@id" : "_:b15",
-    "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasExternalDictionary",
-    "someValuesFrom" : "dt:ExternalDictionaryReference"
-  }, {
-    "@id" : "_:b16",
-    "@type" : "schema:Person",
-    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
-    "identifier" : "https://orcid.org/0000-0002-6249-243X",
-    "memberOf" : "_:b17",
-    "name" : "Philipp Hagedorn"
-  }, {
-    "@id" : "_:b17",
     "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
     "name" : "Ruhr University Bochum"
   }, {
-    "@id" : "_:b18",
+    "@id" : "_:b1",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:author"
+    "minCardinality" : "1",
+    "onProperty" : "loin:hasSpecificationPerObjectType"
+  }, {
+    "@id" : "_:b10",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasPropertyName"
+  }, {
+    "@id" : "_:b12",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasIFCDataType"
+  }, {
+    "@id" : "_:b13",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:belongsToPset"
+  }, {
+    "@id" : "_:b14",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b15",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
   }, {
     "@id" : "_:b19",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasProperty",
-    "someValuesFrom" : "https://w3id.org/iddo/v2#Property"
+    "cardinality" : "1",
+    "onProperty" : "loin:hasIdentifierType"
   }, {
     "@id" : "_:b2",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
-    "name" : "Ruhr University Bochum"
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:ParametricBehaviour"
   }, {
     "@id" : "_:b20",
     "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
+    "cardinality" : "1",
+    "onProperty" : "loin:requested"
   }, {
     "@id" : "_:b21",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:publisher"
+    "cardinality" : "1",
+    "onProperty" : "loin:description"
   }, {
     "@id" : "_:b22",
-    "@type" : "schema:Person",
-    "email" : "mailto:martina.mellenthin.filardo@uni-weimar.de",
-    "identifier" : "https://orcid.org/0000-0001-7759-7579",
-    "memberOf" : "_:b10",
-    "name" : "Marthina Mellenthin-Filardo"
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasReceivingActor"
   }, {
     "@id" : "_:b23",
     "@type" : "owl:Restriction",
     "minCardinality" : "1",
-    "onProperty" : "dt:hasPredefinedValueItem"
+    "onProperty" : "ids4loin:hasApplicability"
   }, {
     "@id" : "_:b24",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "https://w3id.org/iddo/v2#hasUnit"
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
   }, {
     "@id" : "_:b25",
-    "@type" : "schema:Person",
-    "email" : "mailto:sven.zentgraf@rub.de",
-    "identifier" : "https://orcid.org/0000-0001-6058-7614",
-    "memberOf" : "_:b26",
-    "name" : "Sven Zentgraf"
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
   }, {
     "@id" : "_:b26",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
-    "name" : "Ruhr University Bochum"
+    "@type" : "schema:Person",
+    "email" : "mailto:liu.liu-m6r@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-5907-7609",
+    "memberOf" : "_:b46",
+    "name" : "Liu Liu"
   }, {
     "@id" : "_:b27",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "dt:hasProperty"
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b0",
+    "name" : "Philipp Hagedorn"
   }, {
     "@id" : "_:b28",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:ISBN"
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.inf.bi.rub.de",
+    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
+    "parentOrganization" : "_:b56"
   }, {
     "@id" : "_:b29",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasSetOfProperties",
-    "someValuesFrom" : "dt:SetOfProperties"
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Dimensionality"
   }, {
     "@id" : "_:b3",
     "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "dt:hasPredefinedValues"
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentFormat"
+  }, {
+    "@id" : "_:b30",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Detail"
+  }, {
+    "@id" : "_:b31",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Location"
+  }, {
+    "@id" : "_:b32",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:requested"
+  }, {
+    "@id" : "_:b33",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Appearance"
+  }, {
+    "@id" : "_:b34",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b35",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b36",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "loin:InformationContent", "loin:Purpose" ]
+    }
+  }, {
+    "@id" : "_:b37",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasEntityName"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "loin:BreakdownStructure", "loin:OntologyDataDefinition" ]
+    }
+  }, {
+    "@id" : "_:b39",
+    "@type" : "owl:Restriction",
+    "hasValue" : "loin:SimpleValue",
+    "onProperty" : "ids4loin:hasRestrictionType"
   }, {
     "@id" : "_:b4",
     "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentContent"
+  }, {
+    "@id" : "_:b40",
+    "@type" : "owl:Restriction",
     "cardinality" : "1",
-    "onProperty" : "dt:hasIndex"
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b41",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:value"
+  }, {
+    "@id" : "_:b42",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b43",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b44",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasAttributeName"
+  }, {
+    "@id" : "_:b46",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b49",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasDocument",
+    "someValuesFrom" : "loin:RequiredDocument"
   }, {
     "@id" : "_:b5",
     "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "loin:belongsToInformationContent"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
     "cardinality" : "1",
-    "onProperty" : "dt:hasExternalDictionaryProperty"
+    "onProperty" : "loin:hasObjectType"
+  }, {
+    "@id" : "_:b52",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "loin:specifiedByIdentifier"
+  }, {
+    "@id" : "_:b53",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasSendingActor"
+  }, {
+    "@id" : "_:b54",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasPurpose"
+  }, {
+    "@id" : "_:b55",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "ids4loin:hasRequirement"
+  }, {
+    "@id" : "_:b56",
+    "@type" : "schema:Organization",
+    "name" : "Ruhr University Bochum, Germany"
+  }, {
+    "@id" : "_:b57",
+    "@type" : "owl:Restriction",
+    "onProperty" : "ids4loin:hasApplicability",
+    "someValuesFrom" : "ids4loin:Entity"
+  }, {
+    "@id" : "_:b58",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasGeometricalInformation"
   }, {
     "@id" : "_:b6",
     "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "icdd4loin:isRelatedToContainerLinkset"
+  }, {
+    "@id" : "_:b61",
+    "@type" : "owl:Restriction",
     "cardinality" : "1",
-    "onProperty" : "dt:hasExternalDictionary"
+    "onProperty" : "loin:hasBreakdownStructure"
+  }, {
+    "@id" : "_:b62",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "loin:hasBreakdownStructure"
+  }, {
+    "@id" : "_:b63",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:description"
+  }, {
+    "@id" : "_:b64",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasIdentifier"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "loin:hasAlphanumericalInformation"
+  }, {
+    "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasDocumentation"
   }, {
     "@id" : "_:b7",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasSetOfProperties",
-    "someValuesFrom" : "dt:SetOfProperties"
+    "maxCardinality" : "1",
+    "onProperty" : "icdd4loin:isRelatedToContainerDocument"
   }, {
     "@id" : "_:b8",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasReferenceDocument",
-    "someValuesFrom" : "dt:ReferenceDocument"
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentPurpose"
   }, {
     "@id" : "_:b9",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:dateOfPublication"
-  }, {
-    "@id" : "http://inf.bi.rub.de/ontology/dt",
-    "@type" : "owl:Ontology",
-    "created" : "2023-12-23",
-    "creator" : [ "_:b22", "_:b25", "_:b16", "_:b1" ],
-    "description" : {
-      "@language" : "en",
-      "@value" : "The Data Template (TMP) Ontology is defined for ..."
-    },
-    "license" : "https://creativecommons.org/licenses/by/4.0/",
-    "rights" : "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar",
-    "source" : "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology",
-    "title" : {
-      "@language" : "en",
-      "@value" : "Data Template (TMP) Ontology"
-    },
-    "preferredNamespacePrefix" : "tmp",
-    "imports" : [ "https://w3id.org/iddo/v2", "https://w3id.org/loin/v2" ],
-    "versionInfo" : [ "1.0", "Created with TopBraid Composer" ]
-  }, {
-    "@id" : "dt:ConstructionObject",
-    "@type" : "rdfs:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Enter a comment"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Construction object"
-    },
-    "subClassOf" : "dt:LibraryComponent"
-  }, {
-    "@id" : "dt:DataTemplate",
-    "@type" : "rdfs:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Enter a comment"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Data template"
-    },
-    "subClassOf" : [ "_:b11", "_:b7", "_:b12", "dt:LibraryComponent" ]
-  }, {
-    "@id" : "dt:ExternalDictionaryReference",
-    "@type" : "rdfs:Class",
-    "label" : "External dictionary",
-    "subClassOf" : [ "_:b5", "_:b6", "owl:Thing" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#ExternalDictionaryReference"
-  }, {
-    "@id" : "dt:ISBN",
-    "@type" : "owl:DatatypeProperty",
-    "label" : "ISBN",
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty"
-  }, {
-    "@id" : "dt:LibraryComponent",
-    "@type" : "rdfs:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Enter a comment"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Library component"
-    },
-    "subClassOf" : [ "_:b8", "_:b15", "owl:Thing" ]
-  }, {
-    "@id" : "dt:PhysicalQuantity",
-    "@type" : "rdfs:Class",
-    "label" : "Physical quantity",
-    "subClassOf" : "dt:LibraryComponent",
-    "equivalentClass" : "http://qudt.org/schema/qudt/QuantityKind"
-  }, {
-    "@id" : "dt:PredefinedValueItem",
-    "@type" : "owl:Class",
-    "label" : {
-      "@language" : "en-gb",
-      "@value" : "Definition of the property in language N"
-    },
-    "subClassOf" : [ "_:b4", "_:b20", "schema:PropertyValue", "owl:Thing" ]
-  }, {
-    "@id" : "dt:PredefinedValuesList",
-    "@type" : "owl:Class",
-    "label" : {
-      "@language" : "en-gb",
-      "@value" : "T Predefined Values"
-    },
-    "subClassOf" : [ "_:b23", "_:b13", "_:b24", "owl:Thing" ]
-  }, {
-    "@id" : "dt:Property",
-    "@type" : "rdfs:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Inherent or acquired feature of an item"
-    },
-    "label" : {
-      "@language" : "en-gb",
-      "@value" : "Property"
-    },
-    "subClassOf" : [ "_:b3", "dt:LibraryComponent" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#Property"
-  }, {
-    "@id" : "dt:ReferenceDocument",
-    "@type" : "rdfs:Class",
-    "label" : {
-      "@language" : "en",
-      "@value" : "Reference document"
-    },
-    "subClassOf" : [ "_:b14", "_:b21", "_:b9", "_:b18", "_:b28", "dt:LibraryComponent" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#DictionaryReferenceDocument"
-  }, {
-    "@id" : "dt:SetOfProperties",
-    "@type" : "rdfs:Class",
-    "label" : "Set of properties",
-    "subClassOf" : [ "_:b29", "_:b19", "_:b0", "_:b27", "dt:LibraryComponent" ]
-  }, {
-    "@id" : "dt:Unit",
-    "@type" : "rdfs:Class",
-    "label" : "Unit",
-    "subClassOf" : "dt:LibraryComponent",
-    "equivalentClass" : "http://qudt.org/schema/qudt/Unit"
-  }, {
-    "@id" : "dt:author",
-    "@type" : "owl:DatatypeProperty",
-    "label" : "author",
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty"
-  }, {
-    "@id" : "dt:dateOfPublication",
-    "@type" : "owl:DatatypeProperty",
-    "label" : "date of publication",
-    "range" : "xsd:dateTime",
-    "subPropertyOf" : "owl:topDataProperty"
-  }, {
-    "@id" : "dt:hasExternalDictionary",
-    "@type" : "owl:ObjectProperty",
-    "domain" : "dt:LibraryComponent",
-    "label" : "has external dictionary",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasExternalDictionaryProperty",
-    "@type" : "owl:ObjectProperty",
-    "domain" : "dt:ExternalDictionaryReference",
-    "label" : "has external property reference",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasExternalDictionaryReference",
-    "@type" : "owl:ObjectProperty",
-    "domain" : "dt:LibraryComponent",
-    "label" : "referenced external dictionary",
-    "range" : "dt:ExternalDictionaryReference",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasIndex",
-    "@type" : "owl:DatatypeProperty",
-    "label" : "Index of the element in the enumeration",
-    "subPropertyOf" : "owl:topDataProperty"
-  }, {
-    "@id" : "dt:hasPredefinedValueItem",
-    "@type" : "owl:ObjectProperty",
-    "label" : "Predefinded Value Item@en-GB}",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasPredefinedValues",
-    "@type" : "owl:ObjectProperty",
-    "label" : {
-      "@language" : "en-gb",
-      "@value" : "Predefined Values"
-    },
-    "subPropertyOf" : "owl:topObjectProperty",
-    "equivalentProperty" : "https://w3id.org/iddo/v2#hasPossibleValues"
-  }, {
-    "@id" : "dt:hasProperty",
-    "@type" : "owl:ObjectProperty",
-    "domain" : "dt:DataTemplate",
-    "label" : "has property",
-    "range" : "https://w3id.org/iddo/v2#Property",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasReferenceDocument",
-    "@type" : "owl:ObjectProperty",
-    "domain" : "dt:LibraryComponent",
-    "label" : "has reference document",
-    "range" : "dt:ReferenceDocument",
-    "subPropertyOf" : "owl:topObjectProperty"
-  }, {
-    "@id" : "dt:hasSetOfProperties",
-    "@type" : "owl:ObjectProperty",
-    "domain" : [ "dt:SetOfProperties", "dt:DataTemplate" ],
-    "label" : "has set of properties",
-    "range" : "dt:SetOfProperties",
-    "subPropertyOf" : "owl:topObjectProperty"
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
   }, {
     "@id" : "dt:isDataTemplateFor",
+    "inverseOf" : "loin:hasDataTemplate"
+  }, {
+    "@id" : "https://w3id.org/loin",
+    "@type" : "owl:Ontology",
+    "created" : "2023-01-30",
+    "creator" : [ "_:b26", "_:b27" ],
+    "description" : {
+      "@language" : "en",
+      "@value" : "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). "
+    },
+    "license" : "https://creativecommons.org/licenses/by/4.0/",
+    "publisher" : "_:b28",
+    "rights" : "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum",
+    "source" : "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin",
+    "title" : {
+      "@language" : "en",
+      "@value" : "Level of Information Need (LOIN) Ontology"
+    },
+    "preferredNamespacePrefix" : "loin",
+    "imports" : "https://w3id.org/dt",
+    "versionInfo" : "2.0"
+  }, {
+    "@id" : "loin:Actor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Actor is a contextual aspect according to BS EN 17412-1 (2020)"
+    },
+    "label" : "Actor",
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:AlphanumericalInformation",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Alphanumerical information"
+    },
+    "subClassOf" : [ "_:b20", "loin:Information" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Appearance",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Appearance"
+    },
+    "subClassOf" : "loin:GeometrySpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Bounds",
+    "@type" : "ids4loin:RestrictionType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Bounds restriction specifies that the value is a number and has to fall within a range of values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Bounds restriction"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:BreakdownStructure",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Breakdown structure is a term for positioning the object in a structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Breakdown structure"
+    },
+    "subClassOf" : [ "_:b64", "owl:Thing" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:BreakdownStructureType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Breakdown structure type is a term to specify the structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Breakdown structure type"
+    },
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:ClassificationSystem",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Classification system"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Codification",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of identifier type from a breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Codification of an item in a breakdown structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Detail",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Detail"
+    },
+    "subClassOf" : "loin:GeometrySpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Dimensionality",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Dimensionality"
+    },
+    "subClassOf" : "loin:GeometrySpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:DocumentContent",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Document specification for content for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document content"
+    },
+    "subClassOf" : "loin:DocumentSpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:DocumentFormat",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Document specification for format for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document format"
+    },
+    "subClassOf" : "loin:DocumentSpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:DocumentPurpose",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document purpose"
+    },
+    "subClassOf" : "loin:DocumentSpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:DocumentSpecification",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Additional specification of document for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document specification"
+    },
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Documentation",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Documentation"
+    },
+    "subClassOf" : [ "_:b49", "loin:Information" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:EngineeringPrinciple",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Engineering principle"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Enumeration",
+    "@type" : "ids4loin:RestrictionType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Enumeration restriction specifies that the value must be one of a list of allowed values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Enumeration restriction"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:FederationStrategy",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Federation strategy"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Functional",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Functional structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:GeometricalInformation",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Geometrical information"
+    },
+    "subClassOf" : [ "_:b29", "_:b30", "loin:Information", "_:b31", "_:b2", "_:b32", "_:b33" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:GeometrySpecification",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Geometrical information specification"
+    },
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Handdrawn_Sketches",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as such as initial sketches, site plans according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Handdrawn sketches"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Hard_Copy",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents of geometrical information or alphanumerical information can also be considered as documents according to notes of BS EN 17412-1 (2020)."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Hand copy"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Identification",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Identification is a term for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Identification"
+    },
+    "subClassOf" : [ "_:b62", "owl:Thing" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Identifier",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Identifier"
+    },
+    "subClassOf" : [ "_:b41", "_:b19", "_:b61", "owl:Thing" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:IdentifierType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Identifier type is used to specify the identifier in a breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Identifier type"
+    },
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Index",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Index, an identifier type according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Index of an item in a breakdown structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Information",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Proxy class for the three information specifications Alphanumerical Information, Geometrical Information, and Documentation"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Information"
+    },
+    "subClassOf" : "owl:Thing"
+  }, {
+    "@id" : "loin:InformationContent",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Alphanumerical information content"
+    },
+    "subClassOf" : "owl:Thing",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:InformationDeliveryMilestone",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Information delivery milestone"
+    },
+    "subClassOf" : [ "_:b1", "_:b53", "_:b22", "_:b54", "owl:Thing" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Length",
+    "@type" : "ids4loin:RestrictionType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Length restriction specifies the exact number of characters allowed in a value. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Length restriction"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Location",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Location"
+    },
+    "subClassOf" : "loin:GeometrySpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Manual",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as maintenance and user manuals according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : "Manual",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Name",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Name, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Name of an item in a breakdown structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:NotRequested",
+    "@type" : "loin:GeometricalInformation",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Geometry information is not requested"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Geometry not requested"
+    },
+    "term_status" : "stable",
+    "loin:requested" : false
+  }, {
+    "@id" : "loin:Numbering",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Numbering, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : "Numbering of an item in a breakdown structure",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:OntologyDataDefinition",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Ontology data definition is an extension of BS EN 17412-1 (2020). It is used to specify the alphanumerical information according to a published or customized ontology"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Ontology data definition"
+    },
+    "subClassOf" : [ "_:b52", "loin:InformationContent" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:ParametricBehaviour",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Parametric behaviour"
+    },
+    "subClassOf" : "loin:GeometrySpecification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Pattern",
+    "@type" : "ids4loin:RestrictionType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Pattern restriction with regex method specifies advanced pattern matching. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Pattern restriction"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Photograph",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as records of work done, records of existing conditions according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : "Photograph",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Provided_As_Information",
+    "@type" : "loin:DocumentPurpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The document delivered by Inquirer as percondition or information"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "The document provided as information"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Purpose",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Purpose is a contextual aspect according to BS EN 17412-1 (2020)"
+    },
+    "label" : "Purpose",
+    "subClassOf" : [ "_:b21", "owl:Thing" ]
+  }, {
+    "@id" : "loin:ReceivingActor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Receiving actor is a party for information delivery according to ISO 19650-1 (2018)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Receiving actor"
+    },
+    "subClassOf" : "loin:Actor",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:ReferenceOfStructure",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Reference, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Reference of an item in a breakdown structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Report",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as geotechnical reports, reports of existing building conditions, soil surveys, pre calculations according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : "Report",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:RequiredDocument",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document"
+    },
+    "subClassOf" : [ "_:b3", "_:b4", "owl:Thing", "_:b5", "_:b6", "_:b7", "_:b8" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Required_For_Approval",
+    "@type" : "loin:DocumentPurpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The document required by deliverer is for getting approval"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "document required for approval"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Required_with_Supplement",
+    "@type" : "loin:DocumentPurpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The document required by deliverer with supplement of information"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "document required with supplement"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Semantic",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Semantic structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:SendingActor",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Sending actor is a party for information delivery according to ISO 19650-1 (2018)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Sending actor"
+    },
+    "subClassOf" : "loin:Actor",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Signed_Document",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as test certificates, insurance policies, delivery notes according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Signed document"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:SimpleValue",
+    "@type" : "ids4loin:RestrictionType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Simple value restriction specifies the exact allowed value. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Simple value restriction"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Spatial",
+    "@type" : "loin:BreakdownStructureType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of breakdown structure type according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Spatial structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Specification",
+    "@type" : "loin:DocumentContent",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Documents such as technical specifications according to notes according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Specification"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:SpecificationPerObjectType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Specification per Object Type"
+    },
+    "subClassOf" : [ "_:b65", "_:b51", "_:b58", "_:b66", "owl:Thing" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:TypeName",
+    "@type" : "loin:IdentifierType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Type name, an identifier type in a breakdown structure according to notes of BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Type name of an item in a breakdown structure"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:Used_As_Template",
+    "@type" : "loin:DocumentPurpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The document required by deliverer should be used as template"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "The document as template"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:absolute",
+    "@type" : "loin:Location",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of location according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Absolute location"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:belongsToInformationContent",
     "@type" : "owl:ObjectProperty",
-    "domain" : "dt:DataTemplate",
-    "label" : "is data template for",
-    "range" : "https://w3id.org/loin/v2#SpecificationPerObjectType",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Specification of document, that relates with a respective person"
+    },
+    "domain" : "loin:RequiredDocument",
+    "label" : {
+      "@language" : "en",
+      "@value" : "belongs to information content"
+    },
+    "range" : "loin:InformationContent",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:constructive",
+    "@type" : "loin:ParametricBehaviour",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "constructive"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:coordination",
+    "@type" : "loin:Purpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "coordination, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Coordination"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:costEstimation",
+    "@type" : "loin:Purpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Cost estimation, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Cost estimation"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:description",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Description provide detail and extend of information derived by Information Delivery Specification (IDS)"
+    },
+    "domain" : "_:b36",
+    "label" : {
+      "@language" : "en",
+      "@value" : "description"
+    },
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:detailed",
+    "@type" : "loin:Detail",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Detail, an example of detail aspect according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "detailed"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:detailedDesign",
+    "@type" : "loin:InformationDeliveryMilestone",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Detailed design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Detailed design"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:explicit",
+    "@type" : "loin:ParametricBehaviour",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Explicit, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "explicit"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:finalDesign",
+    "@type" : "loin:InformationDeliveryMilestone",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Final design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Final design"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:fireSmokeSimulation",
+    "@type" : "loin:Purpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Fire and smoke simulation, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Fire and smoke simulation"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasAgent",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Information of the information delivery actor defined by foaf ontology mit class foaf:Agent"
+    },
+    "domain" : "loin:Actor",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has agent"
+    },
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasAlphanumericalInformation",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:SpecificationPerObjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has alphanumerical information"
+    },
+    "range" : "loin:AlphanumericalInformation",
+    "subPropertyOf" : "loin:hasInformation",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasBreakdownStructure",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:Identification",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has breakdown structure"
+    },
+    "range" : "loin:BreakdownStructure",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasBreakdownStructureType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates a specific type with the breakdown structure according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:BreakdownStructure",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has breakdown structure type"
+    },
+    "range" : "loin:BreakdownStructureType",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasDataTemplate",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : "has data template",
+    "range" : "dt:DataTemplate",
+    "subPropertyOf" : "loin:hasAlphanumericalInformation",
+    "inverseOf" : "dt:isDataTemplateFor"
+  }, {
+    "@id" : "loin:hasDocument",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:Documentation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has document"
+    },
+    "range" : "loin:RequiredDocument",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasDocumentSpecification",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the document specifications with a document according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:RequiredDocument",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has documentaton specification"
+    },
+    "range" : "loin:DocumentSpecification",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasDocumentation",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:SpecificationPerObjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has documentation"
+    },
+    "range" : "loin:Documentation",
+    "subPropertyOf" : "loin:hasInformation",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasGeometricalInformation",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:SpecificationPerObjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has geometrical information"
+    },
+    "range" : "loin:GeometricalInformation",
+    "subPropertyOf" : "loin:hasInformation",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasGeometrySpecification",
+    "@type" : "owl:ObjectProperty",
+    "comment" : [ "[\"Appearance\",\r\n\"Detail\",\r\n\"Dimensionality\",\r\n\"Location\",\r\n\"ParametricBehaviour\"]", {
+      "@language" : "en",
+      "@value" : "The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)"
+    } ],
+    "domain" : "loin:GeometricalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has geometrical information specification"
+    },
+    "range" : "loin:GeometrySpecification",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasIdentification",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has identification"
+    },
+    "range" : "loin:Identification",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasIdentifier",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:BreakdownStructure",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has identifier"
+    },
+    "range" : "loin:Identifier",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasIdentifierType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:Identifier",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has identifier type"
+    },
+    "range" : "loin:IdentifierType",
     "subPropertyOf" : "owl:topObjectProperty"
   }, {
-    "@id" : "dt:publisher",
-    "@type" : "owl:DatatypeProperty",
-    "label" : "publisher",
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty"
+    "@id" : "loin:hasInformation",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Proxy property for the three information specification relationships"
+    },
+    "domain" : "loin:SpecificationPerObjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has information"
+    },
+    "range" : "loin:Information",
+    "subPropertyOf" : "owl:topObjectProperty"
   }, {
-    "@id" : "dt:uri",
+    "@id" : "loin:hasInformationContent",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has alphanumerical informaton content"
+    },
+    "range" : "loin:InformationContent",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasObjectType",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:SpecificationPerObjectType",
+    "label" : "has object type",
+    "range" : "dt:ConstructionObject",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "loin:hasPurpose",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:InformationDeliveryMilestone",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has purpose"
+    },
+    "range" : "loin:Purpose",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasReceivingActor",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:InformationDeliveryMilestone",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has receiving actor"
+    },
+    "range" : "loin:ReceivingActor",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasReferenceSource",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "_:b38",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has reference source"
+    },
+    "range" : [ "owl:Thing", "xsd:anyURI" ],
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "loin:hasRequirementType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "relates the requirement type with the defined requirements in IDS data definition"
+    },
+    "domain" : "ids4loin:FacetDefinition",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has requirement type"
+    },
+    "range" : "ids4loin:RequirementType",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasSendingActor",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:InformationDeliveryMilestone",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has has Sending Actor"
+    },
+    "range" : "loin:SendingActor",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasSpecificationPerObjectType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)"
+    },
+    "domain" : "loin:InformationDeliveryMilestone",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has specification per object type"
+    },
+    "range" : "loin:SpecificationPerObjectType",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:isRelatedToLoinDocument",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)"
+    },
+    "domain" : "loin:InformationContent",
+    "label" : "is related to Loin document",
+    "range" : "loin:RequiredDocument",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:one-dimensional",
+    "@type" : "loin:Dimensionality",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "one-dimensional, an example of dimensionality according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "one-dimensional"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:parametric",
+    "@type" : "loin:ParametricBehaviour",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Parametric, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "parametric"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:preliminaryDesign",
+    "@type" : "loin:InformationDeliveryMilestone",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Preliminary design, an example of IDM information delivery milestone from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : "Preliminary design",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:real-world",
+    "@type" : "loin:Appearance",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Real-world, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "real-world"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:realistic",
+    "@type" : "loin:Appearance",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "realistic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "realistic"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:relative",
+    "@type" : "loin:Location",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Relative, an example of location according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "relative location"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:requested",
     "@type" : "owl:DatatypeProperty",
-    "label" : "uri",
-    "subPropertyOf" : "owl:topDataProperty"
+    "domain" : [ "loin:GeometrySpecification", "loin:GeometricalInformation", "loin:AlphanumericalInformation" ],
+    "label" : [ "requested", {
+      "@language" : "en",
+      "@value" : "requested as boolean, specifys if Geometrical information is needed according to BS EN 17412-1 (2020)"
+    } ],
+    "range" : "xsd:boolean",
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:simplified",
+    "@type" : "loin:Detail",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "simplified, an example of detail according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "simplified"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:specifiedByIdentifier",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:InformationContent",
+    "label" : "specified by identifier",
+    "range" : "loin:Identifier",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:structuralAnalysis",
+    "@type" : "loin:Purpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Structural analysis, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Structural analysis"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:symbolic",
+    "@type" : "loin:Appearance",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "symbolic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "symbolic"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:three-dimensional",
+    "@type" : "loin:Dimensionality",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Three-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "three-dimensional"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:two-dimensional",
+    "@type" : "loin:Dimensionality",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Two-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "two-dimensional"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:value",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "value for general definition"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "value"
+    },
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:visualization",
+    "@type" : "loin:Purpose",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Visualization, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
+    },
+    "label" : "Visualization",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:zero-dimensional",
+    "@type" : "loin:Dimensionality",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "zero-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "zero-dimensional"
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "icdd4loin:isRelatedToContainerDescription",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description"
+    },
+    "domain" : [ "loin:Purpose", "loin:InformationDeliveryMilestone" ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "is related to container description"
+    },
+    "range" : "Container:ContainerDescription",
+    "term_status" : "stable"
+  }, {
+    "@id" : "icdd4loin:isRelatedToContainerDocument",
+    "@type" : [ "owl:SymmetricProperty", "owl:ObjectProperty" ],
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property is an extension with ICDD. It relates documents defined by BS EN 17412-1(2020) with container documents"
+    },
+    "domain" : "loin:RequiredDocument",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is related to container document"
+    },
+    "range" : "Container:Document",
+    "term_status" : "stable"
+  }, {
+    "@id" : "icdd4loin:isRelatedToContainerLinkset",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set"
+    },
+    "domain" : "loin:RequiredDocument",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is related to container linkset"
+    },
+    "range" : "Container:Linkset",
+    "term_status" : "stable"
+  }, {
+    "@id" : "icdd4loin:isRelatedToContainerParty",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party"
+    },
+    "domain" : "loin:Actor",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is related to container party"
+    },
+    "range" : "Container:Party",
+    "term_status" : "stable"
+  }, {
+    "@id" : "icdd4loin:isRelatedToLinksetIdentifier",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier"
+    },
+    "domain" : "loin:IdentifierType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is related to linkset identifier"
+    },
+    "range" : "Linkset:Identifier",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Attribute",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Attribute is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Attribute of IDS"
+    },
+    "subClassOf" : [ "_:b45", "ids4loin:FacetDefinition" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:AttributeName",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Attribute name must be a valid attribute name from the IFC schema according to the definition of IDS developed by buildingSMART International. Example AttributeName = \"Description\""
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Attribute name"
+    },
+    "subClassOf" : [ "_:b48", "_:b42", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Classification",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Classification is is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International. In this ontology, it is defined as an equivalent class of Indentification according to BS EN 17412-1"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Classification of IDS"
+    },
+    "subClassOf" : "ids4loin:FacetDefinition",
+    "equivalentClass" : "loin:Identification",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:DataDefinition",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "IDS data definition is used to specify the alphanumerical information according to Information Delivery Specification (IDS) developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "IDS data definition"
+    },
+    "subClassOf" : [ "_:b57", "_:b55", "_:b23", "_:b63", "loin:InformationContent" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Entity",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Entity is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Entity"
+    },
+    "subClassOf" : [ "_:b37", "ids4loin:FacetDefinition" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:EntityName",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Entity name must be a valid IFC class from the IFC schema according to IDS developed by buildingSMART International. Example EntityName = \"IFCWALL\""
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Entity name"
+    },
+    "subClassOf" : [ "_:b43", "_:b44", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:FacetDefinition",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "IDS facet definition is used to define a facet to apply the requirement or to require the information according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "IDS facet definition"
+    },
+    "subClassOf" : "rdfs:Resource",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:FacetParameter",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "IDS facet parameter"
+    },
+    "subClassOf" : "rdfs:Resource",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:IFCDataType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "IFC data type must be a valid predefined type from the IFC schema according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "IFC data type"
+    },
+    "subClassOf" : [ "_:b9", "_:b10", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Material",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Material is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Material"
+    },
+    "subClassOf" : "ids4loin:FacetDefinition",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:PredefinedType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Predefined type must be a valid predefined type from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Predefined type"
+    },
+    "subClassOf" : [ "_:b14", "_:b15", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Property",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Property is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Property"
+    },
+    "subClassOf" : [ "_:b11", "_:b12", "_:b13", "ids4loin:FacetDefinition" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:PropertyName",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Property name must be a valid name from the IFC schema, or any custom text value according to IDS stan developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Property name"
+    },
+    "subClassOf" : [ "_:b39", "_:b40", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:PsetName",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Property set name must be a valid name from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Property set name"
+    },
+    "subClassOf" : [ "_:b34", "_:b35", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:RequirementType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "IDS requirement type is used to specify a requirement, if it is optional or mandatory according to IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "IDS requirement type"
+    },
+    "subClassOf" : "rdfs:Resource",
+    "owl:oneOf" : {
+      "@list" : [ "Required", "Optional", "Prohibited" ]
+    },
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:RestrictionType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Restriction type is used to specify the value of IDS facet parameter, that is defined in restriction formulation. The restriction types are based on IDS standard developed by buildingSMART International"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Restriction type"
+    },
+    "subClassOf" : "rdfs:Resource",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:Value",
+    "@type" : "owl:Class",
+    "comment" : "Value can be any custom value according to IDS standard developed by buildingSMART International",
+    "label" : "Value",
+    "subClassOf" : [ "_:b24", "_:b25", "ids4loin:FacetParameter" ],
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:belongsToPset",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Specification is used for facet property of IDS data definition."
+    },
+    "domain" : "ids4loin:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "A property belongs to Property set"
+    },
+    "range" : "ids4loin:PsetName",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasApplicability",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property describes the applicability of a facet for the specification according to IDS definition"
+    },
+    "domain" : "ids4loin:DataDefinition",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has applicability"
+    },
+    "range" : "ids4loin:FacetDefinition",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasAttributeName",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the attribute name with the facet attribute according to IDS definition"
+    },
+    "domain" : "ids4loin:Attribute",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has attribute name"
+    },
+    "range" : "ids4loin:AttributeName",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasEntityName",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the entity name with the facet entity according to IDS definition"
+    },
+    "domain" : "ids4loin:Entity",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has entity name"
+    },
+    "range" : "ids4loin:EntityName",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasIFCDataType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the IFC data type with the facet property according to IDS definition"
+    },
+    "domain" : "ids4loin:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has IFC data type"
+    },
+    "range" : "ids4loin:IFCDataType",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasPredefinedType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates a predefined type with the facet entity according to IDS definition"
+    },
+    "domain" : "ids4loin:Entity",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has predefined type"
+    },
+    "range" : "ids4loin:PredefinedType",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasPropertyName",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates a property name type with the facet property according to IDS definition"
+    },
+    "domain" : "ids4loin:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has property name"
+    },
+    "range" : "ids4loin:PropertyName",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasRequirement",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the requirements with the IDS data definition"
+    },
+    "domain" : "ids4loin:DataDefinition",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has requirement"
+    },
+    "range" : "ids4loin:FacetDefinition",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasRestrictionType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "relates the restriction type with the facet parameter in IDS data definition"
+    },
+    "domain" : "ids4loin:FacetParameter",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has restriction type"
+    },
+    "range" : "ids4loin:RestrictionType",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:hasValue",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "relates the value with a facet in IDS data definition"
+    },
+    "domain" : [ "ids4loin:Property", "ids4loin:Material", "ids4loin:Attribute" ],
+    "label" : "has value",
+    "range" : "ids4loin:Value",
+    "term_status" : "stable"
+  }, {
+    "@id" : "ids4loin:restrictionFormulation",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Restriction formulation is for formulating facet parameter value, that is used by IDS definition."
+    },
+    "domain" : "ids4loin:FacetParameter",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Constraint text formulated for facet parameters"
+    },
+    "range" : "xsd:string",
+    "term_status" : "stable"
   } ],
   "@context" : {
-    "onProperty" : {
-      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
-      "@type" : "@id"
-    },
-    "minCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-    },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "memberOf" : {
-      "@id" : "https://schema.org/memberOf",
-      "@type" : "@id"
-    },
-    "identifier" : {
-      "@id" : "https://schema.org/identifier",
-      "@type" : "@id"
-    },
-    "email" : {
-      "@id" : "https://schema.org/email",
-      "@type" : "@id"
-    },
-    "cardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-    },
-    "subPropertyOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-      "@type" : "@id"
+    "term_status" : {
+      "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
     },
     "range" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
@@ -408,28 +2113,82 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
     },
-    "equivalentClass" : {
-      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "identifier" : {
+      "@id" : "https://schema.org/identifier",
       "@type" : "@id"
     },
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "equivalentProperty" : {
-      "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
       "@type" : "@id"
+    },
+    "minCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
     "someValuesFrom" : {
       "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
       "@type" : "@id"
     },
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "@type" : "@id"
+    },
+    "cardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
     "maxCardinality" : {
       "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "requested" : {
+      "@id" : "https://w3id.org/loin#requested",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
     },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
@@ -438,42 +2197,58 @@
       "@id" : "http://purl.org/dc/terms/created",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
-    "creator" : {
-      "@id" : "http://purl.org/dc/terms/creator",
-      "@type" : "@id"
-    },
-    "imports" : {
-      "@id" : "http://www.w3.org/2002/07/owl#imports",
-      "@type" : "@id"
-    },
-    "description" : {
-      "@id" : "http://purl.org/dc/terms/description"
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
     },
     "source" : {
       "@id" : "http://purl.org/dc/terms/source",
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
     },
-    "preferredNamespacePrefix" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
-    },
-    "license" : {
-      "@id" : "http://purl.org/dc/terms/license",
+    "hasValue" : {
+      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
       "@type" : "@id"
     },
-    "rights" : {
-      "@id" : "http://purl.org/dc/terms/rights"
+    "oneOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#oneOf",
+      "@type" : "@id"
     },
-    "dt" : "http://inf.bi.rub.de/ontology/dt#",
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
+    },
+    "memberOf" : {
+      "@id" : "https://schema.org/memberOf",
+      "@type" : "@id"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email",
+      "@type" : "@id"
+    },
+    "parentOrganization" : {
+      "@id" : "https://schema.org/parentOrganization",
+      "@type" : "@id"
+    },
     "schema" : "https://schema.org/",
-    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "owl" : "http://www.w3.org/2002/07/owl#",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "icdd4loin" : "https://w3id.org/loin/v2/icdd#",
+    "Linkset" : "https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#",
+    "dt" : "https://w3id.org/dt#",
+    "Container" : "https://standards.iso.org/iso/21597/-1/ed-1/en/Container#",
+    "ids4loin" : "https://w3id.org/loin/v2/ids#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "sh" : "http://www.w3.org/ns/shacl#",
+    "loin" : "https://w3id.org/loin#",
     "vann" : "http://purl.org/vocab/vann/",
     "vs" : "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "foaf" : "http://xmlns.com/foaf/0.1#",
     "dc" : "http://purl.org/dc/terms/"
   }
 }

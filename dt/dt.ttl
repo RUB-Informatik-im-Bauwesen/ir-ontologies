@@ -1,12 +1,12 @@
-# baseURI: http://w3id.org/dt
+# baseURI: https://w3id.org/dt
 # imports: https://w3id.org/isoprops
 # imports: https://w3id.org/loin
 # prefix: dt
 
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix dt: <http://w3id.org/dt#> .
-@prefix isoprops: <http://w3id.org/isoprops#> .
-@prefix loin: <http://w3id.org/loin#> .
+@prefix dt: <https://w3id.org/dt#> .
+@prefix isoprops: <https://w3id.org/isoprops#> .
+@prefix loin: <https://w3id.org/loin#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
