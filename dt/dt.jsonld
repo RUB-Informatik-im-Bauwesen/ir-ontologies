@@ -2,8 +2,8 @@
   "@graph" : [ {
     "@id" : "_:b0",
     "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "dt:hasSetOfProperties"
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
   }, {
     "@id" : "_:b1",
     "@type" : "schema:Person",
@@ -13,54 +13,61 @@
     "name" : "Liu Liu"
   }, {
     "@id" : "_:b10",
-    "identifier" : "https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/",
-    "name" : "Bauhaus-Universitaet Weimar"
+    "@type" : "owl:Restriction",
+    "onProperty" : "dt:hasProperty",
+    "someValuesFrom" : "https://w3id.org/isoprops#Property"
   }, {
     "@id" : "_:b11",
-    "@type" : "owl:Restriction",
-    "onProperty" : "dt:isDataTemplateFor",
-    "someValuesFrom" : "https://w3id.org/loin/v2#AlphanumericalInformation"
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
+    "name" : "Ruhr University Bochum"
   }, {
     "@id" : "_:b12",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasProperty",
-    "someValuesFrom" : "https://w3id.org/iddo/v2#Property"
+    "owl:cardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onProperty" : "dt:hasExternalDictionary"
   }, {
     "@id" : "_:b13",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "https://w3id.org/iddo/v2#hasUnit"
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b11",
+    "name" : "Philipp Hagedorn"
   }, {
     "@id" : "_:b14",
     "@type" : "owl:Restriction",
     "maxCardinality" : "1",
-    "onProperty" : "dt:uri"
+    "onProperty" : "dt:ISBN"
   }, {
     "@id" : "_:b15",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasExternalDictionary",
-    "someValuesFrom" : "dt:ExternalDictionaryReference"
+    "onProperty" : "dt:hasReferenceDocument",
+    "someValuesFrom" : "dt:ReferenceDocument"
   }, {
     "@id" : "_:b16",
-    "@type" : "schema:Person",
-    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
-    "identifier" : "https://orcid.org/0000-0002-6249-243X",
-    "memberOf" : "_:b17",
-    "name" : "Philipp Hagedorn"
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "dt:hasPredefinedValueItem"
   }, {
     "@id" : "_:b17",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
-    "name" : "Ruhr University Bochum"
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "https://w3id.org/isoprops#hasUnit"
   }, {
     "@id" : "_:b18",
     "@type" : "owl:Restriction",
     "maxCardinality" : "1",
-    "onProperty" : "dt:author"
+    "onProperty" : "https://w3id.org/isoprops#hasUnit"
   }, {
     "@id" : "_:b19",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasProperty",
-    "someValuesFrom" : "https://w3id.org/iddo/v2#Property"
+    "owl:cardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onProperty" : "dt:hasIndex"
   }, {
     "@id" : "_:b2",
     "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
@@ -68,116 +75,117 @@
   }, {
     "@id" : "_:b20",
     "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
+    "onProperty" : "dt:hasSetOfProperties",
+    "someValuesFrom" : "dt:SetOfProperties"
   }, {
     "@id" : "_:b21",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:publisher"
+    "@type" : "schema:Person",
+    "email" : "mailto:sven.zentgraf@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-6058-7614",
+    "memberOf" : "_:b22",
+    "name" : "Sven Zentgraf"
   }, {
     "@id" : "_:b22",
-    "@type" : "schema:Person",
-    "email" : "mailto:martina.mellenthin.filardo@uni-weimar.de",
-    "identifier" : "https://orcid.org/0000-0001-7759-7579",
-    "memberOf" : "_:b10",
-    "name" : "Marthina Mellenthin-Filardo"
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
+    "name" : "Ruhr University Bochum"
   }, {
     "@id" : "_:b23",
     "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "dt:hasPredefinedValueItem"
+    "maxCardinality" : "1",
+    "onProperty" : "dt:uri"
   }, {
     "@id" : "_:b24",
     "@type" : "owl:Restriction",
     "maxCardinality" : "1",
-    "onProperty" : "https://w3id.org/iddo/v2#hasUnit"
+    "onProperty" : "dt:dateOfPublication"
   }, {
     "@id" : "_:b25",
-    "@type" : "schema:Person",
-    "email" : "mailto:sven.zentgraf@rub.de",
-    "identifier" : "https://orcid.org/0000-0001-6058-7614",
-    "memberOf" : "_:b26",
-    "name" : "Sven Zentgraf"
-  }, {
-    "@id" : "_:b26",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
-    "name" : "Ruhr University Bochum"
-  }, {
-    "@id" : "_:b27",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "0",
-    "onProperty" : "dt:hasProperty"
-  }, {
-    "@id" : "_:b28",
     "@type" : "owl:Restriction",
     "maxCardinality" : "1",
-    "onProperty" : "dt:ISBN"
+    "onProperty" : "dt:publisher"
   }, {
-    "@id" : "_:b29",
+    "@id" : "_:b26",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasSetOfProperties",
-    "someValuesFrom" : "dt:SetOfProperties"
+    "maxCardinality" : "1",
+    "onProperty" : "dt:author"
   }, {
-    "@id" : "_:b3",
+    "@id" : "_:b27",
+    "identifier" : "https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/",
+    "name" : "Bauhaus-Universitaet Weimar"
+  }, {
+    "@id" : "_:b28",
     "@type" : "owl:Restriction",
     "minCardinality" : "0",
     "onProperty" : "dt:hasPredefinedValues"
   }, {
+    "@id" : "_:b29",
+    "@type" : "schema:Person",
+    "email" : "mailto:martina.mellenthin.filardo@uni-weimar.de",
+    "identifier" : "https://orcid.org/0000-0001-7759-7579",
+    "memberOf" : "_:b27",
+    "name" : "Marthina Mellenthin-Filardo"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "owl:Restriction",
+    "onProperty" : "dt:isDataTemplateFor",
+    "someValuesFrom" : "https://w3id.org/loin#AlphanumericalInformation"
+  }, {
     "@id" : "_:b4",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "dt:hasIndex"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "dt:hasExternalDictionaryProperty"
-  }, {
-    "@id" : "_:b6",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "dt:hasExternalDictionary"
-  }, {
-    "@id" : "_:b7",
     "@type" : "owl:Restriction",
     "onProperty" : "dt:hasSetOfProperties",
     "someValuesFrom" : "dt:SetOfProperties"
   }, {
+    "@id" : "_:b5",
+    "@type" : "owl:Restriction",
+    "onProperty" : "dt:hasExternalDictionary",
+    "someValuesFrom" : "dt:ExternalDictionaryReference"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "owl:Restriction",
+    "onProperty" : "dt:hasProperty",
+    "someValuesFrom" : "https://w3id.org/isoprops#Property"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "dt:hasSetOfProperties"
+  }, {
     "@id" : "_:b8",
     "@type" : "owl:Restriction",
-    "onProperty" : "dt:hasReferenceDocument",
-    "someValuesFrom" : "dt:ReferenceDocument"
+    "minCardinality" : "0",
+    "onProperty" : "dt:hasProperty"
   }, {
     "@id" : "_:b9",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "dt:dateOfPublication"
+    "owl:cardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onProperty" : "dt:hasExternalDictionaryProperty"
   }, {
-    "@id" : "http://inf.bi.rub.de/ontology/dt",
+    "@id" : "http://w3id.org/dt",
     "@type" : "owl:Ontology",
     "created" : "2023-12-23",
-    "creator" : [ "_:b22", "_:b25", "_:b16", "_:b1" ],
+    "creator" : [ "_:b13", "_:b1", "_:b29", "_:b21" ],
     "description" : {
       "@language" : "en",
-      "@value" : "The Data Template (TMP) Ontology is defined for ..."
+      "@value" : "The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "
     },
     "license" : "https://creativecommons.org/licenses/by/4.0/",
     "rights" : "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar",
-    "source" : "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology",
+    "source" : "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt",
     "title" : {
       "@language" : "en",
-      "@value" : "Data Template (TMP) Ontology"
+      "@value" : "Data Template (DT) Ontology"
     },
-    "preferredNamespacePrefix" : "tmp",
-    "imports" : [ "https://w3id.org/iddo/v2", "https://w3id.org/loin/v2" ],
+    "preferredNamespacePrefix" : "dt",
     "versionInfo" : [ "1.0", "Created with TopBraid Composer" ]
   }, {
     "@id" : "dt:ConstructionObject",
     "@type" : "rdfs:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Enter a comment"
+      "@value" : "object of interest in the context of a construction process"
     },
     "label" : {
       "@language" : "en",
@@ -189,19 +197,23 @@
     "@type" : "rdfs:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Enter a comment"
+      "@value" : "data structure used to describe the characteristics of construction objects"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Data template"
     },
-    "subClassOf" : [ "_:b11", "_:b7", "_:b12", "dt:LibraryComponent" ]
+    "subClassOf" : [ "_:b3", "_:b20", "_:b10", "dt:LibraryComponent" ]
   }, {
     "@id" : "dt:ExternalDictionaryReference",
     "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "reference to an external dictionary, which is a centralized repository of information about data such as meaning, relationships to other data, origin, usage and format"
+    },
     "label" : "External dictionary",
-    "subClassOf" : [ "_:b5", "_:b6", "owl:Thing" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#ExternalDictionaryReference"
+    "subClassOf" : [ "_:b9", "_:b12", "owl:Thing" ],
+    "equivalentClass" : "https://w3id.org/isoprops#ExternalDictionaryReference"
   }, {
     "@id" : "dt:ISBN",
     "@type" : "owl:DatatypeProperty",
@@ -213,65 +225,83 @@
     "@type" : "rdfs:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Enter a comment"
+      "@value" : "named and individually scheduled physical item and feature that might require management, such as inspection, maintenance, servicing or replacement, during the in-use phase"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Library component"
     },
-    "subClassOf" : [ "_:b8", "_:b15", "owl:Thing" ]
+    "subClassOf" : [ "_:b15", "_:b5", "owl:Thing" ]
   }, {
     "@id" : "dt:PhysicalQuantity",
     "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "the physical quantity of a library component"
+    },
     "label" : "Physical quantity",
     "subClassOf" : "dt:LibraryComponent",
     "equivalentClass" : "http://qudt.org/schema/qudt/QuantityKind"
   }, {
     "@id" : "dt:PredefinedValueItem",
     "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "the physical quantity of a library component"
+    },
     "label" : {
       "@language" : "en-gb",
-      "@value" : "Definition of the property in language N"
+      "@value" : "Predefined value item"
     },
-    "subClassOf" : [ "_:b4", "_:b20", "schema:PropertyValue", "owl:Thing" ]
+    "subClassOf" : [ "_:b19", "_:b0", "schema:PropertyValue", "owl:Thing" ]
   }, {
     "@id" : "dt:PredefinedValuesList",
     "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "list of predefined values"
+    },
     "label" : {
       "@language" : "en-gb",
-      "@value" : "T Predefined Values"
+      "@value" : "Predefined value list"
     },
-    "subClassOf" : [ "_:b23", "_:b13", "_:b24", "owl:Thing" ]
+    "subClassOf" : [ "_:b16", "_:b17", "_:b18", "owl:Thing" ]
   }, {
     "@id" : "dt:Property",
     "@type" : "rdfs:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Inherent or acquired feature of an item"
+      "@value" : "inherent or acquired feature of an item"
     },
     "label" : {
       "@language" : "en-gb",
       "@value" : "Property"
     },
-    "subClassOf" : [ "_:b3", "dt:LibraryComponent" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#Property"
+    "subClassOf" : [ "_:b28", "dt:LibraryComponent" ],
+    "equivalentClass" : "https://w3id.org/isoprops#Property"
   }, {
     "@id" : "dt:ReferenceDocument",
     "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "publication that is consulted to find specific information, particularly in a technical or scientific domain"
+    },
     "label" : {
       "@language" : "en",
       "@value" : "Reference document"
     },
-    "subClassOf" : [ "_:b14", "_:b21", "_:b9", "_:b18", "_:b28", "dt:LibraryComponent" ],
-    "equivalentClass" : "https://w3id.org/iddo/v2#DictionaryReferenceDocument"
+    "subClassOf" : [ "_:b23", "_:b14", "_:b24", "dt:LibraryComponent", "_:b25", "_:b26" ],
+    "equivalentClass" : "https://w3id.org/isoprops#DictionaryReferenceDocument"
   }, {
     "@id" : "dt:SetOfProperties",
     "@type" : "rdfs:Class",
+    "comment" : "a set of properties that can be applied to a data template",
     "label" : "Set of properties",
-    "subClassOf" : [ "_:b29", "_:b19", "_:b0", "_:b27", "dt:LibraryComponent" ]
+    "subClassOf" : [ "_:b4", "_:b6", "_:b7", "_:b8", "dt:LibraryComponent" ]
   }, {
     "@id" : "dt:Unit",
     "@type" : "rdfs:Class",
+    "comment" : "real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the second quantity to the first one as a number",
     "label" : "Unit",
     "subClassOf" : "dt:LibraryComponent",
     "equivalentClass" : "http://qudt.org/schema/qudt/Unit"
@@ -324,13 +354,13 @@
       "@value" : "Predefined Values"
     },
     "subPropertyOf" : "owl:topObjectProperty",
-    "equivalentProperty" : "https://w3id.org/iddo/v2#hasPossibleValues"
+    "equivalentProperty" : "https://w3id.org/isoprops#hasPossibleValues"
   }, {
     "@id" : "dt:hasProperty",
     "@type" : "owl:ObjectProperty",
     "domain" : "dt:DataTemplate",
     "label" : "has property",
-    "range" : "https://w3id.org/iddo/v2#Property",
+    "range" : "https://w3id.org/isoprops#Property",
     "subPropertyOf" : "owl:topObjectProperty"
   }, {
     "@id" : "dt:hasReferenceDocument",
@@ -351,7 +381,7 @@
     "@type" : "owl:ObjectProperty",
     "domain" : "dt:DataTemplate",
     "label" : "is data template for",
-    "range" : "https://w3id.org/loin/v2#SpecificationPerObjectType",
+    "range" : "https://w3id.org/loin#SpecificationPerObjectType",
     "subPropertyOf" : "owl:topObjectProperty"
   }, {
     "@id" : "dt:publisher",
@@ -370,9 +400,9 @@
       "@id" : "http://www.w3.org/2002/07/owl#onProperty",
       "@type" : "@id"
     },
-    "minCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    "cardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
     },
     "name" : {
       "@id" : "https://schema.org/name"
@@ -389,9 +419,9 @@
       "@id" : "https://schema.org/email",
       "@type" : "@id"
     },
-    "cardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    "someValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
+      "@type" : "@id"
     },
     "subPropertyOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
@@ -404,6 +434,17 @@
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "minCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
     "domain" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
@@ -412,52 +453,27 @@
       "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
       "@type" : "@id"
     },
-    "subClassOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "@type" : "@id"
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
     "equivalentProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
       "@type" : "@id"
     },
-    "someValuesFrom" : {
-      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
       "@type" : "@id"
-    },
-    "maxCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-    },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
-    },
-    "title" : {
-      "@id" : "http://purl.org/dc/terms/title"
     },
     "created" : {
       "@id" : "http://purl.org/dc/terms/created",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
-    },
-    "creator" : {
-      "@id" : "http://purl.org/dc/terms/creator",
-      "@type" : "@id"
-    },
-    "imports" : {
-      "@id" : "http://www.w3.org/2002/07/owl#imports",
-      "@type" : "@id"
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
     },
     "description" : {
       "@id" : "http://purl.org/dc/terms/description"
-    },
-    "source" : {
-      "@id" : "http://purl.org/dc/terms/source",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "preferredNamespacePrefix" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
     },
     "license" : {
       "@id" : "http://purl.org/dc/terms/license",
@@ -466,12 +482,24 @@
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
     },
-    "dt" : "http://inf.bi.rub.de/ontology/dt#",
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "dt" : "http://w3id.org/dt#",
     "schema" : "https://schema.org/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "owl" : "http://www.w3.org/2002/07/owl#",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "isoprops" : "http://w3id.org/isoprops#",
+    "loin" : "http://w3id.org/loin#",
     "vann" : "http://purl.org/vocab/vann/",
     "vs" : "http://www.w3.org/2003/06/sw-vocab-status/ns#",
     "dc" : "http://purl.org/dc/terms/"

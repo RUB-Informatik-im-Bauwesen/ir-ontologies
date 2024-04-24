@@ -93,7 +93,7 @@ dt:DataTemplate
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty dt:isDataTemplateFor ;
-      owl:someValuesFrom <https://w3id.org/loin/v2#AlphanumericalInformation> ;
+      owl:someValuesFrom <https://w3id.org/loin#AlphanumericalInformation> ;
     ] ;
 .
 dt:ExternalDictionaryReference
@@ -330,7 +330,7 @@ dt:isDataTemplateFor
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:DataTemplate ;
   rdfs:label "is data template for" ;
-  rdfs:range <https://w3id.org/loin/v2#SpecificationPerObjectType> ;
+  rdfs:range <https://w3id.org/loin#SpecificationPerObjectType> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:publisher

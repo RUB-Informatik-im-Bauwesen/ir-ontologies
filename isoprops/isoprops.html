@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>The ISO Property Ontology (ISOProps)</title>
+    <title>ISO 23386 Property Ontology (ISOProps)</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -217,7 +217,7 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.4</span>
   </div>
-  <h1>The ISO Property Ontology (ISOProps)</h1>
+  <h1>ISO 23386 Property Ontology (ISOProps)</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
@@ -326,13 +326,6 @@
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
-</section>
-<section id="overview">
-    <h2>Overview</h2>
-    <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
-        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
-    </div>
 </section>
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -1481,7 +1474,8 @@ die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festge
             <tr>
                 <th>Description</th>
                 <td>
-                    Paar fuer den digitalen Texttyp (Praezision, Masseinheit)
+                    Paar fuer den digitalen Texttyp (Praezision, Masseinheit)
+
 Praezision ist die Anzahl signifikanter Stellen
                 </td>
             </tr>
@@ -1563,7 +1557,8 @@ Praezision ist die Anzahl signifikanter Stellen
             <tr>
                 <th>Description</th>
                 <td>
-                    Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner)
+                    Liste von Paaren (interner Merk-malsbezeichner, entsprechender Datenkatalog-Bezeichner)
+
 dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden
                 </td>
             </tr>
@@ -1721,7 +1716,8 @@ dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Me
             <tr>
                 <th>Description</th>
                 <td>
-                    Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001)
+                    Enables a sub-group to be linked to a parent group via their globally unique identifiers (attribute GA001)
+
 Any property attached to a group is inherited by the sub-group(s)
                 </td>
             </tr>
@@ -1761,10 +1757,14 @@ Any property attached to a group is inherited by the sub-group(s)
             <tr>
                 <th>Description</th>
                 <td>
-                    Liste von Paaren (physikalische Groesse | Sprache)
-Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben
-nicht physikalische Groessen wie z. B. Text werden mit dem Wert "ohne" angegeben --> http://qudt.org/vocab/quantitykind/Dimensionless
-dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
+                    Liste von Paaren (physikalische Groesse | Sprache)
+
+Physikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben
+
+nicht physikalische Groessen wie z. B. Text werden mit dem Wert "ohne" angegeben --> http://qudt.org/vocab/quantitykind/Dimensionless
+
+dies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303
+
 nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen.
                 </td>
             </tr>
@@ -1804,7 +1804,8 @@ nur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attr
             <tr>
                 <th>Description</th>
                 <td>
-                    Liste von Paaren (moeglicher Wert fuer das Merkmal und Sprache)
+                    Liste von Paaren (moeglicher Wert fuer das Merkmal und Sprache)
+
 Werte koennen String oder Zahlen sein
                 </td>
             </tr>
@@ -1938,7 +1939,8 @@ Werte koennen String oder Zahlen sein
             <tr>
                 <th>Description</th>
                 <td>
-                    List of pairs (group of properties internal identifier, corresponding data dictionary identifier)
+                    List of pairs (group of properties internal identifier, corresponding data dictionary identifier)
+
 This attribute should be used for compatibility between already existing groups of properties
                 </td>
             </tr>
@@ -2011,7 +2013,8 @@ This attribute should be used for compatibility between already existing groups 
             <tr>
                 <th>Description</th>
                 <td>
-                    Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
+                    Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)
+
 die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt
                 </td>
             </tr>
@@ -2051,7 +2054,8 @@ die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festge
             <tr>
                 <th>Description</th>
                 <td>
-                    A unit to represent a scale that enables a value to be measured
+                    A unit to represent a scale that enables a value to be measured
+
 It is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS
                 </td>
             </tr>
@@ -2471,8 +2475,10 @@ It is possible to use this attribute to explain there is no unit attached to the
             <tr>
                 <th>Description</th>
                 <td>
-                    Format for expressing the value of the property
-This can be understood as the storage type from a software perspective
+                    Format for expressing the value of the property
+
+This can be understood as the storage type from a software perspective
+
 In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula
                 </td>
             </tr>
@@ -3091,7 +3097,8 @@ In case of a dynamic property the value of this attribute is the datatype of the
             <tr>
                 <th>Description</th>
                 <td>
-                    Liste von Paaren (Name des Merkmals und Sprache)
+                    Liste von Paaren (Name des Merkmals und Sprache)
+
 Dieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hinzuzufuegen
                 </td>
             </tr>
@@ -3243,7 +3250,8 @@ Dieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hi
             <tr>
                 <th>Description</th>
                 <td>
-                    This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1
+                    This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1
+
 Experts decide if a new revision number can be applied or if a new revision is needed
                 </td>
             </tr>

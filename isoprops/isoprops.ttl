@@ -77,7 +77,7 @@ The preferred prefix for the ISOProps namespace is `isoprops`.
 ## Relation between DCAT vocabulary and the ISOProps ontology
 ![DataCatalog_Overview](DataCatalog_Overview.png \"DataCatalog_Overview\")
 """ ;
-  rdfs:label "The ISO Property Ontology (ISOProps)" ;
+  rdfs:label "ISO 23386 Property Ontology (ISOProps)" ;
   rdfs:seeAlso <https://www.iso.org/standard/75401.html> ;
   owl:imports <http://inf.bi.rub.de/ontology/dt> ;
   owl:versionIRI <https://w3id.org/isoprops> ;

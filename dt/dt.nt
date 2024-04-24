@@ -1,243 +1,246 @@
-# baseURI: http://inf.bi.rub.de/ontology/dt
-# imports: https://w3id.org/iddo/v2
-# imports: https://w3id.org/loin/v2
+# baseURI: http://w3id.org/dt
 # prefix: dt
 
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B0226a67bfa59d14720e05dfb7c6aafdf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/name> "Liu Liu" .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/memberOf> _:B6b1662876fb7d3465a3693b501d6a1d3 .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/identifier> <https://orcid.org/0000-0001-5907-7609> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <https://schema.org/email> <mailto:liu.liu-m6r@rub.de> .
-_:B53c01bdd71a7e0ce9d405ef897822517 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Ba7e5672ed426c6adfa10484253c3a935 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasIndex> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B3f31d4c28d60ab9e565c9fef0b69a4eb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin/v2#SpecificationPerObjectType> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#label> "is data template for" .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4790e604f8b6d7c6c5cf5efd1359722f .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7bf81221da2c8d4b1a7984cd3a2a1892 .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "External dictionary" .
-<http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "referenced external dictionary" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/iddo/v2#hasPossibleValues> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined Values"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B087758d2b7763c56bc13d5deffe27768 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#ReferenceDocument> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> .
-_:Bdb39cff20c983f7abb0e94b6c03455bf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#ReferenceDocument> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "has reference document" .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#dateOfPublication> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B7e0470edf90cf7eb73120150a6f38bcd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9a8fea55378a93f391021d0f517429df <https://schema.org/name> "Bauhaus-Universitaet Weimar" .
-_:B9a8fea55378a93f391021d0f517429df <https://schema.org/identifier> <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/QuantityKind> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "Physical quantity" .
-<http://inf.bi.rub.de/ontology/dt#PhysicalQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9208d3d7fada0f49da39f4c626b14095 .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B087758d2b7763c56bc13d5deffe27768 .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcd802a6a3e563fa1ede0c2a6b200a85d .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Data template"@en .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#DataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/2000/01/rdf-schema#label> "uri" .
-<http://inf.bi.rub.de/ontology/dt#uri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#label> "ISBN" .
-<http://inf.bi.rub.de/ontology/dt#ISBN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/iddo/v2#hasUnit> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bdb586c5822d951ab73859b7a96e15206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#uri> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B998e611adf547afbdbecd8d0858ee40c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#Property> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba7e5672ed426c6adfa10484253c3a935 .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "Inherent or acquired feature of an item"@en .
-<http://inf.bi.rub.de/ontology/dt#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdb39cff20c983f7abb0e94b6c03455bf .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B994cc4558742a792f3ac24b04b8b1161 .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Library component"@en .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#LibraryComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/name> "Philipp Hagedorn" .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/memberOf> _:Badf29c26ee5231b99a064d85cc99d84e .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/identifier> <https://orcid.org/0000-0002-6249-243X> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <https://schema.org/email> <mailto:philipp.hagedorn-n6v@rub.de> .
-_:Bb4514973ffc0a37cbb6d35916c7a74a2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has external property reference" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#author> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B92a497fb90307787f8ec483ff57ec3ee <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/iddo/v2#Property> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:B4581eea3c90ca6581e67dd278a3638f3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3f31d4c28d60ab9e565c9fef0b69a4eb .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B355a573de45e7b64ae1336edf5aa0ba7 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/PropertyValue> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Definition of the property in language N"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "has external dictionary" .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher" .
-<http://inf.bi.rub.de/ontology/dt#publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionaryProperty> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B4790e604f8b6d7c6c5cf5efd1359722f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Badf29c26ee5231b99a064d85cc99d84e <https://schema.org/name> "Ruhr University Bochum" .
-_:Badf29c26ee5231b99a064d85cc99d84e <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/2000/01/rdf-schema#label> "author" .
-<http://inf.bi.rub.de/ontology/dt#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#publisher> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Ba2bcf0179e2df9a2e428d12a49c92f9b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/name> "Marthina Mellenthin-Filardo" .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/memberOf> _:B9a8fea55378a93f391021d0f517429df .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/identifier> <https://orcid.org/0000-0001-7759-7579> .
-_:B9758e4135b92b6e51919af5f72d5f449 <https://schema.org/email> <mailto:martina.mellenthin.filardo@uni-weimar.de> .
-_:B9758e4135b92b6e51919af5f72d5f449 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd072f442ea579d29ab7edf9fd99af1b9 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdb586c5822d951ab73859b7a96e15206 .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B04352159a55ade9320222024f78d31dd .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#label> "T Predefined Values"@en-GB .
-<http://inf.bi.rub.de/ontology/dt#PredefinedValuesList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/name> "Sven Zentgraf" .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/memberOf> _:B9126d17d8a14facc672aaee9692acec2 .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/identifier> <https://orcid.org/0000-0001-6058-7614> .
-_:B37d5f952d82c7e42384e126cb906e28c <https://schema.org/email> <mailto:sven.zentgraf@rub.de> .
-_:B37d5f952d82c7e42384e126cb906e28c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/title> "Data Template (TMP) Ontology"@en .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/created> "2023-12-23"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#versionInfo> "1.0" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B9758e4135b92b6e51919af5f72d5f449 .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/iddo/v2> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/description> "The Data Template (TMP) Ontology is defined for ..."@en .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/loin/v2> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/source> "https://github.com/RUB-Informatik-im-Bauwesen/tmp-ontology"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tmp" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B37d5f952d82c7e42384e126cb906e28c .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:Bb4514973ffc0a37cbb6d35916c7a74a2 .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://inf.bi.rub.de/ontology/dt> <http://www.w3.org/2002/07/owl#versionInfo> "Created with TopBraid Composer" .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/creator> _:B53c01bdd71a7e0ce9d405ef897822517 .
-<http://inf.bi.rub.de/ontology/dt> <http://purl.org/dc/terms/rights> "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#ExternalDictionaryReference> .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> .
-_:B994cc4558742a792f3ac24b04b8b1161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin/v2#AlphanumericalInformation> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#isDataTemplateFor> .
-_:B9208d3d7fada0f49da39f4c626b14095 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#label> "Construction object"@en .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#comment> "Enter a comment"@en .
-<http://inf.bi.rub.de/ontology/dt#ConstructionObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/iddo/v2#hasUnit> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B04352159a55ade9320222024f78d31dd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bd211fa6d1a0cdc7866d5dffc8a51ff40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#range> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "has set of properties" .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iddo/v2#DictionaryReferenceDocument> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B998e611adf547afbdbecd8d0858ee40c .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba2bcf0179e2df9a2e428d12a49c92f9b .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7e0470edf90cf7eb73120150a6f38bcd .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B92a497fb90307787f8ec483ff57ec3ee .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1c323b6a02d23afd4441c520ffff1720 .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Reference document"@en .
-<http://inf.bi.rub.de/ontology/dt#ReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Predefinded Value Item@en-GB}" .
-<http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B6b1662876fb7d3465a3693b501d6a1d3 <https://schema.org/name> "Ruhr University Bochum" .
-_:B6b1662876fb7d3465a3693b501d6a1d3 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iddo/v2#Property> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property" .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://inf.bi.rub.de/ontology/dt#DataTemplate> .
-<http://inf.bi.rub.de/ontology/dt#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/value> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:B355a573de45e7b64ae1336edf5aa0ba7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/iddo/v2#Property> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasProperty> .
-_:Bcd802a6a3e563fa1ede0c2a6b200a85d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inf.bi.rub.de/ontology/dt#SetOfProperties> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasSetOfProperties> .
-_:B633eae376e8be509ae605842fdb1e14d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#label> "Index of the element in the enumeration" .
-<http://inf.bi.rub.de/ontology/dt#hasIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasPredefinedValueItem> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:Bd072f442ea579d29ab7edf9fd99af1b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/Unit> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
-<http://inf.bi.rub.de/ontology/dt#Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B633eae376e8be509ae605842fdb1e14d .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4581eea3c90ca6581e67dd278a3638f3 .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0226a67bfa59d14720e05dfb7c6aafdf .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd211fa6d1a0cdc7866d5dffc8a51ff40 .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inf.bi.rub.de/ontology/dt#LibraryComponent> .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "Set of properties" .
-<http://inf.bi.rub.de/ontology/dt#SetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#label> "date of publication" .
-<http://inf.bi.rub.de/ontology/dt#dateOfPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#ISBN> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B1c323b6a02d23afd4441c520ffff1720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/2002/07/owl#onProperty> <http://inf.bi.rub.de/ontology/dt#hasExternalDictionary> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:B7bf81221da2c8d4b1a7984cd3a2a1892 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:B9126d17d8a14facc672aaee9692acec2 <https://schema.org/name> "Ruhr University Bochum" .
-_:B9126d17d8a14facc672aaee9692acec2 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> .
+_:B2d3e571909a93a2fdb817fa1567a9098 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/value> .
+_:B2d3e571909a93a2fdb817fa1567a9098 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:B2d3e571909a93a2fdb817fa1567a9098 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3f4ac03b7d78158e16cae9785bc06712 <https://schema.org/name> "Liu Liu" .
+_:B3f4ac03b7d78158e16cae9785bc06712 <https://schema.org/memberOf> _:B39a33254c9793eb728a0a1b2fbe162cc .
+_:B3f4ac03b7d78158e16cae9785bc06712 <https://schema.org/identifier> <https://orcid.org/0000-0001-5907-7609> .
+_:B3f4ac03b7d78158e16cae9785bc06712 <https://schema.org/email> <mailto:liu.liu-m6r@rub.de> .
+_:B3f4ac03b7d78158e16cae9785bc06712 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B482a8a9f6d968ce778ec5fc2fe775bfb <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/loin#AlphanumericalInformation> .
+_:B482a8a9f6d968ce778ec5fc2fe775bfb <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#isDataTemplateFor> .
+_:B482a8a9f6d968ce778ec5fc2fe775bfb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/dt#publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher" .
+<http://w3id.org/dt#publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B0ba984ed6b16a93dad889dc40fd08535 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/dt#SetOfProperties> .
+_:B0ba984ed6b16a93dad889dc40fd08535 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasSetOfProperties> .
+_:B0ba984ed6b16a93dad889dc40fd08535 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B9dc9175c2f51a8f79d360e0a8087c38c <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/dt#ExternalDictionaryReference> .
+_:B9dc9175c2f51a8f79d360e0a8087c38c <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasExternalDictionary> .
+_:B9dc9175c2f51a8f79d360e0a8087c38c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0ba984ed6b16a93dad889dc40fd08535 .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8681ce9fe4981a6ebb8a5ea2823b84b8 .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0c0ccab6e50f7fb74019c2db0f34d80c .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5b4a29b2049d972dbb8400cc8ad38415 .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#comment> "a set of properties that can be applied to a data template" .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "Set of properties" .
+<http://w3id.org/dt#SetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B038e7ff9916d4aafdea3fc9abc20bbf3 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasExternalDictionaryProperty> .
+_:B038e7ff9916d4aafdea3fc9abc20bbf3 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B038e7ff9916d4aafdea3fc9abc20bbf3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B430720360e0a440f37db1c1f26417b31 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/isoprops#Property> .
+_:B430720360e0a440f37db1c1f26417b31 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasProperty> .
+_:B430720360e0a440f37db1c1f26417b31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5b4a29b2049d972dbb8400cc8ad38415 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasProperty> .
+_:B5b4a29b2049d972dbb8400cc8ad38415 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5b4a29b2049d972dbb8400cc8ad38415 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/dt#ReferenceDocument> .
+<http://w3id.org/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "has reference document" .
+<http://w3id.org/dt#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#hasReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bc62381630023a87c9995d055d24669da <https://schema.org/name> "Ruhr University Bochum" .
+_:Bc62381630023a87c9995d055d24669da <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> .
+_:Bb82e88e1900ec42e6178c8a054b23d6f <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasExternalDictionary> .
+_:Bb82e88e1900ec42e6178c8a054b23d6f <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb82e88e1900ec42e6178c8a054b23d6f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B1918d8e1225b3a6834b60d043cf2e671 <https://schema.org/name> "Philipp Hagedorn" .
+_:B1918d8e1225b3a6834b60d043cf2e671 <https://schema.org/memberOf> _:Bc62381630023a87c9995d055d24669da .
+_:B1918d8e1225b3a6834b60d043cf2e671 <https://schema.org/identifier> <https://orcid.org/0000-0002-6249-243X> .
+_:B1918d8e1225b3a6834b60d043cf2e671 <https://schema.org/email> <mailto:philipp.hagedorn-n6v@rub.de> .
+_:B1918d8e1225b3a6834b60d043cf2e671 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<http://w3id.org/dt#PhysicalQuantity> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/QuantityKind> .
+<http://w3id.org/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "the physical quantity of a library component"@en .
+<http://w3id.org/dt#PhysicalQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "Physical quantity" .
+<http://w3id.org/dt#PhysicalQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:Bbd995874d159e4d000c844b8dab39986 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#ISBN> .
+_:Bbd995874d159e4d000c844b8dab39986 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bbd995874d159e4d000c844b8dab39986 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#hasIndex> <http://www.w3.org/2000/01/rdf-schema#label> "Index of the element in the enumeration" .
+<http://w3id.org/dt#hasIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B39a33254c9793eb728a0a1b2fbe162cc <https://schema.org/name> "Ruhr University Bochum" .
+_:B39a33254c9793eb728a0a1b2fbe162cc <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf191e13d37ead1cfa1b78d3caab0f78a .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9dc9175c2f51a8f79d360e0a8087c38c .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#label> "Library component"@en .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/2000/01/rdf-schema#comment> "named and individually scheduled physical item and feature that might require management, such as inspection, maintenance, servicing or replacement, during the in-use phase"@en .
+<http://w3id.org/dt#LibraryComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasPredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Predefinded Value Item@en-GB}" .
+<http://w3id.org/dt#hasPredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd3082ac7d8b01924048edf5bebb1cc31 .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdbf02ac52da8f831f3a81e6a77177c80 .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5b7711e0168229089d497b90da31d5bc .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#comment> "list of predefined values"@en .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined value list"@en-GB .
+<http://w3id.org/dt#PredefinedValuesList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6cac43254ab8484c072a6e9b490f4093 .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2d3e571909a93a2fdb817fa1567a9098 .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/PropertyValue> .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#comment> "the physical quantity of a library component"@en .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined value item"@en-GB .
+<http://w3id.org/dt#PredefinedValueItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#ExternalDictionaryReference> .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B038e7ff9916d4aafdea3fc9abc20bbf3 .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb82e88e1900ec42e6178c8a054b23d6f .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#comment> "reference to an external dictionary, which is a centralized repository of information about data such as meaning, relationships to other data, origin, usage and format"@en .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "External dictionary" .
+<http://w3id.org/dt#ExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:Bf191e13d37ead1cfa1b78d3caab0f78a <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/dt#ReferenceDocument> .
+_:Bf191e13d37ead1cfa1b78d3caab0f78a <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasReferenceDocument> .
+_:Bf191e13d37ead1cfa1b78d3caab0f78a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#Unit> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/Unit> .
+<http://w3id.org/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
+<http://w3id.org/dt#Unit> <http://www.w3.org/2000/01/rdf-schema#comment> "real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the second quantity to the first one as a number" .
+<http://w3id.org/dt#Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B8681ce9fe4981a6ebb8a5ea2823b84b8 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/isoprops#Property> .
+_:B8681ce9fe4981a6ebb8a5ea2823b84b8 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasProperty> .
+_:B8681ce9fe4981a6ebb8a5ea2823b84b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/dt#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#label> "date of publication" .
+<http://w3id.org/dt#dateOfPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Baa589e1eb894f3b1fa6dbe6397062468 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/dt#SetOfProperties> .
+_:Baa589e1eb894f3b1fa6dbe6397062468 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasSetOfProperties> .
+_:Baa589e1eb894f3b1fa6dbe6397062468 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf913609ab5407dbd43fccd0cc04a2443 <https://schema.org/name> "Sven Zentgraf" .
+_:Bf913609ab5407dbd43fccd0cc04a2443 <https://schema.org/memberOf> _:Be6d384333bdfa7d24ac14734cc5f8f42 .
+_:Bf913609ab5407dbd43fccd0cc04a2443 <https://schema.org/identifier> <https://orcid.org/0000-0001-6058-7614> .
+_:Bf913609ab5407dbd43fccd0cc04a2443 <https://schema.org/email> <mailto:sven.zentgraf@rub.de> .
+_:Bf913609ab5407dbd43fccd0cc04a2443 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "publication that is consulted to find specific information, particularly in a technical or scientific domain"@en .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1ae8a5584c66fb22b72b06f8b9bcdd05 .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bbd995874d159e4d000c844b8dab39986 .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B808c1f4f9c5fbfeb9b81b50d69c57639 .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#DictionaryReferenceDocument> .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Reference document"@en .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bccb736df7840ddc28f00ca9e88de8084 .
+<http://w3id.org/dt#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be8f2b51b85cad871f8246c472de242a3 .
+_:Be8f2b51b85cad871f8246c472de242a3 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#author> .
+_:Be8f2b51b85cad871f8246c472de242a3 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be8f2b51b85cad871f8246c472de242a3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be6d384333bdfa7d24ac14734cc5f8f42 <https://schema.org/name> "Ruhr University Bochum" .
+_:Be6d384333bdfa7d24ac14734cc5f8f42 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> .
+<http://w3id.org/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#label> "Construction object"@en .
+<http://w3id.org/dt#ConstructionObject> <http://www.w3.org/2000/01/rdf-schema#comment> "object of interest in the context of a construction process"@en .
+<http://w3id.org/dt#ConstructionObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:Bedbaba57d25e4f7d6f10ff0051654587 <https://schema.org/name> "Bauhaus-Universitaet Weimar" .
+_:Bedbaba57d25e4f7d6f10ff0051654587 <https://schema.org/identifier> <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> .
+_:B1ae8a5584c66fb22b72b06f8b9bcdd05 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#uri> .
+_:B1ae8a5584c66fb22b72b06f8b9bcdd05 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B1ae8a5584c66fb22b72b06f8b9bcdd05 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#SpecificationPerObjectType> .
+<http://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#label> "is data template for" .
+<http://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#DataTemplate> .
+<http://w3id.org/dt#isDataTemplateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/dt#author> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/dt#author> <http://www.w3.org/2000/01/rdf-schema#label> "author" .
+<http://w3id.org/dt#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/dt#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#Property> .
+<http://w3id.org/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc662a92324d18fd2e3f73ad1e5296ff8 .
+<http://w3id.org/dt#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en-GB .
+<http://w3id.org/dt#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "inherent or acquired feature of an item"@en .
+<http://w3id.org/dt#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://w3id.org/dt#uri> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#uri> <http://www.w3.org/2000/01/rdf-schema#label> "uri" .
+<http://w3id.org/dt#uri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://w3id.org/dt#ISBN> <http://www.w3.org/2000/01/rdf-schema#label> "ISBN" .
+<http://w3id.org/dt#ISBN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bda2965301fb444e4058aefc3893aebea <https://schema.org/name> "Marthina Mellenthin-Filardo" .
+_:Bda2965301fb444e4058aefc3893aebea <https://schema.org/memberOf> _:Bedbaba57d25e4f7d6f10ff0051654587 .
+_:Bda2965301fb444e4058aefc3893aebea <https://schema.org/identifier> <https://orcid.org/0000-0001-7759-7579> .
+_:Bda2965301fb444e4058aefc3893aebea <https://schema.org/email> <mailto:martina.mellenthin.filardo@uni-weimar.de> .
+_:Bda2965301fb444e4058aefc3893aebea <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<http://w3id.org/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has external property reference" .
+<http://w3id.org/dt#hasExternalDictionaryProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#ExternalDictionaryReference> .
+<http://w3id.org/dt#hasExternalDictionaryProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bdbf02ac52da8f831f3a81e6a77177c80 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/isoprops#hasUnit> .
+_:Bdbf02ac52da8f831f3a81e6a77177c80 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bdbf02ac52da8f831f3a81e6a77177c80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd3082ac7d8b01924048edf5bebb1cc31 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasPredefinedValueItem> .
+_:Bd3082ac7d8b01924048edf5bebb1cc31 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bd3082ac7d8b01924048edf5bebb1cc31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasPredefinedValues> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#hasPossibleValues> .
+<http://w3id.org/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasPredefinedValues> <http://www.w3.org/2000/01/rdf-schema#label> "Predefined Values"@en-GB .
+<http://w3id.org/dt#hasPredefinedValues> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bc662a92324d18fd2e3f73ad1e5296ff8 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasPredefinedValues> .
+_:Bc662a92324d18fd2e3f73ad1e5296ff8 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc662a92324d18fd2e3f73ad1e5296ff8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/dt#SetOfProperties> .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "has set of properties" .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#SetOfProperties> .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#DataTemplate> .
+<http://w3id.org/dt#hasSetOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/isoprops#Property> .
+<http://w3id.org/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property" .
+<http://w3id.org/dt#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#DataTemplate> .
+<http://w3id.org/dt#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B482a8a9f6d968ce778ec5fc2fe775bfb .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Baa589e1eb894f3b1fa6dbe6397062468 .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B430720360e0a440f37db1c1f26417b31 .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Data template"@en .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "data structure used to describe the characteristics of construction objects"@en .
+<http://w3id.org/dt#DataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B5b7711e0168229089d497b90da31d5bc <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/isoprops#hasUnit> .
+_:B5b7711e0168229089d497b90da31d5bc <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5b7711e0168229089d497b90da31d5bc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B0c0ccab6e50f7fb74019c2db0f34d80c <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasSetOfProperties> .
+_:B0c0ccab6e50f7fb74019c2db0f34d80c <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B0c0ccab6e50f7fb74019c2db0f34d80c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "has external dictionary" .
+<http://w3id.org/dt#hasExternalDictionary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#hasExternalDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/dt> <http://purl.org/dc/terms/creator> _:B1918d8e1225b3a6834b60d043cf2e671 .
+<http://w3id.org/dt> <http://purl.org/dc/terms/created> "2023-12-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://w3id.org/dt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/dt> <http://purl.org/dc/terms/creator> _:B3f4ac03b7d78158e16cae9785bc06712 .
+<http://w3id.org/dt> <http://purl.org/dc/terms/creator> _:Bda2965301fb444e4058aefc3893aebea .
+<http://w3id.org/dt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "dt" .
+<http://w3id.org/dt> <http://purl.org/dc/terms/creator> _:Bf913609ab5407dbd43fccd0cc04a2443 .
+<http://w3id.org/dt> <http://purl.org/dc/terms/description> "The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "@en .
+<http://w3id.org/dt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://w3id.org/dt> <http://purl.org/dc/terms/rights> "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" .
+<http://w3id.org/dt> <http://www.w3.org/2002/07/owl#versionInfo> "1.0" .
+<http://w3id.org/dt> <http://www.w3.org/2002/07/owl#versionInfo> "Created with TopBraid Composer" .
+<http://w3id.org/dt> <http://purl.org/dc/terms/title> "Data Template (DT) Ontology"@en .
+<http://w3id.org/dt> <http://purl.org/dc/terms/source> "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:B6cac43254ab8484c072a6e9b490f4093 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#hasIndex> .
+_:B6cac43254ab8484c072a6e9b490f4093 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B6cac43254ab8484c072a6e9b490f4093 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B808c1f4f9c5fbfeb9b81b50d69c57639 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#dateOfPublication> .
+_:B808c1f4f9c5fbfeb9b81b50d69c57639 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B808c1f4f9c5fbfeb9b81b50d69c57639 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bccb736df7840ddc28f00ca9e88de8084 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/dt#publisher> .
+_:Bccb736df7840ddc28f00ca9e88de8084 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bccb736df7840ddc28f00ca9e88de8084 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/dt#ExternalDictionaryReference> .
+<http://w3id.org/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#label> "referenced external dictionary" .
+<http://w3id.org/dt#hasExternalDictionaryReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/dt#LibraryComponent> .
+<http://w3id.org/dt#hasExternalDictionaryReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
