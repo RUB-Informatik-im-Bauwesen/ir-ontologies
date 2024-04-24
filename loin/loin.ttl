@@ -1,15 +1,15 @@
-# baseURI: https://w3id.org/loin/v2
-# imports: http://inf.bi.rub.de/ontology/dt
+# baseURI: https://w3id.org/loin/
+# imports: <http://w3id.org/dt#>
 # prefix: loin
 
 @prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
 @prefix Linkset: <https://standards.iso.org/iso/21597/-1/ed-1/en/Linkset#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix dt: <http://inf.bi.rub.de/ontology/dt#> .
+@prefix dt: <http://w3id.org/dt#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1#> .
 @prefix icdd4loin: <https://w3id.org/loin/v2/icdd#> .
 @prefix ids4loin: <https://w3id.org/loin/v2/ids#> .
-@prefix loin: <https://w3id.org/loin/v2#> .
+@prefix loin: <https://w3id.org/loin#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,7 +22,7 @@
 dt:isDataTemplateFor
   owl:inverseOf loin:hasDataTemplate ;
 .
-<https://w3id.org/loin/v2>
+<https://w3id.org/loin>
   rdf:type owl:Ontology ;
   dc:created "2023-01-30"^^xsd:date ;
   dc:creator [
@@ -57,7 +57,7 @@ dt:isDataTemplateFor
         ] ;
     ] ;
   dc:rights "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum" ;
-  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/loin-ontology"^^xsd:anyURI ;
+  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin"^^xsd:anyURI ;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
   owl:imports <http://inf.bi.rub.de/ontology/dt> ;
