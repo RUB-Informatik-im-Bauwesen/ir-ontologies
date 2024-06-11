@@ -254,54 +254,54 @@ dt:SetOfProperties
 dt:Unit
   rdf:type rdfs:Class ;
   rdfs:comment "real scalar quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the second quantity to the first one as a number" ;
-  rdfs:label "Unit" ;
+  rdfs:label "Unit"@en-GB ;
   rdfs:subClassOf dt:LibraryComponent ;
   owl:equivalentClass <http://qudt.org/schema/qudt/Unit> ;
 .
 dt:author
   rdf:type owl:DatatypeProperty ;
-  rdfs:label "author" ;
+  rdfs:label "author"@en-GB ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
 dt:dateOfPublication
   rdf:type owl:DatatypeProperty ;
-  rdfs:label "date of publication" ;
+  rdfs:label "date of publication"@en-GB ;
   rdfs:range xsd:dateTime ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
 dt:hasExternalDictionary
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:LibraryComponent ;
-  rdfs:label "has external dictionary" ;
+  rdfs:label "has external dictionary"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasExternalDictionaryProperty
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:ExternalDictionaryReference ;
-  rdfs:label "has external property reference" ;
+  rdfs:label "has external property reference"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasExternalDictionaryReference
   rdf:type owl:ObjectProperty ;
   rdfs:domain dt:LibraryComponent ;
-  rdfs:label "referenced external dictionary" ;
+  rdfs:label "referenced external dictionary"@en-GB ;
   rdfs:range dt:ExternalDictionaryReference ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasIndex
   rdf:type owl:DatatypeProperty ;
-  rdfs:label "Index of the element in the enumeration" ;
+  rdfs:label "Index of the element in the enumeration"@en-GB ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
 dt:hasPredefinedValueItem
   rdf:type owl:ObjectProperty ;
-  rdfs:label "Predefinded Value Item@en-GB}" ;
+  rdfs:label "has predefinded value item"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 dt:hasPredefinedValues
   rdf:type owl:ObjectProperty ;
-  rdfs:label "Predefined Values"@en-GB ;
+  rdfs:label "has predefined values"@en-GB ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:equivalentProperty <https://w3id.org/isoprops#hasPossibleValues> ;
 .
