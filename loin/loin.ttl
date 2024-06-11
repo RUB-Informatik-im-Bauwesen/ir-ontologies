@@ -57,9 +57,10 @@ dt:isDataTemplateFor
         ] ;
     ] ;
   dc:rights "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum" ;
-  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin"^^xsd:anyURI ;
+  dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf>;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
+  vann:preferredNamespaceUri "https://w3id.org/loin#" ;
   owl:imports <https://w3id.org/dt> ;
   owl:versionInfo "2.0" ;
 .

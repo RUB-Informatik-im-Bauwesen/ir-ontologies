@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
     <title>Data Template (DT) Ontology</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1Sew
-EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
@@ -135,8 +132,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         .sup-ap,
         .sup-p,
         .sup-ni,
-        .sup-con,
-        .sup-col {
+        .sup-cp,
+        .sup-cl {
             cursor:help;
             margin-left: 3px;
         }
@@ -169,11 +166,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color:brown;
         }
 
-        .sup-con {
+        .sup-cp {
             color:orange;
         }
 
-        .sup-col {
+        .sup-cl {
             color:darkred;
         }
 
@@ -182,11 +179,6 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             color: darkred;
         }
 
-        /* less prominent links for properties */
-        .proplink {
-            color: #336;
-            text-decoration: none;
-        }
     </style>
     
     <script type="application/ld+json">
@@ -223,20 +215,19 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.9.3</span>
+    <span style="font-size:smaller;">2.4</span>
   </div>
   <h1>Data Template (DT) Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
-        <dt>URI</dt>
+        <dt>IRI</dt>
         <dd><code>http://w3id.org/dt</code></dd>
-        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dt>Creator(s)</dt>
         <dd>
             
     <a href="https://orcid.org/0000-0001-5907-7609">Liu Liu</a>
-    <a href="">
-  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="https://orcid.org/0000-0001-5907-7609"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -254,14 +245,12 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </g>
         </g>
     </g>
-  </svg>
-</a>
+</svg></a>
     (<a href="mailto:liu.liu-m6r@rub.de">liu.liu-m6r@rub.de</a>) of 
     <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en">Ruhr University Bochum</a><br/>
             
     <a href="https://orcid.org/0000-0001-6058-7614">Sven Zentgraf</a>
-    <a href="">
-  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="https://orcid.org/0000-0001-6058-7614"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -279,14 +268,12 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </g>
         </g>
     </g>
-  </svg>
-</a>
+</svg></a>
     (<a href="mailto:sven.zentgraf@rub.de">sven.zentgraf@rub.de</a>) of 
     <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en">Ruhr University Bochum</a><br/>
             
     <a href="https://orcid.org/0000-0001-7759-7579">Marthina Mellenthin-Filardo</a>
-    <a href="">
-  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="https://orcid.org/0000-0001-7759-7579"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -304,14 +291,12 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </g>
         </g>
     </g>
-  </svg>
-</a>
+</svg></a>
     (<a href="mailto:martina.mellenthin.filardo@uni-weimar.de">martina.mellenthin.filardo@uni-weimar.de</a>) of 
     <a href="https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/">Bauhaus-Universitaet Weimar</a><br/>
             
     <a href="https://orcid.org/0000-0002-6249-243X">Philipp Hagedorn</a>
-    <a href="">
-  <svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    <a href="https://orcid.org/0000-0002-6249-243X"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Orcid logo</title>
@@ -329,15 +314,14 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </g>
         </g>
     </g>
-  </svg>
-</a>
+</svg></a>
     (<a href="mailto:philipp.hagedorn-n6v@rub.de">philipp.hagedorn-n6v@rub.de</a>) of 
     <a href="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en">Ruhr University Bochum</a><br/>
         </dd>
-        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">Created</a></dt>
+        <dt>Created</dt>
         <dd>2023-12-23</dd>
         <dt>Version Information</dt>
-        <dd>1.0</dd>
+        <dd>Created with TopBraid Composer</dd>
         <dt>Imports</dt>
         <dd>
             <a href="https://w3id.org/isoprops">https://w3id.org/isoprops</a><br/>
@@ -349,7 +333,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             &copy; 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar
         </dd>
         <dt>Source</dt>
-        <dd><a href="https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt">https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt</a></dd>
+        <dd><a href="https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf">https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf</a></dd>
         <dt>Ontology RDF</dt>
         <dd><a href="dt.ttl">RDF (turtle)</a></dd>
     </dl>
@@ -371,33 +355,29 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
-        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+        <img src="dt.png" width="800px"><div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
   <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-      <li><a href="https://w3id.org/dt#ConstructionObject">dt:ConstructionObject</a></li>
-      <li><a href="https://w3id.org/dt#DataTemplate">dt:DataTemplate</a></li>
-      <li><a href="https://w3id.org/dt#ExternalDictionaryReference">dt:ExternalDictionaryReference</a></li>
-      <li><a href="https://w3id.org/dt#LibraryComponent">dt:LibraryComponent</a></li>
-      <li><a href="https://w3id.org/dt#PhysicalQuantity">dt:PhysicalQuantity</a></li>
-      <li><a href="https://w3id.org/dt#PredefinedValueItem">dt:PredefinedValueItem</a></li>
-      <li><a href="https://w3id.org/dt#PredefinedValuesList">dt:PredefinedValuesList</a></li>
-      <li><a href="https://w3id.org/dt#Property">dt:Property</a></li>
-      <li><a href="https://w3id.org/dt#ReferenceDocument">dt:ReferenceDocument</a></li>
-      <li><a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a></li>
-      <li><a href="https://w3id.org/dt#Unit">dt:Unit</a></li>
+        <li><a href="#Constructionobject">Construction object</a></li>
+        <li><a href="#Datatemplate">Data template</a></li>
+        <li><a href="#Externaldictionary">External dictionary</a></li>
+        <li><a href="#Librarycomponent">Library component</a></li>
+        <li><a href="#Physicalquantity">Physical quantity</a></li>
+        <li><a href="#Predefinedvalueitem">Predefined value item</a></li>
+        <li><a href="#Predefinedvaluelist">Predefined value list</a></li>
+        <li><a href="#Property">Property</a></li>
+        <li><a href="#Referencedocument">Reference document</a></li>
+        <li><a href="#Setofproperties">Set of properties</a></li>
+        <li><a href="#Unit">Unit</a></li>
     </ul>
     <div class="entity class" id="Constructionobject">
-        <h3>
-          Construction object<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Constructionobject" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Construction object<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#ConstructionObject</code></td>
             </tr>
             <tr>
@@ -415,13 +395,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity class" id="Datatemplate">
-        <h3>
-          Data template<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Datatemplate" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Data template<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#DataTemplate</code></td>
             </tr>
             <tr>
@@ -439,29 +416,26 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasSetOfProperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">isoprops:Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/dt#isDataTemplateFor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/loin#AlphanumericalInformation">loin:AlphanumericalInformation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">isoprops:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#hasSetOfProperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="https://w3id.org/dt#hasSetOfProperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="https://w3id.org/dt#isDataTemplateFor">dt:isDataTemplateFor</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Externaldictionary">
-        <h3>
-          External dictionary<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Externaldictionary" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>External dictionary<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#ExternalDictionaryReference</code></td>
             </tr>
             <tr>
@@ -479,8 +453,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasExternalDictionaryProperty">dt:hasExternalDictionaryProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="https://w3id.org/dt#hasExternalDictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="https://w3id.org/dt#hasExternalDictionaryProperty">dt:hasExternalDictionaryProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -498,13 +472,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity class" id="Librarycomponent">
-        <h3>
-          Library component<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Librarycomponent" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Library component<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#LibraryComponent</code></td>
             </tr>
             <tr>
@@ -529,33 +500,30 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://w3id.org/dt#ConstructionObject">dt:ConstructionObject</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/dt#Property">dt:Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/dt#DataTemplate">dt:DataTemplate</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/dt#Unit">dt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/dt#ReferenceDocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/dt#PhysicalQuantity">dt:PhysicalQuantity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#Property">dt:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#ReferenceDocument">dt:ReferenceDocument</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#ConstructionObject">dt:ConstructionObject</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#Unit">dt:Unit</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasExternalDictionaryReference">dt:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="https://w3id.org/dt#hasExternalDictionary">dt:hasExternalDictionary</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="https://w3id.org/dt#hasExternalDictionaryReference">dt:hasExternalDictionaryReference</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="https://w3id.org/dt#hasReferenceDocument">dt:hasReferenceDocument</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Physicalquantity">
-        <h3>
-          Physical quantity<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Physicalquantity" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Physical quantity<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#PhysicalQuantity</code></td>
             </tr>
             <tr>
@@ -572,14 +540,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
-    <div class="entity class" id="PredefinedValueItem">
-        <h3>
-          PredefinedValueItem<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#PredefinedValueItem" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+    <div class="entity class" id="Predefinedvalueitem">
+        <h3>Predefined value item<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#PredefinedValueItem</code></td>
             </tr>
             <tr>
@@ -591,8 +556,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/2002/07/owl#Thing">owl:Thing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/PropertyValue">sdo:PropertyValue</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -604,14 +569,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
-    <div class="entity class" id="PredefinedValuesList">
-        <h3>
-          PredefinedValuesList<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#PredefinedValuesList" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+    <div class="entity class" id="Predefinedvaluelist">
+        <h3>Predefined value list<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#PredefinedValuesList</code></td>
             </tr>
             <tr>
@@ -629,21 +591,18 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasPredefinedValueItem">dt:hasPredefinedValueItem</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="https://w3id.org/isoprops#hasUnit">isoprops:hasUnit</a> <span class="cardinality">min</span> 0<br/>
                     <a href="https://w3id.org/isoprops#hasUnit">isoprops:hasUnit</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/dt#hasPredefinedValueItem">dt:hasPredefinedValueItem</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Property">
-        <h3>
-          Property<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Property" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Property<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#Property</code></td>
             </tr>
             <tr>
@@ -667,13 +626,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity class" id="Referencedocument">
-        <h3>
-          Reference document<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Referencedocument" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Reference document<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#ReferenceDocument</code></td>
             </tr>
             <tr>
@@ -691,11 +647,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/dt#publisher">dt:publisher</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="https://w3id.org/dt#author">dt:author</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
-                    <a href="https://w3id.org/dt#ISBN">dt:ISBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/dt#uri">dt:uri</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/dt#ISBN">dt:ISBN</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/dt#dateOfPublication">dt:dateOfPublication</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/dt#author">dt:author</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/dt#publisher">dt:publisher</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -707,13 +663,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity class" id="Setofproperties">
-        <h3>
-          Set of properties<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Setofproperties" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Set of properties<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#SetOfProperties</code></td>
             </tr>
             <tr>
@@ -731,10 +684,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
-                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">isoprops:Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/dt#hasSetOfProperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/dt#SetOfProperties">dt:SetOfProperties</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/dt#hasSetOfProperties">dt:hasSetOfProperties</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
+                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/isoprops#Property">isoprops:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/dt#hasProperty">dt:hasProperty</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0<br/>
                 </td>
             </tr>
             <tr>
@@ -752,13 +705,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity class" id="Unit">
-        <h3>
-          Unit<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Unit" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
-        </h3>
+        <h3>Unit<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#Unit</code></td>
             </tr>
             <tr>
@@ -782,20 +732,18 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <li><a href="#hasexternaldictionary">has external dictionary</a></li>
         <li><a href="#hasexternalpropertyreference">has external property reference</a></li>
         <li><a href="#referencedexternaldictionary">referenced external dictionary</a></li>
-        <li><a href="#PredefindedValueItem@en-GB}">Predefinded Value Item@en-GB}</a></li>
-        <li><a href="#hasPredefinedValues">hasPredefinedValues</a></li>
+        <li><a href="#PredefindedValueItem">Predefinded Value Item</a></li>
+        <li><a href="#PredefinedValues">Predefined Values</a></li>
         <li><a href="#hasproperty">has property</a></li>
         <li><a href="#hasreferencedocument">has reference document</a></li>
         <li><a href="#hassetofproperties">has set of properties</a></li>
         <li><a href="#isdatatemplatefor">is data template for</a></li>
     </ul>
     <div class="entity property" id="hasexternaldictionary">
-        <h3>has external dictionary<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hasexternaldictionary" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>has external dictionary<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasExternalDictionary</code></td>
             </tr>
             <tr>
@@ -813,12 +761,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="hasexternalpropertyreference">
-        <h3>has external property reference<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hasexternalpropertyreference" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>has external property reference<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasExternalDictionaryProperty</code></td>
             </tr>
             <tr>
@@ -836,12 +782,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="referencedexternaldictionary">
-        <h3>referenced external dictionary<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#referencedexternaldictionary" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>referenced external dictionary<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasExternalDictionaryReference</code></td>
             </tr>
             <tr>
@@ -864,13 +808,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
-    <div class="entity property" id="PredefindedValueItem@en-GB}">
-        <h3>Predefinded Value Item@en-GB}<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#PredefindedValueItem@en-GB}" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+    <div class="entity property" id="PredefindedValueItem">
+        <h3>Predefinded Value Item<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasPredefinedValueItem</code></td>
             </tr>
             <tr>
@@ -881,13 +823,11 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             </tr>
         </table>
     </div>
-    <div class="entity property" id="hasPredefinedValues">
-        <h3>hasPredefinedValues<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hasPredefinedValues" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+    <div class="entity property" id="PredefinedValues">
+        <h3>Predefined Values<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasPredefinedValues</code></td>
             </tr>
             <tr>
@@ -905,12 +845,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="hasproperty">
-        <h3>has property<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hasproperty" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>has property<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasProperty</code></td>
             </tr>
             <tr>
@@ -934,12 +872,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="hasreferencedocument">
-        <h3>has reference document<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hasreferencedocument" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>has reference document<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasReferenceDocument</code></td>
             </tr>
             <tr>
@@ -963,12 +899,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="hassetofproperties">
-        <h3>has set of properties<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#hassetofproperties" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>has set of properties<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasSetOfProperties</code></td>
             </tr>
             <tr>
@@ -993,12 +927,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="isdatatemplatefor">
-        <h3>is data template for<sup title="object property" class="sup-op">op</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#isdatatemplatefor" title="fragment link to here">#</a>&nbsp;<a href="#objectproperties" title="Object Properties Index">OPs</a></span>
-        </h3>
+        <h3>is data template for<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#isDataTemplateFor</code></td>
             </tr>
             <tr>
@@ -1034,12 +966,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <li><a href="#uri">uri</a></li>
     </ul>
     <div class="entity property" id="ISBN">
-        <h3>ISBN<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#ISBN" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>ISBN<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#ISBN</code></td>
             </tr>
             <tr>
@@ -1057,12 +987,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="author">
-        <h3>author<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#author" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>author<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#author</code></td>
             </tr>
             <tr>
@@ -1080,12 +1008,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="dateofpublication">
-        <h3>date of publication<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#dateofpublication" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>date of publication<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#dateOfPublication</code></td>
             </tr>
             <tr>
@@ -1103,12 +1029,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="Indexoftheelementintheenumeration">
-        <h3>Index of the element in the enumeration<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#Indexoftheelementintheenumeration" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>Index of the element in the enumeration<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#hasIndex</code></td>
             </tr>
             <tr>
@@ -1120,12 +1044,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="publisher">
-        <h3>publisher<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#publisher" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>publisher<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#publisher</code></td>
             </tr>
             <tr>
@@ -1143,12 +1065,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         </table>
     </div>
     <div class="entity property" id="uri">
-        <h3>uri<sup title="datatype property" class="sup-dp">dp</sup><span style="float:right; margin-right:10px; font-size:smaller;">
-            <a href="#uri" title="fragment link to here">#</a>&nbsp;<a href="#datatypeproperties" title="Datatype Properties Index">DPs</a></span>
-        </h3>
+        <h3>uri<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
-                <th>URI</th>
+                <th>IRI</th>
                 <td><code>https://w3id.org/dt#uri</code></td>
             </tr>
             <tr>
@@ -1162,11 +1082,15 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
 </section>
 
   
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
-        <dt>default (:)</dt>
-        <dd><code>http://w3id.org/dt</code></dd>
         <dt>dc</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>dt</dt>
@@ -1191,6 +1115,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <dd><code>http://purl.org/vocab/vann/</code></dd>
         <dt>vs</dt>
         <dd><code>http://www.w3.org/2003/06/sw-vocab-status/ns#</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
         <dt>xsd</dt>
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>

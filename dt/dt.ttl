@@ -61,9 +61,10 @@
   dc:description "The Data Template (DT) Ontology is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "@en ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
   dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
-  dc:source "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/dt"^^xsd:anyURI ;
+  dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf>;
   dc:title "Data Template (DT) Ontology"@en ;
   vann:preferredNamespacePrefix "dt" ;
+  vann:preferredNamespaceUri <http://w3id.org/dt#> ;
   owl:imports <https://w3id.org/isoprops> ;
   owl:imports <https://w3id.org/loin> ;
   owl:versionInfo "1.0" ;
