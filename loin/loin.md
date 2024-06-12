@@ -18,8 +18,6 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.9.
   * 2023-01-30
 * **Version Information**
   * 2.0
-* **Imports**
-  * [https://w3id.org/dt](https://w3id.org/dt)
 * **License &amp; Rights**
   * [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
   * &copy; 2023 by Chair of Computing in Engineering, Ruhr University Bochum

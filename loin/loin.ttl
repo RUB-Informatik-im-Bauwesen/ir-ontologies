@@ -61,7 +61,6 @@ dt:isDataTemplateFor
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
   vann:preferredNamespaceUri "https://w3id.org/loin#" ;
-  owl:imports <https://w3id.org/dt> ;
   owl:versionInfo "2.0" ;
 .
 loin:Actor

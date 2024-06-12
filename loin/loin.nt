@@ -186,7 +186,6 @@ _:Bee6cb6447d2d909fd249cd0fb3a58433 <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <https://w3id.org/loin> <http://purl.org/dc/terms/publisher> _:Bab002ad09e434fc386e6ae84ecd1f97d .
 <https://w3id.org/loin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/loin> <http://purl.org/vocab/vann/preferredNamespacePrefix> "loin" .
-<https://w3id.org/loin> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/dt> .
 <https://w3id.org/loin> <http://purl.org/dc/terms/title> "Level of Information Need (LOIN) Ontology"@en .
 <https://w3id.org/loin> <http://purl.org/dc/terms/created> "2023-01-30"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/loin> <http://purl.org/dc/terms/description> "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). "@en .

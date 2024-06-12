@@ -324,7 +324,6 @@
       "@value" : "Level of Information Need (LOIN) Ontology"
     },
     "preferredNamespacePrefix" : "loin",
-    "imports" : "https://w3id.org/dt",
     "versionInfo" : "2.0"
   }, {
     "@id" : "loin:Actor",
