@@ -102,8 +102,8 @@ v0.1: initial ontology for BIMSTRUCT project
 isoprops:AssignedProperty
   rdf:type owl:Class ;
   rdfs:comment "Repraesentiert die Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)"@de-DE ;
-  rdfs:comment "Represents the assignment of a property and a property state to a feature of interest (FOI)." ;
-  rdfs:label "Assigned property" ;
+  rdfs:comment "Represents the assignment of a property and a property state to a feature of interest (FOI)."@en;
+  rdfs:label "Assigned property"@en;
   rdfs:label "Zugewiesenes Merkmal"@de-DE ;
   rdfs:subClassOf <http://www.w3id.org/opm#Property> ;
   rdfs:subClassOf [
@@ -119,9 +119,9 @@ isoprops:AssignedProperty
 .
 isoprops:BoundaryLimitMax
   rdf:type rdfs:Class ;
-  rdfs:comment "Boundary limit  interval consisting of the the upper (maxValue) interval boundary" ;
-  rdfs:comment "Grenzwertintervall bestehend aus der oberen(maxValue) Intervallgrenze"@de-DE ;
-  rdfs:label "Maximum Boundary Limit" ;
+  rdfs:comment "BoundaryLimitMax defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval."@en ;
+  rdfs:comment "BoundaryLimitMax definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist."@de-DE ;
+  rdfs:label "Upper Boundary Limit" ;
   rdfs:label "Oberer Grenzwert"@de-DE ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf schema:PropertyValue ;
@@ -147,9 +147,9 @@ isoprops:BoundaryLimitMax
 .
 isoprops:BoundaryLimitMin
   rdf:type rdfs:Class ;
-  rdfs:comment "Boundary limit interval consisting of the lower(minValue) interval boundary" ;
-  rdfs:comment "Grenzwertintervall bestehend aus der unteren(minValue) Intervallgrenze"@de-DE ;
-  rdfs:label "Minimum Boundary Limit" ;
+  rdfs:comment "BoundaryLimitMin defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval."@en ;
+  rdfs:comment "BoundaryLimitMin definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist."@de-DE ;
+  rdfs:label "Lower Boundary Limit"@en ;
   rdfs:label "Unterer Grenzwert"@de-DE ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf schema:PropertyValue ;
@@ -170,15 +170,15 @@ isoprops:BoundaryLimitMin
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:scopeNote "PA040" ;
-  isoprops:code "PA040" ;
+  isoprops:code "PA040"@en ;
   isoprops:code "PA040"@de-DE ;
 .
 isoprops:BoundaryValue
   rdf:type rdfs:Class ;
-  rdfs:comment "Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)"@de-DE ;
-  rdfs:comment "Pair  (List of boundary intervals of possible values for the property, unit)" ;
-  rdfs:label "Boundary values list" ;
-  rdfs:label "Grenzwertliste"@de-DE ;
+  rdfs:comment "BoundaryValue definiert das Grenzwertinterval des Merkmals über einen untere und oberen Grenzwert"@de-DE ;
+  rdfs:comment "BoundaryValue defines the boundary value of the property via a lower and upper boundary value@en" ;
+  rdfs:label "Boundary value"@en ;
+  rdfs:label "Grenzwert"@de-DE ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -193,18 +193,18 @@ isoprops:BoundaryValue
       owl:onProperty isoprops:hasBoundaryLimit ;
     ] ;
   skos:scopeNote "PA040" ;
-  isoprops:code "PA040" ;
+  isoprops:code "PA040"@en ;
   isoprops:code "PA040"@de-DE ;
 .
 isoprops:CategoryOfGroupOfProperties
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Gibt die Kategorie der erstellten Merkmalsgruppe an"@de-DE ;
-  rdfs:comment "Specifies the category of the created property group" ;
+  rdfs:comment "Gibt die Kategorie der erstellten Merkmalsgruppe an. Erlaubt sind die Werte, 'Alternative use'(Alternative Verwendung), 'Class'(Klasse), 'Composed property'(zusammengesetzes Merkmal), 'Domain'(Domaene),'Reference document'(Referenzdokument)"@de-DE ;
+  rdfs:comment "Specifies the category of the created property group. The following values are permitted: 'Alternative use', 'Class', 'Composed property', 'Domain', 'Reference document'."@en ;
   rdfs:domain isoprops:GroupOfProperties ;
   rdfs:label "Category of group of properties" ;
   rdfs:label "Kategorie der Merkmalsgruppe"@de-DE ;
   rdfs:range [
-      rdf:type rdfs:Datatype ;
+      rdf:type rdfs:Datatype ;	
       owl:oneOf (
           "Alternative use"
           "Class"
@@ -220,66 +220,62 @@ isoprops:CategoryOfGroupOfProperties
   skos:example "Domain" ;
   skos:example "Reference document" ;
   skos:scopeNote "GA022" ;
-  isoprops:code "GA022" ;
+  isoprops:code "GA022"@en ;
   isoprops:code "GA022"@de-DE ;
 .
 isoprops:CountryOfOrigin
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Country from where the requirement for this property/group of properties originated" ;
+  rdfs:comment "Country from where the requirement for this property/group of properties originated"@en ;
   rdfs:comment "Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt"@de-DE ;
   rdfs:domain isoprops:GroupOfProperties ;
   rdfs:domain isoprops:Property ;
-  rdfs:label "Country of origin" ;
+  rdfs:label "Country of origin"@en ;
   rdfs:label "Ursprungsland"@de-DE ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA026/GA021" ;
-  isoprops:code "PA026/GA021" ;
+  isoprops:code "PA026/GA021"@en ;
   isoprops:code "PA026/GA021"@de-DE ;
 .
 isoprops:CountryOfUse
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in" ;
-  rdfs:comment "Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist"@de-DE ;
+  rdfs:comment "Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in."@en ;
+  rdfs:comment "Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist."@de-DE ;
   rdfs:domain isoprops:GroupOfProperties ;
   rdfs:domain isoprops:Property ;
-  rdfs:label "Country of use" ;
+  rdfs:label "Country of use"@en ;
   rdfs:label "Land der Verwendung"@de-DE ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA024/GA019" ;
-  isoprops:code "PA024/GA019" ;
+  isoprops:code "PA024/GA019"@en ;
   isoprops:code "PA024/GA019"@de-DE ;
 .
 isoprops:CreatorsLanguage
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Satz, der den Grund fuer die Ab-lehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal entsprechen; diese Er-laeuterung muss in internatio-nalem Englisch (EN) geschrieben werden"@de-DE ;
-  rdfs:comment "Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property; this explanation has to be written in international English (EN)" ;
+  rdfs:comment "Sprache des Erstellers des Merkmals/der Merkmalsgruppe"@de-DE ;
+  rdfs:comment "Language of the creator of the property/group of properties"@en ;
   rdfs:domain isoprops:GroupOfProperties ;
   rdfs:domain isoprops:Property ;
-  rdfs:label "Creator's language" ;
-  rdfs:label "Erlaeuterung fuer die Ablehnung"@de-DE ;
+  rdfs:label "Creator's language"@en ;
+  rdfs:label "Sprache des Erstellers"@de-DE ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA015/GA015" ;
-  isoprops:code "PA015/GA015" ;
+  isoprops:code "PA015/GA015"@en ;
   isoprops:code "PA015/GA015"@de-DE ;
 .
 isoprops:DataType
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment """Format for expressing the value of the property
-This can be understood as the storage type from a software perspective
-In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula""" ;
-  rdfs:comment """Format fuer die Angabe des Wertes des Merkmals
-dies kann aus einer Soft-ware-Perspektive als Speiche-rungsart verstanden werden
-im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Er-gebnisses der Berechnung mit der Gleichung"""@de-DE ;
+  rdfs:comment "Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula."@en;
+  rdfs:comment "Format fuer die Angabe des Merkmalwertes. Dies kann aus Sicht der Software als Speichertyp verstanden werden. Im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Ergebnisses der berechneten Gleichung"@de-DE ;
   rdfs:domain isoprops:Property ;
-  rdfs:label "Data type" ;
+  rdfs:label "Data type"@en ;
   rdfs:label "Datentyp (GUID)"@de-DE ;
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
   skos:scopeNote "PA030" ;
-  isoprops:code "PA030" ;
+  isoprops:code "PA030"@en ;
   isoprops:code "PA030"@de-DE ;
 .
 isoprops:DateOfActivation
