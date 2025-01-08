@@ -1,5 +1,5 @@
 # baseURI: https://w3id.org/loin
-# imports: <https://w3id.org/dt#>
+# imports: https://w3id.org/tempo
 # prefix: loin
 
 @prefix Container: <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
@@ -57,10 +57,11 @@ dt:isDataTemplateFor
         ] ;
     ] ;
   dc:rights "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum" ;
-  dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf>;
+  dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf> ;
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
   vann:preferredNamespaceUri "https://w3id.org/loin#" ;
+  owl:imports <https://w3id.org/tempo> ;
   owl:versionInfo "2.0" ;
 .
 loin:Actor
@@ -80,6 +81,58 @@ loin:AlphanumericalInformation
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:requested ;
     ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasIntendedUse ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasPhysicalQuantity ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasProperty ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasReferenceDocument ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasSetOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasUnit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasUserDefined ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:Appearance
@@ -87,6 +140,20 @@ loin:Appearance
   rdfs:comment "Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Appearance"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "NoColor"
+              "SingleColor"
+              "MaterialColor"
+              "Textures"
+            ) ;
+        ] ;
+      owl:onProperty loin:hasAppearance ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:Bounds
@@ -131,6 +198,21 @@ loin:Detail
   rdfs:comment "Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Detail"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "L1"
+              "L2"
+              "L3"
+              "L4"
+              "L5"
+            ) ;
+        ] ;
+      owl:onProperty loin:hasDetail ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:Dimensionality
@@ -138,19 +220,26 @@ loin:Dimensionality
   rdfs:comment "Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Dimensionality"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "D0"
+              "D1"
+              "D2"
+              "D3"
+            ) ;
+        ] ;
+      owl:onProperty loin:hasDimensionality ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:DocumentContent
   rdf:type owl:Class ;
   rdfs:comment "Document specification for content for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Document content"@en ;
-  rdfs:subClassOf loin:DocumentSpecification ;
-  vs:term_status "stable" ;
-.
-loin:DocumentFormat
-  rdf:type owl:Class ;
-  rdfs:comment "Document specification for format for information need according to BS EN 17412-1 (2020)"@en ;
-  rdfs:label "Document format"@en ;
   rdfs:subClassOf loin:DocumentSpecification ;
   vs:term_status "stable" ;
 .
@@ -168,6 +257,12 @@ loin:DocumentSpecification
   rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
+loin:DocumentType
+  rdf:type owl:Class ;
+  rdfs:label "Document type"@en ;
+  rdfs:subClassOf loin:DocumentSpecification ;
+  vs:term_status "stable" ;
+.
 loin:Documentation
   rdf:type owl:Class ;
   rdfs:comment "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"@en ;
@@ -175,8 +270,27 @@ loin:Documentation
   rdfs:subClassOf loin:Information ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:RequiredDocument ;
       owl:onProperty loin:hasDocument ;
-      owl:someValuesFrom loin:RequiredDocument ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange xsd:boolean ;
+      owl:onProperty loin:requested ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   vs:term_status "stable" ;
 .
@@ -213,6 +327,18 @@ loin:GeometricalInformation
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:requested ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -320,33 +446,6 @@ loin:InformationContent
   rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
-loin:InformationDeliveryMilestone
-  rdf:type owl:Class ;
-  rdfs:comment "Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
-  rdfs:label "Information delivery milestone"@en ;
-  rdfs:subClassOf owl:Thing ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasPurpose ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasReceivingActor ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasSendingActor ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasSpecificationPerObjectType ;
-    ] ;
-  vs:term_status "stable" ;
-.
 loin:Length
   rdf:type ids4loin:RestrictionType ;
   rdfs:comment "Length restriction specifies the exact number of characters allowed in a value. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation."@en ;
@@ -358,6 +457,18 @@ loin:Location
   rdfs:comment "Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Location"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "Absolute"
+              "Relative"
+            ) ;
+        ] ;
+      owl:onProperty loin:hasLocation ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:Manual
@@ -402,6 +513,19 @@ loin:ParametricBehaviour
   rdfs:comment "Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Parametric behaviour"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onDataRange [
+          rdf:type rdfs:Datatype ;
+          owl:oneOf (
+              "ExplicitGeometry"
+              "ConstructiveGeometry"
+              "ParametricGeometry"
+            ) ;
+        ] ;
+      owl:onProperty loin:hasParametricBehaviour ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
   vs:term_status "stable" ;
 .
 loin:Pattern
@@ -415,6 +539,71 @@ loin:Photograph
   rdfs:comment "Documents such as records of work done, records of existing conditions according to notes of BS EN 17412-1 (2020)"@en ;
   rdfs:label "Photograph" ;
   vs:term_status "stable" ;
+.
+loin:Prerequisites
+  rdf:type owl:Class ;
+  rdfs:label "Prerequisites"@en ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:informationDeliveryMilestone ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:purpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:receivingActor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:sendingActor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:informationDeliveryMilestone ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:purpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:receivingActor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty loin:sendingActor ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
 .
 loin:Provided_As_Information
   rdf:type loin:DocumentPurpose ;
@@ -430,7 +619,7 @@ loin:Purpose
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:description ;
+      owl:onProperty loin:hasDescriptionInLanguage ;
     ] ;
 .
 loin:ReceivingActor
@@ -474,18 +663,30 @@ loin:RequiredDocument
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
       owl:onProperty loin:hasDocumentSpecification ;
       owl:someValuesFrom loin:DocumentContent ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty loin:hasDocumentSpecification ;
-      owl:someValuesFrom loin:DocumentFormat ;
+      owl:someValuesFrom loin:DocumentPurpose ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty loin:hasDocumentSpecification ;
-      owl:someValuesFrom loin:DocumentPurpose ;
+      owl:someValuesFrom loin:DocumentType ;
     ] ;
   vs:term_status "stable" ;
 .
@@ -533,6 +734,65 @@ loin:Spatial
   vs:term_status "stable" ;
 .
 loin:Specification
+  rdf:type owl:Class ;
+  rdfs:label "has Reference Type"@en ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onDataRange rdf:langString ;
+      owl:onProperty loin:hasDescriptionInLanguage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:SpecificationPerObjectType ;
+      owl:onProperty loin:hasSpecificationPerObjectType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange rdf:langString ;
+      owl:onProperty loin:hasDescriptionInLanguage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange rdf:langString ;
+      owl:onProperty loin:hasNameInLanguage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:Prerequisites ;
+      owl:onProperty loin:hasPrerequisites ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:SpecificationPerObjectType ;
+      owl:onProperty loin:hasSpecificationPerObjectType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange rdf:langString ;
+      owl:onProperty loin:hasNameInLanguage ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
+      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+    ] ;
+.
+loin:SpecificationInstance
   rdf:type loin:DocumentContent ;
   rdfs:comment "Documents such as technical specifications according to notes according to notes of BS EN 17412-1 (2020)"@en ;
   rdfs:label "Specification"@en ;
@@ -543,6 +803,7 @@ loin:SpecificationPerObjectType
   rdfs:comment "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
   rdfs:label "Specification per Object Type"@en ;
   rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf <https://w3id.org/tempo#ConceptType> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -555,13 +816,15 @@ loin:SpecificationPerObjectType
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasObjectType ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:AlphanumericalInformation ;
+      owl:onProperty loin:hasAlphanumericalInformation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasAlphanumericalInformation ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass <https://w3id.org/tempo#ObjectType> ;
+      owl:onProperty loin:hasObjectType ;
     ] ;
   vs:term_status "stable" ;
 .
@@ -610,42 +873,16 @@ loin:costEstimation
   rdfs:label "Cost estimation"@en ;
   vs:term_status "stable" ;
 .
-loin:description
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Description provide detail and extend of information derived by Information Delivery Specification (IDS)"@en ;
-  rdfs:domain [
-      rdf:type owl:Class ;
-      owl:unionOf (
-          loin:InformationContent
-          loin:Purpose
-        ) ;
-    ] ;
-  rdfs:label "description"@en ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-  vs:term_status "stable" ;
-.
 loin:detailed
   rdf:type loin:Detail ;
   rdfs:comment "Detail, an example of detail aspect according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en ;
   rdfs:label "detailed"@en ;
   vs:term_status "stable" ;
 .
-loin:detailedDesign
-  rdf:type loin:InformationDeliveryMilestone ;
-  rdfs:comment "Detailed design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en ;
-  rdfs:label "Detailed design"@en ;
-  vs:term_status "stable" ;
-.
 loin:explicit
   rdf:type loin:ParametricBehaviour ;
   rdfs:comment "Explicit, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en ;
   rdfs:label "explicit"@en ;
-  vs:term_status "stable" ;
-.
-loin:finalDesign
-  rdf:type loin:InformationDeliveryMilestone ;
-  rdfs:comment "Final design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"@en ;
-  rdfs:label "Final design"@en ;
   vs:term_status "stable" ;
 .
 loin:fireSmokeSimulation
@@ -669,6 +906,23 @@ loin:hasAlphanumericalInformation
   rdfs:label "has alphanumerical information"@en ;
   rdfs:range loin:AlphanumericalInformation ;
   rdfs:subPropertyOf loin:hasInformation ;
+  vs:term_status "stable" ;
+.
+loin:hasAppearance
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain loin:Appearance ;
+  rdfs:label "has appearance"@en ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "NotRequested"
+          "NoColor"
+          "SingleColor"
+          "MaterialColor"
+          "Textures"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
 .
 loin:hasBreakdownStructure
@@ -696,6 +950,47 @@ loin:hasDataTemplate
   rdfs:range dt:DataTemplate ;
   rdfs:subPropertyOf loin:hasAlphanumericalInformation ;
   owl:inverseOf dt:isDataTemplateFor ;
+.
+loin:hasDescriptionInLanguage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Description in Language"@en ;
+  rdfs:range rdf:langString ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  owl:equivalentProperty <https://w3id.org/isoprops#DescriptionInLanguage> ;
+.
+loin:hasDetail
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain loin:Detail ;
+  rdfs:label "has detail"@en ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "NotRequested"
+          "L1"
+          "L2"
+          "L3"
+          "L4"
+          "L5"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  vs:term_status "stable" ;
+.
+loin:hasDimensionality
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain loin:Dimensionality ;
+  rdfs:label "has detail"@en ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "D0"
+          "D1"
+          "D2"
+          "D3"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  vs:term_status "stable" ;
 .
 loin:hasDocument
   rdf:type owl:ObjectProperty ;
@@ -790,6 +1085,35 @@ loin:hasInformationContent
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
+loin:hasIntendedUse
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasIntendedUse> ;
+.
+loin:hasLocation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain loin:Location ;
+  rdfs:label "has location"@en ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "NotRequested"
+          "Absolute"
+          "Relative"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  vs:term_status "stable" ;
+.
+loin:hasNameInLanguage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  rdfs:range rdf:langString ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 loin:hasObjectType
   rdf:type owl:ObjectProperty ;
   rdfs:domain loin:SpecificationPerObjectType ;
@@ -797,10 +1121,46 @@ loin:hasObjectType
   rdfs:range dt:ConstructionObject ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
+loin:hasParametricBehaviour
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain loin:ParametricBehaviour ;
+  rdfs:label "has parametric behaviour"@en ;
+  rdfs:range [
+      rdf:type rdfs:Datatype ;
+      owl:oneOf (
+          "NotRequested"
+          "ExplicitGeometry"
+          "ConstructiveGeometry"
+          "ParametricGeometry"
+        ) ;
+    ] ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+  vs:term_status "stable" ;
+.
+loin:hasPhysicalQuantity
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty loin:hasPhysicalQuantity ;
+.
+loin:hasPrerequisites
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has Prerequisites"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
+loin:hasProperty
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <https://w3id.org/tempo#DataTemplate> ;
+  rdfs:label "has property" ;
+  rdfs:range <https://w3id.org/isoprops#Property> ;
+  rdfs:range <https://w3id.org/tempo#Property> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasProperty> ;
+.
 loin:hasPurpose
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
-  rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has purpose"@en ;
   rdfs:range loin:Purpose ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -809,11 +1169,18 @@ loin:hasPurpose
 loin:hasReceivingActor
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
-  rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has receiving actor"@en ;
   rdfs:range loin:ReceivingActor ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
+.
+loin:hasReferenceDocument
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <https://w3id.org/tempo#Library> ;
+  rdfs:label "has reference document" ;
+  rdfs:range <https://w3id.org/tempo#ReferenceDocument> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasReferenceDocument> ;
 .
 loin:hasReferenceSource
   rdf:type owl:ObjectProperty ;
@@ -841,20 +1208,47 @@ loin:hasRequirementType
 loin:hasSendingActor
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
-  rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has has Sending Actor"@en ;
   rdfs:range loin:SendingActor ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
+loin:hasSetOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <https://w3id.org/tempo#DataTemplate> ;
+  rdfs:domain <https://w3id.org/tempo#SetOfProperties> ;
+  rdfs:label "has set of properties" ;
+  rdfs:range <https://w3id.org/tempo#SetOfProperties> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasSetOfProperties> ;
+.
 loin:hasSpecificationPerObjectType
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
-  rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:label "has specification per object type"@en ;
   rdfs:range loin:SpecificationPerObjectType ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
+.
+loin:hasUnit
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasUnit> ;
+.
+loin:hasUserDefined
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasUserDefined> ;
+.
+loin:informationDeliveryMilestone
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Information delivery milestone"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 loin:isRelatedToLoinDocument
   rdf:type owl:ObjectProperty ;
@@ -877,11 +1271,11 @@ loin:parametric
   rdfs:label "parametric"@en ;
   vs:term_status "stable" ;
 .
-loin:preliminaryDesign
-  rdf:type loin:InformationDeliveryMilestone ;
-  rdfs:comment "Preliminary design, an example of IDM information delivery milestone from BS EN 17412-1 (2020) - Annex B"@en ;
-  rdfs:label "Preliminary design" ;
-  vs:term_status "stable" ;
+loin:purpose
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "purpose"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 loin:real-world
   rdf:type loin:Appearance ;
@@ -894,6 +1288,12 @@ loin:realistic
   rdfs:comment "realistic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)"@en ;
   rdfs:label "realistic"@en ;
   vs:term_status "stable" ;
+.
+loin:receivingActor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Receiving actor"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 loin:relative
   rdf:type loin:Location ;
@@ -911,6 +1311,12 @@ loin:requested
   rdfs:range xsd:boolean ;
   rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
+.
+loin:sendingActor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Sending actor"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 loin:simplified
   rdf:type loin:Detail ;
@@ -972,7 +1378,6 @@ loin:zero-dimensional
 icdd4loin:isRelatedToContainerDescription
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description"@en ;
-  rdfs:domain loin:InformationDeliveryMilestone ;
   rdfs:domain loin:Purpose ;
   rdfs:label "is related to container description"@en ;
   rdfs:range Container:ContainerDescription ;
@@ -1056,7 +1461,7 @@ ids4loin:DataDefinition
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:description ;
+      owl:onProperty loin:hasDescriptionInLanguage ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
