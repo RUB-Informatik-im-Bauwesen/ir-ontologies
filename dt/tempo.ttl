@@ -375,12 +375,6 @@ tempo:Library
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass tempo:UserDefined ;
-      owl:onProperty tempo:hasUserDefined ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange tempo:DataTemplate ;
       owl:onProperty tempo:hasDataTemplate ;
     ] ;
@@ -639,12 +633,6 @@ tempo:Unit
   rdfs:subClassOf tempo:ConceptType ;
   owl:equivalentClass qudt:Unit ;
 .
-tempo:UserDefined
-  rdf:type rdfs:Class ;
-  rdfs:comment "The \"UserDefined\" specialization type is not defined by default in this base schema, as it serves no objective unless a user explicitly introduces their own specialization. To create a user-defined category of groupOfPropertiesType, please create a separate or enrich that schema that imports this base schema and define your custom element (e.g., <UserDefined>) extending GroupOfPropertiesType."@en ;
-  rdfs:label "User defined"@en ;
-  rdfs:subClassOf tempo:GroupOfProperties ;
-.
 tempo:author
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Author of a corresponding Reference Document" ;
@@ -798,6 +786,7 @@ tempo:hasGroupOfProperties
 .
 tempo:hasIntendedUse
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property relates the alphanumerical information with the intened use"@en ;
   rdfs:domain tempo:Library ;
   rdfs:label "has intended use"@en ;
   rdfs:range tempo:IntendedUse ;
@@ -819,12 +808,22 @@ tempo:hasParts
 .
 tempo:hasProperty
   rdf:type owl:ObjectProperty ;
-  rdfs:domain tempo:DataTemplate ;
-  rdfs:domain tempo:GroupOfProperties ;
-  rdfs:domain tempo:Library ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          tempo:DataTemplate
+          tempo:GroupOfProperties
+          tempo:Library
+        ) ;
+    ] ;
   rdfs:label "has property" ;
-  rdfs:range isoprops:Property ;
-  rdfs:range tempo:Property ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          isoprops:Property
+          tempo:Property
+        ) ;
+    ] ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasPurpose
@@ -844,6 +843,7 @@ tempo:hasQuantityKind
 .
 tempo:hasReferenceDocument
   rdf:type owl:ObjectProperty ;
+  rdfs:domain tempo:ConceptType ;
   rdfs:domain tempo:Library ;
   rdfs:label "has reference document"@en ;
   rdfs:range tempo:ReferenceDocument ;
@@ -869,7 +869,7 @@ tempo:hasReplacedObjects
 .
 tempo:hasSetOfProperties
   rdf:type owl:ObjectProperty ;
-  rdfs:domain tempo:DataTemplate ;
+  rdfs:domain tempo:Library ;
   rdfs:label "has set of properties" ;
   rdfs:range tempo:SetOfProperties ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -891,14 +891,6 @@ It is possible to use this attribute to explain there is no unit attached to the
   rdfs:label "has Unit"@en ;
   rdfs:range tempo:Unit ;
   rdfs:seeAlso <http://qudt.org/vocab/unit/UNITLESS> ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-.
-tempo:hasUserDefined
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain tempo:Library ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
-  rdfs:range tempo:UserDefined ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasVisualRepresentation
