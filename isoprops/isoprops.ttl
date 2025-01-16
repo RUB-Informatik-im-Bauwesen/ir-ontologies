@@ -606,8 +606,18 @@ Values can be string or numbers""" ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty isoprops:index ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty isoprops:hasUnit ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty isoprops:index ;
     ] ;
   owl:equivalentClass tempo:Enumeration ;
   skos:scopeNote "PA039" ;
