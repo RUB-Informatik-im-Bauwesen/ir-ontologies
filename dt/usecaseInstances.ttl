@@ -1,0 +1,335 @@
+# baseURI: http://example.org/v0/tempo-usecase
+# imports: https://w3id.org/isoprops
+# imports: https://w3id.org/tempo
+# prefix: tempo-usecase
+
+@prefix isoprops: <https://w3id.org/isoprops#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tempo: <https://w3id.org/tempo#> .
+@prefix tempo-usecase: <http://example.org/v0/tempo-usecase#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/v0/tempo-usecase>
+  rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/isoprops> ;
+  owl:imports <https://w3id.org/tempo> ;
+.
+tempo-usecase:CostGroup330
+  rdf:type isoprops:Property ;
+  isoprops:countryOfOrigin "DE" ;
+  isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfRevision "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfVersion "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:definitionInLanguage "Cost group 330 for External walls/vertical components, external according to DIN 276"@en ;
+  isoprops:dynamicProperty "no" ;
+  isoprops:globallyUniqueIdentifier "56b31aeb-56d7-4c27-8066-5e3cd63ba120" ;
+  isoprops:hasNameInLanguage "Cost group 330" ;
+  isoprops:hasPhysicalQuantity quantitykind:Dimensionless ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup330 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup331 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup332 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup333 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup334 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup335 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup336 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup337 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup338 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup339 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup340 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup341 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup342 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup343 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup344 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup345 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup346 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup347 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup348 ;
+  isoprops:hasPossibleValues tempo-usecase:PossibleValues_CostGroup349 ;
+  isoprops:hasUnit <http://qudt.org/vocab/unit/UNITLESS> ;
+  isoprops:status "active" ;
+.
+tempo-usecase:CostGroups
+  rdf:type tempo:SetOfProperties ;
+  isoprops:categoryOfGroupOfProperties "Class" ;
+  isoprops:countryOfOrigin "DE" ;
+  isoprops:countryOfUse "DE" ;
+  isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfRevision "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfVersion "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:globallyUniqueIdentifier "27a4819d-f9cf-4857-b043-a252fda373df" ;
+  isoprops:revisionNumber 1 ;
+  isoprops:status "active" ;
+  isoprops:versionNumber 1 ;
+  tempo:countryOfOrigin "DE" ;
+  tempo:definitionInLanguage "Cost Groups according to DIN 276"@en ;
+  tempo:hasProperty tempo-usecase:CostGroup330 ;
+  tempo:nameInLanguage "Cost Groups"@en ;
+.
+tempo-usecase:DIN276
+  rdf:type tempo:ReferenceDocument ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  tempo:definitionInLanguage "This standard applies to cost planning in building, in particular the identification and classification of costs." ;
+  tempo:nameInLanguage "DIN 276" ;
+.
+tempo-usecase:DIN4102
+  rdf:type tempo:ReferenceDocument ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  isoprops:definitionInLanguage "Fire behavior of building materials and components; components, terms, requirements and tests " ;
+  isoprops:hasNameInLanguage "DIN 4102" ;
+.
+tempo-usecase:DataTemplateCostGroup
+  rdf:type tempo:DataTemplate ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  tempo:definitionInLanguage "Data template for wall cost groups" ;
+  tempo:hasGroupOfProperties tempo-usecase:CostGroups ;
+  tempo:hasReferenceDocument tempo-usecase:DIN276 ;
+  tempo:isAssignedToObjectType tempo-usecase:Wall ;
+  tempo:majorVersion 1 ;
+  tempo:minorVersion 1 ;
+  tempo:nameInLanguage "Wall Data Template" ;
+.
+tempo-usecase:FireProtectionProperties
+  rdf:type tempo:SetOfProperties ;
+  isoprops:categoryOfGroupOfProperties "Class" ;
+  isoprops:countryOfOrigin "DE" ;
+  isoprops:countryOfUse "DE" ;
+  isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfRevision "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfVersion "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:globallyUniqueIdentifier "2bda5163-03e9-4e81-baa1-5280cdc3d81c" ;
+  isoprops:revisionNumber 1 ;
+  isoprops:status "active" ;
+  isoprops:versionNumber 1 ;
+  tempo:countryOfOrigin "DE" ;
+  tempo:definitionInLanguage "Contains all properties that are relevant for fire protection"@en ;
+  tempo:hasProperty tempo-usecase:FireResistanceClass ;
+  tempo:nameInLanguage "Fire Protection Properties"@en ;
+.
+tempo-usecase:FireResistanceClass
+  rdf:type isoprops:Property ;
+  isoprops:countryOfOrigin "DE" ;
+  isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfRevision "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:dateOfVersion "2024-10-12T14:36"^^xsd:dateTime ;
+  isoprops:definitionInLanguage "fire resistance class according to DIN 4102-2"@en ;
+  isoprops:dynamicProperty "no" ;
+  isoprops:globallyUniqueIdentifier "aa9f70b7-1b37-4946-a84d-c1b10137411b" ;
+  isoprops:hasNameInLanguage "Fire Resistance Class" ;
+  isoprops:hasPhysicalQuantity quantitykind:Dimensionless ;
+  isoprops:hasPossibleValues tempo-usecase:FireResistanceF30 ;
+  isoprops:hasPossibleValues tempo-usecase:FireResistanceF60 ;
+  isoprops:hasPossibleValues tempo-usecase:FireResistanceF90 ;
+  isoprops:hasUnit <http://qudt.org/vocab/unit/UNITLESS> ;
+  isoprops:status "active" ;
+.
+tempo-usecase:FireResistanceF30
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Fire Resistance F 30"@en ;
+  <https://schema.org/value> "F30" ;
+.
+tempo-usecase:FireResistanceF60
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Fire Resistance F 60"@en ;
+  <https://schema.org/value> "F60" ;
+.
+tempo-usecase:FireResistanceF90
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Fire Resistance F 90"@en ;
+  <https://schema.org/value> "F90" ;
+.
+tempo-usecase:FireSafetyDoorTemplate
+  rdf:type tempo:DataTemplate ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  tempo:definitionInLanguage "Data template for a fire safty door"^^rdf:langString ;
+  tempo:hasGroupOfProperties tempo-usecase:FireProtectionProperties ;
+  tempo:hasReferenceDocument tempo-usecase:DIN4102 ;
+  tempo:isAssignedToObjectType tempo-usecase:ifcDoor ;
+  tempo:majorVersion 1 ;
+  tempo:minorVersion 1 ;
+  tempo:nameInLanguage "Fire Safety Door Data Template" ;
+.
+tempo-usecase:PossibleValues_CostGroup330
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 330"@en ;
+  <https://schema.org/value> "330" ;
+  isoprops:index 1 ;
+.
+tempo-usecase:PossibleValues_CostGroup331
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 331"@en ;
+  <https://schema.org/value> "331" ;
+  isoprops:index 2 ;
+.
+tempo-usecase:PossibleValues_CostGroup332
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 332"@en ;
+  <https://schema.org/value> "332" ;
+  isoprops:index 3 ;
+.
+tempo-usecase:PossibleValues_CostGroup333
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 333"@en ;
+  <https://schema.org/value> "333" ;
+  isoprops:index 4 ;
+.
+tempo-usecase:PossibleValues_CostGroup334
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 334"@en ;
+  <https://schema.org/value> "334" ;
+  isoprops:index 5 ;
+.
+tempo-usecase:PossibleValues_CostGroup335
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 335"@en ;
+  <https://schema.org/value> "335" ;
+  isoprops:index 6 ;
+.
+tempo-usecase:PossibleValues_CostGroup336
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 336"@en ;
+  <https://schema.org/value> "336" ;
+  isoprops:index 7 ;
+.
+tempo-usecase:PossibleValues_CostGroup337
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 337"@en ;
+  <https://schema.org/value> "337" ;
+  isoprops:index 8 ;
+.
+tempo-usecase:PossibleValues_CostGroup338
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 338"@en ;
+  <https://schema.org/value> "338" ;
+  isoprops:index 9 ;
+.
+tempo-usecase:PossibleValues_CostGroup339
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 339"@en ;
+  <https://schema.org/value> "339" ;
+  isoprops:index 10 ;
+.
+tempo-usecase:PossibleValues_CostGroup340
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 340"@en ;
+  <https://schema.org/value> "340" ;
+  isoprops:index 11 ;
+.
+tempo-usecase:PossibleValues_CostGroup341
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 341"@en ;
+  <https://schema.org/value> "341" ;
+  isoprops:index 12 ;
+.
+tempo-usecase:PossibleValues_CostGroup342
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 342"@en ;
+  <https://schema.org/value> "342" ;
+  isoprops:index 13 ;
+.
+tempo-usecase:PossibleValues_CostGroup343
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 343"@en ;
+  <https://schema.org/value> "343" ;
+  isoprops:index 14 ;
+.
+tempo-usecase:PossibleValues_CostGroup344
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 344	"@en ;
+  <https://schema.org/value> "344" ;
+  isoprops:index 15 ;
+.
+tempo-usecase:PossibleValues_CostGroup345
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 345"@en ;
+  <https://schema.org/value> "345" ;
+  isoprops:index 16 ;
+.
+tempo-usecase:PossibleValues_CostGroup346
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 346"@en ;
+  <https://schema.org/value> "346" ;
+  isoprops:index 17 ;
+.
+tempo-usecase:PossibleValues_CostGroup347
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 347"@en ;
+  <https://schema.org/value> "347" ;
+  isoprops:index 18 ;
+.
+tempo-usecase:PossibleValues_CostGroup348
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 348"@en ;
+  <https://schema.org/value> "348" ;
+  isoprops:index 19 ;
+.
+tempo-usecase:PossibleValues_CostGroup349
+  rdf:type isoprops:PossibleValues ;
+  rdfs:label "Cost group 349"@en ;
+  <https://schema.org/value> "349" ;
+  isoprops:index 20 ;
+.
+tempo-usecase:UseCaseLibrary
+  rdf:type tempo:Library ;
+  rdfs:label "Use Case Library" ;
+  tempo:hasDataTemplate tempo-usecase:DataTemplateCostGroup ;
+  tempo:hasDataTemplate tempo-usecase:FireSafetyDoorTemplate ;
+  tempo:hasProperty tempo-usecase:CostGroup330 ;
+  tempo:hasProperty tempo-usecase:FireResistanceClass ;
+  tempo:hasQuantityKind quantitykind:Dimensionless ;
+  tempo:hasReferenceDocument tempo-usecase:DIN276 ;
+  tempo:hasReferenceDocument tempo-usecase:DIN4102 ;
+  tempo:hasSetOfProperties tempo-usecase:CostGroups ;
+  tempo:hasSetOfProperties tempo-usecase:FireProtectionProperties ;
+  tempo:isAssignedToObjectType tempo-usecase:Wall ;
+  tempo:isAssignedToObjectType tempo-usecase:ifcDoor ;
+  tempo:nameInLanguage "Use Case Library"@en ;
+.
+tempo-usecase:Wall
+  rdf:type tempo:ObjectType ;
+  tempo:countryOfOrigin "DE" ;
+  tempo:hasDictionary tempo-usecase:ifcWallReference ;
+  tempo:majorVersion 1 ;
+  tempo:minorVersion 1 ;
+  tempo:nameInLanguage "Object type Wall" ;
+.
+tempo-usecase:ifcDoor
+  rdf:type tempo:ObjectType ;
+  rdfs:label "Lageplan"@de ;
+  rdfs:label "Site plan"@en ;
+  tempo:countryOfOrigin "DE" ;
+  tempo:hasDictionary tempo-usecase:ifcDoorReference ;
+  tempo:majorVersion 1 ;
+  tempo:minorVersion 1 ;
+  tempo:nameInLanguage "Object type IFC door" ;
+.
+tempo-usecase:ifcDoorReference
+  rdf:type tempo:ReferenceType ;
+  rdfs:label "Reference to IFC Door"@en ;
+  tempo:conceptGUID "b5d318f1-92a7-4421-ae57-eed9df1f519e" ;
+  tempo:hasReferenceURI <https://standards.buildingsmart.org/IFC/DEV/IFC4/FINAL/OWL#IfcDoor> ;
+.
+tempo-usecase:ifcWallReference
+  rdf:type tempo:ReferenceType ;
+  rdfs:label "Reference to IFC Wall"@en ;
+  tempo:conceptGUID "69511fe4-21eb-4631-997f-09fa3e939890" ;
+  tempo:hasReferenceURI <https://standards.buildingsmart.org/IFC/DEV/IFC4/FINAL/OWL#IfcWall> ;
+.
