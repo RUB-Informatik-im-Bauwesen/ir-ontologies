@@ -73,7 +73,7 @@ loin:Actor
 .
 loin:AlphanumericalInformation
   rdf:type owl:Class ;
-  rdfs:comment "Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Alphanumerical information is a term for specifying the information need according to ISO 7817-3"@en ;
   rdfs:label "Alphanumerical information"@en ;
   rdfs:subClassOf loin:Information ;
   rdfs:subClassOf [
@@ -89,17 +89,17 @@ loin:AlphanumericalInformation
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasPhysicalQuantity ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasProperty ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasQuantityKind ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -118,26 +118,21 @@ loin:AlphanumericalInformation
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasUserDefined ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   vs:term_status "stable" ;
 .
 loin:Appearance
   rdf:type owl:Class ;
-  rdfs:comment "Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Appearance as a geometrical information specification for information need according to ISO 7817-3"@en ;
   rdfs:label "Appearance"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
   rdfs:subClassOf [
@@ -195,7 +190,7 @@ loin:Codification
 .
 loin:Detail
   rdf:type owl:Class ;
-  rdfs:comment "Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Detail as a geometrical information specification for information need according to ISO 7817-3"@en ;
   rdfs:label "Detail"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
   rdfs:subClassOf [
@@ -217,7 +212,7 @@ loin:Detail
 .
 loin:Dimensionality
   rdf:type owl:Class ;
-  rdfs:comment "Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Dimensionality as a geometrical information specification for information need according to ISO 7817-3"@en ;
   rdfs:label "Dimensionality"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
   rdfs:subClassOf [
@@ -238,41 +233,42 @@ loin:Dimensionality
 .
 loin:DocumentContent
   rdf:type owl:Class ;
-  rdfs:comment "Document specification for content for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Document specification for content for information need according to ISO 7817-3"@en ;
   rdfs:label "Document content"@en ;
   rdfs:subClassOf loin:DocumentSpecification ;
   vs:term_status "stable" ;
 .
 loin:DocumentPurpose
   rdf:type owl:Class ;
-  rdfs:comment "Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document"@en ;
+  rdfs:comment "Document purpose is a extension according to ISO 7817-3. It specifies the use of document"@en ;
   rdfs:label "Document purpose"@en ;
   rdfs:subClassOf loin:DocumentSpecification ;
   vs:term_status "stable" ;
 .
 loin:DocumentSpecification
   rdf:type owl:Class ;
-  rdfs:comment "Additional specification of document for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Additional specification of document for information need according to ISO 7817-3"@en ;
   rdfs:label "Document specification"@en ;
   rdfs:subClassOf owl:Thing ;
   vs:term_status "stable" ;
 .
 loin:DocumentType
   rdf:type owl:Class ;
+  rdfs:comment "Specifies the file typ of the required document"@en ;
   rdfs:label "Document type"@en ;
   rdfs:subClassOf loin:DocumentSpecification ;
   vs:term_status "stable" ;
 .
 loin:Documentation
   rdf:type owl:Class ;
-  rdfs:comment "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Documentation is a term for specifying the information need according to ISO 7817-3"@en ;
   rdfs:label "Documentation"@en ;
   rdfs:subClassOf loin:Information ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -284,7 +280,7 @@ loin:Documentation
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -332,13 +328,13 @@ loin:GeometricalInformation
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -452,9 +448,20 @@ loin:Length
   rdfs:label "Length restriction"@en ;
   vs:term_status "stable" ;
 .
+loin:LevelOfInformationNeed
+  rdf:type owl:Class ;
+  rdfs:comment "Level of Information Need as defined by ISO 7817"@en ;
+  rdfs:label "Level Of Information Need"@en ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasSpecification ;
+    ] ;
+.
 loin:Location
   rdf:type owl:Class ;
-  rdfs:comment "Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Location as a geometrical information specification for information need according to ISO 7817-3"@en ;
   rdfs:label "Location"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
   rdfs:subClassOf [
@@ -510,7 +517,7 @@ loin:OntologyDataDefinition
 .
 loin:ParametricBehaviour
   rdf:type owl:Class ;
-  rdfs:comment "Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Parametric behaviour as a geometrical information specification for information need according to ISO 7817-3"@en ;
   rdfs:label "Parametric behaviour"@en ;
   rdfs:subClassOf loin:GeometrySpecification ;
   rdfs:subClassOf [
@@ -542,6 +549,7 @@ loin:Photograph
 .
 loin:Prerequisites
   rdf:type owl:Class ;
+  rdfs:comment "Prerequisites is a term for specifying the prerequisites of a corresponding specification according to ISO 7817-3"@en ;
   rdfs:label "Prerequisites"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
@@ -572,7 +580,7 @@ loin:Prerequisites
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -602,7 +610,7 @@ loin:Prerequisites
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
 .
 loin:Provided_As_Information
@@ -613,7 +621,7 @@ loin:Provided_As_Information
 .
 loin:Purpose
   rdf:type owl:Class ;
-  rdfs:comment "Purpose is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Purpose is a contextual aspect according to ISO 7817-3"@en ;
   rdfs:label "Purpose" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
@@ -643,7 +651,7 @@ loin:Report
 .
 loin:RequiredDocument
   rdf:type owl:Class ;
-  rdfs:comment "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "Document is a term for specifying the documentation of information need according to ISO 7817-3"@en ;
   rdfs:label "Document"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
@@ -665,13 +673,13 @@ loin:RequiredDocument
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -746,12 +754,6 @@ loin:Specification
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass loin:SpecificationPerObjectType ;
-      owl:onProperty loin:hasSpecificationPerObjectType ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange rdf:langString ;
       owl:onProperty loin:hasDescriptionInLanguage ;
     ] ;
@@ -765,7 +767,7 @@ loin:Specification
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -789,7 +791,7 @@ loin:Specification
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange <https://w3id.org/tempo#GUIDType> ;
-      owl:onProperty <https://w3id.org/tempo#hasNodeID> ;
+      owl:onProperty <https://w3id.org/tempo#conceptGUID> ;
     ] ;
 .
 loin:SpecificationInstance
@@ -800,7 +802,7 @@ loin:SpecificationInstance
 .
 loin:SpecificationPerObjectType
   rdf:type owl:Class ;
-  rdfs:comment "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "SpecificationPerObjectType is a contextual aspect according to  ISO 7817-3"@en ;
   rdfs:label "Specification per Object Type"@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf <https://w3id.org/tempo#ConceptType> ;
@@ -816,15 +818,14 @@ loin:SpecificationPerObjectType
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass loin:AlphanumericalInformation ;
-      owl:onProperty loin:hasAlphanumericalInformation ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty loin:hasObjectType ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <https://w3id.org/tempo#ObjectType> ;
-      owl:onProperty loin:hasObjectType ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass loin:AlphanumericalInformation ;
+      owl:onProperty loin:hasAlphanumericalInformation ;
     ] ;
   vs:term_status "stable" ;
 .
@@ -901,7 +902,7 @@ loin:hasAgent
 .
 loin:hasAlphanumericalInformation
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates an alphanumerical information with a LOIN object according to ISO 7817-3"@en ;
   rdfs:domain loin:SpecificationPerObjectType ;
   rdfs:label "has alphanumerical information"@en ;
   rdfs:range loin:AlphanumericalInformation ;
@@ -956,7 +957,7 @@ loin:hasDescriptionInLanguage
   rdfs:label "Description in Language"@en ;
   rdfs:range rdf:langString ;
   rdfs:subPropertyOf owl:topDataProperty ;
-  owl:equivalentProperty <https://w3id.org/isoprops#DescriptionInLanguage> ;
+  owl:equivalentProperty <https://w3id.org/isoprops#hasDescriptionInLanguage> ;
 .
 loin:hasDetail
   rdf:type owl:DatatypeProperty ;
@@ -994,7 +995,7 @@ loin:hasDimensionality
 .
 loin:hasDocument
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates a set of documents with documentation according to ISO 7817-3"@en ;
   rdfs:domain loin:Documentation ;
   rdfs:label "has document"@en ;
   rdfs:range loin:RequiredDocument ;
@@ -1003,7 +1004,7 @@ loin:hasDocument
 .
 loin:hasDocumentSpecification
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the document specifications with a document according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the document specifications with a document according to ISO 7817-3"@en ;
   rdfs:domain loin:RequiredDocument ;
   rdfs:label "has documentaton specification"@en ;
   rdfs:range loin:DocumentSpecification ;
@@ -1012,7 +1013,7 @@ loin:hasDocumentSpecification
 .
 loin:hasDocumentation
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the documentation with a LOIN object according to ISO 7817-3"@en ;
   rdfs:domain loin:SpecificationPerObjectType ;
   rdfs:label "has documentation"@en ;
   rdfs:range loin:Documentation ;
@@ -1021,7 +1022,7 @@ loin:hasDocumentation
 .
 loin:hasGeometricalInformation
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the geometrical information with a LOIN object according to ISO 7817-3"@en ;
   rdfs:domain loin:SpecificationPerObjectType ;
   rdfs:label "has geometrical information"@en ;
   rdfs:range loin:GeometricalInformation ;
@@ -1030,14 +1031,14 @@ loin:hasGeometricalInformation
 .
 loin:hasGeometrySpecification
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the specific aspects with geometrical information according to ISO 7817-3"@en ;
   rdfs:comment """[\"Appearance\",
 \"Detail\",
 \"Dimensionality\",
 \"Location\",
 \"ParametricBehaviour\"]""" ;
   rdfs:domain loin:GeometricalInformation ;
-  rdfs:label "has geometrical information specification"@en ;
+  rdfs:label "has geometrical specification"@en ;
   rdfs:range loin:GeometrySpecification ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
@@ -1087,8 +1088,10 @@ loin:hasInformationContent
 .
 loin:hasIntendedUse
   rdf:type owl:ObjectProperty ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
+  rdfs:comment "The object property relates the alphanumerical information with the intened use"@en ;
+  rdfs:domain loin:AlphanumericalInformation ;
+  rdfs:label "has Intended Use"@en ;
+  rdfs:range <https://w3id.org/tempo#IntendedUse> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:equivalentProperty <https://w3id.org/tempo#hasIntendedUse> ;
 .
@@ -1116,9 +1119,10 @@ loin:hasNameInLanguage
 .
 loin:hasObjectType
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property relates the specification per object type with the object type"@en ;
   rdfs:domain loin:SpecificationPerObjectType ;
-  rdfs:label "has object type" ;
-  rdfs:range dt:ConstructionObject ;
+  rdfs:label "has object type"@en ;
+  rdfs:range <https://w3id.org/tempo#ObjectType> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasParametricBehaviour
@@ -1137,22 +1141,18 @@ loin:hasParametricBehaviour
   rdfs:subPropertyOf owl:topDataProperty ;
   vs:term_status "stable" ;
 .
-loin:hasPhysicalQuantity
-  rdf:type owl:ObjectProperty ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty loin:hasPhysicalQuantity ;
-.
 loin:hasPrerequisites
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property relates the specification with the prerequisites"@en ;
+  rdfs:domain loin:Specification ;
   rdfs:label "has Prerequisites"@en ;
+  rdfs:range loin:Prerequisites ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 loin:hasProperty
   rdf:type owl:ObjectProperty ;
   rdfs:domain <https://w3id.org/tempo#DataTemplate> ;
-  rdfs:label "has property" ;
+  rdfs:label "The object property relates the data template with the properties"@en ;
   rdfs:range <https://w3id.org/isoprops#Property> ;
   rdfs:range <https://w3id.org/tempo#Property> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1160,15 +1160,24 @@ loin:hasProperty
 .
 loin:hasPurpose
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the purpose with the prerequisites according to ISO 7817-3"@en ;
+  rdfs:domain loin:Prerequisites ;
   rdfs:label "has purpose"@en ;
   rdfs:range loin:Purpose ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
+loin:hasQuantityKind
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain loin:AlphanumericalInformation ;
+  rdfs:label "The object property relates the alphanumerical information with the quantitiy kind according to ISO 7817-3"@en ;
+  rdfs:range <https://w3id.org/tempo#QuantityKind> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
 loin:hasReceivingActor
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the prerequisites with the receiving actor according to ISO 7817-3"@en ;
+  rdfs:domain loin:Prerequisites ;
   rdfs:label "has receiving actor"@en ;
   rdfs:range loin:ReceivingActor ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1176,7 +1185,8 @@ loin:hasReceivingActor
 .
 loin:hasReferenceDocument
   rdf:type owl:ObjectProperty ;
-  rdfs:domain <https://w3id.org/tempo#Library> ;
+  rdfs:comment "The object property relates the alphanumerical information with the reference document according to ISO 7817-3"@en ;
+  rdfs:domain loin:AlphanumericalInformation ;
   rdfs:label "has reference document" ;
   rdfs:range <https://w3id.org/tempo#ReferenceDocument> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1207,24 +1217,33 @@ loin:hasRequirementType
 .
 loin:hasSendingActor
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
-  rdfs:label "has has Sending Actor"@en ;
+  rdfs:comment "The object property relates the  with the sending actor  according to ISO 7817"@en ;
+  rdfs:domain loin:Prerequisites ;
+  rdfs:label "has Sending Actor"@en ;
   rdfs:range loin:SendingActor ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
 loin:hasSetOfProperties
   rdf:type owl:ObjectProperty ;
-  rdfs:domain <https://w3id.org/tempo#DataTemplate> ;
-  rdfs:domain <https://w3id.org/tempo#SetOfProperties> ;
-  rdfs:label "has set of properties" ;
+  rdfs:domain loin:AlphanumericalInformation ;
+  rdfs:label "The object property relates the alphanumerical information with the set of properties  according to ISO 7817"@en ;
   rdfs:range <https://w3id.org/tempo#SetOfProperties> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   owl:equivalentProperty <https://w3id.org/tempo#hasSetOfProperties> ;
 .
+loin:hasSpecification
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The object property relates the LOIN with the specification according to ISO 7817"@en ;
+  rdfs:domain loin:LevelOfInformationNeed ;
+  rdfs:label "Specification"@en ;
+  rdfs:range loin:Specification ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+.
 loin:hasSpecificationPerObjectType
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)"@en ;
+  rdfs:comment "The object property relates the specification with the specification per object type according to ISO 7817"@en ;
+  rdfs:domain loin:Specification ;
   rdfs:label "has specification per object type"@en ;
   rdfs:range loin:SpecificationPerObjectType ;
   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -1232,17 +1251,10 @@ loin:hasSpecificationPerObjectType
 .
 loin:hasUnit
   rdf:type owl:ObjectProperty ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
+  rdfs:domain loin:AlphanumericalInformation ;
+  rdfs:label "The object property relates the alphanumerical information with the unit according to ISO 7817"@en ;
+  rdfs:range <https://w3id.org/tempo#Unit> ;
   rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <https://w3id.org/tempo#hasUnit> ;
-.
-loin:hasUserDefined
-  rdf:type owl:ObjectProperty ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <https://w3id.org/tempo#hasUserDefined> ;
 .
 loin:informationDeliveryMilestone
   rdf:type owl:DatatypeProperty ;
