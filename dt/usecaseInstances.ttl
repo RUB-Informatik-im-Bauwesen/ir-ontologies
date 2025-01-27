@@ -76,22 +76,16 @@ tempo-usecase:CostGroups
 .
 tempo-usecase:DIN276
   rdf:type tempo:ReferenceDocument ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
   tempo:definitionInLanguage "This standard applies to cost planning in building, in particular the identification and classification of costs." ;
   tempo:nameInLanguage "DIN 276" ;
 .
 tempo-usecase:DIN4102
   rdf:type tempo:ReferenceDocument ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
   isoprops:definitionInLanguage "Fire behavior of building materials and components; components, terms, requirements and tests " ;
   isoprops:hasNameInLanguage "DIN 4102" ;
 .
 tempo-usecase:DataTemplateCostGroup
   rdf:type tempo:DataTemplate ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
   tempo:definitionInLanguage "Data template for wall cost groups" ;
   tempo:hasGroupOfProperties tempo-usecase:CostGroups ;
   tempo:hasReferenceDocument tempo-usecase:DIN276 ;
@@ -99,6 +93,16 @@ tempo-usecase:DataTemplateCostGroup
   tempo:majorVersion 1 ;
   tempo:minorVersion 1 ;
   tempo:nameInLanguage "Wall Data Template" ;
+.
+tempo-usecase:DataTemplateFireSafetyDoor
+  rdf:type tempo:DataTemplate ;
+  tempo:definitionInLanguage "Data template for a fire safty door"^^rdf:langString ;
+  tempo:hasGroupOfProperties tempo-usecase:FireProtectionProperties ;
+  tempo:hasReferenceDocument tempo-usecase:DIN4102 ;
+  tempo:isAssignedToObjectType tempo-usecase:ifcDoor ;
+  tempo:majorVersion 1 ;
+  tempo:minorVersion 1 ;
+  tempo:nameInLanguage "Fire Safety Door Data Template" ;
 .
 tempo-usecase:FireProtectionProperties
   rdf:type tempo:SetOfProperties ;
@@ -154,18 +158,6 @@ tempo-usecase:FireResistanceF90
   rdf:type isoprops:PossibleValues ;
   rdfs:label "Fire Resistance F 90"@en ;
   <https://schema.org/value> "F90" ;
-.
-tempo-usecase:FireSafetyDoorTemplate
-  rdf:type tempo:DataTemplate ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
-  tempo:definitionInLanguage "Data template for a fire safty door"^^rdf:langString ;
-  tempo:hasGroupOfProperties tempo-usecase:FireProtectionProperties ;
-  tempo:hasReferenceDocument tempo-usecase:DIN4102 ;
-  tempo:isAssignedToObjectType tempo-usecase:ifcDoor ;
-  tempo:majorVersion 1 ;
-  tempo:minorVersion 1 ;
-  tempo:nameInLanguage "Fire Safety Door Data Template" ;
 .
 tempo-usecase:PossibleValues_CostGroup330
   rdf:type isoprops:PossibleValues ;
@@ -291,7 +283,7 @@ tempo-usecase:UseCaseLibrary
   rdf:type tempo:Library ;
   rdfs:label "Use Case Library" ;
   tempo:hasDataTemplate tempo-usecase:DataTemplateCostGroup ;
-  tempo:hasDataTemplate tempo-usecase:FireSafetyDoorTemplate ;
+  tempo:hasDataTemplate tempo-usecase:DataTemplateFireSafetyDoor ;
   tempo:hasProperty tempo-usecase:CostGroup330 ;
   tempo:hasProperty tempo-usecase:FireResistanceClass ;
   tempo:hasQuantityKind quantitykind:Dimensionless ;
@@ -313,8 +305,6 @@ tempo-usecase:Wall
 .
 tempo-usecase:ifcDoor
   rdf:type tempo:ObjectType ;
-  rdfs:label "Lageplan"@de ;
-  rdfs:label "Site plan"@en ;
   tempo:countryOfOrigin "DE" ;
   tempo:hasDictionary tempo-usecase:ifcDoorReference ;
   tempo:majorVersion 1 ;
@@ -325,11 +315,11 @@ tempo-usecase:ifcDoorReference
   rdf:type tempo:ReferenceType ;
   rdfs:label "Reference to IFC Door"@en ;
   tempo:conceptGUID "b5d318f1-92a7-4421-ae57-eed9df1f519e" ;
-  tempo:hasReferenceURI <https://standards.buildingsmart.org/IFC/DEV/IFC4/FINAL/OWL#IfcDoor> ;
+  tempo:hasReferenceURI <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcDoor> ;
 .
 tempo-usecase:ifcWallReference
   rdf:type tempo:ReferenceType ;
   rdfs:label "Reference to IFC Wall"@en ;
   tempo:conceptGUID "69511fe4-21eb-4631-997f-09fa3e939890" ;
-  tempo:hasReferenceURI <https://standards.buildingsmart.org/IFC/DEV/IFC4/FINAL/OWL#IfcWall> ;
+  tempo:hasReferenceURI <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWall> ;
 .
