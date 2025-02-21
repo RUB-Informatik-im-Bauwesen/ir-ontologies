@@ -1,75 +1,219 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
-    "name" : "Ruhr University Bochum"
-  }, {
-    "@id" : "_:b1",
     "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "loin:hasSpecificationPerObjectType"
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasAttributeName"
   }, {
     "@id" : "_:b10",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasRestrictionType"
+    "minQualifiedCardinality" : "0",
+    "onClass" : "loin:SpecificationPerObjectType",
+    "onProperty" : "loin:hasSpecificationPerObjectType"
   }, {
-    "@id" : "_:b11",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasPropertyName"
-  }, {
-    "@id" : "_:b12",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasIFCDataType"
-  }, {
-    "@id" : "_:b13",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:belongsToPset"
-  }, {
-    "@id" : "_:b14",
+    "@id" : "_:b103",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "ids4loin:restrictionFormulation"
   }, {
-    "@id" : "_:b15",
+    "@id" : "_:b106",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "loin:hasNameInLanguage"
+  }, {
+    "@id" : "_:b110",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b111",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentPurpose"
+  }, {
+    "@id" : "_:b112",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "D0", "D1", "D2", "D3" ]
+    }
+  }, {
+    "@id" : "_:b113",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "loin:belongsToInformationContent"
+  }, {
+    "@id" : "_:b114",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "icdd4loin:isRelatedToContainerLinkset"
+  }, {
+    "@id" : "_:b115",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentType"
+  }, {
+    "@id" : "_:b116",
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasDocumentSpecification",
+    "someValuesFrom" : "loin:DocumentContent"
+  }, {
+    "@id" : "_:b117",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "icdd4loin:isRelatedToContainerDocument"
+  }, {
+    "@id" : "_:b119",
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.inf.bi.rub.de",
+    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
+    "parentOrganization" : "_:b120"
+  }, {
+    "@id" : "_:b12",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "loin:hasNameInLanguage"
+  }, {
+    "@id" : "_:b120",
+    "@type" : "schema:Organization",
+    "name" : "Ruhr University Bochum, Germany"
+  }, {
+    "@id" : "_:b121",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasDescriptionInLanguage"
+  }, {
+    "@id" : "_:b123",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "ids4loin:hasRestrictionType"
   }, {
-    "@id" : "_:b19",
+    "@id" : "_:b126",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "NotRequested", "Absolute", "Relative" ]
+    }
+  }, {
+    "@id" : "_:b127",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "L1", "L2", "L3", "L4", "L5" ]
+    }
+  }, {
+    "@id" : "_:b13",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "0",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "loin:hasDescriptionInLanguage"
+  }, {
+    "@id" : "_:b130",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:value"
+  }, {
+    "@id" : "_:b131",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "loin:hasIdentifierType"
   }, {
+    "@id" : "_:b132",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasBreakdownStructure"
+  }, {
+    "@id" : "_:b133",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b138",
+    "@type" : "owl:Restriction",
+    "onProperty" : "ids4loin:hasApplicability",
+    "someValuesFrom" : "ids4loin:Entity"
+  }, {
+    "@id" : "_:b139",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "_:b140",
+    "onProperty" : "loin:hasParametricBehaviour",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b14",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "loin:Prerequisites",
+    "onProperty" : "loin:hasPrerequisites"
+  }, {
+    "@id" : "_:b140",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "ExplicitGeometry", "ConstructiveGeometry", "ParametricGeometry" ]
+    }
+  }, {
+    "@id" : "_:b142",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "_:b127",
+    "onProperty" : "loin:hasDetail",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b144",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b145",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b146",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b147",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasIFCDataType"
+  }, {
+    "@id" : "_:b15",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b16",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "NotRequested", "NoColor", "SingleColor", "MaterialColor", "Textures" ]
+    }
+  }, {
+    "@id" : "_:b18",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "D0", "D1", "D2", "D3" ]
+    }
+  }, {
     "@id" : "_:b2",
     "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasGeometrySpecification",
-    "someValuesFrom" : "loin:ParametricBehaviour"
-  }, {
-    "@id" : "_:b20",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:requested"
-  }, {
-    "@id" : "_:b21",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:description"
+    "minCardinality" : "0",
+    "onProperty" : "loin:hasUnit"
   }, {
     "@id" : "_:b22",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasReceivingActor"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:receivingActor"
   }, {
     "@id" : "_:b23",
-    "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "ids4loin:hasApplicability"
-  }, {
-    "@id" : "_:b24",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "ids4loin:restrictionFormulation"
@@ -77,254 +221,382 @@
     "@id" : "_:b25",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
-    "onProperty" : "ids4loin:hasRestrictionType"
+    "onProperty" : "ids4loin:restrictionFormulation"
   }, {
     "@id" : "_:b26",
-    "@type" : "schema:Person",
-    "email" : "mailto:liu.liu-m6r@rub.de",
-    "identifier" : "https://orcid.org/0000-0001-5907-7609",
-    "memberOf" : "_:b46",
-    "name" : "Liu Liu"
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
   }, {
     "@id" : "_:b27",
-    "@type" : "schema:Person",
-    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
-    "identifier" : "https://orcid.org/0000-0002-6249-243X",
-    "memberOf" : "_:b0",
-    "name" : "Philipp Hagedorn"
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:purpose"
   }, {
     "@id" : "_:b28",
-    "@type" : "schema:Organization",
-    "identifier" : "https://www.inf.bi.rub.de",
-    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
-    "parentOrganization" : "_:b56"
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
+    "name" : "Ruhr University Bochum"
   }, {
     "@id" : "_:b29",
     "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasGeometrySpecification",
-    "someValuesFrom" : "loin:Dimensionality"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasDocumentSpecification",
-    "someValuesFrom" : "loin:DocumentFormat"
-  }, {
-    "@id" : "_:b30",
-    "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasGeometrySpecification",
-    "someValuesFrom" : "loin:Detail"
-  }, {
-    "@id" : "_:b31",
-    "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasGeometrySpecification",
-    "someValuesFrom" : "loin:Location"
-  }, {
-    "@id" : "_:b32",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:requested"
+    "onDataRange" : "_:b35",
+    "onProperty" : "loin:hasLocation",
+    "qualifiedCardinality" : "1"
   }, {
     "@id" : "_:b33",
     "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasGeometrySpecification",
-    "someValuesFrom" : "loin:Appearance"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:sendingActor"
   }, {
     "@id" : "_:b34",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:restrictionFormulation"
+    "onDataRange" : "_:b112",
+    "onProperty" : "loin:hasDimensionality",
+    "qualifiedCardinality" : "1"
   }, {
     "@id" : "_:b35",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasRestrictionType"
-  }, {
-    "@id" : "_:b36",
-    "@type" : "owl:Class",
-    "unionOf" : {
-      "@list" : [ "loin:InformationContent", "loin:Purpose" ]
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "Absolute", "Relative" ]
     }
   }, {
     "@id" : "_:b37",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasEntityName"
+    "minCardinality" : "1",
+    "onProperty" : "loin:hasBreakdownStructure"
   }, {
     "@id" : "_:b38",
-    "@type" : "owl:Class",
-    "unionOf" : {
-      "@list" : [ "loin:BreakdownStructure", "loin:OntologyDataDefinition" ]
-    }
+    "@type" : "owl:Restriction",
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Detail"
   }, {
     "@id" : "_:b39",
     "@type" : "owl:Restriction",
-    "hasValue" : "loin:SimpleValue",
-    "onProperty" : "ids4loin:hasRestrictionType"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasDocumentSpecification",
-    "someValuesFrom" : "loin:DocumentContent"
+    "cardinality" : "1",
+    "onProperty" : "loin:requested"
   }, {
     "@id" : "_:b40",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:restrictionFormulation"
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b41",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:value"
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Location"
   }, {
     "@id" : "_:b42",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasRestrictionType"
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:ParametricBehaviour"
   }, {
     "@id" : "_:b43",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:restrictionFormulation"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b44",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasRestrictionType"
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Appearance"
   }, {
     "@id" : "_:b45",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:hasAttributeName"
+    "onProperty" : "loin:hasGeometrySpecification",
+    "someValuesFrom" : "loin:Dimensionality"
   }, {
     "@id" : "_:b46",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
-    "name" : "Ruhr University Bochum"
-  }, {
-    "@id" : "_:b48",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "ids4loin:restrictionFormulation"
+    "maxCardinality" : "0",
+    "onProperty" : "loin:hasSpecification"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "NotRequested", "L1", "L2", "L3", "L4", "L5" ]
+    }
   }, {
     "@id" : "_:b49",
     "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasDocument",
-    "someValuesFrom" : "loin:RequiredDocument"
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b5",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "loin:belongsToInformationContent"
+    "onDataRange" : "_:b83",
+    "onProperty" : "loin:hasAppearance",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b50",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:receivingActor"
   }, {
     "@id" : "_:b51",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasObjectType"
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:informationDeliveryMilestone"
   }, {
     "@id" : "_:b52",
     "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "loin:specifiedByIdentifier"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:informationDeliveryMilestone"
   }, {
     "@id" : "_:b53",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasSendingActor"
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:sendingActor"
   }, {
     "@id" : "_:b54",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasPurpose"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "loin:purpose"
   }, {
     "@id" : "_:b55",
     "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "ids4loin:hasRequirement"
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b56",
-    "@type" : "schema:Organization",
-    "name" : "Ruhr University Bochum, Germany"
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b57",
-    "@type" : "owl:Restriction",
-    "onProperty" : "ids4loin:hasApplicability",
-    "someValuesFrom" : "ids4loin:Entity"
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "NotRequested", "ExplicitGeometry", "ConstructiveGeometry", "ParametricGeometry" ]
+    }
   }, {
     "@id" : "_:b58",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
-    "onProperty" : "loin:hasGeometricalInformation"
+    "onProperty" : "ids4loin:hasEntityName"
+  }, {
+    "@id" : "_:b59",
+    "@type" : "schema:Person",
+    "email" : "mailto:liu.liu-m6r@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-5907-7609",
+    "memberOf" : "_:b60",
+    "name" : "Liu Liu"
   }, {
     "@id" : "_:b6",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "icdd4loin:isRelatedToContainerLinkset"
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasPropertyName"
+  }, {
+    "@id" : "_:b60",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
+    "name" : "Ruhr University Bochum"
   }, {
     "@id" : "_:b61",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasBreakdownStructure"
+    "onDataRange" : "xsd:boolean",
+    "onProperty" : "loin:requested",
+    "qualifiedCardinality" : "1"
   }, {
     "@id" : "_:b62",
     "@type" : "owl:Restriction",
-    "minCardinality" : "1",
-    "onProperty" : "loin:hasBreakdownStructure"
+    "minCardinality" : "0",
+    "onProperty" : "loin:hasReferenceDocument"
   }, {
     "@id" : "_:b63",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:description"
+    "minCardinality" : "0",
+    "onProperty" : "loin:hasQuantityKind"
   }, {
     "@id" : "_:b64",
     "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "loin:hasIdentifier"
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
   }, {
     "@id" : "_:b65",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "loin:hasAlphanumericalInformation"
+    "cardinality" : "1",
+    "onProperty" : "loin:requested"
   }, {
     "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "loin:hasGroupOfProperties"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b28",
+    "name" : "Philipp Hagedorn"
+  }, {
+    "@id" : "_:b69",
+    "@type" : "owl:Restriction",
+    "hasValue" : "loin:SimpleValue",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "loin:hasProperty"
+  }, {
+    "@id" : "_:b70",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b71",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "loin:hasDocumentation"
   }, {
-    "@id" : "_:b7",
+    "@id" : "_:b72",
     "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "icdd4loin:isRelatedToContainerDocument"
+    "minCardinality" : "1",
+    "onProperty" : "loin:hasObjectType"
+  }, {
+    "@id" : "_:b73",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasGeometricalInformation"
+  }, {
+    "@id" : "_:b74",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "loin:AlphanumericalInformation",
+    "onProperty" : "loin:hasAlphanumericalInformation"
+  }, {
+    "@id" : "_:b77",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasIdentifier"
   }, {
     "@id" : "_:b8",
     "@type" : "owl:Restriction",
-    "onProperty" : "loin:hasDocumentSpecification",
-    "someValuesFrom" : "loin:DocumentPurpose"
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "loin:hasDescriptionInLanguage"
   }, {
-    "@id" : "_:b9",
+    "@id" : "_:b80",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b81",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b83",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "NoColor", "SingleColor", "MaterialColor", "Textures" ]
+    }
+  }, {
+    "@id" : "_:b84",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:belongsToPset"
+  }, {
+    "@id" : "_:b85",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "loin:specifiedByIdentifier"
+  }, {
+    "@id" : "_:b86",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "loin:hasDescriptionInLanguage"
+  }, {
+    "@id" : "_:b87",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "loin:RequiredDocument",
+    "onProperty" : "loin:hasDocument"
+  }, {
+    "@id" : "_:b9",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b90",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:restrictionFormulation"
+  }, {
+    "@id" : "_:b91",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "ids4loin:hasRestrictionType"
+  }, {
+    "@id" : "_:b93",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "https://w3id.org/tempo#GUIDType",
+    "onProperty" : "https://w3id.org/tempo#conceptGUID"
+  }, {
+    "@id" : "_:b94",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "ids4loin:hasRequirement"
+  }, {
+    "@id" : "_:b95",
+    "@type" : "schema:Person",
+    "email" : "mailto:sven.zentgraf@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-6058-7614",
+    "memberOf" : "_:b96",
+    "name" : "Sven Zentgraf"
+  }, {
+    "@id" : "_:b96",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b98",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "ids4loin:hasApplicability"
+  }, {
+    "@id" : "_:b99",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "loin:BreakdownStructure", "loin:OntologyDataDefinition" ]
+    }
   }, {
     "@id" : "dt:isDataTemplateFor",
     "inverseOf" : "loin:hasDataTemplate"
   }, {
     "@id" : "https://w3id.org/loin",
     "@type" : "owl:Ontology",
+    "contributor" : "_:b95",
     "created" : "2023-01-30",
-    "creator" : [ "_:b26", "_:b27" ],
-    "description" : {
-      "@language" : "en",
-      "@value" : "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). "
-    },
+    "creator" : [ "_:b68", "_:b59" ],
+    "issued" : "2024-03-15",
     "license" : "https://creativecommons.org/licenses/by/4.0/",
-    "publisher" : "_:b28",
+    "modified" : "2025-01-15",
+    "publisher" : "_:b119",
     "rights" : "Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum",
-    "source" : "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin",
+    "source" : "https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf",
     "title" : {
       "@language" : "en",
       "@value" : "Level of Information Need (LOIN) Ontology"
     },
     "preferredNamespacePrefix" : "loin",
-    "versionInfo" : "2.0"
+    "preferredNamespaceUri" : "https://w3id.org/loin#",
+    "comment" : "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). \n\nThe namespace for LOIN terms is [https://w3id.org/loin](https://w3id.org/loin)\n\nThe preferred prefix for the LOIN Ontology namespace is `loin`.\n\n## Ontology Overview \n![LOIN Ontology](figures/OntologyOverview.svg \"Ontology\")\n\n",
+    "imports" : "https://w3id.org/tempo",
+    "versionInfo" : "3.0",
+    "historyNote" : "v3.0: Adjustments due to the update of the IR Ontology Network\nv2.0: Updated and aligned within the IR-Ontology Network\nv1.0: Creation of LOIN Ontology"
   }, {
     "@id" : "loin:Actor",
     "@type" : "owl:Class",
@@ -340,26 +612,26 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)"
+      "@value" : "Alphanumerical information is a term for specifying the information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Alphanumerical information"
     },
-    "subClassOf" : [ "_:b20", "loin:Information" ],
+    "subClassOf" : [ "loin:Information", "_:b62", "_:b63", "_:b64", "_:b65", "_:b56", "_:b2", "_:b7", "_:b66" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Appearance",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Appearance as a geometrical information specification for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Appearance"
     },
-    "subClassOf" : "loin:GeometrySpecification",
+    "subClassOf" : [ "_:b5", "loin:GeometrySpecification" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Bounds",
@@ -384,7 +656,7 @@
       "@language" : "en",
       "@value" : "Breakdown structure"
     },
-    "subClassOf" : [ "_:b64", "owl:Thing" ],
+    "subClassOf" : [ "_:b77", "owl:Thing" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:BreakdownStructureType",
@@ -428,33 +700,33 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Detail as a geometrical information specification for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Detail"
     },
-    "subClassOf" : "loin:GeometrySpecification",
+    "subClassOf" : [ "_:b142", "loin:GeometrySpecification" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Dimensionality",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Dimensionality as a geometrical information specification for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Dimensionality"
     },
-    "subClassOf" : "loin:GeometrySpecification",
+    "subClassOf" : [ "_:b34", "loin:GeometrySpecification" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:DocumentContent",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Document specification for content for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Document specification for content for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
@@ -463,24 +735,11 @@
     "subClassOf" : "loin:DocumentSpecification",
     "term_status" : "stable"
   }, {
-    "@id" : "loin:DocumentFormat",
-    "@type" : "owl:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Document specification for format for information need according to BS EN 17412-1 (2020)"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Document format"
-    },
-    "subClassOf" : "loin:DocumentSpecification",
-    "term_status" : "stable"
-  }, {
     "@id" : "loin:DocumentPurpose",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document"
+      "@value" : "Document purpose is a extension according to ISO 7817-3. It specifies the use of document"
     },
     "label" : {
       "@language" : "en",
@@ -493,7 +752,7 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Additional specification of document for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Additional specification of document for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
@@ -502,17 +761,30 @@
     "subClassOf" : "owl:Thing",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:DocumentType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Specifies the file typ of the required document"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Document type"
+    },
+    "subClassOf" : "loin:DocumentSpecification",
+    "term_status" : "stable"
+  }, {
     "@id" : "loin:Documentation",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)"
+      "@value" : "Documentation is a term for specifying the information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Documentation"
     },
-    "subClassOf" : [ "_:b49", "loin:Information" ],
+    "subClassOf" : [ "_:b61", "_:b133", "_:b87", "_:b106", "loin:Information" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:EngineeringPrinciple",
@@ -573,7 +845,7 @@
       "@language" : "en",
       "@value" : "Geometrical information"
     },
-    "subClassOf" : [ "_:b29", "_:b30", "loin:Information", "_:b31", "_:b2", "_:b32", "_:b33" ],
+    "subClassOf" : [ "_:b38", "loin:Information", "_:b39", "_:b40", "_:b41", "_:b42", "_:b43", "_:b44", "_:b45" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:GeometrySpecification",
@@ -623,7 +895,7 @@
       "@language" : "en",
       "@value" : "Identification"
     },
-    "subClassOf" : [ "_:b62", "owl:Thing" ],
+    "subClassOf" : [ "_:b37", "owl:Thing" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Identifier",
@@ -636,7 +908,7 @@
       "@language" : "en",
       "@value" : "Identifier"
     },
-    "subClassOf" : [ "_:b41", "_:b19", "_:b61", "owl:Thing" ],
+    "subClassOf" : [ "_:b130", "_:b131", "_:b132", "owl:Thing" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:IdentifierType",
@@ -689,19 +961,6 @@
     "subClassOf" : "owl:Thing",
     "term_status" : "stable"
   }, {
-    "@id" : "loin:InformationDeliveryMilestone",
-    "@type" : "owl:Class",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Information delivery milestone"
-    },
-    "subClassOf" : [ "_:b1", "_:b53", "_:b22", "_:b54", "owl:Thing" ],
-    "term_status" : "stable"
-  }, {
     "@id" : "loin:Length",
     "@type" : "ids4loin:RestrictionType",
     "comment" : {
@@ -714,17 +973,29 @@
     },
     "term_status" : "stable"
   }, {
+    "@id" : "loin:LevelOfInformationNeed",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Level of Information Need as defined by ISO 7817"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Level Of Information Need"
+    },
+    "subClassOf" : [ "_:b46", "owl:Thing" ]
+  }, {
     "@id" : "loin:Location",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Location as a geometrical information specification for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Location"
     },
-    "subClassOf" : "loin:GeometrySpecification",
+    "subClassOf" : [ "_:b29", "loin:GeometrySpecification" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Manual",
@@ -780,20 +1051,20 @@
       "@language" : "en",
       "@value" : "Ontology data definition"
     },
-    "subClassOf" : [ "_:b52", "loin:InformationContent" ],
+    "subClassOf" : [ "_:b85", "loin:InformationContent" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:ParametricBehaviour",
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)"
+      "@value" : "Parametric behaviour as a geometrical information specification for information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Parametric behaviour"
     },
-    "subClassOf" : "loin:GeometrySpecification",
+    "subClassOf" : [ "_:b139", "loin:GeometrySpecification" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Pattern",
@@ -817,6 +1088,18 @@
     "label" : "Photograph",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:Prerequisites",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Prerequisites is a term for specifying the prerequisites of a corresponding specification according to ISO 7817-3"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Prerequisites"
+    },
+    "subClassOf" : [ "_:b49", "_:b50", "_:b51", "_:b52", "_:b53", "_:b27", "_:b54", "_:b55", "_:b33", "owl:Thing", "_:b22" ]
+  }, {
     "@id" : "loin:Provided_As_Information",
     "@type" : "loin:DocumentPurpose",
     "comment" : {
@@ -833,10 +1116,10 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Purpose is a contextual aspect according to BS EN 17412-1 (2020)"
+      "@value" : "Purpose is a contextual aspect according to ISO 7817-3"
     },
     "label" : "Purpose",
-    "subClassOf" : [ "_:b21", "owl:Thing" ]
+    "subClassOf" : [ "_:b86", "owl:Thing" ]
   }, {
     "@id" : "loin:ReceivingActor",
     "@type" : "owl:Class",
@@ -876,13 +1159,13 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)"
+      "@value" : "Document is a term for specifying the documentation of information need according to ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Document"
     },
-    "subClassOf" : [ "_:b3", "_:b4", "owl:Thing", "_:b5", "_:b6", "_:b7", "_:b8" ],
+    "subClassOf" : [ "_:b110", "_:b113", "_:b114", "_:b111", "_:b115", "_:b116", "owl:Thing", "_:b93", "_:b117" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:Required_For_Approval",
@@ -971,6 +1254,14 @@
     "term_status" : "stable"
   }, {
     "@id" : "loin:Specification",
+    "@type" : "owl:Class",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "subClassOf" : [ "_:b8", "_:b9", "_:b10", "owl:Thing", "_:b11", "_:b12", "_:b13", "_:b14", "_:b15" ]
+  }, {
+    "@id" : "loin:SpecificationInstance",
     "@type" : "loin:DocumentContent",
     "comment" : {
       "@language" : "en",
@@ -986,13 +1277,13 @@
     "@type" : "owl:Class",
     "comment" : {
       "@language" : "en",
-      "@value" : "SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)"
+      "@value" : "SpecificationPerObjectType is a contextual aspect according to  ISO 7817-3"
     },
     "label" : {
       "@language" : "en",
       "@value" : "Specification per Object Type"
     },
-    "subClassOf" : [ "_:b65", "_:b51", "_:b58", "_:b66", "owl:Thing" ],
+    "subClassOf" : [ "_:b71", "https://w3id.org/tempo#ConceptType", "_:b72", "_:b73", "owl:Thing", "_:b74" ],
     "term_status" : "stable"
   }, {
     "@id" : "loin:TypeName",
@@ -1082,20 +1373,6 @@
     },
     "term_status" : "stable"
   }, {
-    "@id" : "loin:description",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Description provide detail and extend of information derived by Information Delivery Specification (IDS)"
-    },
-    "domain" : "_:b36",
-    "label" : {
-      "@language" : "en",
-      "@value" : "description"
-    },
-    "subPropertyOf" : "owl:topDataProperty",
-    "term_status" : "stable"
-  }, {
     "@id" : "loin:detailed",
     "@type" : "loin:Detail",
     "comment" : {
@@ -1108,18 +1385,6 @@
     },
     "term_status" : "stable"
   }, {
-    "@id" : "loin:detailedDesign",
-    "@type" : "loin:InformationDeliveryMilestone",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Detailed design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Detailed design"
-    },
-    "term_status" : "stable"
-  }, {
     "@id" : "loin:explicit",
     "@type" : "loin:ParametricBehaviour",
     "comment" : {
@@ -1129,18 +1394,6 @@
     "label" : {
       "@language" : "en",
       "@value" : "explicit"
-    },
-    "term_status" : "stable"
-  }, {
-    "@id" : "loin:finalDesign",
-    "@type" : "loin:InformationDeliveryMilestone",
-    "comment" : {
-      "@language" : "en",
-      "@value" : "Final design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B"
-    },
-    "label" : {
-      "@language" : "en",
-      "@value" : "Final design"
     },
     "term_status" : "stable"
   }, {
@@ -1174,7 +1427,7 @@
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates an alphanumerical information with a LOIN object according to ISO 7817-3"
     },
     "domain" : "loin:SpecificationPerObjectType",
     "label" : {
@@ -1183,6 +1436,17 @@
     },
     "range" : "loin:AlphanumericalInformation",
     "subPropertyOf" : "loin:hasInformation",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasAppearance",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "loin:Appearance",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has appearance"
+    },
+    "range" : "_:b16",
+    "subPropertyOf" : "owl:topDataProperty",
     "term_status" : "stable"
   }, {
     "@id" : "loin:hasBreakdownStructure",
@@ -1223,11 +1487,43 @@
     "subPropertyOf" : "loin:hasAlphanumericalInformation",
     "inverseOf" : "dt:isDataTemplateFor"
   }, {
+    "@id" : "loin:hasDescriptionInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Description in Language"
+    },
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "https://w3id.org/isoprops#hasDescriptionInLanguage"
+  }, {
+    "@id" : "loin:hasDetail",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "loin:Detail",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has detail"
+    },
+    "range" : "_:b47",
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasDimensionality",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "loin:Dimensionality",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has detail"
+    },
+    "range" : "_:b18",
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
     "@id" : "loin:hasDocument",
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates a set of documents with documentation according to ISO 7817-3"
     },
     "domain" : "loin:Documentation",
     "label" : {
@@ -1242,7 +1538,7 @@
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the document specifications with a document according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the document specifications with a document according to ISO 7817-3"
     },
     "domain" : "loin:RequiredDocument",
     "label" : {
@@ -1257,7 +1553,7 @@
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the documentation with a LOIN object according to ISO 7817-3"
     },
     "domain" : "loin:SpecificationPerObjectType",
     "label" : {
@@ -1272,7 +1568,7 @@
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the geometrical information with a LOIN object according to ISO 7817-3"
     },
     "domain" : "loin:SpecificationPerObjectType",
     "label" : {
@@ -1287,16 +1583,27 @@
     "@type" : "owl:ObjectProperty",
     "comment" : [ "[\"Appearance\",\r\n\"Detail\",\r\n\"Dimensionality\",\r\n\"Location\",\r\n\"ParametricBehaviour\"]", {
       "@language" : "en",
-      "@value" : "The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the specific aspects with geometrical information according to ISO 7817-3"
     } ],
     "domain" : "loin:GeometricalInformation",
     "label" : {
       "@language" : "en",
-      "@value" : "has geometrical information specification"
+      "@value" : "has geometrical specification"
     },
     "range" : "loin:GeometrySpecification",
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasGroupOfProperties",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the set of properties  according to ISO 7817"
+    },
+    "range" : "https://w3id.org/tempo#GroupOfProperties",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "equivalentProperty" : "https://w3id.org/tempo#hasSetOfProperties"
   }, {
     "@id" : "loin:hasIdentification",
     "@type" : "owl:ObjectProperty",
@@ -1371,20 +1678,101 @@
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:hasIntendedUse",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the intened use"
+    },
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Intended Use"
+    },
+    "range" : "https://w3id.org/tempo#IntendedUse",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "equivalentProperty" : "https://w3id.org/tempo#hasIntendedUse"
+  }, {
+    "@id" : "loin:hasLocation",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "loin:Location",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has location"
+    },
+    "range" : "_:b126",
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasNameInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : [ {
+      "@language" : "en",
+      "@value" : "Site plan"
+    }, {
+      "@language" : "de",
+      "@value" : "Lageplan"
+    } ],
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
     "@id" : "loin:hasObjectType",
     "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the specification per object type with the object type"
+    },
     "domain" : "loin:SpecificationPerObjectType",
-    "label" : "has object type",
-    "range" : "dt:ConstructionObject",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has object type"
+    },
+    "range" : "https://w3id.org/tempo#ObjectType",
     "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "loin:hasParametricBehaviour",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "loin:ParametricBehaviour",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has parametric behaviour"
+    },
+    "range" : "_:b57",
+    "subPropertyOf" : "owl:topDataProperty",
+    "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasPrerequisites",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the specification with the prerequisites"
+    },
+    "domain" : "loin:Specification",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Prerequisites"
+    },
+    "range" : "loin:Prerequisites",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "loin:hasProperty",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "https://w3id.org/tempo#DataTemplate",
+    "label" : {
+      "@language" : "en",
+      "@value" : "The object property relates the data template with the properties"
+    },
+    "range" : [ "https://w3id.org/tempo#Property", "https://w3id.org/isoprops#Property" ],
+    "subPropertyOf" : "owl:topObjectProperty",
+    "equivalentProperty" : "https://w3id.org/tempo#hasProperty"
   }, {
     "@id" : "loin:hasPurpose",
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the purpose with the prerequisites according to ISO 7817-3"
     },
-    "domain" : "loin:InformationDeliveryMilestone",
+    "domain" : "loin:Prerequisites",
     "label" : {
       "@language" : "en",
       "@value" : "has purpose"
@@ -1393,13 +1781,23 @@
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:hasQuantityKind",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the quantitiy kind according to ISO 7817-3"
+    },
+    "range" : "https://w3id.org/tempo#QuantityKind",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
     "@id" : "loin:hasReceivingActor",
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the prerequisites with the receiving actor according to ISO 7817-3"
     },
-    "domain" : "loin:InformationDeliveryMilestone",
+    "domain" : "loin:Prerequisites",
     "label" : {
       "@language" : "en",
       "@value" : "has receiving actor"
@@ -1408,9 +1806,21 @@
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:hasReferenceDocument",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the reference document according to ISO 7817-3"
+    },
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : "has reference document",
+    "range" : "https://w3id.org/tempo#ReferenceDocument",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "equivalentProperty" : "https://w3id.org/tempo#hasReferenceDocument"
+  }, {
     "@id" : "loin:hasReferenceSource",
     "@type" : "owl:ObjectProperty",
-    "domain" : "_:b38",
+    "domain" : "_:b99",
     "label" : {
       "@language" : "en",
       "@value" : "has reference source"
@@ -1437,24 +1847,38 @@
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the  with the sending actor  according to ISO 7817"
     },
-    "domain" : "loin:InformationDeliveryMilestone",
+    "domain" : "loin:Prerequisites",
     "label" : {
       "@language" : "en",
-      "@value" : "has has Sending Actor"
+      "@value" : "has Sending Actor"
     },
     "range" : "loin:SendingActor",
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
   }, {
+    "@id" : "loin:hasSpecification",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the LOIN with the specification according to ISO 7817"
+    },
+    "domain" : "loin:LevelOfInformationNeed",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Specification"
+    },
+    "range" : "loin:Specification",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
     "@id" : "loin:hasSpecificationPerObjectType",
     "@type" : "owl:ObjectProperty",
     "comment" : {
       "@language" : "en",
-      "@value" : "The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)"
+      "@value" : "The object property relates the specification with the specification per object type according to ISO 7817"
     },
-    "domain" : "loin:InformationDeliveryMilestone",
+    "domain" : "loin:Specification",
     "label" : {
       "@language" : "en",
       "@value" : "has specification per object type"
@@ -1462,6 +1886,25 @@
     "range" : "loin:SpecificationPerObjectType",
     "subPropertyOf" : "owl:topObjectProperty",
     "term_status" : "stable"
+  }, {
+    "@id" : "loin:hasUnit",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "loin:AlphanumericalInformation",
+    "label" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the unit according to ISO 7817"
+    },
+    "range" : "https://w3id.org/tempo#Unit",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "loin:informationDeliveryMilestone",
+    "@type" : "owl:DatatypeProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Information delivery milestone"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
   }, {
     "@id" : "loin:isRelatedToLoinDocument",
     "@type" : "owl:ObjectProperty",
@@ -1499,14 +1942,14 @@
     },
     "term_status" : "stable"
   }, {
-    "@id" : "loin:preliminaryDesign",
-    "@type" : "loin:InformationDeliveryMilestone",
-    "comment" : {
+    "@id" : "loin:purpose",
+    "@type" : "owl:DatatypeProperty",
+    "label" : {
       "@language" : "en",
-      "@value" : "Preliminary design, an example of IDM information delivery milestone from BS EN 17412-1 (2020) - Annex B"
+      "@value" : "purpose"
     },
-    "label" : "Preliminary design",
-    "term_status" : "stable"
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
   }, {
     "@id" : "loin:real-world",
     "@type" : "loin:Appearance",
@@ -1532,6 +1975,15 @@
     },
     "term_status" : "stable"
   }, {
+    "@id" : "loin:receivingActor",
+    "@type" : "owl:DatatypeProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Receiving actor"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
     "@id" : "loin:relative",
     "@type" : "loin:Location",
     "comment" : {
@@ -1554,6 +2006,15 @@
     "range" : "xsd:boolean",
     "subPropertyOf" : "owl:topDataProperty",
     "term_status" : "stable"
+  }, {
+    "@id" : "loin:sendingActor",
+    "@type" : "owl:DatatypeProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Sending actor"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
   }, {
     "@id" : "loin:simplified",
     "@type" : "loin:Detail",
@@ -1663,7 +2124,7 @@
       "@language" : "en",
       "@value" : "The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description"
     },
-    "domain" : [ "loin:Purpose", "loin:InformationDeliveryMilestone" ],
+    "domain" : "loin:Purpose",
     "label" : {
       "@language" : "en",
       "@value" : "is related to container description"
@@ -1737,7 +2198,7 @@
       "@language" : "en",
       "@value" : "Attribute of IDS"
     },
-    "subClassOf" : [ "_:b45", "ids4loin:FacetDefinition" ],
+    "subClassOf" : [ "_:b0", "ids4loin:FacetDefinition" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:AttributeName",
@@ -1750,7 +2211,7 @@
       "@language" : "en",
       "@value" : "Attribute name"
     },
-    "subClassOf" : [ "_:b48", "_:b42", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b80", "_:b81", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:Classification",
@@ -1777,7 +2238,7 @@
       "@language" : "en",
       "@value" : "IDS data definition"
     },
-    "subClassOf" : [ "_:b57", "_:b55", "_:b23", "_:b63", "loin:InformationContent" ],
+    "subClassOf" : [ "_:b138", "_:b94", "_:b98", "_:b121", "loin:InformationContent" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:Entity",
@@ -1790,7 +2251,7 @@
       "@language" : "en",
       "@value" : "Entity"
     },
-    "subClassOf" : [ "_:b37", "ids4loin:FacetDefinition" ],
+    "subClassOf" : [ "_:b58", "ids4loin:FacetDefinition" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:EntityName",
@@ -1803,7 +2264,7 @@
       "@language" : "en",
       "@value" : "Entity name"
     },
-    "subClassOf" : [ "_:b43", "_:b44", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b90", "_:b91", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:FacetDefinition",
@@ -1842,7 +2303,7 @@
       "@language" : "en",
       "@value" : "IFC data type"
     },
-    "subClassOf" : [ "_:b9", "_:b10", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b25", "_:b26", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:Material",
@@ -1868,7 +2329,7 @@
       "@language" : "en",
       "@value" : "Predefined type"
     },
-    "subClassOf" : [ "_:b14", "_:b15", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b103", "_:b123", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:Property",
@@ -1881,7 +2342,7 @@
       "@language" : "en",
       "@value" : "Property"
     },
-    "subClassOf" : [ "_:b11", "_:b12", "_:b13", "ids4loin:FacetDefinition" ],
+    "subClassOf" : [ "_:b6", "_:b147", "_:b84", "ids4loin:FacetDefinition" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:PropertyName",
@@ -1894,7 +2355,7 @@
       "@language" : "en",
       "@value" : "Property name"
     },
-    "subClassOf" : [ "_:b39", "_:b40", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b69", "_:b70", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:PsetName",
@@ -1907,7 +2368,7 @@
       "@language" : "en",
       "@value" : "Property set name"
     },
-    "subClassOf" : [ "_:b34", "_:b35", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b23", "_:b144", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:RequirementType",
@@ -1943,7 +2404,7 @@
     "@type" : "owl:Class",
     "comment" : "Value can be any custom value according to IDS standard developed by buildingSMART International",
     "label" : "Value",
-    "subClassOf" : [ "_:b24", "_:b25", "ids4loin:FacetParameter" ],
+    "subClassOf" : [ "_:b145", "_:b146", "ids4loin:FacetParameter" ],
     "term_status" : "stable"
   }, {
     "@id" : "ids4loin:belongsToPset",
@@ -2101,30 +2562,22 @@
     "term_status" : {
       "@id" : "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"
     },
-    "range" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
-    "domain" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
-      "@type" : "@id"
-    },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
-    "name" : {
-      "@id" : "https://schema.org/name"
-    },
-    "identifier" : {
-      "@id" : "https://schema.org/identifier",
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
       "@type" : "@id"
     },
-    "subClassOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
-      "@type" : "@id"
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
     },
     "onProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#onProperty",
@@ -2134,91 +2587,55 @@
       "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
-    "someValuesFrom" : {
-      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
       "@type" : "@id"
     },
-    "rest" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
       "@type" : "@id"
     },
-    "first" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
       "@type" : "@id"
     },
     "cardinality" : {
       "@id" : "http://www.w3.org/2002/07/owl#cardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
-    "maxCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-    },
-    "subPropertyOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-      "@type" : "@id"
-    },
-    "requested" : {
-      "@id" : "https://w3id.org/loin#requested",
-      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
-    },
-    "inverseOf" : {
-      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
-      "@type" : "@id"
-    },
-    "equivalentClass" : {
-      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
-      "@type" : "@id"
-    },
-    "license" : {
-      "@id" : "http://purl.org/dc/terms/license",
-      "@type" : "@id"
-    },
-    "creator" : {
-      "@id" : "http://purl.org/dc/terms/creator",
-      "@type" : "@id"
-    },
-    "publisher" : {
-      "@id" : "http://purl.org/dc/terms/publisher",
-      "@type" : "@id"
-    },
-    "preferredNamespacePrefix" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
-    },
-    "imports" : {
-      "@id" : "http://www.w3.org/2002/07/owl#imports",
-      "@type" : "@id"
-    },
-    "title" : {
-      "@id" : "http://purl.org/dc/terms/title"
-    },
-    "created" : {
-      "@id" : "http://purl.org/dc/terms/created",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "description" : {
-      "@id" : "http://purl.org/dc/terms/description"
-    },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
-    },
-    "rights" : {
-      "@id" : "http://purl.org/dc/terms/rights"
-    },
-    "source" : {
-      "@id" : "http://purl.org/dc/terms/source",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasValue" : {
-      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
-      "@type" : "@id"
-    },
     "oneOf" : {
       "@id" : "http://www.w3.org/2002/07/owl#oneOf",
       "@type" : "@id"
     },
-    "unionOf" : {
-      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+    "equivalentProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
+      "@type" : "@id"
+    },
+    "onDataRange" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onDataRange",
+      "@type" : "@id"
+    },
+    "minQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "maxQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "identifier" : {
+      "@id" : "https://schema.org/identifier",
+      "@type" : "@id"
+    },
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "someValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#someValuesFrom",
       "@type" : "@id"
     },
     "memberOf" : {
@@ -2229,8 +2646,90 @@
       "@id" : "https://schema.org/email",
       "@type" : "@id"
     },
+    "qualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "onClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onClass",
+      "@type" : "@id"
+    },
     "parentOrganization" : {
       "@id" : "https://schema.org/parentOrganization",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor",
+      "@type" : "@id"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "historyNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#historyNote"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
+      "@type" : "@id"
+    },
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+      "@type" : "@id"
+    },
+    "requested" : {
+      "@id" : "https://w3id.org/loin#requested",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasValue" : {
+      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
       "@type" : "@id"
     },
     "schema" : "https://schema.org/",

@@ -24,6 +24,16 @@ dt:isDataTemplateFor
 .
 <https://w3id.org/loin>
   rdf:type owl:Ontology ;
+  dc:contributor [
+      rdf:type schema:Person ;
+      schema:email <mailto:sven.zentgraf@rub.de> ;
+      schema:identifier <https://orcid.org/0000-0001-6058-7614> ;
+      schema:memberOf [
+          schema:identifier <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> ;
+          schema:name "Ruhr University Bochum" ;
+        ] ;
+      schema:name "Sven Zentgraf" ;
+    ] ;
   dc:created "2023-01-30"^^xsd:date ;
   dc:creator [
       rdf:type schema:Person ;
@@ -45,8 +55,9 @@ dt:isDataTemplateFor
         ] ;
       schema:name "Philipp Hagedorn" ;
     ] ;
-  dc:description "The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). "@en ;
+  dc:issued "2024-03-15"^^xsd:date ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:modified "2025-01-15"^^xsd:date ;
   dc:publisher [
       rdf:type schema:Organization ;
       schema:identifier <https://www.inf.bi.rub.de> ;
@@ -61,8 +72,21 @@ dt:isDataTemplateFor
   dc:title "Level of Information Need (LOIN) Ontology"@en ;
   vann:preferredNamespacePrefix "loin" ;
   vann:preferredNamespaceUri "https://w3id.org/loin#" ;
+  rdfs:comment """The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). 
+
+The namespace for LOIN terms is [https://w3id.org/loin](https://w3id.org/loin)
+
+The preferred prefix for the LOIN Ontology namespace is `loin`.
+
+## Ontology Overview 
+![LOIN Ontology](figures/OntologyOverview.svg \"Ontology\")
+
+""" ;
   owl:imports <https://w3id.org/tempo> ;
-  owl:versionInfo "2.0" ;
+  owl:versionInfo "3.0" ;
+  <http://www.w3.org/2004/02/skos/core#historyNote> """v3.0: Adjustments due to the update of the IR Ontology Network
+v2.0: Updated and aligned within the IR-Ontology Network
+v1.0: Creation of LOIN Ontology""" ;
 .
 loin:Actor
   rdf:type owl:Class ;
@@ -84,17 +108,12 @@ loin:AlphanumericalInformation
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasIntendedUse ;
+      owl:onProperty loin:hasGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasProperty ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasPurpose ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -105,11 +124,6 @@ loin:AlphanumericalInformation
       rdf:type owl:Restriction ;
       owl:minCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onProperty loin:hasReferenceDocument ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty loin:hasSetOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -1043,6 +1057,14 @@ loin:hasGeometrySpecification
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
 .
+loin:hasGroupOfProperties
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain loin:AlphanumericalInformation ;
+  rdfs:label "The object property relates the alphanumerical information with the set of properties  according to ISO 7817"@en ;
+  rdfs:range <https://w3id.org/tempo#GroupOfProperties> ;
+  rdfs:subPropertyOf owl:topObjectProperty ;
+  owl:equivalentProperty <https://w3id.org/tempo#hasSetOfProperties> ;
+.
 loin:hasIdentification
   rdf:type owl:ObjectProperty ;
   rdfs:comment "The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)"@en ;
@@ -1223,14 +1245,6 @@ loin:hasSendingActor
   rdfs:range loin:SendingActor ;
   rdfs:subPropertyOf owl:topObjectProperty ;
   vs:term_status "stable" ;
-.
-loin:hasSetOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain loin:AlphanumericalInformation ;
-  rdfs:label "The object property relates the alphanumerical information with the set of properties  according to ISO 7817"@en ;
-  rdfs:range <https://w3id.org/tempo#SetOfProperties> ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-  owl:equivalentProperty <https://w3id.org/tempo#hasSetOfProperties> ;
 .
 loin:hasSpecification
   rdf:type owl:ObjectProperty ;

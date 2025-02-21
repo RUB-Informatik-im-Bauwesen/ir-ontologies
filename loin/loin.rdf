@@ -13,15 +13,35 @@
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:ids4loin="https://w3id.org/loin/v2/ids#"
     xmlns:loin="https://w3id.org/loin#"
+    xmlns:j.0="http://www.w3.org/2004/02/skos/core#"
     xmlns:sh="http://www.w3.org/ns/shacl#"
     xmlns:vann="http://purl.org/vocab/vann/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xml:base="https://w3id.org/loin" > 
+  <rdf:Description rdf:about="#LevelOfInformationNeed">
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:label xml:lang="en">Level Of Information Need</rdfs:label>
+    <rdfs:comment xml:lang="en">Level of Information Need as defined by ISO 7817</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:nodeID="A2"/>
+    <rdf:first>L2</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:rest rdf:nodeID="A4"/>
+    <rdf:first>D1</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#Enumeration">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Enumeration restriction</rdfs:label>
     <rdfs:comment xml:lang="en">Enumeration restriction specifies that the value must be one of a list of allowed values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation.</rdfs:comment>
     <rdf:type rdf:resource="https://w3id.org/loin/v2/ids#RestrictionType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first>L3</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#Required_For_Approval">
     <vs:term_status>stable</vs:term_status>
@@ -34,6 +54,16 @@
     <rdfs:label>Photograph</rdfs:label>
     <rdfs:comment xml:lang="en">Documents such as records of work done, records of existing conditions according to notes of BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#DocumentContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasRestrictionType">
     <vs:term_status>stable</vs:term_status>
@@ -51,39 +81,60 @@
     <rdfs:comment xml:lang="en">The object property is an extension with ICDD. It relates the identifier type defined by BS EN 17412-1(2020) with linkset identifier</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A0">
-    <owl:onProperty rdf:resource="#hasBreakdownStructure"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#Dimensionality">
     <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A8"/>
     <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
     <rdfs:label xml:lang="en">Dimensionality</rdfs:label>
-    <rdfs:comment xml:lang="en">Dimensionality as a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Dimensionality as a geometrical information specification for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#PropertyName">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A1"/>
-    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A6"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">Property name</rdfs:label>
     <rdfs:comment xml:lang="en">Property name must be a valid name from the IFC schema, or any custom text value according to IDS stan developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+  <rdf:Description rdf:nodeID="A4">
+    <rdf:rest rdf:nodeID="A11"/>
+    <rdf:first>D2</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasGroupOfProperties">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#hasSetOfProperties"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#GroupOfProperties"/>
+    <rdfs:label xml:lang="en">The object property relates the alphanumerical information with the set of properties  according to ISO 7817</rdfs:label>
+    <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#informationDeliveryMilestone">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Information delivery milestone</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <schema:memberOf rdf:nodeID="A13"/>
+    <schema:name>Philipp Hagedorn</schema:name>
+    <schema:identifier rdf:resource="https://orcid.org/0000-0002-6249-243X"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:email rdf:resource="mailto:philipp.hagedorn-n6v@rub.de"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:onProperty rdf:resource="#requested"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/loin/v2/ids#Entity"/>
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasApplicability"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <owl:onProperty rdf:resource="#specifiedByIdentifier"/>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRequirement"/>
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -99,14 +150,12 @@
     <rdfs:comment xml:lang="en">An example of breakdown structure type according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#BreakdownStructureType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <owl:someValuesFrom rdf:resource="#Detail"/>
-    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <schema:name>Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en"/>
+  <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#FacetParameter">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:label xml:lang="en">IDS facet parameter</rdfs:label>
+    <rdfs:comment xml:lang="en">IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument">
     <vs:term_status>stable</vs:term_status>
@@ -117,22 +166,17 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#FacetParameter">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
-    <rdfs:label xml:lang="en">IDS facet parameter</rdfs:label>
-    <rdfs:comment xml:lang="en">IDS facet parameter is used to specify a facet definition according to IDS standard developed by buildingSMART International</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:oneOf rdf:nodeID="A17"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasEntityName"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first>D2</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <owl:onProperty rdf:resource="#hasIdentifier"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>ParametricGeometry</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#hasAgent">
     <vs:term_status>stable</vs:term_status>
@@ -142,23 +186,36 @@
     <rdfs:comment xml:lang="en">Information of the information delivery actor defined by foaf ontology mit class foaf:Agent</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:onProperty rdf:resource="#hasPurpose"/>
+  <rdf:Description rdf:nodeID="A21">
+    <owl:onProperty rdf:resource="#sendingActor"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Documentation">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A11"/>
+    <rdfs:subClassOf rdf:nodeID="A23"/>
+    <rdfs:subClassOf rdf:nodeID="A24"/>
+    <rdfs:subClassOf rdf:nodeID="A25"/>
+    <rdfs:subClassOf rdf:nodeID="A26"/>
     <rdfs:subClassOf rdf:resource="#Information"/>
     <rdfs:label xml:lang="en">Documentation</rdfs:label>
-    <rdfs:comment xml:lang="en">Documentation is a term for specifying the information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Documentation is a term for specifying the information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A12">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRequirement"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A27">
+    <owl:onProperty rdf:resource="#requested"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <rdf:rest rdf:nodeID="A29"/>
+    <rdf:first>MaterialColor</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#one-dimensional">
     <vs:term_status>stable</vs:term_status>
@@ -166,14 +223,37 @@
     <rdfs:comment xml:lang="en">one-dimensional, an example of dimensionality according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Dimensionality"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A13">
-    <owl:onProperty rdf:resource="#description"/>
+  <rdf:Description rdf:about="#hasAppearance">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:nodeID="A30"/>
+    <rdfs:label xml:lang="en">has appearance</rdfs:label>
+    <rdfs:domain rdf:resource="#Appearance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <owl:onProperty rdf:resource="#value"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A14">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+  <rdf:Description rdf:nodeID="A32">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#belongsToPset"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <owl:onProperty rdf:resource="#sendingActor"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:nodeID="A18"/>
+    <rdf:first>D1</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <owl:someValuesFrom rdf:resource="#DocumentContent"/>
+    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/icdd#isRelatedToContainerDescription">
@@ -181,15 +261,8 @@
     <rdfs:range rdf:resource="https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ContainerDescription"/>
     <rdfs:label xml:lang="en">is related to container description</rdfs:label>
     <rdfs:domain rdf:resource="#Purpose"/>
-    <rdfs:domain rdf:resource="#InformationDeliveryMilestone"/>
     <rdfs:comment xml:lang="en">The object property is an extension with ICDD. It relates the information delivery milestone defined by BS EN 17412-1(2020) with container description</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Report">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:label>Report</rdfs:label>
-    <rdfs:comment xml:lang="en">Documents such as geotechnical reports, reports of existing building conditions, soil surveys, pre calculations according to notes of BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="#DocumentContent"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasPredefinedType">
     <vs:term_status>stable</vs:term_status>
@@ -199,15 +272,25 @@
     <rdfs:comment xml:lang="en">The object property relates a predefined type with the facet entity according to IDS definition</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A15">
-    <owl:onProperty rdf:resource="#hasBreakdownStructure"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A36">
+    <owl:someValuesFrom rdf:resource="#Appearance"/>
+    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A16">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+  <rdf:Description rdf:about="#Report">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:label>Report</rdfs:label>
+    <rdfs:comment xml:lang="en">Documents such as geotechnical reports, reports of existing building conditions, soil surveys, pre calculations according to notes of BS EN 17412-1 (2020)</rdfs:comment>
+    <rdf:type rdf:resource="#DocumentContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasAttributeName"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>D3</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#TypeName">
     <vs:term_status>stable</vs:term_status>
@@ -221,19 +304,50 @@
     <rdfs:comment xml:lang="en">An example of identifier type from a breakdown structure according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#IdentifierType"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first>L4</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <owl:onProperty rdf:resource="#hasDescriptionInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:type rdf:resource="https://schema.org/Organization"/>
+    <schema:name>Ruhr University Bochum, Germany</schema:name>
+  </rdf:Description>
   <rdf:Description rdf:about="">
+    <rdfs:comment>The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). 
+
+The namespace for LOIN terms is [https://w3id.org/loin](https://w3id.org/loin)
+
+The preferred prefix for the LOIN Ontology namespace is `loin`.
+
+## Ontology Overview 
+![LOIN Ontology](figures/OntologyOverview.svg "Ontology")
+
+</rdfs:comment>
     <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dc:creator rdf:nodeID="A17"/>
-    <dc:creator rdf:nodeID="A18"/>
-    <dc:publisher rdf:nodeID="A19"/>
+    <dc:publisher rdf:nodeID="A41"/>
+    <dc:creator rdf:nodeID="A12"/>
+    <dc:contributor rdf:nodeID="A42"/>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-15</dc:modified>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <vann:preferredNamespacePrefix>loin</vann:preferredNamespacePrefix>
+    <j.0:historyNote>v3.0: Adjustments due to the update of the IR Ontology Network
+v2.0: Updated and aligned within the IR-Ontology Network
+v1.0: Creation of LOIN Ontology</j.0:historyNote>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-03-15</dc:issued>
+    <dc:source rdf:resource="https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf"/>
     <dc:title xml:lang="en">Level of Information Need (LOIN) Ontology</dc:title>
+    <owl:imports rdf:resource="https://w3id.org/tempo"/>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-01-30</dc:created>
-    <dc:description xml:lang="en">The Level of Information Need (LOIN) Ontology is defined for specifying information requirements for delivery of data in a buildings' life cycle. The LOIN ontology is based on the standard BS EN 17412-1 (2020). Furthermore, it is extended with vocabulary for connecing Information Delivery Specifications (IDS) and Information containers for linked document delivery (ICDD) as per ISO 21597-1 (2020). </dc:description>
-    <owl:versionInfo>2.0</owl:versionInfo>
+    <dc:creator rdf:nodeID="A43"/>
+    <owl:versionInfo>3.0</owl:versionInfo>
     <dc:rights>Copyright 2023 by Chair of Computing in Engineering, Ruhr University Bochum</dc:rights>
-    <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/loin</dc:source>
+    <vann:preferredNamespaceUri>https://w3id.org/loin#</vann:preferredNamespaceUri>
   </rdf:Description>
   <rdf:Description rdf:about="#FederationStrategy">
     <vs:term_status>stable</vs:term_status>
@@ -256,9 +370,10 @@
   </rdf:Description>
   <rdf:Description rdf:about="#hasObjectType">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    <rdfs:range rdf:resource="https://w3id.org/dt#ConstructionObject"/>
-    <rdfs:label>has object type</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#ObjectType"/>
+    <rdfs:label xml:lang="en">has object type</rdfs:label>
     <rdfs:domain rdf:resource="#SpecificationPerObjectType"/>
+    <rdfs:comment xml:lang="en">The object property relates the specification per object type with the object type</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#realistic">
@@ -273,44 +388,50 @@
     <rdfs:comment xml:lang="en">An example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#ParametricBehaviour"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <owl:onProperty rdf:resource="#hasIdentifierType"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Prohibited</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#Location">
     <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A46"/>
     <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
     <rdfs:label xml:lang="en">Location</rdfs:label>
-    <rdfs:comment xml:lang="en">Location as a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Location as a geometrical information specification for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasNameInLanguage">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:label xml:lang="en">Site plan</rdfs:label>
+    <rdfs:label xml:lang="de">Lageplan</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#PsetName">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A20"/>
-    <rdfs:subClassOf rdf:nodeID="A21"/>
+    <rdfs:subClassOf rdf:nodeID="A47"/>
+    <rdfs:subClassOf rdf:nodeID="A48"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">Property set name</rdfs:label>
     <rdfs:comment xml:lang="en">Property set name must be a valid name from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A22">
-    <owl:someValuesFrom rdf:resource="#DocumentContent"/>
-    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A49">
+    <owl:oneOf rdf:nodeID="A50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A17">
-    <schema:name>Liu Liu</schema:name>
-    <schema:memberOf rdf:nodeID="A23"/>
-    <schema:identifier rdf:resource="https://orcid.org/0000-0001-5907-7609"/>
-    <schema:email rdf:resource="mailto:liu.liu-m6r@rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <rdf:rest rdf:nodeID="A51"/>
+    <rdf:first>ExplicitGeometry</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:about="#preliminaryDesign">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:label>Preliminary design</rdfs:label>
-    <rdfs:comment xml:lang="en">Preliminary design, an example of IDM information delivery milestone from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
-    <rdf:type rdf:resource="#InformationDeliveryMilestone"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A24">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasIFCDataType"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A52">
+    <rdf:rest rdf:nodeID="A20"/>
+    <rdf:first>ConstructiveGeometry</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#real-world">
     <vs:term_status>stable</vs:term_status>
@@ -324,12 +445,18 @@
     <rdfs:range rdf:resource="#Documentation"/>
     <rdfs:label xml:lang="en">has documentation</rdfs:label>
     <rdfs:domain rdf:resource="#SpecificationPerObjectType"/>
-    <rdfs:comment xml:lang="en">The object property relates the documentation with a LOIN object according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates the documentation with a LOIN object according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A25">
-    <owl:onProperty rdf:resource="#hasAlphanumericalInformation"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A53">
+    <owl:onProperty rdf:resource="#hasQuantityKind"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasDetail"/>
+    <owl:onDataRange rdf:nodeID="A55"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Name">
@@ -347,44 +474,47 @@
     <rdfs:comment xml:lang="en">The object property relates the identification with a breakdown structure according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A26">
-    <owl:someValuesFrom rdf:resource="#Appearance"/>
-    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
+  <rdf:Description rdf:nodeID="A56">
+    <owl:oneOf rdf:nodeID="A57"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasReferenceDocument">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#hasReferenceDocument"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#ReferenceDocument"/>
+    <rdfs:label>has reference document</rdfs:label>
+    <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
+    <rdfs:comment xml:lang="en">The object property relates the alphanumerical information with the reference document according to ISO 7817-3</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:onProperty rdf:resource="#hasGroupOfProperties"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A27">
-    <owl:onProperty rdf:resource="#hasGeometricalInformation"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A59">
+    <owl:onProperty rdf:resource="#hasReferenceDocument"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A28">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A29">
-    <owl:onProperty rdf:resource="#requested"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A30">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasApplicability"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  <rdf:Description rdf:nodeID="A60">
+    <owl:onProperty rdf:resource="#receivingActor"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#EntityName">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A31"/>
-    <rdfs:subClassOf rdf:nodeID="A32"/>
+    <rdfs:subClassOf rdf:nodeID="A61"/>
+    <rdfs:subClassOf rdf:nodeID="A22"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">Entity name</rdfs:label>
     <rdfs:comment xml:lang="en">Entity name must be a valid IFC class from the IFC schema according to IDS developed by buildingSMART International. Example EntityName = "IFCWALL"</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A33">
-    <owl:onProperty rdf:resource="#requested"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:rest rdf:nodeID="A63"/>
+    <rdf:first>NoColor</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#symbolic">
     <vs:term_status>stable</vs:term_status>
@@ -392,16 +522,15 @@
     <rdfs:comment xml:lang="en">symbolic, an example of appearance according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Appearance"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A34">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#explicit">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">explicit</rdfs:label>
     <rdfs:comment xml:lang="en">Explicit, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#ParametricBehaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <owl:unionOf rdf:nodeID="A65"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#ClassificationSystem">
     <vs:term_status>stable</vs:term_status>
@@ -410,20 +539,27 @@
     <rdf:type rdf:resource="#BreakdownStructureType"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Specification">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:label xml:lang="en">Specification</rdfs:label>
-    <rdfs:comment xml:lang="en">Documents such as technical specifications according to notes according to notes of BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="#DocumentContent"/>
+    <rdfs:subClassOf rdf:nodeID="A39"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">has Reference Type</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A66"/>
+    <rdfs:subClassOf rdf:nodeID="A67"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="A68"/>
+    <rdfs:subClassOf rdf:nodeID="A69"/>
+    <rdfs:subClassOf rdf:nodeID="A70"/>
+    <rdfs:subClassOf rdf:nodeID="A71"/>
+    <rdfs:subClassOf rdf:nodeID="A72"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A35">
-    <owl:onProperty rdf:resource="#hasDocumentation"/>
+  <rdf:Description rdf:nodeID="A73">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#AttributeName">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A28"/>
-    <rdfs:subClassOf rdf:nodeID="A14"/>
+    <rdfs:subClassOf rdf:nodeID="A74"/>
+    <rdfs:subClassOf rdf:nodeID="A75"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">Attribute name</rdfs:label>
     <rdfs:comment xml:lang="en">Attribute name must be a valid attribute name from the IFC schema according to the definition of IDS developed by buildingSMART International. Example AttributeName = "Description"</rdfs:comment>
@@ -431,8 +567,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#IFCDataType">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A34"/>
-    <rdfs:subClassOf rdf:nodeID="A3"/>
+    <rdfs:subClassOf rdf:nodeID="A7"/>
+    <rdfs:subClassOf rdf:nodeID="A76"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">IFC data type</rdfs:label>
     <rdfs:comment xml:lang="en">IFC data type must be a valid predefined type from the IFC schema according to IDS standard developed by buildingSMART International</rdfs:comment>
@@ -456,33 +592,32 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#Attribute">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A36"/>
+    <rdfs:subClassOf rdf:nodeID="A37"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetDefinition"/>
     <rdfs:label xml:lang="en">Attribute of IDS</rdfs:label>
     <rdfs:comment xml:lang="en">Attribute is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A37">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#hasGeometrySpecification">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#GeometrySpecification"/>
-    <rdfs:label xml:lang="en">has geometrical information specification</rdfs:label>
+    <rdfs:label xml:lang="en">has geometrical specification</rdfs:label>
     <rdfs:domain rdf:resource="#GeometricalInformation"/>
     <rdfs:comment>["Appearance",&#xD;
 "Detail",&#xD;
 "Dimensionality",&#xD;
 "Location",&#xD;
 "ParametricBehaviour"]</rdfs:comment>
-    <rdfs:comment xml:lang="en">The object property relates the specific aspects with geometrical information according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates the specific aspects with geometrical information according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A38">
-    <owl:onProperty rdf:resource="#hasReceivingActor"/>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:rest rdf:nodeID="A78"/>
+    <rdf:first>Absolute</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -494,11 +629,24 @@
     <rdfs:comment xml:lang="en">The object property relates an identifier of breakdown structure with a specific type according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Textures</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#detailed">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">detailed</rdfs:label>
     <rdfs:comment xml:lang="en">Detail, an example of detail aspect according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Detail"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <rdf:rest rdf:nodeID="A82"/>
+    <rdf:first>L2</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Numbering">
     <vs:term_status>stable</vs:term_status>
@@ -512,9 +660,9 @@
     <rdfs:comment xml:lang="en">coordination, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
     <rdf:type rdf:resource="#Purpose"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A39">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="#Purpose"/>
+  <rdf:Description rdf:nodeID="A83">
+    <schema:name>Ruhr University Bochum</schema:name>
+    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Spatial">
     <vs:term_status>stable</vs:term_status>
@@ -531,14 +679,44 @@
     <rdfs:comment xml:lang="en">The object property relates a breakdown structure with its identifier according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#hasProperty">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#hasProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#Property"/>
+    <rdfs:range rdf:resource="https://w3id.org/isoprops#Property"/>
+    <rdfs:label xml:lang="en">The object property relates the data template with the properties</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/tempo#DataTemplate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <owl:onProperty rdf:resource="#purpose"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dt#isDataTemplateFor">
     <owl:inverseOf rdf:resource="#hasDataTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Relative</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#visualization">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label>Visualization</rdfs:label>
     <rdfs:comment xml:lang="en">Visualization, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
     <rdf:type rdf:resource="#Purpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <owl:onProperty rdf:resource="#hasIdentifier"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#Classification">
     <vs:term_status>stable</vs:term_status>
@@ -548,29 +726,23 @@
     <rdfs:comment xml:lang="en">Classification is is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International. In this ontology, it is defined as an equivalent class of Indentification according to BS EN 17412-1</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A40">
-    <owl:onProperty rdf:resource="#hasIdentifierType"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A87">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A41">
-    <owl:onProperty rdf:resource="#hasSpecificationPerObjectType"/>
+  <rdf:Description rdf:nodeID="A88">
+    <owl:onProperty rdf:resource="#specifiedByIdentifier"/>
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#detailedDesign">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:label xml:lang="en">Detailed design</rdfs:label>
-    <rdfs:comment xml:lang="en">Detailed design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
-    <rdf:type rdf:resource="#InformationDeliveryMilestone"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasSpecificationPerObjectType">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#SpecificationPerObjectType"/>
     <rdfs:label xml:lang="en">has specification per object type</rdfs:label>
-    <rdfs:domain rdf:resource="#InformationDeliveryMilestone"/>
-    <rdfs:comment xml:lang="en">The specification per object type property relates the object type specifications with the information delivery milestone according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:domain rdf:resource="#Specification"/>
+    <rdfs:comment xml:lang="en">The object property relates the specification with the specification per object type according to ISO 7817</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Information">
@@ -581,21 +753,53 @@
   </rdf:Description>
   <rdf:Description rdf:about="#BreakdownStructure">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A9"/>
+    <rdfs:subClassOf rdf:nodeID="A86"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en">Breakdown structure</rdfs:label>
     <rdfs:comment xml:lang="en">Breakdown structure is a term for positioning the object in a structure according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A42">
-    <rdf:rest rdf:nodeID="A43"/>
-    <rdf:first rdf:resource="#BreakdownStructure"/>
+  <rdf:Description rdf:nodeID="A82">
+    <rdf:rest rdf:nodeID="A89"/>
+    <rdf:first>L3</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A90">
+    <owl:onProperty rdf:resource="#receivingActor"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <owl:oneOf rdf:nodeID="A92"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <owl:onProperty rdf:resource="#hasBreakdownStructure"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <rdf:rest rdf:nodeID="A95"/>
+    <rdf:first>Absolute</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <owl:onProperty rdf:resource="#belongsToInformationContent"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Bounds">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Bounds restriction</rdfs:label>
     <rdfs:comment xml:lang="en">Bounds restriction specifies that the value is a number and has to fall within a range of values. It is defined by complex restriction of IDS. In this ontology, it is defined as a restriction type, which specifies the restriction formulation.</rdfs:comment>
     <rdf:type rdf:resource="https://w3id.org/loin/v2/ids#RestrictionType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <rdf:rest rdf:nodeID="A98"/>
+    <rdf:first>NotRequested</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:nodeID="A99"/>
+    <rdf:first>ConstructiveGeometry</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#Actor">
     <vs:term_status>stable</vs:term_status>
@@ -608,16 +812,45 @@
     <vs:term_status>stable</vs:term_status>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en">Document specification</rdfs:label>
-    <rdfs:comment xml:lang="en">Additional specification of document for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Additional specification of document for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasApplicability"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Identification">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A15"/>
+    <rdfs:subClassOf rdf:nodeID="A93"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en">Identification</rdfs:label>
     <rdfs:comment xml:lang="en">Identification is a term for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SpecificationInstance">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:label xml:lang="en">Specification</rdfs:label>
+    <rdfs:comment xml:lang="en">Documents such as technical specifications according to notes according to notes of BS EN 17412-1 (2020)</rdfs:comment>
+    <rdf:type rdf:resource="#DocumentContent"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasGeometricalInformation">
     <vs:term_status>stable</vs:term_status>
@@ -625,7 +858,7 @@
     <rdfs:range rdf:resource="#GeometricalInformation"/>
     <rdfs:label xml:lang="en">has geometrical information</rdfs:label>
     <rdfs:domain rdf:resource="#SpecificationPerObjectType"/>
-    <rdfs:comment xml:lang="en">The object property relates the geometrical information with a LOIN object according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates the geometrical information with a LOIN object according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#specifiedByIdentifier">
@@ -636,25 +869,28 @@
     <rdfs:domain rdf:resource="#InformationContent"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+  <rdf:Description rdf:about="#hasParametricBehaviour">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:nodeID="A101"/>
+    <rdfs:label xml:lang="en">has parametric behaviour</rdfs:label>
+    <rdfs:domain rdf:resource="#ParametricBehaviour"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#requested"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <owl:onProperty rdf:resource="#hasDescriptionInLanguage"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#InformationDeliveryMilestone">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A41"/>
-    <rdfs:subClassOf rdf:nodeID="A44"/>
-    <rdfs:subClassOf rdf:nodeID="A38"/>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label xml:lang="en">Information delivery milestone</rdfs:label>
-    <rdfs:comment xml:lang="en">Information delivery milestone is a contextual aspect according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A43">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="#OntologyDataDefinition"/>
+  <rdf:Description rdf:nodeID="A103">
+    <owl:oneOf rdf:nodeID="A104"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/icdd#isRelatedToContainerLinkset">
     <vs:term_status>stable</vs:term_status>
@@ -664,15 +900,31 @@
     <rdfs:comment xml:lang="en">The object property is an extension with ICDD. It relates ontological document defined by BS EN 17412-1(2020) with container linkset or data set</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#Pattern">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Pattern restriction</rdfs:label>
     <rdfs:comment xml:lang="en">Pattern restriction with regex method specifies advanced pattern matching. In this ontology, it is defined as a restriction type, which specifies the restriction formulation.</rdfs:comment>
     <rdf:type rdf:resource="https://w3id.org/loin/v2/ids#RestrictionType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A45">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasPropertyName"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A106">
+    <owl:someValuesFrom rdf:resource="#Dimensionality"/>
+    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <owl:someValuesFrom rdf:resource="#DocumentType"/>
+    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#costEstimation">
@@ -687,6 +939,10 @@
     <rdfs:comment xml:lang="en">Simple value restriction specifies the exact allowed value. In this ontology, it is defined as a restriction type, which specifies the restriction formulation.</rdfs:comment>
     <rdf:type rdf:resource="https://w3id.org/loin/v2/ids#RestrictionType"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <rdf:rest rdf:nodeID="A81"/>
+    <rdf:first>L1</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#hasInformationContent">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -696,6 +952,21 @@
     <rdfs:comment xml:lang="en">The object property relates the detailed content with alphanumerical information according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#AlphanumericalInformation">
+    <rdfs:subClassOf rdf:resource="#Information"/>
+    <rdfs:subClassOf rdf:nodeID="A59"/>
+    <rdfs:subClassOf rdf:nodeID="A53"/>
+    <rdfs:comment xml:lang="en">Alphanumerical information is a term for specifying the information need according to ISO 7817-3</rdfs:comment>
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A107"/>
+    <rdfs:subClassOf rdf:nodeID="A27"/>
+    <rdfs:subClassOf rdf:nodeID="A85"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A105"/>
+    <rdfs:label xml:lang="en">Alphanumerical information</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A110"/>
+    <rdfs:subClassOf rdf:nodeID="A58"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#hasInformation">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#Information"/>
@@ -704,24 +975,9 @@
     <rdfs:comment xml:lang="en">Proxy property for the three information specification relationships</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#AlphanumericalInformation">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A29"/>
-    <rdfs:subClassOf rdf:resource="#Information"/>
-    <rdfs:label xml:lang="en">Alphanumerical information</rdfs:label>
-    <rdfs:comment xml:lang="en">Alphanumerical information is a term for specifying the information need according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A18">
-    <schema:name>Philipp Hagedorn</schema:name>
-    <schema:memberOf rdf:nodeID="A7"/>
-    <schema:identifier rdf:resource="https://orcid.org/0000-0002-6249-243X"/>
-    <schema:email rdf:resource="mailto:philipp.hagedorn-n6v@rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A46">
-    <owl:onProperty rdf:resource="#belongsToInformationContent"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A111">
+    <owl:onProperty rdf:resource="#hasObjectType"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Signed_Document">
@@ -729,6 +985,16 @@
     <rdfs:label xml:lang="en">Signed document</rdfs:label>
     <rdfs:comment xml:lang="en">Documents such as test certificates, insurance policies, delivery notes according to notes of BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#DocumentContent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A112">
+    <owl:onProperty rdf:resource="#hasDescriptionInLanguage"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A113">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasIdentification">
     <vs:term_status>stable</vs:term_status>
@@ -739,11 +1005,6 @@
     <rdfs:comment xml:lang="en">The object property relates the identification of a breakdown structure with an alphanumerical information according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A47">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/icdd#isRelatedToContainerDocument"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#restrictionFormulation">
     <vs:term_status>stable</vs:term_status>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -752,9 +1013,16 @@
     <rdfs:comment xml:lang="en">Restriction formulation is for formulating facet parameter value, that is used by IDS definition.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A48">
-    <rdf:rest rdf:nodeID="A39"/>
-    <rdf:first rdf:resource="#InformationContent"/>
+  <rdf:Description rdf:nodeID="A0">
+    <owl:onProperty rdf:resource="#hasSpecification"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A114">
+    <owl:onProperty rdf:resource="#informationDeliveryMilestone"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#SendingActor">
     <vs:term_status>stable</vs:term_status>
@@ -763,23 +1031,52 @@
     <rdfs:comment xml:lang="en">Sending actor is a party for information delivery according to ISO 19650-1 (2018)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A49">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#belongsToPset"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A115">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="#OntologyDataDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A116">
+    <owl:oneOf rdf:nodeID="A62"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#Entity">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A8"/>
+    <rdfs:subClassOf rdf:nodeID="A117"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetDefinition"/>
     <rdfs:label xml:lang="en">Entity</rdfs:label>
     <rdfs:comment xml:lang="en">Entity is a facet of Information Delivery Specification (IDS), a standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A32">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A70">
+    <owl:onProperty rdf:resource="#hasDescriptionInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>L5</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <schema:memberOf rdf:nodeID="A83"/>
+    <schema:name>Liu Liu</schema:name>
+    <schema:email rdf:resource="mailto:liu.liu-m6r@rub.de"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:identifier rdf:resource="https://orcid.org/0000-0001-5907-7609"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasDescriptionInLanguage">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/isoprops#hasDescriptionInLanguage"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:label xml:lang="en">Description in Language</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DocumentType">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:resource="#DocumentSpecification"/>
+    <rdfs:label xml:lang="en">Document type</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the file typ of the required document</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#GeometrySpecification">
     <vs:term_status>stable</vs:term_status>
@@ -788,19 +1085,42 @@
     <rdfs:comment xml:lang="en">Additional specification of geometrical information for information need according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <owl:oneOf rdf:nodeID="A119"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#Handdrawn_Sketches">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Handdrawn sketches</rdfs:label>
     <rdfs:comment xml:lang="en">Documents such as such as initial sketches, site plans according to notes of BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#DocumentContent"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A44">
-    <owl:onProperty rdf:resource="#hasSendingActor"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:nodeID="A94"/>
+    <rdf:first>NotRequested</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A31">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+  <rdf:Description rdf:about="#hasIntendedUse">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#hasIntendedUse"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#IntendedUse"/>
+    <rdfs:label xml:lang="en">has Intended Use</rdfs:label>
+    <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
+    <rdfs:comment xml:lang="en">The object property relates the alphanumerical information with the intened use</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <schema:identifier rdf:resource="https://orcid.org/0000-0001-6058-7614"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:memberOf rdf:nodeID="A120"/>
+    <schema:email rdf:resource="mailto:sven.zentgraf@rub.de"/>
+    <schema:name>Sven Zentgraf</schema:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A121">
+    <rdf:rest rdf:nodeID="A1"/>
+    <rdf:first>L1</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A122">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasPropertyName"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -810,8 +1130,13 @@
     <rdfs:range rdf:resource="#DocumentSpecification"/>
     <rdfs:label xml:lang="en">has documentaton specification</rdfs:label>
     <rdfs:domain rdf:resource="#RequiredDocument"/>
-    <rdfs:comment xml:lang="en">The object property relates the document specifications with a document according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates the document specifications with a document according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
+    <owl:onProperty rdf:resource="#hasBreakdownStructure"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasRequirementType">
     <vs:term_status>stable</vs:term_status>
@@ -822,11 +1147,21 @@
     <rdfs:comment xml:lang="en">relates the requirement type with the defined requirements in IDS data definition</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:rest rdf:nodeID="A109"/>
+    <rdf:first>NotRequested</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#parametric">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">parametric</rdfs:label>
     <rdfs:comment xml:lang="en">Parametric, an example of parametric behaviour according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#ParametricBehaviour"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:onProperty rdf:resource="#hasDocument"/>
+    <owl:onClass rdf:resource="#RequiredDocument"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Functional">
     <vs:term_status>stable</vs:term_status>
@@ -834,23 +1169,13 @@
     <rdfs:comment xml:lang="en">An example of breakdown structure type according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#BreakdownStructureType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A50">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A51">
-    <owl:someValuesFrom rdf:resource="#DocumentFormat"/>
-    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#hasSendingActor">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#SendingActor"/>
-    <rdfs:label xml:lang="en">has has Sending Actor</rdfs:label>
-    <rdfs:domain rdf:resource="#InformationDeliveryMilestone"/>
-    <rdfs:comment xml:lang="en">The object property relates the sending actor with the information delivery milestone according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:label xml:lang="en">has Sending Actor</rdfs:label>
+    <rdfs:domain rdf:resource="#Prerequisites"/>
+    <rdfs:comment xml:lang="en">The object property relates the  with the sending actor  according to ISO 7817</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#FacetDefinition">
@@ -859,11 +1184,6 @@
     <rdfs:label xml:lang="en">IDS facet definition</rdfs:label>
     <rdfs:comment xml:lang="en">IDS facet definition is used to define a facet to apply the requirement or to require the information according to IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A52">
-    <owl:someValuesFrom rdf:resource="#Dimensionality"/>
-    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#value">
     <vs:term_status>stable</vs:term_status>
@@ -874,39 +1194,83 @@
   </rdf:Description>
   <rdf:Description rdf:about="#Appearance">
     <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A124"/>
     <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
     <rdfs:label xml:lang="en">Appearance</rdfs:label>
-    <rdfs:comment xml:lang="en">Appearance as a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Appearance as a geometrical information specification for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#RequirementType">
     <vs:term_status>stable</vs:term_status>
-    <owl:oneOf rdf:nodeID="A53"/>
+    <owl:oneOf rdf:nodeID="A125"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:label xml:lang="en">IDS requirement type</rdfs:label>
     <rdfs:comment xml:lang="en">IDS requirement type is used to specify a requirement, if it is optional or mandatory according to IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A54">
-    <owl:unionOf rdf:nodeID="A42"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <owl:someValuesFrom rdf:resource="#RequiredDocument"/>
-    <owl:onProperty rdf:resource="#hasDocument"/>
+  <rdf:Description rdf:nodeID="A8">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasDimensionality"/>
+    <owl:onDataRange rdf:nodeID="A56"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A55">
-    <owl:someValuesFrom rdf:resource="#Location"/>
+  <rdf:Description rdf:nodeID="A126">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A127">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A125">
+    <rdf:rest rdf:nodeID="A128"/>
+    <rdf:first>Required</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasSpecification">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#Specification"/>
+    <rdfs:label xml:lang="en">Specification</rdfs:label>
+    <rdfs:domain rdf:resource="#LevelOfInformationNeed"/>
+    <rdfs:comment xml:lang="en">The object property relates the LOIN with the specification according to ISO 7817</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A129">
+    <owl:someValuesFrom rdf:resource="#ParametricBehaviour"/>
+    <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <owl:onProperty rdf:resource="#purpose"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A131">
+    <owl:someValuesFrom rdf:resource="#Detail"/>
     <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Purpose">
-    <rdfs:subClassOf rdf:nodeID="A13"/>
+    <rdfs:subClassOf rdf:nodeID="A112"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label>Purpose</rdfs:label>
-    <rdfs:comment xml:lang="en">Purpose is a contextual aspect according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Purpose is a contextual aspect according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#receivingActor">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Receiving actor</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasApplicability">
     <vs:term_status>stable</vs:term_status>
@@ -928,44 +1292,68 @@
     <rdfs:comment xml:lang="en">Documents of geometrical information or alphanumerical information can also be considered as documents according to notes of BS EN 17412-1 (2020).</rdfs:comment>
     <rdf:type rdf:resource="#DocumentContent"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasUnit">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#Unit"/>
+    <rdfs:label xml:lang="en">The object property relates the alphanumerical information with the unit according to ISO 7817</rdfs:label>
+    <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#hasReceivingActor">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#ReceivingActor"/>
     <rdfs:label xml:lang="en">has receiving actor</rdfs:label>
-    <rdfs:domain rdf:resource="#InformationDeliveryMilestone"/>
-    <rdfs:comment xml:lang="en">The object property relates the receiver actor with the information delivery milestone according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:domain rdf:resource="#Prerequisites"/>
+    <rdfs:comment xml:lang="en">The object property relates the prerequisites with the receiving actor according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A56">
-    <schema:name>Ruhr University Bochum, Germany</schema:name>
-    <rdf:type rdf:resource="https://schema.org/Organization"/>
+  <rdf:Description rdf:about="#sendingActor">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Sending actor</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GeometricalInformation">
+    <rdfs:subClassOf rdf:nodeID="A131"/>
+    <rdfs:comment xml:lang="en">Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Information"/>
+    <rdfs:subClassOf rdf:nodeID="A14"/>
+    <rdfs:subClassOf rdf:nodeID="A132"/>
+    <rdfs:subClassOf rdf:nodeID="A133"/>
+    <rdfs:subClassOf rdf:nodeID="A129"/>
+    <rdfs:subClassOf rdf:nodeID="A126"/>
+    <rdfs:label xml:lang="en">Geometrical information</rdfs:label>
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A36"/>
+    <rdfs:subClassOf rdf:nodeID="A106"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#RequiredDocument">
     <rdfs:label xml:lang="en">Document</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A134"/>
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A51"/>
-    <rdfs:comment xml:lang="en">Document is a term for specifying the documentation of information need according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A22"/>
+    <rdfs:subClassOf rdf:nodeID="A96"/>
+    <rdfs:subClassOf rdf:nodeID="A9"/>
+    <rdfs:subClassOf rdf:nodeID="A135"/>
+    <rdfs:subClassOf rdf:nodeID="A108"/>
+    <rdfs:subClassOf rdf:nodeID="A35"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:subClassOf rdf:nodeID="A46"/>
-    <rdfs:subClassOf rdf:nodeID="A37"/>
+    <rdfs:comment xml:lang="en">Document is a term for specifying the documentation of information need according to ISO 7817-3</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A136"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A47"/>
-    <rdfs:subClassOf rdf:nodeID="A57"/>
+    <rdfs:subClassOf rdf:nodeID="A87"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#GeometricalInformation">
-    <rdfs:subClassOf rdf:nodeID="A52"/>
-    <rdfs:subClassOf rdf:nodeID="A6"/>
-    <rdfs:comment xml:lang="en">Geometrical information is a term for specifying the information need according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="#Information"/>
-    <rdfs:subClassOf rdf:nodeID="A55"/>
-    <rdfs:subClassOf rdf:nodeID="A58"/>
-    <rdfs:subClassOf rdf:nodeID="A33"/>
-    <rdfs:label xml:lang="en">Geometrical information</rdfs:label>
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A26"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A132">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#InformationContent">
     <vs:term_status>stable</vs:term_status>
@@ -973,6 +1361,14 @@
     <rdfs:label xml:lang="en">Alphanumerical information content</rdfs:label>
     <rdfs:comment xml:lang="en">Alphanumerical information content is a term for specifying the alphanumerical information according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasLocation">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:nodeID="A103"/>
+    <rdfs:label xml:lang="en">has location</rdfs:label>
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#IdentifierType">
     <vs:term_status>stable</vs:term_status>
@@ -987,13 +1383,8 @@
     <rdfs:range rdf:resource="#RequiredDocument"/>
     <rdfs:label xml:lang="en">has document</rdfs:label>
     <rdfs:domain rdf:resource="#Documentation"/>
-    <rdfs:comment xml:lang="en">The object property relates a set of documents with documentation according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates a set of documents with documentation according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A59">
-    <owl:onProperty rdf:resource="#description"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasValue">
     <vs:term_status>stable</vs:term_status>
@@ -1013,15 +1404,21 @@
     <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A60">
-    <rdf:rest rdf:nodeID="A61"/>
-    <rdf:first>Optional</rdf:first>
+  <rdf:Description rdf:nodeID="A137">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasParametricBehaviour"/>
+    <owl:onDataRange rdf:nodeID="A16"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#simplified">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">simplified</rdfs:label>
     <rdfs:comment xml:lang="en">simplified, an example of detail according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Detail"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A99">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>ParametricGeometry</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#belongsToInformationContent">
     <vs:term_status>stable</vs:term_status>
@@ -1031,6 +1428,21 @@
     <rdfs:domain rdf:resource="#RequiredDocument"/>
     <rdfs:comment xml:lang="en">Specification of document, that relates with a respective person</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasIFCDataType"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <rdf:rest rdf:nodeID="A139"/>
+    <rdf:first>SingleColor</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <owl:onProperty rdf:resource="#hasNameInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#requested">
     <vs:term_status>stable</vs:term_status>
@@ -1043,22 +1455,28 @@
     <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#Detail">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
-    <rdfs:label xml:lang="en">Detail</rdfs:label>
-    <rdfs:comment xml:lang="en">Detail as a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#Identifier">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A62"/>
-    <rdfs:subClassOf rdf:nodeID="A40"/>
-    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf rdf:nodeID="A31"/>
+    <rdfs:subClassOf rdf:nodeID="A44"/>
+    <rdfs:subClassOf rdf:nodeID="A123"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="en">Identifier</rdfs:label>
     <rdfs:comment xml:lang="en">Identifier is used to assiging a vaule for positioning the object in a breakdown structure according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Detail">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A54"/>
+    <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
+    <rdfs:label xml:lang="en">Detail</rdfs:label>
+    <rdfs:comment xml:lang="en">Detail as a geometrical information specification for information need according to ISO 7817-3</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A110">
+    <owl:onProperty rdf:resource="#hasProperty"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasAttributeName">
     <vs:term_status>stable</vs:term_status>
@@ -1072,24 +1490,43 @@
     <vs:term_status>stable</vs:term_status>
     <rdfs:subClassOf rdf:resource="#DocumentSpecification"/>
     <rdfs:label xml:lang="en">Document content</rdfs:label>
-    <rdfs:comment xml:lang="en">Document specification for content for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Document specification for content for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasQuantityKind">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/tempo#QuantityKind"/>
+    <rdfs:label xml:lang="en">The object property relates the alphanumerical information with the quantitiy kind according to ISO 7817-3</rdfs:label>
+    <rdfs:domain rdf:resource="#AlphanumericalInformation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasPurpose">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="#Purpose"/>
     <rdfs:label xml:lang="en">has purpose</rdfs:label>
-    <rdfs:domain rdf:resource="#InformationDeliveryMilestone"/>
-    <rdfs:comment xml:lang="en">The object property relates the purpose with the information delivery milestone according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:domain rdf:resource="#Prerequisites"/>
+    <rdfs:comment xml:lang="en">The object property relates the purpose with the prerequisites according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasLocation"/>
+    <owl:onDataRange rdf:nodeID="A140"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasReferenceSource">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdfs:label xml:lang="en">has reference source</rdfs:label>
-    <rdfs:domain rdf:nodeID="A54"/>
+    <rdfs:domain rdf:nodeID="A64"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#three-dimensional">
@@ -1105,19 +1542,53 @@
     <rdfs:comment xml:lang="en">Material is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A128">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first>Optional</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <owl:oneOf rdf:nodeID="A97"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#purpose">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">purpose</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A135">
+    <owl:someValuesFrom rdf:resource="#DocumentPurpose"/>
+    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <schema:identifier rdf:resource="https://www.inf.bi.rub.de"/>
+    <rdf:type rdf:resource="https://schema.org/Organization"/>
+    <schema:name>Chair of Computing in Engineering, Ruhr University Bochum</schema:name>
+    <schema:parentOrganization rdf:nodeID="A40"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#PredefinedType">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A16"/>
-    <rdfs:subClassOf rdf:nodeID="A63"/>
+    <rdfs:subClassOf rdf:nodeID="A73"/>
+    <rdfs:subClassOf rdf:nodeID="A79"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label xml:lang="en">Predefined type</rdfs:label>
     <rdfs:comment xml:lang="en">Predefined type must be a valid predefined type from the IFC schema, or any custom text value according to IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A36">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasAttributeName"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A141">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/loin/v2/ids#Entity"/>
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasApplicability"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:rest rdf:nodeID="A115"/>
+    <rdf:first rdf:resource="#BreakdownStructure"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasBreakdownStructureType">
     <vs:term_status>stable</vs:term_status>
@@ -1136,12 +1607,20 @@
     <rdfs:comment xml:lang="en">The object property is an extension with ICDD. It relates the actors defined by BS EN 17412-1(2020) with container party</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Textures</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#RestrictionType">
     <vs:term_status>stable</vs:term_status>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:label xml:lang="en">Restriction type</rdfs:label>
     <rdfs:comment xml:lang="en">Restriction type is used to specify the value of IDS facet parameter, that is defined in restriction formulation. The restriction types are based on IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <rdf:rest rdf:nodeID="A34"/>
+    <rdf:first>D0</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#belongsToPset">
     <vs:term_status>stable</vs:term_status>
@@ -1151,18 +1630,35 @@
     <rdfs:comment xml:lang="en">Specification is used for facet property of IDS data definition.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#DocumentFormat">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:resource="#DocumentSpecification"/>
-    <rdfs:label xml:lang="en">Document format</rdfs:label>
-    <rdfs:comment xml:lang="en">Document specification for format for information need according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A55">
+    <owl:oneOf rdf:nodeID="A121"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Provided_As_Information">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">The document provided as information</rdfs:label>
     <rdfs:comment xml:lang="en">The document delivered by Inquirer as percondition or information</rdfs:comment>
     <rdf:type rdf:resource="#DocumentPurpose"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Prerequisites">
+    <rdfs:subClassOf rdf:nodeID="A127"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A90"/>
+    <rdfs:comment xml:lang="en">Prerequisites is a term for specifying the prerequisites of a corresponding specification according to ISO 7817-3</rdfs:comment>
+    <rdfs:label xml:lang="en">Prerequisites</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A114"/>
+    <rdfs:subClassOf rdf:nodeID="A142"/>
+    <rdfs:subClassOf rdf:nodeID="A33"/>
+    <rdfs:subClassOf rdf:nodeID="A130"/>
+    <rdfs:subClassOf rdf:nodeID="A84"/>
+    <rdfs:subClassOf rdf:nodeID="A143"/>
+    <rdfs:subClassOf rdf:nodeID="A21"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="A60"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <rdf:rest rdf:nodeID="A144"/>
+    <rdf:first>NoColor</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasEntityName">
     <vs:term_status>stable</vs:term_status>
@@ -1172,32 +1668,43 @@
     <rdfs:comment xml:lang="en">The object property relates the entity name with the facet entity according to IDS definition</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#description">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label xml:lang="en">description</rdfs:label>
-    <rdfs:domain rdf:nodeID="A64"/>
-    <rdfs:comment xml:lang="en">Description provide detail and extend of information derived by Information Delivery Specification (IDS)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A19">
-    <schema:parentOrganization rdf:nodeID="A56"/>
-    <schema:name>Chair of Computing in Engineering, Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Organization"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A20">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#restrictionFormulation"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A71">
+    <owl:onProperty rdf:resource="#hasPrerequisites"/>
+    <owl:onClass rdf:resource="#Prerequisites"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A64">
-    <owl:unionOf rdf:nodeID="A48"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A136">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A53">
-    <rdf:rest rdf:nodeID="A60"/>
-    <rdf:first>Required</rdf:first>
+  <rdf:Description rdf:about="#hasDetail">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:nodeID="A49"/>
+    <rdfs:label xml:lang="en">has detail</rdfs:label>
+    <rdfs:domain rdf:resource="#Detail"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A120">
+    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en"/>
+    <schema:name>Ruhr University Bochum</schema:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A144">
+    <rdf:rest rdf:nodeID="A28"/>
+    <rdf:first>SingleColor</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <owl:onProperty rdf:resource="#hasSpecificationPerObjectType"/>
+    <owl:onClass rdf:resource="#SpecificationPerObjectType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <rdf:rest rdf:nodeID="A145"/>
+    <rdf:first>NotRequested</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#hasPropertyName">
     <vs:term_status>stable</vs:term_status>
@@ -1206,11 +1713,6 @@
     <rdfs:domain rdf:resource="https://w3id.org/loin/v2/ids#Property"/>
     <rdfs:comment xml:lang="en">The object property relates a property name type with the facet property according to IDS definition</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A62">
-    <owl:onProperty rdf:resource="#value"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#ReferenceOfStructure">
     <vs:term_status>stable</vs:term_status>
@@ -1231,20 +1733,11 @@
     <rdfs:comment xml:lang="en">Receiving actor is a party for information delivery according to ISO 19650-1 (2018)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A65">
-    <owl:onProperty rdf:resource="#hasObjectType"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#Semantic">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Semantic structure</rdfs:label>
     <rdfs:comment xml:lang="en">An example of breakdown structure type according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#BreakdownStructureType"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A61">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>Prohibited</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#hasAlphanumericalInformation">
     <vs:term_status>stable</vs:term_status>
@@ -1252,27 +1745,26 @@
     <rdfs:range rdf:resource="#AlphanumericalInformation"/>
     <rdfs:label xml:lang="en">has alphanumerical information</rdfs:label>
     <rdfs:domain rdf:resource="#SpecificationPerObjectType"/>
-    <rdfs:comment xml:lang="en">The object property relates an alphanumerical information with a LOIN object according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">The object property relates an alphanumerical information with a LOIN object according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
-    <owl:hasValue rdf:resource="#SimpleValue"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A63">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#Value">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A50"/>
-    <rdfs:subClassOf rdf:nodeID="A66"/>
+    <rdfs:subClassOf rdf:nodeID="A113"/>
+    <rdfs:subClassOf rdf:nodeID="A146"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetParameter"/>
     <rdfs:label>Value</rdfs:label>
     <rdfs:comment>Value can be any custom value according to IDS standard developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+    <owl:hasValue rdf:resource="#SimpleValue"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A139">
+    <rdf:rest rdf:nodeID="A80"/>
+    <rdf:first>MaterialColor</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#structuralAnalysis">
     <vs:term_status>stable</vs:term_status>
@@ -1280,10 +1772,9 @@
     <rdfs:comment xml:lang="en">Structural analysis, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
     <rdf:type rdf:resource="#Purpose"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A57">
-    <owl:someValuesFrom rdf:resource="#DocumentPurpose"/>
-    <owl:onProperty rdf:resource="#hasDocumentSpecification"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>L5</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#relative">
     <vs:term_status>stable</vs:term_status>
@@ -1291,10 +1782,24 @@
     <rdfs:comment xml:lang="en">Relative, an example of location according to notes of geometrical information specification for information need in BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Location"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A21">
-    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+  <rdf:Description rdf:nodeID="A68">
+    <owl:onProperty rdf:resource="#hasNameInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A117">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasEntityName"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasDimensionality">
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:nodeID="A91"/>
+    <rdfs:label xml:lang="en">has detail</rdfs:label>
+    <rdfs:domain rdf:resource="#Dimensionality"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#isRelatedToLoinDocument">
     <vs:term_status>stable</vs:term_status>
@@ -1305,22 +1810,24 @@
     <rdfs:comment xml:lang="en">The object property relates the alphanumerical information content with document according to BS EN 17412-1(2020)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A66">
+  <rdf:Description rdf:nodeID="A134">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
     <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#OntologyDataDefinition">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A5"/>
+    <rdfs:subClassOf rdf:nodeID="A88"/>
     <rdfs:subClassOf rdf:resource="#InformationContent"/>
     <rdfs:label xml:lang="en">Ontology data definition</rdfs:label>
     <rdfs:comment xml:lang="en">Ontology data definition is an extension of BS EN 17412-1 (2020). It is used to specify the alphanumerical information according to a published or customized ontology</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A23">
-    <schema:name>Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en"/>
   </rdf:Description>
   <rdf:Description rdf:about="#two-dimensional">
     <vs:term_status>stable</vs:term_status>
@@ -1328,16 +1835,34 @@
     <rdfs:comment xml:lang="en">Two-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Dimensionality"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A140">
+    <owl:oneOf rdf:nodeID="A77"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A147">
+    <owl:onProperty rdf:resource="#hasAlphanumericalInformation"/>
+    <owl:onClass rdf:resource="#AlphanumericalInformation"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#zero-dimensional">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">zero-dimensional</rdfs:label>
     <rdfs:comment xml:lang="en">zero-dimensional, an example of dimensionality from a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
     <rdf:type rdf:resource="#Dimensionality"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A58">
-    <owl:someValuesFrom rdf:resource="#ParametricBehaviour"/>
+  <rdf:Description rdf:nodeID="A133">
+    <owl:someValuesFrom rdf:resource="#Location"/>
     <owl:onProperty rdf:resource="#hasGeometrySpecification"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasPrerequisites">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:range rdf:resource="#Prerequisites"/>
+    <rdfs:label xml:lang="en">has Prerequisites</rdfs:label>
+    <rdfs:domain rdf:resource="#Specification"/>
+    <rdfs:comment xml:lang="en">The object property relates the specification with the prerequisites</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Used_As_Template">
     <vs:term_status>stable</vs:term_status>
@@ -1347,16 +1872,22 @@
   </rdf:Description>
   <rdf:Description rdf:about="#ParametricBehaviour">
     <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A137"/>
     <rdfs:subClassOf rdf:resource="#GeometrySpecification"/>
     <rdfs:label xml:lang="en">Parametric behaviour</rdfs:label>
-    <rdfs:comment xml:lang="en">Parametric behaviour as a geometrical information specification for information need according to BS EN 17412-1 (2020)</rdfs:comment>
+    <rdfs:comment xml:lang="en">Parametric behaviour as a geometrical information specification for information need according to ISO 7817-3</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A148">
+    <owl:onProperty rdf:resource="#hasGeometricalInformation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#Property">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A45"/>
-    <rdfs:subClassOf rdf:nodeID="A24"/>
-    <rdfs:subClassOf rdf:nodeID="A49"/>
+    <rdfs:subClassOf rdf:nodeID="A122"/>
+    <rdfs:subClassOf rdf:nodeID="A138"/>
+    <rdfs:subClassOf rdf:nodeID="A32"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/loin/v2/ids#FacetDefinition"/>
     <rdfs:label xml:lang="en">Property</rdfs:label>
     <rdfs:comment xml:lang="en">Property is a facet of Information Delivery Specification(IDS), a standard developed by buildingSMART International</rdfs:comment>
@@ -1372,8 +1903,13 @@
     <vs:term_status>stable</vs:term_status>
     <rdfs:subClassOf rdf:resource="#DocumentSpecification"/>
     <rdfs:label xml:lang="en">Document purpose</rdfs:label>
-    <rdfs:comment xml:lang="en">Document purpose is a extension according to BS EN 17412-1 (2020) 6.4 Document - Example 1. It specifies the use of document</rdfs:comment>
+    <rdfs:comment xml:lang="en">Document purpose is a extension according to ISO 7817-3. It specifies the use of document</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A146">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#NotRequested">
     <loin:requested rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</loin:requested>
@@ -1382,39 +1918,86 @@
     <rdfs:comment xml:lang="en">Geometry information is not requested</rdfs:comment>
     <rdf:type rdf:resource="#GeometricalInformation"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <rdf:rest rdf:nodeID="A118"/>
+    <rdf:first>L4</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>D3</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SpecificationPerObjectType">
+    <rdfs:subClassOf rdf:nodeID="A149"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/tempo#ConceptType"/>
+    <rdfs:subClassOf rdf:nodeID="A111"/>
+    <rdfs:label xml:lang="en">Specification per Object Type</rdfs:label>
+    <vs:term_status>stable</vs:term_status>
+    <rdfs:subClassOf rdf:nodeID="A148"/>
+    <rdfs:comment xml:lang="en">SpecificationPerObjectType is a contextual aspect according to  ISO 7817-3</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="A147"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#fireSmokeSimulation">
     <vs:term_status>stable</vs:term_status>
     <rdfs:label xml:lang="en">Fire and smoke simulation</rdfs:label>
     <rdfs:comment xml:lang="en">Fire and smoke simulation, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
     <rdf:type rdf:resource="#Purpose"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#SpecificationPerObjectType">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A25"/>
-    <rdfs:subClassOf rdf:nodeID="A65"/>
-    <rdfs:subClassOf rdf:nodeID="A27"/>
-    <rdfs:subClassOf rdf:nodeID="A35"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:label xml:lang="en">Specification per Object Type</rdfs:label>
-    <rdfs:comment xml:lang="en">SpecificationPerObjectType is a contextual aspect according to BS EN 17412-1 (2020)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Relative</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A142">
+    <owl:onProperty rdf:resource="#informationDeliveryMilestone"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <rdf:rest rdf:nodeID="A3"/>
+    <rdf:first>D0</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A145">
+    <rdf:rest rdf:nodeID="A52"/>
+    <rdf:first>ExplicitGeometry</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/loin/v2/ids#DataDefinition">
     <vs:term_status>stable</vs:term_status>
-    <rdfs:subClassOf rdf:nodeID="A4"/>
-    <rdfs:subClassOf rdf:nodeID="A12"/>
-    <rdfs:subClassOf rdf:nodeID="A30"/>
-    <rdfs:subClassOf rdf:nodeID="A59"/>
+    <rdfs:subClassOf rdf:nodeID="A141"/>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
+    <rdfs:subClassOf rdf:nodeID="A100"/>
+    <rdfs:subClassOf rdf:nodeID="A102"/>
     <rdfs:subClassOf rdf:resource="#InformationContent"/>
     <rdfs:label xml:lang="en">IDS data definition</rdfs:label>
     <rdfs:comment xml:lang="en">IDS data definition is used to specify the alphanumerical information according to Information Delivery Specification (IDS) developed by buildingSMART International</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#finalDesign">
-    <vs:term_status>stable</vs:term_status>
-    <rdfs:label xml:lang="en">Final design</rdfs:label>
-    <rdfs:comment xml:lang="en">Final design, an example of IDM purpose from BS EN 17412-1 (2020) - Annex B</rdfs:comment>
-    <rdf:type rdf:resource="#InformationDeliveryMilestone"/>
+  <rdf:Description rdf:nodeID="A124">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasAppearance"/>
+    <owl:onDataRange rdf:nodeID="A116"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <owl:onProperty rdf:resource="https://w3id.org/loin/v2/ids#hasRestrictionType"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A149">
+    <owl:onProperty rdf:resource="#hasDocumentation"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A143">
+    <owl:onProperty rdf:resource="https://w3id.org/tempo#conceptGUID"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tempo#GUIDType"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <schema:name>Ruhr University Bochum</schema:name>
+    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en"/>
   </rdf:Description>
 </rdf:RDF>
 
