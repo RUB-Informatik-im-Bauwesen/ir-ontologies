@@ -1,0 +1,1451 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b100",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:hasUnit"
+  }, {
+    "@id" : "_:b101",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b102",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b103",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
+  }, {
+    "@id" : "_:b104",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:Property",
+    "onProperty" : "tempo:hasProperty"
+  }, {
+    "@id" : "_:b105",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:GUIDType",
+    "onProperty" : "tempo:conceptGUID"
+  }, {
+    "@id" : "_:b107",
+    "@type" : "rdfs:Datatype",
+    "onDatatype" : "xsd:string",
+    "withRestrictions" : {
+      "@list" : [ "_:b8" ]
+    }
+  }, {
+    "@id" : "_:b108",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:QuantityKind",
+    "onProperty" : "tempo:hasQuantityKind"
+  }, {
+    "@id" : "_:b109",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "tempo:GroupOfProperties", "isoprops:GroupOfProperties" ]
+    }
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "_:b12",
+    "onProperty" : "tempo:hasProperty"
+  }, {
+    "@id" : "_:b110",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "BOOLEAN", "INTEGER", "RATIONAL", "REAL", "COMPLEX", "STRING", "DATETIME" ]
+    }
+  }, {
+    "@id" : "_:b111",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:nameInLanguage"
+  }, {
+    "@id" : "_:b113",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:order"
+  }, {
+    "@id" : "_:b114",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:author"
+  }, {
+    "@id" : "_:b115",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:hasGroupOfProperties"
+  }, {
+    "@id" : "_:b116",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:Unit",
+    "onProperty" : "tempo:hasUnit"
+  }, {
+    "@id" : "_:b118",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:publisher"
+  }, {
+    "@id" : "_:b119",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasURI"
+  }, {
+    "@id" : "_:b12",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "tempo:Property", "isoprops:Property" ]
+    }
+  }, {
+    "@id" : "_:b120",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:isSubtypeOf"
+  }, {
+    "@id" : "_:b121",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "isoprops:GroupOfProperties", "tempo:GroupOfProperties" ]
+    }
+  }, {
+    "@id" : "_:b123",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasURI"
+  }, {
+    "@id" : "_:b124",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:isbn"
+  }, {
+    "@id" : "_:b125",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:publisher"
+  }, {
+    "@id" : "_:b13",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "tempo:GUIDType",
+    "onProperty" : "tempo:conceptGUID"
+  }, {
+    "@id" : "_:b14",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "BOOLEAN", "INTEGER", "RATIONAL", "REAL", "COMPLEX", "STRING", "DATETIME" ]
+    }
+  }, {
+    "@id" : "_:b15",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:QuantityKind",
+    "onProperty" : "tempo:hasQuantityKind"
+  }, {
+    "@id" : "_:b16",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:DataTemplate",
+    "onProperty" : "tempo:hasDataTemplate"
+  }, {
+    "@id" : "_:b17",
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.inf.bi.rub.de",
+    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
+    "parentOrganization" : "_:b18"
+  }, {
+    "@id" : "_:b18",
+    "@type" : "schema:Organization",
+    "name" : "Ruhr University Bochum, Germany"
+  }, {
+    "@id" : "_:b19",
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b32",
+    "name" : "Philipp Hagedorn"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:isbn"
+  }, {
+    "@id" : "_:b20",
+    "@type" : "schema:Person",
+    "email" : "mailto:liu.liu-m6r@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-5907-7609",
+    "memberOf" : "_:b102",
+    "name" : "Liu Liu"
+  }, {
+    "@id" : "_:b21",
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/construction-engineering-and-management/",
+    "name" : "Chair of Construction Management, Bauhaus Universitaet Weimar",
+    "parentOrganization" : "_:b27"
+  }, {
+    "@id" : "_:b22",
+    "@type" : "schema:Person",
+    "email" : "mailto:sven.zentgraf@rub.de",
+    "identifier" : "https://orcid.org/0000-0001-6058-7614",
+    "memberOf" : "_:b101",
+    "name" : "Sven Zentgraf"
+  }, {
+    "@id" : "_:b23",
+    "@type" : "schema:Person",
+    "email" : "mailto:martina.mellenthin.filardo@uni-weimar.de",
+    "identifier" : "https://orcid.org/0000-0001-7759-7579",
+    "memberOf" : "_:b58",
+    "name" : "Marthina Mellenthin-Filardo"
+  }, {
+    "@id" : "_:b24",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:author"
+  }, {
+    "@id" : "_:b25",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "isoprops:Property", "tempo:Property" ]
+    }
+  }, {
+    "@id" : "_:b26",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "tempo:DataTemplate", "tempo:GroupOfProperties", "tempo:Library" ]
+    }
+  }, {
+    "@id" : "_:b27",
+    "@type" : "schema:Organization",
+    "name" : "Bauhaus Universitaet Weimar, Germany"
+  }, {
+    "@id" : "_:b28",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasVisualRepresentation"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "active", "inactive" ]
+    }
+  }, {
+    "@id" : "_:b32",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b33",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:symbol"
+  }, {
+    "@id" : "_:b34",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:Unit",
+    "onProperty" : "tempo:hasUnit"
+  }, {
+    "@id" : "_:b35",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:QuantityKind",
+    "onProperty" : "tempo:hasQuantityKind"
+  }, {
+    "@id" : "_:b36",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:isSpecializationOf"
+  }, {
+    "@id" : "_:b37",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "tempo:isSpecializationOf"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "tempo:Datatype",
+    "onProperty" : "tempo:hasDatatype"
+  }, {
+    "@id" : "_:b39",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:Datatype",
+    "onProperty" : "tempo:hasDatatype"
+  }, {
+    "@id" : "_:b40",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:isDependentOn"
+  }, {
+    "@id" : "_:b42",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasDictionary"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "tempo:hasUnit"
+  }, {
+    "@id" : "_:b46",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:countryOfOrigin"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "_:b110",
+    "onProperty" : "tempo:dataType",
+    "qualifiedCardinality" : "1"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:dataFormat"
+  }, {
+    "@id" : "_:b49",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:Enumeration",
+    "onProperty" : "tempo:hasEnumeration"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:ObjectType",
+    "onProperty" : "tempo:isAssignedToObjectType"
+  }, {
+    "@id" : "_:b50",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:dataFormat"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:Enumeration",
+    "onProperty" : "tempo:hasEnumeration"
+  }, {
+    "@id" : "_:b52",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "tempo:nameInLanguage"
+  }, {
+    "@id" : "_:b53",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "tempo:dateOfPublication"
+  }, {
+    "@id" : "_:b56",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "_:b109",
+    "onProperty" : "tempo:hasGroupOfProperties"
+  }, {
+    "@id" : "_:b57",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ObjectType",
+    "onProperty" : "tempo:isAssignedToObjectType"
+  }, {
+    "@id" : "_:b58",
+    "identifier" : "https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/",
+    "name" : "Bauhaus-Universitaet Weimar"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "tempo:hasReferenceURI"
+  }, {
+    "@id" : "_:b61",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "tempo:order"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "active", "inactive" ]
+    }
+  }, {
+    "@id" : "_:b67",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:hasReferenceURI"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "tempo:GUIDType",
+    "onProperty" : "tempo:conceptGUID"
+  }, {
+    "@id" : "_:b71",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasParts"
+  }, {
+    "@id" : "_:b74",
+    "pattern" : "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
+  }, {
+    "@id" : "_:b76",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "tempo:dateOfPublication"
+  }, {
+    "@id" : "_:b77",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:ReferenceDocument",
+    "onProperty" : "tempo:hasReferenceDocument"
+  }, {
+    "@id" : "_:b78",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ObjectType",
+    "onProperty" : "tempo:hasObjectType"
+  }, {
+    "@id" : "_:b79",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:isSubtypeOf"
+  }, {
+    "@id" : "_:b8",
+    "pattern" : "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
+  }, {
+    "@id" : "_:b80",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "tempo:GUIDType",
+    "onProperty" : "tempo:conceptGUID"
+  }, {
+    "@id" : "_:b81",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:deprecationExplanation"
+  }, {
+    "@id" : "_:b82",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:isSimilarTo"
+  }, {
+    "@id" : "_:b83",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:languageOfCreator"
+  }, {
+    "@id" : "_:b84",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "tempo:GUIDType",
+    "onProperty" : "tempo:conceptGUID"
+  }, {
+    "@id" : "_:b85",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "tempo:exampleInLanguage"
+  }, {
+    "@id" : "_:b86",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "tempo:definitionInLanguage"
+  }, {
+    "@id" : "_:b87",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:countryOfOrigin"
+  }, {
+    "@id" : "_:b88",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceDocument",
+    "onProperty" : "tempo:hasReferenceDocument"
+  }, {
+    "@id" : "_:b89",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "tempo:languageOfCreator"
+  }, {
+    "@id" : "_:b90",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "tempo:dateOfCreation"
+  }, {
+    "@id" : "_:b91",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "1",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "tempo:dateOfCreation"
+  }, {
+    "@id" : "_:b92",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "rdf:langString",
+    "onProperty" : "tempo:descriptionInLanguage"
+  }, {
+    "@id" : "_:b93",
+    "@type" : "owl:Restriction",
+    "maxQualifiedCardinality" : "1",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasDictionary"
+  }, {
+    "@id" : "_:b94",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onDataRange" : "_:b65",
+    "onProperty" : "tempo:status"
+  }, {
+    "@id" : "_:b95",
+    "@type" : "owl:Restriction",
+    "minQualifiedCardinality" : "0",
+    "onClass" : "tempo:ReferenceType",
+    "onProperty" : "tempo:hasReplacedObjects"
+  }, {
+    "@id" : "_:b96",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "0",
+    "onProperty" : "tempo:hasProperty"
+  }, {
+    "@id" : "_:b99",
+    "@type" : "owl:Restriction",
+    "minCardinality" : "1",
+    "onProperty" : "tempo:hasEnumerationItem"
+  }, {
+    "@id" : "isoprops:GroupOfProperties",
+    "equivalentClass" : "tempo:GroupOfProperties"
+  }, {
+    "@id" : "https://w3id.org/tempo",
+    "@type" : "owl:Ontology",
+    "created" : "2023-12-23",
+    "creator" : [ "_:b19", "_:b20", "_:b22", "_:b23" ],
+    "description" : {
+      "@language" : "en",
+      "@value" : "The Data Template Ontology (TempO) is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "
+    },
+    "issued" : "2024-03-15",
+    "license" : "https://creativecommons.org/licenses/by/4.0/",
+    "modified" : "2025-01-15",
+    "publisher" : [ "_:b17", "_:b21" ],
+    "rights" : "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar",
+    "source" : "https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf",
+    "title" : {
+      "@language" : "en",
+      "@value" : "Data Template Ontology (TempO)"
+    },
+    "preferredNamespacePrefix" : "tempo",
+    "preferredNamespaceUri" : "http://w3id.org/tempo#",
+    "comment" : "The Data Template Ontology (TempO) ontology maps the data model of the ISO 23387-3 for Data templates for construction objects used in the life cycle of built assets \nThe namespace for TempO terms is [https://w3id.org/tempo](https://w3id.org/tempo)\n\nThe preferred prefix for the TempO namespace is `tempo`.\n\n## Ontology Overview \r\n![TempO Ontology](figures/OntologyOverview.svg \"Ontology\")\n\n## Library Overview \n![TempO Library Structure](figures/LibraryOverview.svg \"Library Overview\")\n\n",
+    "imports" : "https://w3id.org/isoprops",
+    "versionIRI" : "https://w3id.org/tempo",
+    "versionInfo" : "2.1",
+    "historyNote" : "v2.1: Adjustments due to the update of the IR ontology network\nv2.0: renamed from DT to TempO\nv1.0: Created for Submission for LDAC 2024"
+  }, {
+    "@id" : "tempo:ConceptType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Abstract Concept Type"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Concept Type"
+    },
+    "subClassOf" : [ "_:b52", "_:b81", "_:b82", "_:b83", "_:b84", "_:b85", "_:b86", "_:b87", "_:b42", "_:b88", "_:b89", "_:b68", "_:b90", "_:b91", "_:b92", "_:b28", "_:b46", "owl:Thing", "_:b93", "_:b94", "_:b95" ]
+  }, {
+    "@id" : "tempo:DataTemplate",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Data template is a kind of subject that can be assigned to an object type, and can contain other data templates, groups of properties and/or properties"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Data template"
+    },
+    "subClassOf" : [ "_:b11", "_:b56", "_:b57", "_:b5", "tempo:SubjectType" ]
+  }, {
+    "@id" : "tempo:Datatype",
+    "@type" : "owl:Class",
+    "comment" : "DataType contains Data Format, current defined 12006-3 Data type and Possible values ",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Data type"
+    },
+    "subClassOf" : [ "_:b47", "_:b48", "_:b49", "_:b50", "_:b51", "tempo:ConceptType" ]
+  }, {
+    "@id" : "tempo:Enumeration",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Enumeration constrains the value to a specified set of values"
+    },
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Enumeration"
+    },
+    "subClassOf" : [ "_:b99", "_:b100", "_:b45", "owl:Thing" ],
+    "equivalentClass" : "isoprops:PossibleValues"
+  }, {
+    "@id" : "tempo:EnumerationItem",
+    "@type" : "owl:Class",
+    "comment" : "Specified value and optional order of an enumeration constrain",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Enumeration item"
+    },
+    "subClassOf" : [ "_:b61", "_:b113", "_:b103", "schema:PropertyValue", "owl:Thing" ]
+  }, {
+    "@id" : "tempo:GUIDType",
+    "@type" : "rdfs:Class",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "subClassOf" : "rdfs:Datatype",
+    "onDatatype" : "xsd:string",
+    "withRestrictions" : {
+      "@list" : [ "_:b74" ]
+    }
+  }, {
+    "@id" : "tempo:GroupOfProperties",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Group of properties is a kind of subject that contains properties and/or other groups of properties, but shall not contain data templates and shall not be assigned to an object type."
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Group of properties"
+    },
+    "subClassOf" : [ "_:b96", "tempo:SubjectType" ],
+    "equivalentClass" : "isoprops:GroupOfProperties"
+  }, {
+    "@id" : "tempo:Library",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Library Element with Keys and Keyreferences"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Library"
+    },
+    "subClassOf" : [ "_:b104", "_:b77", "_:b80", "_:b78", "_:b115", "dcat:Catalog", "owl:Thing", "_:b116", "_:b16", "_:b108", "_:b111" ]
+  }, {
+    "@id" : "tempo:ObjectType",
+    "@type" : "owl:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Object type is a kind of subject that can be composed of other object types, but shall not contain data templates, group of properties or properties"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Object type"
+    },
+    "subClassOf" : "tempo:SubjectType"
+  }, {
+    "@id" : "tempo:Property",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "inherent or acquired feature of an item"
+    },
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Property"
+    },
+    "subClassOf" : [ "_:b33", "_:b34", "_:b35", "_:b36", "_:b37", "_:b15", "_:b38", "tempo:ConceptType", "_:b39", "_:b40" ],
+    "equivalentClass" : "isoprops:Property"
+  }, {
+    "@id" : "tempo:QuantityKind",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The Quantity Kind of a library component"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Quantity Kind"
+    },
+    "subClassOf" : "tempo:ConceptType",
+    "equivalentClass" : [ "isoprops:PhysicalQuantity", "qudt:QuantityKind" ]
+  }, {
+    "@id" : "tempo:ReferenceDocument",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Publication that is consulted to find specific information, particularly in a technical or scientific domain"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Reference document"
+    },
+    "subClassOf" : [ "_:b53", "_:b114", "_:b124", "_:b76", "_:b2", "_:b118", "_:b125", "tempo:ConceptType", "_:b119", "_:b24", "_:b123" ],
+    "equivalentClass" : "isoprops:DictionaryReferenceDocument"
+  }, {
+    "@id" : "tempo:ReferenceType",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A relationship defined used to connect the subject for a \r\nspecific purpose"
+    },
+    "label" : "Reference Type",
+    "subClassOf" : [ "_:b105", "_:b67", "_:b13", "_:b6", "owl:Thing" ]
+  }, {
+    "@id" : "tempo:SubjectType",
+    "@type" : "owl:Class",
+    "comment" : "Abstract Subject Type\r\nSubstitution Group is used here to be able to constraint subject relationships to the respectives specilizations of subjects using key/keyref mechanism eg: DataTempalte that isComposedOf, is usable onyl with another DataTemplate, this prevent cross relationships",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Subject type"
+    },
+    "subClassOf" : [ "_:b120", "_:b71", "_:b79", "tempo:ConceptType" ]
+  }, {
+    "@id" : "tempo:Unit",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A unit to represent a scale that enables a value to be measured. It is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS"
+    },
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Unit"
+    },
+    "subClassOf" : "tempo:ConceptType",
+    "equivalentClass" : "qudt:Unit"
+  }, {
+    "@id" : "tempo:about",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "About"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:author",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Author of a corresponding Reference Document",
+    "domain" : "tempo:ReferenceDocument",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Author"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:conceptGUID",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Unique identifier generated using the algorithm denoted in RFC 4122."
+    },
+    "domain" : [ "tempo:ReferenceType", "tempo:Library", "tempo:ConceptType" ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "concept GUID"
+    },
+    "range" : "_:b107",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:countryOfOrigin",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Country from where the corresponding Resource originated"
+    },
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Country of origin"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:dataFormat",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "DataFormat defines constraints on the values of a datatype. It restricts values to literals that conform to a specified pattern, expressed as a regular expression. The interpretation of these patterns for property values may vary depending on the implementation."
+    },
+    "domain" : "tempo:Datatype",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Pattern"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:dataType",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula."
+    },
+    "domain" : "tempo:Datatype",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Datatype"
+    },
+    "range" : "_:b14",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:dateOfCreation",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Date of validation of the concept type creation ",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Date of creation"
+    },
+    "range" : "xsd:dateTime",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:dateOfPublication",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Publication date of the corresponding reference document",
+    "domain" : "tempo:ReferenceDocument",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "date of publication"
+    },
+    "range" : "xsd:dateTime",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:definitionInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Example of the concept type in a specified language"
+    },
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Definition in language"
+    },
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:definitionInLanguage"
+  }, {
+    "@id" : "tempo:deprecationExplanation",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new concept type"
+    },
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Deprecation explanation"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:descriptionInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Description of the concept type in a specified language",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Description in language N"
+    },
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:exampleInLanguage",
+    "scopeNote" : "PA019"
+  }, {
+    "@id" : "tempo:exampleInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Example of the concept type in a specified language",
+    "domain" : "tempo:ConceptType",
+    "label" : "Example in language N",
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:exampleInLanguage",
+    "scopeNote" : "PA019"
+  }, {
+    "@id" : "tempo:hasDataTemplate",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Library",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has data template"
+    },
+    "range" : "tempo:DataTemplate",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasDatatype",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has datatype"
+    },
+    "range" : "tempo:Datatype",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasDictionary",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "has dictionary"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "tempo:hasReferenceType"
+  }, {
+    "@id" : "tempo:hasEnumeration",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Datatype",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "has enumeration"
+    },
+    "range" : "tempo:Enumeration",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "equivalentProperty" : "isoprops:hasPossibleValues"
+  }, {
+    "@id" : "tempo:hasEnumerationItem",
+    "@type" : "owl:ObjectProperty",
+    "comment" : "Points to a specified Enumeration Item",
+    "domain" : "tempo:Enumeration",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "has Enumeration item"
+    },
+    "range" : "tempo:EnumerationItem",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasGroupOfProperties",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:DataTemplate",
+    "label" : "has group of properties",
+    "range" : "_:b121",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasIntendedUse",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The object property relates the alphanumerical information with the intened use"
+    },
+    "domain" : "tempo:Library",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has intended use"
+    },
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasObjectType",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Library",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has object type"
+    },
+    "range" : "tempo:ObjectType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasParts",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:SubjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has parts"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasProperty",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "_:b26",
+    "label" : "has property",
+    "range" : "_:b25",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasPurpose",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Library",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Purpose"
+    },
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasQuantityKind",
+    "@type" : "owl:ObjectProperty",
+    "domain" : [ "tempo:Property", "tempo:Library" ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "has quantity kind"
+    },
+    "range" : "tempo:QuantityKind",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasReferenceDocument",
+    "@type" : "owl:ObjectProperty",
+    "domain" : [ "tempo:Library", "tempo:ConceptType" ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "has reference document"
+    },
+    "range" : "tempo:ReferenceDocument",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasReferenceType",
+    "@type" : "owl:ObjectProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasReferenceURI",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:ReferenceType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has reference URI"
+    },
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasReplacedObjects",
+    "@type" : "owl:ObjectProperty",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has replaced objects"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasURI",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:ReferenceDocument",
+    "label" : " has URI",
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "tempo:hasReferenceType"
+  }, {
+    "@id" : "tempo:hasUnit",
+    "@type" : "owl:ObjectProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A unit to represent a scale that enables a value to be measured\nIt is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS"
+    },
+    "domain" : [ "tempo:Property", "tempo:Library", "tempo:Enumeration" ],
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Unit"
+    },
+    "range" : "tempo:Unit",
+    "seeAlso" : "http://qudt.org/vocab/unit/UNITLESS",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:hasVisualRepresentation",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Resource"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "tempo:hasReferenceType"
+  }, {
+    "@id" : "tempo:isAssignedToObjectType",
+    "@type" : "owl:ObjectProperty",
+    "comment" : "Data template is a kind of subject that can be assigned to an object type",
+    "domain" : "tempo:DataTemplate",
+    "label" : [ {
+      "@language" : "en",
+      "@value" : "Site plan"
+    }, {
+      "@language" : "de",
+      "@value" : "Lageplan"
+    } ],
+    "range" : "tempo:ObjectType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:isDataTemplateFor",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:DataTemplate",
+    "label" : "is data template for",
+    "range" : "loin:SpecificationPerObjectType",
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:isDependentOn",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "range" : [ "tempo:Property", "isoprops:Property" ],
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:isSimilarTo",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "tempo:hasReferenceType"
+  }, {
+    "@id" : "tempo:isSpecializationOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "range" : [ "tempo:Property", "isoprops:Property" ],
+    "subPropertyOf" : "owl:topObjectProperty"
+  }, {
+    "@id" : "tempo:isSubtypeOf",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "tempo:SubjectType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "is subtype of"
+    },
+    "range" : "tempo:ReferenceType",
+    "subPropertyOf" : "tempo:hasReferenceType"
+  }, {
+    "@id" : "tempo:isbn",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "The International Standard Book Number (ISBN) is a numeric commercial book identifier that is intended to be unique.",
+    "domain" : "tempo:ReferenceDocument",
+    "label" : "ISBN",
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:languageOfCreator",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Language of the creator of the concept type"
+    },
+    "label" : {
+      "@language" : "en",
+      "@value" : "Language of creator"
+    },
+    "range" : "xsd:language",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:creatorsLanguage"
+  }, {
+    "@id" : "tempo:majorVersion",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Allows tracking of major changes. Experts decide if a new major version num-\r\nber shall be applied."
+    },
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Major version"
+    },
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:minorVersion",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Allows tracking of minor changes, e.g. new translation, changes of typos: if the \r\nmajor version number changes, the minor version starts again at 1. Experts \r\ndecide if a new minor version number can be applied or if a new major version \r\nis needed."
+    },
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Index of the element in the enumeration"
+    },
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:nameInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Name of the concept type in a specified language"
+    },
+    "domain" : "tempo:Library",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Name in language"
+    },
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:hasNameInLanguage"
+  }, {
+    "@id" : "tempo:order",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "tempo:EnumerationItem",
+    "label" : {
+      "@language" : "en-gb",
+      "@value" : "Order of the element in the enumeration"
+    },
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:publisher",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Publisher of the corresponding reference document",
+    "domain" : "tempo:ReferenceDocument",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Publisher"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "tempo:status",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Status of the concept type during its life cycle",
+    "domain" : "tempo:ConceptType",
+    "label" : {
+      "@language" : "en",
+      "@value" : "has Reference Type"
+    },
+    "range" : "_:b3",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:status"
+  }, {
+    "@id" : "tempo:symbol",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : "Symbols of the property",
+    "domain" : "tempo:Property",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Symbol"
+    },
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "isoprops:symbol"
+  } ],
+  "@context" : {
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
+    },
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
+      "@type" : "@id"
+    },
+    "onDataRange" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onDataRange",
+      "@type" : "@id"
+    },
+    "maxQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "oneOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#oneOf",
+      "@type" : "@id"
+    },
+    "onClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onClass",
+      "@type" : "@id"
+    },
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "minQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "parentOrganization" : {
+      "@id" : "https://schema.org/parentOrganization",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "identifier" : {
+      "@id" : "https://schema.org/identifier",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+      "@type" : "@id"
+    },
+    "versionIRI" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
+      "@type" : "@id"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "historyNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#historyNote"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source",
+      "@type" : "@id"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "scopeNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote"
+    },
+    "equivalentProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
+      "@type" : "@id"
+    },
+    "minCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "pattern" : {
+      "@id" : "http://www.w3.org/2001/XMLSchema#pattern"
+    },
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
+    },
+    "memberOf" : {
+      "@id" : "https://schema.org/memberOf",
+      "@type" : "@id"
+    },
+    "email" : {
+      "@id" : "https://schema.org/email",
+      "@type" : "@id"
+    },
+    "cardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#cardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "qualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "withRestrictions" : {
+      "@id" : "http://www.w3.org/2002/07/owl#withRestrictions",
+      "@type" : "@id"
+    },
+    "onDatatype" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onDatatype",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "@vocab" : "https://w3id.org/tempo#",
+    "schema" : "https://schema.org/",
+    "qudt" : "http://qudt.org/schema/qudt/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "tempo" : "https://w3id.org/tempo#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "isoprops" : "https://w3id.org/isoprops#",
+    "loin" : "https://w3id.org/loin#",
+    "dcat" : "http://www.w3.org/ns/dcat#",
+    "vann" : "http://purl.org/vocab/vann/",
+    "vs" : "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "dc" : "http://purl.org/dc/terms/"
+  }
+}

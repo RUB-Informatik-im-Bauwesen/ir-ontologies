@@ -64,15 +64,50 @@ isoprops:GroupOfProperties
       schema:name "Sven Zentgraf" ;
     ] ;
   dc:description "The Data Template Ontology (TempO) is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "@en ;
+  dc:issued "2024-03-15"^^xsd:date ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:modified "2025-01-15"^^xsd:date ;
+  dc:publisher [
+      rdf:type schema:Organization ;
+      schema:identifier <https://www.inf.bi.rub.de> ;
+      schema:name "Chair of Computing in Engineering, Ruhr University Bochum" ;
+      schema:parentOrganization [
+          rdf:type schema:Organization ;
+          schema:name "Ruhr University Bochum, Germany" ;
+        ] ;
+    ] ;
+  dc:publisher [
+      rdf:type schema:Organization ;
+      schema:identifier <https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/construction-engineering-and-management/> ;
+      schema:name "Chair of Construction Management, Bauhaus Universitaet Weimar" ;
+      schema:parentOrganization [
+          rdf:type schema:Organization ;
+          schema:name "Bauhaus Universitaet Weimar, Germany" ;
+        ] ;
+    ] ;
   dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
   dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf> ;
   dc:title "Data Template Ontology (TempO)"@en ;
   vann:preferredNamespacePrefix "tempo" ;
   vann:preferredNamespaceUri <http://w3id.org/tempo#> ;
+  rdfs:comment """The Data Template Ontology (TempO) ontology maps the data model of the ISO 23387-3 for Data templates for construction objects used in the life cycle of built assets 
+The namespace for TempO terms is [https://w3id.org/tempo](https://w3id.org/tempo)
+
+The preferred prefix for the TempO namespace is `tempo`.
+
+## Ontology Overview 
+![TempO Ontology](figures/OntologyOverview.svg \"Ontology\")
+
+## Library Overview 
+![TempO Library Structure](figures/LibraryOverview.svg \"Library Overview\")
+
+""" ;
   owl:imports <https://w3id.org/isoprops> ;
-  owl:versionInfo "1.0" ;
-  owl:versionInfo "Created with TopBraid Composer" ;
+  owl:versionIRI <https://w3id.org/tempo> ;
+  owl:versionInfo "2.1" ;
+  <http://www.w3.org/2004/02/skos/core#historyNote> """v2.1: Adjustments due to the update of the IR ontology network
+v2.0: renamed from DT to TempO
+v1.0: Created for Submission for LDAC 2024""" ;
 .
 tempo:ConceptType
   rdf:type owl:Class ;
@@ -191,13 +226,13 @@ tempo:ConceptType
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:dateTime ;
-      owl:onProperty tempo:date ;
+      owl:onProperty tempo:dateOfCreation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:dateTime ;
-      owl:onProperty tempo:date ;
+      owl:onProperty tempo:dateOfCreation ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -208,7 +243,7 @@ tempo:ConceptType
 .
 tempo:DataTemplate
   rdf:type rdfs:Class ;
-  rdfs:comment "Data structure used to describe the characteristics of construction objects"@en ;
+  rdfs:comment "Data template is a kind of subject that can be assigned to an object type, and can contain other data templates, groups of properties and/or properties"@en ;
   rdfs:label "Data template"@en ;
   rdfs:subClassOf tempo:SubjectType ;
   rdfs:subClassOf [
@@ -219,19 +254,33 @@ tempo:DataTemplate
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty tempo:hasGroupOfProperties ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty tempo:hasProperty ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass tempo:ObjectType ;
+      owl:onProperty tempo:isAssignedToObjectType ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass tempo:ObjectType ;
-      owl:onProperty tempo:isAssignedToObjectType ;
+      owl:onClass [
+          rdf:type owl:Class ;
+          owl:unionOf (
+              tempo:GroupOfProperties
+              isoprops:GroupOfProperties
+            ) ;
+        ] ;
+      owl:onProperty tempo:hasGroupOfProperties ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onClass [
+          rdf:type owl:Class ;
+          owl:unionOf (
+              tempo:Property
+              isoprops:Property
+            ) ;
+        ] ;
+      owl:onProperty tempo:hasProperty ;
     ] ;
 .
 tempo:Datatype
@@ -249,7 +298,7 @@ tempo:Datatype
       rdf:type owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty tempo:pattern ;
+      owl:onProperty tempo:dataFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -261,7 +310,7 @@ tempo:Datatype
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
-      owl:onProperty tempo:pattern ;
+      owl:onProperty tempo:dataFormat ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -348,12 +397,6 @@ tempo:GroupOfProperties
     ] ;
   owl:equivalentClass isoprops:GroupOfProperties ;
 .
-tempo:IntendedUse
-  rdf:type rdfs:Class ;
-  rdfs:comment "TBD"@en ;
-  rdfs:label "Intended use"@en ;
-  rdfs:subClassOf tempo:GroupOfProperties ;
-.
 tempo:Library
   rdf:type rdfs:Class ;
   rdfs:comment "Library Element with Keys and Keyreferences"@en ;
@@ -362,15 +405,14 @@ tempo:Library
   rdfs:subClassOf dcat:Catalog ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass tempo:ObjectType ;
-      owl:onProperty tempo:hasObjectType ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty tempo:hasGroupOfProperties ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass tempo:SetOfProperties ;
-      owl:onProperty tempo:hasSetOfProperties ;
+      owl:onClass tempo:ObjectType ;
+      owl:onProperty tempo:hasObjectType ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -387,20 +429,8 @@ tempo:Library
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onDataRange tempo:IntendedUse ;
-      owl:onProperty tempo:hasIntendedUse ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
       owl:onDataRange tempo:Property ;
       owl:onProperty tempo:hasProperty ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onDataRange tempo:Purpose ;
-      owl:onProperty tempo:hasPurpose ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -429,7 +459,7 @@ tempo:Library
 .
 tempo:ObjectType
   rdf:type owl:Class ;
-  rdfs:comment "Object type is a kind of subject that can be composed of other object types, but shall not contain data templates, group of properties or properties" ;
+  rdfs:comment "Object type is a kind of subject that can be composed of other object types, but shall not contain data templates, group of properties or properties"@en ;
   rdfs:label "Object type"@en ;
   rdfs:subClassOf tempo:SubjectType ;
 .
@@ -441,7 +471,7 @@ tempo:Property
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tempo:isDependentOn ;
+      owl:onProperty tempo:isSpecializationOf ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -490,12 +520,6 @@ tempo:Property
       owl:onProperty tempo:hasDatatype ;
     ] ;
   owl:equivalentClass isoprops:Property ;
-.
-tempo:Purpose
-  rdf:type rdfs:Class ;
-  rdfs:comment "Purpose of the information to be delivered."@en ;
-  rdfs:label "Purpose"@en ;
-  rdfs:subClassOf tempo:GroupOfProperties ;
 .
 tempo:QuantityKind
   rdf:type rdfs:Class ;
@@ -601,18 +625,18 @@ specific purpose"""@en ;
       owl:onProperty tempo:conceptGUID ;
     ] ;
 .
-tempo:SetOfProperties
-  rdf:type rdfs:Class ;
-  rdfs:comment "a set of properties that can be applied to a data template"@en ;
-  rdfs:label "Set of properties"@en ;
-  rdfs:subClassOf tempo:GroupOfProperties ;
-.
 tempo:SubjectType
   rdf:type owl:Class ;
   rdfs:comment """Abstract Subject Type
 Substitution Group is used here to be able to constraint subject relationships to the respectives specilizations of subjects using key/keyref mechanism eg: DataTempalte that isComposedOf, is usable onyl with another DataTemplate, this prevent cross relationships""" ;
   rdfs:label "Subject type"@en ;
   rdfs:subClassOf tempo:ConceptType ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass tempo:ReferenceType ;
+      owl:onProperty tempo:isSubtypeOf ;
+    ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
@@ -632,6 +656,13 @@ tempo:Unit
   rdfs:label "Unit"@en-GB ;
   rdfs:subClassOf tempo:ConceptType ;
   owl:equivalentClass qudt:Unit ;
+.
+tempo:about
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain tempo:ConceptType ;
+  rdfs:label "About"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
 .
 tempo:author
   rdf:type owl:DatatypeProperty ;
@@ -667,6 +698,14 @@ tempo:countryOfOrigin
   rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
+tempo:dataFormat
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "DataFormat defines constraints on the values of a datatype. It restricts values to literals that conform to a specified pattern, expressed as a regular expression. The interpretation of these patterns for property values may vary depending on the implementation."@en ;
+  rdfs:domain tempo:Datatype ;
+  rdfs:label "Pattern"@en ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf owl:topDataProperty ;
+.
 tempo:dataType
   rdf:type owl:DatatypeProperty ;
   rdfs:comment "Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula."@en ;
@@ -686,11 +725,11 @@ tempo:dataType
     ] ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
-tempo:date
+tempo:dateOfCreation
   rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Date of the concept type" ;
+  rdfs:comment "Date of validation of the concept type creation " ;
   rdfs:domain tempo:ConceptType ;
-  rdfs:label "Date"@en ;
+  rdfs:label "Date of creation"@en ;
   rdfs:range xsd:dateTime ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
@@ -780,8 +819,13 @@ tempo:hasGroupOfProperties
   rdf:type owl:ObjectProperty ;
   rdfs:domain tempo:DataTemplate ;
   rdfs:label "has group of properties" ;
-  rdfs:range isoprops:GroupOfProperties ;
-  rdfs:range tempo:GroupOfProperties ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          isoprops:GroupOfProperties
+          tempo:GroupOfProperties
+        ) ;
+    ] ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasIntendedUse
@@ -789,7 +833,6 @@ tempo:hasIntendedUse
   rdfs:comment "The object property relates the alphanumerical information with the intened use"@en ;
   rdfs:domain tempo:Library ;
   rdfs:label "has intended use"@en ;
-  rdfs:range tempo:IntendedUse ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasObjectType
@@ -830,7 +873,6 @@ tempo:hasPurpose
   rdf:type owl:ObjectProperty ;
   rdfs:domain tempo:Library ;
   rdfs:label "has Purpose"@en ;
-  rdfs:range tempo:Purpose ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasQuantityKind
@@ -865,13 +907,6 @@ tempo:hasReplacedObjects
   rdf:type owl:ObjectProperty ;
   rdfs:label "has replaced objects"@en ;
   rdfs:range tempo:ReferenceType ;
-  rdfs:subPropertyOf owl:topObjectProperty ;
-.
-tempo:hasSetOfProperties
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain tempo:Library ;
-  rdfs:label "has set of properties" ;
-  rdfs:range tempo:SetOfProperties ;
   rdfs:subPropertyOf owl:topObjectProperty ;
 .
 tempo:hasURI
@@ -996,14 +1031,6 @@ tempo:order
   rdfs:domain tempo:EnumerationItem ;
   rdfs:label "Order of the element in the enumeration"@en-GB ;
   rdfs:range xsd:integer ;
-  rdfs:subPropertyOf owl:topDataProperty ;
-.
-tempo:pattern
-  rdf:type owl:DatatypeProperty ;
-  rdfs:comment "Pattern is a constraint on the value of a datatype which is achieved by constraining the value to literals which macht a specific pattern.	The value of pattern must be a regular expression"@en ;
-  rdfs:domain tempo:Datatype ;
-  rdfs:label "Pattern"@en ;
-  rdfs:range xsd:string ;
   rdfs:subPropertyOf owl:topDataProperty ;
 .
 tempo:publisher

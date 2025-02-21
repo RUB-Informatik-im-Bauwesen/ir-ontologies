@@ -1,0 +1,831 @@
+# baseURI: https://w3id.org/tempo
+# imports: https://w3id.org/isoprops
+# prefix: tempo
+
+_:B6557c3b3X2D1d43X2D46d2X2Da067X2Dc22d2c9c1e47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B4042c470X2D9f10X2D465bX2D8191X2D75645bb2fa8c .
+_:B6557c3b3X2D1d43X2D46d2X2Da067X2Dc22d2c9c1e47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "REAL" .
+_:B0c9a872e45c24fb89320d6f4aa0f8bd5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isbn> .
+_:B0c9a872e45c24fb89320d6f4aa0f8bd5 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B0c9a872e45c24fb89320d6f4aa0f8bd5 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B0c9a872e45c24fb89320d6f4aa0f8bd5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bec87da27415a3367da354bd8d6c44d3e <http://www.w3.org/2002/07/owl#oneOf> _:B819dcea0X2Dd3c4X2D4e34X2D9a89X2D15db609d5b34 .
+_:Bec87da27415a3367da354bd8d6c44d3e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:B633ce78389ad2dd42e812e60193ea686 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isAssignedToObjectType> .
+_:B633ce78389ad2dd42e812e60193ea686 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ObjectType> .
+_:B633ce78389ad2dd42e812e60193ea686 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B633ce78389ad2dd42e812e60193ea686 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#Unit> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/Unit> .
+<https://w3id.org/tempo#Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit"@en-GB .
+<https://w3id.org/tempo#Unit> <http://www.w3.org/2000/01/rdf-schema#comment> "A unit to represent a scale that enables a value to be measured. It is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS"@en .
+<https://w3id.org/tempo#Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:Bc8d7f7c3c11a621981dbae28e38c6d42 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasReferenceURI> .
+_:Bc8d7f7c3c11a621981dbae28e38c6d42 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc8d7f7c3c11a621981dbae28e38c6d42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3575439fX2D2dfcX2D4827X2D8231X2Db564f14e047f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B3575439fX2D2dfcX2D4827X2D8231X2Db564f14e047f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:Bf249074b0d91bd77d6b40516b9bd323f .
+_:Bc30e6ec5X2D6331X2D40b8X2Da095X2D0af915804aa1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B31f6f241X2D172aX2D413bX2D87aaX2D5dec98f23e4b .
+_:Bc30e6ec5X2D6331X2D40b8X2Da095X2D0af915804aa1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#GroupOfProperties> .
+_:B0f6c101e16dcca6a8a104a3d5dd88ddd <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasProperty> .
+_:B0f6c101e16dcca6a8a104a3d5dd88ddd <http://www.w3.org/2002/07/owl#onClass> _:B5fe08e4510f62e4f5fd791e4c2313b0e .
+_:B0f6c101e16dcca6a8a104a3d5dd88ddd <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B0f6c101e16dcca6a8a104a3d5dd88ddd <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B745b78bd8533548a5287ffc1ba4c0a50 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#conceptGUID> .
+_:B745b78bd8533548a5287ffc1ba4c0a50 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#GUIDType> .
+_:B745b78bd8533548a5287ffc1ba4c0a50 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B745b78bd8533548a5287ffc1ba4c0a50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/2000/01/rdf-schema#range> _:B14ecd439c33cde6c5034cd7ae6ebc0ba .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/2000/01/rdf-schema#label> "Datatype"@en .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Datatype> .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula."@en .
+<https://w3id.org/tempo#dataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bcaecef1497cd4c2c7bf8e63c57b84b5b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasQuantityKind> .
+_:Bcaecef1497cd4c2c7bf8e63c57b84b5b <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#QuantityKind> .
+_:Bcaecef1497cd4c2c7bf8e63c57b84b5b <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bcaecef1497cd4c2c7bf8e63c57b84b5b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#EnumerationItem> .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/2000/01/rdf-schema#label> "has Enumeration item"@en-GB .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Enumeration> .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to a specified Enumeration Item" .
+<https://w3id.org/tempo#hasEnumerationItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5bb4e6756a001744206aa38205978711 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasDataTemplate> .
+_:B5bb4e6756a001744206aa38205978711 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#DataTemplate> .
+_:B5bb4e6756a001744206aa38205978711 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5bb4e6756a001744206aa38205978711 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B60f219d0ccffa23aa16b82ffe204ef88 <https://schema.org/parentOrganization> _:B56844770440944c0b5a4841eaf30a744 .
+_:B60f219d0ccffa23aa16b82ffe204ef88 <https://schema.org/name> "Chair of Computing in Engineering, Ruhr University Bochum" .
+_:B60f219d0ccffa23aa16b82ffe204ef88 <https://schema.org/identifier> <https://www.inf.bi.rub.de> .
+_:B60f219d0ccffa23aa16b82ffe204ef88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/title> "Data Template Ontology (TempO)"@en .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/created> "2023-12-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/modified> "2025-01-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/publisher> _:B60f219d0ccffa23aa16b82ffe204ef88 .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/description> "The Data Template Ontology (TempO) is based on concepts and principles for creating templates from ISO 23387 and the associated XML data schema, which is currently under development. "@en .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/creator> _:B57c7cba334ad7abbfb96e2008e27c96d .
+<https://w3id.org/tempo> <http://www.w3.org/2000/01/rdf-schema#comment> "The Data Template Ontology (TempO) ontology maps the data model of the ISO 23387-3 for Data templates for construction objects used in the life cycle of built assets \nThe namespace for TempO terms is [https://w3id.org/tempo](https://w3id.org/tempo)\n\nThe preferred prefix for the TempO namespace is `tempo`.\n\n## Ontology Overview \r\n![TempO Ontology](figures/OntologyOverview.svg \"Ontology\")\n\n## Library Overview \n![TempO Library Structure](figures/LibraryOverview.svg \"Library Overview\")\n\n" .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/creator> _:B0ccae442e3144a0d9644cbb9072759ae .
+<https://w3id.org/tempo> <http://purl.org/vocab/vann/preferredNamespaceUri> <http://w3id.org/tempo#> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/publisher> _:B6493fb8d69d8bc34f92f70138b2221db .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/creator> _:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 .
+<https://w3id.org/tempo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/tempo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/tempo> .
+<https://w3id.org/tempo> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/isoprops> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/rights> "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" .
+<https://w3id.org/tempo> <http://www.w3.org/2004/02/skos/core#historyNote> "v2.1: Adjustments due to the update of the IR ontology network\nv2.0: renamed from DT to TempO\nv1.0: Created for Submission for LDAC 2024" .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/creator> _:B70454b900a71d5a43cf69e9c7769e1e4 .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/issued> "2024-03-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/tempo> <http://purl.org/dc/terms/source> <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf> .
+<https://w3id.org/tempo> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tempo" .
+<https://w3id.org/tempo> <http://www.w3.org/2002/07/owl#versionInfo> "2.1" .
+_:B3d87af9262b0d31e3a9d78918a0a3e31 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#author> .
+_:B3d87af9262b0d31e3a9d78918a0a3e31 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B3d87af9262b0d31e3a9d78918a0a3e31 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3d87af9262b0d31e3a9d78918a0a3e31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> _:Bc663e9e513380ea0ff428e15fe8f88da .
+<https://w3id.org/tempo#hasProperty> <http://www.w3.org/2000/01/rdf-schema#label> "has property" .
+<https://w3id.org/tempo#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> _:B6ff51ce59a26646b535455cb068469d0 .
+<https://w3id.org/tempo#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Ba5afb58a4f38eba267251b39403a4b39 <https://schema.org/name> "Bauhaus Universitaet Weimar, Germany" .
+_:Ba5afb58a4f38eba267251b39403a4b39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:B6f2a68be7423ae4154840b5bba5b05f1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasVisualRepresentation> .
+_:B6f2a68be7423ae4154840b5bba5b05f1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:B6f2a68be7423ae4154840b5bba5b05f1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B6f2a68be7423ae4154840b5bba5b05f1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B34372a5bX2D8052X2D4b0aX2D80a9X2D6a38c7f7d934 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B47849cedX2Dc972X2D4c59X2D9545X2D310fd023b562 .
+_:B34372a5bX2D8052X2D4b0aX2D80a9X2D6a38c7f7d934 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "RATIONAL" .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/2000/01/rdf-schema#label> "Date of creation"@en .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/2000/01/rdf-schema#comment> "Date of validation of the concept type creation " .
+<https://w3id.org/tempo#dateOfCreation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bd90e7678X2D16fcX2D40bbX2Da598X2D54c3a3fe784f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Bd90e7678X2D16fcX2D40bbX2Da598X2D54c3a3fe784f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "DATETIME" .
+_:B841074b26ac3ae4a6596ba6c703b6412 <https://schema.org/name> "Ruhr University Bochum" .
+_:B841074b26ac3ae4a6596ba6c703b6412 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en> .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B878464d55bf9e4a43ff78b8859f09846 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8563ae222d5aa951728ca1cb886e3018 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4220d453ba662e0ce30089b036fac622 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "inherent or acquired feature of an item"@en .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb49cb6758726f06b0e03858ba5d9866a .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B86d7e814077684d512d072976b061271 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcaecef1497cd4c2c7bf8e63c57b84b5b .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#label> "Property"@en-GB .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be1ef731a6535416f3d40d895b6f518d8 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#Property> .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B7f889536f4ee55986921c9637c0329f5 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3c7316a1ed5c0880313a1f274c6b8a19 .
+<https://w3id.org/tempo#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ObjectType> .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "Site plan"@en .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "Lageplan"@de .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#DataTemplate> .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/2000/01/rdf-schema#comment> "Data template is a kind of subject that can be assigned to an object type" .
+<https://w3id.org/tempo#isAssignedToObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bf3024459X2Dc6f5X2D43c9X2D8164X2D24c470a9648f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Bf3024459X2Dc6f5X2D43c9X2D8164X2D24c470a9648f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/isoprops#Property> .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2004/02/skos/core#scopeNote> "PA019" .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#exampleInLanguage> .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Description in language N"@en .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of the concept type in a specified language" .
+<https://w3id.org/tempo#descriptionInLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Ba71505a63713aa3c21a1df72a12de7c7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasDictionary> .
+_:Ba71505a63713aa3c21a1df72a12de7c7 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Ba71505a63713aa3c21a1df72a12de7c7 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Ba71505a63713aa3c21a1df72a12de7c7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B5c8e911fX2D1a3fX2D45a2X2D8a96X2Df0657c328551 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B2ab30babX2D39a9X2D4af8X2Db02aX2D7763a5dd3bb2 .
+_:B5c8e911fX2D1a3fX2D45a2X2D8a96X2Df0657c328551 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#GroupOfProperties> .
+<https://w3id.org/tempo#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ObjectType> .
+<https://w3id.org/tempo#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "has object type"@en .
+<https://w3id.org/tempo#hasObjectType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bec4d31d19e58dd21a17f335e6dff67ed <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasUnit> .
+_:Bec4d31d19e58dd21a17f335e6dff67ed <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bec4d31d19e58dd21a17f335e6dff67ed <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B10e35640e7d1ad4c1f72297d584bd6b2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#countryOfOrigin> .
+_:B10e35640e7d1ad4c1f72297d584bd6b2 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B10e35640e7d1ad4c1f72297d584bd6b2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B10e35640e7d1ad4c1f72297d584bd6b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B013a220f3043546ced4ae92d36522f26 .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B507343188981f02f6d53e97ea761db79 .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B068fc1aaac6a493ed1bb53f482dcba04 .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B35e92f4e19783a58e6efb75221bf2538 .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Be25e1be32a0a5cd0513dec1d02607f07 .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#label> "Data type"@en .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/2000/01/rdf-schema#comment> "DataType contains Data Format, current defined 12006-3 Data type and Possible values " .
+<https://w3id.org/tempo#Datatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B3e157809dbe38c61864fcc5a16e85ada <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#nameInLanguage> .
+_:B3e157809dbe38c61864fcc5a16e85ada <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:B3e157809dbe38c61864fcc5a16e85ada <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3e157809dbe38c61864fcc5a16e85ada <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/2000/01/rdf-schema#label> "Index of the element in the enumeration"@en-GB .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Allows tracking of minor changes, e.g. new translation, changes of typos: if the \r\nmajor version number changes, the minor version starts again at 1. Experts \r\ndecide if a new minor version number can be applied or if a new major version \r\nis needed."@en .
+<https://w3id.org/tempo#minorVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B503a9fd0a3c7a8e632270ddc755ea701 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dateOfPublication> .
+_:B503a9fd0a3c7a8e632270ddc755ea701 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:B503a9fd0a3c7a8e632270ddc755ea701 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B503a9fd0a3c7a8e632270ddc755ea701 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3c7316a1ed5c0880313a1f274c6b8a19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isDependentOn> .
+_:B3c7316a1ed5c0880313a1f274c6b8a19 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3c7316a1ed5c0880313a1f274c6b8a19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf249074b0d91bd77d6b40516b9bd323f <http://www.w3.org/2001/XMLSchema#pattern> "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" .
+_:B7c28fc63X2D9dcaX2D4c35X2D8a23X2D3139f29f670a <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Ba1c919e6X2D6c8eX2D4e4eX2D8474X2D35cd2af7f6a5 .
+_:B7c28fc63X2D9dcaX2D4c35X2D8a23X2D3139f29f670a <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/isoprops#GroupOfProperties> .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0f6c101e16dcca6a8a104a3d5dd88ddd .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B36d502e41f32f4b568c0e2fa6a8111c5 .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B9d41476d98135941f3f72db1518b2d8b .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B633ce78389ad2dd42e812e60193ea686 .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#SubjectType> .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Data template"@en .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "Data template is a kind of subject that can be assigned to an object type, and can contain other data templates, groups of properties and/or properties"@en .
+<https://w3id.org/tempo#DataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B6396c5e2529935d4d61ccaf9f6c28e48 <https://schema.org/name> "Bauhaus-Universitaet Weimar" .
+_:B6396c5e2529935d4d61ccaf9f6c28e48 <https://schema.org/identifier> <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/2000/01/rdf-schema#label> "Publisher"@en .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "Publisher of the corresponding reference document" .
+<https://w3id.org/tempo#publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B14ecd439c33cde6c5034cd7ae6ebc0ba <http://www.w3.org/2002/07/owl#oneOf> _:B492b0485X2Dfb6cX2D4c8fX2Da846X2Dda02998b29e2 .
+_:B14ecd439c33cde6c5034cd7ae6ebc0ba <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:B5fe08e4510f62e4f5fd791e4c2313b0e <http://www.w3.org/2002/07/owl#unionOf> _:Bdf1525e7X2D2297X2D4c28X2D8206X2D41bcbf97df3c .
+_:B5fe08e4510f62e4f5fd791e4c2313b0e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tempo#hasDictionary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/tempo#hasReferenceType> .
+<https://w3id.org/tempo#hasDictionary> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "has dictionary"@en-GB .
+<https://w3id.org/tempo#hasDictionary> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#hasDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B64ab8e33f580a3f3cfb039a425245014 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#order> .
+_:B64ab8e33f580a3f3cfb039a425245014 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B64ab8e33f580a3f3cfb039a425245014 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#DataTemplate> .
+<https://w3id.org/tempo#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "has data template"@en .
+<https://w3id.org/tempo#hasDataTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasDataTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#definitionInLanguage> .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Definition in language"@en .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Example of the concept type in a specified language"@en .
+<https://w3id.org/tempo#definitionInLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B819dcea0X2Dd3c4X2D4e34X2D9a89X2D15db609d5b34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B61225f96X2D4637X2D48ecX2Db12aX2D4d16b1f2f2ae .
+_:B819dcea0X2Dd3c4X2D4e34X2D9a89X2D15db609d5b34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "active" .
+_:B25d53edbX2D3b13X2D4d3cX2DadfdX2Df83e3591f539 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bc9992829X2D96ceX2D42cfX2Dab98X2D1932c314e229 .
+_:B25d53edbX2D3b13X2D4d3cX2DadfdX2Df83e3591f539 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/isoprops#Property> .
+_:Bae209af820817a12acfaff78a74c143e <http://www.w3.org/2002/07/owl#oneOf> _:B4097eb42X2D7415X2D4dd0X2Dac92X2Dc618b2c6b9bd .
+_:Bae209af820817a12acfaff78a74c143e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:Bc58115a9b2f3e6292756ed4f26a6d9d4 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasReferenceURI> .
+_:Bc58115a9b2f3e6292756ed4f26a6d9d4 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc58115a9b2f3e6292756ed4f26a6d9d4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd92abcb8a229f3e181e20665d6ecd692 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#conceptGUID> .
+_:Bd92abcb8a229f3e181e20665d6ecd692 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#GUIDType> .
+_:Bd92abcb8a229f3e181e20665d6ecd692 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bd92abcb8a229f3e181e20665d6ecd692 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#ObjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#SubjectType> .
+<https://w3id.org/tempo#ObjectType> <http://www.w3.org/2000/01/rdf-schema#label> "Object type"@en .
+<https://w3id.org/tempo#ObjectType> <http://www.w3.org/2000/01/rdf-schema#comment> "Object type is a kind of subject that can be composed of other object types, but shall not contain data templates, group of properties or properties"@en .
+<https://w3id.org/tempo#ObjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B1d9653f7X2Dbb87X2D488fX2D821cX2Df16e2fdd00ef <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B3128b5bdX2D2e9fX2D4e1eX2D89f7X2D8056dc4cf012 .
+_:B1d9653f7X2Dbb87X2D488fX2D821cX2Df16e2fdd00ef <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "COMPLEX" .
+_:B52a11d2af34e8b1df46e1b00906aeb34 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasParts> .
+_:B52a11d2af34e8b1df46e1b00906aeb34 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:B52a11d2af34e8b1df46e1b00906aeb34 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B52a11d2af34e8b1df46e1b00906aeb34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#about> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#about> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#about> <http://www.w3.org/2000/01/rdf-schema#label> "About"@en .
+<https://w3id.org/tempo#about> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#about> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/tempo#isSubtypeOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/tempo#hasReferenceType> .
+<https://w3id.org/tempo#isSubtypeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#isSubtypeOf> <http://www.w3.org/2000/01/rdf-schema#label> "is subtype of"@en .
+<https://w3id.org/tempo#isSubtypeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#SubjectType> .
+<https://w3id.org/tempo#isSubtypeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#hasReferenceURI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasReferenceURI> <http://www.w3.org/2000/01/rdf-schema#label> "has reference URI"@en .
+<https://w3id.org/tempo#hasReferenceURI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasReferenceURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bdbb5674dX2D4991X2D43f5X2D9ec5X2D69025fbc4849 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B34372a5bX2D8052X2D4b0aX2D80a9X2D6a38c7f7d934 .
+_:Bdbb5674dX2D4991X2D43f5X2D9ec5X2D69025fbc4849 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "INTEGER" .
+_:B3f795630X2D4949X2D4d65X2D91f8X2Dd8b7a1501029 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B3f795630X2D4949X2D4d65X2D91f8X2Dd8b7a1501029 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:B57e179d1e911a019d78ad269f4e340ec .
+<https://w3id.org/tempo#hasParts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasParts> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasParts> <http://www.w3.org/2000/01/rdf-schema#label> "has parts"@en .
+<https://w3id.org/tempo#hasParts> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#SubjectType> .
+<https://w3id.org/tempo#hasParts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bc9992829X2D96ceX2D42cfX2Dab98X2D1932c314e229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Bc9992829X2D96ceX2D42cfX2Dab98X2D1932c314e229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#Property> .
+_:B4097eb42X2D7415X2D4dd0X2Dac92X2Dc618b2c6b9bd <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B0ae809c4X2D6a43X2D477aX2Dbae6X2D69f0e596c445 .
+_:B4097eb42X2D7415X2D4dd0X2Dac92X2Dc618b2c6b9bd <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "active" .
+_:B124c3db237abb46f2672b2e174031afb <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dateOfPublication> .
+_:B124c3db237abb46f2672b2e174031afb <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:B124c3db237abb46f2672b2e174031afb <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B124c3db237abb46f2672b2e174031afb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3128b5bdX2D2e9fX2D4e1eX2D89f7X2D8056dc4cf012 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bd90e7678X2D16fcX2D40bbX2Da598X2D54c3a3fe784f .
+_:B3128b5bdX2D2e9fX2D4e1eX2D89f7X2D8056dc4cf012 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "STRING" .
+<https://w3id.org/tempo#author> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#author> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#author> <http://www.w3.org/2000/01/rdf-schema#label> "Author"@en-GB .
+<https://w3id.org/tempo#author> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#author> <http://www.w3.org/2000/01/rdf-schema#comment> "Author of a corresponding Reference Document" .
+<https://w3id.org/tempo#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B3ded49f0eedf10fd4978c9b40e3727a8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasReferenceDocument> .
+_:B3ded49f0eedf10fd4978c9b40e3727a8 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#ReferenceDocument> .
+_:B3ded49f0eedf10fd4978c9b40e3727a8 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3ded49f0eedf10fd4978c9b40e3727a8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B678b6bf2572a81b454e66292efdb9d62 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasObjectType> .
+_:B678b6bf2572a81b454e66292efdb9d62 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ObjectType> .
+_:B678b6bf2572a81b454e66292efdb9d62 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B678b6bf2572a81b454e66292efdb9d62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#PhysicalQuantity> .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/2002/07/owl#equivalentClass> <http://qudt.org/schema/qudt/QuantityKind> .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity Kind"@en .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/2000/01/rdf-schema#comment> "The Quantity Kind of a library component"@en .
+<https://w3id.org/tempo#QuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:Ba3162a9b6c787c012b44adde12def451 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isSubtypeOf> .
+_:Ba3162a9b6c787c012b44adde12def451 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Ba3162a9b6c787c012b44adde12def451 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Ba3162a9b6c787c012b44adde12def451 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bcfcafcdbb0e6dab2782ca38646fe3d39 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#conceptGUID> .
+_:Bcfcafcdbb0e6dab2782ca38646fe3d39 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#GUIDType> .
+_:Bcfcafcdbb0e6dab2782ca38646fe3d39 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bcfcafcdbb0e6dab2782ca38646fe3d39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract Concept Type"@en .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3e157809dbe38c61864fcc5a16e85ada .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1a287bd89abb3bcbd1227ff69a335302 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc1a9d47055d83b050a74fd16e65fe023 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#label> "Concept Type"@en .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B18d4e0c92a9c9b3cdbcc6a235d3799a2 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B736e63559c717709b3a7f8b249bbb10a .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B79f97da6ac9a45f29ddbbde03eedea3a .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B43696d9338ebfa1cc5390daf9adbe5c8 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5f8880dc1257efd16c4213cbaf678c14 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba71505a63713aa3c21a1df72a12de7c7 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba519375179cceb22f3a9361d9f65e865 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bec694407a96ad4d0ae45244d9f9935f9 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd92abcb8a229f3e181e20665d6ecd692 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc5e9c4d67f2e3ffacfdf22759e6a1abe .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5aef06ad5a02939359ea27c144a785e7 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B316fbe6fb70270af385c7af57a4a5a93 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6f2a68be7423ae4154840b5bba5b05f1 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B10e35640e7d1ad4c1f72297d584bd6b2 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bd4f1c24c2e5cd9db0f0f7a881fd169e5 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bad37c59d3ef3abf36d6a8f814953d508 .
+<https://w3id.org/tempo#ConceptType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcbaca2d0b0feaea3b6a7a8aa610940d5 .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#GroupOfProperties> .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B1ec9597d7f8bc32daaddad0cd2c5ac8e .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#SubjectType> .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "Group of properties"@en .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of properties is a kind of subject that contains properties and/or other groups of properties, but shall not contain data templates and shall not be assigned to an object type."@en .
+<https://w3id.org/tempo#GroupOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tempo#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/loin#SpecificationPerObjectType> .
+<https://w3id.org/tempo#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#label> "is data template for" .
+<https://w3id.org/tempo#isDataTemplateFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#DataTemplate> .
+<https://w3id.org/tempo#isDataTemplateFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B86d7e814077684d512d072976b061271 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isSpecializationOf> .
+_:B86d7e814077684d512d072976b061271 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B86d7e814077684d512d072976b061271 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B43696d9338ebfa1cc5390daf9adbe5c8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#definitionInLanguage> .
+_:B43696d9338ebfa1cc5390daf9adbe5c8 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:B43696d9338ebfa1cc5390daf9adbe5c8 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B43696d9338ebfa1cc5390daf9adbe5c8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd4ce6c9dX2D7ee0X2D4ce9X2Dacf0X2De6c2c53648ad <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B6557c3b3X2D1d43X2D46d2X2Da067X2Dc22d2c9c1e47 .
+_:Bd4ce6c9dX2D7ee0X2D4ce9X2Dacf0X2De6c2c53648ad <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "RATIONAL" .
+_:B9fb7d927X2D5df5X2D45e0X2D9269X2D288c0e926444 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B9fb7d927X2D5df5X2D45e0X2D9269X2D288c0e926444 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "DATETIME" .
+_:B068fc1aaac6a493ed1bb53f482dcba04 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasEnumeration> .
+_:B068fc1aaac6a493ed1bb53f482dcba04 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#Enumeration> .
+_:B068fc1aaac6a493ed1bb53f482dcba04 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B068fc1aaac6a493ed1bb53f482dcba04 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B57c7cba334ad7abbfb96e2008e27c96d <https://schema.org/name> "Philipp Hagedorn" .
+_:B57c7cba334ad7abbfb96e2008e27c96d <https://schema.org/memberOf> _:B841074b26ac3ae4a6596ba6c703b6412 .
+_:B57c7cba334ad7abbfb96e2008e27c96d <https://schema.org/identifier> <https://orcid.org/0000-0002-6249-243X> .
+_:B57c7cba334ad7abbfb96e2008e27c96d <https://schema.org/email> <mailto:philipp.hagedorn-n6v@rub.de> .
+_:B57c7cba334ad7abbfb96e2008e27c96d <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#QuantityKind> .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/2000/01/rdf-schema#label> "has quantity kind"@en .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasQuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#PossibleValues> .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2a66e6d663e6f48b74ac3f215b8e7f4c .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bfc1732673be8d379efc4f8f9d8cb74a8 .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bec4d31d19e58dd21a17f335e6dff67ed .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#label> "Enumeration"@en-GB .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/2000/01/rdf-schema#comment> "Enumeration constrains the value to a specified set of values"@en .
+<https://w3id.org/tempo#Enumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 <https://schema.org/name> "Sven Zentgraf" .
+_:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 <https://schema.org/memberOf> _:Be5ec4ba2fb81c646414aaeb91c39c865 .
+_:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 <https://schema.org/identifier> <https://orcid.org/0000-0001-6058-7614> .
+_:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 <https://schema.org/email> <mailto:sven.zentgraf@rub.de> .
+_:Bbc8f1ec62f779c52ab9cd12c9fd7f7a2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:Bc1a9d47055d83b050a74fd16e65fe023 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isSimilarTo> .
+_:Bc1a9d47055d83b050a74fd16e65fe023 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Bc1a9d47055d83b050a74fd16e65fe023 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc1a9d47055d83b050a74fd16e65fe023 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B18d4e0c92a9c9b3cdbcc6a235d3799a2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#languageOfCreator> .
+_:B18d4e0c92a9c9b3cdbcc6a235d3799a2 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B18d4e0c92a9c9b3cdbcc6a235d3799a2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B18d4e0c92a9c9b3cdbcc6a235d3799a2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#status> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#status> .
+<https://w3id.org/tempo#status> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#status> <http://www.w3.org/2000/01/rdf-schema#range> _:Bec87da27415a3367da354bd8d6c44d3e .
+<https://w3id.org/tempo#status> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#status> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#status> <http://www.w3.org/2000/01/rdf-schema#comment> "Status of the concept type during its life cycle" .
+<https://w3id.org/tempo#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bdf1525e7X2D2297X2D4c28X2D8206X2D41bcbf97df3c <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bf3024459X2Dc6f5X2D43c9X2D8164X2D24c470a9648f .
+_:Bdf1525e7X2D2297X2D4c28X2D8206X2D41bcbf97df3c <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#Property> .
+_:Ba519375179cceb22f3a9361d9f65e865 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasReferenceDocument> .
+_:Ba519375179cceb22f3a9361d9f65e865 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceDocument> .
+_:Ba519375179cceb22f3a9361d9f65e865 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Ba519375179cceb22f3a9361d9f65e865 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/2000/01/rdf-schema#label> "Major version"@en-GB .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Allows tracking of major changes. Experts decide if a new major version num-\r\nber shall be applied."@en .
+<https://w3id.org/tempo#majorVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bcaf3b0156a7f8ccceeadf6f9b31bf1ea <https://schema.org/name> "Ruhr University Bochum" .
+_:Bcaf3b0156a7f8ccceeadf6f9b31bf1ea <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/liu_liu.html.en> .
+_:Bc663e9e513380ea0ff428e15fe8f88da <http://www.w3.org/2002/07/owl#unionOf> _:B25d53edbX2D3b13X2D4d3cX2DadfdX2Df83e3591f539 .
+_:Bc663e9e513380ea0ff428e15fe8f88da <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/2000/01/rdf-schema#label> "Pattern"@en .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Datatype> .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "DataFormat defines constraints on the values of a datatype. It restricts values to literals that conform to a specified pattern, expressed as a regular expression. The interpretation of these patterns for property values may vary depending on the implementation."@en .
+<https://w3id.org/tempo#dataFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B878464d55bf9e4a43ff78b8859f09846 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#symbol> .
+_:B878464d55bf9e4a43ff78b8859f09846 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B878464d55bf9e4a43ff78b8859f09846 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B878464d55bf9e4a43ff78b8859f09846 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/isoprops#GroupOfProperties> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/tempo#GroupOfProperties> .
+_:Bbec6962ef9c8b05d2129c9ba8e2d40d7 <http://www.w3.org/2002/07/owl#onProperty> <https://schema.org/value> .
+_:Bbec6962ef9c8b05d2129c9ba8e2d40d7 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:Bbec6962ef9c8b05d2129c9ba8e2d40d7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B6039179c6c4140a22661f0bd52eb9633 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasProperty> .
+_:B6039179c6c4140a22661f0bd52eb9633 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#Property> .
+_:B6039179c6c4140a22661f0bd52eb9633 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B6039179c6c4140a22661f0bd52eb9633 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/tempo#hasReferenceType> .
+<https://w3id.org/tempo#isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#isSimilarTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#isSimilarTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Country of origin"@en .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/2000/01/rdf-schema#comment> "Country from where the corresponding Resource originated"@en .
+<https://w3id.org/tempo#countryOfOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B57e179d1e911a019d78ad269f4e340ec <http://www.w3.org/2001/XMLSchema#pattern> "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" .
+_:Bb582d150ea91c30b838d0fd2d196c697 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#conceptGUID> .
+_:Bb582d150ea91c30b838d0fd2d196c697 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#GUIDType> .
+_:Bb582d150ea91c30b838d0fd2d196c697 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb582d150ea91c30b838d0fd2d196c697 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "has Purpose"@en .
+<https://w3id.org/tempo#hasPurpose> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B1ec9597d7f8bc32daaddad0cd2c5ac8e <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasProperty> .
+_:B1ec9597d7f8bc32daaddad0cd2c5ac8e <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B1ec9597d7f8bc32daaddad0cd2c5ac8e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasDatatype> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasDatatype> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#Datatype> .
+<https://w3id.org/tempo#hasDatatype> <http://www.w3.org/2000/01/rdf-schema#label> "has datatype"@en .
+<https://w3id.org/tempo#hasDatatype> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#hasDatatype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B5f8880dc1257efd16c4213cbaf678c14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#countryOfOrigin> .
+_:B5f8880dc1257efd16c4213cbaf678c14 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B5f8880dc1257efd16c4213cbaf678c14 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5f8880dc1257efd16c4213cbaf678c14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#creatorsLanguage> .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#language> .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/2000/01/rdf-schema#label> "Language of creator"@en .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/2000/01/rdf-schema#comment> "Language of the creator of the concept type"@en .
+<https://w3id.org/tempo#languageOfCreator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B6adf715dX2Dad2eX2D4cf4X2D8beaX2D3fea32fb7a3f <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bd4ce6c9dX2D7ee0X2D4ce9X2Dacf0X2De6c2c53648ad .
+_:B6adf715dX2Dad2eX2D4cf4X2D8beaX2D3fea32fb7a3f <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "INTEGER" .
+<https://w3id.org/tempo#order> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#order> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/tempo#order> <http://www.w3.org/2000/01/rdf-schema#label> "Order of the element in the enumeration"@en-GB .
+<https://w3id.org/tempo#order> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#EnumerationItem> .
+<https://w3id.org/tempo#order> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B316fbe6fb70270af385c7af57a4a5a93 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#descriptionInLanguage> .
+_:B316fbe6fb70270af385c7af57a4a5a93 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:B316fbe6fb70270af385c7af57a4a5a93 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B316fbe6fb70270af385c7af57a4a5a93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#range> _:Baf60f118fb6c85db3034e928aaaef0a7 .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#label> "concept GUID"@en .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier generated using the algorithm denoted in RFC 4122."@en .
+<https://w3id.org/tempo#conceptGUID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B2ab30babX2D39a9X2D4af8X2Db02aX2D7763a5dd3bb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B2ab30babX2D39a9X2D4af8X2Db02aX2D7763a5dd3bb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/isoprops#GroupOfProperties> .
+_:B8da5aeb3c734276dd870c3045e30912b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasQuantityKind> .
+_:B8da5aeb3c734276dd870c3045e30912b <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#QuantityKind> .
+_:B8da5aeb3c734276dd870c3045e30912b <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B8da5aeb3c734276dd870c3045e30912b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bcbaca2d0b0feaea3b6a7a8aa610940d5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasReplacedObjects> .
+_:Bcbaca2d0b0feaea3b6a7a8aa610940d5 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Bcbaca2d0b0feaea3b6a7a8aa610940d5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bcbaca2d0b0feaea3b6a7a8aa610940d5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd6f85fc07fd255c1b41e27665d74f6f3 <http://www.w3.org/2002/07/owl#unionOf> _:B5c8e911fX2D1a3fX2D45a2X2D8a96X2Df0657c328551 .
+_:Bd6f85fc07fd255c1b41e27665d74f6f3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B6493fb8d69d8bc34f92f70138b2221db <https://schema.org/parentOrganization> _:Ba5afb58a4f38eba267251b39403a4b39 .
+_:B6493fb8d69d8bc34f92f70138b2221db <https://schema.org/name> "Chair of Construction Management, Bauhaus Universitaet Weimar" .
+_:B6493fb8d69d8bc34f92f70138b2221db <https://schema.org/identifier> <https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/construction-engineering-and-management/> .
+_:B6493fb8d69d8bc34f92f70138b2221db <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+_:B9d41476d98135941f3f72db1518b2d8b <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isAssignedToObjectType> .
+_:B9d41476d98135941f3f72db1518b2d8b <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ObjectType> .
+_:B9d41476d98135941f3f72db1518b2d8b <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B9d41476d98135941f3f72db1518b2d8b <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasURI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/tempo#hasReferenceType> .
+<https://w3id.org/tempo#hasURI> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasURI> <http://www.w3.org/2000/01/rdf-schema#label> " has URI" .
+<https://w3id.org/tempo#hasURI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#hasURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/isoprops#Property> .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#isDependentOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B56844770440944c0b5a4841eaf30a744 <https://schema.org/name> "Ruhr University Bochum, Germany" .
+_:B56844770440944c0b5a4841eaf30a744 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Organization> .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2004/02/skos/core#scopeNote> "PA019" .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#exampleInLanguage> .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Example in language N" .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Example of the concept type in a specified language" .
+<https://w3id.org/tempo#exampleInLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B0ae809c4X2D6a43X2D477aX2Dbae6X2D69f0e596c445 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B0ae809c4X2D6a43X2D477aX2Dbae6X2D69f0e596c445 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "inactive" .
+_:B013a220f3043546ced4ae92d36522f26 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B013a220f3043546ced4ae92d36522f26 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dataType> .
+_:B013a220f3043546ced4ae92d36522f26 <http://www.w3.org/2002/07/owl#onDataRange> _:B21f47a45e3d2f9bf1bc86f899c4b4232 .
+_:B013a220f3043546ced4ae92d36522f26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be25e1be32a0a5cd0513dec1d02607f07 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasEnumeration> .
+_:Be25e1be32a0a5cd0513dec1d02607f07 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#Enumeration> .
+_:Be25e1be32a0a5cd0513dec1d02607f07 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be25e1be32a0a5cd0513dec1d02607f07 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/2000/01/rdf-schema#label> "ISBN" .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/2000/01/rdf-schema#comment> "The International Standard Book Number (ISBN) is a numeric commercial book identifier that is intended to be unique." .
+<https://w3id.org/tempo#isbn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/tempo#hasReferenceType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasReferenceType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasReferenceType> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#hasReferenceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B79297524c704f16cc134bafda6b2f328 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#nameInLanguage> .
+_:B79297524c704f16cc134bafda6b2f328 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B79297524c704f16cc134bafda6b2f328 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B79297524c704f16cc134bafda6b2f328 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B4220d453ba662e0ce30089b036fac622 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasQuantityKind> .
+_:B4220d453ba662e0ce30089b036fac622 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#QuantityKind> .
+_:B4220d453ba662e0ce30089b036fac622 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B4220d453ba662e0ce30089b036fac622 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#symbol> .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2000/01/rdf-schema#label> "Symbol"@en .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Symbols of the property" .
+<https://w3id.org/tempo#symbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B79f97da6ac9a45f29ddbbde03eedea3a <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#exampleInLanguage> .
+_:B79f97da6ac9a45f29ddbbde03eedea3a <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+_:B79f97da6ac9a45f29ddbbde03eedea3a <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B79f97da6ac9a45f29ddbbde03eedea3a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B1a287bd89abb3bcbd1227ff69a335302 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#deprecationExplanation> .
+_:B1a287bd89abb3bcbd1227ff69a335302 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B1a287bd89abb3bcbd1227ff69a335302 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B1a287bd89abb3bcbd1227ff69a335302 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B31f6f241X2D172aX2D413bX2D87aaX2D5dec98f23e4b <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B31f6f241X2D172aX2D413bX2D87aaX2D5dec98f23e4b <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#label> "date of publication"@en-GB .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/2000/01/rdf-schema#comment> "Publication date of the corresponding reference document" .
+<https://w3id.org/tempo#dateOfPublication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B36d502e41f32f4b568c0e2fa6a8111c5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasGroupOfProperties> .
+_:B36d502e41f32f4b568c0e2fa6a8111c5 <http://www.w3.org/2002/07/owl#onClass> _:Bd6f85fc07fd255c1b41e27665d74f6f3 .
+_:B36d502e41f32f4b568c0e2fa6a8111c5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B36d502e41f32f4b568c0e2fa6a8111c5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bb582d150ea91c30b838d0fd2d196c697 .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc58115a9b2f3e6292756ed4f26a6d9d4 .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B745b78bd8533548a5287ffc1ba4c0a50 .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc8d7f7c3c11a621981dbae28e38c6d42 .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#label> "Reference Type" .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship defined used to connect the subject for a \r\nspecific purpose"@en .
+<https://w3id.org/tempo#ReferenceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B29b70a3cX2Dbc14X2D44fbX2Db656X2D1699c7afa728 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bc30e6ec5X2D6331X2D40b8X2Da095X2D0af915804aa1 .
+_:B29b70a3cX2Dbc14X2D44fbX2Db656X2D1699c7afa728 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#DataTemplate> .
+_:Bb49cb6758726f06b0e03858ba5d9866a <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isSpecializationOf> .
+_:Bb49cb6758726f06b0e03858ba5d9866a <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bb49cb6758726f06b0e03858ba5d9866a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B35e92f4e19783a58e6efb75221bf2538 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dataFormat> .
+_:B35e92f4e19783a58e6efb75221bf2538 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B35e92f4e19783a58e6efb75221bf2538 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B35e92f4e19783a58e6efb75221bf2538 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B3122e3110a77835b7c6e48cebbf0c17a <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#order> .
+_:B3122e3110a77835b7c6e48cebbf0c17a <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B3122e3110a77835b7c6e48cebbf0c17a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B4b3f7e2a13aa1a6103a3269c4ba40552 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#author> .
+_:B4b3f7e2a13aa1a6103a3269c4ba40552 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B4b3f7e2a13aa1a6103a3269c4ba40552 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B4b3f7e2a13aa1a6103a3269c4ba40552 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bc5e9c4d67f2e3ffacfdf22759e6a1abe <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dateOfCreation> .
+_:Bc5e9c4d67f2e3ffacfdf22759e6a1abe <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:Bc5e9c4d67f2e3ffacfdf22759e6a1abe <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc5e9c4d67f2e3ffacfdf22759e6a1abe <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Be1ef731a6535416f3d40d895b6f518d8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasDatatype> .
+_:Be1ef731a6535416f3d40d895b6f518d8 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#Datatype> .
+_:Be1ef731a6535416f3d40d895b6f518d8 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Be1ef731a6535416f3d40d895b6f518d8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B64ab8e33f580a3f3cfb039a425245014 .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3122e3110a77835b7c6e48cebbf0c17a .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bbec6962ef9c8b05d2129c9ba8e2d40d7 .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://schema.org/PropertyValue> .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#label> "Enumeration item"@en-GB .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/2000/01/rdf-schema#comment> "Specified value and optional order of an enumeration constrain" .
+<https://w3id.org/tempo#EnumerationItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#hasNameInLanguage> .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#langString> .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "Name in language"@en .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of the concept type in a specified language"@en .
+<https://w3id.org/tempo#nameInLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B6039179c6c4140a22661f0bd52eb9633 .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3ded49f0eedf10fd4978c9b40e3727a8 .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bcfcafcdbb0e6dab2782ca38646fe3d39 .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B678b6bf2572a81b454e66292efdb9d62 .
+<https://w3id.org/tempo#Library> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bba2fcf173544227d631f64f44a2e255e .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/dcat#Catalog> .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#comment> "Library Element with Keys and Keyreferences"@en .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#label> "Library"@en .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bc17dc631e4f355e1963794a974a47a5a .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5bb4e6756a001744206aa38205978711 .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B8da5aeb3c734276dd870c3045e30912b .
+<https://w3id.org/tempo#Library> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B79297524c704f16cc134bafda6b2f328 .
+_:B507343188981f02f6d53e97ea761db79 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dataFormat> .
+_:B507343188981f02f6d53e97ea761db79 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B507343188981f02f6d53e97ea761db79 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B507343188981f02f6d53e97ea761db79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bf1639ef6X2D315eX2D42ebX2D914eX2De9eb0f78dd14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:Bdbb5674dX2D4991X2D43f5X2D9ec5X2D69025fbc4849 .
+_:Bf1639ef6X2D315eX2D42ebX2D914eX2De9eb0f78dd14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "BOOLEAN" .
+_:Baf60f118fb6c85db3034e928aaaef0a7 <http://www.w3.org/2002/07/owl#withRestrictions> _:B3575439fX2D2dfcX2D4827X2D8231X2Db564f14e047f .
+_:Baf60f118fb6c85db3034e928aaaef0a7 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:Baf60f118fb6c85db3034e928aaaef0a7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:Bdfa9d903e00306a49210b308c23bc76f <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#publisher> .
+_:Bdfa9d903e00306a49210b308c23bc76f <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:Bdfa9d903e00306a49210b308c23bc76f <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bdfa9d903e00306a49210b308c23bc76f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/isoprops#Property> .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#isSpecializationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:Bf1ec7ce8868726098ea7f2c6cf51aef9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasURI> .
+_:Bf1ec7ce8868726098ea7f2c6cf51aef9 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Bf1ec7ce8868726098ea7f2c6cf51aef9 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bf1ec7ce8868726098ea7f2c6cf51aef9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B56b8ead2465bc096d3bf170ee03db5b3 .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B52a11d2af34e8b1df46e1b00906aeb34 .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Ba3162a9b6c787c012b44adde12def451 .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#label> "Subject type"@en .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract Subject Type\r\nSubstitution Group is used here to be able to constraint subject relationships to the respectives specilizations of subjects using key/keyref mechanism eg: DataTempalte that isComposedOf, is usable onyl with another DataTemplate, this prevent cross relationships" .
+<https://w3id.org/tempo#SubjectType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Be5ec4ba2fb81c646414aaeb91c39c865 <https://schema.org/name> "Ruhr University Bochum" .
+_:Be5ec4ba2fb81c646414aaeb91c39c865 <https://schema.org/identifier> <https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://qudt.org/vocab/unit/UNITLESS> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#Unit> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#label> "has Unit"@en .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Property> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Enumeration> .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "A unit to represent a scale that enables a value to be measured\nIt is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS"@en .
+<https://w3id.org/tempo#hasUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#hasGroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasGroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#range> _:B2f965804514301d074772fcbc6b98766 .
+<https://w3id.org/tempo#hasGroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#label> "has group of properties" .
+<https://w3id.org/tempo#hasGroupOfProperties> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#DataTemplate> .
+<https://w3id.org/tempo#hasGroupOfProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B56b8ead2465bc096d3bf170ee03db5b3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isSubtypeOf> .
+_:B56b8ead2465bc096d3bf170ee03db5b3 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:B56b8ead2465bc096d3bf170ee03db5b3 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B56b8ead2465bc096d3bf170ee03db5b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceDocument> .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "has reference document"@en .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#hasReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B4838870aX2Dddc9X2D43bfX2Db5eaX2D1d860bff801d <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B9fb7d927X2D5df5X2D45e0X2D9269X2D288c0e926444 .
+_:B4838870aX2Dddc9X2D43bfX2Db5eaX2D1d860bff801d <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "STRING" .
+_:B5aef06ad5a02939359ea27c144a785e7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#dateOfCreation> .
+_:B5aef06ad5a02939359ea27c144a785e7 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:B5aef06ad5a02939359ea27c144a785e7 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5aef06ad5a02939359ea27c144a785e7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasVisualRepresentation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/tempo#hasReferenceType> .
+<https://w3id.org/tempo#hasVisualRepresentation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasVisualRepresentation> <http://www.w3.org/2000/01/rdf-schema#label> "has Resource"@en .
+<https://w3id.org/tempo#hasVisualRepresentation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#hasVisualRepresentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B8563ae222d5aa951728ca1cb886e3018 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasUnit> .
+_:B8563ae222d5aa951728ca1cb886e3018 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#Unit> .
+_:B8563ae222d5aa951728ca1cb886e3018 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B8563ae222d5aa951728ca1cb886e3018 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasIntendedUse> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasIntendedUse> <http://www.w3.org/2000/01/rdf-schema#label> "has intended use"@en .
+<https://w3id.org/tempo#hasIntendedUse> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Library> .
+<https://w3id.org/tempo#hasIntendedUse> <http://www.w3.org/2000/01/rdf-schema#comment> "The object property relates the alphanumerical information with the intened use"@en .
+<https://w3id.org/tempo#hasIntendedUse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#hasReplacedObjects> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasReplacedObjects> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#ReferenceType> .
+<https://w3id.org/tempo#hasReplacedObjects> <http://www.w3.org/2000/01/rdf-schema#label> "has replaced objects"@en .
+<https://w3id.org/tempo#hasReplacedObjects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:B2f965804514301d074772fcbc6b98766 <http://www.w3.org/2002/07/owl#unionOf> _:B7c28fc63X2D9dcaX2D4c35X2D8a23X2D3139f29f670a .
+_:B2f965804514301d074772fcbc6b98766 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:B21f47a45e3d2f9bf1bc86f899c4b4232 <http://www.w3.org/2002/07/owl#oneOf> _:Bf1639ef6X2D315eX2D42ebX2D914eX2De9eb0f78dd14 .
+_:B21f47a45e3d2f9bf1bc86f899c4b4232 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:B2bb19738e4e7ca31d785f6a515974fd5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasURI> .
+_:B2bb19738e4e7ca31d785f6a515974fd5 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:B2bb19738e4e7ca31d785f6a515974fd5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B2bb19738e4e7ca31d785f6a515974fd5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B7f889536f4ee55986921c9637c0329f5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasDatatype> .
+_:B7f889536f4ee55986921c9637c0329f5 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#Datatype> .
+_:B7f889536f4ee55986921c9637c0329f5 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B7f889536f4ee55986921c9637c0329f5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bfc1732673be8d379efc4f8f9d8cb74a8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasUnit> .
+_:Bfc1732673be8d379efc4f8f9d8cb74a8 <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bfc1732673be8d379efc4f8f9d8cb74a8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Ba1c919e6X2D6c8eX2D4e4eX2D8474X2D35cd2af7f6a5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:Ba1c919e6X2D6c8eX2D4e4eX2D8474X2D35cd2af7f6a5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/tempo#GroupOfProperties> .
+_:B736e63559c717709b3a7f8b249bbb10a <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#conceptGUID> .
+_:B736e63559c717709b3a7f8b249bbb10a <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#GUIDType> .
+_:B736e63559c717709b3a7f8b249bbb10a <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B736e63559c717709b3a7f8b249bbb10a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bba2fcf173544227d631f64f44a2e255e <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasGroupOfProperties> .
+_:Bba2fcf173544227d631f64f44a2e255e <http://www.w3.org/2002/07/owl#minCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bba2fcf173544227d631f64f44a2e255e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bd4f1c24c2e5cd9db0f0f7a881fd169e5 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasDictionary> .
+_:Bd4f1c24c2e5cd9db0f0f7a881fd169e5 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/tempo#ReferenceType> .
+_:Bd4f1c24c2e5cd9db0f0f7a881fd169e5 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bd4f1c24c2e5cd9db0f0f7a881fd169e5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/isoprops#hasPossibleValues> .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tempo#Enumeration> .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/2000/01/rdf-schema#label> "has enumeration"@en-GB .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#Datatype> .
+<https://w3id.org/tempo#hasEnumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tempo#GUIDType> <http://www.w3.org/2002/07/owl#withRestrictions> _:B3f795630X2D4949X2D4d65X2D91f8X2Dd8b7a1501029 .
+<https://w3id.org/tempo#GUIDType> <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#GUIDType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+<https://w3id.org/tempo#GUIDType> <http://www.w3.org/2000/01/rdf-schema#label> "has Reference Type"@en .
+<https://w3id.org/tempo#GUIDType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+_:B47849cedX2Dc972X2D4c59X2D9545X2D310fd023b562 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B1d9653f7X2Dbb87X2D488fX2D821cX2Df16e2fdd00ef .
+_:B47849cedX2Dc972X2D4c59X2D9545X2D310fd023b562 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "REAL" .
+_:Bf0a461981352bb429ef32621a9f02f18 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#isbn> .
+_:Bf0a461981352bb429ef32621a9f02f18 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:Bf0a461981352bb429ef32621a9f02f18 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bf0a461981352bb429ef32621a9f02f18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B2a66e6d663e6f48b74ac3f215b8e7f4c <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasEnumerationItem> .
+_:B2a66e6d663e6f48b74ac3f215b8e7f4c <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B2a66e6d663e6f48b74ac3f215b8e7f4c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:Bc17dc631e4f355e1963794a974a47a5a <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#hasUnit> .
+_:Bc17dc631e4f355e1963794a974a47a5a <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tempo#Unit> .
+_:Bc17dc631e4f355e1963794a974a47a5a <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bc17dc631e4f355e1963794a974a47a5a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/2000/01/rdf-schema#label> "Deprecation explanation"@en .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/2000/01/rdf-schema#comment> "Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new concept type"@en .
+<https://w3id.org/tempo#deprecationExplanation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B0ccae442e3144a0d9644cbb9072759ae <https://schema.org/name> "Liu Liu" .
+_:B0ccae442e3144a0d9644cbb9072759ae <https://schema.org/memberOf> _:Bcaf3b0156a7f8ccceeadf6f9b31bf1ea .
+_:B0ccae442e3144a0d9644cbb9072759ae <https://schema.org/identifier> <https://orcid.org/0000-0001-5907-7609> .
+_:B0ccae442e3144a0d9644cbb9072759ae <https://schema.org/email> <mailto:liu.liu-m6r@rub.de> .
+_:B0ccae442e3144a0d9644cbb9072759ae <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B4042c470X2D9f10X2D465bX2D8191X2D75645bb2fa8c <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B4838870aX2Dddc9X2D43bfX2Db5eaX2D1d860bff801d .
+_:B4042c470X2D9f10X2D465bX2D8191X2D75645bb2fa8c <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "COMPLEX" .
+_:Bad37c59d3ef3abf36d6a8f814953d508 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#status> .
+_:Bad37c59d3ef3abf36d6a8f814953d508 <http://www.w3.org/2002/07/owl#onDataRange> _:Bae209af820817a12acfaff78a74c143e .
+_:Bad37c59d3ef3abf36d6a8f814953d508 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "0"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bad37c59d3ef3abf36d6a8f814953d508 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B503a9fd0a3c7a8e632270ddc755ea701 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Reference document"@en .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B4b3f7e2a13aa1a6103a3269c4ba40552 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf0a461981352bb429ef32621a9f02f18 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B124c3db237abb46f2672b2e174031afb .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B0c9a872e45c24fb89320d6f4aa0f8bd5 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bdfa9d903e00306a49210b308c23bc76f .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B5a2b6d2b785e94eb36d0d192b1db22d3 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "Publication that is consulted to find specific information, particularly in a technical or scientific domain"@en .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/tempo#ConceptType> .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:Bf1ec7ce8868726098ea7f2c6cf51aef9 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/isoprops#DictionaryReferenceDocument> .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B3d87af9262b0d31e3a9d78918a0a3e31 .
+<https://w3id.org/tempo#ReferenceDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:B2bb19738e4e7ca31d785f6a515974fd5 .
+_:Bec694407a96ad4d0ae45244d9f9935f9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#languageOfCreator> .
+_:Bec694407a96ad4d0ae45244d9f9935f9 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:Bec694407a96ad4d0ae45244d9f9935f9 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:Bec694407a96ad4d0ae45244d9f9935f9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B70454b900a71d5a43cf69e9c7769e1e4 <https://schema.org/name> "Marthina Mellenthin-Filardo" .
+_:B70454b900a71d5a43cf69e9c7769e1e4 <https://schema.org/memberOf> _:B6396c5e2529935d4d61ccaf9f6c28e48 .
+_:B70454b900a71d5a43cf69e9c7769e1e4 <https://schema.org/identifier> <https://orcid.org/0000-0001-7759-7579> .
+_:B70454b900a71d5a43cf69e9c7769e1e4 <https://schema.org/email> <mailto:martina.mellenthin.filardo@uni-weimar.de> .
+_:B70454b900a71d5a43cf69e9c7769e1e4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .
+_:B61225f96X2D4637X2D48ecX2Db12aX2D4d16b1f2f2ae <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:B61225f96X2D4637X2D48ecX2Db12aX2D4d16b1f2f2ae <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "inactive" .
+_:B5a2b6d2b785e94eb36d0d192b1db22d3 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tempo#publisher> .
+_:B5a2b6d2b785e94eb36d0d192b1db22d3 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:B5a2b6d2b785e94eb36d0d192b1db22d3 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:B5a2b6d2b785e94eb36d0d192b1db22d3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:B492b0485X2Dfb6cX2D4c8fX2Da846X2Dda02998b29e2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:B6adf715dX2Dad2eX2D4cf4X2D8beaX2D3fea32fb7a3f .
+_:B492b0485X2Dfb6cX2D4c8fX2Da846X2Dda02998b29e2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "BOOLEAN" .
+_:B6ff51ce59a26646b535455cb068469d0 <http://www.w3.org/2002/07/owl#unionOf> _:B29b70a3cX2Dbc14X2D44fbX2Db656X2D1699c7afa728 .
+_:B6ff51ce59a26646b535455cb068469d0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
