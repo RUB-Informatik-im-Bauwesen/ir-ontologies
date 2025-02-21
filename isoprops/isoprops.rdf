@@ -8,6 +8,7 @@
     xmlns:voaf="http://purl.org/vocommons/voaf#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:isoprops="https://w3id.org/isoprops#"
+    xmlns:tempo="https://w3id.org/tempo#"
     xmlns:opm="https://w3id.org/opm#"
     xmlns:dc="http://purl.org/dc/terms/"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -18,61 +19,99 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xml:base="https://w3id.org/isoprops" > 
   <rdf:Description rdf:nodeID="A0">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>Reference document</rdf:first>
+    <owl:onProperty rdf:resource="#deprecationExplanation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#BoundaryLimitMax">
-    <skos:scopeNote>PA040</skos:scopeNote>
     <rdfs:subClassOf rdf:nodeID="A1"/>
+    <skos:scopeNote>PA040</skos:scopeNote>
     <rdfs:subClassOf rdf:nodeID="A2"/>
-    <rdfs:comment xml:lang="de-DE">Grenzwertintervall bestehend aus der oberen(maxValue) Intervallgrenze</rdfs:comment>
+    <rdfs:comment xml:lang="en">BoundaryLimitMax defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval.</rdfs:comment>
     <rdfs:subClassOf rdf:nodeID="A3"/>
-    <rdfs:label>Maximum Boundary Limit</rdfs:label>
-    <rdfs:comment>Boundary limit  interval consisting of the the upper (maxValue) interval boundary</rdfs:comment>
+    <rdfs:label>Upper Boundary Limit</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://schema.org/PropertyValue"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="de-DE">BoundaryLimitMax definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist.</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Oberer Grenzwert</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <isoprops:code xml:lang="de-DE">PA040</isoprops:code>
     <isoprops:code>PA040</isoprops:code>
   </rdf:Description>
+  <rdf:Description rdf:about="#deprecationExplanation">
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:scopeNote>PA013/GA013</skos:scopeNote>
+    <isoprops:code xml:lang="de-DE">PA013/GA013</isoprops:code>
+    <isoprops:code>PA013/GA013</isoprops:code>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment>Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property/group of properties; this explanation has to be written in international English (EN)</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Erlaeuterung fuer die Ablehnung</rdfs:label>
+    <rdfs:label>Deprecation explanation</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:comment xml:lang="de-DE">Satz, der den Grund fuer die Ablehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal/der neuen Merkmalsgruppe entsprechen; diese Erlaeuterung muss in internationalem Englisch (EN) geschrieben werden</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="A4">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <owl:onProperty rdf:resource="#countryOfOrigin"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#GloballyUniqueIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <skos:scopeNote>PA001/GA001</skos:scopeNote>
-    <rdfs:comment>Unique identifier generated using the algorithm denoted in RFC 4122</rdfs:comment>
-    <isoprops:code xml:lang="de-DE">PA001/GA001</isoprops:code>
-    <isoprops:code>PA001/GA001</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Global eindeutiger Bezeichner (GUID)</rdfs:label>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:label>Globally Unique Identifier (GUID)</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="de-DE">Eindeutiger Bezeichner, der mit dem in RFC 4122 beschriebenen Algorithmus erzeugt wird</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:domain rdf:resource="#Property"/>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="A5">
-    <owl:onProperty rdf:resource="https://w3id.org/dt#hasExternalDictionary"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="#hasDescriptionInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A6">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>inactive</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfCreation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="#status"/>
+    <owl:onDataRange rdf:nodeID="A7"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A8">
-    <schema:name>Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en"/>
+    <rdf:rest rdf:nodeID="A9"/>
+    <rdf:first>Domain</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#globallyUniqueIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="de-DE">Global eindeutiger Bezeichner (GUID)</rdfs:label>
+    <rdfs:label>Globally Unique Identifier (GUID)</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA001/GA001</isoprops:code>
+    <isoprops:code>PA001/GA001</isoprops:code>
+    <skos:scopeNote>PA001/GA001</skos:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment>Unique identifier generated using the algorithm denoted in RFC 4122</rdfs:comment>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment xml:lang="de-DE">Eindeutiger Bezeichner, der mit dem in RFC 4122 beschriebenen Algorithmus erzeugt wird</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Reference document</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dateOfVersion"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasVisualRepresentation">
+    <skos:scopeNote>PA023/GA018</skos:scopeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:label xml:lang="de-DE">Bildliche Darstellung</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:comment xml:lang="de-DE">Bildliche Darstellung des Merkmals durch Skizzen, Fotos, Videos oder sonstige Multimedia-Objekte</rdfs:comment>
+    <rdfs:label>Visual representation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <isoprops:code xml:lang="de-DE">PA023/GA018</isoprops:code>
+    <isoprops:code>PA023/GA018</isoprops:code>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Visual representation of the group of properties through sketches, photos, videos or other multimedia objects</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="#hasDictionaryReferenceDocument">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
@@ -88,9 +127,10 @@
     <rdfs:label>has external dictionary</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>inactive</rdf:first>
+  <rdf:Description rdf:nodeID="A12">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasTextFormat">
     <skos:scopeNote>PA038</skos:scopeNote>
@@ -107,55 +147,47 @@ The encoding is set according to Name of encoding standard of IANA, RFC 2978</rd
     <rdfs:range rdf:resource="#TextFormatItem"/>
     <isoprops:code>PA038</isoprops:code>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:onProperty rdf:resource="#DateOfActivation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#Inclusive"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#PossibleValues">
-    <rdfs:subClassOf rdf:nodeID="A11"/>
+    <rdfs:subClassOf rdf:nodeID="A14"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A12"/>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/dt#PredefinedValuesList"/>
+    <rdfs:subClassOf rdf:nodeID="A16"/>
     <isoprops:code xml:lang="de-DE">PA039</isoprops:code>
     <isoprops:code>PA039</isoprops:code>
     <rdfs:label xml:lang="de-DE">Liste moeglicher Werte in Sprache N</rdfs:label>
     <rdfs:comment>Possible value for the property and language&#xD;
 Values can be string or numbers</rdfs:comment>
     <skos:scopeNote>PA039</skos:scopeNote>
+    <owl:equivalentClass rdf:resource="https://w3id.org/tempo#Enumeration"/>
     <rdfs:subClassOf rdf:resource="https://schema.org/PropertyValue"/>
     <rdfs:label>Possible value in language N</rdfs:label>
     <rdfs:comment xml:lang="de-DE">Moeglicher Wert fuer das Merkmal und Sprache&#xD;
 Werte koennen String oder Zahlen sein</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A17"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A12">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#accessURL"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first>RATIONAL</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <owl:onProperty rdf:resource="#countryOfUse"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A13">
-    <owl:onProperty rdf:resource="#hasUnit"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#DeprecationExplanation">
-    <rdfs:label xml:lang="de-DE">Erlaeuterung fuer die Ablehnung</rdfs:label>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <skos:scopeNote>PA013/GA013</skos:scopeNote>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property/group of properties; this explanation has to be written in international English (EN)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label>Deprecation explanation</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA013/GA013</isoprops:code>
-    <isoprops:code>PA013/GA013</isoprops:code>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:comment xml:lang="de-DE">Satz, der den Grund fuer die Ablehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal/der neuen Merkmalsgruppe entsprechen; diese Erlaeuterung muss in internationalem Englisch (EN) geschrieben werden</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A14">
-    <rdf:rest rdf:nodeID="A15"/>
-    <rdf:first>Composed property</rdf:first>
+  <rdf:Description rdf:nodeID="A21">
+    <schema:parentOrganization rdf:nodeID="A22"/>
+    <schema:name>Chair of Computing in Engineering, Ruhr University Bochum</schema:name>
+    <schema:identifier rdf:resource="https://www.inf.bi.rub.de"/>
+    <rdf:type rdf:resource="https://schema.org/Organization"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasDefiningValue">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -170,39 +202,21 @@ Werte koennen String oder Zahlen sein</rdfs:comment>
     <rdfs:comment>In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030</rdfs:comment>
     <rdfs:label>Defining values</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A16">
-    <owl:onProperty rdf:resource="#VisualRepresentation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="A23">
+    <owl:oneOf rdf:nodeID="A24"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:onProperty rdf:resource="#hasDigitalFormat"/>
+    <owl:onClass rdf:resource="#DigitalFormatItem"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#DateOfCreation">
-    <rdfs:comment xml:lang="de-DE">Datum der Validierung der An-frage zur Erstellung des Merkmals durch Sachverstaendige</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:comment>Date of validation of the property creation request by experts</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Date of creation</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA003/GA003</isoprops:code>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <isoprops:code>PA003/GA003</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Datum der Erstellung</rdfs:label>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <skos:scopeNote>PA003/GA003</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="#DefinitionInLanguage">
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <skos:scopeNote>PA016/GA016</skos:scopeNote>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label xml:lang="de-DE">Definition in Sprache N</rdfs:label>
-    <rdfs:comment>List of pairs (definition of the property/group of properties, language)</rdfs:comment>
-    <rdfs:label>Definition of in language N</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA016/GA016</isoprops:code>
-    <isoprops:code>PA016/GA016</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Definition des Merkmals/der Merkmalsgruppe, Sprache)</rdfs:comment>
+  <rdf:Description rdf:nodeID="A26">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#symbol"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasGivenGroupOfProperties">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -217,164 +231,182 @@ Werte koennen String oder Zahlen sein</rdfs:comment>
     <rdfs:domain rdf:resource="#Property"/>
     <rdfs:label>Given group of properties</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="#DateOfRevision">
-    <rdfs:comment xml:lang="de-DE">Datum der Ueberarbeitung</rdfs:comment>
-    <rdfs:comment>Date of revision</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Datum der Ueberarbeitung</rdfs:label>
-    <rdfs:label>Date of revision</rdfs:label>
-    <skos:scopeNote>PA006/GA006</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">PA006/GA006</isoprops:code>
-    <isoprops:code>PA006/GA006</isoprops:code>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdf:Description rdf:nodeID="A27">
+    <owl:onProperty rdf:resource="#dateOfLastChange"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A17">
-    <owl:onProperty rdf:resource="#hasPropertyReference"/>
+  <rdf:Description rdf:nodeID="A28">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A18">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfRevision"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A19">
-    <owl:onProperty rdf:resource="#SubdivisionOfUse"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A20">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>DATETIME</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A21">
-    <owl:onProperty rdf:resource="#hasParentGroupOfProperties"/>
-    <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#DateOfVersion">
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:comment xml:lang="de-DE">Datum der Version</rdfs:comment>
-    <isoprops:code xml:lang="de-DE">PA007/GA007</isoprops:code>
-    <isoprops:code>PA007/GA007</isoprops:code>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment>Date of version</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Datum der Version</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Date of version</rdfs:label>
-    <skos:scopeNote>PA007/GA007</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="#SymbolOfTheProperty">
-    <skos:scopeNote>PA022</skos:scopeNote>
-    <rdfs:comment>Pair (symbol of the property, globally unique identifier of the group of properties (attribute GA001))</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:comment xml:lang="de-DE">Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A22"/>
-    <isoprops:code xml:lang="de-DE">PA022</isoprops:code>
-    <isoprops:code>PA022</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Symbol des Merkmals in einer gegebenen Merkmalsgruppe</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A23"/>
-    <rdfs:label>Symbol of the property in a given property group</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A24">
-    <owl:onProperty rdf:resource="#isReplacedByGroupOfProperties"/>
-    <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A25">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#VersionNumber"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A26">
-    <owl:onProperty rdf:resource="#Tolerance"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A27">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DataType"/>
-    <owl:onDataRange rdf:nodeID="A28"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="A29">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>Reference document</rdf:first>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasGivenGroupOfProperties"/>
+    <owl:onClass rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A30">
-    <owl:onProperty rdf:resource="#Tolerance"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:onProperty rdf:resource="#hasTextFormat"/>
+    <owl:onClass rdf:resource="#TextFormatItem"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#creatorsLanguage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:label xml:lang="de-DE">Sprache des Erstellers</rdfs:label>
+    <rdfs:label xml:lang="en">Creator's language</rdfs:label>
+    <skos:scopeNote>PA015/GA015</skos:scopeNote>
+    <rdfs:comment xml:lang="de-DE">Sprache des Erstellers des Merkmals/der Merkmalsgruppe</rdfs:comment>
+    <rdfs:comment xml:lang="en">Language of the creator of the property/group of properties</rdfs:comment>
+    <isoprops:code xml:lang="en">PA015/GA015</isoprops:code>
+    <isoprops:code xml:lang="de-DE">PA015/GA015</isoprops:code>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A31">
-    <owl:onProperty rdf:resource="#DescriptionInLanguage"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#status"/>
+    <owl:onDataRange rdf:nodeID="A32"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A32">
-    <owl:onProperty rdf:resource="#CountryOfUse"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A33">
-    <owl:onProperty rdf:resource="#hasBoundaryLimit"/>
-    <owl:onClass rdf:resource="#BoundaryLimitMax"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="#exampleInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#CategoryOfGroupOfProperties">
-    <rdfs:label xml:lang="de-DE">Kategorie der Merkmalsgruppe</rdfs:label>
-    <rdfs:comment>Specifies the category of the created property group</rdfs:comment>
-    <skos:example>Composed property</skos:example>
-    <rdfs:comment xml:lang="de-DE">Gibt die Kategorie der erstellten Merkmalsgruppe an</rdfs:comment>
+  <rdf:Description rdf:nodeID="A22">
+    <schema:name>Ruhr University Bochum, Germany</schema:name>
+    <rdf:type rdf:resource="https://schema.org/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#countryOfOrigin">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Country from where the requirement for this property/group of properties originated</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Ursprungsland</rdfs:label>
+    <skos:scopeNote>PA026/GA021</skos:scopeNote>
     <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <skos:example>Reference document</skos:example>
-    <skos:example>Alternative use</skos:example>
-    <skos:scopeNote>GA022</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">GA022</isoprops:code>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <isoprops:code>GA022</isoprops:code>
-    <rdfs:range rdf:nodeID="A34"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <skos:example>Domain</skos:example>
-    <skos:example>Class</skos:example>
-    <rdfs:label>Category of group of properties</rdfs:label>
+    <rdfs:comment xml:lang="de-DE">Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt</rdfs:comment>
+    <rdfs:label xml:lang="en">Country of origin</rdfs:label>
+    <isoprops:code xml:lang="en">PA026/GA021</isoprops:code>
+    <isoprops:code xml:lang="de-DE">PA026/GA021</isoprops:code>
+    <rdfs:domain rdf:resource="#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasBoundary"/>
+    <owl:onClass rdf:resource="#BoundaryValue"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SymbolOfTheProperty">
+    <rdfs:subClassOf rdf:nodeID="A26"/>
+    <skos:scopeNote>PA022</skos:scopeNote>
+    <rdfs:comment>Pair (symbol of the property, globally unique identifier of the group of properties (attribute GA001))</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A29"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:comment xml:lang="de-DE">Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))</rdfs:comment>
+    <isoprops:code xml:lang="de-DE">PA022</isoprops:code>
+    <isoprops:code>PA022</isoprops:code>
+    <rdfs:label xml:lang="de-DE">Symbol des Merkmals in einer gegebenen Merkmalsgruppe</rdfs:label>
+    <rdfs:label>Symbol of the property in a given property group</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A35">
-    <owl:onProperty rdf:resource="#CountryOfUse"/>
+    <rdf:rest rdf:nodeID="A36"/>
+    <rdf:first>active</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dynamicProperty"/>
+    <owl:onDataRange rdf:nodeID="A38"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <owl:onProperty rdf:resource="#deprecationExplanation"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <owl:onProperty rdf:resource="https://schema.org/value"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dataType"/>
+    <owl:onDataRange rdf:nodeID="A41"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>inactive</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/publisher"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <owl:onProperty rdf:resource="#hasGroupOfProperties"/>
+    <owl:onClass rdf:resource="#GroupOfProperties"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>DATETIME</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#categoryOfGroupOfProperties">
+    <rdfs:comment xml:lang="de-DE">Gibt die Kategorie der erstellten Merkmalsgruppe an. Erlaubt sind die Werte, 'Alternative use'(Alternative Verwendung), 'Class'(Klasse), 'Composed property'(zusammengesetzes Merkmal), 'Domain'(Domaene),'Reference document'(Referenzdokument)</rdfs:comment>
+    <rdfs:label>Category of group of properties</rdfs:label>
+    <skos:scopeNote>GA022</skos:scopeNote>
+    <skos:example>Composed property</skos:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <skos:example>Domain</skos:example>
+    <rdfs:label xml:lang="de-DE">Kategorie der Merkmalsgruppe</rdfs:label>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:range rdf:nodeID="A46"/>
+    <skos:example>Alternative use</skos:example>
+    <rdfs:comment xml:lang="en">Specifies the category of the created property group. The following values are permitted: 'Alternative use', 'Class', 'Composed property', 'Domain', 'Reference document'.</rdfs:comment>
+    <isoprops:code xml:lang="en">GA022</isoprops:code>
+    <isoprops:code xml:lang="de-DE">GA022</isoprops:code>
+    <skos:example>Reference document</skos:example>
+    <skos:example>Class</skos:example>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#revisionNumber"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Dictionary">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A36"/>
     <rdfs:comment xml:lang="de-DE">Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A37"/>
-    <rdfs:subClassOf rdf:nodeID="A38"/>
-    <rdfs:subClassOf rdf:nodeID="A39"/>
-    <rdfs:subClassOf rdf:nodeID="A40"/>
+    <rdfs:subClassOf rdf:nodeID="A48"/>
+    <rdfs:subClassOf rdf:nodeID="A49"/>
+    <rdfs:subClassOf rdf:nodeID="A50"/>
     <rdfs:comment>Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A41"/>
+    <rdfs:subClassOf rdf:nodeID="A43"/>
+    <rdfs:subClassOf rdf:nodeID="A51"/>
     <rdfs:label>Data dictionary</rdfs:label>
     <rdfs:label xml:lang="de-DE">Datenkatalog</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A52"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
-    <rdfs:subClassOf rdf:nodeID="A4"/>
+    <rdfs:subClassOf rdf:nodeID="A28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasGroupOfProperties">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -389,25 +421,36 @@ Werte koennen String oder Zahlen sein</rdfs:comment>
     <rdfs:range rdf:resource="#GroupOfProperties"/>
     <rdfs:label>Group(s) of properties</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A42">
-    <owl:onProperty rdf:resource="#NameInLanguage"/>
+  <rdf:Description rdf:about="#subdivisionOfUse">
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <isoprops:code xml:lang="de-DE">PA025/GA020</isoprops:code>
+    <isoprops:code>PA025/GA020</isoprops:code>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:scopeNote>PA025/GA020</skos:scopeNote>
+    <rdfs:comment>Documented geographical region of use of the group of properties</rdfs:comment>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label xml:lang="de-DE">Unterteilung der Verwendung</rdfs:label>
+    <rdfs:label>Subdivision of use</rdfs:label>
+    <rdfs:comment xml:lang="de-DE">Dokumentierte geographische Region, in der das Merkmal/ die Merkmalsgruppe verwendet wird</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <owl:onProperty rdf:resource="#dateOfLastChange"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <owl:onProperty rdf:resource="#subdivisionOfUse"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A43">
+  <rdf:Description rdf:nodeID="A56">
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Status"/>
-    <owl:onDataRange rdf:nodeID="A44"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A45">
-    <rdf:rest rdf:nodeID="A46"/>
-    <rdf:first>RATIONAL</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A47">
-    <owl:onProperty rdf:resource="#hasPropertyGroupReference"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <owl:onProperty rdf:resource="#dateOfRevision"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasDefiningValueItem">
@@ -423,25 +466,11 @@ Werte koennen String oder Zahlen sein</rdfs:comment>
     <skos:scopeNote>PA035</skos:scopeNote>
     <rdfs:range rdf:resource="#DefiningValueItem"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A48">
-    <rdf:rest rdf:nodeID="A49"/>
-    <rdf:first>active</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#RevisionNumber">
-    <rdfs:label>Revision number</rdfs:label>
-    <rdfs:comment xml:lang="de-DE">Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.&#xD;
-Sachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist.</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <skos:scopeNote>PA010/GA010</skos:scopeNote>
-    <rdfs:comment>This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1&#xD;
-Experts decide if a new revision number can be applied or if a new revision is needed</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:domain rdf:resource="#Property"/>
-    <isoprops:code xml:lang="de-DE">PA010/GA010</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Nummer der ueberarbeitung</rdfs:label>
-    <isoprops:code>PA010/GA010</isoprops:code>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  <rdf:Description rdf:nodeID="A57">
+    <owl:onProperty rdf:resource="#nameOfTheDefiningValues"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasPhysicalQuantity">
     <rdfs:seeAlso rdf:resource="http://qudt.org/vocab/quantitykind"/>
@@ -465,72 +494,97 @@ Non-physical quantities such as text are expressed with the value "without" --&g
 This is equivalent to a measure in ISO 16739-1 and ISO 10303&#xD;
 Only one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A50">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#GloballyUniqueIdentifier"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:onProperty rdf:resource="#hasPhysicalQuantity"/>
+    <owl:onDataRange rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#status">
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="de-DE">Status</rdfs:label>
+    <rdfs:label>Status</rdfs:label>
+    <rdfs:comment>Status of the property during its life cycle</rdfs:comment>
+    <isoprops:code xml:lang="de-DE">PA002/GA002</isoprops:code>
+    <isoprops:code>PA002/GA002</isoprops:code>
+    <rdfs:comment xml:lang="de-DE">Status des Merkmals waehrend seines Lebenszyklus</rdfs:comment>
+    <rdfs:range rdf:nodeID="A59"/>
+    <rdfs:domain rdf:resource="#Property"/>
+    <skos:scopeNote>PA002/GA002</skos:scopeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <skos:example>active</skos:example>
+    <skos:example>inactive</skos:example>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dateOfRevision"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first>Composed property</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <rdf:rest rdf:nodeID="A18"/>
+    <rdf:first>INTEGER</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#Property">
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dt#LibraryComponent"/>
     <rdfs:label xml:lang="de-DE">Merkmal</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A51"/>
-    <rdfs:subClassOf rdf:nodeID="A52"/>
-    <rdfs:subClassOf rdf:nodeID="A53"/>
-    <rdfs:subClassOf rdf:nodeID="A54"/>
-    <rdfs:comment xml:lang="de-DE">Inhaerente oder erworbene Eigenschaft eines Datenelements</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A50"/>
-    <rdfs:subClassOf rdf:nodeID="A55"/>
-    <rdfs:comment>Inherent or acquired feature of an item</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A56"/>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
-    <rdfs:subClassOf rdf:nodeID="A57"/>
-    <rdfs:subClassOf rdf:nodeID="A42"/>
-    <rdfs:subClassOf rdf:nodeID="A18"/>
-    <rdfs:subClassOf rdf:nodeID="A27"/>
-    <rdfs:subClassOf rdf:nodeID="A58"/>
-    <rdfs:subClassOf rdf:nodeID="A59"/>
-    <rdfs:subClassOf rdf:nodeID="A60"/>
-    <rdfs:subClassOf rdf:nodeID="A61"/>
-    <rdfs:subClassOf rdf:nodeID="A35"/>
-    <rdfs:subClassOf rdf:nodeID="A62"/>
-    <rdfs:label>Property</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="A63"/>
-    <rdfs:subClassOf rdf:nodeID="A31"/>
-    <rdfs:subClassOf rdf:nodeID="A43"/>
+    <rdfs:comment xml:lang="de-DE">Inhaerente oder erworbene Eigenschaft eines Datenelements</rdfs:comment>
     <rdfs:subClassOf rdf:nodeID="A64"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="A60"/>
+    <rdfs:comment>Inherent or acquired feature of an item</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A25"/>
     <rdfs:subClassOf rdf:nodeID="A65"/>
+    <rdfs:subClassOf rdf:nodeID="A57"/>
     <rdfs:subClassOf rdf:nodeID="A66"/>
+    <rdfs:subClassOf rdf:nodeID="A39"/>
+    <rdfs:subClassOf rdf:nodeID="A27"/>
     <rdfs:subClassOf rdf:nodeID="A67"/>
     <rdfs:subClassOf rdf:nodeID="A68"/>
-    <rdfs:subClassOf rdf:nodeID="A7"/>
-    <rdfs:subClassOf rdf:nodeID="A16"/>
-    <owl:equivalentClass rdf:resource="https://w3id.org/opm#Property"/>
     <rdfs:subClassOf rdf:nodeID="A69"/>
+    <rdfs:subClassOf rdf:nodeID="A58"/>
     <rdfs:subClassOf rdf:nodeID="A70"/>
     <rdfs:subClassOf rdf:nodeID="A71"/>
+    <rdfs:label>Property</rdfs:label>
     <rdfs:subClassOf rdf:nodeID="A72"/>
+    <rdfs:subClassOf rdf:nodeID="A11"/>
     <rdfs:subClassOf rdf:nodeID="A73"/>
     <rdfs:subClassOf rdf:nodeID="A74"/>
+    <rdfs:subClassOf rdf:nodeID="A40"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/tempo#ConceptType"/>
     <rdfs:subClassOf rdf:nodeID="A75"/>
     <rdfs:subClassOf rdf:nodeID="A76"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:subClassOf rdf:nodeID="A77"/>
+    <rdfs:subClassOf rdf:nodeID="A6"/>
     <rdfs:subClassOf rdf:nodeID="A78"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A33"/>
+    <rdfs:subClassOf rdf:nodeID="A34"/>
     <rdfs:subClassOf rdf:nodeID="A79"/>
-    <rdfs:subClassOf rdf:nodeID="A19"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/opm#Property"/>
     <rdfs:subClassOf rdf:nodeID="A80"/>
+    <rdfs:subClassOf rdf:nodeID="A5"/>
+    <rdfs:subClassOf rdf:nodeID="A81"/>
+    <rdfs:subClassOf rdf:nodeID="A82"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/tempo#Property"/>
+    <rdfs:subClassOf rdf:nodeID="A83"/>
+    <rdfs:subClassOf rdf:nodeID="A84"/>
+    <rdfs:subClassOf rdf:nodeID="A85"/>
+    <rdfs:subClassOf rdf:nodeID="A86"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A87"/>
+    <rdfs:subClassOf rdf:nodeID="A44"/>
+    <rdfs:subClassOf rdf:nodeID="A4"/>
+    <rdfs:subClassOf rdf:nodeID="A37"/>
     <rdfs:subClassOf rdf:nodeID="A30"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A81">
-    <owl:onProperty rdf:resource="http://www.w3id.org/opm#hasPropertyState"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#PhysicalQuantity">
     <owl:equivalentClass rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dt#LibraryComponent"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="de-DE">Physikalische Groesse</rdfs:label>
     <rdfs:label>Physical quantity</rdfs:label>
     <rdfs:comment xml:lang="de-DE">Liste von Paaren (physikalische Groesse | Sprache)&#xD;
@@ -545,15 +599,22 @@ This is equivalent to a measure in ISO 16739-1 and ISO 10303&#xD;
 Only one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A82">
-    <owl:onProperty rdf:resource="#replacesGroupOfProperties"/>
+  <rdf:Description rdf:nodeID="A88">
+    <owl:onProperty rdf:resource="#hasParentGroupOfProperties"/>
     <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <owl:onProperty rdf:resource="https://schema.org/value"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A68">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#versionNumber"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <owl:onProperty rdf:resource="#dateOfDeactivation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasPossibleValues">
@@ -571,11 +632,6 @@ Werte koennen String oder Zahlen sein</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Liste moeglicher Werte in Sprache N</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A78">
-    <owl:onProperty rdf:resource="#CreatorsLanguage"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#hasParentGroupOfProperties">
     <skos:scopeNote>GA023</skos:scopeNote>
     <rdfs:label xml:lang="de-DE">uebergeordnete Merkmalsgruppe</rdfs:label>
@@ -592,53 +648,54 @@ jedes einer Gruppe zugehoerige Merkmal wird von der/den Untergruppe(n) uebernomm
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#BoundaryValue">
-    <rdfs:comment>Pair  (List of boundary intervals of possible values for the property, unit)</rdfs:comment>
+    <rdfs:comment>BoundaryValue defines the boundary value of the property via a lower and upper boundary value@en</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A83"/>
+    <isoprops:code xml:lang="en">PA040</isoprops:code>
     <isoprops:code xml:lang="de-DE">PA040</isoprops:code>
-    <isoprops:code>PA040</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)</rdfs:comment>
-    <rdfs:label xml:lang="de-DE">Grenzwertliste</rdfs:label>
+    <rdfs:label xml:lang="de-DE">Grenzwert</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A89"/>
+    <rdfs:comment xml:lang="de-DE">BoundaryValue definiert das Grenzwertinterval des Merkmals über einen untere und oberen Grenzwert</rdfs:comment>
+    <rdfs:label xml:lang="en">Boundary value</rdfs:label>
     <skos:scopeNote>PA040</skos:scopeNote>
-    <rdfs:label>Boundary values list</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A33"/>
+    <rdfs:subClassOf rdf:nodeID="A90"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#symbol">
+    <isoprops:code xml:lang="de-DE">PA022</isoprops:code>
+    <isoprops:code>PA022</isoprops:code>
+    <skos:scopeNote>PA022</skos:scopeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="de-DE">Symbol</rdfs:label>
+    <rdfs:label>Symbol</rdfs:label>
+    <rdfs:domain rdf:resource="#SymbolOfTheProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <owl:onProperty rdf:resource="#countryOfUse"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#DigitalFormatItem">
     <skos:scopeNote>PA037</skos:scopeNote>
     <rdfs:label>Digital format item</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A84"/>
-    <rdfs:subClassOf rdf:nodeID="A85"/>
+    <rdfs:subClassOf rdf:nodeID="A91"/>
     <rdfs:label xml:lang="de-DE">Digitales Format-Item</rdfs:label>
     <isoprops:code xml:lang="de-DE">PA037</isoprops:code>
     <isoprops:code>PA037</isoprops:code>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:comment>Pair for digital text type (precision, unit)&#xD;
 Precision is the number of significant digits</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A92"/>
     <rdfs:comment xml:lang="de-DE">Paar fuer den digitalen Texttyp (Praezision, Masseinheit)&#xD;
 Praezision ist die Anzahl signifikanter Stellen</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A76">
-    <owl:onProperty rdf:resource="#hasPossibleValues"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A86">
-    <owl:onProperty rdf:resource="#SubdivisionOfUse"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A87">
-    <rdf:rest rdf:nodeID="A14"/>
-    <rdf:first>Class</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A88">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfVersion"/>
+  <rdf:Description rdf:nodeID="A93">
+    <owl:onProperty rdf:resource="#dateOfActivation"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasBoundary">
@@ -654,81 +711,91 @@ Praezision ist die Anzahl signifikanter Stellen</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Grenzwerte</rdfs:label>
     <rdfs:domain rdf:resource="#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A59">
-    <owl:onProperty rdf:resource="#hasConnectedProperty"/>
+  <rdf:Description rdf:nodeID="A85">
+    <owl:onProperty rdf:resource="#hasParameterOfTheDynamicProperty"/>
     <owl:onClass rdf:resource="#Property"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#DataType">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="A94">
+    <rdf:rest rdf:nodeID="A95"/>
+    <rdf:first>yes</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#index">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#order"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment xml:lang="de-DE">Format fuer die Angabe des Wertes des Merkmals&#xD;
-dies kann aus einer Soft-ware-Perspektive als Speiche-rungsart verstanden werden&#xD;
-im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Er-gebnisses der Berechnung mit der Gleichung</rdfs:comment>
-    <isoprops:code xml:lang="de-DE">PA030</isoprops:code>
-    <isoprops:code>PA030</isoprops:code>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label>inclusive</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment>Format for expressing the value of the property&#xD;
-This can be understood as the storage type from a software perspective&#xD;
-In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula</rdfs:comment>
-    <rdfs:label xml:lang="de-DE">Datentyp (GUID)</rdfs:label>
-    <skos:scopeNote>PA030</skos:scopeNote>
-    <rdfs:label>Data type</rdfs:label>
-    <rdfs:domain rdf:resource="#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#Tolerance">
-    <isoprops:code xml:lang="de-DE">PA036</isoprops:code>
-    <isoprops:code>PA036</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Fuer numerische Werte; der Gesamtbetrag, um den eine be-stimmte Einheit schwanken darf; sie ist die Differenz zwischen dem Hoechstwert und dem Mindestwert fuer die Einheit</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:label>Tolerance</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Toleranz</rdfs:label>
-    <skos:scopeNote>PA036</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A89">
-    <rdf:rest rdf:nodeID="A9"/>
-    <rdf:first>active</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#CountryOfUse">
-    <isoprops:code xml:lang="de-DE">PA024/GA019</isoprops:code>
-    <isoprops:code>PA024/GA019</isoprops:code>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:comment>Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in</rdfs:comment>
-    <rdfs:label xml:lang="de-DE">Land der Verwendung</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <skos:scopeNote>PA024/GA019</skos:scopeNote>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Country of use</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="de-DE">Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A77">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#RevisionNumber"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdf:Description rdf:nodeID="A17">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <owl:oneOf rdf:nodeID="A96"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#AssignedProperty">
-    <rdfs:subClassOf rdf:nodeID="A81"/>
-    <rdfs:subClassOf rdf:nodeID="A17"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3id.org/opm#Property"/>
+    <rdfs:subClassOf rdf:nodeID="A97"/>
+    <rdfs:subClassOf rdf:nodeID="A98"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/opm#Property"/>
     <rdfs:label xml:lang="de-DE">Zugewiesenes Merkmal</rdfs:label>
-    <rdfs:label>Assigned property</rdfs:label>
-    <rdfs:comment>Represents the assignment of a property and a property state to a feature of interest (FOI).</rdfs:comment>
+    <rdfs:label xml:lang="en">Assigned property</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents the assignment of a property and a property state to a feature of interest (FOI).</rdfs:comment>
     <rdfs:comment xml:lang="de-DE">Repraesentiert die Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A64">
-    <owl:onProperty rdf:resource="#DefinitionInLanguage"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A99">
+    <owl:onProperty rdf:resource="#hasExternalDictionaryProperty"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <rdf:rest rdf:nodeID="A101"/>
+    <rdf:first>Composed property</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <owl:onProperty rdf:resource="#subdivisionOfUse"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:onClass rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#encoding">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <skos:scopeNote>PA038</skos:scopeNote>
+    <rdfs:domain rdf:resource="#TextFormatItem"/>
+    <isoprops:code xml:lang="de-DE">PA038</isoprops:code>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <isoprops:code>PA038</isoprops:code>
+    <rdfs:label>Encoding</rdfs:label>
+    <rdfs:label xml:lang="de-DE">Kodierung</rdfs:label>
+    <rdfs:comment>The encoding is set according to Name of encoding standard of IANA, RFC 2978</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="de-DE">Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <schema:name>Philipp Hagedorn</schema:name>
+    <schema:memberOf rdf:nodeID="A104"/>
+    <schema:identifier rdf:resource="https://orcid.org/0000-0002-6249-243X"/>
+    <schema:email rdf:resource="mailto:philipp.hagedorn-n6v@rub.de"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <rdf:rest rdf:nodeID="A106"/>
+    <rdf:first>yes</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#isReplacedByProperty">
     <isoprops:code xml:lang="de-DE">PA012</isoprops:code>
@@ -744,81 +811,60 @@ In case of a dynamic property the value of this attribute is the datatype of the
     <rdfs:comment xml:lang="de-DE">global eindeutiger Bezeichner (Attribut PA001) des ersetzenden Merkmals (oder der Merkmale)</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#VisualRepresentation">
+  <rdf:Description rdf:about="#dateOfVersion">
+    <rdfs:comment xml:lang="de-DE">Datum der Version</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:label>Date of version</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA007/GA007</isoprops:code>
+    <isoprops:code>PA007/GA007</isoprops:code>
+    <skos:scopeNote>PA007/GA007</skos:scopeNote>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <isoprops:code xml:lang="de-DE">PA023/GA018</isoprops:code>
-    <isoprops:code>PA023/GA018</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Bildliche Darstellung des Merkmals durch Skizzen, Fotos, Videos oder sonstige Multimedia-Objekte</rdfs:comment>
-    <skos:scopeNote>PA023/GA018</skos:scopeNote>
-    <rdfs:comment>Visual representation of the group of properties through sketches, photos, videos or other multimedia objects</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="de-DE">Bildliche Darstellung</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment>Date of version</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Datum der Version</rdfs:label>
     <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:label>Visual representation</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A15">
-    <rdf:rest rdf:nodeID="A0"/>
-    <rdf:first>Domain</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Precision">
-    <rdfs:domain rdf:resource="#DigitalFormatItem"/>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label>Tolerance</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>Precision is the number of significant digits</rdfs:comment>
-    <skos:scopeNote>PA037</skos:scopeNote>
-    <rdfs:comment xml:lang="de-DE">Praezision ist die Anzahl signifi-kanter Stellen</rdfs:comment>
-    <rdfs:label xml:lang="de-DE">Toleranz</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA037</isoprops:code>
-    <isoprops:code>PA037</isoprops:code>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
   </rdf:Description>
   <rdf:Description rdf:about="#DefiningValuesList">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:equivalentClass rdf:resource="https://w3id.org/tempo#Enumeration"/>
     <rdfs:label>Defining values list</rdfs:label>
-    <isoprops:code>PA035</isoprops:code>
     <isoprops:code xml:lang="de-DE">PA035</isoprops:code>
-    <rdfs:subClassOf rdf:nodeID="A90"/>
+    <isoprops:code>PA035</isoprops:code>
     <rdfs:comment xml:lang="de-DE">Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Liste definierender Werte</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A53"/>
+    <rdfs:subClassOf rdf:nodeID="A107"/>
     <rdfs:comment>In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A108"/>
     <skos:scopeNote>PA035</skos:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A91">
-    <rdf:rest rdf:nodeID="A20"/>
-    <rdf:first>STRING</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A34">
-    <owl:oneOf rdf:nodeID="A92"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A37">
-    <owl:onProperty rdf:resource="#hasDictionarySubset"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A93">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Encoding"/>
+  <rdf:Description rdf:nodeID="A67">
+    <owl:onProperty rdf:resource="#deprecationExplanation"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#DateOfLastChange">
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment xml:lang="de-DE">Datum der Validierung der letzten Aenderungsanfrage durch Sachverstaendige</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>Date of validation of the last change request by experts</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <skos:scopeNote>PA005/GA005</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">PA005/GA005</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Datum der letzten Aenderung</rdfs:label>
-    <rdfs:label>Date of last change</rdfs:label>
-    <isoprops:code>PA005/GA005</isoprops:code>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:nodeID="A109"/>
+    <rdf:first>REAL</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A110">
+    <schema:name>Sven Zentgraf</schema:name>
+    <schema:memberOf rdf:nodeID="A111"/>
+    <schema:identifier rdf:resource="https://orcid.org/0000-0001-6058-7614"/>
+    <schema:email rdf:resource="mailto:sven.zentgraf@rub.de"/>
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:oneOf rdf:nodeID="A35"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dt#hasExternalDictionaryReference">
     <owl:equivalentProperty rdf:resource="https://w3id.org/dt#hasExternalDictionaryReference"/>
@@ -831,10 +877,38 @@ In case of a dynamic property the value of this attribute is the datatype of the
     <rdfs:domain rdf:resource="#BoundaryLimitMax"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A94">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#CreatorsLanguage"/>
+  <rdf:Description rdf:nodeID="A112">
+    <owl:onProperty rdf:resource="#hasParentGroupOfProperties"/>
+    <owl:onClass rdf:resource="#GroupOfProperties"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A113">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/dcat#accessURL"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <owl:onProperty rdf:resource="#replacesProperties"/>
+    <owl:onClass rdf:resource="#Property"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <owl:onProperty rdf:resource="#hasPossibleValues"/>
+    <owl:onClass rdf:resource="#PossibleValues"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A114">
+    <owl:onProperty rdf:resource="#deprecationExplanation"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A115">
+    <owl:onProperty rdf:resource="https://schema.org/value"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasDigitalFormat">
@@ -852,78 +926,95 @@ Precision is the number of significant digits</rdfs:comment>
     <isoprops:code>PA037</isoprops:code>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A95">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Status"/>
-    <owl:onDataRange rdf:nodeID="A96"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A101">
+    <rdf:rest rdf:nodeID="A10"/>
+    <rdf:first>Domain</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A97">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfCreation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A84">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Precision"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#DateOfActivation">
-    <rdfs:comment>Date after when the property can be used</rdfs:comment>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Date of activation</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA004/GA004</isoprops:code>
-    <isoprops:code>PA004/GA004</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Datum, nach dem das Merkmal verwendet werden kann</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:label xml:lang="de-DE">Datum der Aktivierung</rdfs:label>
-    <skos:scopeNote>PA04/GA04</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A38">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/publisher"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A58">
-    <owl:onProperty rdf:resource="#hasTextFormat"/>
-    <owl:onClass rdf:resource="#TextFormatItem"/>
+  <rdf:Description rdf:nodeID="A63">
+    <owl:onProperty rdf:resource="#isReplacedByProperty"/>
+    <owl:onClass rdf:resource="#Property"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A53">
-    <owl:onProperty rdf:resource="#DeprecationExplanation"/>
+  <rdf:Description rdf:about="#revisionNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <isoprops:code xml:lang="de-DE">PA010/GA010</isoprops:code>
+    <isoprops:code>PA010/GA010</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="#Property"/>
+    <skos:scopeNote>PA010/GA010</skos:scopeNote>
+    <rdfs:comment>This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1&#xD;
+Experts decide if a new revision number can be applied or if a new revision is needed</rdfs:comment>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment xml:lang="de-DE">Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.&#xD;
+Sachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist.</rdfs:comment>
+    <rdfs:label>Revision number</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="de-DE">Nummer der ueberarbeitung</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <owl:onProperty rdf:resource="#hasVisualRepresentation"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A40">
+  <rdf:Description rdf:nodeID="A116">
+    <rdf:rest rdf:nodeID="A42"/>
+    <rdf:first>active</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A117">
+    <owl:onProperty rdf:resource="#index"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A118">
+    <owl:onProperty rdf:resource="https://schema.org/value"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A119">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#versionNumber"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/type"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A70">
-    <owl:onProperty rdf:resource="#DeprecationExplanation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>inactive</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A120">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#numberOfCharacters"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A74">
-    <owl:onProperty rdf:resource="#DateOfDeactivation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A96">
+    <rdf:rest rdf:nodeID="A121"/>
+    <rdf:first>active</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A98">
-    <owl:onProperty rdf:resource="#NameInLanguage"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:about="#versionNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>Version number</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <skos:scopeNote>PA009/GA009</skos:scopeNote>
+    <rdfs:comment xml:lang="de-DE">Diese Versionsnummer ermoeglicht die Verfolgung groesserer aenderungen. Sachverstaendige entscheiden, ob eine neue Ver-sionsnummer angewendet werden muss.</rdfs:comment>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment>This version number allows tracking of major changes. Experts decide if a new version number must be applied</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="de-DE">Versionsnummer</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA009/GA009</isoprops:code>
+    <isoprops:code>PA009/GA009</isoprops:code>
   </rdf:Description>
   <rdf:Description rdf:about="#replacesGroupOfProperties">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -938,12 +1029,6 @@ Precision is the number of significant digits</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Liste ersetzter Merkmalsgruppen</rdfs:label>
     <owl:inverseOf rdf:resource="#isReplacedByGroupOfProperties"/>
     <rdfs:comment>List of globally unique identifiers of the replaced groups of properties</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A99">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Inclusive"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasUnit">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -960,144 +1045,121 @@ es ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkma
     <rdfs:label xml:lang="de-DE">hat Einheit</rdfs:label>
     <rdfs:domain rdf:resource="#BoundaryLimitMin"/>
     <rdfs:label>has unit</rdfs:label>
-    <rdfs:comment>A unit to represent a scale that enables a value to be measured&#xD;
+    <rdfs:comment xml:lang="en">A unit to represent a scale that enables a value to be measured&#xD;
 It is possible to use this attribute to explain there is no unit attached to the property by using unitless --&gt; http://qudt.org/vocab/unit/UNITLESS</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A100">
-    <rdf:rest rdf:nodeID="A6"/>
-    <rdf:first>active</rdf:first>
+  <rdf:Description rdf:nodeID="A111">
+    <schema:name>Ruhr University Bochum</schema:name>
+    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A101">
+  <rdf:Description rdf:nodeID="A122">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <owl:onProperty rdf:resource="#DefiningValueItem"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A123">
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#CategoryOfGroupOfProperties"/>
-    <owl:onDataRange rdf:nodeID="A102"/>
+    <owl:onProperty rdf:resource="#creatorsLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A103">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>no</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#CreatorsLanguage">
-    <rdfs:comment xml:lang="de-DE">Satz, der den Grund fuer die Ab-lehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal entsprechen; diese Er-laeuterung muss in internatio-nalem Englisch (EN) geschrieben werden</rdfs:comment>
-    <rdfs:label>Creator's language</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA015/GA015</isoprops:code>
-    <isoprops:code>PA015/GA015</isoprops:code>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment>Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property; this explanation has to be written in international English (EN)</rdfs:comment>
+  <rdf:Description rdf:about="#tolerance">
+    <skos:scopeNote>PA036</skos:scopeNote>
+    <isoprops:code xml:lang="de-DE">PA036</isoprops:code>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Erlaeuterung fuer die Ablehnung</rdfs:label>
+    <isoprops:code>PA036</isoprops:code>
+    <rdfs:label xml:lang="de-DE">Toleranz</rdfs:label>
     <rdfs:domain rdf:resource="#Property"/>
-    <skos:scopeNote>PA015/GA015</skos:scopeNote>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment xml:lang="de-DE">Fuer numerische Werte; der Gesamtbetrag, um den eine be-stimmte Einheit schwanken darf; sie ist die Differenz zwischen dem Hoechstwert und dem Mindestwert fuer die Einheit</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment>For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit</rdfs:comment>
+    <rdfs:label>Tolerance</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A72">
-    <owl:onProperty rdf:resource="#hasUnit"/>
-    <owl:onClass rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A124">
+    <owl:onProperty rdf:resource="#tolerance"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A104">
-    <schema:name>Sven Zentgraf</schema:name>
-    <schema:memberOf rdf:nodeID="A8"/>
-    <schema:identifier rdf:resource="https://orcid.org/0000-0001-6058-7614"/>
-    <schema:email rdf:resource="mailto:sven.zentgraf@rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
+  <rdf:Description rdf:about="#descriptionInLanguage">
+    <skos:scopeNote>PA019</skos:scopeNote>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Beschreibung des Merkmals, Sprache)</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label>Description in language N</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <isoprops:code xml:lang="de-DE">PA019</isoprops:code>
+    <isoprops:code>PA019</isoprops:code>
+    <rdfs:comment>List of pairs (Description of the property, language)</rdfs:comment>
+    <rdfs:domain rdf:resource="#Property"/>
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#descriptionInLanguage"/>
+    <rdfs:label xml:lang="de-DE">Beschreibung in Sprache N</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A41">
+  <rdf:Description rdf:nodeID="A50">
     <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A105">
-    <owl:onProperty rdf:resource="#DeprecationExplanation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A125">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dateOfVersion"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A96">
-    <owl:oneOf rdf:nodeID="A100"/>
+  <rdf:Description rdf:nodeID="A126">
+    <owl:oneOf rdf:nodeID="A105"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A106">
-    <owl:oneOf rdf:nodeID="A107"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#NameOfTheDefiningValues">
-    <skos:scopeNote>PA034</skos:scopeNote>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:Description rdf:about="#hasNameInLanguage">
+    <skos:scopeNote>PA016/GA016</skos:scopeNote>
+    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Name des Merkmals und Sprache)&#xD;
+Dieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hinzuzufuegen</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Name in Sprache N</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <isoprops:code xml:lang="de-DE">PA034</isoprops:code>
-    <isoprops:code>PA034</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Im Falle eines Feldes liefert dieses Attribut die Namen der Spaltenkoepfe, festgelegt als Liste von Paaren (Name, Sprache)</rdfs:comment>
-    <rdfs:comment>In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:label>Names of the defining values</rdfs:label>
-    <rdfs:label xml:lang="de-DE">Name der definierenden Werte</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A69">
-    <owl:onProperty rdf:resource="#NameOfTheDefiningValues"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A44">
-    <owl:oneOf rdf:nodeID="A89"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A46">
-    <rdf:rest rdf:nodeID="A108"/>
-    <rdf:first>REAL</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A109">
-    <rdf:rest rdf:nodeID="A110"/>
-    <rdf:first>Composed property</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Status">
     <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:label xml:lang="de-DE">Status</rdfs:label>
-    <rdfs:label>Status</rdfs:label>
-    <rdfs:range rdf:nodeID="A111"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <skos:example>active</skos:example>
+    <rdfs:comment>List of pairs (property name and language)&#xD;
+This attribute can be used to add synonyms for different domains</rdfs:comment>
+    <rdfs:label>Name in language N</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <isoprops:code xml:lang="de-DE">PA016/GA016</isoprops:code>
+    <isoprops:code>PA016/GA016</isoprops:code>
+    <rdfs:domain rdf:resource="#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dateOfRevision">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:comment>Status of the property during its life cycle</rdfs:comment>
-    <rdfs:comment xml:lang="de-DE">Status des Merkmals waehrend seines Lebenszyklus</rdfs:comment>
-    <skos:scopeNote>PA002/GA002</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">PA002/GA002</isoprops:code>
-    <isoprops:code>PA002/GA002</isoprops:code>
-    <skos:example>inactive</skos:example>
+    <rdfs:label>Date of revision</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA006/GA006</isoprops:code>
+    <isoprops:code>PA006/GA006</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment xml:lang="de-DE">Datum der Ueberarbeitung</rdfs:comment>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <skos:scopeNote>PA006/GA006</skos:scopeNote>
+    <rdfs:comment>Date of revision</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Datum der Ueberarbeitung</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A112">
-    <owl:onProperty rdf:resource="https://schema.org/value"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A91">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#precision"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A67">
-    <owl:onProperty rdf:resource="#hasPossibleValues"/>
-    <owl:onClass rdf:resource="#PossibleValues"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A102">
-    <owl:oneOf rdf:nodeID="A113"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A114">
-    <schema:parentOrganization rdf:nodeID="A115"/>
-    <schema:name>Chair of Computing in Engineering, Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Organization"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Inclusive"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdf:Description rdf:nodeID="A66">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#dateOfCreation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#DictionaryReferenceDocument">
-    <rdfs:subClassOf rdf:nodeID="A47"/>
+    <rdfs:subClassOf rdf:nodeID="A127"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
     <rdfs:label xml:lang="de-DE">Referenzdokument</rdfs:label>
     <rdfs:label>Reference document</rdfs:label>
@@ -1105,50 +1167,35 @@ It is possible to use this attribute to explain there is no unit attached to the
     <rdfs:comment>Publication that is consulted to find specific information, particularly in a technical or scientific domain</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A116">
-    <schema:name>Philipp Hagedorn</schema:name>
-    <schema:memberOf rdf:nodeID="A117"/>
-    <schema:identifier rdf:resource="https://orcid.org/0000-0002-6249-243X"/>
-    <schema:email rdf:resource="mailto:philipp.hagedorn-n6v@rub.de"/>
-    <rdf:type rdf:resource="https://schema.org/Person"/>
+  <rdf:Description rdf:nodeID="A128">
+    <rdf:rest rdf:nodeID="A100"/>
+    <rdf:first>Class</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A108">
-    <rdf:rest rdf:nodeID="A91"/>
-    <rdf:first>COMPLEX</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="#DynamicProperty">
-    <isoprops:code xml:lang="de-DE">PA031</isoprops:code>
-    <isoprops:code>PA031</isoprops:code>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label>Dynamic Property</rdfs:label>
-    <skos:scopeNote>PA031</skos:scopeNote>
-    <rdfs:range rdf:nodeID="A118"/>
-    <skos:example>no</skos:example>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032</rdfs:comment>
-    <rdfs:comment xml:lang="de-DE">Wenn es sich um ein dynamisches Merkmal handelt, haengt der Wert von den im Attribut PA032 bereitgestellten Parametern ab</rdfs:comment>
-    <rdfs:label xml:lang="de-DE">Dynamisches Merkmal</rdfs:label>
-    <skos:example>yes</skos:example>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A68">
-    <owl:onProperty rdf:resource="#CountryOfOrigin"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A119">
+  <rdf:Description rdf:nodeID="A129">
     <owl:onProperty rdf:resource="#hasExternalDictionaryReference"/>
     <owl:onClass rdf:resource="#ExternalDictionaryReference"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A111">
-    <owl:oneOf rdf:nodeID="A48"/>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>no</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#revisionNumber"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <owl:oneOf rdf:nodeID="A130"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A115">
-    <schema:name>Ruhr University Bochum, Germany</schema:name>
-    <rdf:type rdf:resource="https://schema.org/Organization"/>
+  <rdf:Description rdf:nodeID="A131">
+    <owl:onProperty rdf:resource="#hasVisualRepresentation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasBoundaryLimit">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -1163,9 +1210,11 @@ It is possible to use this attribute to explain there is no unit attached to the
     <isoprops:code xml:lang="de-DE">PA040</isoprops:code>
     <isoprops:code>PA040</isoprops:code>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A28">
-    <owl:oneOf rdf:nodeID="A120"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  <rdf:Description rdf:nodeID="A90">
+    <owl:onProperty rdf:resource="#hasBoundaryLimit"/>
+    <owl:onClass rdf:resource="#BoundaryLimitMax"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasPropertyReference">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
@@ -1177,124 +1226,154 @@ It is possible to use this attribute to explain there is no unit attached to the
     <rdfs:comment>Attaches a property reference to a property assignment</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A121">
-    <owl:onProperty rdf:resource="#hasParentGroupOfProperties"/>
-    <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A107">
-    <rdf:rest rdf:nodeID="A103"/>
-    <rdf:first>yes</rdf:first>
+  <rdf:Description rdf:about="#dateOfActivation">
+    <rdfs:comment>Date after when the property can be used</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Datum der Aktivierung</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:comment xml:lang="de-DE">Datum, nach dem das Merkmal verwendet werden kann</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <skos:scopeNote>PA04/GA04</skos:scopeNote>
+    <rdfs:label>Date of activation</rdfs:label>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <isoprops:code xml:lang="de-DE">PA004/GA004</isoprops:code>
+    <isoprops:code>PA004/GA004</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#GroupOfProperties">
-    <rdfs:subClassOf rdf:nodeID="A101"/>
-    <rdfs:label>Group of properties</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A88"/>
-    <rdfs:subClassOf rdf:nodeID="A122"/>
-    <rdfs:subClassOf rdf:nodeID="A24"/>
-    <rdfs:subClassOf rdf:nodeID="A123"/>
-    <rdfs:subClassOf rdf:nodeID="A119"/>
-    <rdfs:subClassOf rdf:nodeID="A82"/>
-    <rdfs:subClassOf rdf:nodeID="A121"/>
-    <rdfs:comment>Collection enabling the properties to be prearranged or organized</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A97"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A124"/>
-    <rdfs:subClassOf rdf:nodeID="A26"/>
-    <rdfs:subClassOf rdf:nodeID="A105"/>
-    <rdfs:subClassOf rdf:nodeID="A125"/>
-    <rdfs:subClassOf rdf:nodeID="A95"/>
-    <rdfs:comment xml:lang="de-DE">Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A126"/>
-    <rdfs:subClassOf rdf:nodeID="A127"/>
-    <rdfs:subClassOf rdf:nodeID="A25"/>
-    <rdfs:subClassOf rdf:nodeID="A94"/>
-    <rdfs:subClassOf rdf:nodeID="A32"/>
-    <rdfs:label xml:lang="de-DE">Merkmalsgruppe</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A128"/>
-    <rdfs:subClassOf rdf:nodeID="A129"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dt#LibraryComponent"/>
-    <rdfs:subClassOf rdf:nodeID="A130"/>
-    <rdfs:subClassOf rdf:nodeID="A98"/>
-    <rdfs:subClassOf rdf:nodeID="A86"/>
+    <rdfs:subClassOf rdf:nodeID="A55"/>
     <rdfs:subClassOf rdf:nodeID="A131"/>
-    <rdfs:subClassOf rdf:nodeID="A21"/>
+    <rdfs:subClassOf rdf:nodeID="A124"/>
+    <rdfs:subClassOf rdf:nodeID="A54"/>
+    <rdfs:label xml:lang="en">Group of properties</rdfs:label>
+    <owl:equivalentClass rdf:resource="https://w3id.org/tempo#GroupOfProperties"/>
+    <rdfs:subClassOf rdf:nodeID="A132"/>
+    <rdfs:subClassOf rdf:nodeID="A133"/>
+    <rdfs:subClassOf rdf:nodeID="A134"/>
+    <rdfs:subClassOf rdf:nodeID="A123"/>
+    <rdfs:subClassOf rdf:nodeID="A135"/>
+    <rdfs:comment xml:lang="en">Collection enabling the properties to be prearranged or organized</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:subClassOf rdf:nodeID="A136"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A88"/>
+    <rdfs:subClassOf rdf:nodeID="A137"/>
+    <rdfs:subClassOf rdf:nodeID="A20"/>
+    <rdfs:subClassOf rdf:nodeID="A93"/>
+    <rdfs:subClassOf rdf:nodeID="A31"/>
+    <rdfs:subClassOf rdf:nodeID="A119"/>
+    <rdfs:subClassOf rdf:nodeID="A138"/>
+    <rdfs:comment xml:lang="de-DE">Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf rdf:nodeID="A114"/>
+    <rdfs:subClassOf rdf:nodeID="A139"/>
+    <rdfs:label xml:lang="de-DE">Merkmalsgruppe</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A56"/>
+    <rdfs:subClassOf rdf:nodeID="A47"/>
+    <rdfs:subClassOf rdf:nodeID="A112"/>
+    <rdfs:subClassOf rdf:nodeID="A125"/>
+    <rdfs:subClassOf rdf:nodeID="A140"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/tempo#SubjectType"/>
+    <rdfs:subClassOf rdf:nodeID="A129"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A125">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#RevisionNumber"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdf:Description rdf:about="#numberOfCharacters">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label>Number of Characters</rdfs:label>
+    <rdfs:comment xml:lang="de-DE">Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</rdfs:comment>
+    <skos:scopeNote>PA038</skos:scopeNote>
+    <rdfs:domain rdf:resource="#TextFormatItem"/>
+    <isoprops:code xml:lang="de-DE">PA038</isoprops:code>
+    <isoprops:code>PA038</isoprops:code>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label xml:lang="de-DE">Anzahl der Zeichen</rdfs:label>
+    <rdfs:comment>The encoding is set according to Name of encoding standard of IANA, RFC 2978</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dateOfCreation">
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:scopeNote>PA003/GA003</skos:scopeNote>
+    <isoprops:code xml:lang="de-DE">PA003/GA003</isoprops:code>
+    <isoprops:code>PA003/GA003</isoprops:code>
+    <rdfs:comment xml:lang="de-DE">Datum der Validierung der An-frage zur Erstellung des Merkmals durch Sachverstaendige</rdfs:comment>
+    <rdfs:label>Date of creation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment>Date of validation of the property creation request by experts</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Datum der Erstellung</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#nameOfTheDefiningValues">
+    <rdfs:comment>In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)</rdfs:comment>
+    <isoprops:code xml:lang="de-DE">PA034</isoprops:code>
+    <isoprops:code>PA034</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <skos:scopeNote>PA034</skos:scopeNote>
+    <rdfs:label xml:lang="de-DE">Name der definierenden Werte</rdfs:label>
+    <rdfs:label>Names of the defining values</rdfs:label>
+    <rdfs:comment xml:lang="de-DE">Im Falle eines Feldes liefert dieses Attribut die Namen der Spaltenkoepfe, festgelegt als Liste von Paaren (Name, Sprache)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A130">
+    <rdf:rest rdf:nodeID="A141"/>
+    <rdf:first>Alternative use</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A141">
+    <rdf:rest rdf:nodeID="A61"/>
+    <rdf:first>Class</rdf:first>
+  </rdf:Description>
   <rdf:Description rdf:about="#BoundaryLimitMin">
+    <rdfs:label xml:lang="en">Lower Boundary Limit</rdfs:label>
     <skos:scopeNote>PA040</skos:scopeNote>
-    <rdfs:subClassOf rdf:nodeID="A132"/>
+    <rdfs:subClassOf rdf:nodeID="A142"/>
+    <rdfs:subClassOf rdf:nodeID="A13"/>
+    <rdfs:comment xml:lang="de-DE">BoundaryLimitMin definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist.</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Unterer Grenzwert</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://schema.org/PropertyValue"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:comment xml:lang="en">BoundaryLimitMin defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:comment>Boundary limit interval consisting of the lower(minValue) interval boundary</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A99"/>
-    <rdfs:subClassOf rdf:nodeID="A13"/>
-    <rdfs:label>Minimum Boundary Limit</rdfs:label>
+    <isoprops:code xml:lang="en">PA040</isoprops:code>
     <isoprops:code xml:lang="de-DE">PA040</isoprops:code>
-    <isoprops:code>PA040</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Grenzwertintervall bestehend aus der unteren(minValue) Intervallgrenze</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A115"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A56">
-    <owl:onProperty rdf:resource="#hasGroupOfProperties"/>
-    <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A124">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#CountryOfOrigin"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#ExampleInLanguage">
-    <rdfs:label xml:lang="de-DE">Beispiel in Sprache N</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA019</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Beispiel des Merkmals, Sprache)</rdfs:comment>
-    <isoprops:code>PA019</isoprops:code>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment>List of pairs (example of the property, language)</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:domain rdf:resource="#Property"/>
-    <skos:scopeNote>PA019</skos:scopeNote>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Example in language N</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A62">
+  <rdf:Description rdf:nodeID="A82">
     <owl:onProperty rdf:resource="#hasSymbolsOfTheProperty"/>
     <owl:onClass rdf:resource="#SymbolOfTheProperty"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A122">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#GloballyUniqueIdentifier"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A133">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A80">
-    <owl:onProperty rdf:resource="#isReplacedByProperty"/>
-    <owl:onClass rdf:resource="#Property"/>
+  <rdf:Description rdf:nodeID="A78">
+    <owl:onProperty rdf:resource="#hasExternalDictionaryReference"/>
+    <owl:onClass rdf:resource="#ExternalDictionaryReference"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A75">
+  <rdf:Description rdf:nodeID="A132">
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#VersionNumber"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <owl:onProperty rdf:resource="#dateOfCreation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A109">
+    <rdf:rest rdf:nodeID="A143"/>
+    <rdf:first>COMPLEX</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A144">
+    <owl:onProperty rdf:resource="#hasDictionaryReferenceDocument"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <owl:onProperty rdf:resource="#hasDefiningValue"/>
+    <owl:onClass rdf:resource="#DefiningValuesList"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasDictionarySubset">
@@ -1305,47 +1384,42 @@ It is possible to use this attribute to explain there is no unit attached to the
     <rdfs:domain rdf:resource="#Dictionary"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#CountryOfOrigin">
-    <rdfs:comment>Country from where the requirement for this property/group of properties originated</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:label>Country of origin</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <skos:scopeNote>PA026/GA021</skos:scopeNote>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="de-DE">Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:label xml:lang="de-DE">Ursprungsland</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA026/GA021</isoprops:code>
-    <isoprops:code>PA026/GA021</isoprops:code>
+  <rdf:Description rdf:nodeID="A97">
+    <owl:onProperty rdf:resource="https://w3id.org/opm#hasPropertyState"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:onProperty rdf:resource="#index"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="">
-    <owl:versionInfo>v2.1</owl:versionInfo>
+    <dc:creator rdf:nodeID="A103"/>
+    <owl:priorVersion rdf:resource="https://w3id.org/https//w3id.org/iddo"/>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-01-15</dc:modified>
     <vann:preferredNamespacePrefix>isoprops</vann:preferredNamespacePrefix>
-    <dc:creator rdf:nodeID="A104"/>
+    <owl:versionInfo>v2.2</owl:versionInfo>
     <owl:versionIRI rdf:resource=""/>
-    <skos:historyNote>&#xD;
-  v2.1: renamed from IDDO to ISOProps&#xD;
-  v2.0: update&#xD;
-  &#xD;
-  v0.3: dcat usage update &#xD;
-  &#xD;
-  v0.2: ontology update &#xD;
-&#xD;
-v0.1: initial ontology for BIMSTRUCT project &#xD;
-  </skos:historyNote>
     <rdfs:seeAlso rdf:resource="https://www.iso.org/standard/75401.html"/>
-    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-04-24</dc:modified>
+    <vann:preferredNamespaceUri rdf:resource="#"/>
+    <dc:publisher rdf:nodeID="A21"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <vann:preferredNamespaceUri rdf:resource=""/>
     <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-01-01</dc:created>
     <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dc:publisher rdf:nodeID="A114"/>
+    <dc:source rdf:resource="https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf"/>
+    <dc:creator rdf:nodeID="A110"/>
+    <skos:historyNote>v2.2: Adjustments due to the update of the IR ontology network&#xD;
+v2.1: renamed from IDDO to ISOProps&#xD;
+v2.0: update&#xD;
+  &#xD;
+v0.3: dcat usage update &#xD;
+v0.2: ontology update &#xD;
+v0.1: initial ontology for BIMSTRUCT project &#xD;
+  </skos:historyNote>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-12-06</dc:issued>
     <rdfs:label>ISO 23386 Property Ontology (ISOProps)</rdfs:label>
     <skos:example rdf:resource="https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png"/>
-    <owl:imports rdf:resource="https://w3id.org/dt"/>
-    <dc:creator rdf:nodeID="A116"/>
     <rdfs:comment>The ISO Property (ISOProps) ontology maps the data model of the ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.&#xD;
 &#xD;
 The namespace for ISOProps terms is [https://w3id.org/isoprops](https://w3id.org/isoprops)&#xD;
@@ -1363,96 +1437,85 @@ The preferred prefix for the ISOProps namespace is `isoprops`.&#xD;
 </rdfs:comment>
     <schema:codeRepository rdf:resource="https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/isoprops"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A123">
-    <owl:onProperty rdf:resource="#VisualRepresentation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A136">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#categoryOfGroupOfProperties"/>
+    <owl:onDataRange rdf:nodeID="A23"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A120">
-    <rdf:rest rdf:nodeID="A134"/>
-    <rdf:first>BOOLEAN</rdf:first>
+  <rdf:Description rdf:nodeID="A145">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#encoding"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#TextFormatItem">
     <rdfs:label>Text format item</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A120"/>
+    <rdfs:subClassOf rdf:nodeID="A145"/>
     <rdfs:comment xml:lang="de-DE">Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)&#xD;
 die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</rdfs:comment>
     <isoprops:code xml:lang="de-DE">PA038</isoprops:code>
     <isoprops:code>PA038</isoprops:code>
     <rdfs:label xml:lang="de-DE">Textformat-Item</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A93"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    <rdfs:subClassOf rdf:nodeID="A135"/>
     <skos:scopeNote>PA038</skos:scopeNote>
     <rdfs:comment>Pair for text type (encoding, number of characters)&#xD;
 The encoding is set according to Name of encoding standard of IANA, RFC 2978</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="#DateOfDeactivation">
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:label>Date of deactivation</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:comment>Date of deactivation</rdfs:comment>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <skos:scopeNote>PA008/GA008</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">PA008/GA008</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Datum der Deaktivierung</rdfs:comment>
-    <isoprops:code>PA008/GA008</isoprops:code>
-    <rdfs:label xml:lang="de-DE">Datum der Deaktivierung</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <owl:onProperty rdf:resource="#hasUnit"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A39">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
+  <rdf:Description rdf:nodeID="A98">
+    <owl:onProperty rdf:resource="#hasPropertyReference"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A54">
-    <owl:onProperty rdf:resource="#hasDigitalFormat"/>
-    <owl:onClass rdf:resource="#DigitalFormatItem"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A117">
-    <schema:name>Ruhr University Bochum</schema:name>
-    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A132">
-    <owl:onProperty rdf:resource="https://schema.org/value"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A133">
+    <owl:onProperty rdf:resource="#definitionInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#DefiningValueItem">
     <rdfs:label xml:lang="de-DE">Definierender Wert-Item</rdfs:label>
     <rdfs:comment>Contains a defining value of an array in the form of a literal</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A146"/>
+    <rdfs:subClassOf rdf:nodeID="A118"/>
     <skos:scopeNote>PA035</skos:scopeNote>
     <rdfs:comment xml:lang="de-DE">Enthaelt einen definierenden Wert eines Arrays in Form eines Literals</rdfs:comment>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <isoprops:code xml:lang="de-DE">PA035</isoprops:code>
     <isoprops:code>PA035</isoprops:code>
-    <rdfs:subClassOf rdf:nodeID="A112"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:subClassOf rdf:resource="https://schema.org/PropertyValue"/>
+    <rdfs:subClassOf rdf:nodeID="A117"/>
     <rdfs:label>Defining value item</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A83">
-    <owl:onProperty rdf:resource="#hasBoundaryLimit"/>
-    <owl:onClass rdf:resource="#BoundaryLimitMin"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A139">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#countryOfOrigin"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A134">
-    <rdf:rest rdf:nodeID="A45"/>
-    <rdf:first>INTEGER</rdf:first>
+  <rdf:Description rdf:about="#definitionInLanguage">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:label>Definition of in language N</rdfs:label>
+    <skos:scopeNote>PA016/GA016</skos:scopeNote>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment>List of pairs (definition of the property/group of properties, language)</rdfs:comment>
+    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Definition des Merkmals/der Merkmalsgruppe, Sprache)</rdfs:comment>
+    <isoprops:code xml:lang="de-DE">PA016/GA016</isoprops:code>
+    <isoprops:code>PA016/GA016</isoprops:code>
+    <rdfs:label xml:lang="de-DE">Definition in Sprache N</rdfs:label>
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#definitionInLanguage"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A110">
-    <rdf:rest rdf:nodeID="A29"/>
-    <rdf:first>Domain</rdf:first>
+  <rdf:Description rdf:nodeID="A77">
+    <owl:onProperty rdf:resource="#dateOfActivation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasParameterOfTheDynamicProperty">
     <rdfs:range rdf:resource="#Property"/>
@@ -1481,70 +1544,22 @@ The encoding is set according to Name of encoding standard of IANA, RFC 2978</rd
     <isoprops:code>GA012</isoprops:code>
     <rdfs:comment>List of globally unique identifiers of the replacing groups of properties</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="#NumberOfCharacters">
-    <rdfs:comment>The encoding is set according to Name of encoding standard of IANA, RFC 2978</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:label>Number of Characters</rdfs:label>
-    <rdfs:domain rdf:resource="#TextFormatItem"/>
-    <isoprops:code xml:lang="de-DE">PA038</isoprops:code>
-    <isoprops:code>PA038</isoprops:code>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label xml:lang="de-DE">Anzahl der Zeichen</rdfs:label>
-    <rdfs:comment xml:lang="de-DE">Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</rdfs:comment>
-    <skos:scopeNote>PA038</skos:scopeNote>
+  <rdf:Description rdf:nodeID="A59">
+    <owl:oneOf rdf:nodeID="A116"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A127">
-    <owl:onProperty rdf:resource="#DefinitionInLanguage"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#NameInLanguage">
-    <rdfs:domain rdf:resource="#Property"/>
-    <rdfs:comment>List of pairs (property name and language)&#xD;
-This attribute can be used to add synonyms for different domains</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <isoprops:code xml:lang="de-DE">PA016/GA016</isoprops:code>
-    <isoprops:code>PA016/GA016</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Name des Merkmals und Sprache)&#xD;
-Dieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hinzuzufuegen</rdfs:comment>
-    <rdfs:label>Name in language N</rdfs:label>
-    <skos:scopeNote>PA016/GA016</skos:scopeNote>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Name in Sprache N</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A65">
-    <owl:onProperty rdf:resource="#hasExternalDictionaryReference"/>
-    <owl:onClass rdf:resource="#ExternalDictionaryReference"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A79">
-    <owl:onProperty rdf:resource="#replacesProperties"/>
-    <owl:onClass rdf:resource="#Property"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A23">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#hasGivenGroupOfProperties"/>
-    <owl:onClass rdf:resource="#GroupOfProperties"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A63">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DynamicProperty"/>
-    <owl:onDataRange rdf:nodeID="A106"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A85">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  <rdf:Description rdf:nodeID="A142">
     <owl:onProperty rdf:resource="#hasUnit"/>
-    <owl:onClass rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <rdf:rest rdf:nodeID="A128"/>
+    <rdf:first>Alternative use</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A121">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>inactive</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="#hasRelationOfTheGroupOfPropertiesIdentifiersInTheInterconnectedDataDictionaries">
     <rdfs:comment xml:lang="de-DE">Liste von Paaren (inter-ner Bezeichner der Merkmalsgruppe, ent-sprechender Daten-katalog-Bezeichner)&#xD;
@@ -1560,38 +1575,74 @@ This attribute should be used for compatibility between already existing groups 
     <rdfs:label xml:lang="de-DE">Beziehung der Bezeichner der Merkmalsgruppe in den miteinander verbundenen Datenkatalogen</rdfs:label>
     <rdfs:label>Relations of the group of properties identifiers in the interconnected data dictionaries</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:onProperty rdf:resource="https://schema.org/value"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A147">
+    <owl:onProperty rdf:resource="#hasExternalDictionary"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#precision">
+    <rdfs:comment xml:lang="de-DE">Praezision ist die Anzahl signifi-kanter Stellen</rdfs:comment>
+    <rdfs:label>Tolerance</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA037</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <isoprops:code>PA037</isoprops:code>
+    <skos:scopeNote>PA037</skos:scopeNote>
+    <rdfs:label xml:lang="de-DE">Toleranz</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="#DigitalFormatItem"/>
+    <rdfs:comment>Precision is the number of significant digits</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A127">
+    <owl:onProperty rdf:resource="#hasPropertyGroupReference"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dynamicProperty">
+    <rdfs:comment xml:lang="de-DE">Wenn es sich um ein dynamisches Merkmal handelt, haengt der Wert von den im Attribut PA032 bereitgestellten Parametern ab</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Dynamisches Merkmal</rdfs:label>
+    <isoprops:code xml:lang="de-DE">PA031</isoprops:code>
+    <isoprops:code>PA031</isoprops:code>
+    <skos:scopeNote>PA031</skos:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:comment>If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032</rdfs:comment>
+    <skos:example>yes</skos:example>
+    <rdfs:label>Dynamic Property</rdfs:label>
+    <rdfs:range rdf:nodeID="A126"/>
+    <skos:example>no</skos:example>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <owl:onProperty rdf:resource="#countryOfOrigin"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#hasExternalDictionaryProperty">
     <owl:equivalentProperty rdf:resource="https://w3id.org/dt#hasExternalDictionaryProperty"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     <rdfs:label>has external dictionary property</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A129">
-    <owl:onProperty rdf:resource="#DeprecationExplanation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A90">
-    <owl:onProperty rdf:resource="#DefiningValueItem"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A36">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+  <rdf:Description rdf:nodeID="A81">
+    <owl:onProperty rdf:resource="#creatorsLanguage"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A22">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#Symbol"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="A108">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A66">
-    <owl:onProperty rdf:resource="#hasPhysicalQuantity"/>
-    <owl:onDataRange rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A74">
+    <owl:onProperty rdf:resource="#hasNameInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasProperty">
@@ -1614,6 +1665,20 @@ This attribute should be used for compatibility between already existing groups 
     <rdfs:comment>Attaches a property group reference to a isoprops:ReferenceDocument</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#countryOfUse">
+    <skos:scopeNote>PA024/GA019</skos:scopeNote>
+    <rdfs:label xml:lang="en">Country of use</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:label xml:lang="de-DE">Land der Verwendung</rdfs:label>
+    <rdfs:comment xml:lang="en">Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in.</rdfs:comment>
+    <isoprops:code xml:lang="en">PA024/GA019</isoprops:code>
+    <isoprops:code xml:lang="de-DE">PA024/GA019</isoprops:code>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:comment xml:lang="de-DE">Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist.</rdfs:comment>
+  </rdf:Description>
   <rdf:Description rdf:about="#code">
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <rdfs:label xml:lang="de-DE">Code</rdfs:label>
@@ -1626,21 +1691,44 @@ This attribute should be used for compatibility between already existing groups 
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
   <rdf:Description rdf:about="#DictionarySubset">
-    <rdfs:subClassOf rdf:nodeID="A136"/>
-    <rdfs:subClassOf rdf:nodeID="A133"/>
-    <rdfs:subClassOf rdf:nodeID="A137"/>
+    <rdfs:subClassOf rdf:nodeID="A144"/>
+    <rdfs:subClassOf rdf:nodeID="A113"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="de-DE">Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs</rdfs:comment>
     <rdfs:label xml:lang="de-DE">Teilmenge des Datenkatalogs</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A102"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-    <rdfs:subClassOf rdf:nodeID="A12"/>
     <rdfs:comment>Defines a subset or subgrouping of a data catalog</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A122"/>
     <rdfs:label>Dictionary subset</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A61">
-    <owl:onProperty rdf:resource="#hasParameterOfTheDynamicProperty"/>
-    <owl:onClass rdf:resource="#Property"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>Reference document</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dateOfLastChange">
+    <rdfs:label>Date of last change</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="de-DE">Datum der Validierung der letzten Aenderungsanfrage durch Sachverstaendige</rdfs:comment>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>Date of validation of the last change request by experts</rdfs:comment>
+    <skos:scopeNote>PA005/GA005</skos:scopeNote>
+    <rdfs:label xml:lang="de-DE">Datum der letzten Aenderung</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="#Property"/>
+    <isoprops:code xml:lang="de-DE">PA005/GA005</isoprops:code>
+    <isoprops:code>PA005/GA005</isoprops:code>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#globallyUniqueIdentifier"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <owl:onProperty rdf:resource="#hasDictionarySubset"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasExternalDictionaryReference">
@@ -1662,26 +1750,27 @@ This attribute should be used for compatibility between already existing propert
     <isoprops:code xml:lang="de-DE">GA014</isoprops:code>
     <isoprops:code>GA014</isoprops:code>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A128">
-    <owl:onProperty rdf:resource="#DateOfLastChange"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A41">
+    <owl:oneOf rdf:nodeID="A148"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A138">
-    <rdf:rest rdf:nodeID="A139"/>
-    <rdf:first>yes</rdf:first>
+  <rdf:Description rdf:nodeID="A106">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>no</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A130">
-    <owl:onProperty rdf:resource="#DateOfDeactivation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A140">
-    <owl:onProperty rdf:resource="https://w3id.org/dt#hasExternalDictionaryProperty"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:about="#exampleInLanguage">
+    <owl:equivalentProperty rdf:resource="https://w3id.org/tempo#exampleInLanguage"/>
+    <isoprops:code xml:lang="de-DE">PA019</isoprops:code>
+    <isoprops:code>PA019</isoprops:code>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:label>Example in language N</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Beispiel des Merkmals, Sprache)</rdfs:comment>
+    <rdfs:comment>List of pairs (example of the property, language)</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Beispiel in Sprache N</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <skos:scopeNote>PA019</skos:scopeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasSymbolsOfTheProperty">
     <rdfs:domain rdf:resource="#Property"/>
@@ -1696,19 +1785,23 @@ This attribute should be used for compatibility between already existing propert
     <rdfs:comment>List of pairs (symbol of the property, globally unique identifier of the group of properties (attribute GA001))</rdfs:comment>
     <skos:scopeNote>PA022</skos:scopeNote>
   </rdf:Description>
-  <rdf:Description rdf:about="#SubdivisionOfUse">
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+  <rdf:Description rdf:about="#dateOfDeactivation">
+    <rdfs:comment>Date of deactivation</rdfs:comment>
+    <isoprops:code xml:lang="de-DE">PA008/GA008</isoprops:code>
+    <isoprops:code>PA008/GA008</isoprops:code>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="de-DE">Unterteilung der Verwendung</rdfs:label>
-    <rdfs:label>Subdivision of use</rdfs:label>
-    <skos:scopeNote>PA025/GA020</skos:scopeNote>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     <rdfs:domain rdf:resource="#Property"/>
-    <isoprops:code xml:lang="de-DE">PA025/GA020</isoprops:code>
-    <isoprops:code>PA025/GA020</isoprops:code>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:comment xml:lang="de-DE">Dokumentierte geographische Region, in der das Merkmal/ die Merkmalsgruppe verwendet wird</rdfs:comment>
-    <rdfs:comment>Documented geographical region of use of the group of properties</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <skos:scopeNote>PA008/GA008</skos:scopeNote>
+    <rdfs:domain rdf:resource="#GroupOfProperties"/>
+    <rdfs:comment xml:lang="de-DE">Datum der Deaktivierung</rdfs:comment>
+    <rdfs:label>Date of deactivation</rdfs:label>
+    <rdfs:label xml:lang="de-DE">Datum der Deaktivierung</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <owl:oneOf rdf:nodeID="A94"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
   </rdf:Description>
   <rdf:Description rdf:about="#hasConnectedProperty">
     <rdfs:label xml:lang="de-DE">Verbundene Merkmale</rdfs:label>
@@ -1723,14 +1816,17 @@ This attribute should be used for compatibility between already existing propert
     <isoprops:code>PA020</isoprops:code>
     <rdfs:range rdf:resource="#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A60">
-    <owl:onProperty rdf:resource="#MethodOfMeasurement"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A143">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first>STRING</rdf:first>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/dcat#accessURL">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:onProperty rdf:resource="#index"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="#replacesProperties">
     <skos:scopeNote>PA011</skos:scopeNote>
@@ -1748,8 +1844,8 @@ This attribute should be used for compatibility between already existing propert
   </rdf:Description>
   <rdf:Description rdf:about="#ExternalDictionaryReference">
     <owl:equivalentClass rdf:resource="https://w3id.org/dt#ExternalDictionaryReference"/>
-    <rdfs:subClassOf rdf:nodeID="A140"/>
-    <rdfs:subClassOf rdf:nodeID="A5"/>
+    <rdfs:subClassOf rdf:nodeID="A99"/>
+    <rdfs:subClassOf rdf:nodeID="A147"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     <rdfs:label xml:lang="de-DE">External Dictionary Reference</rdfs:label>
     <rdfs:label>External Dictionary Reference </rdfs:label>
@@ -1759,162 +1855,116 @@ This attribute should be used for compatibility between already existing propert
 Dieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A141">
-    <rdf:rest rdf:nodeID="A109"/>
-    <rdf:first>Class</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A136">
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <owl:onProperty rdf:resource="https://schema.org/value"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Encoding">
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:domain rdf:resource="#TextFormatItem"/>
-    <rdfs:label xml:lang="de-DE">Kodierung</rdfs:label>
-    <skos:scopeNote>PA038</skos:scopeNote>
-    <rdfs:comment>The encoding is set according to Name of encoding standard of IANA, RFC 2978</rdfs:comment>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <isoprops:code xml:lang="de-DE">PA038</isoprops:code>
-    <rdfs:label>Encoding</rdfs:label>
-    <isoprops:code>PA038</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A92">
-    <rdf:rest rdf:nodeID="A141"/>
-    <rdf:first>Alternative use</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A126">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfRevision"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A139">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>no</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A118">
-    <owl:oneOf rdf:nodeID="A138"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A57">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#DateOfVersion"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#VersionNumber">
-    <rdfs:label>Version number</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:domain rdf:resource="#Property"/>
-    <isoprops:code xml:lang="de-DE">PA009/GA009</isoprops:code>
-    <isoprops:code>PA009/GA009</isoprops:code>
-    <rdfs:domain rdf:resource="#GroupOfProperties"/>
-    <rdfs:comment>This version number allows tracking of major changes. Experts decide if a new version number must be applied</rdfs:comment>
-    <skos:scopeNote>PA009/GA009</skos:scopeNote>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label xml:lang="de-DE">Versionsnummer</rdfs:label>
-    <rdfs:comment xml:lang="de-DE">Diese Versionsnummer ermoeglicht die Verfolgung groesserer aenderungen. Sachverstaendige entscheiden, ob eine neue Ver-sionsnummer angewendet werden muss.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A52">
-    <owl:onProperty rdf:resource="#ExampleInLanguage"/>
+  <rdf:Description rdf:nodeID="A72">
+    <owl:onProperty rdf:resource="#methodOfMeasurement"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#methodOfMeasurement">
+    <rdfs:label>Method of measurement</rdfs:label>
+    <rdfs:comment>Evaluation of construction products to ensure their fitness according to requirements in harmonised technical specifications</rdfs:comment>
+    <rdfs:comment>Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <isoprops:code xml:lang="de-DE">PA029</isoprops:code>
+    <isoprops:code>PA029</isoprops:code>
+    <rdfs:label xml:lang="de-DE">Messverfahren</rdfs:label>
+    <rdfs:domain rdf:resource="#Property"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <skos:scopeNote>PA029</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#Inclusive"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A140">
+    <owl:onProperty rdf:resource="#isReplacedByGroupOfProperties"/>
+    <owl:onClass rdf:resource="#GroupOfProperties"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <owl:onProperty rdf:resource="#tolerance"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A135">
+    <owl:onProperty rdf:resource="#hasNameInLanguage"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <owl:onProperty rdf:resource="#hasUnit"/>
+    <owl:onClass rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <owl:onProperty rdf:resource="#hasBoundaryLimit"/>
+    <owl:onClass rdf:resource="#BoundaryLimitMin"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A137">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="#globallyUniqueIdentifier"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A148">
+    <rdf:rest rdf:nodeID="A62"/>
+    <rdf:first>BOOLEAN</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <owl:onProperty rdf:resource="#hasConnectedProperty"/>
+    <owl:onClass rdf:resource="#Property"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A138">
+    <owl:onProperty rdf:resource="#replacesGroupOfProperties"/>
+    <owl:onClass rdf:resource="#GroupOfProperties"/>
     <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A73">
-    <owl:onProperty rdf:resource="#DateOfLastChange"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A131">
-    <owl:onProperty rdf:resource="#DateOfActivation"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A137">
-    <owl:onProperty rdf:resource="#hasDictionaryReferenceDocument"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A55">
-    <owl:onProperty rdf:resource="#hasDefiningValue"/>
-    <owl:onClass rdf:resource="#DefiningValuesList"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Symbol">
-    <isoprops:code xml:lang="de-DE">PA022</isoprops:code>
-    <isoprops:code>PA022</isoprops:code>
-    <skos:scopeNote>PA022</skos:scopeNote>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label xml:lang="de-DE">Symbol</rdfs:label>
-    <rdfs:label>Symbol</rdfs:label>
-    <rdfs:domain rdf:resource="#SymbolOfTheProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A113">
-    <rdf:rest rdf:nodeID="A87"/>
-    <rdf:first>Alternative use</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A71">
-    <owl:onProperty rdf:resource="#CountryOfOrigin"/>
+    <owl:onProperty rdf:resource="#definitionInLanguage"/>
     <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxQualifiedCardinality>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#MethodOfMeasurement">
-    <rdfs:label xml:lang="de-DE">Messverfahren</rdfs:label>
+  <rdf:Description rdf:nodeID="A104">
+    <schema:name>Ruhr University Bochum</schema:name>
+    <schema:identifier rdf:resource="https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A134">
+    <owl:onProperty rdf:resource="#dateOfDeactivation"/>
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#dataType">
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label>Method of measurement</rdfs:label>
-    <isoprops:code xml:lang="de-DE">PA029</isoprops:code>
-    <isoprops:code>PA029</isoprops:code>
-    <rdfs:comment>Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen</rdfs:comment>
+    <skos:scopeNote>PA030</skos:scopeNote>
+    <rdfs:comment xml:lang="en">Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="de-DE">Format fuer die Angabe des Merkmalwertes. Dies kann aus Sicht der Software als Speichertyp verstanden werden. Im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Ergebnisses der berechneten Gleichung</rdfs:comment>
+    <isoprops:code xml:lang="en">PA030</isoprops:code>
+    <isoprops:code xml:lang="de-DE">PA030</isoprops:code>
+    <rdfs:label xml:lang="en">Data type</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:domain rdf:resource="#Property"/>
-    <skos:scopeNote>PA029</skos:scopeNote>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment>Evaluation of construction products to ensure their fitness according to requirements in harmonised technical specifications</rdfs:comment>
+    <rdfs:label xml:lang="de-DE">Datentyp (GUID)</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="#DescriptionInLanguage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label>Description in language N</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    <rdfs:label xml:lang="de-DE">Beschreibung in Sprache N</rdfs:label>
-    <skos:scopeNote>PA019</skos:scopeNote>
-    <isoprops:code xml:lang="de-DE">PA019</isoprops:code>
-    <isoprops:code>PA019</isoprops:code>
-    <rdfs:comment xml:lang="de-DE">Liste von Paaren (Beschreibung des Merkmals, Sprache)</rdfs:comment>
-    <rdfs:comment>List of pairs (Description of the property, language)</rdfs:comment>
-    <rdfs:domain rdf:resource="#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A135">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#NumberOfCharacters"/>
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  <rdf:Description rdf:nodeID="A146">
+    <owl:onProperty rdf:resource="#index"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A51">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="#hasBoundary"/>
-    <owl:onClass rdf:resource="#BoundaryValue"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A49">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>inactive</rdf:first>
   </rdf:Description>
 </rdf:RDF>
 

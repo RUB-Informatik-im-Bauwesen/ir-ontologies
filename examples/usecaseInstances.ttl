@@ -21,6 +21,7 @@ tempo-usecase:CostGroup330
   rdf:type isoprops:Property ;
   isoprops:countryOfOrigin "DE" ;
   isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dataType "Enumeration" ;
   isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
   isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
   isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
@@ -55,7 +56,7 @@ tempo-usecase:CostGroup330
   isoprops:status "active" ;
 .
 tempo-usecase:CostGroups
-  rdf:type tempo:SetOfProperties ;
+  rdf:type tempo:GroupOfProperties ;
   isoprops:categoryOfGroupOfProperties "Class" ;
   isoprops:countryOfOrigin "DE" ;
   isoprops:countryOfUse "DE" ;
@@ -105,7 +106,7 @@ tempo-usecase:DataTemplateFireSafetyDoor
   tempo:nameInLanguage "Fire Safety Door Data Template" ;
 .
 tempo-usecase:FireProtectionProperties
-  rdf:type tempo:SetOfProperties ;
+  rdf:type tempo:GroupOfProperties ;
   isoprops:categoryOfGroupOfProperties "Class" ;
   isoprops:countryOfOrigin "DE" ;
   isoprops:countryOfUse "DE" ;
@@ -128,6 +129,7 @@ tempo-usecase:FireResistanceClass
   rdf:type isoprops:Property ;
   isoprops:countryOfOrigin "DE" ;
   isoprops:creatorsLanguage "de-DE" ;
+  isoprops:dataType "Enumeration" ;
   isoprops:dateOfActivation "2024-10-12T14:36"^^xsd:dateTime ;
   isoprops:dateOfCreation "2024-10-12T14:36"^^xsd:dateTime ;
   isoprops:dateOfLastChange "2024-10-12T14:36"^^xsd:dateTime ;
@@ -284,13 +286,13 @@ tempo-usecase:UseCaseLibrary
   rdfs:label "Use Case Library" ;
   tempo:hasDataTemplate tempo-usecase:DataTemplateCostGroup ;
   tempo:hasDataTemplate tempo-usecase:DataTemplateFireSafetyDoor ;
+  tempo:hasGroupOfProperties tempo-usecase:CostGroups ;
+  tempo:hasGroupOfProperties tempo-usecase:FireProtectionProperties ;
   tempo:hasProperty tempo-usecase:CostGroup330 ;
   tempo:hasProperty tempo-usecase:FireResistanceClass ;
   tempo:hasQuantityKind quantitykind:Dimensionless ;
   tempo:hasReferenceDocument tempo-usecase:DIN276 ;
   tempo:hasReferenceDocument tempo-usecase:DIN4102 ;
-  tempo:hasSetOfProperties tempo-usecase:CostGroups ;
-  tempo:hasSetOfProperties tempo-usecase:FireProtectionProperties ;
   tempo:isAssignedToObjectType tempo-usecase:Wall ;
   tempo:isAssignedToObjectType tempo-usecase:ifcDoor ;
   tempo:nameInLanguage "Use Case Library"@en ;
@@ -322,4 +324,7 @@ tempo-usecase:ifcWallReference
   rdfs:label "Reference to IFC Wall"@en ;
   tempo:conceptGUID "69511fe4-21eb-4631-997f-09fa3e939890" ;
   tempo:hasReferenceURI <https://identifier.buildingsmart.org/uri/buildingsmart/ifc/4.3/class/IfcWall> ;
+.
+tempo:hasGroupOfProperties
+  rdfs:range tempo:GroupOfProperties ;
 .

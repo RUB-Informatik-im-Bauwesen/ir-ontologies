@@ -1,145 +1,83 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
-    "@type" : "owl:Restriction",
-    "owl:maxQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CountryOfOrigin"
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "Alternative use", "Class", "Composed property", "Domain", "Reference document" ]
+    }
   }, {
     "@id" : "_:b1",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:GroupOfProperties",
-    "onProperty" : "isoprops:isReplacedByGroupOfProperties"
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfRevision",
+    "owl:qualifiedCardinality" : 1
   }, {
     "@id" : "_:b10",
-    "@type" : "rdfs:Datatype",
-    "owl:oneOf" : {
-      "@list" : [ "active", "inactive" ]
-    }
-  }, {
-    "@id" : "_:b102",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:GloballyUniqueIdentifier",
+    "onDataRange" : "xsd:integer",
+    "onProperty" : "isoprops:revisionNumber",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b100",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfCreation",
     "owl:qualifiedCardinality" : 1
   }, {
     "@id" : "_:b103",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfVersion",
+    "onDataRange" : "xsd:integer",
+    "onProperty" : "isoprops:numberOfCharacters",
     "owl:qualifiedCardinality" : 1
   }, {
     "@id" : "_:b104",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 1,
     "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:VisualRepresentation"
+    "onProperty" : "isoprops:definitionInLanguage"
   }, {
     "@id" : "_:b105",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "0"
-    },
-    "onClass" : "isoprops:ExternalDictionaryReference",
-    "onProperty" : "isoprops:hasExternalDictionaryReference"
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
   }, {
     "@id" : "_:b106",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:GroupOfProperties",
-    "onProperty" : "isoprops:replacesGroupOfProperties"
-  }, {
-    "@id" : "_:b107",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfCreation",
-    "owl:qualifiedCardinality" : 1
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
   }, {
     "@id" : "_:b108",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DeprecationExplanation"
+    "owl:minCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "0"
+    },
+    "onProperty" : "isoprops:hasUnit"
   }, {
     "@id" : "_:b109",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:integer",
-    "onProperty" : "isoprops:RevisionNumber",
-    "owl:qualifiedCardinality" : 1
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfDeactivation"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
   }, {
     "@id" : "_:b110",
     "@type" : "owl:Restriction",
-    "onDataRange" : [ "_:b10", "xsd:string" ],
-    "onProperty" : "isoprops:Status",
-    "owl:qualifiedCardinality" : 1
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:hasNameInLanguage"
   }, {
     "@id" : "_:b111",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DefinitionInLanguage"
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:decimal",
+    "onProperty" : "isoprops:tolerance"
   }, {
     "@id" : "_:b112",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:integer",
-    "onProperty" : "isoprops:VersionNumber",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b113",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfLastChange"
-  }, {
-    "@id" : "_:b114",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:SubdivisionOfUse"
-  }, {
-    "@id" : "_:b115",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfActivation"
-  }, {
-    "@id" : "_:b118",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
-    "name" : "Ruhr University Bochum"
-  }, {
-    "@id" : "_:b119",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:identifier"
-  }, {
-    "@id" : "_:b12",
-    "@type" : "owl:Restriction",
-    "owl:maxQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DeprecationExplanation"
-  }, {
-    "@id" : "_:b121",
-    "@type" : "rdfs:Datatype",
-    "owl:oneOf" : {
-      "@list" : [ "BOOLEAN", "INTEGER", "RATIONAL", "REAL", "COMPLEX", "STRING", "DATETIME" ]
-    }
-  }, {
-    "@id" : "_:b123",
-    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
-    "name" : "Ruhr University Bochum"
-  }, {
-    "@id" : "_:b124",
-    "@type" : "owl:Restriction",
-    "owl:maxQualifiedCardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    },
-    "onClass" : "isoprops:BoundaryLimitMin",
-    "onProperty" : "isoprops:hasBoundaryLimit"
-  }, {
-    "@id" : "_:b125",
     "@type" : "owl:Restriction",
     "owl:maxQualifiedCardinality" : {
       "@type" : "xsd:nonNegativeInteger",
@@ -148,77 +86,191 @@
     "onClass" : "isoprops:BoundaryLimitMax",
     "onProperty" : "isoprops:hasBoundaryLimit"
   }, {
-    "@id" : "_:b126",
+    "@id" : "_:b113",
     "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:publisher"
-  }, {
-    "@id" : "_:b127",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
-  }, {
-    "@id" : "_:b128",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:type"
-  }, {
-    "@id" : "_:b129",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:description"
-  }, {
-    "@id" : "_:b13",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DefinitionInLanguage"
-  }, {
-    "@id" : "_:b130",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:boolean",
-    "onProperty" : "isoprops:Inclusive",
-    "owl:qualifiedCardinality" : {
+    "owl:minCardinality" : {
       "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    }
+      "@value" : "0"
+    },
+    "onProperty" : "isoprops:index"
   }, {
-    "@id" : "_:b131",
+    "@id" : "_:b114",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "isoprops:index"
+  }, {
+    "@id" : "_:b115",
     "@type" : "rdfs:Datatype",
     "owl:oneOf" : {
       "@list" : [ "yes", "no" ]
     }
   }, {
+    "@id" : "_:b117",
+    "@type" : "owl:Restriction",
+    "owl:minCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "0"
+    },
+    "onProperty" : "isoprops:index"
+  }, {
+    "@id" : "_:b118",
+    "@type" : "owl:Restriction",
+    "owl:maxQualifiedCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onClass" : "isoprops:BoundaryLimitMin",
+    "onProperty" : "isoprops:hasBoundaryLimit"
+  }, {
+    "@id" : "_:b119",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "isoprops:index"
+  }, {
+    "@id" : "_:b12",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:hasNameInLanguage"
+  }, {
+    "@id" : "_:b120",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:countryOfUse"
+  }, {
+    "@id" : "_:b121",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:GroupOfProperties",
+    "onProperty" : "isoprops:replacesGroupOfProperties"
+  }, {
+    "@id" : "_:b122",
+    "@type" : "owl:Restriction",
+    "onDataRange" : [ "_:b8", "xsd:string" ],
+    "onProperty" : "isoprops:status",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b123",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/sven_zentgraf.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b126",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:hasVisualRepresentation"
+  }, {
+    "@id" : "_:b127",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:creatorsLanguage",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b128",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:globallyUniqueIdentifier",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b129",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfActivation"
+  }, {
+    "@id" : "_:b13",
+    "identifier" : "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/philipp_hagedorn.html.en",
+    "name" : "Ruhr University Bochum"
+  }, {
+    "@id" : "_:b130",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:integer",
+    "onProperty" : "isoprops:versionNumber",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b131",
+    "@type" : "owl:Restriction",
+    "owl:maxQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:deprecationExplanation"
+  }, {
     "@id" : "_:b132",
     "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:issued"
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:deprecationExplanation"
+  }, {
+    "@id" : "_:b133",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfRevision",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b134",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:GroupOfProperties",
+    "onProperty" : "isoprops:isReplacedByGroupOfProperties"
   }, {
     "@id" : "_:b137",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onProperty" : "isoprops:hasExternalDictionary"
+  }, {
+    "@id" : "_:b14",
+    "@type" : "schema:Person",
+    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
+    "identifier" : "https://orcid.org/0000-0002-6249-243X",
+    "memberOf" : "_:b13",
+    "name" : "Philipp Hagedorn"
+  }, {
+    "@id" : "_:b140",
     "@type" : "schema:Organization",
     "name" : "Ruhr University Bochum, Germany"
   }, {
-    "@id" : "_:b139",
+    "@id" : "_:b141",
     "@type" : "owl:Restriction",
-    "owl:minCardinality" : 1,
-    "onProperty" : "isoprops:DefiningValueItem"
+    "owl:minCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "0"
+    },
+    "onProperty" : "isoprops:hasUnit"
   }, {
-    "@id" : "_:b14",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CreatorsLanguage",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b140",
+    "@id" : "_:b143",
     "@type" : "owl:Restriction",
     "owl:minCardinality" : 1,
     "onProperty" : "isoprops:hasDictionarySubset"
   }, {
-    "@id" : "_:b15",
+    "@id" : "_:b144",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
     "onClass" : "isoprops:GroupOfProperties",
-    "onProperty" : "isoprops:hasParentGroupOfProperties"
+    "onProperty" : "isoprops:hasGivenGroupOfProperties",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b146",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:type"
+  }, {
+    "@id" : "_:b147",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "isoprops:hasUnit"
+  }, {
+    "@id" : "_:b148",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:publisher"
+  }, {
+    "@id" : "_:b15",
+    "@type" : "schema:Organization",
+    "identifier" : "https://www.inf.bi.rub.de",
+    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
+    "parentOrganization" : "_:b140"
   }, {
     "@id" : "_:b16",
     "@type" : "schema:Person",
@@ -228,66 +280,23 @@
     "name" : "Sven Zentgraf"
   }, {
     "@id" : "_:b17",
-    "@type" : "schema:Organization",
-    "identifier" : "https://www.inf.bi.rub.de",
-    "name" : "Chair of Computing in Engineering, Ruhr University Bochum",
-    "parentOrganization" : "_:b137"
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:symbol",
+    "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b18",
-    "@type" : "schema:Person",
-    "email" : "mailto:philipp.hagedorn-n6v@rub.de",
-    "identifier" : "https://orcid.org/0000-0002-6249-243X",
-    "memberOf" : "_:b118",
-    "name" : "Philipp Hagedorn"
+    "@id" : "_:b19",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "schema:value"
   }, {
     "@id" : "_:b2",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CountryOfUse"
-  }, {
-    "@id" : "_:b21",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    },
-    "onProperty" : "isoprops:hasUnit"
-  }, {
-    "@id" : "_:b22",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
-  }, {
-    "@id" : "_:b24",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "isoprops:CreatorsLanguage"
-  }, {
-    "@id" : "_:b25",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:MethodOfMeasurement"
-  }, {
-    "@id" : "_:b28",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfRevision",
+    "onDataRange" : "_:b3",
+    "onProperty" : "isoprops:status",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b29",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CountryOfOrigin"
-  }, {
-    "@id" : "_:b30",
+    "@id" : "_:b20",
     "@type" : "owl:Restriction",
     "onDataRange" : "xsd:boolean",
     "onProperty" : "isoprops:Inclusive",
@@ -296,50 +305,41 @@
       "@value" : "1"
     }
   }, {
-    "@id" : "_:b31",
+    "@id" : "_:b21",
     "@type" : "owl:Restriction",
-    "owl:minCardinality" : 1,
-    "onProperty" : "http://www.w3id.org/opm#hasPropertyState"
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:GroupOfProperties",
+    "onProperty" : "isoprops:hasParentGroupOfProperties"
   }, {
-    "@id" : "_:b32",
+    "@id" : "_:b22",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfVersion",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b23",
     "@type" : "owl:Restriction",
     "owl:cardinality" : 1,
-    "onProperty" : "isoprops:hasPropertyReference"
+    "onProperty" : "isoprops:creatorsLanguage"
   }, {
-    "@id" : "_:b33",
+    "@id" : "_:b24",
     "@type" : "owl:Restriction",
-    "onDataRange" : "_:b34",
-    "onProperty" : "isoprops:CategoryOfGroupOfProperties",
+    "onDataRange" : "xsd:integer",
+    "onProperty" : "isoprops:revisionNumber",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b34",
-    "@type" : "rdfs:Datatype",
-    "owl:oneOf" : {
-      "@list" : [ "Alternative use", "Class", "Composed property", "Domain", "Reference document" ]
-    }
-  }, {
-    "@id" : "_:b37",
+    "@id" : "_:b25",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:Encoding",
-    "owl:qualifiedCardinality" : 1
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfLastChange"
   }, {
-    "@id" : "_:b38",
-    "@type" : "rdfs:Datatype",
-    "owl:oneOf" : {
-      "@list" : [ "active", "inactive" ]
-    }
-  }, {
-    "@id" : "_:b4",
+    "@id" : "_:b26",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    },
-    "onDataRange" : "qudt:QuantityKind",
-    "onProperty" : "isoprops:hasPhysicalQuantity"
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:description"
   }, {
-    "@id" : "_:b40",
+    "@id" : "_:b27",
     "@type" : "owl:Restriction",
     "owl:cardinality" : {
       "@type" : "xsd:nonNegativeInteger",
@@ -347,92 +347,170 @@
     },
     "onProperty" : "isoprops:hasUnit"
   }, {
-    "@id" : "_:b41",
+    "@id" : "_:b28",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:boolean",
+    "onProperty" : "isoprops:Inclusive",
+    "owl:qualifiedCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    }
+  }, {
+    "@id" : "_:b3",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "active", "inactive" ]
+    }
+  }, {
+    "@id" : "_:b32",
+    "@type" : "owl:Restriction",
+    "owl:minCardinality" : 1,
+    "onProperty" : "opm:hasPropertyState"
+  }, {
+    "@id" : "_:b33",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "isoprops:hasPropertyReference"
+  }, {
+    "@id" : "_:b34",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onClass" : "isoprops:SymbolOfTheProperty",
     "onProperty" : "isoprops:hasSymbolsOfTheProperty"
   }, {
+    "@id" : "_:b36",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:TextFormatItem",
+    "onProperty" : "isoprops:hasTextFormat"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:ExternalDictionaryReference",
+    "onProperty" : "isoprops:hasExternalDictionaryReference"
+  }, {
+    "@id" : "_:b39",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "active", "inactive" ]
+    }
+  }, {
+    "@id" : "_:b4",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:identifier"
+  }, {
+    "@id" : "_:b41",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:countryOfUse"
+  }, {
     "@id" : "_:b42",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfRevision",
+    "owl:minQualifiedCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "0"
+    },
+    "onClass" : "isoprops:ExternalDictionaryReference",
+    "onProperty" : "isoprops:hasExternalDictionaryReference"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:decimal",
+    "onProperty" : "isoprops:precision",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b43",
+    "@id" : "_:b46",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "isoprops:hasDictionaryReferenceDocument"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dcat:accessURL"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:title"
+  }, {
+    "@id" : "_:b49",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : 1,
+    "onProperty" : "dc:description"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "yes", "no" ]
+    }
+  }, {
+    "@id" : "_:b50",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "isoprops:hasUnit"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "_:b52",
+    "onProperty" : "isoprops:dataType",
+    "owl:qualifiedCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    }
+  }, {
+    "@id" : "_:b52",
+    "@type" : "rdfs:Datatype",
+    "owl:oneOf" : {
+      "@list" : [ "BOOLEAN", "INTEGER", "RATIONAL", "REAL", "COMPLEX", "STRING", "DATETIME" ]
+    }
+  }, {
+    "@id" : "_:b53",
     "@type" : "owl:Restriction",
     "owl:cardinality" : {
       "@type" : "xsd:nonNegativeInteger",
       "@value" : "1"
     },
-    "onProperty" : "https://w3id.org/dt#hasExternalDictionaryProperty"
+    "onProperty" : "isoprops:hasUnit"
   }, {
-    "@id" : "_:b44",
+    "@id" : "_:b56",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "_:b57",
+    "onProperty" : "isoprops:categoryOfGroupOfProperties",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b57",
     "@type" : "rdfs:Datatype",
     "owl:oneOf" : {
       "@list" : [ "Alternative use", "Class", "Composed property", "Domain", "Reference document" ]
     }
   }, {
-    "@id" : "_:b46",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    },
-    "onProperty" : "https://w3id.org/dt#hasExternalDictionary"
-  }, {
-    "@id" : "_:b47",
-    "@type" : "owl:Restriction",
-    "onClass" : "isoprops:GroupOfProperties",
-    "onProperty" : "isoprops:hasGivenGroupOfProperties",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b48",
+    "@id" : "_:b58",
     "@type" : "owl:Restriction",
     "owl:cardinality" : 1,
-    "onProperty" : "dc:description"
+    "onProperty" : "dc:issued"
   }, {
-    "@id" : "_:b49",
+    "@id" : "_:b59",
     "@type" : "owl:Restriction",
     "owl:cardinality" : 1,
     "onProperty" : "dc:title"
   }, {
-    "@id" : "_:b5",
+    "@id" : "_:b60",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfVersion",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:encoding",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b50",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "isoprops:hasDictionaryReferenceDocument"
-  }, {
-    "@id" : "_:b51",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:decimal",
-    "onProperty" : "isoprops:Tolerance"
-  }, {
-    "@id" : "_:b52",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfDeactivation"
-  }, {
-    "@id" : "_:b53",
+    "@id" : "_:b61",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DeprecationExplanation"
+    "onProperty" : "isoprops:subdivisionOfUse"
   }, {
-    "@id" : "_:b54",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:decimal",
-    "onProperty" : "isoprops:Precision",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b55",
+    "@id" : "_:b62",
     "@type" : "owl:Restriction",
     "onClass" : "qudt:Unit",
     "onProperty" : "isoprops:hasUnit",
@@ -441,19 +519,155 @@
       "@value" : "1"
     }
   }, {
-    "@id" : "_:b56",
+    "@id" : "_:b63",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:GloballyUniqueIdentifier",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfVersion",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b57",
+    "@id" : "_:b64",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:DefiningValuesList",
+    "onProperty" : "isoprops:hasDefiningValue"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:Property",
+    "onProperty" : "isoprops:isReplacedByProperty"
+  }, {
+    "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:methodOfMeasurement"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "owl:Restriction",
+    "owl:cardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onProperty" : "isoprops:hasExternalDictionaryProperty"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "owl:Restriction",
+    "owl:minCardinality" : 1,
+    "onProperty" : "isoprops:DefiningValueItem"
+  }, {
+    "@id" : "_:b70",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:PossibleValues",
+    "onProperty" : "isoprops:hasPossibleValues"
+  }, {
+    "@id" : "_:b71",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:countryOfOrigin",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b72",
+    "@type" : "owl:Restriction",
+    "owl:maxQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:countryOfOrigin"
+  }, {
+    "@id" : "_:b73",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onClass" : "isoprops:DigitalFormatItem",
+    "onProperty" : "isoprops:hasDigitalFormat"
+  }, {
+    "@id" : "_:b74",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:nameOfTheDefiningValues"
+  }, {
+    "@id" : "_:b75",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfCreation",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b76",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:deprecationExplanation"
+  }, {
+    "@id" : "_:b77",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfLastChange"
+  }, {
+    "@id" : "_:b78",
+    "@type" : "owl:Restriction",
+    "owl:maxQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:deprecationExplanation"
+  }, {
+    "@id" : "_:b79",
+    "@type" : "owl:Restriction",
+    "onDataRange" : "xsd:integer",
+    "onProperty" : "isoprops:versionNumber",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b8",
     "@type" : "rdfs:Datatype",
     "owl:oneOf" : {
       "@list" : [ "active", "inactive" ]
     }
   }, {
-    "@id" : "_:b58",
+    "@id" : "_:b80",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:hasVisualRepresentation"
+  }, {
+    "@id" : "_:b81",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : {
+      "@type" : "xsd:nonNegativeInteger",
+      "@value" : "1"
+    },
+    "onDataRange" : "qudt:QuantityKind",
+    "onProperty" : "isoprops:hasPhysicalQuantity"
+  }, {
+    "@id" : "_:b82",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 1,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:definitionInLanguage"
+  }, {
+    "@id" : "_:b83",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:subdivisionOfUse"
+  }, {
+    "@id" : "_:b84",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:dateTime",
+    "onProperty" : "isoprops:dateOfActivation"
+  }, {
+    "@id" : "_:b85",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:exampleInLanguage"
+  }, {
+    "@id" : "_:b86",
+    "@type" : "owl:Restriction",
+    "onClass" : "isoprops:BoundaryValue",
+    "onProperty" : "isoprops:hasBoundary",
+    "owl:qualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b87",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : {
       "@type" : "xsd:nonNegativeInteger",
@@ -462,244 +676,76 @@
     "onClass" : "qudt:Unit",
     "onProperty" : "isoprops:hasUnit"
   }, {
-    "@id" : "_:b59",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "_:b60",
-    "onProperty" : "isoprops:DynamicProperty",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b60",
-    "@type" : "rdfs:Datatype",
-    "owl:oneOf" : {
-      "@list" : [ "yes", "no" ]
-    }
-  }, {
-    "@id" : "_:b62",
-    "@type" : "owl:Restriction",
-    "onClass" : "isoprops:BoundaryValue",
-    "onProperty" : "isoprops:hasBoundary",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b63",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:ExampleInLanguage"
-  }, {
-    "@id" : "_:b64",
-    "@type" : "owl:Restriction",
-    "owl:maxQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DeprecationExplanation"
-  }, {
-    "@id" : "_:b65",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:DefiningValuesList",
-    "onProperty" : "isoprops:hasDefiningValue"
-  }, {
-    "@id" : "_:b66",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
-    "onClass" : "isoprops:GroupOfProperties",
-    "onProperty" : "isoprops:hasGroupOfProperties"
-  }, {
-    "@id" : "_:b67",
+    "@id" : "_:b88",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfActivation"
+    "onProperty" : "isoprops:dateOfDeactivation"
   }, {
-    "@id" : "_:b68",
+    "@id" : "_:b89",
     "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
+    "owl:minQualifiedCardinality" : 0,
     "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:NameInLanguage"
+    "onProperty" : "isoprops:hasDescriptionInLanguage"
   }, {
-    "@id" : "_:b69",
+    "@id" : "_:b90",
     "@type" : "owl:Restriction",
-    "onDataRange" : "_:b121",
-    "onProperty" : "isoprops:DataType",
-    "owl:qualifiedCardinality" : {
-      "@type" : "xsd:nonNegativeInteger",
-      "@value" : "1"
-    }
+    "onDataRange" : "xsd:string",
+    "onProperty" : "isoprops:globallyUniqueIdentifier",
+    "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b7",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dcat:accessURL"
-  }, {
-    "@id" : "_:b70",
+    "@id" : "_:b91",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:TextFormatItem",
-    "onProperty" : "isoprops:hasTextFormat"
+    "onDataRange" : "xsd:decimal",
+    "onProperty" : "isoprops:tolerance"
   }, {
-    "@id" : "_:b71",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:Property",
-    "onProperty" : "isoprops:hasConnectedProperty"
-  }, {
-    "@id" : "_:b72",
+    "@id" : "_:b92",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onClass" : "isoprops:Property",
     "onProperty" : "isoprops:hasParameterOfTheDynamicProperty"
   }, {
-    "@id" : "_:b73",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 1,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CountryOfUse"
-  }, {
-    "@id" : "_:b74",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:DescriptionInLanguage"
-  }, {
-    "@id" : "_:b75",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "_:b38",
-    "onProperty" : "isoprops:Status",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b76",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:ExternalDictionaryReference",
-    "onProperty" : "isoprops:hasExternalDictionaryReference"
-  }, {
-    "@id" : "_:b77",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:PossibleValues",
-    "onProperty" : "isoprops:hasPossibleValues"
-  }, {
-    "@id" : "_:b78",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfCreation",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b79",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:VisualRepresentation"
-  }, {
-    "@id" : "_:b8",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onClass" : "isoprops:DigitalFormatItem",
-    "onProperty" : "isoprops:hasDigitalFormat"
-  }, {
-    "@id" : "_:b80",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:NameOfTheDefiningValues"
-  }, {
-    "@id" : "_:b81",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfLastChange"
-  }, {
-    "@id" : "_:b82",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:dateTime",
-    "onProperty" : "isoprops:DateOfDeactivation"
-  }, {
-    "@id" : "_:b83",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:integer",
-    "onProperty" : "isoprops:VersionNumber",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b84",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:hasPossibleValues"
-  }, {
-    "@id" : "_:b85",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:integer",
-    "onProperty" : "isoprops:RevisionNumber",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b86",
+    "@id" : "_:b93",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onClass" : "isoprops:Property",
     "onProperty" : "isoprops:replacesProperties"
   }, {
-    "@id" : "_:b87",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:SubdivisionOfUse"
-  }, {
-    "@id" : "_:b88",
+    "@id" : "_:b94",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 0,
     "onClass" : "isoprops:Property",
-    "onProperty" : "isoprops:isReplacedByProperty"
+    "onProperty" : "isoprops:hasConnectedProperty"
   }, {
-    "@id" : "_:b89",
-    "@type" : "owl:Restriction",
-    "owl:minQualifiedCardinality" : 0,
-    "onDataRange" : "xsd:decimal",
-    "onProperty" : "isoprops:Tolerance"
-  }, {
-    "@id" : "_:b9",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "dc:title"
-  }, {
-    "@id" : "_:b90",
+    "@id" : "_:b95",
     "@type" : "owl:Restriction",
     "owl:minQualifiedCardinality" : 1,
+    "onClass" : "isoprops:GroupOfProperties",
+    "onProperty" : "isoprops:hasGroupOfProperties"
+  }, {
+    "@id" : "_:b96",
+    "@type" : "owl:Restriction",
+    "owl:minQualifiedCardinality" : 0,
     "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:NameInLanguage"
+    "onProperty" : "isoprops:countryOfOrigin"
   }, {
-    "@id" : "_:b91",
+    "@id" : "_:b97",
     "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "isoprops:hasPropertyGroupReference"
-  }, {
-    "@id" : "_:b92",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:integer",
-    "onProperty" : "isoprops:NumberOfCharacters",
+    "onDataRange" : "_:b115",
+    "onProperty" : "isoprops:dynamicProperty",
     "owl:qualifiedCardinality" : 1
   }, {
-    "@id" : "_:b93",
-    "@type" : "owl:Restriction",
-    "owl:cardinality" : 1,
-    "onProperty" : "schema:value"
-  }, {
-    "@id" : "_:b94",
+    "@id" : "_:b98",
     "@type" : "owl:Restriction",
     "owl:maxQualifiedCardinality" : 1,
     "onClass" : "isoprops:GroupOfProperties",
     "onProperty" : "isoprops:hasParentGroupOfProperties"
   }, {
-    "@id" : "_:b95",
+    "@id" : "_:b99",
     "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:Symbol",
-    "owl:qualifiedCardinality" : 1
-  }, {
-    "@id" : "_:b96",
-    "@type" : "owl:Restriction",
-    "onDataRange" : "xsd:string",
-    "onProperty" : "isoprops:CountryOfOrigin",
-    "owl:qualifiedCardinality" : 1
+    "owl:cardinality" : 1,
+    "onProperty" : "isoprops:hasPropertyGroupReference"
   }, {
     "@id" : "dcat:accessURL",
     "@type" : "owl:AnnotationProperty"
@@ -710,46 +756,58 @@
     "@id" : "https://w3id.org/isoprops",
     "@type" : "owl:Ontology",
     "created" : "2019-01-01",
-    "creator" : [ "_:b16", "_:b18" ],
+    "creator" : [ "_:b14", "_:b16" ],
     "issued" : "2021-12-06",
     "license" : "https://creativecommons.org/licenses/by/4.0/",
-    "modified" : "2024-04-24",
-    "publisher" : "_:b17",
+    "modified" : "2025-01-15",
+    "publisher" : "_:b15",
+    "source" : "https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf",
     "preferredNamespacePrefix" : "isoprops",
-    "preferredNamespaceUri" : "https://w3id.org/isoprops",
+    "preferredNamespaceUri" : "https://w3id.org/isoprops#",
     "comment" : "The ISO Property (ISOProps) ontology maps the data model of the ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.\r\n\r\nThe namespace for ISOProps terms is [https://w3id.org/isoprops](https://w3id.org/isoprops)\r\n\r\nThe preferred prefix for the ISOProps namespace is `isoprops`.\r\n\r\n## Ontology Overview \r\n![IDDO Ontology](Ontology_Overview.png \"Ontology\")\r\n\r\n## Assigning an ISOProps Property to a Feature of Interest\r\n![Property_Assignment](Property_Assignment.png \"Property_Assignment\")\r\n\r\n## Relation between DCAT vocabulary and the ISOProps ontology\r\n![DataCatalog_Overview](DataCatalog_Overview.png \"DataCatalog_Overview\")\r\n",
     "label" : "ISO 23386 Property Ontology (ISOProps)",
     "seeAlso" : "https://www.iso.org/standard/75401.html",
-    "imports" : "https://w3id.org/dt",
+    "priorVersion" : "https://w3id.org/https//w3id.org/iddo",
     "versionIRI" : "https://w3id.org/isoprops",
-    "versionInfo" : "v2.1",
-    "example" : "https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png",
-    "historyNote" : "\r\n  v2.1: renamed from IDDO to ISOProps\r\n  v2.0: update\r\n  \r\n  v0.3: dcat usage update \r\n  \r\n  v0.2: ontology update \r\n\r\nv0.1: initial ontology for BIMSTRUCT project \r\n  ",
+    "versionInfo" : "v2.2",
+    "example" : {
+      "@id" : "https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png"
+    },
+    "historyNote" : "v2.2: Adjustments due to the update of the IR ontology network\r\nv2.1: renamed from IDDO to ISOProps\r\nv2.0: update\r\n  \r\nv0.3: dcat usage update \r\nv0.2: ontology update \r\nv0.1: initial ontology for BIMSTRUCT project \r\n  ",
     "codeRepository" : "https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/isoprops"
   }, {
     "@id" : "isoprops:AssignedProperty",
     "@type" : "owl:Class",
-    "comment" : [ "Represents the assignment of a property and a property state to a feature of interest (FOI).", {
+    "comment" : [ {
+      "@language" : "en",
+      "@value" : "Represents the assignment of a property and a property state to a feature of interest (FOI)."
+    }, {
       "@language" : "de-de",
       "@value" : "Repraesentiert die Zweisung eines Merkmals und einer Merkmalszustandes an ein Feature of Interest (FOI)"
     } ],
     "label" : [ {
       "@language" : "de-de",
       "@value" : "Zugewiesenes Merkmal"
-    }, "Assigned property" ],
-    "subClassOf" : [ "_:b31", "_:b32", "http://www.w3id.org/opm#Property" ]
+    }, {
+      "@language" : "en",
+      "@value" : "Assigned property"
+    } ],
+    "subClassOf" : [ "_:b32", "_:b33", "opm:Property" ]
   }, {
     "@id" : "isoprops:BoundaryLimitMax",
     "@type" : "rdfs:Class",
     "comment" : [ {
+      "@language" : "en",
+      "@value" : "BoundaryLimitMax defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval."
+    }, {
       "@language" : "de-de",
-      "@value" : "Grenzwertintervall bestehend aus der oberen(maxValue) Intervallgrenze"
-    }, "Boundary limit  interval consisting of the the upper (maxValue) interval boundary" ],
-    "label" : [ "Maximum Boundary Limit", {
+      "@value" : "BoundaryLimitMax definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist."
+    } ],
+    "label" : [ "Upper Boundary Limit", {
       "@language" : "de-de",
       "@value" : "Oberer Grenzwert"
     } ],
-    "subClassOf" : [ "_:b29", "_:b30", "_:b21", "schema:PropertyValue", "owl:Thing" ],
+    "subClassOf" : [ "_:b19", "_:b27", "_:b28", "schema:PropertyValue", "owl:Thing" ],
     "scopeNote" : "PA040",
     "code" : [ {
       "@language" : "de-de",
@@ -758,145 +816,421 @@
   }, {
     "@id" : "isoprops:BoundaryLimitMin",
     "@type" : "rdfs:Class",
-    "comment" : [ "Boundary limit interval consisting of the lower(minValue) interval boundary", {
+    "comment" : [ {
       "@language" : "de-de",
-      "@value" : "Grenzwertintervall bestehend aus der unteren(minValue) Intervallgrenze"
+      "@value" : "BoundaryLimitMin definiert den oberen Grenzwert des Grenzintervalls, einschließlich der Einheit und der Angabe ob der Wert im Intervall enthalten ist."
+    }, {
+      "@language" : "en",
+      "@value" : "BoundaryLimitMin defines the upper limit of the boundary interval, including the unit and whether the value is included in the interval."
     } ],
     "label" : [ {
+      "@language" : "en",
+      "@value" : "Lower Boundary Limit"
+    }, {
       "@language" : "de-de",
       "@value" : "Unterer Grenzwert"
-    }, "Minimum Boundary Limit" ],
-    "subClassOf" : [ "_:b127", "schema:PropertyValue", "owl:Thing", "_:b130", "_:b40" ],
+    } ],
+    "subClassOf" : [ "_:b53", "_:b20", "schema:PropertyValue", "owl:Thing", "_:b11" ],
     "scopeNote" : "PA040",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA040"
+    }, {
       "@language" : "de-de",
       "@value" : "PA040"
-    }, "PA040" ]
+    } ]
   }, {
     "@id" : "isoprops:BoundaryValue",
     "@type" : "rdfs:Class",
-    "comment" : [ "Pair  (List of boundary intervals of possible values for the property, unit)", {
+    "comment" : [ "BoundaryValue defines the boundary value of the property via a lower and upper boundary value@en", {
       "@language" : "de-de",
-      "@value" : "Paar (Liste von Grenzwert-Intervallen moeglicher Werte fuer das Merkmal, Einheit)"
+      "@value" : "BoundaryValue definiert das Grenzwertinterval des Merkmals über einen untere und oberen Grenzwert"
     } ],
     "label" : [ {
       "@language" : "de-de",
-      "@value" : "Grenzwertliste"
-    }, "Boundary values list" ],
-    "subClassOf" : [ "_:b124", "_:b125", "owl:Thing" ],
+      "@value" : "Grenzwert"
+    }, {
+      "@language" : "en",
+      "@value" : "Boundary value"
+    } ],
+    "subClassOf" : [ "_:b118", "_:b112", "owl:Thing" ],
     "scopeNote" : "PA040",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA040"
+    }, {
       "@language" : "de-de",
       "@value" : "PA040"
-    }, "PA040" ]
+    } ]
   }, {
-    "@id" : "isoprops:CategoryOfGroupOfProperties",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Specifies the category of the created property group", {
+    "@id" : "isoprops:DefiningValueItem",
+    "@type" : "rdfs:Class",
+    "comment" : [ "Contains a defining value of an array in the form of a literal", {
       "@language" : "de-de",
-      "@value" : "Gibt die Kategorie der erstellten Merkmalsgruppe an"
+      "@value" : "Enthaelt einen definierenden Wert eines Arrays in Form eines Literals"
     } ],
-    "domain" : "isoprops:GroupOfProperties",
     "label" : [ {
       "@language" : "de-de",
-      "@value" : "Kategorie der Merkmalsgruppe"
-    }, "Category of group of properties" ],
-    "range" : "_:b44",
-    "subPropertyOf" : "owl:topDataProperty",
-    "skos:example" : [ "Composed property", "Reference document", "Alternative use", "Domain", "Class" ],
-    "scopeNote" : "GA022",
+      "@value" : "Definierender Wert-Item"
+    }, "Defining value item" ],
+    "subClassOf" : [ "_:b117", "_:b106", "owl:Thing", "schema:PropertyValue", "_:b119" ],
+    "scopeNote" : "PA035",
     "code" : [ {
       "@language" : "de-de",
-      "@value" : "GA022"
-    }, "GA022" ]
+      "@value" : "PA035"
+    }, "PA035" ]
   }, {
-    "@id" : "isoprops:CountryOfOrigin",
+    "@id" : "isoprops:DefiningValuesList",
+    "@type" : "rdfs:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben"
+    }, "In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030" ],
+    "label" : [ "Defining values list", {
+      "@language" : "de-de",
+      "@value" : "Liste definierender Werte"
+    } ],
+    "subClassOf" : [ "owl:Thing", "_:b141", "_:b7", "_:b147" ],
+    "equivalentClass" : "tempo:Enumeration",
+    "scopeNote" : "PA035",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA035"
+    }, "PA035" ]
+  }, {
+    "@id" : "isoprops:Dictionary",
+    "@type" : "owl:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format"
+    }, "Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format" ],
+    "label" : [ "Data dictionary", {
+      "@language" : "de-de",
+      "@value" : "Datenkatalog"
+    } ],
+    "subClassOf" : [ "_:b4", "_:b146", "_:b59", "_:b148", "_:b26", "_:b143", "dcat:Catalog", "_:b58" ]
+  }, {
+    "@id" : "isoprops:DictionaryReferenceDocument",
+    "@type" : "owl:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Publikation, die hinzugezogen wird, um bestimmte Informationen zu finden, insbesondere in einer technischen oder wissenschaftlichen Domaene"
+    }, "Publication that is consulted to find specific information, particularly in a technical or scientific domain" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Referenzdokument"
+    }, "Reference document" ],
+    "subClassOf" : [ "_:b99", "dcat:Distribution" ]
+  }, {
+    "@id" : "isoprops:DictionarySubset",
+    "@type" : "owl:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs"
+    }, "Defines a subset or subgrouping of a data catalog" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Teilmenge des Datenkatalogs"
+    }, "Dictionary subset" ],
+    "subClassOf" : [ "_:b46", "_:b47", "_:b48", "dcat:Dataset", "_:b49" ]
+  }, {
+    "@id" : "isoprops:DigitalFormatItem",
+    "@type" : "rdfs:Class",
+    "comment" : [ "Pair for digital text type (precision, unit)\r\nPrecision is the number of significant digits", {
+      "@language" : "de-de",
+      "@value" : "Paar fuer den digitalen Texttyp (Praezision, Masseinheit)\r\nPraezision ist die Anzahl signifikanter Stellen"
+    } ],
+    "label" : [ "Digital format item", {
+      "@language" : "de-de",
+      "@value" : "Digitales Format-Item"
+    } ],
+    "subClassOf" : [ "_:b45", "owl:Thing", "_:b62" ],
+    "scopeNote" : "PA037",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA037"
+    }, "PA037" ]
+  }, {
+    "@id" : "isoprops:ExternalDictionaryReference",
+    "@type" : "rdfs:Class",
+    "comment" : [ "Pair (property internal identifier, corresponding data dictionary identifier)\r\nThis attribute should be used for compatibility between already existing properties", {
+      "@language" : "de-de",
+      "@value" : "Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner)\r\nDieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"
+    } ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "External Dictionary Reference"
+    }, "External Dictionary Reference " ],
+    "subClassOf" : [ "_:b68", "_:b137", "owl:Thing" ],
+    "equivalentClass" : "https://w3id.org/dt#ExternalDictionaryReference"
+  }, {
+    "@id" : "isoprops:GroupOfProperties",
+    "@type" : "owl:Class",
+    "comment" : [ {
+      "@language" : "en",
+      "@value" : "Collection enabling the properties to be prearranged or organized"
+    }, {
+      "@language" : "de-de",
+      "@value" : "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"
+    } ],
+    "label" : [ {
+      "@language" : "en",
+      "@value" : "Group of properties"
+    }, {
+      "@language" : "de-de",
+      "@value" : "Merkmalsgruppe"
+    } ],
+    "subClassOf" : [ "_:b61", "_:b126", "_:b111", "_:b25", "_:b100", "_:b104", "_:b109", "_:b127", "_:b110", "owl:Thing", "_:b56", "_:b98", "_:b128", "_:b120", "_:b129", "_:b122", "_:b130", "_:b121", "_:b131", "_:b132", "_:b71", "_:b133", "_:b10", "_:b21", "_:b63", "_:b134", "tempo:SubjectType", "_:b42" ],
+    "equivalentClass" : "tempo:GroupOfProperties"
+  }, {
+    "@id" : "isoprops:Inclusive",
     "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Country from where the requirement for this property/group of properties originated", {
+    "domain" : [ "isoprops:BoundaryLimitMin", "isoprops:BoundaryLimitMax" ],
+    "label" : "inclusive",
+    "range" : "xsd:boolean",
+    "subPropertyOf" : "owl:topDataProperty"
+  }, {
+    "@id" : "isoprops:PhysicalQuantity",
+    "@type" : "rdfs:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Liste von Paaren (physikalische Groesse | Sprache)\r\nPhysikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben\r\nnicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben\r\ndies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303\r\nnur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."
+    }, "List of pairs (physical quantity | language)\r\nPhysical quantities are expressed in International System (SI) units\r\nNon-physical quantities such as text are expressed with the value \"without\"\r\nThis is equivalent to a measure in ISO 16739-1 and ISO 10303\r\nOnly one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Physikalische Groesse"
+    }, "Physical quantity" ],
+    "subClassOf" : "owl:Thing",
+    "equivalentClass" : "qudt:QuantityKind"
+  }, {
+    "@id" : "isoprops:PossibleValues",
+    "@type" : "rdfs:Class",
+    "comment" : [ "Possible value for the property and language\r\nValues can be string or numbers", {
+      "@language" : "de-de",
+      "@value" : "Moeglicher Wert fuer das Merkmal und Sprache\r\nWerte koennen String oder Zahlen sein"
+    } ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Liste moeglicher Werte in Sprache N"
+    }, "Possible value in language N" ],
+    "subClassOf" : [ "_:b113", "_:b108", "_:b105", "owl:Thing", "_:b114", "schema:PropertyValue", "_:b50" ],
+    "equivalentClass" : "tempo:Enumeration",
+    "scopeNote" : "PA039",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA039"
+    }, "PA039" ]
+  }, {
+    "@id" : "isoprops:Property",
+    "@type" : "owl:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Inhaerente oder erworbene Eigenschaft eines Datenelements"
+    }, "Inherent or acquired feature of an item" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Merkmal"
+    }, "Property" ],
+    "subClassOf" : [ "_:b65", "_:b72", "_:b1", "_:b73", "_:b24", "_:b74", "_:b75", "_:b76", "_:b77", "_:b78", "_:b79", "_:b80", "_:b81", "_:b41", "_:b64", "_:b66", "_:b22", "_:b82", "_:b12", "_:b51", "tempo:ConceptType", "_:b70", "_:b83", "owl:Thing", "_:b84", "_:b2", "_:b38", "_:b85", "_:b86", "_:b87", "_:b88", "_:b89", "_:b23", "_:b34", "_:b90", "_:b91", "_:b92", "_:b93", "_:b94", "_:b95", "_:b96", "_:b97", "_:b36" ],
+    "equivalentClass" : [ "opm:Property", "tempo:Property" ]
+  }, {
+    "@id" : "isoprops:SymbolOfTheProperty",
+    "@type" : "rdfs:Class",
+    "comment" : [ "Pair (symbol of the property, globally unique identifier of the group of properties (attribute GA001))", {
+      "@language" : "de-de",
+      "@value" : "Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))"
+    } ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Symbol des Merkmals in einer gegebenen Merkmalsgruppe"
+    }, "Symbol of the property in a given property group" ],
+    "subClassOf" : [ "_:b17", "_:b144", "owl:Thing" ],
+    "scopeNote" : "PA022",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA022"
+    }, "PA022" ]
+  }, {
+    "@id" : "isoprops:TextFormatItem",
+    "@type" : "rdfs:Class",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)\r\ndie Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"
+    }, "Pair for text type (encoding, number of characters)\r\nThe encoding is set according to Name of encoding standard of IANA, RFC 2978" ],
+    "label" : [ "Text format item", {
+      "@language" : "de-de",
+      "@value" : "Textformat-Item"
+    } ],
+    "subClassOf" : [ "_:b103", "_:b60", "owl:Thing" ],
+    "scopeNote" : "PA038",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA038"
+    }, "PA038" ]
+  }, {
+    "@id" : "isoprops:categoryOfGroupOfProperties",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Gibt die Kategorie der erstellten Merkmalsgruppe an. Erlaubt sind die Werte, 'Alternative use'(Alternative Verwendung), 'Class'(Klasse), 'Composed property'(zusammengesetzes Merkmal), 'Domain'(Domaene),'Reference document'(Referenzdokument)"
+    }, {
+      "@language" : "en",
+      "@value" : "Specifies the category of the created property group. The following values are permitted: 'Alternative use', 'Class', 'Composed property', 'Domain', 'Reference document'."
+    } ],
+    "domain" : "isoprops:GroupOfProperties",
+    "label" : [ "Category of group of properties", {
+      "@language" : "de-de",
+      "@value" : "Kategorie der Merkmalsgruppe"
+    } ],
+    "range" : "_:b0",
+    "subPropertyOf" : "owl:topDataProperty",
+    "example" : [ "Composed property", "Domain", "Alternative use", "Reference document", "Class" ],
+    "scopeNote" : "GA022",
+    "code" : [ {
+      "@language" : "en",
+      "@value" : "GA022"
+    }, {
+      "@language" : "de-de",
+      "@value" : "GA022"
+    } ]
+  }, {
+    "@id" : "isoprops:code",
+    "@type" : [ "owl:AnnotationProperty", "rdf:Property" ],
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Code, der zur Identifizierung des Attributs verwendet werden kann"
+    }, "Code that can be used to identify the attribute" ],
+    "domain" : "rdfs:Resource",
+    "isDefinedBy" : "http://www.w3.org/2000/01/rdf-schema#",
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Code"
+    }, "Code" ],
+    "range" : "rdfs:Literal"
+  }, {
+    "@id" : "isoprops:countryOfOrigin",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "en",
+      "@value" : "Country from where the requirement for this property/group of properties originated"
+    }, {
       "@language" : "de-de",
       "@value" : "Land, aus dem die Anforderung an dieses Merkmal/dieser Merkmalsgruppe stammt"
     } ],
     "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ "Country of origin", {
+    "label" : [ {
       "@language" : "de-de",
       "@value" : "Ursprungsland"
+    }, {
+      "@language" : "en",
+      "@value" : "Country of origin"
     } ],
     "range" : "xsd:string",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA026/GA021",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA026/GA021"
+    }, {
       "@language" : "de-de",
       "@value" : "PA026/GA021"
-    }, "PA026/GA021" ]
+    } ]
   }, {
-    "@id" : "isoprops:CountryOfUse",
+    "@id" : "isoprops:countryOfUse",
     "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in", {
+    "comment" : [ {
+      "@language" : "en",
+      "@value" : "Country (group of countries, continent) in which the property is relevant for the market the stakeholders operate in."
+    }, {
       "@language" : "de-de",
-      "@value" : "Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist"
+      "@value" : "Land (Gruppe von Laendern, Kon-tinent), in dem das Merkmal/die Merkmalsgruppe fuer den Markt, auf dem die Beteiligten arbeiten, relevant ist."
     } ],
     "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
     "label" : [ {
+      "@language" : "en",
+      "@value" : "Country of use"
+    }, {
       "@language" : "de-de",
       "@value" : "Land der Verwendung"
-    }, "Country of use" ],
+    } ],
     "range" : "xsd:string",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA024/GA019",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA024/GA019"
+    }, {
       "@language" : "de-de",
       "@value" : "PA024/GA019"
-    }, "PA024/GA019" ]
+    } ]
   }, {
-    "@id" : "isoprops:CreatorsLanguage",
+    "@id" : "isoprops:creatorsLanguage",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
-      "@value" : "Satz, der den Grund fuer die Ab-lehnung erlaeutert, der erklaeren kann, wie Werte umzurechnen sind, damit sie dem neuen Merkmal entsprechen; diese Er-laeuterung muss in internatio-nalem Englisch (EN) geschrieben werden"
-    }, "Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property; this explanation has to be written in international English (EN)" ],
+      "@value" : "Sprache des Erstellers des Merkmals/der Merkmalsgruppe"
+    }, {
+      "@language" : "en",
+      "@value" : "Language of the creator of the property/group of properties"
+    } ],
     "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ "Creator's language", {
+    "label" : [ {
       "@language" : "de-de",
-      "@value" : "Erlaeuterung fuer die Ablehnung"
+      "@value" : "Sprache des Erstellers"
+    }, {
+      "@language" : "en",
+      "@value" : "Creator's language"
     } ],
     "range" : "xsd:string",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA015/GA015",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA015/GA015"
+    }, {
       "@language" : "de-de",
       "@value" : "PA015/GA015"
-    }, "PA015/GA015" ]
+    } ]
   }, {
-    "@id" : "isoprops:DataType",
+    "@id" : "isoprops:dataType",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
+      "@language" : "en",
+      "@value" : "Format for expressing the value of the property. This can be understood as the storage type from a software perspective. In case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula."
+    }, {
       "@language" : "de-de",
-      "@value" : "Format fuer die Angabe des Wertes des Merkmals\r\ndies kann aus einer Soft-ware-Perspektive als Speiche-rungsart verstanden werden\r\nim Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Er-gebnisses der Berechnung mit der Gleichung"
-    }, "Format for expressing the value of the property\r\nThis can be understood as the storage type from a software perspective\r\nIn case of a dynamic property the value of this attribute is the datatype of the result of the calculation by the formula" ],
+      "@value" : "Format fuer die Angabe des Merkmalwertes. Dies kann aus Sicht der Software als Speichertyp verstanden werden. Im Falle eines dynamischen Merkmals ist der Wert dieses Attributs der Datentyp des Ergebnisses der berechneten Gleichung"
+    } ],
     "domain" : "isoprops:Property",
     "label" : [ {
+      "@language" : "en",
+      "@value" : "Data type"
+    }, {
       "@language" : "de-de",
       "@value" : "Datentyp (GUID)"
-    }, "Data type" ],
+    } ],
     "range" : "xsd:string",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA030",
     "code" : [ {
+      "@language" : "en",
+      "@value" : "PA030"
+    }, {
       "@language" : "de-de",
       "@value" : "PA030"
-    }, "PA030" ]
+    } ]
   }, {
-    "@id" : "isoprops:DateOfActivation",
+    "@id" : "isoprops:dateOfActivation",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "Date after when the property can be used", {
       "@language" : "de-de",
       "@value" : "Datum, nach dem das Merkmal verwendet werden kann"
     } ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ "Date of activation", {
+    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
+    "label" : [ {
       "@language" : "de-de",
       "@value" : "Datum der Aktivierung"
-    } ],
+    }, "Date of activation" ],
     "range" : "xsd:dateTime",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA04/GA04",
@@ -905,7 +1239,7 @@
       "@value" : "PA004/GA004"
     }, "PA004/GA004" ]
   }, {
-    "@id" : "isoprops:DateOfCreation",
+    "@id" : "isoprops:dateOfCreation",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
@@ -924,7 +1258,7 @@
       "@value" : "PA003/GA003"
     }, "PA003/GA003" ]
   }, {
-    "@id" : "isoprops:DateOfDeactivation",
+    "@id" : "isoprops:dateOfDeactivation",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "Date of deactivation", {
       "@language" : "de-de",
@@ -943,17 +1277,17 @@
       "@value" : "PA008/GA008"
     }, "PA008/GA008" ]
   }, {
-    "@id" : "isoprops:DateOfLastChange",
+    "@id" : "isoprops:dateOfLastChange",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
       "@value" : "Datum der Validierung der letzten Aenderungsanfrage durch Sachverstaendige"
     }, "Date of validation of the last change request by experts" ],
-    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ {
+    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
+    "label" : [ "Date of last change", {
       "@language" : "de-de",
       "@value" : "Datum der letzten Aenderung"
-    }, "Date of last change" ],
+    } ],
     "range" : "xsd:dateTime",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA005/GA005",
@@ -962,17 +1296,17 @@
       "@value" : "PA005/GA005"
     }, "PA005/GA005" ]
   }, {
-    "@id" : "isoprops:DateOfRevision",
+    "@id" : "isoprops:dateOfRevision",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
       "@value" : "Datum der Ueberarbeitung"
     }, "Date of revision" ],
     "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ {
+    "label" : [ "Date of revision", {
       "@language" : "de-de",
       "@value" : "Datum der Ueberarbeitung"
-    }, "Date of revision" ],
+    } ],
     "range" : "xsd:dateTime",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA006/GA006",
@@ -981,17 +1315,17 @@
       "@value" : "PA006/GA006"
     }, "PA006/GA006" ]
   }, {
-    "@id" : "isoprops:DateOfVersion",
+    "@id" : "isoprops:dateOfVersion",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
       "@value" : "Datum der Version"
     }, "Date of version" ],
     "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ {
+    "label" : [ "Date of version", {
       "@language" : "de-de",
       "@value" : "Datum der Version"
-    }, "Date of version" ],
+    } ],
     "range" : "xsd:dateTime",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA007/GA007",
@@ -1000,60 +1334,27 @@
       "@value" : "PA007/GA007"
     }, "PA007/GA007" ]
   }, {
-    "@id" : "isoprops:DefiningValueItem",
-    "@type" : "rdfs:Class",
-    "comment" : [ "Contains a defining value of an array in the form of a literal", {
-      "@language" : "de-de",
-      "@value" : "Enthaelt einen definierenden Wert eines Arrays in Form eines Literals"
-    } ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Definierender Wert-Item"
-    }, "Defining value item" ],
-    "subClassOf" : [ "owl:Thing", "_:b93", "schema:PropertyValue" ],
-    "scopeNote" : "PA035",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA035"
-    }, "PA035" ]
-  }, {
-    "@id" : "isoprops:DefiningValuesList",
-    "@type" : "rdfs:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Im Falle eines Feldes liefert dieses Attribut die definierenden Werte, sofern zutreffend, der Datentyp wird durch das Attribut PA030 angegeben"
-    }, "In case of an array, this attribute provides the defining values when applicable, the datatype is given by the attribute PA030" ],
-    "label" : [ "Defining values list", {
-      "@language" : "de-de",
-      "@value" : "Liste definierender Werte"
-    } ],
-    "subClassOf" : [ "owl:Thing", "_:b139" ],
-    "scopeNote" : "PA035",
-    "code" : [ "PA035", {
-      "@language" : "de-de",
-      "@value" : "PA035"
-    } ]
-  }, {
-    "@id" : "isoprops:DefinitionInLanguage",
+    "@id" : "isoprops:definitionInLanguage",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "List of pairs (definition of the property/group of properties, language)", {
       "@language" : "de-de",
       "@value" : "Liste von Paaren (Definition des Merkmals/der Merkmalsgruppe, Sprache)"
     } ],
     "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ {
+    "label" : [ "Definition of in language N", {
       "@language" : "de-de",
       "@value" : "Definition in Sprache N"
-    }, "Definition of in language N" ],
+    } ],
     "range" : "rdf:langString",
     "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "tempo:definitionInLanguage",
     "scopeNote" : "PA016/GA016",
     "code" : [ {
       "@language" : "de-de",
       "@value" : "PA016/GA016"
     }, "PA016/GA016" ]
   }, {
-    "@id" : "isoprops:DeprecationExplanation",
+    "@id" : "isoprops:deprecationExplanation",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "Sentence explaining the reason of the deprecation, which can explain how to convert values to conform to the new property/group of properties; this explanation has to be written in international English (EN)", {
       "@language" : "de-de",
@@ -1072,7 +1373,7 @@
       "@value" : "PA013/GA013"
     }, "PA013/GA013" ]
   }, {
-    "@id" : "isoprops:DescriptionInLanguage",
+    "@id" : "isoprops:descriptionInLanguage",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
@@ -1085,95 +1386,43 @@
     } ],
     "range" : "rdf:langString",
     "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "tempo:descriptionInLanguage",
     "scopeNote" : "PA019",
     "code" : [ {
       "@language" : "de-de",
       "@value" : "PA019"
     }, "PA019" ]
   }, {
-    "@id" : "isoprops:Dictionary",
-    "@type" : "owl:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Zentralisiertes Repository von Informationen ueber Daten, wie z. B. Bedeutung, Beziehungen zu anderen Daten, Ursprung, Verwendung und Format"
-    }, "Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format" ],
-    "label" : [ "Data dictionary", {
-      "@language" : "de-de",
-      "@value" : "Datenkatalog"
-    } ],
-    "subClassOf" : [ "_:b129", "_:b140", "_:b126", "_:b132", "_:b128", "_:b9", "dcat:Catalog", "_:b119" ]
-  }, {
-    "@id" : "isoprops:DictionaryReferenceDocument",
-    "@type" : "owl:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Publikation, die hinzugezogen wird, um bestimmte Informationen zu finden, insbesondere in einer technischen oder wissenschaftlichen Domaene"
-    }, "Publication that is consulted to find specific information, particularly in a technical or scientific domain" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Referenzdokument"
-    }, "Reference document" ],
-    "subClassOf" : [ "_:b91", "dcat:Distribution" ]
-  }, {
-    "@id" : "isoprops:DictionarySubset",
-    "@type" : "owl:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Definiert eine Teilmenge oder Untergruppierung eines Datenkatalogs"
-    }, "Defines a subset or subgrouping of a data catalog" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Teilmenge des Datenkatalogs"
-    }, "Dictionary subset" ],
-    "subClassOf" : [ "_:b48", "_:b49", "_:b50", "dcat:Dataset", "_:b7" ]
-  }, {
-    "@id" : "isoprops:DigitalFormatItem",
-    "@type" : "rdfs:Class",
-    "comment" : [ "Pair for digital text type (precision, unit)\r\nPrecision is the number of significant digits", {
-      "@language" : "de-de",
-      "@value" : "Paar fuer den digitalen Texttyp (Praezision, Masseinheit)\r\nPraezision ist die Anzahl signifikanter Stellen"
-    } ],
-    "label" : [ "Digital format item", {
-      "@language" : "de-de",
-      "@value" : "Digitales Format-Item"
-    } ],
-    "subClassOf" : [ "_:b54", "_:b55", "owl:Thing" ],
-    "scopeNote" : "PA037",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA037"
-    }, "PA037" ]
-  }, {
-    "@id" : "isoprops:DynamicProperty",
+    "@id" : "isoprops:dynamicProperty",
     "@type" : "owl:DatatypeProperty",
-    "comment" : [ "If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032", {
+    "comment" : [ {
       "@language" : "de-de",
       "@value" : "Wenn es sich um ein dynamisches Merkmal handelt, haengt der Wert von den im Attribut PA032 bereitgestellten Parametern ab"
-    } ],
-    "label" : [ "Dynamic Property", {
+    }, "If this is a dynamic property, the value is dependent on the parameters provided in the attribute PA032" ],
+    "label" : [ {
       "@language" : "de-de",
       "@value" : "Dynamisches Merkmal"
-    } ],
-    "range" : "_:b131",
+    }, "Dynamic Property" ],
+    "range" : "_:b5",
     "subPropertyOf" : "owl:topDataProperty",
-    "skos:example" : [ "no", "yes" ],
+    "example" : [ "yes", "no" ],
     "scopeNote" : "PA031",
     "code" : [ {
       "@language" : "de-de",
       "@value" : "PA031"
     }, "PA031" ]
   }, {
-    "@id" : "isoprops:Encoding",
+    "@id" : "isoprops:encoding",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "The encoding is set according to Name of encoding standard of IANA, RFC 2978", {
       "@language" : "de-de",
       "@value" : "Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"
     } ],
     "domain" : "isoprops:TextFormatItem",
-    "label" : [ {
+    "label" : [ "Encoding", {
       "@language" : "de-de",
       "@value" : "Kodierung"
-    }, "Encoding" ],
+    } ],
     "range" : "xsd:string",
     "subPropertyOf" : "owl:topDataProperty",
     "scopeNote" : "PA038",
@@ -1182,45 +1431,33 @@
       "@value" : "PA038"
     }, "PA038" ]
   }, {
-    "@id" : "isoprops:ExampleInLanguage",
+    "@id" : "isoprops:exampleInLanguage",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ {
       "@language" : "de-de",
       "@value" : "Liste von Paaren (Beispiel des Merkmals, Sprache)"
     }, "List of pairs (example of the property, language)" ],
     "domain" : "isoprops:Property",
-    "label" : [ {
+    "label" : [ "Example in language N", {
       "@language" : "de-de",
       "@value" : "Beispiel in Sprache N"
-    }, "Example in language N" ],
+    } ],
     "range" : "rdf:langString",
     "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "tempo:exampleInLanguage",
     "scopeNote" : "PA019",
     "code" : [ {
       "@language" : "de-de",
       "@value" : "PA019"
     }, "PA019" ]
   }, {
-    "@id" : "isoprops:ExternalDictionaryReference",
-    "@type" : "rdfs:Class",
-    "comment" : [ "Pair (property internal identifier, corresponding data dictionary identifier)\r\nThis attribute should be used for compatibility between already existing properties", {
-      "@language" : "de-de",
-      "@value" : "Paar (interner Merkmalsbezeichner, entsprechender Datenkatalog-Bezeichner)\r\nDieses Attribut sollte fuer die Vertraeglichkeit zwischen bereits vorhandenen Merkmalen verwendet werden"
-    } ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "External Dictionary Reference"
-    }, "External Dictionary Reference " ],
-    "subClassOf" : [ "_:b43", "_:b46", "owl:Thing" ],
-    "equivalentClass" : "https://w3id.org/dt#ExternalDictionaryReference"
-  }, {
-    "@id" : "isoprops:GloballyUniqueIdentifier",
+    "@id" : "isoprops:globallyUniqueIdentifier",
     "@type" : "owl:DatatypeProperty",
     "comment" : [ "Unique identifier generated using the algorithm denoted in RFC 4122", {
       "@language" : "de-de",
       "@value" : "Eindeutiger Bezeichner, der mit dem in RFC 4122 beschriebenen Algorithmus erzeugt wird"
     } ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
+    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
     "label" : [ {
       "@language" : "de-de",
       "@value" : "Global eindeutiger Bezeichner (GUID)"
@@ -1232,338 +1469,6 @@
       "@language" : "de-de",
       "@value" : "PA001/GA001"
     }, "PA001/GA001" ]
-  }, {
-    "@id" : "isoprops:GroupOfProperties",
-    "@type" : "owl:Class",
-    "comment" : [ "Collection enabling the properties to be prearranged or organized", {
-      "@language" : "de-de",
-      "@value" : "Sammlung, die es ermoeglicht, die Merkmale vorauszuplanen oder zu organisieren"
-    } ],
-    "label" : [ "Group of properties", {
-      "@language" : "de-de",
-      "@value" : "Merkmalsgruppe"
-    } ],
-    "subClassOf" : [ "_:b33", "_:b103", "_:b102", "_:b1", "_:b104", "_:b105", "_:b106", "_:b94", "_:b107", "owl:Thing", "_:b96", "_:b51", "_:b108", "_:b109", "_:b110", "_:b42", "_:b111", "_:b112", "_:b14", "_:b2", "_:b113", "_:b12", "https://w3id.org/dt#LibraryComponent", "_:b52", "_:b90", "_:b114", "_:b115", "_:b15" ]
-  }, {
-    "@id" : "isoprops:Inclusive",
-    "@type" : "owl:DatatypeProperty",
-    "domain" : [ "isoprops:BoundaryLimitMin", "isoprops:BoundaryLimitMax" ],
-    "label" : "inclusive",
-    "range" : "xsd:boolean",
-    "subPropertyOf" : "owl:topDataProperty"
-  }, {
-    "@id" : "isoprops:MethodOfMeasurement",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen", "Evaluation of construction products to ensure their fitness according to requirements in harmonised technical specifications" ],
-    "domain" : "isoprops:Property",
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Messverfahren"
-    }, "Method of measurement" ],
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA029",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA029"
-    }, "PA029" ]
-  }, {
-    "@id" : "isoprops:NameInLanguage",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "List of pairs (property name and language)\r\nThis attribute can be used to add synonyms for different domains", {
-      "@language" : "de-de",
-      "@value" : "Liste von Paaren (Name des Merkmals und Sprache)\r\nDieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hinzuzufuegen"
-    } ],
-    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ "Name in language N", {
-      "@language" : "de-de",
-      "@value" : "Name in Sprache N"
-    } ],
-    "range" : "rdf:langString",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA016/GA016",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA016/GA016"
-    }, "PA016/GA016" ]
-  }, {
-    "@id" : "isoprops:NameOfTheDefiningValues",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Im Falle eines Feldes liefert dieses Attribut die Namen der Spaltenkoepfe, festgelegt als Liste von Paaren (Name, Sprache)"
-    }, "In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)" ],
-    "label" : [ "Names of the defining values", {
-      "@language" : "de-de",
-      "@value" : "Name der definierenden Werte"
-    } ],
-    "range" : "rdf:langString",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA034",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA034"
-    }, "PA034" ]
-  }, {
-    "@id" : "isoprops:NumberOfCharacters",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "The encoding is set according to Name of encoding standard of IANA, RFC 2978", {
-      "@language" : "de-de",
-      "@value" : "Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"
-    } ],
-    "domain" : "isoprops:TextFormatItem",
-    "label" : [ "Number of Characters", {
-      "@language" : "de-de",
-      "@value" : "Anzahl der Zeichen"
-    } ],
-    "range" : "xsd:integer",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA038",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA038"
-    }, "PA038" ]
-  }, {
-    "@id" : "isoprops:PhysicalQuantity",
-    "@type" : "rdfs:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Liste von Paaren (physikalische Groesse | Sprache)\r\nPhysikalische Groessen werden in Einheiten des Internationalen Einheitensystems (SI) angegeben\r\nnicht physikalische Groessen wie z. B. Text werden mit dem Wert \"ohne\" angegeben\r\ndies ist gleichbedeutend mit einem Mass in ISO 16739-1 und ISO 10303\r\nnur eine physikalische Groesse kann einem Merkmal zugeordnet werden. Dieses Attribut wird ver-wendet, um die Groesse in Klartext mit allen benoetigten ueberset-zungen bereitzustellen."
-    }, "List of pairs (physical quantity | language)\r\nPhysical quantities are expressed in International System (SI) units\r\nNon-physical quantities such as text are expressed with the value \"without\"\r\nThis is equivalent to a measure in ISO 16739-1 and ISO 10303\r\nOnly one physical quantity can be attached to a property. This attribute is used to provide the quantity in plain text with all the needed translations" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Physikalische Groesse"
-    }, "Physical quantity" ],
-    "subClassOf" : "https://w3id.org/dt#LibraryComponent",
-    "equivalentClass" : "qudt:QuantityKind"
-  }, {
-    "@id" : "isoprops:PossibleValues",
-    "@type" : "rdfs:Class",
-    "comment" : [ "Possible value for the property and language\r\nValues can be string or numbers", {
-      "@language" : "de-de",
-      "@value" : "Moeglicher Wert fuer das Merkmal und Sprache\r\nWerte koennen String oder Zahlen sein"
-    } ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Liste moeglicher Werte in Sprache N"
-    }, "Possible value in language N" ],
-    "subClassOf" : [ "_:b22", "owl:Thing", "schema:PropertyValue" ],
-    "equivalentClass" : "https://w3id.org/dt#PredefinedValuesList",
-    "scopeNote" : "PA039",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA039"
-    }, "PA039" ]
-  }, {
-    "@id" : "isoprops:Precision",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Precision is the number of significant digits", {
-      "@language" : "de-de",
-      "@value" : "Praezision ist die Anzahl signifi-kanter Stellen"
-    } ],
-    "domain" : "isoprops:DigitalFormatItem",
-    "label" : [ "Tolerance", {
-      "@language" : "de-de",
-      "@value" : "Toleranz"
-    } ],
-    "range" : "xsd:decimal",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA037",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA037"
-    }, "PA037" ]
-  }, {
-    "@id" : "isoprops:Property",
-    "@type" : "owl:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Inhaerente oder erworbene Eigenschaft eines Datenelements"
-    }, "Inherent or acquired feature of an item" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Merkmal"
-    }, "Property" ],
-    "subClassOf" : [ "https://w3id.org/dt#LibraryComponent", "_:b62", "_:b63", "_:b64", "_:b8", "_:b56", "_:b65", "_:b66", "_:b67", "_:b5", "_:b68", "_:b28", "_:b69", "_:b70", "_:b71", "_:b25", "_:b72", "_:b73", "_:b41", "_:b59", "_:b74", "_:b75", "_:b13", "owl:Thing", "_:b76", "_:b4", "_:b77", "_:b3", "_:b78", "_:b79", "_:b80", "_:b53", "_:b0", "_:b58", "_:b81", "_:b82", "_:b83", "_:b84", "_:b85", "_:b24", "_:b86", "_:b87", "_:b88", "_:b89" ],
-    "equivalentClass" : "opm:Property"
-  }, {
-    "@id" : "isoprops:RevisionNumber",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.\r\nSachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist."
-    }, "This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1\r\nExperts decide if a new revision number can be applied or if a new revision is needed" ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ "Revision number", {
-      "@language" : "de-de",
-      "@value" : "Nummer der ueberarbeitung"
-    } ],
-    "range" : "xsd:integer",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA010/GA010",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA010/GA010"
-    }, "PA010/GA010" ]
-  }, {
-    "@id" : "isoprops:Status",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "Status of the property during its life cycle", {
-      "@language" : "de-de",
-      "@value" : "Status des Merkmals waehrend seines Lebenszyklus"
-    } ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Status"
-    }, "Status" ],
-    "range" : "_:b57",
-    "subPropertyOf" : "owl:topDataProperty",
-    "skos:example" : [ "active", "inactive" ],
-    "scopeNote" : "PA002/GA002",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA002/GA002"
-    }, "PA002/GA002" ]
-  }, {
-    "@id" : "isoprops:SubdivisionOfUse",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Dokumentierte geographische Region, in der das Merkmal/ die Merkmalsgruppe verwendet wird"
-    }, "Documented geographical region of use of the group of properties" ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Unterteilung der Verwendung"
-    }, "Subdivision of use" ],
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA025/GA020",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA025/GA020"
-    }, "PA025/GA020" ]
-  }, {
-    "@id" : "isoprops:Symbol",
-    "@type" : "owl:DatatypeProperty",
-    "domain" : "isoprops:SymbolOfTheProperty",
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Symbol"
-    }, "Symbol" ],
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA022",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA022"
-    }, "PA022" ]
-  }, {
-    "@id" : "isoprops:SymbolOfTheProperty",
-    "@type" : "rdfs:Class",
-    "comment" : [ "Pair (symbol of the property, globally unique identifier of the group of properties (attribute GA001))", {
-      "@language" : "de-de",
-      "@value" : "Paar (Symbol des Merkmals, global eindeutiger Bezeichner der Merkmalsgruppe (Attribut GA001))"
-    } ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Symbol des Merkmals in einer gegebenen Merkmalsgruppe"
-    }, "Symbol of the property in a given property group" ],
-    "subClassOf" : [ "owl:Thing", "_:b95", "_:b47" ],
-    "scopeNote" : "PA022",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA022"
-    }, "PA022" ]
-  }, {
-    "@id" : "isoprops:TextFormatItem",
-    "@type" : "rdfs:Class",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Paar fuer den Texttyp (Verschluesselung, Anzahl der Zeichen)\r\ndie Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"
-    }, "Pair for text type (encoding, number of characters)\r\nThe encoding is set according to Name of encoding standard of IANA, RFC 2978" ],
-    "label" : [ "Text format item", {
-      "@language" : "de-de",
-      "@value" : "Textformat-Item"
-    } ],
-    "subClassOf" : [ "_:b37", "owl:Thing", "_:b92" ],
-    "scopeNote" : "PA038",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA038"
-    }, "PA038" ]
-  }, {
-    "@id" : "isoprops:Tolerance",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Fuer numerische Werte; der Gesamtbetrag, um den eine be-stimmte Einheit schwanken darf; sie ist die Differenz zwischen dem Hoechstwert und dem Mindestwert fuer die Einheit"
-    }, "For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit" ],
-    "domain" : "isoprops:Property",
-    "label" : [ "Tolerance", {
-      "@language" : "de-de",
-      "@value" : "Toleranz"
-    } ],
-    "range" : "xsd:decimal",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA036",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA036"
-    }, "PA036" ]
-  }, {
-    "@id" : "isoprops:VersionNumber",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ "This version number allows tracking of major changes. Experts decide if a new version number must be applied", {
-      "@language" : "de-de",
-      "@value" : "Diese Versionsnummer ermoeglicht die Verfolgung groesserer aenderungen. Sachverstaendige entscheiden, ob eine neue Ver-sionsnummer angewendet werden muss."
-    } ],
-    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
-    "label" : [ "Version number", {
-      "@language" : "de-de",
-      "@value" : "Versionsnummer"
-    } ],
-    "range" : "xsd:integer",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA009/GA009",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA009/GA009"
-    }, "PA009/GA009" ]
-  }, {
-    "@id" : "isoprops:VisualRepresentation",
-    "@type" : "owl:DatatypeProperty",
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Bildliche Darstellung des Merkmals durch Skizzen, Fotos, Videos oder sonstige Multimedia-Objekte"
-    }, "Visual representation of the group of properties through sketches, photos, videos or other multimedia objects" ],
-    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Bildliche Darstellung"
-    }, "Visual representation" ],
-    "range" : "xsd:string",
-    "subPropertyOf" : "owl:topDataProperty",
-    "scopeNote" : "PA023/GA018",
-    "code" : [ {
-      "@language" : "de-de",
-      "@value" : "PA023/GA018"
-    }, "PA023/GA018" ]
-  }, {
-    "@id" : "isoprops:code",
-    "@type" : [ "owl:AnnotationProperty", "rdf:Property" ],
-    "comment" : [ {
-      "@language" : "de-de",
-      "@value" : "Code, der zur Identifizierung des Attributs verwendet werden kann"
-    }, "Code that can be used to identify the attribute" ],
-    "domain" : "rdfs:Resource",
-    "isDefinedBy" : "http://www.w3.org/2000/01/rdf-schema#",
-    "label" : [ {
-      "@language" : "de-de",
-      "@value" : "Code"
-    }, "Code" ],
-    "range" : "rdfs:Literal"
   }, {
     "@id" : "isoprops:hasBoundary",
     "@type" : "owl:ObjectProperty",
@@ -1771,6 +1676,25 @@
       "@value" : "PA021"
     }, "PA021" ]
   }, {
+    "@id" : "isoprops:hasNameInLanguage",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Liste von Paaren (Name des Merkmals und Sprache)\r\nDieses Attribut kann verwendet werden, um Synonyme fuer verschiedene Domaenen hinzuzufuegen"
+    }, "List of pairs (property name and language)\r\nThis attribute can be used to add synonyms for different domains" ],
+    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Name in Sprache N"
+    }, "Name in language N" ],
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA016/GA016",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA016/GA016"
+    }, "PA016/GA016" ]
+  }, {
     "@id" : "isoprops:hasParameterOfTheDynamicProperty",
     "@type" : "owl:ObjectProperty",
     "comment" : [ {
@@ -1950,7 +1874,10 @@
     "comment" : [ {
       "@language" : "de-de",
       "@value" : "Eine Einheit zur Darstellung einer Skala, die es ermoeglicht, einen Wert zu messen\r\nes ist moeglich, dieses Attribut zu verwenden, um zu erlaeutern, dass dem Merkmal keine Einheit zugeordnet ist, indem einheitslos verwendet wird --> http://qudt.org/vocab/unit/UNITLESS"
-    }, "A unit to represent a scale that enables a value to be measured\r\nIt is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS" ],
+    }, {
+      "@language" : "en",
+      "@value" : "A unit to represent a scale that enables a value to be measured\r\nIt is possible to use this attribute to explain there is no unit attached to the property by using unitless --> http://qudt.org/vocab/unit/UNITLESS"
+    } ],
     "domain" : [ "isoprops:BoundaryLimitMax", "isoprops:Property", "isoprops:BoundaryLimitMin" ],
     "label" : [ {
       "@language" : "de-de",
@@ -1964,6 +1891,32 @@
       "@language" : "de-de",
       "@value" : "PA033"
     }, "PA033" ]
+  }, {
+    "@id" : "isoprops:hasVisualRepresentation",
+    "@type" : "owl:ObjectProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Bildliche Darstellung des Merkmals durch Skizzen, Fotos, Videos oder sonstige Multimedia-Objekte"
+    }, "Visual representation of the group of properties through sketches, photos, videos or other multimedia objects" ],
+    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Bildliche Darstellung"
+    }, "Visual representation" ],
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topObjectProperty",
+    "scopeNote" : "PA023/GA018",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA023/GA018"
+    }, "PA023/GA018" ]
+  }, {
+    "@id" : "isoprops:index",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "inclusive",
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty",
+    "equivalentProperty" : "tempo:order"
   }, {
     "@id" : "isoprops:isReplacedByGroupOfProperties",
     "@type" : "owl:ObjectProperty",
@@ -2005,6 +1958,78 @@
       "@value" : "PA012"
     }, "PA012" ]
   }, {
+    "@id" : "isoprops:methodOfMeasurement",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ "Evaluation of construction products to ensure their fitness according to requirements in harmonised technical specifications", "Beurteilung von Bauprodukten, um ihre Tauglichkeit entsprechend den Anforderungen in harmonisierten technischen Spezifikationen sicherzustellen" ],
+    "domain" : "isoprops:Property",
+    "label" : [ "Method of measurement", {
+      "@language" : "de-de",
+      "@value" : "Messverfahren"
+    } ],
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA029",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA029"
+    }, "PA029" ]
+  }, {
+    "@id" : "isoprops:nameOfTheDefiningValues",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ "In case of an array, this attribute provides the names of the column headers defined as a list of pairs (name, language)", {
+      "@language" : "de-de",
+      "@value" : "Im Falle eines Feldes liefert dieses Attribut die Namen der Spaltenkoepfe, festgelegt als Liste von Paaren (Name, Sprache)"
+    } ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Name der definierenden Werte"
+    }, "Names of the defining values" ],
+    "range" : "rdf:langString",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA034",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA034"
+    }, "PA034" ]
+  }, {
+    "@id" : "isoprops:numberOfCharacters",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Die Verschluesselung wird nach Name der Codierungsnorm von IANA, RFC 2978 festgelegt"
+    }, "The encoding is set according to Name of encoding standard of IANA, RFC 2978" ],
+    "domain" : "isoprops:TextFormatItem",
+    "label" : [ "Number of Characters", {
+      "@language" : "de-de",
+      "@value" : "Anzahl der Zeichen"
+    } ],
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA038",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA038"
+    }, "PA038" ]
+  }, {
+    "@id" : "isoprops:precision",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Praezision ist die Anzahl signifi-kanter Stellen"
+    }, "Precision is the number of significant digits" ],
+    "domain" : "isoprops:DigitalFormatItem",
+    "label" : [ "Tolerance", {
+      "@language" : "de-de",
+      "@value" : "Toleranz"
+    } ],
+    "range" : "xsd:decimal",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA037",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA037"
+    }, "PA037" ]
+  }, {
     "@id" : "isoprops:replacesGroupOfProperties",
     "@type" : "owl:ObjectProperty",
     "comment" : [ {
@@ -2044,8 +2069,150 @@
       "@language" : "de-de",
       "@value" : "PA011"
     }, "PA011" ]
+  }, {
+    "@id" : "isoprops:revisionNumber",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ "This revision number allows tracking of minor changes e.g. new translation, changes of typos: if the version number changes, the revision number starts again at 1\r\nExperts decide if a new revision number can be applied or if a new revision is needed", {
+      "@language" : "de-de",
+      "@value" : "Diese Nummer der ueberarbeitung ermoeglicht die Verfolgung kleinerer aenderungen, z. B. neue uebersetzung, Korrekturen von Tippfehlern: wenn sich die Versionsnummer aendert, beginnt die Nummer der ueberarbeitung wieder bei 1.\r\nSachverstaendige entscheiden, ob eine neue Nummer der ueberarbeitung angewendet werden kann oder ob eine neue ueberarbeitung erforderlich ist."
+    } ],
+    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
+    "label" : [ "Revision number", {
+      "@language" : "de-de",
+      "@value" : "Nummer der ueberarbeitung"
+    } ],
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA010/GA010",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA010/GA010"
+    }, "PA010/GA010" ]
+  }, {
+    "@id" : "isoprops:status",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ "Status of the property during its life cycle", {
+      "@language" : "de-de",
+      "@value" : "Status des Merkmals waehrend seines Lebenszyklus"
+    } ],
+    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Status"
+    }, "Status" ],
+    "range" : "_:b39",
+    "subPropertyOf" : "owl:topDataProperty",
+    "example" : [ "active", "inactive" ],
+    "scopeNote" : "PA002/GA002",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA002/GA002"
+    }, "PA002/GA002" ]
+  }, {
+    "@id" : "isoprops:subdivisionOfUse",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ "Documented geographical region of use of the group of properties", {
+      "@language" : "de-de",
+      "@value" : "Dokumentierte geographische Region, in der das Merkmal/ die Merkmalsgruppe verwendet wird"
+    } ],
+    "domain" : [ "isoprops:GroupOfProperties", "isoprops:Property" ],
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Unterteilung der Verwendung"
+    }, "Subdivision of use" ],
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA025/GA020",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA025/GA020"
+    }, "PA025/GA020" ]
+  }, {
+    "@id" : "isoprops:symbol",
+    "@type" : "owl:DatatypeProperty",
+    "domain" : "isoprops:SymbolOfTheProperty",
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Symbol"
+    }, "Symbol" ],
+    "range" : "xsd:string",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA022",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA022"
+    }, "PA022" ]
+  }, {
+    "@id" : "isoprops:tolerance",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Fuer numerische Werte; der Gesamtbetrag, um den eine be-stimmte Einheit schwanken darf; sie ist die Differenz zwischen dem Hoechstwert und dem Mindestwert fuer die Einheit"
+    }, "For numerical values; the total amount that a specific unit is permitted to vary; it is the difference between the maximum and the minimum limits for the unit" ],
+    "domain" : "isoprops:Property",
+    "label" : [ {
+      "@language" : "de-de",
+      "@value" : "Toleranz"
+    }, "Tolerance" ],
+    "range" : "xsd:decimal",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA036",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA036"
+    }, "PA036" ]
+  }, {
+    "@id" : "isoprops:versionNumber",
+    "@type" : "owl:DatatypeProperty",
+    "comment" : [ {
+      "@language" : "de-de",
+      "@value" : "Diese Versionsnummer ermoeglicht die Verfolgung groesserer aenderungen. Sachverstaendige entscheiden, ob eine neue Ver-sionsnummer angewendet werden muss."
+    }, "This version number allows tracking of major changes. Experts decide if a new version number must be applied" ],
+    "domain" : [ "isoprops:Property", "isoprops:GroupOfProperties" ],
+    "label" : [ "Version number", {
+      "@language" : "de-de",
+      "@value" : "Versionsnummer"
+    } ],
+    "range" : "xsd:integer",
+    "subPropertyOf" : "owl:topDataProperty",
+    "scopeNote" : "PA009/GA009",
+    "code" : [ {
+      "@language" : "de-de",
+      "@value" : "PA009/GA009"
+    }, "PA009/GA009" ]
   } ],
   "@context" : {
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "scopeNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote"
+    },
+    "example" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#example"
+    },
+    "subPropertyOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "code" : {
+      "@id" : "https://w3id.org/isoprops#code"
+    },
+    "qualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
     "onProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#onProperty",
       "@type" : "@id"
@@ -2053,53 +2220,6 @@
     "onDataRange" : {
       "@id" : "http://www.w3.org/2002/07/owl#onDataRange",
       "@type" : "@id"
-    },
-    "maxQualifiedCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
-    },
-    "subPropertyOf" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-      "@type" : "@id"
-    },
-    "range" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
-      "@type" : "@id"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
-    "domain" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
-      "@type" : "@id"
-    },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
-    },
-    "code" : {
-      "@id" : "https://w3id.org/isoprops#code"
-    },
-    "scopeNote" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote"
-    },
-    "onClass" : {
-      "@id" : "http://www.w3.org/2002/07/owl#onClass",
-      "@type" : "@id"
-    },
-    "minQualifiedCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
-    },
-    "qualifiedCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#qualifiedCardinality",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
-    },
-    "rest" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-      "@type" : "@id"
-    },
-    "first" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
     },
     "cardinality" : {
       "@id" : "http://www.w3.org/2002/07/owl#cardinality",
@@ -2109,33 +2229,53 @@
       "@id" : "http://www.w3.org/2002/07/owl#oneOf",
       "@type" : "@id"
     },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    "minCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
     },
-    "preferredNamespacePrefix" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    "minQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "identifier" : {
+      "@id" : "https://schema.org/identifier",
+      "@type" : "@id"
     },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator",
       "@type" : "@id"
     },
-    "versionIRI" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
-      "@type" : "@id"
-    },
-    "historyNote" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#historyNote"
-    },
-    "seeAlso" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+    "priorVersion" : {
+      "@id" : "http://www.w3.org/2002/07/owl#priorVersion",
       "@type" : "@id"
     },
     "modified" : {
       "@id" : "http://purl.org/dc/terms/modified",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "versionIRI" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
     "preferredNamespaceUri" : {
       "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
       "@type" : "@id"
     },
     "created" : {
@@ -2146,55 +2286,62 @@
       "@id" : "http://purl.org/dc/terms/license",
       "@type" : "@id"
     },
-    "publisher" : {
-      "@id" : "http://purl.org/dc/terms/publisher",
+    "source" : {
+      "@id" : "http://purl.org/dc/terms/source",
       "@type" : "@id"
+    },
+    "historyNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#historyNote"
     },
     "issued" : {
       "@id" : "http://purl.org/dc/terms/issued",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
-    "example" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#example",
-      "@type" : "@id"
-    },
-    "imports" : {
-      "@id" : "http://www.w3.org/2002/07/owl#imports",
-      "@type" : "@id"
-    },
     "codeRepository" : {
       "@id" : "https://schema.org/codeRepository",
+      "@type" : "@id"
+    },
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first"
+    },
+    "onClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onClass",
       "@type" : "@id"
     },
     "subClassOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
       "@type" : "@id"
     },
-    "inverseOf" : {
-      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
-      "@type" : "@id"
-    },
     "equivalentProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
+      "@type" : "@id"
+    },
+    "maxCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "inverseOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
       "@type" : "@id"
     },
     "equivalentClass" : {
       "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
       "@type" : "@id"
     },
-    "minCardinality" : {
-      "@id" : "http://www.w3.org/2002/07/owl#minCardinality",
+    "maxQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#integer"
     },
-    "name" : {
-      "@id" : "https://schema.org/name"
+    "parentOrganization" : {
+      "@id" : "https://schema.org/parentOrganization",
+      "@type" : "@id"
     },
     "memberOf" : {
       "@id" : "https://schema.org/memberOf",
-      "@type" : "@id"
-    },
-    "identifier" : {
-      "@id" : "https://schema.org/identifier",
       "@type" : "@id"
     },
     "email" : {
@@ -2205,15 +2352,12 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
       "@type" : "@id"
     },
-    "parentOrganization" : {
-      "@id" : "https://schema.org/parentOrganization",
-      "@type" : "@id"
-    },
     "schema" : "https://schema.org/",
     "qudt" : "http://qudt.org/schema/qudt/",
     "owl" : "http://www.w3.org/2002/07/owl#",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "tempo" : "https://w3id.org/tempo#",
     "voaf" : "http://purl.org/vocommons/voaf#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
     "opm" : "https://w3id.org/opm#",

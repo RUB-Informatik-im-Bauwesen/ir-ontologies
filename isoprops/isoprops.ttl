@@ -27,6 +27,16 @@ dcat:accessURL
 .
 <https://w3id.org/isoprops>
   rdf:type owl:Ontology ;
+  dc:contributor [
+      rdf:type schema:Person ;
+      schema:email <mailto:martina.mellenthin.filardo@uni-weimar.de> ;
+      schema:identifier <https://orcid.org/0000-0001-7759-7579> ;
+      schema:memberOf [
+          schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
+          schema:name "Bauhaus-Universitaet Weimar" ;
+        ] ;
+      schema:name "Marthina Mellenthin-Filardo" ;
+    ] ;
   dc:created "2019-01-01"^^xsd:date ;
   dc:creator [
       rdf:type schema:Person ;
@@ -50,7 +60,7 @@ dcat:accessURL
     ] ;
   dc:issued "2021-12-06"^^xsd:date ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:modified "2024-04-24"^^xsd:date ;
+  dc:modified "2025-01-15"^^xsd:date ;
   dc:publisher [
       rdf:type schema:Organization ;
       schema:identifier <https://www.inf.bi.rub.de> ;
@@ -70,28 +80,26 @@ The namespace for ISOProps terms is [https://w3id.org/isoprops](https://w3id.org
 The preferred prefix for the ISOProps namespace is `isoprops`.
 
 ## Ontology Overview 
-![IDDO Ontology](Ontology_Overview.png \"Ontology\")
+![IDDO Ontology](figures/OntologyOverview.svg \"Ontology\")
 
 ## Assigning an ISOProps Property to a Feature of Interest
-![Property_Assignment](Property_Assignment.png \"Property_Assignment\")
+![Property_Assignment](figures/PropertyAssignment.svg \"Property_Assignment\")
 
 ## Relation between DCAT vocabulary and the ISOProps ontology
-![DataCatalog_Overview](DataCatalog_Overview.png \"DataCatalog_Overview\")
+![DataCatalog_Overview](figures/DataCatalogOverview.svg \"DataCatalog_Overview\")
 """ ;
   rdfs:label "ISO 23386 Property Ontology (ISOProps)" ;
   rdfs:seeAlso <https://www.iso.org/standard/75401.html> ;
   owl:priorVersion <https://w3id.org/https//w3id.org/iddo> ;
   owl:versionIRI <https://w3id.org/isoprops> ;
-  owl:versionInfo "v2.1" ;
+  owl:versionInfo "v2.2" ;
   skos:example <https://rub-informatik-im-bauwesen.github.io/iddo/Ontology_Overview.png> ;
-  skos:historyNote """
-  v2.1: renamed from IDDO to ISOProps
-  v2.0: update
+  skos:historyNote """v2.2: Adjustments due to the update of the IR ontology network
+v2.1: renamed from IDDO to ISOProps
+v2.0: update
   
-  v0.3: dcat usage update 
-  
-  v0.2: ontology update 
-
+v0.3: dcat usage update 
+v0.2: ontology update 
 v0.1: initial ontology for BIMSTRUCT project 
   """ ;
   schema:codeRepository <https://github.com/RUB-Informatik-im-Bauwesen/ir-ontologies/tree/main/isoprops> ;
@@ -756,12 +764,6 @@ isoprops:Property
       owl:minQualifiedCardinality 0 ;
       owl:onDataRange xsd:string ;
       owl:onProperty isoprops:hasDescriptionInLanguage ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minQualifiedCardinality 0 ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty isoprops:hasPossibleValues ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
