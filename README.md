@@ -25,7 +25,7 @@ Detailed documentation: https://rub-informatik-im-bauwesen.github.io/ir-ontologi
 
 [ISOProps / ISO 23386 Ontology Documentation (formerly known as IDDO ontology)](https://rub-informatik-im-bauwesen.github.io/ir-ontologies/isoprops/isoprops.html)   
 [LOIN / EN 17412–1 Ontology Documentation](https://rub-informatik-im-bauwesen.github.io/ir-ontologies/loin/loin.html)   
-[TempO /ISO 23387 Ontology Documentation (formaly known as DT Ontology)](https://rub-informatik-im-bauwesen.github.io/ir-ontologies/dt/dt.html)   
+[TempO /ISO 23387 Ontology Documentation (formaly known as DT Ontology)](https://rub-informatik-im-bauwesen.github.io/ir-ontologies/tempo/tempo.html)   
 [Examples Documentation](examples/loin-dt-iddo.md)   
 
 
