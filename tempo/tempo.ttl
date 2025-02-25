@@ -79,13 +79,13 @@ isoprops:GroupOfProperties
   dc:publisher [
       rdf:type schema:Organization ;
       schema:identifier <https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/construction-engineering-and-management/> ;
-      schema:name "Chair of Construction and Management, Bauhaus-Universitaet Weimar" ;
+      schema:name "Chair of Construction Engineering and Management, Bauhaus-Universitaet Weimar" ;
       schema:parentOrganization [
           rdf:type schema:Organization ;
           schema:name "Bauhaus Universitaet Weimar, Germany" ;
         ] ;
     ] ;
-  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Management, Bauhaus Universitaet Weimar" ;
+  dc:rights "Copyright 2024 by Chair of Computing in Engineering, Ruhr University Bochum and Chair of Construction Engineering and Management, Bauhaus Universitaet Weimar" ;
   dc:source <https://linkedbuildingdata.net/ldac2024/files/papers/LDAC2024_Camera_8.pdf> ;
   dc:title "Data Template Ontology (TempO)"@en ;
   vann:preferredNamespacePrefix "tempo" ;
