@@ -41,7 +41,7 @@ isoprops:GroupOfProperties
           schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
           schema:name "Bauhaus-Universitaet Weimar" ;
         ] ;
-      schema:name "Marthina Mellenthin-Filardo" ;
+      schema:name "Marthina Mellenthin Filardo" ;
     ] ;
   dc:creator [
       rdf:type schema:Person ;
@@ -79,7 +79,7 @@ isoprops:GroupOfProperties
   dc:publisher [
       rdf:type schema:Organization ;
       schema:identifier <https://www.uni-weimar.de/en/civil-and-environmental-engineering/chairs/construction-engineering-and-management/> ;
-      schema:name "Chair of Construction Management, Bauhaus Universitaet Weimar" ;
+      schema:name "Chair of Construction and Management, Bauhaus-Universitaet Weimar" ;
       schema:parentOrganization [
           rdf:type schema:Organization ;
           schema:name "Bauhaus Universitaet Weimar, Germany" ;

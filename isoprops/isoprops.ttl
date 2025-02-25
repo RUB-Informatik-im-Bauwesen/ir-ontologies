@@ -35,7 +35,7 @@ dcat:accessURL
           schema:identifier <https://www.uni-weimar.de/en/civil-engineering/chairs/construction-engineering-and-management/people/martina-mellenthin-filardo-msc/> ;
           schema:name "Bauhaus-Universitaet Weimar" ;
         ] ;
-      schema:name "Marthina Mellenthin-Filardo" ;
+      schema:name "Marthina Mellenthin Filardo" ;
     ] ;
   dc:created "2019-01-01"^^xsd:date ;
   dc:creator [
