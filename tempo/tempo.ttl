@@ -90,7 +90,7 @@ isoprops:GroupOfProperties
   dc:title "Data Template Ontology (TempO)"@en ;
   vann:preferredNamespacePrefix "tempo" ;
   vann:preferredNamespaceUri <http://w3id.org/tempo#> ;
-  rdfs:comment """The Data Template Ontology (TempO) ontology maps the data model of the ISO 23387-3 for Data templates for construction objects used in the life cycle of built assets 
+  rdfs:comment """The Data Template Ontology (TempO) ontology maps the data model of the ISO 23387-3 for Data templates for construction objects used in the life cycle of built assets. 
 The namespace for TempO terms is [https://w3id.org/tempo](https://w3id.org/tempo)
 
 The preferred prefix for the TempO namespace is `tempo`.
